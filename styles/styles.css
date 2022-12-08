@@ -10,77 +10,6 @@
  * governing permissions and limitations under the License.
  */
 
-/* fallback font for Gilroy  (normal - 700) */
-@font-face {
-  font-family: "gilroy-normal-700-fallback";
-  size-adjust: 102.931%;
-  src: local("Arial");
-}
-
-/* fallback font for Gilroy (normal - 600) */
-@font-face {
-  font-family: "gilroy-normal-600-fallback";
-  size-adjust: 102.811%;
-  src: local("Arial");
-}
-
-/* fallback font for Gilroy (normal - 500) */
-@font-face {
-  font-family: "gilroy-normal-500-fallback";
-  size-adjust: 101.991%;
-  src: local("Arial");
-}
-
-/* fallback font for Gilroy Medium (normal - 400) */
-@font-face {
-  font-family: "gilroy-normal-400-fallback";
-  size-adjust: 101.491%;
-  src: local("Arial");
-}
-
-/* fallback font for Gilroy Regular (normal - 300) */
-@font-face {
-  font-family: "gilroy-normal-300-fallback";
-  size-adjust: 100.871%;
-  src: local("Arial");
-}
-
-/* fallback font for Zahrah Bold (normal - 700) */
-@font-face {
-  font-family: "zahrah-normal-700-fallback";
-  size-adjust: 103.121%;
-  src: local("Arial");
-}
-
-/* fallback font for Zahrah Bold Italic (italic - 700) */
-@font-face {
-  font-family: "zahrah-italic-700-fallback";
-  size-adjust: 103.121%;
-  src: local("Arial");
-}
-
-
-/* fallback font for Zahrah SemiBold (normal - 600) */
-@font-face {
-  font-family: "zahrah-normal-600-fallback";
-  size-adjust: 102.181%;
-  src: local("Arial");
-}
-
-/* fallback font for Zahrah SemiBold Italic (italic - 600) */
-@font-face {
-  font-family: "zahrah-italic-600-fallback";
-  size-adjust: 100.871%;
-  src: local("Arial");
-}
-
-/* fallback font for Zahrah Medium Italic (italic - 500) */
-@font-face {
-  font-family: "zahrah-italic-500-fallback";
-  size-adjust: 98.879%;
-  src: local("Arial");
-}
-
 :root {
   /* colors */
   --clr-black: #000;
@@ -95,6 +24,7 @@
   --overlay-background-color: #eee;
   --highlight-background-color: #ccc;
   --text-color: var(--clr-black);
+  --clr-grey: #f4f4f4;
 
   /* fonts */
   --body-font-family: 'Gilroy', 'gilroy-normal-700-fallback', 'gilroy-normal-600-fallback', 'gilroy-normal-400-fallback', 'gilroy-normal-300-fallback', 'Arial', sans-serif;
@@ -116,11 +46,13 @@
 
   /* nav height */
   --nav-height: 64px;
-
+  /* section max width */
+  --section-max-width: 720px;
 }
 
 html {
   scroll-behavior: smooth;
+  font-size: 10px;
 }
 
 body {
@@ -159,8 +91,8 @@ h5 { font-size: var(--heading-font-size-s) }
 h6 { font-size: var(--heading-font-size-xs) }
 
 p, dl, ol, ul, pre, blockquote {
-  margin-top: 1em;
-  margin-bottom: 1em;
+  margin-top: 0;
+  margin-bottom: 2.5rem;
 }
 
 a:any-link {
@@ -241,6 +173,100 @@ main .section {
   padding: 64px 16px;
 }
 
+main .section > div {
+  max-width: var(--section-max-width);
+}
+
+main .section > div p {
+  font-size: 1.6rem;
+}
+
+main .section > div p:last-child {
+  margin-bottom: 1rem;
+}
+
+/* styles for /secure-shopping */
+main .section.secure-shopping > div{
+  background-color: var(--clr-grey);
+  padding: 1.75rem;
+}
+
+main .section.secure-shopping h1 {
+  background-color: #000;
+  color: #fff;
+  padding: .75em;
+  margin: 0;
+  font-size: 20px;
+}
+
+/* styles for /accessibility page */
+main .section.accessibility h1 {
+  font-size: 3.4rem;
+  text-transform: none;
+  color: #000;
+  border-bottom: 1px solid #010101;
+  padding-bottom: 1rem;
+  margin-bottom: 4rem;
+}
+
+main .section.accessibility h2 {
+  font-size: 2.6rem;
+  text-transform: none;
+  color: #000;
+  margin: 2rem 0 .5rem;
+}
+
+/* styles for /privacy-policy */
+main .section.privacy-policy h1{
+  font-size: 3.8rem;
+  margin-bottom: 3rem;
+}
+
+main .section.privacy-policy ol, main .section.privacy-policy ul {
+  padding-left: 1.5rem;
+}
+
+main .section.privacy-policy ol li 
+{
+  margin-top: 2em;
+  font-size: 16px;
+  line-height: 18px;
+  font-weight: bolder;
+}
+
+main .section.privacy-policy ul li{
+  font-size: 1.6rem;
+}
+
+main .section.privacy-policy a:any-link{
+  text-decoration: underline;
+  color: #000 ;
+}
+
+/* styles for /terms-of-use */
+
+main .section.terms-of-use h1{
+  font-size: 4.2rem;
+  margin: 0 0 2rem;    
+  color: #333;
+}
+
+main .section.terms-of-use a:any-link{
+  text-decoration: underline;
+  color: #ef2f23;
+}
+
+main .section.terms-of-use ol li ,main .section.terms-of-use ul li {
+  font-size: 1.8rem;
+  margin-bottom: 1em;
+}
+
+main .section.terms-of-use h3 {
+  margin-top: 2em;
+  font-size: 1.6rem;
+  color: #ef2f23;
+}
+
 main pre {
   background-color: var(--overlay-background-color);
   padding: 1em;
@@ -279,13 +305,7 @@ main img {
   height: auto;
 }
 
-@media (min-width: 600px) {
-  main .section {
-    padding: 64px 32px;
-  }  
-}
-
-@media (min-width: 900px) {
+@media (min-width: 1024px) {
   :root {
     --heading-font-size-xxl: 60px;
     --heading-font-size-xl: 48px;
@@ -293,11 +313,16 @@ main img {
     --heading-font-size-m: 30px;
     --heading-font-size-s: 24px;
     --heading-font-size-xs: 22px;  
+    --section-max-width: 1160px;
   }
   
   .section > div {
-    max-width: 1920px;
+    max-width: var(--section-max-width);
     margin: auto;
+  }
+
+  main .section.privacy-policy ol, main .section.privacy-policy ul {
+    padding-left: 4rem;
   }
 }
 
