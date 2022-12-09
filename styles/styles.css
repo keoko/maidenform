@@ -47,7 +47,6 @@
 
   /* nav height */
   --nav-height: 64px;
-  
   /* section max width */
   --section-max-width: 720px;
 }
@@ -181,84 +180,10 @@ main .section > div {
 
 main .section > div p {
   font-size: 1.6rem;
-  margin: 0;
 }
 
-
-/* modal dialog styles */
-.modal-background {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  z-index: 3000;
-  background: rgb(0 0 0 / 80%);
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-}
-
-.modal-content {
-  background: #fff;
-  padding: 20px;
-  text-align: center;
-  max-width: 120rem;
-  width: 60%;
-  border-radius: 4px;
-  font-size: 14px;
-  font-weight: 400;
-  position: relative;
-
-  /* TODO: font-family: 'Gilroy Regular' */
-}
-
-.modal-content h1 {
-  margin: 10px 0;
-  padding: 0;
-  font-size: 24px;
-  font-weight: 300;
-}
-
-.modal-content button {
-  display: block;
-  background: #fff;
-  border: 1px solid #000;
-  width: 44px;
-  height: 44px;
-  margin: -20px -20px 0 0;
-  text-align: center;
-  color: #333;
-  border-radius: 50%;
-  padding: 0;
-  font-size: 20px;
-  font-weight: 400;
-  line-height: 44px;
-  font-family: Arial, monospace;
-  position: absolute;
-  right: 0;
-  top: 0;
-  z-index: 1000;
-  transition: all .3s ease;
-}
-
-button:disabled, button:disabled:hover {
-  background-color: var(--overlay-background-color);
-  cursor: unset;
-}
-
-.modal-content button:hover {
-  background: #000;
-  color: #fff;
-}
-
-
-main .section 
-h1, h2, h3,
-h4, h5, h6 {
-  font-family: var(--body-font-family);
-  font-weight: 400;
+main .section > div p:last-child {
+  margin-bottom: 1rem;
 }
 
 /* styles for /secure-shopping */
@@ -288,16 +213,14 @@ main .section.accessibility h1 {
 main .section.accessibility h2 {
   font-size: 2.6rem;
   text-transform: none;
-  color: var(--clr-black);
+  color: #000;
   margin: 2rem 0 .5rem;
 }
 
 /* styles for /privacy-policy */
 main .section.privacy-policy h1{
-  font-weight: 400;
   font-size: 3.8rem;
   margin-bottom: 3rem;
-
 }
 
 main .section.privacy-policy ol, main .section.privacy-policy ul {
@@ -307,46 +230,31 @@ main .section.privacy-policy ol, main .section.privacy-policy ul {
 main .section.privacy-policy ol li 
 {
   margin-top: 2em;
-  font-size: 1.6rem;
-  font-weight: 500;
+  font-size: 16px;
+  line-height: 18px;
+  font-weight: bolder;
 }
 
 main .section.privacy-policy ul li{
   font-size: 1.6rem;
-  font-weight: 500;
-}
-
-main .section.privacy-policy strong {
-  font-weight: 500;
-}
-
-main .section.customer-service > div > p + p a{
-  font-size: 1.4rem;
-  text-decoration: underline;
 }
 
 main .section.privacy-policy a:any-link{
   text-decoration: underline;
-  color:var(--clr-black) ;
+  color: #000 ;
 }
 
 /* styles for /terms-of-use */
 
-
-
 main .section.terms-of-use h1{
   font-size: 4.2rem;
-  margin: 0 0 2rem;  
+  margin: 0 0 2rem;    
   color: #333;
-}
-
-main .section.terms-of-use  p {
-  margin: 1rem auto;
 }
 
 main .section.terms-of-use a:any-link{
   text-decoration: underline;
-  color: var(--clr-red);
+  color: #ef2f23;
 }
 
 main .section.terms-of-use ol li ,main .section.terms-of-use ul li {
@@ -357,42 +265,7 @@ main .section.terms-of-use ol li ,main .section.terms-of-use ul li {
 main .section.terms-of-use h3 {
   margin-top: 2em;
   font-size: 1.6rem;
-  color: var(--clr-red);
-}
-
-main .section > div p:first-of-type {
-  margin-top: 1rem;
-}
-
-main .section > div p:last-of-type {
-  margin-bottom: 1rem;
-}
-
-/* styles for /customer-service */
-main .section.customer-service h1 {
-  display: none;
-}
-
-main .section.customer-service h4 {
-  font-size: 1.25rem;
-  font-weight: 300;
-}
-
-main .section.customer-service > div > p {
-  font-size: 1.6rem;
-  font-weight: 300;
-  margin-bottom: 1rem;
-}
-
-main img {
-  max-width: 100%;
-  width: auto;
-  height: auto;
-}
-
-main .section.customer-service > div > p + p img{
-  max-width: 1.75rem;
-  margin: 0 0.5rem 0 0;
+  color: #ef2f23;
 }
 
 main pre {
@@ -426,7 +299,6 @@ hr {
   border: 0;
   border-bottom: 1px solid var(--overlay-background-color);
 }
-
 
 
 @media (min-width: 1024px) {
