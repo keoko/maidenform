@@ -180,10 +180,12 @@ main .section > div {
 
 main .section > div p {
   font-size: 1.6rem;
+  margin: 0;
 }
 
-main .section > div p:last-child {
-  margin-bottom: 1rem;
+main .section h1,h2,h3,h4,h5,h6 {
+  font-family: var(--body-font-family);
+  font-weight: 400;
 }
 
 /* styles for /secure-shopping */
@@ -213,14 +215,16 @@ main .section.accessibility h1 {
 main .section.accessibility h2 {
   font-size: 2.6rem;
   text-transform: none;
-  color: #000;
+  color: var(--clr-black);
   margin: 2rem 0 .5rem;
 }
 
 /* styles for /privacy-policy */
 main .section.privacy-policy h1{
+  font-weight: 400;
   font-size: 3.8rem;
   margin-bottom: 3rem;
+
 }
 
 main .section.privacy-policy ol, main .section.privacy-policy ul {
@@ -230,31 +234,46 @@ main .section.privacy-policy ol, main .section.privacy-policy ul {
 main .section.privacy-policy ol li 
 {
   margin-top: 2em;
-  font-size: 16px;
-  line-height: 18px;
-  font-weight: bolder;
+  font-size: 1.6rem;
+  font-weight: 500;
 }
 
 main .section.privacy-policy ul li{
   font-size: 1.6rem;
+  font-weight: 500;
+}
+
+main .section.privacy-policy strong {
+  font-weight: 500;
+}
+
+main .section.customer-service > div > p + p a{
+  font-size: 1.4rem;
+  text-decoration: underline;
 }
 
 main .section.privacy-policy a:any-link{
   text-decoration: underline;
-  color: #000 ;
+  color:var(--clr-black) ;
 }
 
 /* styles for /terms-of-use */
 
+
+
 main .section.terms-of-use h1{
   font-size: 4.2rem;
-  margin: 0 0 2rem;    
+  margin: 0 0 2rem;  
   color: #333;
+}
+
+main .section.terms-of-use  p {
+  margin: 1rem auto;
 }
 
 main .section.terms-of-use a:any-link{
   text-decoration: underline;
-  color: #ef2f23;
+  color: var(--clr-red);
 }
 
 main .section.terms-of-use ol li ,main .section.terms-of-use ul li {
@@ -265,7 +284,42 @@ main .section.terms-of-use ol li ,main .section.terms-of-use ul li {
 main .section.terms-of-use h3 {
   margin-top: 2em;
   font-size: 1.6rem;
-  color: #ef2f23;
+  color: var(--clr-red);
+}
+
+main .section > div p:first-of-type {
+  margin-top: 1rem;
+}
+
+main .section > div p:last-of-type {
+  margin-bottom: 1rem;
+}
+
+/* styles for /customer-service */
+main .section.customer-service h1 {
+  display: none;
+}
+
+main .section.customer-service h4 {
+  font-size: 1.25rem;
+  font-weight: 300;
+}
+
+main .section.customer-service > div > p {
+  font-size: 1.6rem;
+  font-weight: 300;
+  margin-bottom: 1rem;
+}
+
+main img {
+  max-width: 100%;
+  width: auto;
+  height: auto;
+}
+
+main .section.customer-service > div > p + p img{
+  max-width: 1.75rem;
+  margin: 0 0.5rem 0 0;
 }
 
 main pre {
@@ -299,6 +353,7 @@ hr {
   border: 0;
   border-bottom: 1px solid var(--overlay-background-color);
 }
+
 
 
 @media (min-width: 1024px) {
