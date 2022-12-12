@@ -7,7 +7,7 @@ const loadScript = (url, callback, async = false, type) => {
   const script = document.createElement('script');
   script.src = url;
   if (async) {
-    script.async = true;
+    script.defer = true;
   }
   if (type) {
     script.setAttribute('type', type);
