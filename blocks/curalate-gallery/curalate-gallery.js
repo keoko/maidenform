@@ -2,10 +2,13 @@ const crl8SiteName = 'maidenform-py0jjh';
 const crl8StaticScript =
   '//apps.bazaarvoice.com/deployments/hanes-maidenform/main_site/production/en_US/bv.js';
 
-const loadScript = (url, callback, type) => {
+const loadScript = (url, callback, async = false, type) => {
   const head = document.querySelector('head');
   const script = document.createElement('script');
   script.src = url;
+  if (async) {
+    script.async = true;
+  }
   if (type) {
     script.setAttribute('type', type);
   }
@@ -52,6 +55,6 @@ export default async function decorate(block) {
   };
   /* end of reverse engineered minified original JS */
 
-  loadScript(crl8DynamicScript, crl8Callback);
-  loadScript(crl8StaticScript);
+  loadScript(crl8StaticScript, null, true);
+  loadScript(crl8DynamicScript, crl8Callback, true);
 }
