@@ -188,6 +188,7 @@
   --heading-font-size-xs: 18px;
 
   /* nav height */
+  --desktop-nav-height: 100px;
   --nav-height: 64px;
 
 }
@@ -269,7 +270,7 @@ a.button:any-link, button {
   border: 2px solid transparent;
   padding: 5px 30px;
   text-align: center;
-  font-style: normal; 
+  font-style: normal;
   font-weight: 600;
   cursor: pointer;
   color: var(--background-color);
@@ -298,12 +299,12 @@ a.button.secondary, button.secondary {
   border: 1px solid var(--clr-black);
   color: var(--clr-white);
   padding: 10px 20px;
-} 
+}
 
 a.button.secondary:hover, button.secondary:hover {
   background-color: var(--clr-white);
   color: var(--clr-black);
-} 
+}
 
 main input {
   font-size: 1.25rem;
@@ -311,7 +312,7 @@ main input {
   max-width: 50rem;
   display: block;
   margin-bottom: 1rem;
-  padding: 0.75rem 0.6rem;    
+  padding: 0.75rem 0.6rem;
   border-radius: 0.25rem;
   box-sizing: border-box;
   border: 1px solid var(--text-color);
@@ -417,12 +418,18 @@ main img {
     --heading-font-size-l: 36px;
     --heading-font-size-m: 30px;
     --heading-font-size-s: 24px;
-    --heading-font-size-xs: 22px;  
+    --heading-font-size-xs: 22px;
   }
-  
+
   .section > div {
     max-width: 1920px;
     margin: auto;
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --nav-height: var(--desktop-nav-height);
   }
 }
 
