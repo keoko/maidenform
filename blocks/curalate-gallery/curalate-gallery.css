@@ -1,0 +1,9 @@
+.curalate-gallery {
+  max-width: 720px;
+}
+
+@media (min-width: 1024px) {
+  .curalate-gallery {
+    max-width: 1160px;
+  }
+}
