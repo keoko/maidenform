@@ -1,9 +1,5 @@
 /* stylelint-disable no-descending-specificity */
 
-main .section > div.product-list-page-wrapper {
-    max-width: 1920px;
-}
-
 main .section.product-list-page-container > .default-content-wrapper h1:first-child {
     display: none;
 }
@@ -187,6 +183,7 @@ main .section.product-list-page-container > .default-content-wrapper h1:first-ch
 }
 
 .product-list-page .products .title h1 ~ span {
+    display: none;
     font-family: var(--ff-gilroy-medium);
     font-size: 16px;
     color: var(--clr-dark-grey);
@@ -194,6 +191,7 @@ main .section.product-list-page-container > .default-content-wrapper h1:first-ch
 }
 
 .product-list-page .products .title > button {
+    display: none;
     margin-left: auto;
     border: 1px solid var(--clr-black);
     background: var(--clr-white);
@@ -265,7 +263,7 @@ main .section.product-list-page-container > .default-content-wrapper h1:first-ch
     padding: 0;
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap;
+    flex-wrap: no-wrap;
 }
 
 .product-list-page .products .list > ol > li .variants ol li {
@@ -283,6 +281,15 @@ main .section.product-list-page-container > .default-content-wrapper h1:first-ch
     border-radius: 50%;
     border: 1px solid var(--clr-grey);
     box-shadow: 0 0 0 2px var(--clr-white) inset;
+}
+
+.product-list-page .products .list > ol > li .variants ol li:has(.swatch):nth-child(n+5) {
+    display: none;
+}
+
+.product-list-page .products .list > ol > li .variants ol li:has(.previous),
+.product-list-page .products .list > ol > li .variants ol li:has(.next) {
+    padding: 9px 0;
 }
 
 .product-list-page .products .list > ol > li .variants ol li .previous,
@@ -422,6 +429,10 @@ main .section.product-list-page-container > .default-content-wrapper h1:first-ch
 }
 
 @media (min-width: 900px) {
+    main .section > div.product-list-page-wrapper {
+        max-width: 1920px;
+    }
+
     .product-list-page .facets {
         display: block;
     }
@@ -434,7 +445,20 @@ main .section.product-list-page-container > .default-content-wrapper h1:first-ch
         display: block;
     }
 
+    .product-list-page .products .list > ol > li .variants ol li:has(.swatch):nth-child(n+5) {
+        display: block;
+    }
+
     .product-list-page .products .pagination > div:nth-child(2) {
         display: block;
     }
+
+    .product-list-page .products .title h1 ~ span {
+        display: inline;
+    }
+    
+    .product-list-page .products .title > button {
+        display: block;
+    }
+    
 }
