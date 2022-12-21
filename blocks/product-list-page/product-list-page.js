@@ -30,7 +30,10 @@ export default function decorate(block) {
     <div class="price">
       <span class="old-price">$48.00</span> <span>$20.00</span>
     </div>
-    <div class="rating">Rating</div>
+    <div class="rating">
+      <div style="--rating: 4.5;"></div>
+      <span>(50)</span>
+    </div>
   </li>`);
 
   const content = document.createRange().createContextualFragment(`
