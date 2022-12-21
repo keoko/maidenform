@@ -1,3 +1,5 @@
+/* stylelint-disable no-descending-specificity */
+
 main .section > div.product-list-page-wrapper {
     max-width: 1920px;
 }
@@ -49,6 +51,18 @@ main .section.product-list-page-container > .default-content-wrapper h1:first-ch
     transition: all .2s ease;
 }
 
+.product-list-page .facets .facet-list .facet .facet-content {
+    transition: all .2s ease;
+    overflow: hidden;
+    padding-top: 6px;
+}
+
+.product-list-page .facets .facet-list .facet .facet-content ol {
+    list-style-type: none;
+    margin: 0;
+    padding: 16px 0 0;
+}
+
 .product-list-page .facets .facet-list .facet > input {
     display: none;
 }
@@ -67,18 +81,6 @@ main .section.product-list-page-container > .default-content-wrapper h1:first-ch
 
 .product-list-page .facets .facet-list .facet:first-child {
     border-top: 1px solid #000;
-}
-
-.product-list-page .facets .facet-list .facet .facet-content {
-    transition: all .2s ease;
-    overflow: hidden;
-    padding-top: 6px;
-}
-
-.product-list-page .facets .facet-list .facet .facet-content ol {
-    list-style-type: none;
-    margin: 0;
-    padding: 16px 0 0 0;
 }
 
 /* Radio/Checkbox Facet */
@@ -160,7 +162,7 @@ main .section.product-list-page-container > .default-content-wrapper h1:first-ch
 }
 
 .product-list-page .facets .facet-list .facet.swatch.color .facet-content ol li button:hover {
-    box-shadow: inset 0 0 0 18px rgba(255, 255, 255, 0.3);
+    box-shadow: inset 0 0 0 18px rgba(255 255 255 / 30%);
 }
 
 .product-list-page .products {
@@ -281,11 +283,10 @@ main .section.product-list-page-container > .default-content-wrapper h1:first-ch
     height: 24px;
     margin: 0;
     padding: 0;
-    border-radius: 0;
     color: transparent;
     border-radius: 50%;
     border: 1px solid var(--clr-grey);
-    box-shadow: 0px 0px 0px 2px rgba(255,255,255,1) inset;
+    box-shadow: 0 0 0 2px var(--clr-white) inset;
 }
 
 .product-list-page .products .list > ol > li .variants ol li .previous,
@@ -383,6 +384,6 @@ main .section.product-list-page-container > .default-content-wrapper h1:first-ch
 .product-list-page .products .pagination button.next::after {
     background: url('../../icons/rounded-triangle.svg') no-repeat center/contain;
     transform: rotate(270deg);
-    margin-right: 0px;
+    margin-right: 0;
     margin-left: 8px;
 }
