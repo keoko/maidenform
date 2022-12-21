@@ -24,14 +24,14 @@
     padding: 10px;
 }
 
-.shop-by-style>div>div h2 {
+.shop-by-style > div > div h2 {
     font-family: var(--ff-zahrah-semibold-italic);
     font-size: 16px;
     font-weight: 400;
     margin: 0 0 20px;
 }
 
-.shop-by-style>div>div h1 {
+.shop-by-style > div > div h1 {
     font-family: var(--ff-zahrah-semibold-italic);
     font-size: 34px;
     margin: 0;

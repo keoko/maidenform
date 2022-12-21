@@ -1,3 +1,388 @@
+main .section > div.product-list-page-wrapper {
+    max-width: 1920px;
+}
+
+main .section.product-list-page-container > .default-content-wrapper h1:first-child {
+    display: none;
+}
+
 .product-list-page {
-    /* TODO */
+    display: flex;
+    gap: 50px;
+}
+
+.product-list-page .facets {
+    flex: 25;
+    max-width: 430px;
+    background: #f2f5f7;
+    padding: 20px 30px;
+}
+
+.product-list-page .facets h2 {
+    margin: 0;
+    padding: 20px 5px;
+    font-size: 18px;
+    font-family: var(--ff-gilroy-medium);
+}
+
+.product-list-page .facets .facet-list .facet {
+    border-bottom: 1px solid #000;
+    font-size: 16px;
+    font-family: var(--ff-gilroy-medium);
+    padding: 20px 0;
+    text-transform: uppercase;
+}
+
+.product-list-page .facets .facet-list .facet > label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.product-list-page .facets .facet-list .facet > label::after {
+    display: inline-block;
+    content: '';
+    width: 15px;
+    height: 15px;
+    background: url('../../icons/rounded-triangle.svg') no-repeat center/contain;
+    transition: all .2s ease;
+}
+
+.product-list-page .facets .facet-list .facet > input {
+    display: none;
+}
+
+.product-list-page .facets .facet-list .facet > input ~ .facet-content {
+    max-height: 0;
+}
+
+.product-list-page .facets .facet-list .facet > input:checked ~ .facet-content {
+    max-height: 1000px;
+}
+
+.product-list-page .facets .facet-list .facet > input:checked ~ label::after {
+    transform: rotate(180deg);
+}
+
+.product-list-page .facets .facet-list .facet:first-child {
+    border-top: 1px solid #000;
+}
+
+.product-list-page .facets .facet-list .facet .facet-content {
+    transition: all .2s ease;
+    overflow: hidden;
+    padding-top: 6px;
+}
+
+.product-list-page .facets .facet-list .facet .facet-content ol {
+    list-style-type: none;
+    margin: 0;
+    padding: 16px 0 0 0;
+}
+
+/* Radio/Checkbox Facet */
+.product-list-page .facets .facet-list .facet.radio .facet-content ol li,
+.product-list-page .facets .facet-list .facet.checkbox .facet-content ol li {
+    margin-bottom: 6px;
+}
+
+.product-list-page .facets .facet-list .facet.radio .facet-content ol input[type=radio] {
+    vertical-align: middle;
+    position: relative;
+    bottom: 2px;
+}
+
+.product-list-page .facets .facet-list .facet.checkbox .facet-content ol input[type=checkbox] {
+    vertical-align: middle;
+}
+
+.product-list-page .facets .facet-list .facet.radio .facet-content ol label,
+.product-list-page .facets .facet-list .facet.checkbox .facet-content ol label {
+    font-family: var(--ff-gilroy-regular);
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.product-list-page .facets .facet-list .facet.radio .facet-content ol label .count,
+.product-list-page .facets .facet-list .facet.checkbox .facet-content ol label .count {
+    font-family: var(--ff-gilroy-regular);
+    font-size: 12px;
+    text-transform: none;
+    color: var(--clr-dark-grey);
+}
+
+.product-list-page .facets .facet-list .facet.radio .facet-content ol label .count::before,
+.product-list-page .facets .facet-list .facet.checkbox .facet-content ol label .count::before {
+    content: '(';
+}
+
+.product-list-page .facets .facet-list .facet.radio .facet-content ol label .count::after,
+.product-list-page .facets .facet-list .facet.checkbox .facet-content ol label .count::after {
+    content: ')'
+}
+
+/* Swatch Size Facet */
+
+.product-list-page .facets .facet-list .facet.swatch.size .facet-content ol {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4px;
+}
+
+.product-list-page .facets .facet-list .facet.swatch.size .facet-content ol li button {
+    border: 1px solid var(--clr-black);
+    background: var(--clr-white);
+    color: var(--clr-black);
+    border-radius: 3px;;
+    min-width: 60px;
+    min-height: 38px;
+    padding: 0;
+    margin: 0;
+}
+
+/* Swatch Color Facet */
+
+.product-list-page .facets .facet-list .facet.swatch.color .facet-content ol {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.product-list-page .facets .facet-list .facet.swatch.color .facet-content ol li button {
+    color: transparent;
+    border: 1px solid var(--clr-black);
+    width: 34px;
+    height: 34px;
+    border-radius: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.product-list-page .facets .facet-list .facet.swatch.color .facet-content ol li button:hover {
+    box-shadow: inset 0 0 0 18px rgba(255, 255, 255, 0.3);
+}
+
+.product-list-page .products {
+    flex: 75;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-list-page .products .title {
+    display: flex;
+    justify-content: left;
+    align-items: baseline;
+}
+
+.product-list-page .products .title h1 {
+    text-transform: uppercase;
+    margin: 0;
+    padding: 0;
+    font-family: var(--ff-gilroy-regular);
+    font-size: 30px;
+}
+
+.product-list-page .products .title h1 ~ span {
+    font-family: var(--ff-gilroy-medium);
+    font-size: 16px;
+    color: var(--clr-dark-grey);
+    margin-left: 10px;
+}
+
+.product-list-page .products .title > button {
+    margin-left: auto;
+    border: 1px solid var(--clr-black);
+    background: var(--clr-white);
+    color: var(--clr-black);
+}
+
+.product-list-page .products .list > ol {
+    list-style-type: none;
+    display: grid;
+    margin: 0;
+    padding: 0;
+    gap: 20px;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.product-list-page .products .list > ol > li {
+    /* aspect-ratio: 1 / 1.75; */
+    overflow: hidden;
+}
+
+.product-list-page .products .list > ol > li .picture {
+    display: block;
+    position: relative;
+}
+
+.product-list-page .products .list > ol > li .picture button {
+    display: none;
+    width: 42px;
+    height: 42px;
+    background-color: #d73389;
+    border: 1px solid #d73389;
+    border-radius: 50%;
+    margin: 0;
+    padding: 0;
+    color: transparent;
+    position: absolute;
+    bottom: 10%;
+    right: 10%;
+    font-size: 0;
+}
+
+.product-list-page .products .list > ol > li .picture:hover button {
+    display: block;
+}
+
+
+.product-list-page .products .list > ol > li .picture button:hover {
+    background: var(--clr-white);
+}
+
+.product-list-page .products .list > ol > li .picture button::after {
+    content: '';
+    display: block;
+    width: 45%;
+    height: 100%;
+    background: url('../../icons/icon-quick-view.svg') no-repeat center/contain;
+    filter: invert(1);
+    margin: auto;
+}
+
+.product-list-page .products .list > ol > li .picture button:hover::after {
+    filter: invert(26%) sepia(97%) saturate(1910%) hue-rotate(305deg) brightness(85%) contrast(99%);
+}
+
+.product-list-page .products .list > ol > li .picture img {
+    aspect-ratio: 1 / 1.20;
+    width: 100%;
+    object-fit: cover;
+}
+
+.product-list-page .products .list > ol > li .variants ol {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.product-list-page .products .list > ol > li .variants ol li {
+    display: block;
+    padding: 9px;
+}
+
+.product-list-page .products .list > ol > li .variants ol li .swatch {
+    display: block;
+    width: 24px;
+    height: 24px;
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
+    color: transparent;
+    border-radius: 50%;
+    border: 1px solid var(--clr-grey);
+    box-shadow: 0px 0px 0px 2px rgba(255,255,255,1) inset;
+}
+
+.product-list-page .products .list > ol > li .variants ol li .previous,
+.product-list-page .products .list > ol > li .variants ol li .next {
+    display: block;
+    background: url('../../icons/arrow-thick.svg') no-repeat center/contain;
+    color: transparent;
+    width: 16px;
+    height: 24px;
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
+    border: 0;
+    opacity: 0.3;
+    transition: all .2s ease;
+}
+
+.product-list-page .products .list > ol > li .variants ol li .previous:hover,
+.product-list-page .products .list > ol > li .variants ol li .next:hover {
+    opacity: 1;
+}
+
+.product-list-page .products .list > ol > li .variants ol li .previous {
+    transform: rotate(180deg);
+}
+
+.product-list-page .products .list > ol > li .variants ol li.active button {
+    border: 1px solid var(--clr-black);
+}
+
+.product-list-page .products .list > ol > li .name  {
+    line-height: 20px;
+}
+
+.product-list-page .products .list > ol > li .name a {
+    display: inline;
+    font-family: var(--ff-gilroy-bold);
+    font-size: 15px;
+    text-decoration: none;
+    overflow-wrap: break-word;
+    text-overflow: ellipsis;
+}
+
+.product-list-page .products .list > ol > li .price {
+    font-family: var(--ff-gilroy-bold);
+    font-size: 15px;
+}
+
+.product-list-page .products .list > ol > li .price .old-price {
+    font-family: var(--ff-gilroy-regular);
+    font-size: 14px;
+    color: var(--clr-dark-grey);
+    text-decoration: line-through;
+}
+
+.product-list-page .products > div:last-child {
+    margin-top: auto;
+}
+
+.product-list-page .products .pagination {
+    display: flex;
+    justify-content: space-between;
+}
+
+.product-list-page .products .pagination label,
+.product-list-page .products .pagination span {
+    text-transform: uppercase;
+    font-family: var(--ff-gilroy-bold);
+    font-size: 16px;
+}
+
+.product-list-page .products .pagination button {
+    text-transform: uppercase;
+    font-family: var(--ff-gilroy-bold);
+    font-size: 16px;
+    background: transparent;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    color: var(--clr-black);
+    border-radius: 0;
+}
+
+.product-list-page .products .pagination button.previous::before,
+.product-list-page .products .pagination button.next::after {
+    display: inline-block;
+    content: '';
+    width: 12px;
+    height: 12px;
+    background: url('../../icons/rounded-triangle.svg') no-repeat center/contain;
+    transform: rotate(90deg);
+    margin-right: 8px;
+}
+
+.product-list-page .products .pagination button.next::after {
+    background: url('../../icons/rounded-triangle.svg') no-repeat center/contain;
+    transform: rotate(270deg);
+    margin-right: 0px;
+    margin-left: 8px;
 }
