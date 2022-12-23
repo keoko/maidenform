@@ -470,7 +470,7 @@ main img {
   flex-direction: column;
 }
 
-.section:is(.accessibility, .privacy-policy, .secure-shopping, .terms-of-use) 
+.section:is(.accessibility, .privacy-policy, .secure-shopping, .terms-of-use)
 h1, h2, h3, h4 {
   font-family: var(--ff-gilroy-light);
 }
