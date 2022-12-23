@@ -15,14 +15,20 @@ export default function decorate(block) {
       <button class="add-to-cart-action">Add to Bag</button>
     </div>
     <div class="variants">
-      <ol>
-        <li><button class="previous">Previous</button></li>
-        <li class="active"><button class="swatch" style="background: url('https://swatches.maidenform.com/HNS_A22601/HNS_A22601_ClassicRedPlaid_sw.jpg?quality=85&height=50&width=50&fit=bounds') no-repeat center;">Classic Red Plaid</button></li>
-        <li><button class="swatch" style="background: url('https://swatches.maidenform.com/HNS_A22601/HNS_A22601_MerlotFairisle_sw.jpg?quality=85&height=50&width=50&fit=bounds') no-repeat center;">Merlot Fairisle</button></li>
-        <li><button class="swatch" style="background: url('https://swatches.maidenform.com/HNS_A22601/HNS_A22601_RedAndGreenTreeFairisle_sw.jpg?quality=85&height=50&width=50&fit=bounds') no-repeat center;">Red And Green Tree Fairisle</button></li>
-        <li><button class="swatch" style="background: url('https://swatches.maidenform.com/HNS_A22601/HNS_A22601_SpruceGreenDot_sw.jpg?quality=85&height=50&width=50&fit=bounds') no-repeat center;">Spruce Green Dot</button></li>
-        <li><button class="next">Next</button></li>
-      </ol>
+      <button class="previous">Previous</button>
+      <div class="swatches">
+        <button class="swatch active" style="background: url('https://swatches.maidenform.com/HNS_A22601/HNS_A22601_ClassicRedPlaid_sw.jpg?quality=85&height=50&width=50&fit=bounds') no-repeat center;">Classic Red Plaid</button>
+        <button class="swatch" style="background: url('https://swatches.maidenform.com/HNS_A22601/HNS_A22601_MerlotFairisle_sw.jpg?quality=85&height=50&width=50&fit=bounds') no-repeat center;">Merlot Fairisle</button>
+        <button class="swatch" style="background: url('https://swatches.maidenform.com/HNS_A22601/HNS_A22601_RedAndGreenTreeFairisle_sw.jpg?quality=85&height=50&width=50&fit=bounds') no-repeat center;">Red And Green Tree Fairisle</button>
+        <button class="swatch" style="background: url('https://swatches.maidenform.com/HNS_A22601/HNS_A22601_SpruceGreenDot_sw.jpg?quality=85&height=50&width=50&fit=bounds') no-repeat center;">Spruce Green Dot</button>
+        <button class="swatch" style="background: url('https://swatches.maidenform.com/HNS_A22601/HNS_A22601_MerlotFairisle_sw.jpg?quality=85&height=50&width=50&fit=bounds') no-repeat center;">Merlot Fairisle</button>
+        <button class="swatch" style="background: url('https://swatches.maidenform.com/HNS_A22601/HNS_A22601_RedAndGreenTreeFairisle_sw.jpg?quality=85&height=50&width=50&fit=bounds') no-repeat center;">Red And Green Tree Fairisle</button>
+        <button class="swatch" style="background: url('https://swatches.maidenform.com/HNS_A22601/HNS_A22601_SpruceGreenDot_sw.jpg?quality=85&height=50&width=50&fit=bounds') no-repeat center;">Spruce Green Dot</button>
+        <button class="swatch" style="background: url('https://swatches.maidenform.com/HNS_A22601/HNS_A22601_MerlotFairisle_sw.jpg?quality=85&height=50&width=50&fit=bounds') no-repeat center;">Merlot Fairisle</button>
+        <button class="swatch" style="background: url('https://swatches.maidenform.com/HNS_A22601/HNS_A22601_RedAndGreenTreeFairisle_sw.jpg?quality=85&height=50&width=50&fit=bounds') no-repeat center;">Red And Green Tree Fairisle</button>
+        <button class="swatch" style="background: url('https://swatches.maidenform.com/HNS_A22601/HNS_A22601_SpruceGreenDot_sw.jpg?quality=85&height=50&width=50&fit=bounds') no-repeat center;">Spruce Green Dot</button>
+        </div>
+      <button class="next">Next</button>
     </div>
     <div class="name">
       <a href="https://www.maidenform.com/a22601.html">Comfy Cabin Thermal Holiday Pajama Set</a>
@@ -131,6 +137,15 @@ export default function decorate(block) {
     </div>
   `);
   Array.from({ length: 11 }, () => content.querySelector('.products ol').appendChild(product.cloneNode(true)));
+
+  // Add event listeners to all buttons
+  content.querySelectorAll('.variants .previous').forEach((el) => el.addEventListener('click', (event) => {
+    event.target.closest('.variants').querySelector('.swatches').scrollLeft -= 132;
+  }));
+
+  content.querySelectorAll('.variants .next').forEach((el) => el.addEventListener('click', (event) => {
+    event.target.closest('.variants').querySelector('.swatches').scrollLeft += 132;
+  }));
 
   block.appendChild(content);
 }
