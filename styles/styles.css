@@ -471,7 +471,7 @@ main img {
   flex-direction: column;
 }
 
-.section:is(.accessibility, .privacy-policy, .secure-shopping, .terms-of-use) 
+.section:is(.accessibility, .privacy-policy, .secure-shopping, .terms-of-use)
 h1, h2, h3, h4 {
   font-family: var(--ff-gilroy-light);
 }
@@ -694,6 +694,11 @@ main > .section.magic-bottom > div:not(:last-child) {
 }
 
 @media (min-width: 600px) {
+  main:has(.section.magic-bottom) {
+    max-width: 1920px;
+    margin: 0 auto;
+  }
+
   main .section {
     padding: 64px 32px;
   }
