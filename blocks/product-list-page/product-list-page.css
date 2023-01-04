@@ -53,7 +53,7 @@ main .section.product-list-page-container > .default-content-wrapper h1:first-ch
     z-index: 2;
     overflow: auto;
     background: var(--clr-white);
-    font-size: 16px;
+    font-size: 1.6rem;
 }
 
 .product-list-page .products .title .sort > .overlay.active {
@@ -82,7 +82,7 @@ main .section.product-list-page-container > .default-content-wrapper h1:first-ch
 
 .product-list-page .facets .facet-list .facet {
     border-bottom: 1px solid #000;
-    font-size: 16px;
+    font-size: 1.6rem;
     font-family: var(--ff-gilroy-medium);
     padding: 20px;
     text-transform: uppercase;
@@ -155,14 +155,14 @@ main .section.product-list-page-container > .default-content-wrapper h1:first-ch
 .product-list-page .facets .facet-list .facet.radio .facet-content ol label,
 .product-list-page .facets .facet-list .facet.checkbox .facet-content ol label {
     font-family: var(--ff-gilroy-regular);
-    font-size: 12px;
+    font-size: 1.2rem;
     text-transform: uppercase;
 }
 
 .product-list-page .facets .facet-list .facet.radio .facet-content ol label .count,
 .product-list-page .facets .facet-list .facet.checkbox .facet-content ol label .count {
     font-family: var(--ff-gilroy-regular);
-    font-size: 12px;
+    font-size: 1.2rem;
     text-transform: none;
     color: var(--clr-dark-grey);
 }
@@ -236,13 +236,13 @@ main .section.product-list-page-container > .default-content-wrapper h1:first-ch
     margin: 0;
     padding: 0;
     font-family: var(--ff-gilroy-regular);
-    font-size: 30px;
+    font-size: 3rem;
 }
 
 .product-list-page .products .title h1 ~ span {
     display: none;
     font-family: var(--ff-gilroy-medium);
-    font-size: 16px;
+    font-size: 1.6rem;
     color: var(--clr-dark-grey);
     margin-left: 10px;
 }
@@ -264,7 +264,7 @@ main .section.product-list-page-container > .default-content-wrapper h1:first-ch
     color: var(--clr-black);
     text-transform: uppercase;
     font-family: var(--ff-gilroy-bold);
-    font-size: 14px;
+    font-size: 1.4rem;
     padding: 12px 25px;
     margin: 0;
 }
@@ -282,7 +282,7 @@ main .section.product-list-page-container > .default-content-wrapper h1:first-ch
     color: var(--clr-black);
     text-transform: uppercase;
     font-family: var(--ff-gilroy-bold);
-    font-size: 18px;
+    font-size: 1.8rem;
     padding: 9px 15px;
     margin: 0;
 }
@@ -418,13 +418,13 @@ main .section.product-list-page-container > .default-content-wrapper h1:first-ch
 }
 
 .product-list-page .products .list > ol > li .name  {
-    line-height: 20px;
+    line-height: 2rem;
 }
 
 .product-list-page .products .list > ol > li .name a {
     display: inline;
     font-family: var(--ff-gilroy-bold);
-    font-size: 15px;
+    font-size: 1.5rem;
     text-decoration: none;
     overflow-wrap: break-word;
     text-overflow: ellipsis;
@@ -436,12 +436,12 @@ main .section.product-list-page-container > .default-content-wrapper h1:first-ch
 
 .product-list-page .products .list > ol > li .price {
     font-family: var(--ff-gilroy-bold);
-    font-size: 15px;
+    font-size: 1.5rem;
 }
 
 .product-list-page .products .list > ol > li .price .old-price {
     font-family: var(--ff-gilroy-regular);
-    font-size: 14px;
+    font-size: 1.4rem;
     color: var(--clr-dark-grey);
     text-decoration: line-through;
 }
@@ -456,14 +456,14 @@ main .section.product-list-page-container > .default-content-wrapper h1:first-ch
     --percent: calc(var(--rating) / 5 * 100%);
 
     display: inline-block;
-    font-size: 18px;
+    font-size: 1.8rem;
     line-height: 1;
     font-family: 'Times New Roman', Times, serif;
 }
 
 .product-list-page .products .list > ol > li .rating > span {
     color: var(--clr-pink);
-    font-size: 12px;
+    font-size: 1.2rem;
 }
 
 .product-list-page .products .list > ol > li .rating > div::before {
@@ -494,7 +494,7 @@ main .section.product-list-page-container > .default-content-wrapper h1:first-ch
     padding: 2px 30px 2px 25px;
     text-transform: uppercase;
     font-family: var(--ff-gilroy-bold);
-    font-size: 16px;
+    font-size: 1.6rem;
     background: url('../../icons/rounded-triangle.svg') no-repeat center/contain;
     background-size: 10px 10px;
     background-position: right 10px center;
@@ -504,13 +504,13 @@ main .section.product-list-page-container > .default-content-wrapper h1:first-ch
 .product-list-page .products .pagination span {
     text-transform: uppercase;
     font-family: var(--ff-gilroy-bold);
-    font-size: 16px;
+    font-size: 1.6rem;
 }
 
 .product-list-page .products .pagination button {
     text-transform: uppercase;
     font-family: var(--ff-gilroy-bold);
-    font-size: 16px;
+    font-size: 1.6rem;
     background: transparent;
     border: 0;
     padding: 0;
@@ -565,7 +565,7 @@ main .section.product-list-page-container > .default-content-wrapper h1:first-ch
         display: block;
         margin: 0;
         padding: 20px 5px;
-        font-size: 18px;
+        font-size: 1.8rem;
         font-family: var(--ff-gilroy-medium);
     }
 
@@ -632,7 +632,7 @@ main .section.product-list-page-container > .default-content-wrapper h1:first-ch
         background: #f2f5f7;
         border-radius: 6px;
         font-family: var(--ff-gilroy-medium);
-        font-size: 14px;
+        font-size: 1.4rem;
         left: unset;
         top: unset;
         bottom: unset;
