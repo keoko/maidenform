@@ -45,6 +45,7 @@ export default function decorate(block) {
   const content = document.createRange().createContextualFragment(`
     <div class="facets">
       <h2>Filters</h2>
+      <button class="close">Close</button>
       <div class="facet-list">
         <div class="facet radio">
           <input type="checkbox" id="facet-toggle-sleep" />
@@ -105,15 +106,30 @@ export default function decorate(block) {
       <div class="title">
         <h1>Bralettes</h1>
         <span>(11 Products)</span>
-        <button>Sort By: Relevance</button>
+        <div class="sort">
+          <button>Sort By: Relevance</button>
+          <div class="overlay">
+            <button class="close">Close</button>
+            <ul>
+              <li><a href="#">Price: High to Low</a></li>
+              <li><a href="#">Price: Low to High</a></li>
+              <li><a href="#" class="active">Product Name</a></li>
+              <li><a href="#">Relevance</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="mobile-menu">
+        <button id="toggle-filters">Filters</button>
+        <button id="toggle-sortby">Sort By</button>
       </div>
       <div class="list">
         <ol></ol>
       </div>
       <div class="pagination">
         <div>
-          <label>Show:</label>
-          <select>
+          <label for="select-pagesize">Show:</label>
+          <select id="select-pagesize" name="pageSize">
             <option>20 Items</option>
             <option>30 Items</option>
             <option>40 Items</option>
@@ -121,8 +137,8 @@ export default function decorate(block) {
           </select>
         </div>
         <div>
-          <label>Page:</label>
-          <select>
+          <label for="select-page">Page:</label>
+          <select id="select-page" name="page">
             <option>1</option>
             <option>2</option>
             <option>3</option>
@@ -138,6 +154,11 @@ export default function decorate(block) {
   `);
   Array.from({ length: 11 }, () => content.querySelector('.products ol').appendChild(product.cloneNode(true)));
 
+  /*
+  Mobile
+  Click to open overlay, add close icon, CSS only?
+  */
+
   // Add event listeners to all buttons
   content.querySelectorAll('.variants .previous').forEach((el) => el.addEventListener('click', (event) => {
     event.target.closest('.variants').querySelector('.swatches').scrollLeft -= 132;
@@ -145,6 +166,15 @@ export default function decorate(block) {
 
   content.querySelectorAll('.variants .next').forEach((el) => el.addEventListener('click', (event) => {
     event.target.closest('.variants').querySelector('.swatches').scrollLeft += 132;
+  }));
+
+  // Add event listeners to mobile menu buttons
+  content.querySelectorAll('.mobile-menu #toggle-filters, .facets .close').forEach((el) => el.addEventListener('click', (event) => {
+    event.target.closest('.product-list-page').querySelector('.facets').classList.toggle('active');
+  }));
+
+  content.querySelectorAll('.mobile-menu #toggle-sortby, .sort .overlay .close').forEach((el) => el.addEventListener('click', (event) => {
+    event.target.closest('.product-list-page').querySelector('.sort .overlay').classList.toggle('active');
   }));
 
   block.appendChild(content);
