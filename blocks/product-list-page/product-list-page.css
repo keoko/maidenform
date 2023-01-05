@@ -362,6 +362,8 @@ main .section.product-list-page-container > .default-content-wrapper h1:first-ch
     padding: 0 18px;
     max-width: 100%;
     scroll-behavior: smooth;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
 }
 
 .product-list-page .products .list > ol > li .variants .swatches::-webkit-scrollbar {
