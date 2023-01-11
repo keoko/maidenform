@@ -1,0 +1,11 @@
+version: 1
+indices:
+  blocks:
+    target: /block-library/query-index.json
+    include:
+      - '**/block-library/blocks/**'
+    properties:
+      title:
+        select: head > meta[property="og:title"]
+        value: |
+          attribute(el, 'content')
