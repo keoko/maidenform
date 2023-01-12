@@ -32,7 +32,6 @@ function handleBlockAction(action, block) {
 }
 
 export default function Picker() {
-  console.log("here")
   const [loading, setLoading] = useState(true);
   const [blocks, setBlocks] = useState(null);
   const [openedSubmenu, setOpenedSubmenu] = useState(null);
@@ -48,11 +47,9 @@ export default function Picker() {
           return block
         }))
       }).then((blocks) => {
-        console.log(blocks)
         const fulfilledBlocks = [...blocks]
           .filter((promise) => promise.status === 'fulfilled')
           .map((promise) => promise.value)
-        console.log(fulfilledBlocks)
         setBlocks(fulfilledBlocks);
         setLoading(false);
       })
@@ -69,12 +66,11 @@ export default function Picker() {
     return <>
       <ActionButton onPress={() => setOpenedSubmenu(null)} isQuiet><ChevronLeft /><Text>Back</Text></ActionButton>
       <ActionButton onPress={() => openPreview(block)} isQuiet><Preview /><Text>Preview</Text></ActionButton>
-      <ListView maxWidth="size-6000"
-                renderEmptyState={renderEmptyState}
-                onAction={(key) => copyTable(variants.find(v => v.name === key))}
+      <ListView maxWidth="size-6000" renderEmptyState={renderEmptyState}
       >
         {variants.map(variant => <Item key={variant.name}>
-          <Text>{variant.name}</Text><Copy justifySelf={'flex-end'} />
+          <Text>{variant.name}</Text>
+          <ActionButton onPress={() => copyTable(variant)}><Copy /></ActionButton>
         </Item>)}
       </ListView>
     </>
