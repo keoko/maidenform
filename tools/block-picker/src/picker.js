@@ -32,7 +32,7 @@ export default function Picker() {
     {
       blocks.map((block) => {
         return <Item key={block.path}>
-          <a href={block.path}>{block.title}</a>
+          <a href={block.path} target={'_blockpreview'}>{block.title}</a>
           <ActionMenu direction={"left"} onAction={(action) => handleAction(action, block)}>
             <Item key={"copy"}>
               <Copy />
