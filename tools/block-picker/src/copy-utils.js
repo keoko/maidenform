@@ -59,8 +59,9 @@ export async function enrichWithVariants(block) {
   if (!doc) return;
 
   doc.body.querySelectorAll('div[class]').forEach((blockVariant) => {
-    const table = getTable(blockVariant, title, path);
-    block.variants.push({ name: getBlockName(blockVariant), table });
+    const name = getBlockName(blockVariant)
+    const table = getTable(blockVariant, name, path);
+    block.variants.push({ name, table });
   });
 }
 
