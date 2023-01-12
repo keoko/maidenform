@@ -59,7 +59,6 @@ export default function Picker() {
     return <>
       <ActionButton onPress={() => setOpenedSubmenu(null)} isQuiet><ChevronLeft /><Text>Back</Text></ActionButton>
       <ListView maxWidth="size-6000"
-                minHeight="size-3000"
                 renderEmptyState={renderEmptyState}
                 onAction={(key) => copyTable(variants.find(v => v.name === key))}
       >
