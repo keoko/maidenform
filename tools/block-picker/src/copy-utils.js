@@ -36,18 +36,37 @@ export function getTable(block, name, path) {
   return table.outerHTML;
 }
 
-export async function copyTable(blockProps) {
-  const { path, title } = blockProps;
+function getBlockName(block) {
+  const classes = block.className.split(' ');
+  const name = classes.shift();
+  return classes.length > 0 ? `${name} (${classes.join(', ')})` : name;
+}
 
+async function fetchPlainBlock(path) {
   const resp = await fetch(`${path}.plain.html`);
   if (!resp.ok) return;
 
   const html = await resp.text();
   const parser = new DOMParser();
-  const doc = parser.parseFromString(html, 'text/html');
-  // TODO make options for block variants
-  const firstBlock = doc.body.querySelector('div[class]');
-  const table = getTable(firstBlock, title, path);
+  return parser.parseFromString(html, 'text/html');
+}
+
+export async function enrichWithVariants(block) {
+  const { path, title } = block;
+  block.variants = [];
+
+  const doc = await fetchPlainBlock(path);
+  if (!doc) return;
+
+  doc.body.querySelectorAll('div[class]').forEach((blockVariant) => {
+    const table = getTable(blockVariant, title, path);
+    block.variants.push({ name: getBlockName(blockVariant), table });
+  });
+}
+
+export async function copyTable(blockVariant) {
+  const { table } = blockVariant
+
   await navigator.clipboard.write([new ClipboardItem({
     'text/plain': new Blob([table], { type: 'text/plain' }),
     'text/html': new Blob([table], { type: 'text/html' }),
