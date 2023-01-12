@@ -1,0 +1,79 @@
+.footer-banner-container {
+    background: #000;
+    color: #fff;
+    height: 44px;
+    padding: 2px;
+    width: 100%;
+    overflow: hidden;
+    position: fixed;
+    bottom: 0;
+    z-index: 2003;
+    font-family: var(--ff-gilroy-regular);
+    text-transform: uppercase;
+    letter-spacing: .05em;
+}
+
+.footer-banner-wrapper {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.footer-banner {
+    width: 100%;
+    height: 100%;
+    display: block;
+    overflow: hidden;
+}
+
+.footer-banner a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.footer-banner > div {
+    flex-shrink: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+    transform: translateX(100%);
+}
+
+.footer-banner > div:first-child {
+    transform: translateX(0%);
+}
+
+.footer-banner > div.animated {
+    transition: 0.5s ease all;
+}
+
+.footer-banner button {
+    background: none;
+    border: 0;
+    margin: 0;
+    display: inline;
+    font-size: 1.2rem;
+    font-family: var(--ff-gilroy-bold);
+    text-decoration: underline;
+    text-transform: uppercase;
+    border-radius: 0;
+    padding: 9px 15px;
+}
+
+@media (min-width: 768px) {
+    .footer-banner > div {
+        font-size: 2.0rem;
+    }
+}
+
+/* Hide Modal content */
+.footer-banner .modal {
+    display: none;
+}
