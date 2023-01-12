@@ -52,7 +52,7 @@ async function fetchPlainBlock(path) {
 }
 
 export async function enrichWithVariants(block) {
-  const { path, title } = block;
+  const { path } = block;
   block.variants = [];
 
   const doc = await fetchPlainBlock(path);

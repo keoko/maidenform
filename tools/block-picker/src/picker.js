@@ -6,12 +6,6 @@ import ChevronLeft from '@spectrum-icons/workflow/ChevronLeft';
 import NotFound from '@spectrum-icons/illustrations/NotFound';
 import { copyTable, enrichWithVariants } from './copy-utils';
 
-const handleAction = async (key, block) => {
-  if (key === 'copy') {
-    await copyTable(block.variants[0]);
-  }
-}
-
 function renderEmptyState() {
   return (
     <IllustratedMessage>
@@ -20,6 +14,21 @@ function renderEmptyState() {
       <Content>No results found</Content>
     </IllustratedMessage>
   );
+}
+
+function openPreview(block) {
+  window.open(block.path, '_blockpreview');
+}
+
+function handleBlockAction(action, block) {
+  switch (action) {
+    case "preview":
+      openPreview();
+      break;
+    case "copy":
+      copyTable(block?.variants?.[0]);
+      break;
+  }
 }
 
 export default function Picker() {
@@ -54,10 +63,12 @@ export default function Picker() {
   }
 
   if (openedSubmenu) {
-    const variants = blocks.find((block) => block.path === openedSubmenu).variants;
+    const block = blocks.find((block) => block.path === openedSubmenu);
+    const variants = block.variants;
 
     return <>
       <ActionButton onPress={() => setOpenedSubmenu(null)} isQuiet><ChevronLeft /><Text>Back</Text></ActionButton>
+      <ActionButton onPress={() => openPreview(block)} isQuiet><Preview /><Text>Preview</Text></ActionButton>
       <ListView maxWidth="size-6000"
                 renderEmptyState={renderEmptyState}
                 onAction={(key) => copyTable(variants.find(v => v.name === key))}
@@ -79,10 +90,14 @@ export default function Picker() {
       blocks?.map((block) => {
         return <Item key={block.path} hasChildItems>
           <Text>{block.title}</Text>
-          <ActionMenu direction={"left"} onAction={() => window.open(block.path, '_blockpreview')}>
+          <ActionMenu direction={"left"} onAction={(key) => handleBlockAction(key, block)}>
             <Item key={"preview"}>
               <Preview />
               <Text>Preview</Text>
+            </Item>
+            <Item key={"copy"}>
+              <Copy />
+              <Text>Copy Default Variant</Text>
             </Item>
           </ActionMenu>
         </Item>
