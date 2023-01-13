@@ -128,8 +128,9 @@ export default async function decorate(block) {
     });
 
     const searchBar = document.createElement('form');
+    searchBar.action = '/search';
     searchBar.innerHTML = `
-      <input name="query" type="text" placeholder="Search" />
+      <input name="q" type="text" data-rfkid="rfkid_6" placeholder="Search" />
       <button class="search-button" aria-label="submit search query"><span class="icon icon-search" /></button>
       <span class="icon icon-x-lg close-button" />
     `;

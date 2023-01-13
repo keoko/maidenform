@@ -1,4 +1,5 @@
 helix-importer-ui
 tools/picker
 sitemap-redirect.js
+scripts/jquery.min.js
 block-picker

@@ -1,0 +1,11 @@
+.block.product-recommendation {
+    padding: 20px 0;
+}
+
+/* stylelint-disable-next-line selector-class-pattern */
+.section.heading-pink .block.product-recommendation .rfk_header {
+    font-family: var(--ff-zahrah-semibold);
+    font-size: var(--heading-font-size-l);
+    color: var(--clr-dark-pink);
+    text-transform: unset;
+}
