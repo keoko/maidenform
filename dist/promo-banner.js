@@ -1,4 +1,4 @@
-import { Carousel, Modal } from "../footer-banner/footer-banner.js";
+import { Carousel, Modal } from "./footer-banner.js";
 async function decorate(block) {
   const carousel = new Carousel(Array.from(block.children));
   Array.from(block.children).forEach((promotion) => {

@@ -29,10 +29,6 @@ export default defineConfig({
       },
       { src: "blocks/**/*.public.*",
         dest: ".", rename: (name, extension, fullPath) => fullPath.replace('.public', '')
-      },
-      {
-        src: "scripts/**",
-        dest: "scripts"
       }
     ]
   })],
@@ -40,7 +36,7 @@ export default defineConfig({
     minify: false,
     lib: {
       entry: getEntryFiles(),
-      fileName: (format, entry) => `blocks/${entry}/${entry}.js`,
+      fileName: (format, entry) => `${entry}.js`,
       formats: ['esm']
     },
     rollupOptions: {
