@@ -48,6 +48,29 @@ const blocks = {
 };
 
 /**
+ * Fetch GraphQL query via GET method
+ * 
+ * @param {string} api - URL of the GraphQL endpoint
+ * @param {string} storeView - Store view code
+ * @param {string} query - GraphQL query
+ * @param {object} variables - GraphQL variables
+ * @returns {Promise} GraphQL response as object
+ */
+const fetchGet = async (endpoint, storeView, query, variables) => {
+    const api = new URL(endpoint);
+    api.searchParams.append('query', query);
+    api.searchParams.append('variables', JSON.stringify(variables));
+
+    return await fetch(api, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+            'Store': storeView,
+        },
+    }).then(res => res.json());
+}
+
+/**
  * Returns the current breadcrumb path based on the key of the current folder.
  * 
  * Format: Array of objects with the following properties:
@@ -62,18 +85,7 @@ const getPath = async (key, rootCategoryKey) => {
 
     let currentCategory;
     try {
-        currentCategory = await fetch(endpoint, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Store': storeView,
-            },
-            body: JSON.stringify({
-                operationName: 'getCategory',
-                query: getCategory,
-                variables: { uid: key },
-            })
-        }).then(res => res.json());
+        currentCategory = await fetchGet(endpoint, storeView, getCategory, { uid: key });
     } catch (err) {
         console.error('Could not retrieve current category', err);
         return [];
@@ -107,18 +119,8 @@ const getItems = async (folderKey) => {
     let newItems = {};
 
     try {
-        const categories = await fetch(endpoint, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Store': storeView,
-            },
-            body: JSON.stringify({
-                operationName: 'getCategoriesInCategory',
-                query: getCategoriesInCategory,
-                variables: { uid: folderKey }
-            })
-        }).then(res => res.json());
+        // GraphQL query via fetch as GET
+        const categories = await fetchGet(endpoint, storeView, getCategoriesInCategory, { uid: folderKey });
         categories?.data?.categories?.items.forEach(category => {
             newItems[category.uid] = {
                 ...category,
@@ -133,18 +135,7 @@ const getItems = async (folderKey) => {
 
     // Get products
     try {
-        const products = await fetch(endpoint, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Store': storeView,
-            },
-            body: JSON.stringify({
-                operationName: 'getProductsInCategory',
-                query: getProductsInCategory,
-                variables: { uid: folderKey }
-            })
-        }).then(res => res.json());
+        const products = await fetchGet(endpoint, storeView, getProductsInCategory, { uid: folderKey });
         products?.data?.products?.items.forEach(product => {
             // Handle thumbnail for variants and change dimensions
             let thumbnail;
