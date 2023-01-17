@@ -2,9 +2,7 @@ function getConfigRow(rows, name) {
   return rows.find((row) => row.children[0].textContent.toLowerCase() === name);
 }
 
-function decorateVideo(video) {
-  const div = document.createElement('div');
-  div.classList.add(`video-${video.type}`);
+function decorateVideo(video, target) {
   const videoTag = document.createElement('video');
   videoTag.toggleAttribute('autoplay', true);
   videoTag.toggleAttribute('muted', true);
@@ -14,9 +12,9 @@ function decorateVideo(video) {
   videoTag.setAttribute('poster', video.poster);
   videoTag.setAttribute('title', video.title);
   videoTag.innerHTML = `<source src="${video.videoUrl}" type="video/mp4">`;
-  div.appendChild(videoTag);
+  target.innerHTML = '';
+  target.appendChild(videoTag);
   videoTag.muted = true;
-  return div;
 }
 
 function decorateOverlay(overlay, overlaySticker) {
@@ -66,8 +64,27 @@ export default function decorate(block) {
     };
   });
 
-  mobileVideoRow.replaceWith(decorateVideo(mobileVideo));
-  desktopVideoRow.replaceWith(decorateVideo(desktopVideo));
+  const mobileVideoContainer = document.createElement('div');
+  mobileVideoContainer.classList.add('video-mobile');
+  mobileVideoRow.replaceWith(mobileVideoContainer);
+
+  const desktopVideoContainer = document.createElement('div');
+  desktopVideoContainer.classList.add('video-desktop');
+  desktopVideoRow.replaceWith(desktopVideoContainer);
+
+  const addVideos = (e) => {
+    if (e.matches) {
+      decorateVideo(mobileVideo, mobileVideoContainer);
+      desktopVideoContainer.textContent = '';
+    } else {
+      mobileVideoContainer.textContent = '';
+      decorateVideo(desktopVideo, desktopVideoContainer);
+    }
+  };
+  const mql = window.matchMedia('only screen and (max-width: 600px)');
+  mql.onchange = addVideos;
+  addVideos(mql);
+
   if (overlayRow) {
     decorateOverlay(overlayRow, overlayStickerRow);
   }
