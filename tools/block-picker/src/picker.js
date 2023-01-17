@@ -23,7 +23,7 @@ function openPreview(block) {
 function handleBlockAction(action, block) {
   switch (action) {
     case "preview":
-      openPreview();
+      openPreview(block);
       break;
     case "copy":
       copyTable(block?.variants?.[0]);
