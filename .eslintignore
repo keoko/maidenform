@@ -3,3 +3,6 @@ tools/picker
 sitemap-redirect.js
 scripts/jquery.min.js
 block-picker
+sitemap-redirect.js
+scripts/preact.js
+scripts/htm.js
