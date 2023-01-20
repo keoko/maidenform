@@ -1,9 +1,9 @@
 import {
   h, Component, Fragment,
   // eslint-disable-next-line import/no-unresolved,import/extensions
-} from 'https://unpkg.com/preact?module';
+} from '../../scripts/preact.js';
 // eslint-disable-next-line import/no-unresolved,import/extensions
-import htm from 'https://unpkg.com/htm?module';
+import htm from '../../scripts/htm.js';
 
 const html = htm.bind(h);
 

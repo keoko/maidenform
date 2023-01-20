@@ -1,14 +1,33 @@
 import {
-  h, render, Fragment,
+  h, render, Fragment, Component,
 } from '../../scripts/preact.js';
 import htm from '../../scripts/htm.js';
 import Carousel from './ProductDetailsCarousel.js';
 import Sidebar from './ProductDetailsSidebar.js';
+import ProductDetailsShimmer from './ProductDetailsShimmer.js';
 
 const html = htm.bind(h);
 
-function ProductDetailPage() {
-  return html`
+class ProductDetailPage extends Component {
+  constructor() {
+    super();
+    this.state = { loading: false };
+  }
+
+  componentDidMount() {
+    if (this.state.loading) {
+      // setTimeout(() => {
+      //   this.setState({ loading: false });
+      // }, 800);
+    }
+  }
+
+  render() {
+    if (this.state.loading) {
+      return html`<${ProductDetailsShimmer} />`;
+    }
+
+    return html`
   <${Fragment} >
       <${Carousel} />
       <${Sidebar} />
@@ -20,6 +39,7 @@ function ProductDetailPage() {
           </p>
       </div>
   </>`;
+  }
 }
 
 export default function decorate($block) {

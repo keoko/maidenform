@@ -42,7 +42,20 @@ function QuantitySelector({ onChange }) {
   `;
 }
 
-function NameAndPrice({ name, price }) {
+function NameAndPriceShimmer() {
+  return html`
+      <div class="desktop-hidden title-shimmer">
+          <div class="heading-shimmer shimmer"></div>
+          <div class="price-shimmer shimmer"></div>
+      </div>
+  `;
+}
+
+function NameAndPrice({ name, price, shimmer }) {
+  if (shimmer) {
+    return html`<${NameAndPriceShimmer} />`;
+  }
+
   return html`
     <${Fragment}>
         <h1>${name}</h1>
@@ -155,10 +168,11 @@ export default class ProductDetailsSidebar extends Component {
   render() {
     return html`<${Fragment}>
       <div class="product-title desktop-hidden">
-          <${NameAndPrice} name=${this.state.product.name} price=${this.state.product.price} />
+          <${NameAndPrice} shimmer=${this.props.shimmer} name=${this.state.product.name} price=${this.state.product.price} />
       </div>
-      <div class="sidebar">
-          <div class="product-title sidebar-section mobile-hidden">
+      <div class=${`sidebar ${this.props.shimmer ? 'shimmer' : ''}`}>
+          ${this.props.shimmer || html`
+            <div class="product-title sidebar-section mobile-hidden">
               <${Rating} value=${this.state.product.rating} />
               <${NameAndPrice} name=${this.state.product.name} price=${this.state.product.price} />
           </div>
@@ -184,6 +198,7 @@ export default class ProductDetailsSidebar extends Component {
           <${SelectionDisplay} selection=${this.state.selection} />
           <${QuantitySelector} />
           <${CartSection} />
+        `}
       </div>
     </Fragment>`;
   }

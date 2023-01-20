@@ -73,31 +73,42 @@ export default class Carousel extends Component {
         <div class="product-detail-carousel">
             <div class="carousel-thumbnails-wrapper">
                 <div class="thumbnail-controls">
-                    <button name="thumbnail-prev" onClick=${() => this.updateThumbnailSlide((index) => index - 1)}><${Icon} name="caret-up-fill" /></button>
-                    <button name="thumbnail-next" onClick=${() => this.updateThumbnailSlide((index) => index + 1)}><${Icon} name="caret-down-fill" /></button>
+                    <button name="thumbnail-prev" disabled=${this.props.shimmer} onClick=${() => this.updateThumbnailSlide((index) => index - 1)}><${Icon} name="caret-up-fill" /></button>
+                    <button name="thumbnail-next" disabled=${this.props.shimmer} onClick=${() => this.updateThumbnailSlide((index) => index + 1)}><${Icon} name="caret-down-fill" /></button>
                 </div>
                 <ul class="carousel-thumbnails" style="transform: translateY(-${(this.state.thumbnailSlide === 0 ? 0 : 1) * -252.7 + (this.state.thumbnailSlide) * 322.6}px)">
-                    ${this.thumbnailImages.map((image, i) => html`
+                    ${this.props.shimmer || this.thumbnailImages.map((image, i) => html`
                           <li key=${image} onClick=${() => this.setState({ slide: i, thumbnailSlide: i })}>
                               <picture>
                                   <img height="313" width="247" src=${image} />
                               </picture>
                           </li>`)}
+                    ${this.props.shimmer && [1, 2, 3].map(() => html`
+                        <li><picture class="shimmer"><img height="313" width="247" /></picture></li>
+                    `)}
                 </ul>
             </div>
             <div class="carousel-stage-wrapper">
-                <div class="main-controls">
-                    <button name="stage-prev" onClick=${() => this.updateSlide((index) => index - 1)}><${Icon} name="caret-left-fill" /></button>
-                    <button name="stage-next" onClick=${() => this.updateSlide((index) => index + 1)}><${Icon} name="caret-right-fill" /></button>
-                </div>
-                <ul class="carousel-stage" style="transform: translateX(-${this.state.slide * 100}%)">
-                    ${this.images.map((image, i) => html`
+                ${this.props.shimmer || html`
+                    <div class="main-controls">
+                        <button name="stage-prev" onClick=${() => this.updateSlide((index) => index - 1)}><${Icon} name="caret-left-fill" /></button>
+                        <button name="stage-next" onClick=${() => this.updateSlide((index) => index + 1)}><${Icon} name="caret-right-fill" /></button>
+                    </div>
+                `}
+                <ul 
+                        class="carousel-stage"
+                        style="transform: translateX(-${this.state.slide * 100}%)"
+                >
+                    ${this.props.shimmer || this.images.map((image, i) => html`
                         <li key=${image} active=${i === this.state.slide ? 'true' : 'false'}>
                             <picture>
                                 <${OptimizedSources} src=${image} width="888" height="700" sizes=${[{ media: 450, width: 450 }, { media: 2000, width: 700 }]} />
                             </picture>
                         </li>
                     `)}
+                    ${this.props.shimmer && html`
+                        <li><picture class="shimmer"><img width="888" height="700" /></picture></li>
+                    `}
                 </ul>
             </div>
         </div>
