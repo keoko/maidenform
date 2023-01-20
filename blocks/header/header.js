@@ -26,22 +26,37 @@ function collapseAllSubmenus(menu) {
   menu.querySelectorAll('*[aria-expanded="true"]').forEach((el) => el.setAttribute('aria-expanded', 'false'));
 }
 
+function clearAllTabIndex() {
+  document.querySelectorAll('.nav-menu *[tabindex]').forEach((element) => {
+    element.removeAttribute('tabindex');
+  });
+}
+
 function addEventListenersMobile() {
-  document.querySelectorAll('.menu-expandable').forEach((title) => {
+  clearAllTabIndex();
+
+  const toggleMenu = (item) => {
+    const expanded = item.getAttribute('aria-expanded') === 'true';
+    collapseAllSubmenus(item.closest('li'));
+    item.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+  };
+
+  document.querySelectorAll('.menu-expandable, .m-expandable-title').forEach((title) => {
     title.addEventListener('click', (e) => {
       e.stopPropagation();
-      const expanded = title.getAttribute('aria-expanded') === 'true';
-      collapseAllSubmenus(title.closest('li'));
-      title.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+      toggleMenu(title);
     });
   });
 
-  document.querySelectorAll('.m-expandable-title').forEach((title) => {
-    title.addEventListener('click', (e) => {
-      e.stopPropagation();
-      const expanded = title.getAttribute('aria-expanded') === 'true';
-      collapseAllSubmenus(title.closest('li'));
-      title.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+  document.querySelectorAll('.nav-menu .icon-dropdown').forEach((dropdown) => {
+    dropdown.setAttribute('tabindex', '0');
+    dropdown.setAttribute('aria-label', 'Open section');
+    dropdown.addEventListener('keydown', (e) => {
+      if (e.key === ' ') {
+        e.preventDefault();
+        e.stopPropagation();
+        toggleMenu(dropdown.closest('.menu-expandable, .m-expandable-title'));
+      }
     });
   });
 
@@ -65,16 +80,33 @@ function addEventListenersMobile() {
 }
 
 function addEventListenersDesktop() {
-  document.querySelectorAll('.nav-menu > ul > li').forEach((title) => {
-    title.addEventListener('mouseenter', (e) => {
-      e.stopPropagation();
-      const expanded = title.getAttribute('aria-expanded') === 'true';
-      collapseAllSubmenus(title.closest('ul'));
-      title.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+  clearAllTabIndex();
+
+  function expandMenu(element) {
+    const expanded = element.getAttribute('aria-expanded') === 'true';
+    collapseAllSubmenus(element.closest('ul'));
+    element.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+  }
+
+  document.querySelectorAll('.menu-expandable').forEach((linkElement) => {
+    linkElement.setAttribute('tabindex', '0');
+    linkElement.setAttribute('aria-label', `Expand the submenu for ${linkElement.querySelector('a').innerText}`);
+
+    linkElement.addEventListener('keydown', (e) => {
+      if (e.key === ' ' && e.target === linkElement) {
+        e.preventDefault();
+        e.stopPropagation();
+        expandMenu(linkElement);
+      }
     });
   });
 
   document.querySelectorAll('.nav-menu > ul > li').forEach((title) => {
+    title.addEventListener('mouseenter', (e) => {
+      e.stopPropagation();
+      expandMenu(title);
+    });
+
     title.addEventListener('mouseleave', () => {
       collapseAllSubmenus(document.querySelector('nav'));
     });
@@ -111,12 +143,25 @@ export default async function decorate(block) {
     const hamburger = document.createElement('div');
     hamburger.classList.add('nav-hamburger');
     hamburger.innerHTML = '<span class="icon icon-mobile-menu"></span>';
-    hamburger.addEventListener('click', () => {
+
+    const expandHamburger = () => {
       const expanded = nav.getAttribute('aria-expanded') === 'true';
       document.body.style.overflowY = expanded ? '' : 'hidden';
       nav.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+      document.querySelector('main').style.visibility = expanded ? '' : 'hidden';
+    };
+
+    hamburger.setAttribute('tabindex', '0');
+    hamburger.addEventListener('click', expandHamburger);
+    hamburger.addEventListener('keydown', (e) => {
+      if (e.key === ' ') {
+        e.preventDefault();
+        e.stopPropagation();
+        expandHamburger();
+      }
     });
-    nav.querySelector(':scope > div').append(hamburger);
+
+    nav.querySelector(':scope > div').insertBefore(hamburger, nav.querySelector('.nav-menu'));
     nav.setAttribute('aria-expanded', 'false');
 
     // tools
@@ -236,6 +281,7 @@ export default async function decorate(block) {
     window.addEventListener('resize', () => {
       if (shouldResize()) {
         nav.setAttribute('aria-expanded', 'false');
+        document.querySelector('main').style.visibility = '';
         removeAllEventListeners(document.querySelector('.nav-menu'));
         removeAllEventListeners(document.querySelector('.nav-tools'));
         collapseAllSubmenus(block);

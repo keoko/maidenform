@@ -220,6 +220,10 @@ header nav .nav-menu .menu-nav-dropdown *:not(.icon) > img {
   display: none;
 }
 
+header nav .linked-picture-desktop {
+  visibility: hidden;
+}
+
 /* Desktop styles */
 @media (min-width: 1024px) {
   header nav .nav-hamburger {
@@ -228,6 +232,10 @@ header nav .nav-menu .menu-nav-dropdown *:not(.icon) > img {
 
   header nav .nav-menu ul .menu-nav-category.sign-in-link-mobile {
     display: none;
+  }
+
+  header nav .linked-picture-desktop {
+    visibility: unset;
   }
 
   header nav .nav-tools .sign-in-link-desktop {
@@ -276,7 +284,7 @@ header nav .nav-menu .menu-nav-dropdown *:not(.icon) > img {
     align-items: flex-end;
     grid-area: links;
   }
-  
+
   header nav p.m-expandable-title a {
     pointer-events: unset;
   }
@@ -293,7 +301,7 @@ header nav .nav-menu .menu-nav-dropdown *:not(.icon) > img {
   header nav .nav-menu .menu-nav-dropdown .column {
     padding: 12px;
   }
-  
+
   header nav .nav-menu ul > li *:is(a, p) {
     font-size: 1.5rem;
     padding: 0;
