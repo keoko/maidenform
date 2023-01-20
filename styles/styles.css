@@ -220,6 +220,7 @@
   --highlight-background-color: #ccc;
   --text-color: var(--clr-black);
   --clr-grey: #f4f4f4;
+  --loading-background: #ededed;
 
   /* fonts */
   --ff-gilroy-xbold: 'Gilroy ExtraBold 700', 'Gilroy ExtraBold 700 Fallback' , sans-serif;
