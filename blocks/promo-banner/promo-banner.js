@@ -31,5 +31,5 @@ export default async function decorate(block) {
     });
   });
 
-  carousel.start();
+  carousel.init();
 }
