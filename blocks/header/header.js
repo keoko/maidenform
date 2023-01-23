@@ -1,6 +1,7 @@
 import cartApi from '../../scripts/commerce/cart.js';
 import { storeView } from '../../scripts/commerce/config.js';
 import { decorateIcons } from '../../scripts/lib-franklin.js';
+import loadReflektion from '../../scripts/reflektion.js';
 
 const mobileBreakpoint = 1024;
 let globalWindowWidth = window.innerWidth;
@@ -193,6 +194,10 @@ export default async function decorate(block) {
       <span class="icon icon-x-lg close-button" />
     `;
     toolContainer.append(searchBar);
+    const searchInput = toolContainer.querySelector('input[name="q"]');
+    searchInput.addEventListener('focus', () => {
+      loadReflektion();
+    }, { once: true });
 
     const login = document.createElement('a');
     login.classList.add('sign-in-link-desktop');
