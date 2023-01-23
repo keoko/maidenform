@@ -27,13 +27,13 @@ function makeScrollableWithDrag(item, end) {
     startPosition = e.pageX;
     document.addEventListener('mousemove', mouseMove);
     document.addEventListener('mouseup', mouseUp);
-    document.addEventListener('touchmove', mouseMove);
-    document.addEventListener('touchend', mouseUp);
+    document.addEventListener('touchmove', mouseMove, { passive: true });
+    document.addEventListener('touchend', mouseUp, { passive: true });
   }
 
   function reAttachListener() {
     item.addEventListener('mousedown', mouseDown);
-    item.addEventListener('touchstart', mouseDown);
+    item.addEventListener('touchstart', mouseDown, { passive: true });
   }
 
   function removeListener() {
