@@ -1,3 +1,5 @@
+import cartApi from '../../scripts/commerce/cart.js';
+import { storeView } from '../../scripts/commerce/config.js';
 import { decorateIcons } from '../../scripts/lib-franklin.js';
 
 const mobileBreakpoint = 1024;
@@ -112,6 +114,15 @@ function addEventListenersDesktop() {
     });
   });
 
+  // TODO: Add to mobile as well
+  const minicart = document.querySelector('header .nav-tools .minicart');
+  if (minicart) {
+    minicart.onclick = () => cartApi.togglePanel('cart');
+    cartApi.cartItemsQuantity.watch((quantity) => {
+      minicart.setAttribute('data-cart-qty', quantity || '');
+    });
+  }
+
   const searchButton = document.querySelector('.nav-tools form');
   if (searchButton.hasAttribute('aria-expanded')) searchButton.removeAttribute('aria-expanded');
 }
@@ -166,17 +177,19 @@ export default async function decorate(block) {
 
     // tools
     const toolContainer = nav.querySelector('.nav-tools');
-    ['heart', 'minicart'].forEach((tool) => {
-      const icon = document.createElement('span');
-      icon.classList.add('icon', `icon-${tool}`);
-      toolContainer.append(icon);
-    });
+    toolContainer.innerHTML = '';
+    toolContainer.append(document.createRange().createContextualFragment(
+      '<button class="wishlist">Open Wishlist</button>',
+    ));
+    toolContainer.append(document.createRange().createContextualFragment(
+      '<button class="minicart">Open Cart</button>',
+    ));
 
     const searchBar = document.createElement('form');
     searchBar.action = '/search';
     searchBar.innerHTML = `
       <input name="q" type="text" data-rfkid="rfkid_6" placeholder="Search" />
-      <button class="search-button" aria-label="submit search query"><span class="icon icon-search" /></button>
+      <button class="search-button" aria-label="submit search query">Search</button>
       <span class="icon icon-x-lg close-button" />
     `;
     toolContainer.append(searchBar);
@@ -266,11 +279,14 @@ export default async function decorate(block) {
 
     block.append(nav);
 
+    cartApi.setSelectedStore?.(storeView);
+
     // Handle different event listeners for mobile/desktop on window resize
     const removeAllEventListeners = (element) => {
       element.replaceWith(element.cloneNode(true));
     };
 
+    // TODO: Replace this logic with window.matchMedia + onchange event
     const shouldResize = () => {
       const resize = (window.innerWidth > mobileBreakpoint && globalWindowWidth <= mobileBreakpoint)
         || (window.innerWidth < mobileBreakpoint && globalWindowWidth >= mobileBreakpoint);

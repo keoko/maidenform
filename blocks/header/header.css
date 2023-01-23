@@ -63,6 +63,34 @@ header nav .nav-tools .icon {
   margin-right: 14px;
 }
 
+header nav .nav-tools .minicart,
+header nav .nav-tools .wishlist,
+header nav .nav-tools .search-button {
+  font-size: 0;
+  width: 20px;
+  height: 20px;
+  color: transparent;
+  border: 0;
+  margin: 0 14px 0 0;
+  padding: 0;
+  border-radius: 0;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: transparent;
+}
+
+header nav .nav-tools .minicart {
+  background-image: url('../../icons/minicart.svg');
+}
+
+header nav .nav-tools .wishlist {
+  background-image: url('../../icons/heart.svg');
+}
+
+header nav .nav-tools .search-button {
+  background-image: url('../../icons/search.svg');
+}
+
 header nav .nav-tools form {
   display: flex;
   align-items: center;
@@ -70,12 +98,6 @@ header nav .nav-tools form {
 
 header nav .nav-tools form input {
   display: none;
-}
-
-header nav .nav-tools form .search-button {
-  padding: 0;
-  color: black;
-  background: none;
 }
 
 header nav .nav-tools form .close-button {
@@ -276,7 +298,6 @@ header nav .linked-picture-desktop {
   header nav .nav-tools form .search-button {
     position: absolute;
     right: 0;
-    top: -16px;
   }
 
   header nav .nav-menu {

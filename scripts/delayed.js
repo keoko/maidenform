@@ -1,4 +1,6 @@
 // eslint-disable-next-line import/no-cycle
+import { render } from './commerce/config.js';
+import Panels from './commerce/panels.js';
 import {
   fetchPlaceholders,
   sampleRUM,
@@ -88,5 +90,10 @@ loadScript('https://44568633-prod.rfksrv.com/rfk/js/11293-44568633/init.js');
   });
   searchOverlayObserver.observe(await searchOverlay, { attributes: true, attributeFilter: ['class'] });
 })();
+
+// Commerce
+const elem = document.createRange().createContextualFragment('<div id="storefront-sdk--panels"></div>');
+render(Panels)(elem);
+document.body.append(elem);
 
 // add more delayed functionality here
