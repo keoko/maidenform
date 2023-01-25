@@ -7,13 +7,13 @@ const endpoint = 'https://www.marbec.click/graphql-maidenform'; // Custom proxy 
 const prodMetadata = [];
 const createSheet = async () => {
   const data = [
-    ['path', 'meta_keyword', 'meta_title', 'meta_description'],
+    ['URL', 'keywords', 'title', 'og:title' , 'description' , 'og:description'],
   ];
   prodMetadata.forEach((metaData) => {
     data.push(
       [metaData.path, metaData.meta_keyword,
-        metaData.meta_title,
-        metaData.meta_description],
+        metaData.meta_title, metaData.meta_title,
+        metaData.meta_description, metaData.meta_description],
     );
   });
   // Write XLSX file
