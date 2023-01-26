@@ -1,5 +1,5 @@
-import cartApi from '../../scripts/commerce/cart.js';
-import { storeView } from '../../scripts/commerce/config.js';
+// import cartApi from '../../scripts/commerce/cart.js';
+// import { storeView } from '../../scripts/commerce/config.js';
 import { decorateIcons } from '../../scripts/lib-franklin.js';
 import loadReflektion from '../../scripts/reflektion.js';
 
@@ -116,13 +116,21 @@ function addEventListenersDesktop() {
   });
 
   // TODO: Add to mobile as well
-  const minicart = document.querySelector('header .nav-tools .minicart');
+  const minicartButtons = document.querySelectorAll('header .nav-tools .minicart, header .minicart-panel .close');
+  const minicartPanel = document.querySelector('header .minicart-panel');
+  minicartButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      minicartPanel.classList.toggle('open');
+    });
+  });
+
+  /* const minicart = document.querySelector('header .nav-tools .minicart');
   if (minicart) {
     minicart.onclick = () => cartApi.togglePanel('cart');
     cartApi.cartItemsQuantity.watch((quantity) => {
       minicart.setAttribute('data-cart-qty', quantity || '');
     });
-  }
+  } */
 
   const searchButton = document.querySelector('.nav-tools form');
   if (searchButton.hasAttribute('aria-expanded')) searchButton.removeAttribute('aria-expanded');
@@ -183,7 +191,90 @@ export default async function decorate(block) {
       '<button class="wishlist">Open Wishlist</button>',
     ));
     toolContainer.append(document.createRange().createContextualFragment(
-      '<button class="minicart">Open Cart</button>',
+      `<div class="minicart-wrapper">
+        <button class="minicart" aria-label="Open Cart">13</button>
+        <div class="minicart-panel">
+          <div class="panels">
+            <div class="cart-header">
+              <h2>Added to your Bag</h2>
+              <div class="subtotal">
+                <span>Sub-total:</span> <span class="price">$44.40</span>
+              </div>
+              <button class="close" aria-label="Close">13</button>
+            </div>
+            <div class="cart-list">
+              <ul>
+                <li>
+                  <div class="product">
+                    <div class="image">
+                      <a href="#">
+                        <picture>
+                          <img src="https://cdn.maidenform.com/catalog/product/M/F/MFB_DM2302/MFB_DM2302_SparrowBrown_Front.jpg?quality=85&bg-color=255,255,255&fit=bounds&height=131&width=105" alt="Product Image" />
+                        </picture>
+                      </a>
+                    </div>
+                    <div class="info">
+                      <a href="#">Product Name</a>
+                      <div class="details">
+                        <input type="checkbox" id="hide-details-1" />
+                        <label for="hide-details-1">See Details</label>
+                        <ul>
+                          <li>Color: <span>Sparrow Brown</span></li>
+                          <li>Size: <span>M</span></li>
+                        </ul>
+                      </div>
+                      <span class="price">$22.20</span>
+                      <div class="quantity">
+                        <label for="quantity-1">QTY:</label>
+                        <input type="number" id="quantity-1" value="1" min="1" max="99" />
+                      </div>
+                    </div>
+                    <div class="actions">
+                      <button>Edit</button>
+                      <button>Remove</button>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="product">
+                    <div class="image">
+                      <a href="#">
+                        <picture>
+                          <img src="https://cdn.maidenform.com/catalog/product/M/F/MFB_DM2302/MFB_DM2302_SparrowBrown_Front.jpg?quality=85&bg-color=255,255,255&fit=bounds&height=131&width=105" alt="Product Image" />
+                        </picture>
+                      </a>
+                    </div>
+                    <div class="info">
+                      <a href="#">Product Name</a>
+                      <div class="details">
+                        <input type="checkbox" id="hide-details-2" />
+                        <label for="hide-details-2">See Details</label>
+                        <ul>
+                          <li>Color: <span>Sparrow Brown</span></li>
+                          <li>Size: <span>M</span></li>
+                        </ul>
+                      </div>
+                      <span class="price">$22.20</span>
+                      <div class="quantity">
+                        <label for="quantity-2">QTY:</label>
+                        <input type="number" id="quantity-2" value="1" min="1" max="99" />
+                      </div>
+                    </div>
+                    <div class="actions">
+                      <button>Edit</button>
+                      <button>Remove</button>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="cart-actions">
+              <button>Continue Shopping</button>
+              <button>View and Edit Bag</button>
+            </div>
+          </div>
+        </div>
+      </div>`,
     ));
 
     const searchBar = document.createElement('form');
@@ -284,7 +375,7 @@ export default async function decorate(block) {
 
     block.append(nav);
 
-    cartApi.setSelectedStore?.(storeView);
+    // cartApi.setSelectedStore?.(storeView);
 
     // Handle different event listeners for mobile/desktop on window resize
     const removeAllEventListeners = (element) => {

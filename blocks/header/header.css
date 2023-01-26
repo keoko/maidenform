@@ -67,8 +67,8 @@ header nav .nav-tools .minicart,
 header nav .nav-tools .wishlist,
 header nav .nav-tools .search-button {
   font-size: 0;
-  width: 20px;
-  height: 20px;
+  width: 22px;
+  height: 22px;
   color: transparent;
   border: 0;
   margin: 0 14px 0 0;
@@ -81,6 +81,11 @@ header nav .nav-tools .search-button {
 
 header nav .nav-tools .minicart {
   background-image: url('../../icons/minicart.svg');
+  color: var(--clr-pink);
+  font-family: var(--ff-gilroy-regular);
+  font-size: 1.2rem;
+  padding: 5px 3px 0 0;
+  text-align: center;
 }
 
 header nav .nav-tools .wishlist {
