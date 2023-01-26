@@ -80,6 +80,12 @@ function addEventListenersMobile() {
       form.removeAttribute('aria-expanded');
     }
   });
+
+  const minicartButtons = document.querySelector('header .nav-tools .minicart');
+  const minicartPanel = document.querySelector('header .minicart-panel');
+  minicartButtons.addEventListener('click', () => {
+    minicartPanel.classList.toggle('open');
+  });
 }
 
 function addEventListenersDesktop() {
@@ -190,6 +196,8 @@ export default async function decorate(block) {
     toolContainer.append(document.createRange().createContextualFragment(
       '<button class="wishlist">Open Wishlist</button>',
     ));
+
+    // Cart with two items
     toolContainer.append(document.createRange().createContextualFragment(
       `<div class="minicart-wrapper">
         <button class="minicart" aria-label="Open Cart">13</button>
@@ -276,6 +284,23 @@ export default async function decorate(block) {
         </div>
       </div>`,
     ));
+
+    // Empty cart
+    /* toolContainer.append(document.createRange().createContextualFragment(
+      `<div class="minicart-wrapper">
+        <button class="minicart" aria-label="Open Cart">13</button>
+        <div class="minicart-panel empty">
+          <div class="panels">
+            <div class="cart-header">
+              <button class="close" aria-label="Close">13</button>
+            </div>
+            <div class="cart-empty">
+              You have no shopping items in your cart.
+            </div>
+          </div>
+        </div>
+      </div>`,
+    )); */
 
     const searchBar = document.createElement('form');
     searchBar.action = '/search';
