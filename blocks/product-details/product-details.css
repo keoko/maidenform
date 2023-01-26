@@ -92,13 +92,19 @@
   margin: 12px 0 0;
 }
 
-.product-details .swatch {
-  cursor: pointer;
+.product-details .swatch > button {
   width: 36px;
   height: 36px;
   background-size: initial;
   border-radius: 22px;
   border: 2px solid white;
+  display: inline;
+  margin: 0;
+  padding: 0;
+}
+
+.product-details .swatch > button[aria-selected="true"] {
+  outline: 2px solid black;
 }
 
 .product-details .selected-swatch-name {
@@ -109,10 +115,6 @@
   color: #696969;
   font-size: 16px;
   padding: 8px 15px;
-}
-
-.product-details .swatch[aria-selected="true"] {
-  outline: 2px solid black;
 }
 
 .product-details .cart .secondary-action {
@@ -199,7 +201,10 @@
   gap: 12px;
 }
 
-.product-details .sizes-selector ul li {
+.product-details .sizes-selector ul li button {
+  background: none;
+  margin: 0;
+  padding: 0;
   color: #99969c;
   font-size: 1rem;
   border-radius: 4px;
@@ -212,17 +217,17 @@
   cursor: pointer;
 }
 
-.product-details .sizes-selector ul li[aria-selected="true"] {
+.product-details .sizes-selector ul li button[aria-selected="true"] {
   border-color: black;
   color: black;
 }
 
-.product-details .sizes-selector ul li[aria-disabled="true"] {
+.product-details .sizes-selector ul li button[aria-disabled="true"] {
   cursor: not-allowed;
   position: relative;
 }
 
-.product-details .sizes-selector ul li[aria-disabled="true"]::after {
+.product-details .sizes-selector ul li button[aria-disabled="true"]::after {
   background: url('/icons/size-disabled.svg') no-repeat;
   background-size: contain;
   content: '';

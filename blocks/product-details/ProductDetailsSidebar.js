@@ -15,11 +15,14 @@ function SizeSelector({
           <span class="size-guide">Size Guide</span>
           <ul>
               ${allSizes.map((size) => html`
-                <li aria-selected=${size === selectedSize} 
-                    onClick=${unavailableSizes?.includes(size) || (() => onChange?.(size))} 
-                    key=${size} 
-                    aria-disabled=${unavailableSizes?.includes(size)}>
-                    ${size}
+                <li key=${size}>
+                    <button
+                        aria-selected=${size === selectedSize}
+                        onClick=${unavailableSizes?.includes(size) || (() => onChange?.(size))}
+                        aria-disabled=${unavailableSizes?.includes(size)}
+                    >
+                        ${size}
+                    </button>
                 </li>
               `)}
           </ul>
@@ -86,12 +89,15 @@ function ColorSelector({ colors, onChange, selectedColor }) {
           <h4>AVAILABLE COLOR</h4>
           <ul class="swatches">
               ${colors.map((color) => html`
-                      <li 
-                        onClick=${() => onChange?.(color.name)} 
-                        aria-selected=${color.name === selectedColor} 
-                        key=${color.name} data-swatch-name=${color.name} 
+                      <li
+                        key=${color.name}  
                         class="swatch" 
-                        style="background: url(${color.url}) no-repeat center;"></li>
+                        >
+                          <button aria-selected=${color.name === selectedColor}
+                                  data-swatch-name=${color.name}
+                                  style="background: url(${color.url}) no-repeat center;" 
+                                  onClick=${() => onChange?.(color.name)} ></button>
+                      </li>
                   `)}
           </ul>
           <div class="selected-swatch-name">${selectedColor}</div>

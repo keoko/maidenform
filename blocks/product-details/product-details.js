@@ -16,9 +16,9 @@ class ProductDetailPage extends Component {
 
   componentDidMount() {
     if (this.state.loading) {
-      // setTimeout(() => {
-      //   this.setState({ loading: false });
-      // }, 800);
+      setTimeout(() => {
+        this.setState({ loading: false });
+      }, 1600);
     }
   }
 
