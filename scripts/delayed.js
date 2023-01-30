@@ -1,6 +1,6 @@
 // eslint-disable-next-line import/no-cycle
-// import { render } from './commerce/config.js';
-// import Panels from './commerce/panels.js';
+import { render } from './commerce/config.js';
+import Panels from './commerce/panels.js';
 import {
   fetchPlaceholders,
   sampleRUM,
@@ -38,11 +38,10 @@ if (otId) {
 sampleRUM('cwv');
 
 // Commerce
-/*
 // TODO: Move into header
-//const elem = document.querySelector('.minicart-panel');
-//render(Panels)(elem);
-//document.body.append(elem);
-*/
+const wrapper = document.querySelector('.minicart-wrapper');
+const panel = document.createElement('div');
+render(Panels)(panel);
+wrapper.append(panel);
 
 // add more delayed functionality here

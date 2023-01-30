@@ -878,10 +878,6 @@ body.product-detail-page main .section > div {
 }
 
 .minicart-panel {
-  display: none;
-}
-
-.minicart-panel.open {
   display: block;
 }
 

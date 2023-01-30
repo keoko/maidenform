@@ -1,5 +1,5 @@
-// import cartApi from '../../scripts/commerce/cart.js';
-// import { storeView } from '../../scripts/commerce/config.js';
+import cartApi from '../../scripts/commerce/cart.js';
+import { storeView } from '../../scripts/commerce/config.js';
 import { decorateIcons } from '../../scripts/lib-franklin.js';
 import loadReflektion from '../../scripts/reflektion.js';
 
@@ -81,11 +81,11 @@ function addEventListenersMobile() {
     }
   });
 
-  const minicartButtons = document.querySelector('header .nav-tools .minicart');
+  /* const minicartButtons = document.querySelector('header .nav-tools .minicart');
   const minicartPanel = document.querySelector('header .minicart-panel');
   minicartButtons.addEventListener('click', () => {
     minicartPanel.classList.toggle('open');
-  });
+  }); */
 }
 
 function addEventListenersDesktop() {
@@ -122,21 +122,21 @@ function addEventListenersDesktop() {
   });
 
   // TODO: Add to mobile as well
-  const minicartButtons = document.querySelectorAll('header .nav-tools .minicart, header .minicart-panel .close');
+  /* const minicartButtons = document.querySelectorAll('header .nav-tools .minicart, header .minicart-panel .close');
   const minicartPanel = document.querySelector('header .minicart-panel');
   minicartButtons.forEach((button) => {
     button.addEventListener('click', () => {
       minicartPanel.classList.toggle('open');
     });
-  });
+  }); */
 
-  /* const minicart = document.querySelector('header .nav-tools .minicart');
+  const minicart = document.querySelector('header .nav-tools button.minicart');
   if (minicart) {
     minicart.onclick = () => cartApi.togglePanel('cart');
     cartApi.cartItemsQuantity.watch((quantity) => {
-      minicart.setAttribute('data-cart-qty', quantity || '');
+      minicart.textContent = quantity || '';
     });
-  } */
+  }
 
   const searchButton = document.querySelector('.nav-tools form');
   if (searchButton.hasAttribute('aria-expanded')) searchButton.removeAttribute('aria-expanded');
@@ -200,8 +200,8 @@ export default async function decorate(block) {
     // Cart with two items
     toolContainer.append(document.createRange().createContextualFragment(
       `<div class="minicart-wrapper">
-        <button class="minicart" aria-label="Open Cart">13</button>
-        <div class="minicart-panel">
+        <button class="minicart" aria-label="Open Cart"></button>
+        <!-- <div class="minicart-panel">
           <div class="panels">
             <div class="cart-header">
               <h2>Added to your Bag</h2>
@@ -281,14 +281,14 @@ export default async function decorate(block) {
               <button>View and Edit Bag</button>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>`,
     ));
 
     // Empty cart
     /* toolContainer.append(document.createRange().createContextualFragment(
       `<div class="minicart-wrapper">
-        <button class="minicart" aria-label="Open Cart">13</button>
+        <button class="minicart" aria-label="Open Cart"></button>
         <div class="minicart-panel empty">
           <div class="panels">
             <div class="cart-header">
@@ -400,7 +400,7 @@ export default async function decorate(block) {
 
     block.append(nav);
 
-    // cartApi.setSelectedStore?.(storeView);
+    cartApi.setSelectedStore?.('default');
 
     // Handle different event listeners for mobile/desktop on window resize
     const removeAllEventListeners = (element) => {
