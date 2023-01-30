@@ -7,9 +7,12 @@ const mobileBreakpoint = 1024;
 let globalWindowWidth = window.innerWidth;
 
 function addDropdownIcon(element) {
+  const dropdownButton = document.createElement('button');
   const dropdownArrow = document.createElement('span');
   dropdownArrow.classList.add('icon', 'icon-dropdown');
-  element.append(dropdownArrow);
+  dropdownButton.append(dropdownArrow);
+  dropdownButton.classList.add('dropdown-button');
+  element.append(dropdownButton);
 }
 
 function wrapChildren(element, newType) {
@@ -52,7 +55,6 @@ function addEventListenersMobile() {
   });
 
   document.querySelectorAll('.nav-menu .icon-dropdown').forEach((dropdown) => {
-    dropdown.setAttribute('tabindex', '0');
     dropdown.setAttribute('aria-label', 'Open section');
     dropdown.addEventListener('keydown', (e) => {
       if (e.key === ' ') {
