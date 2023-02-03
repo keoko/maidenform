@@ -1,5 +1,5 @@
-// const mfeRootPath = 'https://d1f3flsjknp2wb.cloudfront.net/develop/storefront-sdk';
-const mfeRootPath = 'http://localhost:3001/storefront-sdk';
+// Use local version of Storefront SDK
+const mfeRootPath = '/scripts/storefront-sdk';
 
 export const storeView = 'maidenform_store_view';
 

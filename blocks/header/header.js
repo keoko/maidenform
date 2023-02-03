@@ -83,11 +83,13 @@ function addEventListenersMobile() {
     }
   });
 
-  /* const minicartButtons = document.querySelector('header .nav-tools .minicart');
-  const minicartPanel = document.querySelector('header .minicart-panel');
-  minicartButtons.addEventListener('click', () => {
-    minicartPanel.classList.toggle('open');
-  }); */
+  const minicart = document.querySelector('header .nav-tools button.minicart');
+  if (minicart) {
+    minicart.onclick = () => cartApi.togglePanel('cart');
+    cartApi.cartItemsQuantity.watch((quantity) => {
+      minicart.textContent = quantity || '';
+    });
+  }
 }
 
 function addEventListenersDesktop() {
@@ -122,15 +124,6 @@ function addEventListenersDesktop() {
       collapseAllSubmenus(document.querySelector('nav'));
     });
   });
-
-  // TODO: Add to mobile as well
-  /* const minicartButtons = document.querySelectorAll('header .nav-tools .minicart, header .minicart-panel .close');
-  const minicartPanel = document.querySelector('header .minicart-panel');
-  minicartButtons.forEach((button) => {
-    button.addEventListener('click', () => {
-      minicartPanel.classList.toggle('open');
-    });
-  }); */
 
   const minicart = document.querySelector('header .nav-tools button.minicart');
   if (minicart) {
@@ -203,106 +196,8 @@ export default async function decorate(block) {
     toolContainer.append(document.createRange().createContextualFragment(
       `<div class="minicart-wrapper">
         <button class="minicart" aria-label="Open Cart"></button>
-        <!-- <div class="minicart-panel">
-          <div class="panels">
-            <div class="cart-header">
-              <h2>Added to your Bag</h2>
-              <div class="subtotal">
-                <span>Sub-total:</span> <span class="price">$44.40</span>
-              </div>
-              <button class="close" aria-label="Close">13</button>
-            </div>
-            <div class="cart-list">
-              <ul>
-                <li>
-                  <div class="product">
-                    <div class="image">
-                      <a href="#">
-                        <picture>
-                          <img src="https://cdn.maidenform.com/catalog/product/M/F/MFB_DM2302/MFB_DM2302_SparrowBrown_Front.jpg?quality=85&bg-color=255,255,255&fit=bounds&height=131&width=105" alt="Product Image" />
-                        </picture>
-                      </a>
-                    </div>
-                    <div class="info">
-                      <a href="#">Product Name</a>
-                      <div class="details">
-                        <input type="checkbox" id="hide-details-1" />
-                        <label for="hide-details-1">See Details</label>
-                        <ul>
-                          <li>Color: <span>Sparrow Brown</span></li>
-                          <li>Size: <span>M</span></li>
-                        </ul>
-                      </div>
-                      <span class="price">$22.20</span>
-                      <div class="quantity">
-                        <label for="quantity-1">QTY:</label>
-                        <input type="number" id="quantity-1" value="1" min="1" max="99" />
-                      </div>
-                    </div>
-                    <div class="actions">
-                      <button>Edit</button>
-                      <button>Remove</button>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div class="product">
-                    <div class="image">
-                      <a href="#">
-                        <picture>
-                          <img src="https://cdn.maidenform.com/catalog/product/M/F/MFB_DM2302/MFB_DM2302_SparrowBrown_Front.jpg?quality=85&bg-color=255,255,255&fit=bounds&height=131&width=105" alt="Product Image" />
-                        </picture>
-                      </a>
-                    </div>
-                    <div class="info">
-                      <a href="#">Product Name</a>
-                      <div class="details">
-                        <input type="checkbox" id="hide-details-2" />
-                        <label for="hide-details-2">See Details</label>
-                        <ul>
-                          <li>Color: <span>Sparrow Brown</span></li>
-                          <li>Size: <span>M</span></li>
-                        </ul>
-                      </div>
-                      <span class="price">$22.20</span>
-                      <div class="quantity">
-                        <label for="quantity-2">QTY:</label>
-                        <input type="number" id="quantity-2" value="1" min="1" max="99" />
-                      </div>
-                    </div>
-                    <div class="actions">
-                      <button>Edit</button>
-                      <button>Remove</button>
-                    </div>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="cart-actions">
-              <button>Continue Shopping</button>
-              <button>View and Edit Bag</button>
-            </div>
-          </div>
-        </div> -->
       </div>`,
     ));
-
-    // Empty cart
-    /* toolContainer.append(document.createRange().createContextualFragment(
-      `<div class="minicart-wrapper">
-        <button class="minicart" aria-label="Open Cart"></button>
-        <div class="minicart-panel empty">
-          <div class="panels">
-            <div class="cart-header">
-              <button class="close" aria-label="Close">13</button>
-            </div>
-            <div class="cart-empty">
-              You have no shopping items in your cart.
-            </div>
-          </div>
-        </div>
-      </div>`,
-    )); */
 
     const searchBar = document.createElement('form');
     searchBar.action = '/search';
@@ -402,7 +297,10 @@ export default async function decorate(block) {
 
     block.append(nav);
 
+    // TODO: Set store view
     cartApi.setSelectedStore?.('default');
+    // Set handler for navigating to product page
+    cartApi.onProductLinkClick.register('_href', (data) => `/products/${data.url_key}`);
 
     // Handle different event listeners for mobile/desktop on window resize
     const removeAllEventListeners = (element) => {

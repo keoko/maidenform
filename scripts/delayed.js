@@ -37,8 +37,7 @@ if (otId) {
 // Core Web Vitals RUM collection
 sampleRUM('cwv');
 
-// Commerce
-// TODO: Move into header
+// Load mini cart
 const wrapper = document.querySelector('.minicart-wrapper');
 const panel = document.createElement('div');
 render(Panels)(panel);
