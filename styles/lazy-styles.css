@@ -1,4 +1,4 @@
-/* below the fold CSS goes here */
+/* stylelint-disable no-descending-specificity */
 
 /* || Gilroy Fonts */
 @font-face {
@@ -167,14 +167,14 @@
     gap: 20px;
 }
 
-.minicart-panel.empty .cart-header {
-    display: none;
-}
-
 .minicart-panel .cart-header {
     display: flex;
     height: 87px;
     align-items: center;
+}
+
+.minicart-panel.empty .cart-header {
+    display: none;
 }
 
 .minicart-panel .cart-header h2,

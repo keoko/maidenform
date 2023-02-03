@@ -6,4 +6,5 @@ block-picker
 sitemap-redirect.js
 scripts/preact.js
 scripts/htm.js
+scripts/storefront-sdk
 tools/bulk-metadata

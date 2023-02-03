@@ -1,5 +1,5 @@
 import cartApi from '../../scripts/commerce/cart.js';
-import { storeView } from '../../scripts/commerce/config.js';
+// import { storeView } from '../../scripts/commerce/config.js';
 import { decorateIcons } from '../../scripts/lib-franklin.js';
 import loadReflektion from '../../scripts/reflektion.js';
 
