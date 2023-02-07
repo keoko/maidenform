@@ -8,9 +8,24 @@ import ProductDetailsShimmer from './ProductDetailsShimmer.js';
 
 const html = htm.bind(h);
 
-const query = `
-{
-  products(skus:["09436"]) {
+const enrichmentQuery = `
+query EnrichmentQuery {
+  refineProduct(
+    sku: "07959",
+    optionIds: ["Y29uZmlndXJhYmxlLzU1MC8zMDk0", "Y29uZmlndXJhYmxlLzI4MC80Mw==", "Y29uZmlndXJhYmxlLzU1OS8zMTQ1"]
+  ) {
+    images(roles: []) {
+      url
+      roles
+      label
+    }
+  }
+}
+`;
+
+const productQuery = `
+query ProductQuery($sku: String!) {
+  products(skus:[$sku]) {
     __typename
     id
     sku
@@ -91,8 +106,7 @@ const query = `
 }
 `;
 
-async function performRequest() {
-  // TODO start data loading before loading preact if possible
+async function performGraphqlQuery(query, variables) {
   const headers = {
     'Content-Type': 'application/json',
     'Magento-Environment-Id': '271c8746-f2ed-43c3-8159-e7b7bbe79aac',
@@ -106,23 +120,67 @@ async function performRequest() {
   const response = await fetch('https://catalog-service-sandbox.adobe.io/graphql', {
     method: 'POST',
     headers,
-    body: JSON.stringify({ query }),
+    body: JSON.stringify({
+      query,
+      variables,
+    }),
   });
 
-  if (response.ok) {
-    return response.json();
+  if (!response.ok) {
+    return null;
   }
-  return null;
+
+  const productData = await response.json();
+
+  return productData.data;
+}
+
+async function enrichVariant(product, variantOptions) {
+  product.enrichments = product.enrichments || {};
+
+  // eslint-disable-next-line no-underscore-dangle
+  if (product.enrichments[variantOptions.join('')]) {
+    return product;
+  }
+
+  product.enrichments[variantOptions.join('')] = await performGraphqlQuery(
+    enrichmentQuery,
+    {
+      sku: '07959',
+      variantIds: variantOptions,
+    },
+  );
+  return product;
+}
+
+async function performRequest() {
+  // TODO start data loading before loading preact if possible
+  const productData = await performGraphqlQuery(productQuery, { sku: '07959' });
+
+  console.log(productData.products[0]);
+
+  if (!productData?.products?.[0]) {
+    return null;
+  }
+
+  const product = productData?.products?.[0];
+
+  await enrichVariant(product, [
+    'Y29uZmlndXJhYmxlLzU1MC8zMDk0',
+    'Y29uZmlndXJhYmxlLzI4MC80Mw==',
+    'Y29uZmlndXJhYmxlLzU1OS8zMTQ1']);
+
+  return product;
 }
 
 class ProductDetailPage extends Component {
   constructor(props) {
     super();
 
-    if (props.data.needAwait) {
-      this.state = { loading: true, promise: props.data.promise };
+    if (props.productPromise.needAwait) {
+      this.state = { loading: true, promise: props.productPromise.promise };
     } else {
-      this.state = { loading: false, data: props.data.data };
+      this.state = { loading: false, product: props.productPromise.product };
     }
   }
 
@@ -134,28 +192,25 @@ class ProductDetailPage extends Component {
   componentDidMount() {
     if (this.state.promise) {
       this.state.promise.then((data) => {
-        this.setState({ loading: false, data });
+        this.setState({ loading: false, product: data });
       });
     }
   }
 
   render() {
-    console.log(this.state.data)
-
     if (this.state.loading) {
       return html`<${ProductDetailsShimmer} />`;
     }
 
+    console.log(this.state.product);
+
     return html`
   <${Fragment} >
       <${Carousel} />
-      <${Sidebar} />
+      <${Sidebar} product=${this.state.product} />
       <div class="product-detail-description">
           <h3>PRODUCT DETAILS</h3>
-          <p>
-              Cushioned wire for all-day comfort.
-          <ul><li>Full-coverage cups</li><li>Super-soft fabric</li><li>Lightly lined, cloud-foam cups</li><li>Side and back smoothing</li><li>Comfort Devotion® collection</li></ul>
-          </p>
+          <div dangerouslySetInnerHTML=${{ __html: this.state.product.description }}></div>
       </div>
   </>`;
   }
@@ -166,7 +221,7 @@ async function dataOrLoading(timeout) {
 
   return Promise.any([
     new Promise((res) => {
-      dataPromise.then((data) => res({ needAwait: false, data }));
+      dataPromise.then((data) => res({ needAwait: false, product: data }));
     }),
     new Promise((res) => {
       setTimeout(() => res({ needAwait: true, promise: dataPromise }), timeout);
@@ -178,9 +233,9 @@ export default async function decorate($block) {
   $block.innerHTML = '';
 
   // if data is loaded within 50ms, don't show loading effect
-  const result = await dataOrLoading(50);
+  const result = await dataOrLoading(350);
 
-  const app = html`<${ProductDetailPage} data=${result} />`;
+  const app = html`<${ProductDetailPage} productPromise=${result} />`;
 
   render(app, $block);
 }

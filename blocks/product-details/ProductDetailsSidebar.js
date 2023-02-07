@@ -119,13 +119,13 @@ function CartSection() {
   `;
 }
 
-function SelectionDisplay({ selection }) {
+function SelectionDisplay({ selection, productOptions }) {
   return html`
       <div class="sidebar-section">
           <h4 class="variant-selection">
               <span>SELECTION: </span>
               <span>
-                    ${selection.color} ${selection.bandSize}${selection.cupSize} 
+                    ${selection.color} ${productOptions.map((option) => selection[option.id]).join(' ')}
                   </span>
           </h4>
       </div>
@@ -133,15 +133,24 @@ function SelectionDisplay({ selection }) {
 }
 
 export default class ProductDetailsSidebar extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
+
+    if (props.shimmer) {
+      return;
+    }
+
+    const priceFormatter = new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: props.product.priceRange.maximum.regular.amount.currency,
+    });
 
     // Subject to change once commerce endpoint is available
     const product = {
-      name: 'Everyday Full Coverage Cushioned Underwire Bra',
+      name: props.product.name,
       price: {
-        actual: '$48.00',
-        reduced: '$28.80',
+        actual: `${priceFormatter.format(props.product.priceRange.maximum.regular.amount.value)}`,
+        reduced: `${priceFormatter.format(props.product.priceRange.maximum.final.amount.value)}`,
       },
       rating: 3.5,
       colors: [
@@ -156,6 +165,23 @@ export default class ProductDetailsSidebar extends Component {
         { name: 'Lilac Meringue', url: 'https://swatches.maidenform.com/HNS_09436/HNS_09436_LilacMeringue_sw.jpg?quality=85&height=50&width=50&fit=bounds' },
       ],
     };
+
+    this.product = props.product;
+
+    const colorOption = props.product.options.find((option) => option.id === 'color');
+    if (colorOption) {
+      this.colors = colorOption.values.map((value) => ({
+        name: value.title,
+        url: `https://swatches.maidenform.com/HNS_09436/HNS_09436_${value.title.replace(' ', '')}_sw.jpg?quality=85&height=50&width=50&fit=bounds`,
+      }));
+      // TODO why are there so many wrong colors
+      const lastColorIndex = this.colors.findIndex((color) => color.name.includes('{'));
+      if (lastColorIndex > 0) {
+        this.colors = this.colors.slice(0, lastColorIndex);
+      }
+    }
+
+    this.productOptions = props.product.options.filter((option) => option.id !== 'color');
 
     this.state = {
       selection: {
@@ -174,34 +200,30 @@ export default class ProductDetailsSidebar extends Component {
   render() {
     return html`<${Fragment}>
       <div class="product-title desktop-hidden">
-          <${NameAndPrice} shimmer=${this.props.shimmer} name=${this.state.product.name} price=${this.state.product.price} />
+          <${NameAndPrice} shimmer=${this.props.shimmer} name=${this.state.product?.name} price=${this.state.product?.price} />
       </div>
       <div class=${`sidebar ${this.props.shimmer ? 'shimmer' : ''}`}>
           ${this.props.shimmer || html`
             <div class="product-title sidebar-section mobile-hidden">
-              <${Rating} value=${this.state.product.rating} />
-              <${NameAndPrice} name=${this.state.product.name} price=${this.state.product.price} />
+              <${Rating} value=${this.state.product?.rating} />
+              <${NameAndPrice} name=${this.state.product?.name} price=${this.state.product?.price} />
           </div>
           <${ColorSelector} 
                   colors=${this.state.product.colors}
                   onChange=${(color) => this.updateSelection({ color })}
                   selectedColor=${this.state.selection.color}
           />
-          <${SizeSelector} 
+          ${this.productOptions.map((option) => html`
+            <${SizeSelector} 
                   sizeType="Band Size" 
-                  allSizes=${[34, 36, 38, 40, 42]} 
-                  unavailableSizes=${[38]} 
-                  selectedSize=${this.state.selection.bandSize}
-                  onChange=${(size) => this.updateSelection({ bandSize: size })}
-          />
-          <${SizeSelector} 
-                  sizeType="Cup Size" 
-                  allSizes=${['B', 'C', 'D', 'DD']} 
-                  unavailableSizes=${['DD']}
-                  selectedSize=${this.state.selection.cupSize}
-                  onChange=${(size) => this.updateSelection({ cupSize: size })}
-          />
-          <${SelectionDisplay} selection=${this.state.selection} />
+                  allSizes=${option.values.map((value) => value.title)} 
+                  unavailableSizes=${[]}
+                  selectedSize=${this.state.selection[option.id]}
+                  onChange=${(size) => this.updateSelection({ [option.id]: size })}
+            />
+          `)}
+            
+          <${SelectionDisplay} selection=${this.state.selection} productOptions=${this.productOptions} />
           <${QuantitySelector} />
           <${CartSection} />
         `}
