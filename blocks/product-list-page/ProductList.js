@@ -1,5 +1,5 @@
 import {
-  h, Component, createRef,
+  h, Component, createRef, Fragment,
 } from '../../scripts/preact.js';
 import htm from '../../scripts/htm.js';
 
@@ -14,7 +14,7 @@ class ProductCard extends Component {
       currency: 'USD',
     });
     this.state = {
-      selectedVariant: null,
+      selectedVariant: 0,
     };
     this.baseProduct = props.product;
     this.resizeObserver = new ResizeObserver((entries) => {
@@ -53,9 +53,33 @@ class ProductCard extends Component {
     }
 
     // TODO
-    if (this.state.selectedVariant) {
+    /* if (this.state.selectedVariant) {
       console.log('Load variant', this.state.selectedVariant);
+    } */
+  }
+
+  renderPrice(price) {
+    if (price.sale) {
+      return html`<${Fragment}>
+          <span class="old-price">${this.formatter.format(price.regular)}</span> <span>${this.formatter.format(price.sale)}</span>
+        </${Fragment}>`;
     }
+    return html`<span>${this.formatter.format(price.regular)}</span>`;
+  }
+
+  static renderImage(name, image) {
+    const url = new URL(image);
+    url.search = '';
+
+    return html`<picture>
+      <source media="(min-width: 320px) and (max-width: 767px)" srcset="${url}?width=420&amp;quality=100&amp;bg-color=255,255,255" />
+      <source media="(min-width: 768px) and (max-width: 1024x)" srcset="${url}?width=768&amp;quality=100&amp;bg-color=255,255,255" />
+      <img class="product-image-photo"
+        srcset="${url}?width=247&amp;quality=100&amp;bg-color=255,255,255&amp;dpr=1 1x,
+          ${url}?width=247&amp;quality=100&amp;bg-color=255,255,255&amp;dpr=1.5 1.5x,
+          ${url}?width=247&amp;quality=100&amp;bg-color=255,255,255&amp;dpr=2 2x" 
+        src="${url}?width=247&amp;quality=100&amp;bg-color=255,255,255" max-width="247" max-height="313" alt=${name} />
+    </picture>`;
   }
 
   render({ product, loading }, state) {
@@ -79,27 +103,19 @@ class ProductCard extends Component {
       <li>
         <div class="picture">
           <a href="/products/${product.url_key}">
-            <picture>
-              <source media="(min-width: 320px) and (max-width: 767px)" srcset="${product.image}?width=420&amp;quality=100&amp;bg-color=255,255,255" />
-              <source media="(min-width: 768px) and (max-width: 1024x)" srcset="${product.image}?width=768&amp;quality=100&amp;bg-color=255,255,255" />
-              <img class="product-image-photo"
-                srcset="${product.image}?width=247&amp;quality=100&amp;bg-color=255,255,255&amp;dpr=1 1x,
-                  ${product.image}?width=247&amp;quality=100&amp;bg-color=255,255,255&amp;dpr=1.5 1.5x,
-                  ${product.image}?width=247&amp;quality=100&amp;bg-color=255,255,255&amp;dpr=2 2x" 
-                src="${product.image}?width=247&amp;quality=100&amp;bg-color=255,255,255" max-width="247" max-height="313" alt=${product.name} />
-            </picture>
+            ${ProductCard.renderImage(product.name, product.swatches[state.selectedVariant].product_image)}
           </a>
           <button class="add-to-cart-action">Add to Bag</button>
         </div>
         <div class="variants">
           <button class="previous" onClick=${this.swatchScrollLeft}>Previous</button>
           <div class="swatches" ref=${this.variantsRef}>
-            ${product.swatches.map(({ value, image, name }) => html`
+            ${product.swatches.map(({ value, image, name }, index) => html`
               <button
-                class="swatch ${value === state.selectedVariant ? 'active' : ''}"
+                class="swatch ${index === state.selectedVariant ? 'active' : ''}"
                 value=${value}
                 style="background: url('${image}?width=50&amp;quality=85&amp;fit=bounds') no-repeat center;"
-                onClick=${(event) => this.setState({ selectedVariant: event.target.value })}>${name}</button>
+                onClick=${() => this.setState({ selectedVariant: index })}>${name}</button>
             `)}
             </div>
           <button class="next" onClick=${this.swatchScrollRight}>Next</button>
@@ -107,9 +123,7 @@ class ProductCard extends Component {
         <div class="name">
           <a href="/products/${product.url_key}">${product.name}</a>
         </div>
-        <div class="price">
-          <span class="old-price">${this.formatter.format(product.price.regular)}</span> <span>${this.formatter.format(product.price.sale)}</span>
-        </div>
+        <div class="price">${this.renderPrice(product.price)}</div>
         <div class="rating">
           <div style="--rating: ${product.rating.average};"></div>
           <span>(${product.rating.count})</span>

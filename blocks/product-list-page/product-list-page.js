@@ -4,6 +4,7 @@ import {
 import htm from '../../scripts/htm.js';
 import ProductList from './ProductList.js';
 import FacetList from './FacetList.js';
+import { readBlockConfig } from '../../scripts/lib-franklin.js';
 
 const html = htm.bind(h);
 
@@ -37,11 +38,11 @@ function Sort(props) {
   const options = [
     { label: 'Price: High to Low', value: 'price-desc' },
     { label: 'Price: Low to High', value: 'price-asc' },
-    { label: 'Product Name', value: 'name' },
-    { label: 'Relevance', value: 'relevance' },
+    { label: 'Product Name', value: 'name-asc' },
+    { label: 'Relevance', value: 'relevance-asc' },
   ];
 
-  const currentSort = options.find((option) => option.value === props.currentSort) || options[3];
+  const currentSort = options.find((option) => option.value === `${props.currentSort}-${props.sortDirection}`) || options[3];
 
   return html`<div class="sort" disabled=${props.disabled}>
     <button disabled=${props.disabled}>Sort By: ${currentSort.label}</button>
@@ -50,10 +51,11 @@ function Sort(props) {
       <ul>
         ${options.map((option) => html`<li>
           <a href="#" class="${currentSort.value === option.value ? 'active' : ''}" onClick=${(e) => {
-  props.sortMenuRef.current.classList.toggle('active');
-  props.onSort?.(option.value);
-  e.preventDefault();
-}}>${option.label}</a>
+      props.sortMenuRef.current.classList.toggle('active');
+      const [sort, direction = 'asc'] = option.value.split('-');
+      props.onSort?.(sort, direction);
+      e.preventDefault();
+    }}>${option.label}</a>
         </li>`)}
       </ul>
     </div>
@@ -61,7 +63,7 @@ function Sort(props) {
 }
 
 class ProductListPage extends Component {
-  constructor() {
+  constructor({ type = 'category' }) {
     super();
 
     this.facetMenuRef = createRef();
@@ -69,108 +71,24 @@ class ProductListPage extends Component {
 
     const queryParams = ProductListPage.parseQueryParams();
 
+    let headline = 'Search Results';
+    if (type === 'category') {
+      // Get from H1
+      headline = document.querySelector('.default-content-wrapper > h1')?.innerText;
+    }
+
     this.state = {
       loading: true,
-      pages: 3,
+      pages: 1,
+      type,
       category: {
-        // Get from H1
-        name: document.querySelector('.default-content-wrapper > h1').innerText,
+        name: headline,
       },
-      sort: false,
+      sort: 'featured',
+      sortDirection: 'asc',
       products: {
-        items: [{
-          sku: 'a22601',
-          url_key: 'a22601',
-          name: 'Comfy Cabin Thermal Holiday Pajama Set',
-          image: 'https://cdn.maidenform.com/catalog/product/H/N/HNS_M21405/HNS_M21405_BabyBlueStripe_Front.jpg',
-          rating: {
-            average: 4.5,
-            count: 50,
-          },
-          price: {
-            regular: 48.00,
-            sale: 20.00,
-          },
-          swatches: [
-            {
-              image: 'https://swatches.maidenform.com/HNS_A22601/HNS_A22601_ClassicRedPlaid_sw.jpg',
-              name: 'Classic Red Plaid',
-              value: 'red-plaid',
-            },
-            {
-              image: 'https://swatches.maidenform.com/HNS_A22601/HNS_A22601_MerlotFairisle_sw.jpg',
-              name: 'Merlot Fairisle',
-              value: 'merlot-fairisle',
-            },
-            {
-              image: 'https://swatches.maidenform.com/HNS_A22601/HNS_A22601_RedAndGreenTreeFairisle_sw.jpg',
-              name: 'Red And Green Tree Fairisle',
-              value: 'red-and-green-tree-fairisle',
-            },
-            {
-              image: 'https://swatches.maidenform.com/HNS_A22601/HNS_A22601_SpruceGreenDot_sw.jpg',
-              name: 'Spruce Green Dot',
-              value: 'spruce-green-dot',
-            },
-          ],
-        },
-        ...Array(9).fill({
-          sku: 'a22601',
-          url_key: 'a22601',
-          name: 'Comfy Cabin Thermal Holiday Pajama Set',
-          image: 'https://cdn.maidenform.com/catalog/product/H/N/HNS_M21405/HNS_M21405_BabyBlueStripe_Front.jpg',
-          rating: {
-            average: 4.5,
-            count: 50,
-          },
-          price: {
-            regular: 48.00,
-            sale: 20.00,
-          },
-          swatches: [
-            {
-              image: 'https://swatches.maidenform.com/HNS_A22601/HNS_A22601_ClassicRedPlaid_sw.jpg',
-              name: 'Classic Red Plaid',
-              value: 'red-plaid',
-            },
-            {
-              image: 'https://swatches.maidenform.com/HNS_A22601/HNS_A22601_MerlotFairisle_sw.jpg',
-              name: 'Merlot Fairisle',
-              value: 'merlot-fairisle',
-            },
-            {
-              image: 'https://swatches.maidenform.com/HNS_A22601/HNS_A22601_RedAndGreenTreeFairisle_sw.jpg',
-              name: 'Red And Green Tree Fairisle',
-              value: 'red-and-green-tree-fairisle',
-            },
-            {
-              image: 'https://swatches.maidenform.com/HNS_A22601/HNS_A22601_SpruceGreenDot_sw.jpg',
-              name: 'Spruce Green Dot',
-              value: 'spruce-green-dot',
-            },
-            {
-              image: 'https://swatches.maidenform.com/HNS_A22601/HNS_A22601_ClassicRedPlaid_sw.jpg',
-              name: 'Classic Red Plaid',
-              value: 'red-plaid-1',
-            },
-            {
-              image: 'https://swatches.maidenform.com/HNS_A22601/HNS_A22601_MerlotFairisle_sw.jpg',
-              name: 'Merlot Fairisle',
-              value: 'merlot-fairisle-1',
-            },
-            {
-              image: 'https://swatches.maidenform.com/HNS_A22601/HNS_A22601_RedAndGreenTreeFairisle_sw.jpg',
-              name: 'Red And Green Tree Fairisle',
-              value: 'red-and-green-tree-fairisle-1',
-            },
-            {
-              image: 'https://swatches.maidenform.com/HNS_A22601/HNS_A22601_SpruceGreenDot_sw.jpg',
-              name: 'Spruce Green Dot',
-              value: 'spruce-green-dot-1',
-            },
-          ],
-        })],
-        total: 10,
+        items: [],
+        total: 0,
       },
       filters: {},
       facets: [{
@@ -231,7 +149,7 @@ class ProductListPage extends Component {
     const newState = {
       currentPage: 1,
       currentPageSize: 10,
-      sort: false,
+      sort: 'featured',
       filters: {},
     };
     params.forEach((value, key) => {
@@ -241,6 +159,10 @@ class ProductListPage extends Component {
         newState.currentPageSize = parseInt(value, 10) || 10;
       } else if (key === 'sort') {
         newState.sort = value;
+      } else if (key === 'sortDirection') {
+        newState.sortDirection = value === 'desc' ? 'desc' : 'asc';
+      } else if (key === 'q') {
+        newState.searchTerm = value;
       } else {
         newState.filters[key] = value.split(',');
       }
@@ -260,15 +182,104 @@ class ProductListPage extends Component {
     window.history.pushState({}, '', `${window.location.pathname}?${newParams.toString()}`);
   };
 
+  static mapSwatch = (swatch) => ({
+    // TODO: Where to get swatch image?
+    image: 'https://swatches.maidenform.com/HNS_A22601/HNS_A22601_ClassicRedPlaid_sw.jpg',
+    product_image: swatch.sku_image_url,
+    name: swatch.custom_color,
+    value: swatch.custom_color,
+  });
+
+  static mapProduct = (product) => {
+    const price = {};
+    if (product.price === product.final_price) {
+      price.regular = parseFloat(product.price);
+    } else {
+      price.regular = parseFloat(product.price);
+      price.sale = parseFloat(product.final_price);
+    }
+
+    const productUrl = new URL(product.url);
+    const urlKey = productUrl.pathname.substring(1, productUrl.pathname.length - 5);
+
+    const mappedProduct = {
+      sku: product.parent_sku,
+      url_key: urlKey,
+      name: product.name,
+      image: product.image_url,
+      // TODO: Get ratings from Bazaarvoice
+      rating: {
+        average: 4.5,
+        count: 50,
+      },
+      price,
+      swatches: product.swatch.map(ProductListPage.mapSwatch),
+    };
+    return mappedProduct;
+  };
+
   loadProducts = async () => {
-    // TODO
     this.setState({ loading: true });
 
-    console.log('This should trigger a query', this.state);
+    if (this.state.type !== 'search' || !this.state.searchTerm) {
+      setTimeout(() => {
+        this.setState({ loading: false });
+      }, 200);
+      return;
+    }
 
-    setTimeout(() => {
-      this.setState({ loading: false });
-    }, 200);
+    // TODO: Add filters
+    const query = {
+      context: {
+        page: {
+          uri: '/search',
+          locale_country: 'us',
+          locale_language: 'en',
+        },
+      },
+      widget: {
+        rfkid: 'rfkid_7',
+      },
+      query: {
+        keyphrase: {
+          value: [this.state.searchTerm],
+        },
+      },
+      n_item: this.state.currentPageSize,
+      page_number: this.state.currentPage,
+      facet: {
+        all: true,
+        total: true,
+      },
+      sort: {
+        value: [{
+          name: this.state.sort,
+          order: this.state.sortDirection,
+        }],
+      },
+      content: {
+        product: {},
+      },
+    };
+
+    // TODO: Replace with stage endpoint, move config to Excel
+    const url = new URL('https://maidenform.rfk.maidenform.com/api/search-rec/3');
+    url.searchParams.append('data', JSON.stringify(query));
+    const response = await fetch(url).then((res) => res.json());
+
+    console.log('response', response);
+
+    // Parse response into state
+    this.setState({
+      loading: false,
+      pages: response.total_page,
+      products: {
+        items: response.content.product.value.map(ProductListPage.mapProduct),
+        total: response.total_item,
+      },
+      // TODO: Map facets
+      facets: [],
+    });
   };
 
   componentDidMount() {
@@ -281,6 +292,8 @@ class ProductListPage extends Component {
       page: this.state.currentPage,
       pageSize: this.state.currentPageSize,
       sort: this.state.sort,
+      sortDirection: this.state.sortDirection,
+      q: this.state.searchTerm,
       ...this.state.filters,
     });
 
@@ -313,7 +326,8 @@ class ProductListPage extends Component {
         <${Sort}
           disabled=${state.loading}
           currentSort=${state.sort}
-          onSort=${(sort) => this.setState({ sort })}
+          sortDirection=${state.sortDirection}
+          onSort=${(sort, direction) => this.setState({ sort, sortDirection: direction })}
           sortMenuRef=${this.sortMenuRef} />
       </div>
       <div class="mobile-menu">
@@ -335,8 +349,10 @@ class ProductListPage extends Component {
 }
 
 export default function decorate(block) {
+  const config = readBlockConfig(block);
+
   block.textContent = '';
 
-  const app = html`<${ProductListPage} />`;
+  const app = html`<${ProductListPage} ...${config} />`;
   render(app, block);
 }
