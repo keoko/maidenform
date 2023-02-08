@@ -25,6 +25,11 @@
   color: #c41b53;
 }
 
+.product-details .product-rating .icon {
+  width: 16px;
+  height: 16px;
+}
+
 .product-details .product-title h1 {
   font-family: var(--ff-gilroy-light);
   line-height: 1.1;
