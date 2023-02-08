@@ -37,6 +37,7 @@ header nav .nav-logo .icon {
 
 header nav .nav-logo svg {
   width: 100px;
+  height: 60px;
 }
 
 header nav .nav-hamburger {
@@ -177,10 +178,11 @@ header .dropdown-button {
 header nav .dropdown-button > .icon {
   display: block;
   width: 14px;
+  height: 14px;
 }
 
 header nav p.m-expandable-title .icon, header nav .nav-menu ul > li .menu-nav-category .icon {
-  width: 14px;
+  min-width: 14px;
   transition: transform 200ms;
 }
 
