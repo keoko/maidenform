@@ -1,5 +1,12 @@
 version: 1
 indices:
+  content-sitemap:
+    target: /content-sitemap.json
+    exclude:
+      - 'drafts/**'
+      - 'block-library/**'
+      - 'fragments/**'
+      - 'products/**'
   blocks:
     target: /block-library/query-index.json
     include:
