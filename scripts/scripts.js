@@ -10,6 +10,8 @@ import {
   loadBlocks,
   loadCSS,
 } from './lib-franklin.js';
+// load the library which initializes the storfront and datalayer
+import './commerce-events-sdk.js';
 
 const LCP_BLOCKS = []; // add your LCP blocks to the list
 window.hlx.RUM_GENERATION = 'project-1'; // add your RUM generation information here
