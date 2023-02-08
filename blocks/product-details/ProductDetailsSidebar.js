@@ -1,6 +1,4 @@
-import {
-  h, Component, Fragment,
-} from '../../scripts/preact.js';
+import { Component, Fragment, h } from '../../scripts/preact.js';
 import htm from '../../scripts/htm.js';
 import Icon from './Icon.js';
 
@@ -54,7 +52,7 @@ function NameAndPriceShimmer() {
   `;
 }
 
-function NameAndPrice({ name, price, shimmer }) {
+function NameAndPrice({ name, price, sku, shimmer }) {
   if (shimmer) {
     return html`<${NameAndPriceShimmer} />`;
   }
@@ -66,7 +64,7 @@ function NameAndPrice({ name, price, shimmer }) {
             <span class="price-reduced">${price?.actual}</span>
             <span class="price-actual">${price?.reduced}</span>
         </div>
-        <div class="style-id">Style #09436</div>
+        <div class="style-id">Style #${sku}</div>
     </Fragment>
   `;
 }
@@ -133,11 +131,11 @@ function SelectionDisplay({ selection, productOptions }) {
 }
 
 export default class ProductDetailsSidebar extends Component {
-  constructor(props) {
-    super(props);
+  productFromProps() {
+    const { props } = this;
 
-    if (props.shimmer) {
-      return;
+    if (!props.product) {
+      return null;
     }
 
     const priceFormatter = new Intl.NumberFormat('en-US', {
@@ -145,43 +143,62 @@ export default class ProductDetailsSidebar extends Component {
       currency: props.product.priceRange.maximum.regular.amount.currency,
     });
 
-    // Subject to change once commerce endpoint is available
-    const product = {
+    return {
       name: props.product.name,
       price: {
         actual: `${priceFormatter.format(props.product.priceRange.maximum.regular.amount.value)}`,
         reduced: `${priceFormatter.format(props.product.priceRange.maximum.final.amount.value)}`,
       },
+      sku: props.product.sku,
       rating: 3.5,
       colors: [
-        { name: 'Black', url: 'https://swatches.maidenform.com/HNS_09436/HNS_09436_Black_sw.jpg?quality=85&height=50&width=50&fit=bounds' },
-        { name: 'White', url: 'https://swatches.maidenform.com/HNS_09436/HNS_09436_White_sw.jpg?quality=85&height=50&width=50&fit=bounds' },
-        { name: 'Black and Navy Blossoms Print', url: 'https://swatches.maidenform.com/HNS_09436/HNS_09436_BlackandNavyBlossomsPrint_sw.jpg?quality=85&height=50&width=50&fit=bounds' },
-        { name: 'Sandshell', url: 'https://swatches.maidenform.com/HNS_09436/HNS_09436_Sandshell_sw.jpg?quality=85&height=50&width=50&fit=bounds' },
-        { name: 'Body Beige', url: 'https://swatches.maidenform.com/HNS_09436/HNS_09436_BodyBeige_sw.jpg?quality=85&height=50&width=50&fit=bounds' },
-        { name: 'Ivory', url: 'https://swatches.maidenform.com/HNS_09436/HNS_09436_Ivory_sw.jpg?quality=85&height=50&width=50&fit=bounds' },
-        { name: 'Bleached Indigo', url: 'https://swatches.maidenform.com/HNS_09436/HNS_09436_BleachedIndigo_sw.jpg?quality=85&height=50&width=50&fit=bounds' },
-        { name: 'Chestnut', url: 'https://swatches.maidenform.com/HNS_09436/HNS_09436_Chestnut_sw.jpg?quality=85&height=50&width=50&fit=bounds' },
-        { name: 'Lilac Meringue', url: 'https://swatches.maidenform.com/HNS_09436/HNS_09436_LilacMeringue_sw.jpg?quality=85&height=50&width=50&fit=bounds' },
+        {
+          name: 'Black',
+          url: 'https://swatches.maidenform.com/HNS_09436/HNS_09436_Black_sw.jpg?quality=85&height=50&width=50&fit=bounds',
+        },
+        {
+          name: 'White',
+          url: 'https://swatches.maidenform.com/HNS_09436/HNS_09436_White_sw.jpg?quality=85&height=50&width=50&fit=bounds',
+        },
+        {
+          name: 'Black and Navy Blossoms Print',
+          url: 'https://swatches.maidenform.com/HNS_09436/HNS_09436_BlackandNavyBlossomsPrint_sw.jpg?quality=85&height=50&width=50&fit=bounds',
+        },
+        {
+          name: 'Sandshell',
+          url: 'https://swatches.maidenform.com/HNS_09436/HNS_09436_Sandshell_sw.jpg?quality=85&height=50&width=50&fit=bounds',
+        },
+        {
+          name: 'Body Beige',
+          url: 'https://swatches.maidenform.com/HNS_09436/HNS_09436_BodyBeige_sw.jpg?quality=85&height=50&width=50&fit=bounds',
+        },
+        {
+          name: 'Ivory',
+          url: 'https://swatches.maidenform.com/HNS_09436/HNS_09436_Ivory_sw.jpg?quality=85&height=50&width=50&fit=bounds',
+        },
+        {
+          name: 'Bleached Indigo',
+          url: 'https://swatches.maidenform.com/HNS_09436/HNS_09436_BleachedIndigo_sw.jpg?quality=85&height=50&width=50&fit=bounds',
+        },
+        {
+          name: 'Chestnut',
+          url: 'https://swatches.maidenform.com/HNS_09436/HNS_09436_Chestnut_sw.jpg?quality=85&height=50&width=50&fit=bounds',
+        },
+        {
+          name: 'Lilac Meringue',
+          url: 'https://swatches.maidenform.com/HNS_09436/HNS_09436_LilacMeringue_sw.jpg?quality=85&height=50&width=50&fit=bounds',
+        },
       ],
+      options: props.product.options.filter((option) => option.id !== 'color'),
     };
+  }
 
-    this.product = props.product;
+  constructor(props) {
+    super(props);
 
-    const colorOption = props.product.options.find((option) => option.id === 'color');
-    if (colorOption) {
-      this.colors = colorOption.values.map((value) => ({
-        name: value.title,
-        url: `https://swatches.maidenform.com/HNS_09436/HNS_09436_${value.title.replace(' ', '')}_sw.jpg?quality=85&height=50&width=50&fit=bounds`,
-      }));
-      // TODO why are there so many wrong colors
-      const lastColorIndex = this.colors.findIndex((color) => color.name.includes('{'));
-      if (lastColorIndex > 0) {
-        this.colors = this.colors.slice(0, lastColorIndex);
-      }
+    if (props.shimmer) {
+      return;
     }
-
-    this.productOptions = props.product.options.filter((option) => option.id !== 'color');
 
     this.state = {
       selection: {
@@ -189,7 +206,6 @@ export default class ProductDetailsSidebar extends Component {
         cupSize: null,
         bandSize: null,
       },
-      product,
     };
   }
 
@@ -198,24 +214,25 @@ export default class ProductDetailsSidebar extends Component {
   }
 
   render() {
+    const product = this.productFromProps();
     return html`<${Fragment}>
       <div class="product-title desktop-hidden">
-          <${NameAndPrice} shimmer=${this.props.shimmer} name=${this.state.product?.name} price=${this.state.product?.price} />
+          <${NameAndPrice} shimmer=${this.props.shimmer} name=${product?.name} price=${product?.price} sku=${product?.sku} />
       </div>
       <div class=${`sidebar ${this.props.shimmer ? 'shimmer' : ''}`}>
           ${this.props.shimmer || html`
             <div class="product-title sidebar-section mobile-hidden">
-              <${Rating} value=${this.state.product?.rating} />
-              <${NameAndPrice} name=${this.state.product?.name} price=${this.state.product?.price} />
+              <${Rating} value=${product?.rating} />
+              <${NameAndPrice} name=${product?.name} price=${product?.price} sku=${product?.sku} />
           </div>
           <${ColorSelector} 
-                  colors=${this.state.product.colors}
+                  colors=${product?.colors}
                   onChange=${(color) => this.updateSelection({ color })}
                   selectedColor=${this.state.selection.color}
           />
-          ${this.productOptions.map((option) => html`
+          ${product?.options.map((option) => html`
             <${SizeSelector} 
-                  sizeType="Band Size" 
+                  sizeType=${option.title}
                   allSizes=${option.values.map((value) => value.title)} 
                   unavailableSizes=${[]}
                   selectedSize=${this.state.selection[option.id]}
@@ -223,7 +240,7 @@ export default class ProductDetailsSidebar extends Component {
             />
           `)}
             
-          <${SelectionDisplay} selection=${this.state.selection} productOptions=${this.productOptions} />
+          <${SelectionDisplay} selection=${this.state.selection} productOptions=${product?.options} />
           <${QuantitySelector} />
           <${CartSection} />
         `}

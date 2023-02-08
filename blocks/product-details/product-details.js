@@ -106,6 +106,17 @@ query ProductQuery($sku: String!) {
 }
 `;
 
+function getSku() {
+  return window.location.pathname.split('/').at(-1);
+}
+
+export function errorGettingProduct() {
+  const sku = getSku();
+  // eslint-disable-next-line no-console
+  console.log(`Error fetching the product for sku ${sku}`);
+  window.location = '/404.html';
+}
+
 async function performGraphqlQuery(query, variables) {
   const headers = {
     'Content-Type': 'application/json',
@@ -135,7 +146,7 @@ async function performGraphqlQuery(query, variables) {
   return productData.data;
 }
 
-async function enrichVariant(product, variantOptions) {
+async function enrichVariant(product, sku, variantOptions) {
   product.enrichments = product.enrichments || {};
 
   // eslint-disable-next-line no-underscore-dangle
@@ -146,18 +157,16 @@ async function enrichVariant(product, variantOptions) {
   product.enrichments[variantOptions.join('')] = await performGraphqlQuery(
     enrichmentQuery,
     {
-      sku: '07959',
+      sku,
       variantIds: variantOptions,
     },
   );
   return product;
 }
 
-async function performRequest() {
+async function performRequest(sku) {
   // TODO start data loading before loading preact if possible
-  const productData = await performGraphqlQuery(productQuery, { sku: '07959' });
-
-  console.log(productData.products[0]);
+  const productData = await performGraphqlQuery(productQuery, { sku });
 
   if (!productData?.products?.[0]) {
     return null;
@@ -165,10 +174,11 @@ async function performRequest() {
 
   const product = productData?.products?.[0];
 
-  await enrichVariant(product, [
-    'Y29uZmlndXJhYmxlLzU1MC8zMDk0',
-    'Y29uZmlndXJhYmxlLzI4MC80Mw==',
-    'Y29uZmlndXJhYmxlLzU1OS8zMTQ1']);
+  // extract the first product
+  if (product) {
+    const variants = product.options.map((option) => option.values[0].id);
+    await enrichVariant(product, sku, variants);
+  }
 
   return product;
 }
@@ -184,11 +194,6 @@ class ProductDetailPage extends Component {
     }
   }
 
-  async loadData() {
-    // TODO error handling
-    this.setState({ loading: false });
-  }
-
   componentDidMount() {
     if (this.state.promise) {
       this.state.promise.then((data) => {
@@ -202,22 +207,25 @@ class ProductDetailPage extends Component {
       return html`<${ProductDetailsShimmer} />`;
     }
 
-    console.log(this.state.product);
+    if (!this.state.product) {
+      errorGettingProduct();
+    }
 
     return html`
-  <${Fragment} >
-      <${Carousel} />
-      <${Sidebar} product=${this.state.product} />
-      <div class="product-detail-description">
-          <h3>PRODUCT DETAILS</h3>
-          <div dangerouslySetInnerHTML=${{ __html: this.state.product.description }}></div>
-      </div>
-  </>`;
+      <${Fragment} >
+          <${Carousel} />
+          <${Sidebar} product=${this.state.product} />
+          <div class="product-detail-description">
+              <h3>PRODUCT DETAILS</h3>
+              <div dangerouslySetInnerHTML=${{ __html: this.state.product.description }}></div>
+          </div>
+      </>
+    `;
   }
 }
 
-async function dataOrLoading(timeout) {
-  const dataPromise = performRequest();
+async function dataOrLoading(sku, timeout) {
+  const dataPromise = performRequest(sku);
 
   return Promise.any([
     new Promise((res) => {
@@ -232,10 +240,12 @@ async function dataOrLoading(timeout) {
 export default async function decorate($block) {
   $block.innerHTML = '';
 
-  // if data is loaded within 50ms, don't show loading effect
-  const result = await dataOrLoading(350);
+  const sku = getSku();
 
-  const app = html`<${ProductDetailPage} productPromise=${result} />`;
+  // if data is loaded within 350ms, don't show loading effect
+  const result = await dataOrLoading(sku, 350);
+
+  const app = html`<${ProductDetailPage} productPromise=${result} sku=${sku} />`;
 
   render(app, $block);
 }
