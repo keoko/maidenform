@@ -7,6 +7,8 @@ indices:
       - 'block-library/**'
       - 'fragments/**'
       - 'products/**'
+      - 'nav'
+      - 'footer'
     properties:
       title:
         select: head > meta[property="og:title"]
