@@ -58,7 +58,7 @@ function Facet({
   };
 
   return html`
-  <div class="facet ${type} ${style ? style : ''}">
+  <div class="facet ${type} ${style || ''}">
     <input type="checkbox" id="facet-toggle-${id}" checked=${selection.length > 0}  />
     <label for="facet-toggle-${id}">${name}</label>
     <div class="facet-content">

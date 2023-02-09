@@ -97,7 +97,7 @@ class ProductCard extends Component {
     return html`
       <li>
         <div class="picture">
-          <a href="/products/${product.url_key}">
+          <a href="/products/${product.url_key}--${product.sku}">
             ${ProductCard.renderImage(product.name, product.swatches[state.selectedVariant].product_image)}
           </a>
           <button class="add-to-cart-action">Add to Bag</button>
@@ -116,7 +116,7 @@ class ProductCard extends Component {
           <button class="next" onClick=${this.swatchScrollRight}>Next</button>
         </div>
         <div class="name">
-          <a href="/products/${product.url_key}">${product.name}</a>
+          <a href="/products/${product.url_key}--${product.sku}">${product.name}</a>
         </div>
         <div class="price">${this.renderPrice(product.price)}</div>
         <div class="rating">
@@ -133,6 +133,12 @@ const ProductList = ({ products, loading, currentPageSize }) => {
       <ol>
         ${Array(currentPageSize).fill().map(() => html`<${ProductCard} loading=${true} />`)}
       </ol>
+    </div>`;
+  }
+
+  if (products.items.length === 0) {
+    return html`<div class="list">
+      <div class="empty">We're sorry, we couldn't find anything that matches your query.</div>
     </div>`;
   }
 

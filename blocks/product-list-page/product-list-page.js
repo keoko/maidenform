@@ -51,11 +51,11 @@ function Sort(props) {
       <ul>
         ${options.map((option) => html`<li>
           <a href="#" class="${currentSort.value === option.value ? 'active' : ''}" onClick=${(e) => {
-      props.sortMenuRef.current.classList.toggle('active');
-      const [sort, direction = 'asc'] = option.value.split('-');
-      props.onSort?.(sort, direction);
-      e.preventDefault();
-    }}>${option.label}</a>
+  props.sortMenuRef.current.classList.toggle('active');
+  const [sort, direction = 'asc'] = option.value.split('-');
+  props.onSort?.(sort, direction);
+  e.preventDefault();
+}}>${option.label}</a>
         </li>`)}
       </ul>
     </div>
@@ -115,55 +115,7 @@ class ProductListPage extends Component {
         total: 0,
       },
       filters: {},
-      facets: [{
-        name: 'Sleep/Loungewear type',
-        id: 'sleep',
-        type: 'radio',
-        options: [
-          { name: 'Tops', count: 12, value: 'tops' },
-          { name: 'Pajamas', count: 12, value: 'pajamas' },
-          { name: 'Pants', count: 12, value: 'pants' },
-          { name: 'Shorts', count: 12, value: 'shorts' },
-        ],
-      },
-      {
-        name: 'Size',
-        id: 'size',
-        type: 'swatch',
-        options: [
-          { name: 'S', value: 's' },
-          { name: 'M', value: 'm' },
-          { name: 'L', value: 'l' },
-          { name: 'XL', value: 'xl' },
-          { name: '1X', value: '1x' },
-        ],
-      },
-      {
-        name: 'Price',
-        id: 'price',
-        type: 'checkbox',
-        options: [
-          { name: 'up to $10', value: '0-10', count: 12 },
-          { name: '$10 to $20', value: '10-20', count: 12 },
-          { name: '$20 to $30', value: '20-30', count: 12 },
-          { name: 'more than $30', value: '30', count: 12 },
-        ],
-      },
-      {
-        name: 'Color',
-        id: 'color',
-        type: 'swatch',
-        options: [
-          { name: 'black', value: 'black', color: 'black' },
-          { name: 'white', value: 'white', color: 'white' },
-          { name: 'red', value: 'red', color: 'red' },
-          { name: 'blue', value: 'blue', color: 'blue' },
-          { name: 'green', value: 'green', color: 'green' },
-          { name: 'yellow', value: 'yellow', color: 'yellow' },
-          { name: 'orange', value: 'orange', color: 'orange' },
-          { name: 'purple', value: 'purple', color: 'purple' },
-        ],
-      }],
+      facets: [],
       ...queryParams,
     };
   }
@@ -242,7 +194,7 @@ class ProductListPage extends Component {
     return mappedProduct;
   };
 
-  static mapFacetOption = ({ count, text, id}) => ({ name: text, count, value: id });
+  static mapFacetOption = ({ count, text, id }) => ({ name: text, count, value: id });
 
   static mapFacet = (id, facet) => {
     const { type, style } = facetTypeMapping[id] || { type: 'radio' };
@@ -307,21 +259,33 @@ class ProductListPage extends Component {
     }
 
     // TODO: Replace with stage endpoint, move config to Excel
-    const url = new URL('https://maidenform.rfk.maidenform.com/api/search-rec/3');
-    url.searchParams.append('data', JSON.stringify(query));
-    const response = await fetch(url).then((res) => res.json());
+    try {
+      const url = new URL('https://maidenform.rfk.maidenform.com/api/search-rec/3');
+      url.searchParams.append('data', JSON.stringify(query));
+      const response = await fetch(url).then((res) => res.json());
 
-    // Parse response into state
-    this.setState({
-      loading: false,
-      pages: response.total_page,
-      products: {
-        items: response.content.product.value.map(ProductListPage.mapProduct),
-        total: response.total_item,
-      },
-      facets: Object.keys(response.facet)
-        .map((id) => ProductListPage.mapFacet(id, response.facet[id])),
-    });
+      // Parse response into state
+      this.setState({
+        loading: false,
+        pages: Math.max(response.total_page, 1),
+        products: {
+          items: response.content.product.value.map(ProductListPage.mapProduct),
+          total: response.total_item,
+        },
+        facets: Object.keys(response.facet || {})
+          .map((id) => ProductListPage.mapFacet(id, response.facet[id])),
+      });
+    } catch (e) {
+      this.state = {
+        loading: false,
+        pages: 1,
+        products: {
+          items: [],
+          total: 0,
+        },
+        facets: [],
+      };
+    }
   };
 
   componentDidMount() {
@@ -354,7 +318,6 @@ class ProductListPage extends Component {
   }
 
   render(_, state) {
-    console.log('state', state);
     return html`<${Fragment}>
     <${FacetList} 
       facets=${state.facets}

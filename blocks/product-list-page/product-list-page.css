@@ -302,6 +302,11 @@ main .section.product-list-page-container > .default-content-wrapper h1:first-ch
     margin: 0;
 }
 
+.product-list-page .products .list > .empty {
+    text-align: center;
+    padding: 25px 0;
+}
+
 .product-list-page .products .list > ol {
     list-style-type: none;
     display: grid;
@@ -724,7 +729,7 @@ main .section.product-list-page-container > .default-content-wrapper h1:first-ch
     ) var(--loading-background);
     background-size: 200% 100%;
     background-position-x: 180%;
-    /* animation: 1s loading ease-in-out infinite; */
+    animation: 1s loading ease-in-out infinite;
     border-radius: 4px;
 }
 
