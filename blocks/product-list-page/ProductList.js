@@ -51,11 +51,6 @@ class ProductCard extends Component {
         this.resizeObserver.disconnect();
       }
     }
-
-    // TODO
-    /* if (this.state.selectedVariant) {
-      console.log('Load variant', this.state.selectedVariant);
-    } */
   }
 
   renderPrice(price) {

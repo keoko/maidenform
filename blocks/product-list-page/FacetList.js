@@ -6,7 +6,7 @@ import htm from '../../scripts/htm.js';
 const html = htm.bind(h);
 
 function Facet({
-  name, id, type, options, selection, onSelectionChange,
+  name, id, type, style, options, selection, onSelectionChange,
 }) {
   const renderOptions = () => {
     const handleClickSingle = (event) => {
@@ -58,7 +58,7 @@ function Facet({
   };
 
   return html`
-  <div class="facet ${type} ${`facet-${id}`}">
+  <div class="facet ${type} ${style ? style : ''}">
     <input type="checkbox" id="facet-toggle-${id}" checked=${selection.length > 0}  />
     <label for="facet-toggle-${id}">${name}</label>
     <div class="facet-content">

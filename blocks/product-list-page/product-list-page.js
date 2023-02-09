@@ -62,6 +62,30 @@ function Sort(props) {
   </div>`;
 }
 
+const facetTypeMapping = {
+  custom_size: {
+    type: 'swatch',
+    style: 'facet-size',
+  },
+  custom_bandsize: {
+    type: 'swatch',
+    style: 'facet-size',
+  },
+  custom_color_family: {
+    type: 'checkbox',
+  },
+  custom_cupsize: {
+    type: 'swatch',
+    style: 'facet-size',
+  },
+  custom_silhouette: {
+    type: 'checkbox',
+  },
+  custom_strap_type: {
+    type: 'checkbox',
+  },
+};
+
 class ProductListPage extends Component {
   constructor({ type = 'category' }) {
     super();
@@ -218,6 +242,20 @@ class ProductListPage extends Component {
     return mappedProduct;
   };
 
+  static mapFacetOption = ({ count, text, id}) => ({ name: text, count, value: id });
+
+  static mapFacet = (id, facet) => {
+    const { type, style } = facetTypeMapping[id] || { type: 'radio' };
+    const mappedFacet = {
+      name: facet.display_name,
+      id,
+      type,
+      style,
+      options: facet.value.map(ProductListPage.mapFacetOption),
+    };
+    return mappedFacet;
+  };
+
   loadProducts = async () => {
     this.setState({ loading: true });
 
@@ -228,7 +266,6 @@ class ProductListPage extends Component {
       return;
     }
 
-    // TODO: Add filters
     const query = {
       context: {
         page: {
@@ -262,12 +299,17 @@ class ProductListPage extends Component {
       },
     };
 
+    if (Object.keys(this.state.filters).length > 0) {
+      query.filter = {};
+      Object.keys(this.state.filters).forEach((key) => {
+        query.filter[key] = { value: this.state.filters[key] };
+      });
+    }
+
     // TODO: Replace with stage endpoint, move config to Excel
     const url = new URL('https://maidenform.rfk.maidenform.com/api/search-rec/3');
     url.searchParams.append('data', JSON.stringify(query));
     const response = await fetch(url).then((res) => res.json());
-
-    console.log('response', response);
 
     // Parse response into state
     this.setState({
@@ -277,8 +319,8 @@ class ProductListPage extends Component {
         items: response.content.product.value.map(ProductListPage.mapProduct),
         total: response.total_item,
       },
-      // TODO: Map facets
-      facets: [],
+      facets: Object.keys(response.facet)
+        .map((id) => ProductListPage.mapFacet(id, response.facet[id])),
     });
   };
 
@@ -312,6 +354,7 @@ class ProductListPage extends Component {
   }
 
   render(_, state) {
+    console.log('state', state);
     return html`<${Fragment}>
     <${FacetList} 
       facets=${state.facets}
