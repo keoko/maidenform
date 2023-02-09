@@ -107,14 +107,24 @@ query ProductQuery($sku: String!) {
 `;
 
 function getSku() {
-  return window.location.pathname.split('/').at(-1);
+  const path = window.location.pathname;
+  const result = path.match(/\/products\/[\w|-]+-([0-9]+)$/);
+  return result?.[1];
 }
 
 export function errorGettingProduct() {
-  const sku = getSku();
-  // eslint-disable-next-line no-console
-  console.log(`Error fetching the product for sku ${sku}`);
-  window.location = '/404.html';
+  fetch('/404.html').then((response) => {
+    if (response.ok) {
+      return response.text();
+    }
+    throw new Error('Error getting 404 page');
+  }).then((htmlText) => {
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(htmlText, 'text/html');
+    document.body.innerHTML = doc.body.innerHTML;
+    document.head.innerHTML = doc.head.innerHTML;
+  });
+  document.body.innerHTML = '';
 }
 
 async function performGraphqlQuery(query, variables) {
@@ -175,7 +185,7 @@ async function performRequest(sku) {
   const product = productData?.products?.[0];
 
   // extract the first product
-  if (product) {
+  if (product && product.options[0]?.values[0]) {
     const variants = product.options.map((option) => option.values[0].id);
     await enrichVariant(product, sku, variants);
   }
@@ -241,6 +251,9 @@ export default async function decorate($block) {
   $block.innerHTML = '';
 
   const sku = getSku();
+  if (!sku) {
+    errorGettingProduct();
+  }
 
   // if data is loaded within 350ms, don't show loading effect
   const result = await dataOrLoading(sku, 350);
