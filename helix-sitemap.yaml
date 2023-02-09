@@ -1,0 +1,9 @@
+sitemaps:
+  default:
+    origin: https://maidenform.com
+    source: /content-sitemap.json
+    destination: /sitemap.xml
+  products:
+    origin: https://maidenform.com
+    source: /products.json
+    destination: /sitemap.xml
