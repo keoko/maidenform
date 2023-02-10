@@ -311,7 +311,7 @@ class ProductListPage extends Component {
       return acc;
     }, {}));
 
-    const keysToCheck = ['filters', 'sort', 'currentPageSize', 'currentPage'];
+    const keysToCheck = ['filters', 'sort', 'sortDirection', 'searchTerm', 'currentPageSize', 'currentPage'];
     if (keysToCheck.some((key) => diff.includes(key))) {
       this.loadProducts();
     }
