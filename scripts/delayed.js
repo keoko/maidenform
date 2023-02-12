@@ -1,12 +1,13 @@
 // eslint-disable-next-line import/no-cycle
 import {
-  fetchPlaceholders,
   sampleRUM,
 }
   from './lib-franklin.js';
 
-const placeholders = await fetchPlaceholders();
-const isProd = window.location.hostname.endsWith(placeholders.host);
+import {
+  calcEnvironment,
+  getConfigValue,
+} from './configs.js';
 
 const loadScript = (url, attrs) => {
   const head = document.querySelector('head');
@@ -22,16 +23,19 @@ const loadScript = (url, attrs) => {
   return script;
 };
 
+const environment = calcEnvironment();
 // OneTrust Cookies Consent Notice start
-const otId = placeholders.onetrustid;
-if (otId) {
-  const cookieScript = loadScript('https://cdn.cookielaw.org/scripttemplates/otSDKStub.js');
-  cookieScript.setAttribute('data-domain-script', `${otId}${isProd ? '' : '-test'}`);
+const otId = await getConfigValue('onetrustid');
+const onetrustscript = await getConfigValue('onetrustscript');
+const isProduction = (environment === 'prod');
+if (otId && onetrustscript) {
+  const cookieScript = loadScript(`${onetrustscript}`);
+  cookieScript.setAttribute('data-domain-script', `${otId}${isProduction ? '' : '-test'}`);
   window.OptanonWrapper = () => {};
 }
 
-// OneTrust Cookies Consent Notice end
-
+// load newrelic script
+if (!isProduction) loadScript('/scripts/newrelic-stage.js');
 // Core Web Vitals RUM collection
 sampleRUM('cwv');
 
