@@ -5,6 +5,7 @@ import htm from '../../scripts/htm.js';
 import ProductList from './ProductList.js';
 import FacetList from './FacetList.js';
 import { readBlockConfig } from '../../scripts/lib-franklin.js';
+import { getSwatchImageUrl } from '../../scripts/commerce.js';
 
 const html = htm.bind(h);
 
@@ -158,26 +159,8 @@ class ProductListPage extends Component {
     window.history.pushState({}, '', `${window.location.pathname}?${newParams.toString()}`);
   };
 
-  static getSwatchImageUrl = (sku, swatch) => {
-    const swatchUrl = new URL(swatch.sku_image_url);
-    swatchUrl.hostname = 'swatches.maidenform.com';
-    swatchUrl.search = '';
-
-    let color = swatch.custom_color;
-    // Remove and non-alphanumeric characters
-    color = color.replace(/[^a-zA-Z0-9]/g, '');
-
-    const filename = swatchUrl.pathname.split('/').pop();
-    const prefix = filename.split('_')[0].toUpperCase();
-    const extension = filename.split('.').pop();
-
-    swatchUrl.pathname = `${prefix}_${sku}/${prefix}_${sku}_${color}_sw.${extension}`;
-
-    return swatchUrl.toString();
-  };
-
   static mapSwatch = (product, swatch) => ({
-    image: ProductListPage.getSwatchImageUrl(product.parent_sku, swatch),
+    image: getSwatchImageUrl(product.parent_sku, swatch),
     product_image: swatch.sku_image_url,
     name: swatch.custom_color,
     value: swatch.custom_color,
