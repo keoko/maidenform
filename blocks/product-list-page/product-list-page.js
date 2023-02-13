@@ -41,7 +41,7 @@ function Sort(props) {
     { label: 'Price: High to Low', value: 'price-desc' },
     { label: 'Price: Low to High', value: 'price-asc' },
     { label: 'Product Name', value: 'name-asc' },
-    { label: 'Relevance', value: 'relevance-asc' },
+    { label: 'Relevance', value: 'featured-asc' },
   ];
 
   const currentSort = options.find((option) => option.value === `${props.currentSort}-${props.sortDirection}`) || options[3];
