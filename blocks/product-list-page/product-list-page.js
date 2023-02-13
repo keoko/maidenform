@@ -158,9 +158,25 @@ class ProductListPage extends Component {
     window.history.pushState({}, '', `${window.location.pathname}?${newParams.toString()}`);
   };
 
-  static mapSwatch = (swatch) => ({
-    // TODO: Where to get swatch image?
-    image: 'https://swatches.maidenform.com/HNS_A22601/HNS_A22601_ClassicRedPlaid_sw.jpg',
+  static getSwatchImageUrl = (sku, swatch) => {
+    const swatchUrl = new URL(swatch.sku_image_url);
+    swatchUrl.hostname = 'swatches.maidenform.com';
+
+    let color = swatch.custom_color;
+    // Remove and non-alphanumeric characters
+    color = color.replace(/[^a-zA-Z0-9]/g, '');
+
+    const filename = swatchUrl.pathname.split('/').pop();
+    const prefix = filename.split('_')[0].toUpperCase();
+    const extension = filename.split('.').pop();
+
+    swatchUrl.pathname = `${prefix}_${sku}/${prefix}_${sku}_${color}_sw.${extension}`;
+
+    return swatchUrl.toString();
+  };
+
+  static mapSwatch = (product, swatch) => ({
+    image: ProductListPage.getSwatchImageUrl(product.parent_sku, swatch),
     product_image: swatch.sku_image_url,
     name: swatch.custom_color,
     value: swatch.custom_color,
@@ -189,7 +205,7 @@ class ProductListPage extends Component {
         count: 50,
       },
       price,
-      swatches: product.swatch.map(ProductListPage.mapSwatch),
+      swatches: product.swatch.map((s) => ProductListPage.mapSwatch(product, s)),
     };
     return mappedProduct;
   };
@@ -276,6 +292,7 @@ class ProductListPage extends Component {
           .map((id) => ProductListPage.mapFacet(id, response.facet[id])),
       });
     } catch (e) {
+      console.error('Error loading products', e);
       this.state = {
         loading: false,
         pages: 1,
