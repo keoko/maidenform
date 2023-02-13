@@ -1,7 +1,7 @@
 sitemaps:
   content:
     origin: https://franklin.maidenform.com
-    source: /content-sitemap.json
+    source: /query-index.json
     destination: /content-sitemap.xml
   products:
     origin: https://franklin.maidenform.com
