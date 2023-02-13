@@ -6,6 +6,7 @@ import ProductList from './ProductList.js';
 import FacetList from './FacetList.js';
 import { readBlockConfig } from '../../scripts/lib-franklin.js';
 import { getSwatchImageUrl } from '../../scripts/commerce.js';
+import { getConfigValue } from '../../scripts/configs.js';
 
 const html = htm.bind(h);
 
@@ -258,9 +259,8 @@ class ProductListPage extends Component {
       });
     }
 
-    // TODO: Replace with stage endpoint, move config to Excel
     try {
-      const url = new URL('https://maidenform.rfk.maidenform.com/api/search-rec/3');
+      const url = new URL(await getConfigValue('reflektion-endpoint'));
       url.searchParams.append('data', JSON.stringify(query));
       const response = await fetch(url).then((res) => res.json());
 
