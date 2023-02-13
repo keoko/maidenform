@@ -161,6 +161,7 @@ class ProductListPage extends Component {
   static getSwatchImageUrl = (sku, swatch) => {
     const swatchUrl = new URL(swatch.sku_image_url);
     swatchUrl.hostname = 'swatches.maidenform.com';
+    swatchUrl.search = '';
 
     let color = swatch.custom_color;
     // Remove and non-alphanumeric characters

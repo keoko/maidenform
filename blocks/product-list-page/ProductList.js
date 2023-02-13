@@ -109,7 +109,7 @@ class ProductCard extends Component {
               <button
                 class="swatch ${index === state.selectedVariant ? 'active' : ''}"
                 value=${value}
-                style="background: url('${image}?width=50&amp;quality=85&amp;fit=bounds') no-repeat center;"
+                style="background: url('${image}?width=26&amp;quality=85&amp;fit=bounds') no-repeat center;"
                 onClick=${() => this.setState({ selectedVariant: index })}>${name}</button>
             `)}
             </div>
