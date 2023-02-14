@@ -11,6 +11,8 @@ import {
   loadCSS,
 } from './lib-franklin.js';
 
+import { getConfigValue } from './configs.js';
+
 const LCP_BLOCKS = []; // add your LCP blocks to the list
 window.hlx.RUM_GENERATION = 'project-1'; // add your RUM generation information here
 
@@ -77,7 +79,7 @@ export async function getProductRatings(productSkus) {
 
   const searchParams = new URLSearchParams({
     apiversion: '5.4',
-    passkey: 'cavLO3Nhn1Q6Md2X3nWWotFTcdnVlcbpK4Jt3W7kyvvA8',
+    passkey: await getConfigValue('bazaarvoice-passkey'),
     Filter: `ProductId:${skusString}`,
     Stats: 'Reviews',
   });
