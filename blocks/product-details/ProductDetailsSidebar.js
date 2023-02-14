@@ -52,7 +52,9 @@ function NameAndPriceShimmer() {
   `;
 }
 
-function NameAndPrice({ name, price, sku, shimmer }) {
+function NameAndPrice({
+  name, price, sku, shimmer,
+}) {
   if (shimmer) {
     return html`<${NameAndPriceShimmer} />`;
   }
@@ -69,7 +71,7 @@ function NameAndPrice({ name, price, sku, shimmer }) {
   `;
 }
 
-function Rating({ value }) {
+function Rating({ value, count }) {
   return html`
       <div class="product-rating">
           ${[...Array(5).keys()].map((key) => {
@@ -77,6 +79,7 @@ function Rating({ value }) {
     if (value - key > 0.5) return html`<${Icon} name="star-fill" />`;
     return html`<${Icon} name="star-half" />`;
   })}
+          <span class="rating-count">(${count})</span>
       </div>
   `;
 }
@@ -130,6 +133,10 @@ function SelectionDisplay({ selection, productOptions }) {
   `;
 }
 
+function roundToHalf(num) {
+  return Math.round(num * 2) / 2;
+}
+
 export default class ProductDetailsSidebar extends Component {
   productFromProps() {
     const { props } = this;
@@ -150,7 +157,8 @@ export default class ProductDetailsSidebar extends Component {
         reduced: `${priceFormatter.format(props.product.priceRange.maximum.final.amount.value)}`,
       },
       sku: props.product.sku,
-      rating: 3.5,
+      rating: roundToHalf(props.product.reviewStats.average) ?? 0,
+      numReviews: props.product.reviewStats.count ?? 0,
       colors: [
         {
           name: 'Black',
@@ -222,7 +230,7 @@ export default class ProductDetailsSidebar extends Component {
       <div class=${`sidebar ${this.props.shimmer ? 'shimmer' : ''}`}>
           ${this.props.shimmer || html`
             <div class="product-title sidebar-section mobile-hidden">
-              <${Rating} value=${product?.rating} />
+              <${Rating} value=${product?.rating} count=${product?.numReviews} />
               <${NameAndPrice} name=${product?.name} price=${product?.price} sku=${product?.sku} />
           </div>
           <${ColorSelector} 

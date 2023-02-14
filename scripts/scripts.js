@@ -72,6 +72,35 @@ function buildImageLinks(element) {
   });
 }
 
+export async function getProductRatings(productSkus) {
+  const skusString = typeof productSkus === 'object' ? productSkus.join(',') : productSkus;
+
+  const searchParams = new URLSearchParams({
+    apiversion: '5.4',
+    passkey: 'cavLO3Nhn1Q6Md2X3nWWotFTcdnVlcbpK4Jt3W7kyvvA8',
+    Filter: `ProductId:${skusString}`,
+    Stats: 'Reviews',
+  });
+  const endpoint = 'https://stg.api.bazaarvoice.com/data/statistics.json';
+  const response = await fetch(`${endpoint}?${searchParams.toString()}`);
+  if (response.ok) {
+    const body = await response.json();
+    if (body?.Results?.length === 1) {
+      return {
+        average: body.Results[0].ProductStatistics.ReviewStatistics?.AverageOverallRating,
+        count: body.Results[0].ProductStatistics.ReviewStatistics?.TotalReviewCount,
+      };
+    }
+    return body?.Results?.map(
+      (product) => ({
+        average: product.ProductStatistics.ReviewStatistics?.AverageOverallRating,
+        count: product.ProductStatistics.ReviewStatistics?.TotalReviewCount,
+      }),
+    );
+  }
+  return { average: null, count: null };
+}
+
 /**
  * Builds all synthetic blocks in a container element.
  * @param {Element} main The container element

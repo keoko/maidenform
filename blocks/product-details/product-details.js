@@ -5,6 +5,7 @@ import htm from '../../scripts/htm.js';
 import Carousel from './ProductDetailsCarousel.js';
 import Sidebar from './ProductDetailsSidebar.js';
 import ProductDetailsShimmer from './ProductDetailsShimmer.js';
+import { getProductRatings } from '../../scripts/scripts.js';
 
 const html = htm.bind(h);
 
@@ -108,7 +109,7 @@ query ProductQuery($sku: String!) {
 
 function getSku() {
   const path = window.location.pathname;
-  const result = path.match(/\/products\/[\w|-]+--([0-9]+)$/);
+  const result = path.match(/\/products\/[\w|-]+--([\w|-]+)$/);
   return result?.[1];
 }
 
@@ -189,6 +190,8 @@ async function performRequest(sku) {
     const variants = product.options.map((option) => option.values[0].id);
     await enrichVariant(product, sku, variants);
   }
+
+  product.reviewStats = await getProductRatings(sku);
 
   return product;
 }
