@@ -73,13 +73,9 @@ function NameAndPrice({
 
 function Rating({ value, count }) {
   return html`
-      <div class="product-rating">
-          ${[...Array(5).keys()].map((key) => {
-    if (value - key < 0.5) return html`<${Icon} name="star" />`;
-    if (value - key > 0.5) return html`<${Icon} name="star-fill" />`;
-    return html`<${Icon} name="star-half" />`;
-  })}
-          <span class="rating-count">(${count})</span>
+      <div class="rating">
+          <div style="--rating: ${value};"></div>
+          <span>(${count})</span>
       </div>
   `;
 }

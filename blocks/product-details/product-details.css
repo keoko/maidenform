@@ -27,9 +27,34 @@
   align-items: center;
 }
 
-.product-details .rating-count {
-  font-size: 15px;
-  margin-left: 6px;
+.product-details .rating {
+  display: flex;
+  gap: 2px;
+  align-items: center;
+  height: 20px;
+}
+
+.product-details .rating > div {
+  --percent: calc(var(--rating) / 5 * 100%);
+
+  display: inline-block;
+  font-size: 2.3rem;
+  line-height: 1;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.product-details .rating > div::before {
+  content: '★★★★★';
+  background: linear-gradient(90deg, var(--clr-pink), var(--percent), var(--clr-dark-grey) var(--percent));
+  /* stylelint-disable-next-line property-no-vendor-prefix */
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.product-details .rating > span {
+  color: var(--clr-pink);
+  font-size: 1.5rem;
 }
 
 .product-details .product-title h1 {
