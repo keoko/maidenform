@@ -27,26 +27,27 @@ function OptimizedSources({
 }
 
 export default class Carousel extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       slide: 0,
       thumbnailSlide: 0,
     };
+  }
 
-    this.thumbnailImages = [
-      'https://cdn.maidenform.com/catalog/product/M/F/MFB_09436/MFB_09436_Black_Front.jpg?width=247&quality=100&bg-color=255,255,255',
-      'https://cdn.maidenform.com/catalog/product/M/F/MFB_09436/MFB_09436_Black_Side.jpg?width=247&quality=100&bg-color=255,255,255',
-      'https://cdn.maidenform.com/catalog/product/M/F/MFB_09436/MFB_09436_Black_Back.jpg?width=247&quality=100&bg-color=255,255,255',
-      'https://cdn.maidenform.com/catalog/product/M/F/MFB_09436/MFB_09436_Black_Detail01.jpg?width=247&quality=100&bg-color=255,255,255',
-    ];
+  getImages() {
+    const productImages = this.props.product?.productImages;
 
-    this.images = [
-      'https://cdn.maidenform.com/catalog/product/M/F/MFB_09436/MFB_09436_Black_Front.jpg?width=700&quality=100&bg-color=255,255,255&dpr=1 1x',
-      'https://cdn.maidenform.com/catalog/product/M/F/MFB_09436/MFB_09436_Black_Side.jpg?width=700&quality=100&bg-color=255,255,255&dpr=1 1x',
-      'https://cdn.maidenform.com/catalog/product/M/F/MFB_09436/MFB_09436_Black_Back.jpg?width=700&quality=100&bg-color=255,255,255&dpr=1 1x',
-      'https://cdn.maidenform.com/catalog/product/M/F/MFB_09436/MFB_09436_Black_Detail01.jpg?width=700&quality=100&bg-color=255,255,255&dpr=1 1x',
-    ];
+    if (productImages) {
+      const rawImages = productImages
+        .map((image) => image.url
+          .replace('productH', 'product/H')
+          .replace('productM', 'product/M'))
+        .slice(0);
+
+      this.thumbnailImages = rawImages.map((image) => `${image}?width=247&quality=100&bg-color=255,255,255`);
+      this.images = rawImages.map((image) => `${image}?width=700&quality=100&bg-color=255,255,255&dpr=1 1x`);
+    }
   }
 
   static negativeModulo(i, mod) {
@@ -69,6 +70,7 @@ export default class Carousel extends Component {
   }
 
   render() {
+    this.getImages();
     return html`
         <div class="product-detail-carousel">
             <div class="carousel-thumbnails-wrapper">

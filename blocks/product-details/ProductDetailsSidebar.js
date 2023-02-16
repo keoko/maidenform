@@ -19,7 +19,7 @@ function SizeSelector({
                         onClick=${unavailableSizes?.includes(size) || (() => onChange?.(size))}
                         aria-disabled=${unavailableSizes?.includes(size)}
                     >
-                        ${size}
+                        ${size.title}
                     </button>
                 </li>
               `)}
@@ -93,11 +93,11 @@ function ColorSelector({ colors, onChange, selectedColor }) {
                           <button aria-selected=${color.name === selectedColor}
                                   data-swatch-name=${color.name}
                                   style="background: url(${color.url}) no-repeat center;" 
-                                  onClick=${() => onChange?.(color.name)} ></button>
+                                  onClick=${() => onChange?.(color)} ></button>
                       </li>
                   `)}
           </ul>
-          <div class="selected-swatch-name">${selectedColor}</div>
+          <div class="selected-swatch-name">${selectedColor?.name}</div>
       </div>
   `;
 }
@@ -122,8 +122,8 @@ function SelectionDisplay({ selection, productOptions }) {
           <h4 class="variant-selection">
               <span>SELECTION: </span>
               <span>
-                    ${selection.color} ${productOptions.map((option) => selection[option.id]).join(' ')}
-                  </span>
+                ${selection.color} ${productOptions.map((option) => selection[option.id]?.title).join(' ')}
+              </span>
           </h4>
       </div>
   `;
@@ -131,6 +131,10 @@ function SelectionDisplay({ selection, productOptions }) {
 
 function roundToHalf(num) {
   return Math.round(num * 2) / 2;
+}
+
+function toColorName(name) {
+  return name.replace(/[^A-Za-z0-9]/ig, '');
 }
 
 export default class ProductDetailsSidebar extends Component {
@@ -146,75 +150,41 @@ export default class ProductDetailsSidebar extends Component {
       currency: props.product.priceRange.maximum.regular.amount.currency,
     });
 
+    const { sku } = props.product;
+
+    const colors = props.product.options.find((option) => option.id === 'color').values.map((color) => ({
+      name: color.title,
+      id: color.id,
+      url: `https://swatches.maidenform.com/HNS_${sku}/HNS_${sku}_${toColorName(color.title)}_sw.jpg?quality=85&height=50&width=50&fit=bounds`,
+    }));
+
     return {
       name: props.product.name,
       price: {
         actual: `${priceFormatter.format(props.product.priceRange.maximum.regular.amount.value)}`,
         reduced: `${priceFormatter.format(props.product.priceRange.maximum.final.amount.value)}`,
       },
-      sku: props.product.sku,
+      sku,
       rating: roundToHalf(props.product.reviewStats.average) ?? 0,
       numReviews: props.product.reviewStats.count ?? 0,
-      colors: [
-        {
-          name: 'Black',
-          url: 'https://swatches.maidenform.com/HNS_09436/HNS_09436_Black_sw.jpg?quality=85&height=50&width=50&fit=bounds',
-        },
-        {
-          name: 'White',
-          url: 'https://swatches.maidenform.com/HNS_09436/HNS_09436_White_sw.jpg?quality=85&height=50&width=50&fit=bounds',
-        },
-        {
-          name: 'Black and Navy Blossoms Print',
-          url: 'https://swatches.maidenform.com/HNS_09436/HNS_09436_BlackandNavyBlossomsPrint_sw.jpg?quality=85&height=50&width=50&fit=bounds',
-        },
-        {
-          name: 'Sandshell',
-          url: 'https://swatches.maidenform.com/HNS_09436/HNS_09436_Sandshell_sw.jpg?quality=85&height=50&width=50&fit=bounds',
-        },
-        {
-          name: 'Body Beige',
-          url: 'https://swatches.maidenform.com/HNS_09436/HNS_09436_BodyBeige_sw.jpg?quality=85&height=50&width=50&fit=bounds',
-        },
-        {
-          name: 'Ivory',
-          url: 'https://swatches.maidenform.com/HNS_09436/HNS_09436_Ivory_sw.jpg?quality=85&height=50&width=50&fit=bounds',
-        },
-        {
-          name: 'Bleached Indigo',
-          url: 'https://swatches.maidenform.com/HNS_09436/HNS_09436_BleachedIndigo_sw.jpg?quality=85&height=50&width=50&fit=bounds',
-        },
-        {
-          name: 'Chestnut',
-          url: 'https://swatches.maidenform.com/HNS_09436/HNS_09436_Chestnut_sw.jpg?quality=85&height=50&width=50&fit=bounds',
-        },
-        {
-          name: 'Lilac Meringue',
-          url: 'https://swatches.maidenform.com/HNS_09436/HNS_09436_LilacMeringue_sw.jpg?quality=85&height=50&width=50&fit=bounds',
-        },
-      ],
+      colors,
       options: props.product.options.filter((option) => option.id !== 'color'),
     };
   }
 
   constructor(props) {
+    console.log('constructor')
     super(props);
 
     if (props.shimmer) {
       return;
     }
 
-    this.state = {
-      selection: {
-        color: 'Black',
-        cupSize: null,
-        bandSize: null,
-      },
-    };
+    this.updateSelection = this.updateSelection.bind(this);
   }
 
   updateSelection(fragment) {
-    this.setState((state) => ({ selection: { ...state.selection, ...fragment } }));
+    this.props.onSelectionChanged?.(fragment);
   }
 
   render() {
@@ -232,19 +202,19 @@ export default class ProductDetailsSidebar extends Component {
           <${ColorSelector} 
                   colors=${product?.colors}
                   onChange=${(color) => this.updateSelection({ color })}
-                  selectedColor=${this.state.selection.color}
+                  selectedColor=${this.props.selection.color?.name}
           />
           ${product?.options.map((option) => html`
             <${SizeSelector} 
                   sizeType=${option.title}
-                  allSizes=${option.values.map((value) => value.title)} 
+                  allSizes=${option.values} 
                   unavailableSizes=${[]}
-                  selectedSize=${this.state.selection[option.id]}
+                  selectedSize=${this.props.selection[option.id]}
                   onChange=${(size) => this.updateSelection({ [option.id]: size })}
             />
           `)}
             
-          <${SelectionDisplay} selection=${this.state.selection} productOptions=${product?.options} />
+          <${SelectionDisplay} selection=${this.props.selection} productOptions=${product?.options} />
           <${QuantitySelector} />
           <${CartSection} />
         `}

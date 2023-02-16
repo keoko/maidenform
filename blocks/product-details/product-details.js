@@ -10,10 +10,10 @@ import { getProductRatings } from '../../scripts/scripts.js';
 const html = htm.bind(h);
 
 const enrichmentQuery = `
-query EnrichmentQuery {
+query EnrichmentQuery($sku: String!, $variantIds: [String!]!) {
   refineProduct(
-    sku: "07959",
-    optionIds: ["Y29uZmlndXJhYmxlLzU1MC8zMDk0", "Y29uZmlndXJhYmxlLzI4MC80Mw==", "Y29uZmlndXJhYmxlLzU1OS8zMTQ1"]
+    sku: $sku,
+    optionIds: $variantIds
   ) {
     images(roles: []) {
       url
@@ -157,22 +157,16 @@ async function performGraphqlQuery(query, variables) {
   return productData.data;
 }
 
-async function enrichVariant(product, sku, variantOptions) {
-  product.enrichments = product.enrichments || {};
-
-  // eslint-disable-next-line no-underscore-dangle
-  if (product.enrichments[variantOptions.join('')]) {
-    return product;
-  }
-
-  product.enrichments[variantOptions.join('')] = await performGraphqlQuery(
+async function getProductImages(color, sku) {
+  console.log('getting images');
+  const result = await performGraphqlQuery(
     enrichmentQuery,
     {
       sku,
-      variantIds: variantOptions,
+      variantIds: [color.id],
     },
   );
-  return product;
+  return result.refineProduct?.images;
 }
 
 async function performRequest(sku) {
@@ -185,10 +179,10 @@ async function performRequest(sku) {
 
   const product = productData?.products?.[0];
 
-  // extract the first product
-  if (product && product.options[0]?.values[0]) {
-    const variants = product.options.map((option) => option.values[0].id);
-    await enrichVariant(product, sku, variants);
+  // get first color
+  const color = product.options?.find((option) => option.id === 'color')?.values?.[0];
+  if (color) {
+    product.productImages = await getProductImages(color, sku);
   }
 
   product.reviewStats = await getProductRatings(sku);
@@ -200,11 +194,19 @@ class ProductDetailPage extends Component {
   constructor(props) {
     super();
 
+    const initSel = {
+      color: null,
+      bandsize: null,
+      cupsize: null,
+    };
+
     if (props.productPromise.needAwait) {
-      this.state = { loading: true, promise: props.productPromise.promise };
+      this.state = { loading: true, promise: props.productPromise.promise, selection: initSel };
     } else {
-      this.state = { loading: false, product: props.productPromise.product };
+      this.state = { loading: false, product: props.productPromise.product, selection: initSel };
     }
+
+    this.onSelectionChanged = this.onSelectionChanged.bind(this);
   }
 
   componentDidMount() {
@@ -212,6 +214,31 @@ class ProductDetailPage extends Component {
       this.state.promise.then((data) => {
         this.setState({ loading: false, product: data });
       });
+    }
+  }
+
+  async onSelectionChanged(fragment) {
+    if (fragment.color) {
+      getProductImages(fragment.color, getSku()).then((newImages) => {
+        console.log(this.state.selection);
+        this.setState((oldState) => ({
+          selection: {
+            ...oldState.selection,
+            ...fragment,
+          },
+          product: {
+            ...oldState.product,
+            productImages: newImages,
+          },
+        }));
+      });
+    } else {
+      this.setState((oldState) => ({
+        selection: {
+          ...oldState.selection,
+          ...fragment,
+        },
+      }));
     }
   }
 
@@ -226,8 +253,8 @@ class ProductDetailPage extends Component {
 
     return html`
       <${Fragment} >
-          <${Carousel} />
-          <${Sidebar} product=${this.state.product} />
+          <${Carousel} product=${this.state.product} />
+          <${Sidebar} product=${this.state.product} selection=${this.state.selection} onSelectionChanged=${this.onSelectionChanged} />
           <div class="product-detail-description">
               <h3>PRODUCT DETAILS</h3>
               <div dangerouslySetInnerHTML=${{ __html: this.state.product.description }}></div>
