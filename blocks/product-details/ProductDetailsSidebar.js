@@ -97,7 +97,7 @@ function ColorSelector({ colors, onChange, selectedColor }) {
                       </li>
                   `)}
           </ul>
-          <div class="selected-swatch-name">${selectedColor?.name}</div>
+          <div class="selected-swatch-name">${selectedColor}</div>
       </div>
   `;
 }
@@ -122,7 +122,7 @@ function SelectionDisplay({ selection, productOptions }) {
           <h4 class="variant-selection">
               <span>SELECTION: </span>
               <span>
-                ${selection.color} ${productOptions.map((option) => selection[option.id]?.title).join(' ')}
+                ${selection.color?.name} ${productOptions.map((option) => selection[option.id]?.title).join(' ')}
               </span>
           </h4>
       </div>
@@ -173,7 +173,6 @@ export default class ProductDetailsSidebar extends Component {
   }
 
   constructor(props) {
-    console.log('constructor')
     super(props);
 
     if (props.shimmer) {
@@ -187,7 +186,10 @@ export default class ProductDetailsSidebar extends Component {
     this.props.onSelectionChanged?.(fragment);
   }
 
+
   render() {
+    console.log(this.props?.selection?.color?.name)
+
     const product = this.productFromProps();
     return html`<${Fragment}>
       <div class="product-title desktop-hidden">
@@ -199,20 +201,20 @@ export default class ProductDetailsSidebar extends Component {
               <${Rating} value=${product?.rating} count=${product?.numReviews} />
               <${NameAndPrice} name=${product?.name} price=${product?.price} sku=${product?.sku} />
           </div>
-          <${ColorSelector} 
+            ${product?.colors && html`
+              <${ColorSelector}
                   colors=${product?.colors}
                   onChange=${(color) => this.updateSelection({ color })}
-                  selectedColor=${this.props.selection.color?.name}
-          />
-          ${product?.options.map((option) => html`
+                  selectedColor=${this.props?.selection?.color?.name}
+              />`}
+            ${product?.options.map((option) => html`
             <${SizeSelector} 
                   sizeType=${option.title}
                   allSizes=${option.values} 
                   unavailableSizes=${[]}
                   selectedSize=${this.props.selection[option.id]}
                   onChange=${(size) => this.updateSelection({ [option.id]: size })}
-            />
-          `)}
+            />`)}
             
           <${SelectionDisplay} selection=${this.props.selection} productOptions=${product?.options} />
           <${QuantitySelector} />

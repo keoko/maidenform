@@ -158,7 +158,6 @@ async function performGraphqlQuery(query, variables) {
 }
 
 async function getProductImages(color, sku) {
-  console.log('getting images');
   const result = await performGraphqlQuery(
     enrichmentQuery,
     {
@@ -169,7 +168,7 @@ async function getProductImages(color, sku) {
   return result.refineProduct?.images;
 }
 
-async function performRequest(sku) {
+async function getProduct(sku) {
   // TODO start data loading before loading preact if possible
   const productData = await performGraphqlQuery(productQuery, { sku });
 
@@ -194,16 +193,10 @@ class ProductDetailPage extends Component {
   constructor(props) {
     super();
 
-    const initSel = {
-      color: null,
-      bandsize: null,
-      cupsize: null,
-    };
-
     if (props.productPromise.needAwait) {
-      this.state = { loading: true, promise: props.productPromise.promise, selection: initSel };
+      this.state = { loading: true, promise: props.productPromise.promise, selection: {} };
     } else {
-      this.state = { loading: false, product: props.productPromise.product, selection: initSel };
+      this.state = { loading: false, product: props.productPromise.product, selection: {} };
     }
 
     this.onSelectionChanged = this.onSelectionChanged.bind(this);
@@ -217,30 +210,27 @@ class ProductDetailPage extends Component {
     }
   }
 
-  async onSelectionChanged(fragment) {
+  onSelectionChanged = (fragment) => {
+    // update selection value
+    this.setState((oldState) => ({
+      selection: {
+        ...oldState.selection,
+        ...fragment,
+      },
+    }));
+
+    // fetch new images if color changed
     if (fragment.color) {
       getProductImages(fragment.color, getSku()).then((newImages) => {
-        console.log(this.state.selection);
         this.setState((oldState) => ({
-          selection: {
-            ...oldState.selection,
-            ...fragment,
-          },
           product: {
             ...oldState.product,
             productImages: newImages,
           },
         }));
       });
-    } else {
-      this.setState((oldState) => ({
-        selection: {
-          ...oldState.selection,
-          ...fragment,
-        },
-      }));
     }
-  }
+  };
 
   render() {
     if (this.state.loading) {
@@ -265,7 +255,7 @@ class ProductDetailPage extends Component {
 }
 
 async function dataOrLoading(sku, timeout) {
-  const dataPromise = performRequest(sku);
+  const dataPromise = getProduct(sku);
 
   return Promise.any([
     new Promise((res) => {
