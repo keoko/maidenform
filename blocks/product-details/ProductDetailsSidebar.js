@@ -186,10 +186,7 @@ export default class ProductDetailsSidebar extends Component {
     this.props.onSelectionChanged?.(fragment);
   }
 
-
   render() {
-    console.log(this.props?.selection?.color?.name)
-
     const product = this.productFromProps();
     return html`<${Fragment}>
       <div class="product-title desktop-hidden">
