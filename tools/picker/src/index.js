@@ -8,7 +8,7 @@ import getProductsInCategory from './queries/products.graphql.js';
 
 import './styles.css';
 
-const endpoint = 'https://www.marbec.click/graphql-maidenform'; // Custom proxy with CORS support
+const endpoint = 'https://franklin.maidenform.com/graphql';
 const rootCategoryKey = 'MTI4OQ=='; // UID
 const storeView = 'maidenform_store_view';
 
