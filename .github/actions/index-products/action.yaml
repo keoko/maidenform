@@ -1,0 +1,5 @@
+name: 'Update Commerce Sitemap'
+description: 'Updates the sitemap to include commerce products'
+runs:
+  using: 'node18'
+  main: 'index.js'

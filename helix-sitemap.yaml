@@ -1,9 +1,5 @@
 sitemaps:
-  content:
+  default:
     origin: https://franklin.maidenform.com
     source: /query-index.json
-    destination: /content-sitemap.xml
-  products:
-    origin: https://franklin.maidenform.com
-    source: /products.json
-    destination: /products-sitemap.xml
+    destination: /sitemap.xml
