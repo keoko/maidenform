@@ -55,7 +55,7 @@ async function main() {
 
   const promises = allProducts.map((product) => {
     const { sku, url_key } = product;
-    const url = `${adminBaseEndpoint}/products/${url_key}--${sku}`
+    const url = `${adminBaseEndpoint}/products/${url_key}/${sku}`
 
     return fetch(url, { method: 'POST' })
   });

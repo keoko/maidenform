@@ -10,4 +10,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: ./.github/actions/index-products
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      - name: Install and run
+        working-directory: ./.github/ci
+        run: |
+          npm ci
+          node -v
+          node index-products.js
