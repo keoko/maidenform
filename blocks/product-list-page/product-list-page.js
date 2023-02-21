@@ -5,7 +5,7 @@ import htm from '../../scripts/htm.js';
 import ProductList from './ProductList.js';
 import FacetList from './FacetList.js';
 import { readBlockConfig } from '../../scripts/lib-franklin.js';
-import { getSwatchImageUrl } from '../../scripts/commerce.js';
+import { getProductRatings, getSwatchImageUrl } from '../../scripts/commerce.js';
 import { getConfigValue } from '../../scripts/configs.js';
 
 const html = htm.bind(h);
@@ -167,7 +167,7 @@ class ProductListPage extends Component {
     value: swatch.custom_color,
   });
 
-  static mapProduct = (product) => {
+  static mapProduct = (product, ratings) => {
     const price = {};
     if (product.price === product.final_price) {
       price.regular = parseFloat(product.price);
@@ -184,10 +184,9 @@ class ProductListPage extends Component {
       url_key: urlKey,
       name: product.name,
       image: product.image_url,
-      // TODO: Get ratings from Bazaarvoice
       rating: {
-        average: 4.5,
-        count: 50,
+        average: ratings[product.parent_sku]?.average ?? 0,
+        count: ratings[product.parent_sku]?.count ?? 0,
       },
       price,
       swatches: product.swatch.map((s) => ProductListPage.mapSwatch(product, s)),
@@ -264,12 +263,20 @@ class ProductListPage extends Component {
       url.searchParams.append('data', JSON.stringify(query));
       const response = await fetch(url).then((res) => res.json());
 
+      // get ratings
+      const allSkus = response.content.product.value
+        .filter((product) => !!product.parent_sku)
+        .map((product) => product.parent_sku);
+
+      const ratings = await getProductRatings(allSkus);
+
       // Parse response into state
       this.setState({
         loading: false,
         pages: Math.max(response.total_page, 1),
         products: {
-          items: response.content.product.value.map(ProductListPage.mapProduct),
+          items: response.content.product.value
+            .map((product) => ProductListPage.mapProduct(product, ratings)),
           total: response.total_item,
         },
         facets: Object.keys(response.facet || {})
