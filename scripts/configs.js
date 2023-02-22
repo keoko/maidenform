@@ -1,5 +1,5 @@
 // Determine the environment
-const calcEnvironment = () => {
+export const calcEnvironment = () => {
   const { href } = window.location;
   const param = new URL(window.location).searchParams.get('config');
   if (param && !href.includes('maidenform.com')) {

@@ -10,6 +10,8 @@ import {
   loadBlocks,
   loadCSS,
 } from './lib-franklin.js';
+// load the library which initializes the storfront and datalayer
+import './commerce-events-sdk.js';
 
 import { getConfigValue } from './configs.js';
 
