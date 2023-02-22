@@ -32,7 +32,7 @@ function QuantitySelector({ onChange }) {
   return html`
       <div class="sidebar-section quantity-select">
           <h4 class="selection">QUANTITY:</h4>
-          <select onChange=${(option) => onChange?.(option.value)}>
+          <select onchange=${(event) => onChange?.(Number.parseInt(event.target.value, 10))}>
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
@@ -102,10 +102,13 @@ function ColorSelector({ colors, onChange, selectedColor }) {
   `;
 }
 
-function CartSection() {
+function CartSection({ onAddToCart, canAddToCart }) {
   return html`<${Fragment}>
       <div class="sidebar-section cart">
-          <button class="button primary cart-button">Add to Bag</button>
+          <button 
+                  disabled=${!canAddToCart()} 
+                  onclick=${onAddToCart} 
+                  class="button primary cart-button">Add to Bag</button>
           <p>Pay in 4 interest free payments on purchases of $30-$1,500 with PayPal
           </p>
           <p class="secondary-action"><${Icon} name="heart" />ADD TO FAVORITES</p>
@@ -180,10 +183,15 @@ export default class ProductDetailsSidebar extends Component {
     }
 
     this.updateSelection = this.updateSelection.bind(this);
+    this.canAddToCart = this.canAddToCart.bind(this);
   }
 
   updateSelection(fragment) {
     this.props.onSelectionChanged?.(fragment);
+  }
+
+  canAddToCart() {
+    return Object.keys(this.props.selection).length === this.props.product.options.length;
   }
 
   render() {
@@ -214,8 +222,8 @@ export default class ProductDetailsSidebar extends Component {
             />`)}
             
           <${SelectionDisplay} selection=${this.props.selection} productOptions=${product?.options} />
-          <${QuantitySelector} />
-          <${CartSection} />
+          <${QuantitySelector} onChange=${this.props.onQuantityChanged} />
+          <${CartSection} onAddToCart=${this.props.onAddToCart} canAddToCart=${this.canAddToCart} />
         `}
       </div>
     </Fragment>`;

@@ -20,6 +20,7 @@ query EnrichmentQuery($sku: String!, $variantIds: [String!]!) {
       roles
       label
     }
+    addToCartAllowed
   }
 }
 `;
@@ -200,6 +201,8 @@ class ProductDetailPage extends Component {
     }
 
     this.onSelectionChanged = this.onSelectionChanged.bind(this);
+    this.onAddToCart = this.onAddToCart.bind(this);
+    this.onQuantityChanged = this.onQuantityChanged.bind(this);
   }
 
   componentDidMount() {
@@ -209,6 +212,17 @@ class ProductDetailPage extends Component {
       });
     }
   }
+
+  onAddToCart = () => {
+    if (Object.keys(this.state.selection).length === this.state.product.options.length) {
+      const optionsUIDs = Object.values(this.state.selection).map((option) => option.id);
+      console.log({ sku: getSku(), optionsUIDs, quantity: this.state.selectedQuantity ?? 1 });
+    }
+  };
+
+  onQuantityChanged = (quantity) => {
+    this.setState({ selectedQuantity: quantity });
+  };
 
   onSelectionChanged = (fragment) => {
     // update selection value
@@ -244,7 +258,13 @@ class ProductDetailPage extends Component {
     return html`
       <${Fragment} >
           <${Carousel} product=${this.state.product} />
-          <${Sidebar} product=${this.state.product} selection=${this.state.selection} onSelectionChanged=${this.onSelectionChanged} />
+          <${Sidebar} 
+                  product=${this.state.product} 
+                  selection=${this.state.selection} 
+                  onSelectionChanged=${this.onSelectionChanged} 
+                  onAddToCart=${this.onAddToCart}
+                  onQuantityChanged=${this.onQuantityChanged}
+          />
           <div class="product-detail-description">
               <h3>PRODUCT DETAILS</h3>
               <div dangerouslySetInnerHTML=${{ __html: this.state.product.description }}></div>
