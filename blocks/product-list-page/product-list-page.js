@@ -2,11 +2,24 @@ import {
   h, Component, Fragment, render, createRef,
 } from '../../scripts/preact.js';
 import htm from '../../scripts/htm.js';
+import query from './productSearch.graphql.js';
 import ProductList from './ProductList.js';
 import FacetList from './FacetList.js';
 import { readBlockConfig } from '../../scripts/lib-franklin.js';
 import { getProductRatings, getSwatchImageUrl } from '../../scripts/commerce.js';
 import { getConfigValue } from '../../scripts/configs.js';
+
+const endpoint = 'https://catalog-service-sandbox.adobe.io/graphql';
+
+const headers = {
+  'Content-Type': 'application/json',
+  'Magento-Environment-Id': '271c8746-f2ed-43c3-8159-e7b7bbe79aac',
+  'Magento-Website-Code': 'maidenform',
+  'Magento-Store-View-Code': 'maidenform_store_view',
+  'Magento-Store-Code': 'maidenform_store',
+  'Magento-Customer-Group': '77de68daecd823babbb58edb1c8e14d7106e83bb',
+  'x-api-key': 'maidenform-franklin',
+};
 
 const html = htm.bind(h);
 
@@ -41,7 +54,7 @@ function Sort(props) {
     { label: 'Price: High to Low', value: 'price-desc' },
     { label: 'Price: Low to High', value: 'price-asc' },
     { label: 'Product Name', value: 'name-asc' },
-    { label: 'Relevance', value: 'featured-asc' },
+    { label: 'Relevance', value: 'relevance-asc' },
   ];
 
   const currentSort = options.find((option) => option.value === `${props.currentSort}-${props.sortDirection}`) || options[3];
@@ -64,7 +77,7 @@ function Sort(props) {
   </div>`;
 }
 
-const facetTypeMapping = {
+/* const facetTypeMapping = {
   custom_size: {
     type: 'swatch',
     style: 'facet-size',
@@ -86,7 +99,7 @@ const facetTypeMapping = {
   custom_strap_type: {
     type: 'checkbox',
   },
-};
+}; */
 
 class ProductListPage extends Component {
   constructor({ type = 'category' }) {
@@ -110,7 +123,7 @@ class ProductListPage extends Component {
       category: {
         name: headline,
       },
-      sort: 'featured',
+      sort: 'relevance', // TODO: should be position for PLP
       sortDirection: 'asc',
       products: {
         items: [],
@@ -218,60 +231,58 @@ class ProductListPage extends Component {
       return;
     }
 
-    const query = {
-      context: {
-        page: {
-          uri: '/search',
-          locale_country: 'us',
-          locale_language: 'en',
-        },
-      },
-      widget: {
-        rfkid: 'rfkid_7',
-      },
-      query: {
-        keyphrase: {
-          value: [this.state.searchTerm],
-        },
-      },
-      n_item: this.state.currentPageSize,
-      page_number: this.state.currentPage,
-      facet: {
-        all: true,
-        total: true,
-      },
-      sort: {
-        value: [{
-          name: this.state.sort,
-          order: this.state.sortDirection,
-        }],
-      },
-      content: {
-        product: {},
-      },
-    };
-
-    if (Object.keys(this.state.filters).length > 0) {
+    /* if (Object.keys(this.state.filters).length > 0) {
       query.filter = {};
       Object.keys(this.state.filters).forEach((key) => {
         query.filter[key] = { value: this.state.filters[key] };
       });
-    }
+    } */
+
+    console.log('hello?');
 
     try {
-      const url = new URL(await getConfigValue('reflektion-endpoint'));
-      url.searchParams.append('data', JSON.stringify(query));
-      const response = await fetch(url).then((res) => res.json());
+      // TODO: Make query with sort + phrase + page size
+      // TODO: Add filters
+      // TODO: Add back ratings
 
+      const variables = {
+        phrase: this.state.searchTerm,
+      };
+
+      const apiCall = new URL(endpoint);
+      apiCall.searchParams.append('query', query);
+      apiCall.searchParams.append('variables', JSON.stringify(variables));
+
+      const response = await fetch(apiCall, {
+        method: 'GET',
+        headers,
+      }).then((res) => res.json());
+
+      // TODO: Ignore errors for now, since some are caused by products with missing price information
+
+      console.log('response', response);
+
+      /* 
       // get ratings
       const allSkus = response.content.product.value
         .filter((product) => !!product.parent_sku)
         .map((product) => product.parent_sku);
 
-      const ratings = await getProductRatings(allSkus);
+      const ratings = await getProductRatings(allSkus); */
 
       // Parse response into state
       this.setState({
+        loading: false,
+        pages: Math.max(response.data.productSearch.page_info.total_pages, 1),
+        products: {
+          items: [],
+          total: response.data.productSearch.total_count,
+        },
+        facets: [],
+      });
+
+      /* 
+this.setState({
         loading: false,
         pages: Math.max(response.total_page, 1),
         products: {
@@ -282,6 +293,7 @@ class ProductListPage extends Component {
         facets: Object.keys(response.facet || {})
           .map((id) => ProductListPage.mapFacet(id, response.facet[id])),
       });
+      */
     } catch (e) {
       console.error('Error loading products', e);
       this.state = {
@@ -326,6 +338,9 @@ class ProductListPage extends Component {
   }
 
   render(_, state) {
+
+    console.log('state', state);
+
     return html`<${Fragment}>
     <${FacetList} 
       facets=${state.facets}
