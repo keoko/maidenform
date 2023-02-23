@@ -7,7 +7,6 @@ import ProductList from './ProductList.js';
 import FacetList from './FacetList.js';
 import { readBlockConfig } from '../../scripts/lib-franklin.js';
 import { getProductRatings, getSwatchImageUrl } from '../../scripts/commerce.js';
-import { getConfigValue } from '../../scripts/configs.js';
 
 const endpoint = 'https://catalog-service-sandbox.adobe.io/graphql';
 
@@ -140,7 +139,7 @@ class ProductListPage extends Component {
     const newState = {
       currentPage: 1,
       currentPageSize: 10,
-      sort: 'featured',
+      sort: 'relevance',
       filters: {},
     };
     params.forEach((value, key) => {
@@ -181,30 +180,19 @@ class ProductListPage extends Component {
   });
 
   static mapProduct = (product, ratings) => {
-    const price = {};
-    if (product.price === product.final_price) {
-      price.regular = parseFloat(product.price);
-    } else {
-      price.regular = parseFloat(product.price);
-      price.sale = parseFloat(product.final_price);
-    }
-
+    // Parse url_key from url
     const productUrl = new URL(product.url);
     const urlKey = productUrl.pathname.substring(1, productUrl.pathname.length - 5);
 
-    const mappedProduct = {
-      sku: product.parent_sku,
+    return {
+      ...product,
       url_key: urlKey,
-      name: product.name,
-      image: product.image_url,
+      swatches: [],
       rating: {
-        average: ratings[product.parent_sku]?.average ?? 0,
-        count: ratings[product.parent_sku]?.count ?? 0,
+        average: ratings[product.sku]?.average ?? 0,
+        count: ratings[product.sku]?.count ?? 0,
       },
-      price,
-      swatches: product.swatch.map((s) => ProductListPage.mapSwatch(product, s)),
     };
-    return mappedProduct;
   };
 
   static mapFacetOption = ({ count, text, id }) => ({ name: text, count, value: id });
@@ -238,15 +226,17 @@ class ProductListPage extends Component {
       });
     } */
 
-    console.log('hello?');
-
     try {
-      // TODO: Make query with sort + phrase + page size
       // TODO: Add filters
-      // TODO: Add back ratings
 
       const variables = {
         phrase: this.state.searchTerm,
+        pageSize: this.state.currentPageSize,
+        currentPage: this.state.currentPage,
+        sort: [{
+          attribute: this.state.sort,
+          direction: this.state.sortDirection === 'desc' ? 'DESC' : 'ASC',
+        }],
       };
 
       const apiCall = new URL(endpoint);
@@ -262,20 +252,20 @@ class ProductListPage extends Component {
 
       console.log('response', response);
 
-      /* 
       // get ratings
-      const allSkus = response.content.product.value
-        .filter((product) => !!product.parent_sku)
-        .map((product) => product.parent_sku);
+      const allSkus = response.data.productSearch.items
+        .filter((product) => !!product.productView.sku)
+        .map((product) => product.productView.sku);
 
-      const ratings = await getProductRatings(allSkus); */
+      const ratings = await getProductRatings(allSkus);
 
       // Parse response into state
       this.setState({
         loading: false,
         pages: Math.max(response.data.productSearch.page_info.total_pages, 1),
         products: {
-          items: [],
+          items: response.data.productSearch.items
+            .map((product) => ProductListPage.mapProduct(product.productView, ratings)),
           total: response.data.productSearch.total_count,
         },
         facets: [],

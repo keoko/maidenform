@@ -53,22 +53,46 @@ class ProductCard extends Component {
     }
   }
 
-  renderPrice(price) {
-    if (price.sale) {
+  renderPrice(product) {
+    // Simple product
+    if (product.price) {
+      // Find out if regular and final are different
+      const { regular, final } = product.price;
+      if (regular.amount.value === final.amount.value) {
+        return html`<span>${this.formatter.format(final.amount.value)}</span>`;
+      }
       return html`<${Fragment}>
-          <span class="old-price">${this.formatter.format(price.regular)}</span> <span>${this.formatter.format(price.sale)}</span>
-        </${Fragment}>`;
+        <span class="old-price">${this.formatter.format(regular.amount.value)}</span> <span>${this.formatter.format(final.amount.value)}</span>
+      </${Fragment}>`;
     }
-    return html`<span>${this.formatter.format(price.regular)}</span>`;
+
+    // Complex product
+    if (product.priceRange) {
+      const { regular, final } = product.priceRange.minimum;
+      if (regular.amount.value === final.amount.value) {
+        return html`<span>from ${this.formatter.format(final.amount.value)}</span>`;
+      }
+      return html`<${Fragment}>
+        <span class="old-price">${this.formatter.format(regular.amount.value)}</span> from <span>${this.formatter.format(final.amount.value)}</span>
+      </${Fragment}>`;
+    }
+
+    return null;
   }
 
-  static renderImage(name, image) {
+  static renderImage(product) {
+    // Placeholder
+    let image = 'https://cdn.maidenform.com/catalog/product/i/m/placeholder/image.jpg';
+    if (product.images.length > 0) {
+      image = product.images[0].url;
+    }
+
     const url = new URL(image);
     url.search = '';
 
     return html`<picture>
       <source type="image/webp" srcset="${url}?width=247&amp;bg-color=255,255,255&format=webply&optimize=medium" />
-      <img class="product-image-photo" src="${url}?width=247&amp;quality=100&amp;bg-color=255,255,255" max-width="247" max-height="313" alt=${name} />
+      <img class="product-image-photo" src="${url}?width=247&amp;quality=100&amp;bg-color=255,255,255" max-width="247" max-height="313" alt=${product.name} />
     </picture>`;
   }
 
@@ -93,7 +117,7 @@ class ProductCard extends Component {
       <li>
         <div class="picture">
           <a href="/products/${product.url_key}--${product.sku}">
-            ${ProductCard.renderImage(product.name, product.swatches[state.selectedVariant].product_image)}
+            ${ProductCard.renderImage(product)}
           </a>
           <button class="add-to-cart-action">Add to Bag</button>
         </div>
@@ -111,9 +135,9 @@ class ProductCard extends Component {
           <button class="next" onClick=${this.swatchScrollRight}>Next</button>
         </div>
         <div class="name">
-          <a href="/products/${product.url_key}--${product.sku}">${product.name}</a>
+          <a href="/products/${product.url_key}--${product.sku}" dangerouslySetInnerHTML=${{__html: product.name}} />
         </div>
-        <div class="price">${this.renderPrice(product.price)}</div>
+        <div class="price">${this.renderPrice(product)}</div>
         <div class="rating">
           <div style="--rating: ${product.rating.average};"></div>
           <span>(${product.rating.count})</span>

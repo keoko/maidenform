@@ -85,4 +85,4 @@ fragment priceFields on ProductViewPrice {
     }
 }`;
 
-export default query.replaceAll(/(?:\r\n|\r|\n|\t|[\s]{4})/g, ' ');
+export default query.replace(/(?:\r\n|\r|\n|\t|[\s]{4})/g, ' ').replace(/\s\s+/g, ' ');
