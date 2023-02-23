@@ -1,6 +1,4 @@
-import {
-  Component, Fragment, h, render,
-} from '../../scripts/preact.js';
+import { Component, Fragment, h, render, } from '../../scripts/preact.js';
 import htm from '../../scripts/htm.js';
 import Carousel from './ProductDetailsCarousel.js';
 import Sidebar from './ProductDetailsSidebar.js';
@@ -98,7 +96,7 @@ class ProductDetailPage extends Component {
     this.getInStockProducts = this.getInStockProducts.bind(this);
   }
 
-  // Returns a map. Keys to the map are option type ids. Values are arrays of in-stock products,
+  // Returns a map. Keys to the map are option type ids. Values are arrays of in-stock variant ids,
   // given the other options that are selected.
   async getInStockProducts() {
     const result = await performMonolithGraphQLQuery(stockQuery, { urlKey: getUrlKey() });
@@ -108,16 +106,12 @@ class ProductDetailPage extends Component {
       errorGettingProduct();
     }
 
-    if (!this.state.product) {
-      return {};
-    }
-
     const inStockVariants = product.variants
       .map((variant) => variant.attributes
         .reduce((acc, curr) => ({ ...acc, [curr.code]: { label: curr.label, id: curr.uid } }), {}));
 
     // for each option, store the in-stock products given all the other options that are selected
-    const res = this.state.product.options.reduce((acc, curOption) => {
+    return this.state.product.options.reduce((acc, curOption) => {
       const inStockVariantsForOption = inStockVariants
         .filter((variant) => Object.keys(this.state.selection)
           .filter((selectionType) => selectionType !== curOption.id)
@@ -125,11 +119,10 @@ class ProductDetailPage extends Component {
             && this.state.selection[curr].id === variant[curr].id, true));
       return {
         ...acc,
-        [curOption.id]: inStockVariantsForOption,
+        [curOption.id]: [
+          ...new Set(inStockVariantsForOption.map((variant) => variant[curOption.id].id))],
       };
     }, {});
-
-    return res;
   }
 
   componentDidMount() {
@@ -140,10 +133,11 @@ class ProductDetailPage extends Component {
           product: data,
           selection: { color: data.options.find((option) => option.id === 'color').values[0] },
         });
+        this.getInStockProducts().then((result) => this.setState({ inStockVariants: result }));
       });
+    } else {
+      this.getInStockProducts().then((result) => this.setState({ inStockVariants: result }));
     }
-
-    this.getInStockProducts().then((result) => this.setState({ inStockVariants: result }));
   }
 
   onAddToCart = () => {
