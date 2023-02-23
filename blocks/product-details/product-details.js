@@ -6,13 +6,24 @@ import Carousel from './ProductDetailsCarousel.js';
 import Sidebar from './ProductDetailsSidebar.js';
 import ProductDetailsShimmer from './ProductDetailsShimmer.js';
 import { getProductRatings } from '../../scripts/scripts.js';
-import { performGraphqlQuery, enrichmentQuery, productQuery } from './queries.js';
+import {
+  performCatalogServiceQuery,
+  enrichmentQuery,
+  productQuery,
+  performMonolithGraphQLQuery, stockQuery,
+} from './queries.js';
 
 const html = htm.bind(h);
 
 function getSku() {
   const path = window.location.pathname;
   const result = path.match(/\/products\/[\w|-]+\/([\w|-]+)$/);
+  return result?.[1];
+}
+
+function getUrlKey() {
+  const path = window.location.pathname;
+  const result = path.match(/\/products\/([\w|-]+)\/[\w|-]+$/);
   return result?.[1];
 }
 
@@ -32,7 +43,7 @@ export function errorGettingProduct() {
 }
 
 async function getProductImages(color, sku) {
-  const result = await performGraphqlQuery(
+  const result = await performCatalogServiceQuery(
     enrichmentQuery,
     {
       sku,
@@ -44,7 +55,7 @@ async function getProductImages(color, sku) {
 
 async function getProduct(sku) {
   // TODO start data loading before loading preact if possible
-  const productData = await performGraphqlQuery(productQuery, { sku });
+  const productData = await performCatalogServiceQuery(productQuery, { sku });
 
   if (!productData?.products?.[0]) {
     return null;
@@ -83,6 +94,27 @@ class ProductDetailPage extends Component {
     this.onSelectionChanged = this.onSelectionChanged.bind(this);
     this.onAddToCart = this.onAddToCart.bind(this);
     this.onQuantityChanged = this.onQuantityChanged.bind(this);
+    this.getOutOfStockVariants = this.getOutOfStockVariants.bind(this);
+  }
+
+  async getOutOfStockVariants() {
+    const result = await performMonolithGraphQLQuery(stockQuery, { urlKey: getUrlKey() });
+    const product = result?.products?.items?.[0];
+
+    if (!product) {
+      errorGettingProduct();
+    }
+
+    const inStockVariants = product.variants
+      .map((variant) => variant.attributes
+        .reduce((acc, curr) => ({ ...acc, [curr.code]: { label: curr.label, id: curr.uid } }), {}));
+
+    const color = this.state.selection.color.id;
+    console.log(color);
+
+    const forColorSelection = inStockVariants.filter((variant) => variant.color.id === color);
+    console.log(forColorSelection);
+    this.setState({ inStockVariants: forColorSelection });
   }
 
   componentDidMount() {
@@ -95,6 +127,8 @@ class ProductDetailPage extends Component {
         });
       });
     }
+
+    this.getOutOfStockVariants();
   }
 
   onAddToCart = () => {
@@ -119,6 +153,8 @@ class ProductDetailPage extends Component {
 
     // fetch new images if color changed
     if (fragment.color) {
+      this.getOutOfStockVariants();
+
       getProductImages(fragment.color, getSku()).then((newImages) => {
         this.setState((oldState) => ({
           product: {
@@ -148,6 +184,7 @@ class ProductDetailPage extends Component {
                   onSelectionChanged=${this.onSelectionChanged} 
                   onAddToCart=${this.onAddToCart}
                   onQuantityChanged=${this.onQuantityChanged}
+                  inStockVariants=${this.state.inStockVariants}
           />
           <div class="product-detail-description">
               <h3>PRODUCT DETAILS</h3>

@@ -5,9 +5,11 @@ import Icon from './Icon.js';
 const html = htm.bind(h);
 
 function SizeSelector({
-  sizeType, allSizes, unavailableSizes, onChange, selectedSize,
+  sizeType, allSizes, onChange, selectedSize, unavailableSizes,
 }) {
   const sortedSizes = allSizes.sort((a, b) => (a.title < b.title ? -1 : 1));
+
+  console.log(allSizes);
 
   return html`
       <div class="sidebar-section sizes-selector">
@@ -63,7 +65,7 @@ function NameAndPrice({
 
   return html`
     <${Fragment}>
-        <h1>${name}</h1>
+        <h1 dangerouslySetInnerHTML=${{ __html: name }}></h1>
         <div class="price">
             <span class="price-reduced">${price?.actual}</span>
             <span class="price-actual">${price?.reduced}</span>
@@ -197,7 +199,7 @@ export default class ProductDetailsSidebar extends Component {
   }
 
   render() {
-    console.log(this.props?.selection?.color?.title)
+    console.log(this.props?.selection?.color?.title);
     const product = this.productFromProps();
     return html`<${Fragment}>
       <div class="product-title desktop-hidden">
@@ -216,13 +218,14 @@ export default class ProductDetailsSidebar extends Component {
                   selectedColor=${this.props?.selection?.color?.title}
               />`}
             ${product?.options.map((option) => html`
-            <${SizeSelector} 
-                  sizeType=${option.title}
-                  allSizes=${option.values} 
-                  unavailableSizes=${[]}
-                  selectedSize=${this.props.selection[option.id]}
-                  onChange=${(size) => this.updateSelection({ [option.id]: size })}
-            />`)}
+                <${SizeSelector} 
+                      sizeType=${option.title}
+                      allSizes=${option.values} 
+                      unavailableSizes=${option.values.filter((size) => !this.props.inStockVariants?.find((variant) => variant[option.id].label === size.title))}
+                      inStockVariants=${this.props.inStockVariants}
+                      selectedSize=${this.props.selection[option.id]}
+                      onChange=${(size) => this.updateSelection({ [option.id]: size })}
+                />`)}
             
           <${SelectionDisplay} selection=${this.props.selection} productOptions=${product?.options} />
           <${QuantitySelector} onChange=${this.props.onQuantityChanged} />

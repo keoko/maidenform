@@ -97,7 +97,61 @@ query ProductQuery($sku: String!) {
 }
 `;
 
-export async function performGraphqlQuery(query, variables) {
+export const stockQuery = `
+query StockQuery($urlKey: String!) {
+  products(
+    filter: { url_key: { eq: $urlKey } }
+    pageSize: 20
+    currentPage: 1
+  ) {
+    items {
+      name
+      stock_status
+      ... on ConfigurableProduct {
+        variants {
+          attributes {
+            uid
+            label
+            code
+          }
+
+          product {
+            sku
+            name
+            stock_status
+          }
+        }
+      }
+    }
+  }
+}
+`;
+
+export async function performMonolithGraphQLQuery(query, variables) {
+  const headers = {
+    'Content-Type': 'application/json',
+    Store: 'maidenform_store_view',
+  };
+
+  const params = new URLSearchParams({
+    query: query.replaceAll(/(?:\r\n|\r|\n|\t|[\s]{4})/g, ' '),
+    variables: JSON.stringify(variables),
+  });
+  const response = await fetch(
+    `https://www.marbec.click/graphql-maidenform?${params.toString()}`,
+    { headers },
+  );
+
+  if (!response.ok) {
+    return null;
+  }
+
+  const json = await response.json();
+
+  return json.data;
+}
+
+export async function performCatalogServiceQuery(query, variables) {
   const headers = {
     'Content-Type': 'application/json',
     'Magento-Environment-Id': '271c8746-f2ed-43c3-8159-e7b7bbe79aac',
