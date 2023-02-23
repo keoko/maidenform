@@ -76,30 +76,6 @@ function Sort(props) {
   </div>`;
 }
 
-/* const facetTypeMapping = {
-  custom_size: {
-    type: 'swatch',
-    style: 'facet-size',
-  },
-  custom_bandsize: {
-    type: 'swatch',
-    style: 'facet-size',
-  },
-  custom_color_family: {
-    type: 'checkbox',
-  },
-  custom_cupsize: {
-    type: 'swatch',
-    style: 'facet-size',
-  },
-  custom_silhouette: {
-    type: 'checkbox',
-  },
-  custom_strap_type: {
-    type: 'checkbox',
-  },
-}; */
-
 class ProductListPage extends Component {
   constructor({ type = 'category' }) {
     super();
@@ -195,20 +171,6 @@ class ProductListPage extends Component {
     };
   };
 
-  static mapFacetOption = ({ count, text, id }) => ({ name: text, count, value: id });
-
-  static mapFacet = (id, facet) => {
-    const { type, style } = facetTypeMapping[id] || { type: 'radio' };
-    const mappedFacet = {
-      name: facet.display_name,
-      id,
-      type,
-      style,
-      options: facet.value.map(ProductListPage.mapFacetOption),
-    };
-    return mappedFacet;
-  };
-
   loadProducts = async () => {
     this.setState({ loading: true });
 
@@ -219,16 +181,8 @@ class ProductListPage extends Component {
       return;
     }
 
-    /* if (Object.keys(this.state.filters).length > 0) {
-      query.filter = {};
-      Object.keys(this.state.filters).forEach((key) => {
-        query.filter[key] = { value: this.state.filters[key] };
-      });
-    } */
-
     try {
-      // TODO: Add filters
-
+      // TODO: Be careful if query exceeds GET size limits, then switch to POST
       const variables = {
         phrase: this.state.searchTerm,
         pageSize: this.state.currentPageSize,
@@ -239,6 +193,17 @@ class ProductListPage extends Component {
         }],
       };
 
+      if (Object.keys(this.state.filters).length > 0) {
+        variables.filter = [];
+        Object.keys(this.state.filters).forEach((key) => {
+          if (this.state.filters[key].length > 1) {
+            variables.filter.push({ attribute: key, in: this.state.filters[key] });
+          } else if (this.state.filters[key].length === 1) {
+            variables.filter.push({ attribute: key, eq: this.state.filters[key][0] });
+          }
+        });
+      }
+
       const apiCall = new URL(endpoint);
       apiCall.searchParams.append('query', query);
       apiCall.searchParams.append('variables', JSON.stringify(variables));
@@ -248,7 +213,8 @@ class ProductListPage extends Component {
         headers,
       }).then((res) => res.json());
 
-      // TODO: Ignore errors for now, since some are caused by products with missing price information
+      // TODO: Ignore errors for now, since some are caused by products with
+      // missing price information
 
       console.log('response', response);
 
@@ -256,7 +222,6 @@ class ProductListPage extends Component {
       const allSkus = response.data.productSearch.items
         .filter((product) => !!product.productView.sku)
         .map((product) => product.productView.sku);
-
       const ratings = await getProductRatings(allSkus);
 
       // Parse response into state
@@ -268,22 +233,8 @@ class ProductListPage extends Component {
             .map((product) => ProductListPage.mapProduct(product.productView, ratings)),
           total: response.data.productSearch.total_count,
         },
-        facets: [],
+        facets: response.data.productSearch.facets,
       });
-
-      /* 
-this.setState({
-        loading: false,
-        pages: Math.max(response.total_page, 1),
-        products: {
-          items: response.content.product.value
-            .map((product) => ProductListPage.mapProduct(product, ratings)),
-          total: response.total_item,
-        },
-        facets: Object.keys(response.facet || {})
-          .map((id) => ProductListPage.mapFacet(id, response.facet[id])),
-      });
-      */
     } catch (e) {
       console.error('Error loading products', e);
       this.state = {
@@ -328,7 +279,6 @@ this.setState({
   }
 
   render(_, state) {
-
     console.log('state', state);
 
     return html`<${Fragment}>

@@ -1,3 +1,4 @@
+/* eslint-disable object-curly-spacing */
 import {
   h, Component, createRef, Fragment,
 } from '../../scripts/preact.js';
@@ -116,7 +117,7 @@ class ProductCard extends Component {
     return html`
       <li>
         <div class="picture">
-          <a href="/products/${product.url_key}--${product.sku}">
+          <a href="/products/${product.url_key}/${product.sku}">
             ${ProductCard.renderImage(product)}
           </a>
           <button class="add-to-cart-action">Add to Bag</button>
@@ -135,7 +136,7 @@ class ProductCard extends Component {
           <button class="next" onClick=${this.swatchScrollRight}>Next</button>
         </div>
         <div class="name">
-          <a href="/products/${product.url_key}--${product.sku}" dangerouslySetInnerHTML=${{__html: product.name}} />
+          <a href="/products/${product.url_key}/${product.sku}" dangerouslySetInnerHTML=${{__html: product.name}} />
         </div>
         <div class="price">${this.renderPrice(product)}</div>
         <div class="rating">

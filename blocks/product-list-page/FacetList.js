@@ -5,52 +5,75 @@ import htm from '../../scripts/htm.js';
 
 const html = htm.bind(h);
 
+const facetTypeMapping = {
+  bra_type: {
+    type: 'radio',
+  },
+  silhouette: {
+    type: 'swatch',
+    style: 'facet-size',
+  },
+};
+
 function Facet({
-  name, id, type, style, options, selection, onSelectionChange,
+  title, attribute, buckets, selection, onSelectionChange,
 }) {
+  // Define type (scalar, stats or range)
+  // const firstBucket = buckets[0];
+  // const type = firstBucket.__typename;
+
+  // Infer display type based on name + type combinations, fallback to default
+  let displayType = 'checkbox';
+  let displayStyle = '';
+
+  if (facetTypeMapping[attribute]) {
+    displayType = facetTypeMapping[attribute].type;
+    displayStyle = facetTypeMapping[attribute].style;
+  }
+
   const renderOptions = () => {
     const handleClickSingle = (event) => {
       const { value } = event.target;
       if (selection.includes(value)) {
-        onSelectionChange(id, []);
+        onSelectionChange(attribute, []);
       } else {
-        onSelectionChange(id, [value]);
+        onSelectionChange(attribute, [value]);
       }
     };
 
     const handleClickMultiple = (event) => {
       const { value } = event.target;
       if (selection.includes(value)) {
-        onSelectionChange(id, selection.filter((selected) => selected !== value));
+        onSelectionChange(attribute, selection.filter((selected) => selected !== value));
       } else {
-        onSelectionChange(id, [...selection, value]);
+        onSelectionChange(attribute, [...selection, value]);
       }
     };
 
-    if (type === 'swatch') {
-      return options.map((option) => html`
+    if (displayType === 'swatch') {
+      return buckets.map((bucket) => html`
           <li>
             <button
-              value=${option.value}
-              style="${option.color ? `background: ${option.color}` : ''}"
-              class="${selection.includes(option.value) ? 'active' : ''}"
-              onClick=${handleClickMultiple}>${option.name}</button>
+              value=${bucket.id}
+              style="${bucket.color ? `background: ${bucket.color}` : ''}"
+              class="${selection.includes(bucket.id) ? 'active' : ''}"
+              onClick=${handleClickMultiple}>${bucket.title}</button>
           </li>
         `);
     }
-    if (type === 'checkbox') {
-      return options.map((option) => html`<li>
-          <input type="checkbox" name="facet-${id}" id="facet-${option.value}" value=${option.value} checked=${selection.includes(option.value)} onClick=${handleClickMultiple} />
-          <label for="facet-${option.value}">
-            ${option.name} <span class="count">${option.count}</span>
+    if (displayType === 'checkbox') {
+      return buckets.map((bucket) => html`<li>
+          <input type="checkbox" name="facet-${attribute}" id="facet-${bucket.id}" value=${bucket.id} checked=${selection.includes(bucket.id)} onClick=${handleClickMultiple} />
+          <label for="facet-${bucket.id}">
+            ${bucket.title} <span class="count">${bucket.count}</span>
           </label>
         </li>`);
     }
-    if (type === 'radio') {
-      return options.map((option) => html`<li>
-          <input type="radio" name="facet-${id}" id="facet-${option.value}" value=${option.value} checked=${selection.includes(option.value)} onClick=${handleClickSingle} />
-          <label for="facet-${option.value}">
-            ${option.name} <span class="count">${option.count}</span>
+    if (displayType === 'radio') {
+      return buckets.map((bucket) => html`<li>
+          <input type="radio" name="facet-${attribute}" id="facet-${bucket.id}" value=${bucket.id} checked=${selection.includes(bucket.id)} onClick=${handleClickSingle} />
+          <label for="facet-${bucket.id}">
+            ${bucket.title} <span class="count">${bucket.count}</span>
           </label>
         </li>`);
     }
@@ -58,9 +81,9 @@ function Facet({
   };
 
   return html`
-  <div class="facet ${type} ${style || ''}">
-    <input type="checkbox" id="facet-toggle-${id}" checked=${selection.length > 0}  />
-    <label for="facet-toggle-${id}">${name}</label>
+  <div class="facet ${displayType} ${displayStyle || ''}">
+    <input type="checkbox" id="facet-toggle-${attribute}" checked=${selection.length > 0}  />
+    <label for="facet-toggle-${attribute}">${title}</label>
     <div class="facet-content">
         <ol>${renderOptions()}</ol>
     </div>
@@ -87,10 +110,12 @@ export default class FacetList extends Component {
           <h2>Filters</h2>
           <button class="close" onClick=${() => facetMenuRef.current.classList.toggle('active')}>Close</button>
           <div class="facet-list">
-            ${facets.map((facet) => {
-    const selection = filters[facet.id] || [];
-    return html`<${Facet} ...${facet} selection=${selection} onSelectionChange=${this.onSelectionChange} />`;
-  })}
+            ${facets
+    .filter((facet) => facet.buckets.length > 0)
+    .map((facet) => {
+      const selection = filters[facet.attribute] || [];
+      return html`<${Facet} ...${facet} selection=${selection} onSelectionChange=${this.onSelectionChange} />`;
+    })}
         </div>
       </div>`;
   }
