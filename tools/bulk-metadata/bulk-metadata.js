@@ -1,8 +1,9 @@
 import XLSX from 'xlsx';
 import fs from 'fs';
+import he from 'he';
 import getAllProducts from './queries/products.graphql.js';
 
-const endpoint = 'https://www.marbec.click/graphql-maidenform'; // Custom proxy with CORS support
+const endpoint = 'https://franklin.maidenform.com/graphql';
 
 const prodMetadata = [];
 const createSheet = async () => {
@@ -28,37 +29,28 @@ const createSheet = async () => {
  * @param {INT} pageNumber - pass the pagenumber to retrieved paginated results
  */
 const getProducts = async (pageNumber) => {
-  const response = await fetch(
-    endpoint,
-    {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'cache-control': 'no-cache',
-        store: 'maidenform_store_view', // maiden form specific
-      },
-      body: JSON.stringify({
-        query: getAllProducts,
-        variables: {
-          currentPage: pageNumber,
-        },
-      }),
+  const api = new URL(endpoint);
+  api.searchParams.append('query', getAllProducts);
+  api.searchParams.append('variables', JSON.stringify({ currentPage: pageNumber }));
+
+  const response = await fetch(api, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+      store: 'maidenform_store_view',
     },
-  );
+  });
   const result = await response.json();
 
   if (result && result.data) {
-    // push the metadata to an array
     result.data.products.items.forEach((item) => {
-      if (item.meta_keyword || item.meta_title || item.meta_description) {
-        const itemMeta = {
-          path: `/products/${item.url_key}`,
-          meta_keyword: (item.meta_keyword !== null) ? item.meta_keyword : '',
-          meta_title: (item.meta_title !== null) ? item.meta_title : '',
-          meta_description: (item.meta_description !== null) ? item.meta_description : '',
-        };
-        prodMetadata.push(itemMeta);
-      }
+      const itemMeta = {
+        path: `/products/${item.url_key}/${item.sku}`,
+        meta_keyword: (item.meta_keyword !== null) ? item.meta_keyword : '',
+        meta_title: he.decode((item.meta_title !== null) ? item.meta_title : item.name),
+        meta_description: (item.meta_description !== null) ? item.meta_description : '',
+      };
+      prodMetadata.push(itemMeta);
     });
     const totalPages = result.data.products.page_info.total_pages;
     const currentPage = result.data.products.page_info.current_page;
@@ -69,4 +61,7 @@ const getProducts = async (pageNumber) => {
     }
   }
 };
-getProducts();
+
+getProducts()
+  .then()
+  .catch((e) => console.error(e));
