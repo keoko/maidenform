@@ -7,12 +7,14 @@ const html = htm.bind(h);
 function SizeSelector({
   sizeType, allSizes, unavailableSizes, onChange, selectedSize,
 }) {
+  const sortedSizes = allSizes.sort((a, b) => (a.title < b.title ? -1 : 1));
+
   return html`
       <div class="sidebar-section sizes-selector">
           <h4>AVAILABLE ${sizeType.toUpperCase()}</h4>
           <span class="size-guide">Size Guide</span>
           <ul>
-              ${allSizes.map((size) => html`
+              ${sortedSizes.map((size) => html`
                 <li key=${size}>
                     <button
                         aria-selected=${size === selectedSize}
@@ -87,11 +89,11 @@ function ColorSelector({ colors, onChange, selectedColor }) {
           <ul class="swatches">
               ${colors.map((color) => html`
                       <li
-                        key=${color.name}  
+                        key=${color.title}  
                         class="swatch" 
                         >
-                          <button aria-selected=${color.name === selectedColor}
-                                  data-swatch-name=${color.name}
+                          <button aria-selected=${color.title === selectedColor}
+                                  data-swatch-name=${color.title}
                                   style="background: url(${color.url}) no-repeat center;" 
                                   onClick=${() => onChange?.(color)} ></button>
                       </li>
@@ -125,7 +127,7 @@ function SelectionDisplay({ selection, productOptions }) {
           <h4 class="variant-selection">
               <span>SELECTION: </span>
               <span>
-                ${selection.color?.name} ${productOptions.map((option) => selection[option.id]?.title).join(' ')}
+                ${selection.color?.title} ${productOptions.map((option) => selection[option.id]?.title).join(' ')}
               </span>
           </h4>
       </div>
@@ -156,7 +158,7 @@ export default class ProductDetailsSidebar extends Component {
     const { sku } = props.product;
 
     const colors = props.product.options.find((option) => option.id === 'color').values.map((color) => ({
-      name: color.title,
+      title: color.title,
       id: color.id,
       url: `https://swatches.maidenform.com/HNS_${sku}/HNS_${sku}_${toColorName(color.title)}_sw.jpg?quality=85&height=50&width=50&fit=bounds`,
     }));
@@ -195,6 +197,7 @@ export default class ProductDetailsSidebar extends Component {
   }
 
   render() {
+    console.log(this.props?.selection?.color?.title)
     const product = this.productFromProps();
     return html`<${Fragment}>
       <div class="product-title desktop-hidden">
@@ -210,7 +213,7 @@ export default class ProductDetailsSidebar extends Component {
               <${ColorSelector}
                   colors=${product?.colors}
                   onChange=${(color) => this.updateSelection({ color })}
-                  selectedColor=${this.props?.selection?.color?.name}
+                  selectedColor=${this.props?.selection?.color?.title}
               />`}
             ${product?.options.map((option) => html`
             <${SizeSelector} 
