@@ -144,6 +144,24 @@
   outline: 2px solid black;
 }
 
+.product-details .swatch > button[aria-disabled="true"] {
+  cursor: not-allowed;
+  position: relative;
+}
+
+.product-details .swatch > button[aria-disabled="true"]::after {
+  fill: white;
+  background: url('/icons/color-disabled.svg') no-repeat;
+  background-size: contain;
+  content: '';
+  height: 70%;
+  left: 10%;
+  position: absolute;
+  top: 15%;
+  width: 80%;
+  z-index: 1;
+}
+
 .product-details .selected-swatch-name {
   display: inline-block;
   margin-top: 12px;

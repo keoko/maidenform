@@ -7,10 +7,11 @@ import Sidebar from './ProductDetailsSidebar.js';
 import ProductDetailsShimmer from './ProductDetailsShimmer.js';
 import { getProductRatings } from '../../scripts/scripts.js';
 import {
-  performCatalogServiceQuery,
   enrichmentQuery,
+  performCatalogServiceQuery,
+  performMonolithGraphQLQuery,
   productQuery,
-  performMonolithGraphQLQuery, stockQuery,
+  stockQuery,
 } from './queries.js';
 
 const html = htm.bind(h);
@@ -94,10 +95,12 @@ class ProductDetailPage extends Component {
     this.onSelectionChanged = this.onSelectionChanged.bind(this);
     this.onAddToCart = this.onAddToCart.bind(this);
     this.onQuantityChanged = this.onQuantityChanged.bind(this);
-    this.getOutOfStockVariants = this.getOutOfStockVariants.bind(this);
+    this.getInStockProducts = this.getInStockProducts.bind(this);
   }
 
-  async getOutOfStockVariants() {
+  // Returns a map. Keys to the map are option type ids. Values are arrays of in-stock products,
+  // given the other options that are selected.
+  async getInStockProducts() {
     const result = await performMonolithGraphQLQuery(stockQuery, { urlKey: getUrlKey() });
     const product = result?.products?.items?.[0];
 
@@ -105,16 +108,28 @@ class ProductDetailPage extends Component {
       errorGettingProduct();
     }
 
+    if (!this.state.product) {
+      return {};
+    }
+
     const inStockVariants = product.variants
       .map((variant) => variant.attributes
         .reduce((acc, curr) => ({ ...acc, [curr.code]: { label: curr.label, id: curr.uid } }), {}));
 
-    const color = this.state.selection.color.id;
-    console.log(color);
+    // for each option, store the in-stock products given all the other options that are selected
+    const res = this.state.product.options.reduce((acc, curOption) => {
+      const inStockVariantsForOption = inStockVariants
+        .filter((variant) => Object.keys(this.state.selection)
+          .filter((selectionType) => selectionType !== curOption.id)
+          .reduce((inStockSoFar, curr) => inStockSoFar
+            && this.state.selection[curr].id === variant[curr].id, true));
+      return {
+        ...acc,
+        [curOption.id]: inStockVariantsForOption,
+      };
+    }, {});
 
-    const forColorSelection = inStockVariants.filter((variant) => variant.color.id === color);
-    console.log(forColorSelection);
-    this.setState({ inStockVariants: forColorSelection });
+    return res;
   }
 
   componentDidMount() {
@@ -128,7 +143,7 @@ class ProductDetailPage extends Component {
       });
     }
 
-    this.getOutOfStockVariants();
+    this.getInStockProducts().then((result) => this.setState({ inStockVariants: result }));
   }
 
   onAddToCart = () => {
@@ -151,10 +166,10 @@ class ProductDetailPage extends Component {
       },
     }));
 
+    this.getInStockProducts().then((result) => this.setState({ inStockVariants: result }));
+
     // fetch new images if color changed
     if (fragment.color) {
-      this.getOutOfStockVariants();
-
       getProductImages(fragment.color, getSku()).then((newImages) => {
         this.setState((oldState) => ({
           product: {

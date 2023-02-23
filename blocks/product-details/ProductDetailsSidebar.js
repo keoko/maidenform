@@ -9,8 +9,6 @@ function SizeSelector({
 }) {
   const sortedSizes = allSizes.sort((a, b) => (a.title < b.title ? -1 : 1));
 
-  console.log(allSizes);
-
   return html`
       <div class="sidebar-section sizes-selector">
           <h4>AVAILABLE ${sizeType.toUpperCase()}</h4>
@@ -84,7 +82,10 @@ function Rating({ value, count }) {
   `;
 }
 
-function ColorSelector({ colors, onChange, selectedColor }) {
+function ColorSelector({
+  colors, onChange, selectedColor, unavailableColors,
+}) {
+  const unavailableNames = unavailableColors?.map((c) => c.title);
   return html`
       <div class="sidebar-section color-selector">
           <h4>AVAILABLE COLOR</h4>
@@ -95,9 +96,11 @@ function ColorSelector({ colors, onChange, selectedColor }) {
                         class="swatch" 
                         >
                           <button aria-selected=${color.title === selectedColor}
+                                  aria-disabled=${unavailableNames?.includes(color.title)}
                                   data-swatch-name=${color.title}
                                   style="background: url(${color.url}) no-repeat center;" 
-                                  onClick=${() => onChange?.(color)} ></button>
+                                  onClick=${unavailableNames?.includes(color.title) || (() => onChange?.(color))} 
+                          ></button>
                       </li>
                   `)}
           </ul>
@@ -199,7 +202,6 @@ export default class ProductDetailsSidebar extends Component {
   }
 
   render() {
-    console.log(this.props?.selection?.color?.title);
     const product = this.productFromProps();
     return html`<${Fragment}>
       <div class="product-title desktop-hidden">
@@ -214,6 +216,7 @@ export default class ProductDetailsSidebar extends Component {
             ${product?.colors && html`
               <${ColorSelector}
                   colors=${product?.colors}
+                  unavailableColors=${product?.colors.filter((color) => !this.props.inStockVariants?.color?.find((variant) => variant.color.label === color.title))}
                   onChange=${(color) => this.updateSelection({ color })}
                   selectedColor=${this.props?.selection?.color?.title}
               />`}
@@ -221,8 +224,7 @@ export default class ProductDetailsSidebar extends Component {
                 <${SizeSelector} 
                       sizeType=${option.title}
                       allSizes=${option.values} 
-                      unavailableSizes=${option.values.filter((size) => !this.props.inStockVariants?.find((variant) => variant[option.id].label === size.title))}
-                      inStockVariants=${this.props.inStockVariants}
+                      unavailableSizes=${option.values.filter((size) => !this.props.inStockVariants?.[option.id]?.find((variant) => variant[option.id].label === size.title))}
                       selectedSize=${this.props.selection[option.id]}
                       onChange=${(size) => this.updateSelection({ [option.id]: size })}
                 />`)}
