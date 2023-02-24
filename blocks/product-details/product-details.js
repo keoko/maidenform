@@ -237,7 +237,7 @@ export default async function decorate($block) {
   }
 
   // if data is loaded within 350ms, don't show loading effect
-  const result = await dataOrLoading(sku, 350);
+  const result = await dataOrLoading(sku, 0);
 
   const app = html`<${ProductDetailPage} productPromise=${result} sku=${sku} />`;
 
