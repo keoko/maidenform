@@ -12,7 +12,7 @@ query EnrichmentQuery($sku: String!, $variantIds: [String!]!) {
     addToCartAllowed
   }
 }
-`;
+`.replace(/(?:\r\n|\r|\n|\t|[\s]{4})/g, ' ').replace(/\s\s+/g, ' ');
 
 export const productQuery = `
 query ProductQuery($sku: String!) {
@@ -95,7 +95,7 @@ query ProductQuery($sku: String!) {
     }
   }
 }
-`;
+`.replace(/(?:\r\n|\r|\n|\t|[\s]{4})/g, ' ').replace(/\s\s+/g, ' ');
 
 export const stockQuery = `
 query StockQuery($urlKey: String!) {
@@ -125,7 +125,7 @@ query StockQuery($urlKey: String!) {
     }
   }
 }
-`;
+`.replace(/(?:\r\n|\r|\n|\t|[\s]{4})/g, ' ').replace(/\s\s+/g, ' ');
 
 export async function performMonolithGraphQLQuery(query, variables) {
   const headers = {
@@ -134,7 +134,7 @@ export async function performMonolithGraphQLQuery(query, variables) {
   };
 
   const params = new URLSearchParams({
-    query: query.replaceAll(/(?:\r\n|\r|\n|\t|[\s]{4})/g, ' '),
+    query,
     variables: JSON.stringify(variables),
   });
   const response = await fetch(
