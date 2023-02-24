@@ -49,25 +49,28 @@ function Pagination(props) {
 }
 
 function Sort(props) {
+  const {
+    type, disabled, sortMenuRef, onSort,
+  } = props;
   const options = [
     { label: 'Price: High to Low', value: 'price-desc' },
     { label: 'Price: Low to High', value: 'price-asc' },
     { label: 'Product Name', value: 'name-asc' },
-    { label: 'Relevance', value: 'relevance-asc' },
+    { label: 'Relevance', value: type === 'category' ? 'position-asc' : 'relevance-asc' },
   ];
 
   const currentSort = options.find((option) => option.value === `${props.currentSort}-${props.sortDirection}`) || options[3];
 
-  return html`<div class="sort" disabled=${props.disabled}>
-    <button disabled=${props.disabled}>Sort By: ${currentSort.label}</button>
-    <div class="overlay" ref=${props.sortMenuRef}>
-      <button class="close" onClick=${() => props.sortMenuRef.current.classList.toggle('active')}>Close</button>
+  return html`<div class="sort" disabled=${disabled}>
+    <button disabled=${disabled}>Sort By: ${currentSort.label}</button>
+    <div class="overlay" ref=${sortMenuRef}>
+      <button class="close" onClick=${() => sortMenuRef.current.classList.toggle('active')}>Close</button>
       <ul>
         ${options.map((option) => html`<li>
           <a href="#" class="${currentSort.value === option.value ? 'active' : ''}" onClick=${(e) => {
-  props.sortMenuRef.current.classList.toggle('active');
+  sortMenuRef.current.classList.toggle('active');
   const [sort, direction = 'asc'] = option.value.split('-');
-  props.onSort?.(sort, direction);
+  onSort?.(sort, direction);
   e.preventDefault();
 }}>${option.label}</a>
         </li>`)}
@@ -77,7 +80,8 @@ function Sort(props) {
 }
 
 class ProductListPage extends Component {
-  constructor({ type = 'category' }) {
+  constructor(props) {
+    const { type = 'category', category } = props;
     super();
 
     this.facetMenuRef = createRef();
@@ -86,19 +90,24 @@ class ProductListPage extends Component {
     const queryParams = ProductListPage.parseQueryParams();
 
     let headline = 'Search Results';
+    let sort = 'relevance';
     if (type === 'category') {
       // Get from H1
       headline = document.querySelector('.default-content-wrapper > h1')?.innerText;
+      sort = 'position';
     }
 
     this.state = {
       loading: true,
       pages: 1,
+      currentPage: 1,
+      currentPageSize: 10,
       type,
       category: {
         name: headline,
+        id: category || null,
       },
-      sort: 'relevance', // TODO: should be position for PLP
+      sort,
       sortDirection: 'asc',
       products: {
         items: [],
@@ -113,9 +122,6 @@ class ProductListPage extends Component {
   static parseQueryParams = () => {
     const params = new URLSearchParams(window.location.search);
     const newState = {
-      currentPage: 1,
-      currentPageSize: 10,
-      sort: 'relevance',
       filters: {},
     };
     params.forEach((value, key) => {
@@ -174,17 +180,9 @@ class ProductListPage extends Component {
   loadProducts = async () => {
     this.setState({ loading: true });
 
-    if (this.state.type !== 'search' || !this.state.searchTerm) {
-      setTimeout(() => {
-        this.setState({ loading: false });
-      }, 200);
-      return;
-    }
-
     try {
       // TODO: Be careful if query exceeds GET size limits, then switch to POST
       const variables = {
-        phrase: this.state.searchTerm,
         pageSize: this.state.currentPageSize,
         currentPage: this.state.currentPage,
         sort: [{
@@ -192,6 +190,10 @@ class ProductListPage extends Component {
           direction: this.state.sortDirection === 'desc' ? 'DESC' : 'ASC',
         }],
       };
+
+      if (this.state.type === 'search') {
+        variables.search = this.state.searchTerm;
+      }
 
       if (Object.keys(this.state.filters).length > 0) {
         variables.filter = [];
@@ -202,6 +204,11 @@ class ProductListPage extends Component {
             variables.filter.push({ attribute: key, eq: this.state.filters[key][0] });
           }
         });
+      }
+
+      if (this.state.type === 'category' && this.state.category.id) {
+        variables.filter = variables.filter || [];
+        variables.filter.push({ attribute: 'categoryIds', eq: this.state.category.id });
       }
 
       const apiCall = new URL(endpoint);
@@ -215,8 +222,6 @@ class ProductListPage extends Component {
 
       // TODO: Ignore errors for now, since some are caused by products with
       // missing price information
-
-      console.log('response', response);
 
       // get ratings
       const allSkus = response.data.productSearch.items
@@ -233,7 +238,7 @@ class ProductListPage extends Component {
             .map((product) => ProductListPage.mapProduct(product.productView, ratings)),
           total: response.data.productSearch.total_count,
         },
-        facets: response.data.productSearch.facets,
+        facets: response.data.productSearch.facets.filter((facet) => facet.attribute !== 'categories'),
       });
     } catch (e) {
       console.error('Error loading products', e);
@@ -278,8 +283,8 @@ class ProductListPage extends Component {
     }
   }
 
-  render(_, state) {
-    console.log('state', state);
+  render(props, state) {
+    const { type = 'category' } = props;
 
     return html`<${Fragment}>
     <${FacetList} 
@@ -296,6 +301,7 @@ class ProductListPage extends Component {
           disabled=${state.loading}
           currentSort=${state.sort}
           sortDirection=${state.sortDirection}
+          type=${type}
           onSort=${(sort, direction) => this.setState({ sort, sortDirection: direction })}
           sortMenuRef=${this.sortMenuRef} />
       </div>
