@@ -1,7 +1,12 @@
-import { Component, Fragment, h, render, } from '../../scripts/preact.js';
+import {
+  Component, Fragment, h, render,
+} from '../../scripts/preact.js';
 import htm from '../../scripts/htm.js';
 import Carousel from './ProductDetailsCarousel.js';
 import Sidebar from './ProductDetailsSidebar.js';
+// Import here to preload script
+// eslint-disable-next-line no-unused-vars
+import Icon from './Icon.js';
 import ProductDetailsShimmer from './ProductDetailsShimmer.js';
 import { getProductRatings } from '../../scripts/scripts.js';
 import {
@@ -62,13 +67,19 @@ async function getProduct(sku) {
 
   const product = productData?.products?.[0];
 
-  // get first color
-  const color = product.options?.find((option) => option.id === 'color')?.values?.[0];
-  if (color) {
-    product.productImages = await getProductImages(color, sku);
-  }
+  const getColor = async () => {
+    // get first color
+    const color = product.options?.find((option) => option.id === 'color')?.values?.[0];
+    if (color) {
+      product.productImages = await getProductImages(color, sku);
+    }
+  };
 
-  product.reviewStats = await getProductRatings(sku);
+  const getRatings = async () => {
+    product.reviewStats = await getProductRatings(sku);
+  };
+
+  await Promise.all([getColor(), getRatings()]);
 
   return product;
 }
