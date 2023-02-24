@@ -23,20 +23,22 @@ const loadScript = (url, attrs) => {
   return script;
 };
 
-const environment = calcEnvironment();
-// OneTrust Cookies Consent Notice start
-const otId = await getConfigValue('onetrustid');
-const onetrustscript = await getConfigValue('onetrustscript');
-const isProduction = (environment === 'prod');
-if (otId && onetrustscript) {
-  const cookieScript = loadScript(`${onetrustscript}`);
-  cookieScript.setAttribute('data-domain-script', `${otId}${isProduction ? '' : '-test'}`);
-  window.OptanonWrapper = () => {};
-}
+if (new URLSearchParams(window.location.search).get('skip_delayed') !== 'true') {
+  const environment = calcEnvironment();
+  // OneTrust Cookies Consent Notice start
+  const otId = await getConfigValue('onetrustid');
+  const onetrustscript = await getConfigValue('onetrustscript');
+  const isProduction = (environment === 'prod');
+  if (otId && onetrustscript) {
+    const cookieScript = loadScript(`${onetrustscript}`);
+    cookieScript.setAttribute('data-domain-script', `${otId}${isProduction ? '' : '-test'}`);
+    window.OptanonWrapper = () => {};
+  }
 
-// load newrelic script
-if (!isProduction) loadScript('/scripts/newrelic-stage.js');
-// Core Web Vitals RUM collection
-sampleRUM('cwv');
+  // load newrelic script
+  if (!isProduction) loadScript('/scripts/newrelic-stage.js');
+  // Core Web Vitals RUM collection
+  sampleRUM('cwv');
+}
 
 // add more delayed functionality here
