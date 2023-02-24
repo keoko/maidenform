@@ -228,8 +228,8 @@ async function dataOrLoading(sku, timeout) {
   ]);
 }
 
-export default async function decorate($block) {
-  $block.innerHTML = '';
+export default function decorate($block) {
+  $block.innerHTML = '<div class="full-height"></div>';
 
   const sku = getSku();
   if (!sku) {
@@ -237,9 +237,9 @@ export default async function decorate($block) {
   }
 
   // if data is loaded within 350ms, don't show loading effect
-  const result = await dataOrLoading(sku, 0);
+  dataOrLoading(sku, 350).then((result) => {
+    const app = html`<${ProductDetailPage} productPromise=${result} sku=${sku} />`;
 
-  const app = html`<${ProductDetailPage} productPromise=${result} sku=${sku} />`;
-
-  render(app, $block);
+    render(app, $block);
+  });
 }

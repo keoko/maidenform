@@ -3,6 +3,10 @@
   grid-template: 'product-title' 'carousel';
 }
 
+.product-details > div.full-height {
+  height: 100vh;
+}
+
 .product-details > *:not(.product-detail-carousel) {
   padding: 0 16px;
 }
