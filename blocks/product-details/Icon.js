@@ -37,7 +37,7 @@ export default class Icon extends Component {
     return html`<${Fragment}>
         <span class=${`icon icon${this.iconName}`} dangerouslySetInnerHTML=${{ __html: this.state.iconHTML }}>
         </span>
-    </Fragment>
+    </${Fragment}>
     `;
   }
 }

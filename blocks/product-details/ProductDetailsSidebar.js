@@ -69,7 +69,7 @@ function NameAndPrice({
             <span class="price-actual">${price?.reduced}</span>
         </div>
         <div class="style-id">Style #${sku}</div>
-    </Fragment>
+    </${Fragment}>
   `;
 }
 
@@ -110,20 +110,19 @@ function ColorSelector({
 }
 
 function CartSection({ onAddToCart, canAddToCart }) {
-  return html`<${Fragment}>
-      <div class="sidebar-section cart">
-          <button 
-                  disabled=${!canAddToCart()} 
-                  onclick=${onAddToCart} 
-                  class="button primary cart-button">Add to Bag</button>
-          <p>Pay in 4 interest free payments on purchases of $30-$1,500 with PayPal
-          </p>
-          <p class="secondary-action"><${Icon} name="heart" />ADD TO FAVORITES</p>
-          <p class="secondary-action"><${Icon} name="envelope" />EMAIL</p>
-          <p><a href="/customer-service">Need Help?</a></p>
-      </div>
-  </>
-  `;
+  return html`<div class="sidebar-section cart">
+    <button
+      disabled=${false} 
+      onclick=${onAddToCart} 
+      class="button primary cart-button">
+      Add to Bag
+    </button>
+    <p>Pay in 4 interest free payments on purchases of $30-$1,500 with PayPal
+    </p>
+    <p class="secondary-action"><${Icon} name="heart" />ADD TO FAVORITES</p>
+    <p class="secondary-action"><${Icon} name="envelope" />EMAIL</p>
+    <p><a href="/customer-service">Need Help?</a></p>
+  </div>`;
 }
 
 function SelectionDisplay({ selection, productOptions }) {
@@ -234,6 +233,6 @@ export default class ProductDetailsSidebar extends Component {
           <${CartSection} onAddToCart=${this.props.onAddToCart} canAddToCart=${this.canAddToCart} />
         `}
       </div>
-    </Fragment>`;
+    </${Fragment}>`;
   }
 }

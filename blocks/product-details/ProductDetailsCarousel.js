@@ -22,7 +22,7 @@ function OptimizedSources({
   })
 }
         <img height=${height} width=${width} src=${src} />
-    </Fragment>
+    </${Fragment}>
   `;
 }
 
