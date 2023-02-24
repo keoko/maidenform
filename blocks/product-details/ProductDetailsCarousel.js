@@ -10,6 +10,7 @@ function OptimizedSources({
   src,
   sizes,
   width,
+  loading = 'lazy',
   height,
 }) {
   const addWebpParams = (url) => {
@@ -33,7 +34,7 @@ function OptimizedSources({
           return html`${webpTag}\n${jpgTag}`;
         })}
         <source srcset=${webpUrl} />
-        <img height=${height} width=${width} src=${src} />
+        <img height=${height} width=${width} src=${src} loading=${loading} />
     </${Fragment}>
   `;
   /* eslint-enable indent */
@@ -117,7 +118,7 @@ export default class Carousel extends Component {
                     ${this.props.shimmer || this.images.map((image, i) => html`
                         <li key=${image} active=${i === this.state.slide ? 'true' : 'false'}>
                             <picture>
-                                <${OptimizedSources} src=${image} width="888" height="700" sizes=${[{ media: 450, width: 450 }, { media: 2000, width: 700 }]} />
+                                <${OptimizedSources} src=${image} width="888" height="700" sizes=${[{ media: 450, width: 450 }, { media: 2000, width: 700 }]} loading=${i === 0 ? 'eager' : 'lazy'} />
                             </picture>
                         </li>
                     `)}
