@@ -12,6 +12,7 @@ function OptimizedSources({
   width,
   loading = 'lazy',
   height,
+  loading = 'lazy',
 }) {
   const addWebpParams = (url) => {
     url.searchParams.set('format', 'webply');
@@ -96,7 +97,7 @@ export default class Carousel extends Component {
                     ${this.props.shimmer || this.thumbnailImages.map((image, i) => html`
                           <li key=${image} onClick=${() => this.setState({ slide: i, thumbnailSlide: i })}>
                               <picture>
-                                  <${OptimizedSources} src=${image} height="313" width="247" sizes=${[]} />
+                                  <${OptimizedSources} src=${image} height="313" width="247" loading=${i === 0 ? 'eager' : 'lazy'} sizes=${[]} />
                               </picture>
                           </li>`)}
                     ${this.props.shimmer && [1, 2, 3].map(() => html`
@@ -118,7 +119,7 @@ export default class Carousel extends Component {
                     ${this.props.shimmer || this.images.map((image, i) => html`
                         <li key=${image} active=${i === this.state.slide ? 'true' : 'false'}>
                             <picture>
-                                <${OptimizedSources} src=${image} width="888" height="700" sizes=${[{ media: 450, width: 450 }, { media: 2000, width: 700 }]} loading=${i === 0 ? 'eager' : 'lazy'} />
+                                <${OptimizedSources} src=${image} width="888" height="700" loading=${i === 0 ? 'eager' : 'lazy'} sizes=${[{ media: 450, width: 450 }, { media: 2000, width: 700 }]} />
                             </picture>
                         </li>
                     `)}
