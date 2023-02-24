@@ -12,8 +12,14 @@ function OptimizedSources({
   width,
   height,
 }) {
+  const addWebpParams = (url) => {
+    url.searchParams.set('format', 'webply');
+    url.searchParams.set('optimize', 'medium');
+    url.searchParams.delete('quality');
+  };
+
   const webpUrl = new URL(src);
-  webpUrl.searchParams.set('format', 'webply');
+  addWebpParams(webpUrl);
 
   /* eslint-disable indent */
   return html`
@@ -22,7 +28,7 @@ function OptimizedSources({
           const url = new URL(src);
           url.searchParams.set('width', size.width);
           const jpgTag = html`<source media=${`(max-width: ${size.media}px)`} srcset=${url.href}/>`;
-          url.searchParams.set('format', 'webply');
+          addWebpParams(url);
           const webpTag = html`<source media=${`(max-width: ${size.media}px)`} srcset=${url.href}/>`;
           return html`${webpTag}\n${jpgTag}`;
         })}
