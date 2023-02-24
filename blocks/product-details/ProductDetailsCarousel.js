@@ -12,18 +12,25 @@ function OptimizedSources({
   width,
   height,
 }) {
+  const webpUrl = new URL(src);
+  webpUrl.searchParams.set('format', 'webply');
+
+  /* eslint-disable indent */
   return html`
-    <${Fragment} >
+      <${Fragment} >
         ${sizes.map((size) => {
-    const url = new URL(src);
-    url.searchParams.set('width', size.width);
-    return html`
-        <source media=${`(max-width: ${size.media}px)`} srcset=${url.href}/>`;
-  })
-}
+          const url = new URL(src);
+          url.searchParams.set('width', size.width);
+          const jpgTag = html`<source media=${`(max-width: ${size.media}px)`} srcset=${url.href}/>`;
+          url.searchParams.set('format', 'webply');
+          const webpTag = html`<source media=${`(max-width: ${size.media}px)`} srcset=${url.href}/>`;
+          return html`${webpTag}\n${jpgTag}`;
+        })}
+        <source srcset=${webpUrl} />
         <img height=${height} width=${width} src=${src} />
     </Fragment>
   `;
+  /* eslint-enable indent */
 }
 
 export default class Carousel extends Component {
@@ -82,7 +89,7 @@ export default class Carousel extends Component {
                     ${this.props.shimmer || this.thumbnailImages.map((image, i) => html`
                           <li key=${image} onClick=${() => this.setState({ slide: i, thumbnailSlide: i })}>
                               <picture>
-                                  <img height="313" width="247" src=${image} />
+                                  <${OptimizedSources} src=${image} height="313" width="247" sizes=${[]} />
                               </picture>
                           </li>`)}
                     ${this.props.shimmer && [1, 2, 3].map(() => html`
