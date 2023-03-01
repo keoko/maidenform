@@ -339,7 +339,7 @@ class ProductListPage extends Component {
       facets=${state.facets}
       filters=${state.filters}
       facetMenuRef=${this.facetMenuRef}
-      onFilterChange=${(filters) => this.setState({ filters })}
+      onFilterChange=${(filters) => this.setState({ filters, currentPage: 1 })}
       loading=${state.loading} />
     <div class="products">
       <div class="title">
