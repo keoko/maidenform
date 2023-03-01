@@ -365,7 +365,7 @@ class ProductListPage extends Component {
         currentPageSize=${state.currentPageSize}
         loading=${state.loading}
         onPageChange=${(page) => this.setState({ currentPage: page })}
-        onPageSizeChange=${(pageSize) => this.setState({ currentPageSize: pageSize })} />
+        onPageSizeChange=${(pageSize) => this.setState({ currentPageSize: pageSize, currentPage: 1 })} />
     </div>
   </>`;
   }
