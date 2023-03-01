@@ -240,7 +240,7 @@ class ProductListPage extends Component {
       };
 
       if (this.state.type === 'search') {
-        variables.search = this.state.searchTerm;
+        variables.phrase = this.state.searchTerm;
       }
 
       if (Object.keys(this.state.filters).length > 0) {
