@@ -122,12 +122,12 @@ class ProductCard extends Component {
         <div class="variants">
           <button class="previous" onClick=${this.swatchScrollLeft}>Previous</button>
           <div class="swatches" ref=${this.variantsRef}>
-            ${product.swatches.map(({ value, image, name }, index) => html`
+            ${product.swatches.map(({ id, image, title }, index) => html`
               <button
                 class="swatch ${index === state.selectedVariant ? 'active' : ''}"
-                value=${value}
+                value=${id}
                 style="background: url('${image}?width=26&quality=85&fit=bounds') no-repeat center;"
-                onClick=${() => this.setState({ selectedVariant: index })}>${name}</button>
+                onClick=${() => this.setState({ selectedVariant: index })}>${title}</button>
             `)}
             </div>
           <button class="next" onClick=${this.swatchScrollRight}>Next</button>
