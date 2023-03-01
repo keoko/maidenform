@@ -39,7 +39,7 @@ const query = `query productSearch(
                 name
                 sku
                 url
-                images(roles: ["small_image", "thumbnail"]) {
+                images(roles: []) {
                     label
                     roles
                     url
@@ -56,6 +56,12 @@ const query = `query productSearch(
                         }
                         maximum {
                             ...priceFields
+                        }
+                    }
+                    options {
+                        title
+                        values {
+                            title
                         }
                     }
                 }

@@ -81,19 +81,16 @@ class ProductCard extends Component {
     return null;
   }
 
-  static renderImage(product) {
+  static renderImage(name, image) {
     // Placeholder
-    let image = 'https://cdn.maidenform.com/catalog/product/i/m/placeholder/image.jpg';
-    if (product.images.length > 0) {
-      image = product.images[0].url;
-    }
+    const displayImage = image || 'https://cdn.maidenform.com/catalog/product/i/m/placeholder/image.jpg';
 
-    const url = new URL(image);
+    const url = new URL(displayImage);
     url.search = '';
 
     return html`<picture>
-      <source type="image/webp" srcset="${url}?width=247&amp;bg-color=255,255,255&format=webply&optimize=medium" />
-      <img class="product-image-photo" src="${url}?width=247&amp;quality=100&amp;bg-color=255,255,255" max-width="247" max-height="313" alt=${product.name} />
+      <source type="image/webp" srcset="${url}?width=247&bg-color=255,255,255&format=webply&optimize=medium" />
+      <img class="product-image-photo" src="${url}?width=247&quality=100&bg-color=255,255,255" max-width="247" max-height="313" alt=${name} />
     </picture>`;
   }
 
@@ -118,7 +115,7 @@ class ProductCard extends Component {
       <li>
         <div class="picture">
           <a href="/products/${product.url_key}/${product.sku}">
-            ${ProductCard.renderImage(product)}
+            ${ProductCard.renderImage(product.name, product.swatches[state.selectedVariant]?.productImage)}
           </a>
           <button class="add-to-cart-action">Add to Bag</button>
         </div>
@@ -129,7 +126,7 @@ class ProductCard extends Component {
               <button
                 class="swatch ${index === state.selectedVariant ? 'active' : ''}"
                 value=${value}
-                style="background: url('${image}?width=26&amp;quality=85&amp;fit=bounds') no-repeat center;"
+                style="background: url('${image}?width=26&quality=85&fit=bounds') no-repeat center;"
                 onClick=${() => this.setState({ selectedVariant: index })}>${name}</button>
             `)}
             </div>

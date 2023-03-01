@@ -161,15 +161,63 @@ class ProductListPage extends Component {
     value: swatch.custom_color,
   });
 
+  static getColorSwatchesForProduct = (colorOption, images, sku) => (
+    colorOption ? colorOption.values : [])
+    .map((v) => {
+      const id = v.title.replace(/[^a-zA-Z0-9]/g, '');
+      const productImage = images.find((i) => i.url.includes(`_${id}_`))?.url;
+
+      let swatchImage = null;
+      if (productImage) {
+        const swatchUrl = new URL(productImage);
+        swatchUrl.hostname = 'swatches.maidenform.com';
+        swatchUrl.search = '';
+
+        const filename = swatchUrl.pathname.split('/').pop();
+        const prefix = filename.split('_')[0].toUpperCase();
+        const extension = filename.split('.').pop();
+        swatchUrl.pathname = `${prefix}_${sku}/${prefix}_${sku}_${id}_sw.${extension}`;
+        swatchImage = swatchUrl.toString();
+      }
+
+      return {
+        ...v,
+        id,
+        productImage,
+        image: swatchImage,
+      };
+    })
+    // Remove options without image
+    .filter((v) => v.image);
+
   static mapProduct = (product, ratings) => {
     // Parse url_key from url
     const productUrl = new URL(product.url);
     const urlKey = productUrl.pathname.substring(1, productUrl.pathname.length - 5);
 
+    const allImages = product.images
+      // Filter out size charts
+      .filter((image) => !image.roles.includes('hide_from_pdp'))
+      // Remove duplicates
+      .filter((image, index, self) => self.findIndex((i) => i.url === image.url) === index)
+      // Fix wrong image URL
+      .map((image) => ({
+        ...image,
+        url: image.url
+          .replace('productH', 'product/H')
+          .replace('productM', 'product/M'),
+      }));
+
+    // Find in product.options the object with title = Color
+    const colorOption = product.options.find((option) => option.title === 'Color');
+    const colorOptions = ProductListPage
+      .getColorSwatchesForProduct(colorOption, allImages, product.sku);
+
     return {
       ...product,
+      images: allImages.length > 0 ? [allImages[0]] : [],
       url_key: urlKey,
-      swatches: [],
+      swatches: colorOptions,
       rating: {
         average: ratings[product.sku]?.average ?? 0,
         count: ratings[product.sku]?.count ?? 0,
