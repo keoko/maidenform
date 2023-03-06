@@ -34,8 +34,9 @@ if (otId && onetrustscript) {
   window.OptanonWrapper = () => {};
 }
 
-// load newrelic script
-if (!isProduction) loadScript('/scripts/newrelic-stage.js');
+// TODO (#101): Load newrelic script
+// if (!isProduction) loadScript('/scripts/newrelic-stage.js');
+
 // Core Web Vitals RUM collection
 sampleRUM('cwv');
 
