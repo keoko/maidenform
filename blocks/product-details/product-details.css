@@ -93,6 +93,10 @@
   align-items: center;
 }
 
+.product-details .sidebar-section .hidden {
+  display: none;
+}
+
 .product-details .product-title .price .price-regular {
   font-size: 1.8rem;
   line-height: 3.6rem;

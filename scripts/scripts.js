@@ -111,6 +111,34 @@ export function loadScript(url, attrs, callback) {
   return script;
 }
 
+/*
+Returns an array of objects with the following structure:
+[
+  { "key": 5, "count": 175 },
+  { "key": 4, "count": 27 },
+  { "key": 3, "count": 20 },
+  { "key": 2, "count": 27 },
+  { "key": 1, "count": 38 }
+]
+*/
+export async function getProductRatingsSummary(productId) {
+  const searchParams = new URLSearchParams({
+    passkey: await getConfigValue('bazaarvoice-passkey'),
+    productid: productId,
+    contentType: 'reviews,questions',
+    reviewDistribution: 'primaryRating,recommended',
+    rev: 0,
+    contentlocale: 'en_GB,en_US'
+  });
+  const endpoint = 'https://stg.api.bazaarvoice.com/data/display/0.2alpha/product/summary';
+  const response = await fetch(`${endpoint}?${searchParams.toString()}`);
+  if (response.ok) {
+    const body = await response.json();
+    return body?.reviewSummary?.primaryRating?.distribution;
+  }
+  return [];
+}
+
 /**
  * Builds all synthetic blocks in a container element.
  * @param {Element} main The container element

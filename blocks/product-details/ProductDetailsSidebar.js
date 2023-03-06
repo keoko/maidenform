@@ -2,6 +2,7 @@ import { Component, Fragment, h } from '../../scripts/preact.js';
 import htm from '../../scripts/htm.js';
 import Icon from './Icon.js';
 import { renderPrice } from '../../scripts/commerce.js';
+import { getProductRatingsSummary } from '../../scripts/scripts.js';
 
 const html = htm.bind(h);
 
@@ -81,14 +82,40 @@ function NameAndPrice({ shimmer, product }) {
   `;
 }
 
-function Rating({ value, count }) {
+function Rating({ value, count, handleMouseOver, handleMouseOut }) {
   return html`
-      <div class="rating">
+      <div class="rating" onMouseOver=${handleMouseOver} onMouseOut=${handleMouseOut}>
           <div style="--rating: ${value ?? 0};"></div>
           <span>(${count})</span>
       </div>
   `;
 }
+
+function RatingModal({ ratingsSummary }) {
+  if (ratingsSummary) {
+    return html`
+    <div data-bv-modal="true" class="bv_modal_component_container" tabindex="0" role="navigation" style="left: 960px !important; top: 440px !important;">
+      <div class="bv_modal_outer_content">
+        <div class="bv_modal_inner_content" id="bv_components_histogram">
+          <div class="bv_histogram_component_container">
+            <div>
+            ${ratingsSummary.map((rating) => html`
+              <div class="bv_histogram_row_container" aria-label="175 reviews with ${rating.key} stars. " aria-expanded="false" tabindex="0" role="link">
+                <div class="bv_histogram_row_prefix">${rating.key}</div>
+                <div class="bv_histogram_row_star">
+                  <div>${rating.count}</div>
+                </div>
+              </div>
+            `)}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
+  }
+};
+
 
 function ColorSelector({
   colors, onChange, selectedColor, unavailableColors,
@@ -214,7 +241,7 @@ export default class ProductDetailsSidebar extends Component {
       <div class=${`sidebar ${this.props.shimmer ? 'shimmer' : ''}`}>
           ${this.props.shimmer || html`
             <div class="product-title sidebar-section mobile-hidden">
-              <${Rating} value=${product?.rating ?? 0} count=${product?.numReviews} />
+              <${Ratings} sku=${product?.sku} value=${product?.rating ?? 0} count=${product?.numReviews} />
               <${NameAndPrice} product=${product} />
           </div>
             ${hasColors && html`
@@ -239,5 +266,57 @@ export default class ProductDetailsSidebar extends Component {
         `}
       </div>
     <//>`;
+  }
+}
+
+class Ratings extends Component {
+  productRatingsSummaryPromise = null;
+
+  constructor(props) {
+    super(props);
+    this.handleMouseOver = this.handleMouseOver.bind(this);
+    this.handleMouseOut = this.handleMouseOut.bind(this);
+    this.state = {
+      isHovering: false,
+      ratingsSummary: null
+    };
+  }
+
+  handleMouseOver() {
+    if (!this.state.ratingsSummary && !this.productRatingsSummaryPromise) {
+      this.productRatingsSummaryPromise = getProductRatingsSummary(this.props.sku);
+      if (this.productRatingsSummaryPromise) {
+        this.productRatingsSummaryPromise.then((data) => {
+          this.setState(() => ({
+            ratingsSummary: data
+          }));
+        });
+      }
+    }
+    this.setState(() => ({
+      isHovering: true
+    }));
+  }
+
+  handleMouseOut() {
+    this.setState(() => ({
+      isHovering: false
+    }));
+  }
+
+  render() {
+    return html`
+      <div>
+        <${Rating}
+          value=${this.props.value}
+          count=${this.props.count}
+          handleMouseOver=${this.handleMouseOver}
+          handleMouseOut=${this.handleMouseOut}
+        />
+        ${this.state.isHovering && html`
+          <${RatingModal} ratingsSummary=${this.state.ratingsSummary} />
+        `}
+      </div>
+      `;
   }
 }
