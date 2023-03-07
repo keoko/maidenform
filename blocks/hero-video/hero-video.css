@@ -14,12 +14,17 @@
 .hero-video .video-desktop,
 .hero-video .video-mobile {
   margin: 0 auto;
-  max-width: max-content;
   width: 100%;
+  overflow: hidden;
 }
 
 .hero-video .video-desktop {
   display: none;
+  aspect-ratio: 1 / 0.44;
+}
+
+.hero-video .video-mobile {
+  aspect-ratio: 1 / 1.25;
 }
 
 .hero-video video {
@@ -81,7 +86,7 @@
 
 @media (min-width: 600px) {
   .hero-video .video-desktop {
-    display: unset;
+    display: block;
   }
 
   .hero-video .video-mobile {

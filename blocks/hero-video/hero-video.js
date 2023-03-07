@@ -8,7 +8,7 @@ function decorateVideo(video, target) {
   videoTag.toggleAttribute('muted', true);
   videoTag.toggleAttribute('playsinline', true);
   videoTag.toggleAttribute('loop', true);
-  videoTag.toggleAttribute('controls', true);
+  /* videoTag.toggleAttribute('controls', false); */
   videoTag.setAttribute('poster', video.poster);
   videoTag.setAttribute('title', video.title);
   videoTag.innerHTML = `<source src="${video.videoUrl}" type="video/mp4">`;
@@ -52,7 +52,7 @@ export default function decorate(block) {
       const srcURL = new URL(poster.src);
       const srcUSP = new URLSearchParams(srcURL.search);
       srcUSP.set('format', 'webply');
-      srcUSP.set('width', `${typeHint === 'mobile' ? 750 : 2000}`);
+      srcUSP.set('width', `${typeHint === 'mobile' ? 480 : 2000}`);
       optimizedPosterSrc = `${srcURL.pathname}?${srcUSP.toString()}`;
     }
 
