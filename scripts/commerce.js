@@ -2,22 +2,25 @@
 
 import { getConfigValue } from './configs.js';
 
-export function getSwatchImageUrl(sku, swatch) {
-  const swatchUrl = new URL(swatch.sku_image_url);
-  swatchUrl.hostname = 'swatches.maidenform.com';
-  swatchUrl.search = '';
+export const PLACEHOLDER_IMG = 'https://cdn.maidenform.com/catalog/product/i/m/placeholder/image.jpg';
 
-  let color = swatch.custom_color;
+export function getSwatchImageUrl(sku, color) {
   // Remove and non-alphanumeric characters
-  color = color.replace(/[^a-zA-Z0-9]/g, '');
+  const colorString = color.replace(/[^a-zA-Z0-9]/g, '');
 
-  const filename = swatchUrl.pathname.split('/').pop();
-  const prefix = filename.split('_')[0].toUpperCase();
-  const extension = filename.split('.').pop();
+  return `https://swatches.maidenform.com/HNS_${sku}/HNS_${sku}_${colorString}_sw.jpg`;
+}
 
-  swatchUrl.pathname = `${prefix}_${sku}/${prefix}_${sku}_${color}_sw.${extension}`;
-
-  return swatchUrl.toString();
+export function renderFallbackImage(event, fallback = PLACEHOLDER_IMG) {
+  const pictureTag = event.target.parentNode;
+  for (let i = 0; i < pictureTag.children.length; i += 1) {
+    const child = pictureTag.children[i];
+    if (child.tagName === 'SOURCE') {
+      child.srcset = fallback;
+    } else if (child.tagName === 'IMG') {
+      child.src = fallback;
+    }
+  }
 }
 
 export async function getProductRatings(productSkus) {

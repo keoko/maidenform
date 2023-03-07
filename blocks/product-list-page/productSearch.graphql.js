@@ -39,11 +39,6 @@ const query = `query productSearch(
                 name
                 sku
                 url
-                images(roles: []) {
-                    label
-                    roles
-                    url
-                }
                 ... on SimpleProductView {
                     price {
                         ...priceFields

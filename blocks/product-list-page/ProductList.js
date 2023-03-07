@@ -3,6 +3,7 @@ import {
   h, Component, createRef, Fragment,
 } from '../../scripts/preact.js';
 import htm from '../../scripts/htm.js';
+import { PLACEHOLDER_IMG, renderFallbackImage } from '../../scripts/commerce.js';
 
 const html = htm.bind(h);
 
@@ -17,6 +18,9 @@ class ProductCard extends Component {
     this.state = {
       selectedVariant: 0,
     };
+
+    // TODO: Call refineProduct for selection of variant
+
     this.baseProduct = props.product;
     this.resizeObserver = new ResizeObserver((entries) => {
       entries.forEach((entry) => {
@@ -83,7 +87,7 @@ class ProductCard extends Component {
 
   static renderImage(name, image) {
     // Placeholder
-    const displayImage = image || 'https://cdn.maidenform.com/catalog/product/i/m/placeholder/image.jpg';
+    const displayImage = image || PLACEHOLDER_IMG;
 
     const url = new URL(displayImage);
     url.search = '';
@@ -91,7 +95,7 @@ class ProductCard extends Component {
     return html`<picture>
       <source type="image/webp" srcset="${url}?width=163&bg-color=255,255,255&format=webply&optimize=medium" media="(max-width: 900px)" />
       <source type="image/webp" srcset="${url}?width=330&bg-color=255,255,255&format=webply&optimize=medium" />
-      <img class="product-image-photo" src="${url}?width=330&quality=100&bg-color=255,255,255" max-width="330" max-height="396" alt=${name} />
+      <img class="product-image-photo" src="${url}?width=330&quality=100&bg-color=255,255,255" max-width="330" max-height="396" alt=${name} onerror=${renderFallbackImage} />
     </picture>`;
   }
 
@@ -116,7 +120,7 @@ class ProductCard extends Component {
       <li>
         <div class="picture">
           <a href="/products/${product.url_key}/${product.sku}">
-            ${ProductCard.renderImage(product.name, product.swatches[state.selectedVariant]?.productImage)}
+            ${ProductCard.renderImage(product.name, product.images[0].url)}
           </a>
           <button class="add-to-cart-action">Add to Bag</button>
         </div>
