@@ -85,7 +85,7 @@ class ProductCard extends Component {
     return null;
   }
 
-  static renderImage(name, image) {
+  static renderImage(name, image, loading = 'lazy') {
     // Placeholder
     const displayImage = image || PLACEHOLDER_IMG;
 
@@ -95,11 +95,11 @@ class ProductCard extends Component {
     return html`<picture>
       <source type="image/webp" srcset="${url}?width=163&bg-color=255,255,255&format=webply&optimize=medium" media="(max-width: 900px)" />
       <source type="image/webp" srcset="${url}?width=330&bg-color=255,255,255&format=webply&optimize=medium" />
-      <img class="product-image-photo" src="${url}?width=330&quality=100&bg-color=255,255,255" max-width="330" max-height="396" alt=${name} onerror=${renderFallbackImage} />
+      <img class="product-image-photo" src="${url}?width=330&quality=100&bg-color=255,255,255" max-width="330" max-height="396" alt=${name} loading=${loading} onerror=${renderFallbackImage} />
     </picture>`;
   }
 
-  render({ product, loading }, state) {
+  render({ product, loading, index }, state) {
     if (loading) {
       return html`
       <li>
@@ -120,19 +120,19 @@ class ProductCard extends Component {
       <li>
         <div class="picture">
           <a href="/products/${product.url_key}/${product.sku}">
-            ${ProductCard.renderImage(product.name, product.images[0].url)}
+            ${ProductCard.renderImage(product.name, product.images[0].url, index < 1 ? 'eager' : 'lazy')}
           </a>
           <button class="add-to-cart-action">Add to Bag</button>
         </div>
         <div class="variants">
           <button class="previous" onClick=${this.swatchScrollLeft}>Previous</button>
           <div class="swatches" ref=${this.variantsRef}>
-            ${product.swatches.map(({ id, image, title }, index) => html`
+            ${product.swatches.map(({ id, image, title }, i) => html`
               <button
-                class="swatch ${index === state.selectedVariant ? 'active' : ''}"
+                class="swatch ${i === state.selectedVariant ? 'active' : ''}"
                 value=${id}
                 style="background: url('${image}?width=26&quality=85&fit=bounds') no-repeat center;"
-                onClick=${() => this.setState({ selectedVariant: index })}>${title}</button>
+                onClick=${() => this.setState({ selectedVariant: i })}>${title}</button>
             `)}
             </div>
           <button class="next" onClick=${this.swatchScrollRight}>Next</button>
@@ -165,7 +165,7 @@ const ProductList = ({ products, loading, currentPageSize }) => {
   }
 
   return html`<div class="list">
-    <ol>${products.items.map((product) => html`<${ProductCard} product=${product} />`)}</ol>
+    <ol>${products.items.map((product, index) => html`<${ProductCard} product=${product} index=${index} />`)}</ol>
   </div>`;
 };
 
