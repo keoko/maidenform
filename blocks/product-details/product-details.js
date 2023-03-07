@@ -5,7 +5,6 @@ import htm from '../../scripts/htm.js';
 import Carousel from './ProductDetailsCarousel.js';
 import Sidebar from './ProductDetailsSidebar.js';
 import ProductDetailsShimmer from './ProductDetailsShimmer.js';
-import { setPage } from '../../scripts/mse-utils.js';
 
 const html = htm.bind(h);
 
@@ -44,8 +43,6 @@ class ProductDetailPage extends Component {
 }
 
 export default function decorate($block) {
-  setPage('Product');
-
   $block.innerHTML = '';
   const app = html`<${ProductDetailPage} />`;
 
