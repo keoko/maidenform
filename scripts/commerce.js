@@ -2,7 +2,7 @@
 
 import { getConfigValue } from './configs.js';
 
-export const PLACEHOLDER_IMG = 'https://cdn.maidenform.com/catalog/product/i/m/placeholder/image.jpg';
+export const PLACEHOLDER_IMG = new URL('/product-images/placeholder.jpg', document.baseURI).toString();
 
 export function getSwatchImageUrl(sku, color) {
   // Remove and non-alphanumeric characters
