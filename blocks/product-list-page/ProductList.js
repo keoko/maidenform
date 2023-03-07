@@ -119,7 +119,7 @@ class ProductCard extends Component {
     return html`
       <li>
         <div class="picture">
-          <a href="/products/${product.url_key}/${product.sku}">
+          <a href="https://pdp-catalog-service--maidenform--hlxsites.hlx.live/products/${product.url_key}/${product.sku}">
             ${ProductCard.renderImage(product.name, product.images[0].url, index < 1 ? 'eager' : 'lazy')}
           </a>
           <button class="add-to-cart-action">Add to Bag</button>
@@ -138,7 +138,7 @@ class ProductCard extends Component {
           <button class="next" onClick=${this.swatchScrollRight}>Next</button>
         </div>
         <div class="name">
-          <a href="/products/${product.url_key}/${product.sku}" dangerouslySetInnerHTML=${{__html: product.name}} />
+          <a href="https://pdp-catalog-service--maidenform--hlxsites.hlx.live/products/${product.url_key}/${product.sku}" dangerouslySetInnerHTML=${{__html: product.name}} />
         </div>
         <div class="price">${this.renderPrice(product)}</div>
         <div class="rating">
