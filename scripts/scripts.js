@@ -10,8 +10,6 @@ import {
   loadBlocks,
   loadCSS,
 } from './lib-franklin.js';
-// load the library which initializes the storfront and datalayer
-import './commerce-events-sdk.js';
 
 const LCP_BLOCKS = []; // add your LCP blocks to the list
 window.hlx.RUM_GENERATION = 'project-1'; // add your RUM generation information here
@@ -72,6 +70,21 @@ function buildImageLinks(element) {
       }
     }
   });
+}
+
+export function loadScript(url, attrs, callback) {
+  const head = document.querySelector('head');
+  const script = document.createElement('script');
+  script.src = url;
+  script.onload = callback;
+  if (attrs) {
+    // eslint-disable-next-line no-restricted-syntax, guard-for-in
+    for (const attr in attrs) {
+      script.setAttribute(attr, attrs[attr]);
+    }
+  }
+  head.append(script);
+  return script;
 }
 
 /**
