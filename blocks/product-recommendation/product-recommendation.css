@@ -1,11 +1,99 @@
-.block.product-recommendation {
-    padding: 20px 0;
+.product-recommendation {
+    color: var(--clr-dark-pink);
+
+    --title-height: 120px;
 }
 
-/* stylelint-disable-next-line selector-class-pattern */
-.section.heading-pink .block.product-recommendation .rfk_header {
-    font-family: var(--ff-zahrah-semibold);
-    font-size: var(--heading-font-size-l);
-    color: var(--clr-dark-pink);
-    text-transform: unset;
+.product-recommendation picture {
+    display: flex;
+}
+
+.product-recommendation .product-grid {
+    display: flex;
+    gap: 16px;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+}
+
+.product-recommendation .product-grid .product-grid-item {
+    width: 70%;
+    max-width: 200px;
+    scroll-snap-align: center;
+    flex-shrink: 0;
+}
+
+.product-recommendation .product-grid .product-grid-item h3 {
+    font-size: 14px;
+    color: black;
+    font-family: var(--ff-gilroy-light);
+    height: var(--title-height);
+    overflow: hidden;
+    box-sizing: border-box;
+    margin: 0;
+    padding-top: 15px;
+}
+
+.product-recommendation .product-grid picture {
+    background: none;
+}
+
+.product-recommendation .product-grid img {
+    aspect-ratio: 450 / 571;
+    display: block;
+    width: 100%;
+    object-fit: contain;
+    background: none;
+}
+
+.product-recommendation .placeholder {
+    /* todo: sizing of the loading effect */
+    width: 70%;
+    max-width: 200px;
+    flex-shrink: 0;
+    scroll-snap-align: center;
+    margin-bottom: var(--title-height);
+    box-sizing: border-box;
+    background-color: #f8f8f8;
+}
+
+.product-recommendation .placeholder picture {
+    height: 100%;
+}
+
+.product-recommendation .placeholder img {
+    display: block;
+    width: 100%;
+    visibility: hidden;
+}
+
+@keyframes loading {
+    to {
+        background-position-x: -20%;
+    }
+}
+
+@media (min-width: 768px) {
+    .product-recommendation .placeholder {
+        width: unset;
+        max-width: unset;
+    }
+
+    .product-recommendation .product-grid .product-grid-item {
+        width: unset;
+        max-width: unset;
+    }
+
+    .product-recommendation .product-grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-gap: 16px;
+        scrollbar-width: none;
+    }
+
+    .product-recommendation .product-grid::-webkit-scrollbar {
+        display: none;
+        width: 0;
+        height: 0;
+    }
 }
