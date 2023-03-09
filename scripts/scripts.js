@@ -10,8 +10,13 @@ import {
   loadBlocks,
   loadCSS,
 } from './lib-franklin.js';
+import './configs.js';
 
-const LCP_BLOCKS = []; // add your LCP blocks to the list
+import { preloadLCPImage } from './product.js';
+
+const LCP_BLOCKS = [
+  'product-details',
+]; // add your LCP blocks to the list
 window.hlx.RUM_GENERATION = 'project-1'; // add your RUM generation information here
 
 /* function buildHeroBlock(main) {
@@ -137,6 +142,9 @@ export async function loadFragment(path) {
  * loads everything needed to get to LCP.
  */
 async function loadEager(doc) {
+  if (window.location.href.match(/\/products\/[\w|-]+\/[\w|-]+/)) {
+    preloadLCPImage();
+  }
   document.documentElement.lang = 'en';
   decorateTemplateAndTheme();
   const main = doc.querySelector('main');
@@ -189,9 +197,9 @@ async function loadLazy(doc) {
  */
 function loadDelayed() {
   if (new URLSearchParams(window.location.search).get('skip_delayed') !== 'true') {
-  // eslint-disable-next-line import/no-cycle
+    // eslint-disable-next-line import/no-cycle
     window.setTimeout(() => import('./delayed.js'), 3000);
-  // load anything that can be postponed to the latest here
+    // load anything that can be postponed to the latest here
   }
 }
 

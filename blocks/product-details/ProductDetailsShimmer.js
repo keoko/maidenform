@@ -9,8 +9,9 @@ const html = htm.bind(h);
 
 export default function ProductDetailsShimmer() {
   return html`<${Fragment}>
-      <${Carousel} shimmer />
-      <${Sidebar} shimmer />
+      <div class="title-shimmer shimmer desktop-hidden"></div>
+      <${Carousel} loading />
+      <${Sidebar} loading />
       <div class="detail-shimmer shimmer mobile-hidden"></div>
-  </Fragment>`;
+  <//>`;
 }

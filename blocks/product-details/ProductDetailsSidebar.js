@@ -1,27 +1,27 @@
-import {
-  h, Component, Fragment,
-} from '../../scripts/preact.js';
+import { Component, Fragment, h } from '../../scripts/preact.js';
 import htm from '../../scripts/htm.js';
 import Icon from './Icon.js';
 
 const html = htm.bind(h);
 
 function SizeSelector({
-  sizeType, allSizes, unavailableSizes, onChange, selectedSize,
+  sizeType, allSizes, onChange, selectedSize, unavailableSizes,
 }) {
+  const sortedSizes = allSizes.sort((a, b) => (a.title < b.title ? -1 : 1));
+
   return html`
       <div class="sidebar-section sizes-selector">
           <h4>AVAILABLE ${sizeType.toUpperCase()}</h4>
           <span class="size-guide">Size Guide</span>
           <ul>
-              ${allSizes.map((size) => html`
+              ${sortedSizes.map((size) => html`
                 <li key=${size}>
                     <button
                         aria-selected=${size === selectedSize}
                         onClick=${unavailableSizes?.includes(size) || (() => onChange?.(size))}
-                        aria-disabled=${unavailableSizes?.includes(size)}
+                        disabled=${unavailableSizes?.includes(size)}
                     >
-                        ${size}
+                        ${size.title}
                     </button>
                 </li>
               `)}
@@ -34,7 +34,7 @@ function QuantitySelector({ onChange }) {
   return html`
       <div class="sidebar-section quantity-select">
           <h4 class="selection">QUANTITY:</h4>
-          <select onChange=${(option) => onChange?.(option.value)}>
+          <select onchange=${(event) => onChange?.(Number.parseInt(event.target.value, 10))}>
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
@@ -54,49 +54,90 @@ function NameAndPriceShimmer() {
   `;
 }
 
-function NameAndPrice({ name, price, shimmer }) {
-  if (shimmer) {
+function NameAndPrice({
+  name, sku, shimmer, priceRange, price,
+}) {
+  if (shimmer || !(priceRange || price)) {
     return html`<${NameAndPriceShimmer} />`;
+  }
+
+  const formatPrice = (p) => {
+    const priceFormatter = new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: p.amount.currency,
+    });
+    return priceFormatter.format(p.amount.value);
+  };
+
+  let priceHtml;
+  if (price && price.final.amount.value !== price.regular.amount.value) {
+    // variant selected, with a discount
+    priceHtml = html`
+        <span class="price-reduced">${formatPrice(price.regular)}</span>
+        <span class="price-actual">${formatPrice(price.final)}</span>
+    `;
+  } else if (price) {
+    // variant selected, no discount
+    priceHtml = html`
+        <span class="price-actual">${formatPrice(price.final)}</span>
+    `;
+  } else if (priceRange.minimum.final.amount.value !== priceRange.maximum.final.amount.value) {
+    // no variant selected, price range
+    priceHtml = html`
+        <span class="price">From ${formatPrice(priceRange.minimum.final)}</span>
+    `;
+  } else if (priceRange.minimum.final.amount.value !== priceRange.minimum.regular.amount.value) {
+    // no variant selected, but minimum and maximum variant prices are the same, with discount
+    priceHtml = html`
+        <span class="price-reduced">${formatPrice(priceRange.minimum.regular)}</span>
+        <span class="price-actual">${formatPrice(priceRange.minimum.final)}</span>
+    `;
+  } else {
+    // no variant selected, but all prices are the same (no discounts or variant differences)
+    priceHtml = html`
+        <span class="price-actual">${formatPrice(priceRange.minimum.final)}</span>
+    `;
   }
 
   return html`
     <${Fragment}>
-        <h1>${name}</h1>
-        <div class="price">
-            <span class="price-reduced">${price?.actual}</span>
-            <span class="price-actual">${price?.reduced}</span>
+        <h1 dangerouslySetInnerHTML=${{ __html: name }}></h1>
+        <div class="price" >
+            ${priceHtml}
         </div>
-        <div class="style-id">Style #09436</div>
-    </Fragment>
+        <div class="style-id">Style #${sku}</div>
+    <//>
   `;
 }
 
-function Rating({ value }) {
+function Rating({ value, count }) {
   return html`
-      <div class="product-rating">
-          ${[...Array(5).keys()].map((key) => {
-    if (value - key < 0.5) return html`<${Icon} name="star" />`;
-    if (value - key > 0.5) return html`<${Icon} name="star-fill" />`;
-    return html`<${Icon} name="star-half" />`;
-  })}
+      <div class="rating">
+          <div style="--rating: ${value ?? 0};"></div>
+          <span>(${count})</span>
       </div>
   `;
 }
 
-function ColorSelector({ colors, onChange, selectedColor }) {
+function ColorSelector({
+  colors, onChange, selectedColor, unavailableColors,
+}) {
+  const unavailableNames = unavailableColors?.map((c) => c.title);
   return html`
       <div class="sidebar-section color-selector">
           <h4>AVAILABLE COLOR</h4>
           <ul class="swatches">
               ${colors.map((color) => html`
                       <li
-                        key=${color.name}  
+                        key=${color.title}  
                         class="swatch" 
                         >
-                          <button aria-selected=${color.name === selectedColor}
-                                  data-swatch-name=${color.name}
+                          <button aria-selected=${color.title === selectedColor}
+                                  disabled=${unavailableNames?.includes(color.title)}
+                                  data-swatch-name=${color.title}
                                   style="background: url(${color.url}) no-repeat center;" 
-                                  onClick=${() => onChange?.(color.name)} ></button>
+                                  onClick=${unavailableNames?.includes(color.title) || (() => onChange?.(color))} 
+                          ></button>
                       </li>
                   `)}
           </ul>
@@ -105,107 +146,127 @@ function ColorSelector({ colors, onChange, selectedColor }) {
   `;
 }
 
-function CartSection() {
-  return html`<${Fragment}>
-      <div class="sidebar-section cart">
-          <button class="button primary cart-button">Add to Bag</button>
+function CartSection({ onAddToCart, canAddToCart }) {
+  return html`<div class="sidebar-section cart">
+          <button 
+                  disabled=${!canAddToCart()} 
+                  onclick=${onAddToCart} 
+                  class="button primary cart-button">Add to Bag</button>
           <p>Pay in 4 interest free payments on purchases of $30-$1,500 with PayPal
           </p>
           <p class="secondary-action"><${Icon} name="heart" />ADD TO FAVORITES</p>
           <p class="secondary-action"><${Icon} name="envelope" />EMAIL</p>
           <p><a href="/customer-service">Need Help?</a></p>
-      </div>
-  </>
-  `;
+      </div>`;
 }
 
-function SelectionDisplay({ selection }) {
+function SelectionDisplay({ selection, productOptions }) {
   return html`
       <div class="sidebar-section">
           <h4 class="variant-selection">
               <span>SELECTION: </span>
               <span>
-                    ${selection.color} ${selection.bandSize}${selection.cupSize} 
-                  </span>
+                ${selection.color?.title} ${productOptions.map((option) => selection[option.id]?.title).join(' ')}
+              </span>
           </h4>
       </div>
   `;
 }
 
+function roundToHalf(num) {
+  return Math.round(num * 2) / 2;
+}
+
+function toColorName(name) {
+  return name.replace(/[^A-Za-z0-9]/ig, '');
+}
+
 export default class ProductDetailsSidebar extends Component {
-  constructor() {
-    super();
+  productFromProps() {
+    const { props } = this;
 
-    // Subject to change once commerce endpoint is available
-    const product = {
-      name: 'Everyday Full Coverage Cushioned Underwire Bra',
-      price: {
-        actual: '$48.00',
-        reduced: '$28.80',
-      },
-      rating: 3.5,
-      colors: [
-        { name: 'Black', url: 'https://swatches.maidenform.com/HNS_09436/HNS_09436_Black_sw.jpg?quality=85&height=50&width=50&fit=bounds' },
-        { name: 'White', url: 'https://swatches.maidenform.com/HNS_09436/HNS_09436_White_sw.jpg?quality=85&height=50&width=50&fit=bounds' },
-        { name: 'Black and Navy Blossoms Print', url: 'https://swatches.maidenform.com/HNS_09436/HNS_09436_BlackandNavyBlossomsPrint_sw.jpg?quality=85&height=50&width=50&fit=bounds' },
-        { name: 'Sandshell', url: 'https://swatches.maidenform.com/HNS_09436/HNS_09436_Sandshell_sw.jpg?quality=85&height=50&width=50&fit=bounds' },
-        { name: 'Body Beige', url: 'https://swatches.maidenform.com/HNS_09436/HNS_09436_BodyBeige_sw.jpg?quality=85&height=50&width=50&fit=bounds' },
-        { name: 'Ivory', url: 'https://swatches.maidenform.com/HNS_09436/HNS_09436_Ivory_sw.jpg?quality=85&height=50&width=50&fit=bounds' },
-        { name: 'Bleached Indigo', url: 'https://swatches.maidenform.com/HNS_09436/HNS_09436_BleachedIndigo_sw.jpg?quality=85&height=50&width=50&fit=bounds' },
-        { name: 'Chestnut', url: 'https://swatches.maidenform.com/HNS_09436/HNS_09436_Chestnut_sw.jpg?quality=85&height=50&width=50&fit=bounds' },
-        { name: 'Lilac Meringue', url: 'https://swatches.maidenform.com/HNS_09436/HNS_09436_LilacMeringue_sw.jpg?quality=85&height=50&width=50&fit=bounds' },
-      ],
-    };
+    if (!props.product) {
+      return null;
+    }
 
-    this.state = {
-      selection: {
-        color: 'Black',
-        cupSize: null,
-        bandSize: null,
-      },
-      product,
+    const { sku } = props.product;
+
+    const colors = props.product.options.find((option) => option.id === 'color').values
+      .map((color) => ({
+        title: color.title,
+        id: color.id,
+        url: `https://franklin.maidenform.com/images/swatches/HNS_${sku}/HNS_${sku}_${toColorName(color.title)}_sw.jpg?quality=85&height=36&width=36&fit=bounds&format=webply`,
+      }))
+      .sort((a, b) => (a.title < b.title ? -1 : 1));
+
+    return {
+      name: props.product.name,
+      priceRange: props.product.priceRange,
+      price: props.product.price,
+      sku,
+      rating: roundToHalf(props.product.reviewStats?.average ?? 0),
+      numReviews: props.product.reviewStats?.count ?? 0,
+      colors,
+      options: props.product.options.filter((option) => option.id !== 'color'),
     };
+  }
+
+  constructor(props) {
+    super(props);
+
+    this.updateSelection = this.updateSelection.bind(this);
+    this.canAddToCart = this.canAddToCart.bind(this);
   }
 
   updateSelection(fragment) {
-    this.setState((state) => ({ selection: { ...state.selection, ...fragment } }));
+    this.props.onSelectionChanged?.(fragment);
+  }
+
+  canAddToCart() {
+    return Object.keys(this.props.selection).length === this.props.product.options.length;
   }
 
   render() {
+    if (this.props.loading) {
+      return html`<div class="sidebar shimmer"></div>`;
+    }
+
+    const product = this.productFromProps();
+
+    const hasColors = product?.colors && product?.colors.length > 0;
+    const allProductOptions = product?.options.filter((option) => option.values.length > 0);
+
     return html`<${Fragment}>
       <div class="product-title desktop-hidden">
-          <${NameAndPrice} shimmer=${this.props.shimmer} name=${this.state.product.name} price=${this.state.product.price} />
+          <${NameAndPrice} shimmer=${this.props.shimmer} name=${product?.name} priceRange=${product?.priceRange} price=${product?.price} sku=${product?.sku} />
       </div>
       <div class=${`sidebar ${this.props.shimmer ? 'shimmer' : ''}`}>
           ${this.props.shimmer || html`
             <div class="product-title sidebar-section mobile-hidden">
-              <${Rating} value=${this.state.product.rating} />
-              <${NameAndPrice} name=${this.state.product.name} price=${this.state.product.price} />
+              <${Rating} value=${product?.rating ?? 0} count=${product?.numReviews} />
+              <${NameAndPrice} name=${product?.name} priceRange=${product?.priceRange} price=${product?.price} sku=${product?.sku} />
           </div>
-          <${ColorSelector} 
-                  colors=${this.state.product.colors}
+            ${hasColors && html`
+              <${ColorSelector}
+                  colors=${product?.colors}
+                  unavailableColors=${product?.colors.filter((color) => !this.props.inStockVariants?.color?.includes(color.id))}
                   onChange=${(color) => this.updateSelection({ color })}
-                  selectedColor=${this.state.selection.color}
-          />
-          <${SizeSelector} 
-                  sizeType="Band Size" 
-                  allSizes=${[34, 36, 38, 40, 42]} 
-                  unavailableSizes=${[38]} 
-                  selectedSize=${this.state.selection.bandSize}
-                  onChange=${(size) => this.updateSelection({ bandSize: size })}
-          />
-          <${SizeSelector} 
-                  sizeType="Cup Size" 
-                  allSizes=${['B', 'C', 'D', 'DD']} 
-                  unavailableSizes=${['DD']}
-                  selectedSize=${this.state.selection.cupSize}
-                  onChange=${(size) => this.updateSelection({ cupSize: size })}
-          />
-          <${SelectionDisplay} selection=${this.state.selection} />
-          <${QuantitySelector} />
-          <${CartSection} />
+                  selectedColor=${this.props?.selection?.color?.title}
+              />`}
+            ${allProductOptions?.map((option) => html`
+                <${SizeSelector} 
+                      sizeType=${option.title}
+                      allSizes=${option.values} 
+                      unavailableSizes=${option.values.filter((size) => !this.props.inStockVariants?.[option.id]?.includes(size.id))}
+                      selectedSize=${this.props.selection[option.id]}
+                      onChange=${(size) => this.updateSelection({ [option.id]: size })}
+                />`)}
+            ${(allProductOptions?.length > 0 || hasColors) && html`
+                <${SelectionDisplay} selection=${this.props.selection} productOptions=${product?.options} />`}
+          <${QuantitySelector} onChange=${this.props.onQuantityChanged} />
+          <${CartSection} onAddToCart=${this.props.onAddToCart} canAddToCart=${this.canAddToCart} />
         `}
       </div>
-    </Fragment>`;
+    <//>`;
   }
 }

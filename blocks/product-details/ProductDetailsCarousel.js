@@ -3,6 +3,7 @@ import {
 } from '../../scripts/preact.js';
 import htm from '../../scripts/htm.js';
 import Icon from './Icon.js';
+import { getSku } from '../../scripts/product.js';
 
 const html = htm.bind(h);
 
@@ -11,42 +12,60 @@ function OptimizedSources({
   sizes,
   width,
   height,
+  loading = 'lazy',
 }) {
+  const addWebpParams = (url) => {
+    url.searchParams.set('format', 'webply');
+    url.searchParams.set('optimize', 'medium');
+    url.searchParams.delete('quality');
+    url.searchParams.delete('dpr');
+    url.searchParams.delete('bg-color');
+  };
+
+  const webpUrl = new URL(src);
+  addWebpParams(webpUrl);
+
+  /* eslint-disable indent */
   return html`
-    <${Fragment} >
+      <${Fragment} >
         ${sizes.map((size) => {
-    const url = new URL(src);
-    url.searchParams.set('width', size.width);
-    return html`
-        <source media=${`(max-width: ${size.media}px)`} srcset=${url.href}/>`;
-  })
-}
-        <img height=${height} width=${width} src=${src} />
-    </Fragment>
+          const url = new URL(src);
+          url.searchParams.set('width', size.width);
+          const jpgTag = html`<source media=${`(max-width: ${size.media}px)`} srcset=${url.href}/>`;
+          addWebpParams(url);
+          const webpTag = html`<source media=${`(max-width: ${size.media}px)`} srcset=${url.href}/>`;
+          return html`${webpTag}\n${jpgTag}`;
+        })}
+        <source srcset=${webpUrl} />
+        <img height=${height} width=${width} src=${src} loading=${loading} />
+    <//>
   `;
+  /* eslint-enable indent */
 }
 
 export default class Carousel extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       slide: 0,
       thumbnailSlide: 0,
     };
+  }
 
-    this.thumbnailImages = [
-      'https://cdn.maidenform.com/catalog/product/M/F/MFB_09436/MFB_09436_Black_Front.jpg?width=247&quality=100&bg-color=255,255,255',
-      'https://cdn.maidenform.com/catalog/product/M/F/MFB_09436/MFB_09436_Black_Side.jpg?width=247&quality=100&bg-color=255,255,255',
-      'https://cdn.maidenform.com/catalog/product/M/F/MFB_09436/MFB_09436_Black_Back.jpg?width=247&quality=100&bg-color=255,255,255',
-      'https://cdn.maidenform.com/catalog/product/M/F/MFB_09436/MFB_09436_Black_Detail01.jpg?width=247&quality=100&bg-color=255,255,255',
-    ];
+  getImages() {
+    const productImages = this.props.product?.productImages;
 
-    this.images = [
-      'https://cdn.maidenform.com/catalog/product/M/F/MFB_09436/MFB_09436_Black_Front.jpg?width=700&quality=100&bg-color=255,255,255&dpr=1 1x',
-      'https://cdn.maidenform.com/catalog/product/M/F/MFB_09436/MFB_09436_Black_Side.jpg?width=700&quality=100&bg-color=255,255,255&dpr=1 1x',
-      'https://cdn.maidenform.com/catalog/product/M/F/MFB_09436/MFB_09436_Black_Back.jpg?width=700&quality=100&bg-color=255,255,255&dpr=1 1x',
-      'https://cdn.maidenform.com/catalog/product/M/F/MFB_09436/MFB_09436_Black_Detail01.jpg?width=700&quality=100&bg-color=255,255,255&dpr=1 1x',
-    ];
+    if (productImages) {
+      const rawImages = productImages
+        .map((image) => image.url
+          .replace('productH', 'product/H')
+          .replace('productM', 'product/M')
+          .replace('cdn.maidenform.com', 'franklin.maidenform.com/images/catalog'))
+        .slice(0);
+
+      this.thumbnailImages = rawImages.map((image) => `${image}?width=247&quality=100&bg-color=255,255,255`);
+      this.images = rawImages.map((image) => `${image}?width=700&quality=100&bg-color=255,255,255&dpr=1`);
+    }
   }
 
   static negativeModulo(i, mod) {
@@ -69,6 +88,13 @@ export default class Carousel extends Component {
   }
 
   render() {
+    this.getImages();
+
+    if (!this.images || !this.thumbnailImages) {
+      this.images = [`${window.origin}/product-images/${getSku().toLowerCase()}.jpg`];
+      this.thumbnailImages = [];
+    }
+
     return html`
         <div class="product-detail-carousel">
             <div class="carousel-thumbnails-wrapper">
@@ -80,7 +106,7 @@ export default class Carousel extends Component {
                     ${this.props.shimmer || this.thumbnailImages.map((image, i) => html`
                           <li key=${image} onClick=${() => this.setState({ slide: i, thumbnailSlide: i })}>
                               <picture>
-                                  <img height="313" width="247" src=${image} />
+                                  <${OptimizedSources} src=${image} height="313" width="247" loading=${'lazy'} sizes=${[]} />
                               </picture>
                           </li>`)}
                     ${this.props.shimmer && [1, 2, 3].map(() => html`
@@ -102,7 +128,7 @@ export default class Carousel extends Component {
                     ${this.props.shimmer || this.images.map((image, i) => html`
                         <li key=${image} active=${i === this.state.slide ? 'true' : 'false'}>
                             <picture>
-                                <${OptimizedSources} src=${image} width="888" height="700" sizes=${[{ media: 450, width: 450 }, { media: 2000, width: 700 }]} />
+                                <${OptimizedSources} src=${image} width="888" height="700" loading=${i === 0 ? 'eager' : 'lazy'} sizes=${[{ media: 450, width: 450 }, { media: 2000, width: 700 }]} />
                             </picture>
                         </li>
                     `)}

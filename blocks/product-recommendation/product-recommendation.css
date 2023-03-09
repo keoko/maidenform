@@ -47,7 +47,6 @@
 }
 
 .product-recommendation .placeholder {
-    /* todo: sizing of the loading effect */
     width: 70%;
     max-width: 200px;
     flex-shrink: 0;
