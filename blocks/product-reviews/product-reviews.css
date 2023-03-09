@@ -1,0 +1,33 @@
+.product-reviews div[role="tablist"] {
+  display: flex;
+  justify-content: center;
+}
+
+.product-reviews button[role="tab"] {
+  text-transform: uppercase;
+  font-size: 18px;
+  font-family: var(--ff-gilroy-bold);
+  height: 50px;
+  border: 2px solid black;
+  width: 50%;
+  max-width: 350px;
+}
+
+.product-reviews button[role="tab"]:first-of-type {
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.product-reviews button[role="tab"]:last-of-type {
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+}
+
+.product-reviews button[role="tab"][aria-selected="false"] {
+  background: white;
+  color: black;
+}
+
+.product-reviews button[role="tab"]:hover {
+  color: #d73389;
+}

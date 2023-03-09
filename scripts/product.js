@@ -10,7 +10,7 @@ export async function getProductRatings(productSkus) {
     Stats: 'Reviews',
   });
   const endpoint = await getConfigValue('bazaarvoice-endpoint');
-  const response = await fetch(`${endpoint}?${searchParams.toString()}`);
+  const response = await fetch(`${endpoint}/data/statistics.json?${searchParams.toString()}`);
   if (response.ok) {
     const body = await response.json();
     if (body?.Results?.length === 1) {
