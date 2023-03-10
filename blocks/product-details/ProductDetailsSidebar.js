@@ -82,40 +82,29 @@ function NameAndPrice({ shimmer, product }) {
   `;
 }
 
-function Rating({ value, count, handleMouseOver, handleMouseOut }) {
+function Rating({
+  sku, value, count, onMouseOver, onMouseOut,
+}) {
   return html`
-      <div class="rating" onMouseOver=${handleMouseOver} onMouseOut=${handleMouseOut}>
+      <div class="rating" onMouseOver=${() => onMouseOver?.(sku)} onMouseOut=${onMouseOut}>
           <div style="--rating: ${value ?? 0};"></div>
           <span>(${count})</span>
       </div>
   `;
 }
 
-function RatingModal({ ratingsSummary }) {
-  if (ratingsSummary) {
-    return html`
-    <div data-bv-modal="true" class="bv_modal_component_container" tabindex="0" role="navigation" style="left: 960px !important; top: 440px !important;">
-      <div class="bv_modal_outer_content">
-        <div class="bv_modal_inner_content" id="bv_components_histogram">
-          <div class="bv_histogram_component_container">
-            <div>
-            ${ratingsSummary.map((rating) => html`
-              <div class="bv_histogram_row_container" aria-label="175 reviews with ${rating.key} stars. " aria-expanded="false" tabindex="0" role="link">
-                <div class="bv_histogram_row_prefix">${rating.key}</div>
-                <div class="bv_histogram_row_star">
-                  <div>${rating.count}</div>
-                </div>
-              </div>
-            `)}
-            </div>
-          </div>
-        </div>
+function RatingModal() {
+  return html`
+    <div role="dialog"
+        id="ratings_dialog"
+        aria-label="_ reviews"
+        aria-modal="true"
+        class="sidebar-section reviews-modal hidden">
+      <div id="ratings_dialog_ratings">
       </div>
-    </div>
+  </div>
   `;
-  }
-};
-
+}
 
 function ColorSelector({
   colors, onChange, selectedColor, unavailableColors,
@@ -214,6 +203,8 @@ export default class ProductDetailsSidebar extends Component {
 
     this.updateSelection = this.updateSelection.bind(this);
     this.canAddToCart = this.canAddToCart.bind(this);
+    this.displayRatingsModal = this.displayRatingsModal.bind(this);
+    this.hideRatingsModal = this.hideRatingsModal.bind(this);
   }
 
   updateSelection(fragment) {
@@ -222,6 +213,35 @@ export default class ProductDetailsSidebar extends Component {
 
   canAddToCart() {
     return Object.keys(this.props.selection).length === this.props.product.options.length;
+  }
+
+  displayRatingsModal(sku) {
+    // TODO no idea if this is the right way to do this
+    const dialog = this.base.parentElement.querySelector('#ratings_dialog');
+    dialog.classList.remove('hidden');
+    const ratings = dialog.querySelector('#ratings_dialog_ratings');
+
+    // TODO maybe we want to preload this?
+    if (!ratings.innerHTML) {
+      getProductRatingsSummary(sku).then((ratingsSummary) => {
+        const total = ratingsSummary?.map((rating) => rating.count).reduce((a, b) => a + b, 0);
+        dialog.setAttribute('aria-label', `${total} reviews`);
+
+        ratings.innerHTML = `${ratingsSummary?.map((rating) => `
+          <div aria-label="${rating.count} reviews with ${rating.key} stars. ">
+            <span class="ratings_dialog_ratings_key">${rating.key}</span>
+            <span class="ratings_dialog_ratings_count">${rating.count}</span>
+          </div>
+        `).join('')}
+        <div>Read ${total} reviews</div>`;
+      });
+    }
+  }
+
+  hideRatingsModal() {
+    // TODO no idea if this is the right way to do this
+    const dialog = this.base.parentElement.querySelector('#ratings_dialog');
+    dialog.classList.add('hidden');
   }
 
   render() {
@@ -241,7 +261,10 @@ export default class ProductDetailsSidebar extends Component {
       <div class=${`sidebar ${this.props.shimmer ? 'shimmer' : ''}`}>
           ${this.props.shimmer || html`
             <div class="product-title sidebar-section mobile-hidden">
-              <${Ratings} sku=${product?.sku} value=${product?.rating ?? 0} count=${product?.numReviews} />
+              <${Rating} sku=${product?.sku} value=${product?.rating ?? 0} count=${product?.numReviews}
+                  onMouseOver=${(sku) => product?.numReviews > 0 && this.displayRatingsModal(sku)}
+                  onMouseOut=${product?.numReviews > 0 && this.hideRatingsModal} />
+              ${product?.numReviews > 0 && html`<${RatingModal} />`}
               <${NameAndPrice} product=${product} />
           </div>
             ${hasColors && html`
@@ -266,57 +289,5 @@ export default class ProductDetailsSidebar extends Component {
         `}
       </div>
     <//>`;
-  }
-}
-
-class Ratings extends Component {
-  productRatingsSummaryPromise = null;
-
-  constructor(props) {
-    super(props);
-    this.handleMouseOver = this.handleMouseOver.bind(this);
-    this.handleMouseOut = this.handleMouseOut.bind(this);
-    this.state = {
-      isHovering: false,
-      ratingsSummary: null
-    };
-  }
-
-  handleMouseOver() {
-    if (!this.state.ratingsSummary && !this.productRatingsSummaryPromise) {
-      this.productRatingsSummaryPromise = getProductRatingsSummary(this.props.sku);
-      if (this.productRatingsSummaryPromise) {
-        this.productRatingsSummaryPromise.then((data) => {
-          this.setState(() => ({
-            ratingsSummary: data
-          }));
-        });
-      }
-    }
-    this.setState(() => ({
-      isHovering: true
-    }));
-  }
-
-  handleMouseOut() {
-    this.setState(() => ({
-      isHovering: false
-    }));
-  }
-
-  render() {
-    return html`
-      <div>
-        <${Rating}
-          value=${this.props.value}
-          count=${this.props.count}
-          handleMouseOver=${this.handleMouseOver}
-          handleMouseOut=${this.handleMouseOut}
-        />
-        ${this.state.isHovering && html`
-          <${RatingModal} ratingsSummary=${this.state.ratingsSummary} />
-        `}
-      </div>
-      `;
   }
 }

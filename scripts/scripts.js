@@ -13,7 +13,7 @@ import {
   waitForLCP,
   loadBlock, decorateBlock,
 } from './lib-franklin.js';
-import './configs.js';
+import { getConfigValue } from './configs.js';
 // eslint-disable-next-line import/no-cycle
 import { preloadLCPImage, preloadCategory, isPDP } from './commerce.js';
 
@@ -128,7 +128,7 @@ export async function getProductRatingsSummary(productId) {
     contentType: 'reviews,questions',
     reviewDistribution: 'primaryRating,recommended',
     rev: 0,
-    contentlocale: 'en_GB,en_US'
+    contentlocale: 'en_GB,en_US',
   });
   const endpoint = 'https://stg.api.bazaarvoice.com/data/display/0.2alpha/product/summary';
   const response = await fetch(`${endpoint}?${searchParams.toString()}`);
