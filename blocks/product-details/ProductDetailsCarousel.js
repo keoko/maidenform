@@ -3,7 +3,7 @@ import {
 } from '../../scripts/preact.js';
 import htm from '../../scripts/htm.js';
 import Icon from './Icon.js';
-import { getSku } from '../../scripts/product.js';
+import { getSkuFromUrl } from '../../scripts/commerce.js';
 
 const html = htm.bind(h);
 
@@ -91,7 +91,7 @@ export default class Carousel extends Component {
     this.getImages();
 
     if (!this.images || !this.thumbnailImages) {
-      this.images = [`${window.origin}/product-images/${getSku().toLowerCase()}.jpg`];
+      this.images = [`${window.origin}/product-images/${getSkuFromUrl().toLowerCase()}.jpg`];
       this.thumbnailImages = [];
     }
 

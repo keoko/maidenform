@@ -5,6 +5,8 @@ import {
   decorateTemplateAndTheme,
   loadBlocks,
   loadCSS,
+  getMetadata,
+  readBlockConfig,
   loadFooter,
   loadHeader,
   sampleRUM,
@@ -12,10 +14,11 @@ import {
 } from './lib-franklin.js';
 import './configs.js';
 
-import { preloadLCPImage } from './product.js';
+import { preloadLCPImage, preloadCategory } from './commerce.js';
 
 const LCP_BLOCKS = [
   'product-details',
+  'product-list-page',
 ]; // add your LCP blocks to the list
 window.hlx.RUM_GENERATION = 'project-1'; // add your RUM generation information here
 
@@ -145,6 +148,13 @@ export async function loadFragment(path) {
 async function loadEager(doc) {
   if (window.location.href.match(/\/products\/[\w|-]+\/[\w|-]+/)) {
     preloadLCPImage();
+  }
+  if (getMetadata('template') === 'plp') {
+    const plpBlock = document.querySelector('.product-list-page');
+    const { category } = readBlockConfig(plpBlock);
+    if (category) {
+      preloadCategory();
+    }
   }
   document.documentElement.lang = 'en';
   decorateTemplateAndTheme();

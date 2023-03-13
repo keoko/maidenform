@@ -4,6 +4,8 @@ import {
 import htm from '../../scripts/htm.js';
 import ProductList from './ProductList.js';
 import FacetList from './FacetList.js';
+import { readBlockConfig } from '../../scripts/lib-franklin.js';
+import { loadCategory, getProductRatings, parseQueryParams } from '../../scripts/commerce.js';
 
 const html = htm.bind(h);
 
@@ -34,24 +36,28 @@ function Pagination(props) {
 }
 
 function Sort(props) {
+  const {
+    type, disabled, sortMenuRef, onSort,
+  } = props;
   const options = [
     { label: 'Price: High to Low', value: 'price-desc' },
     { label: 'Price: Low to High', value: 'price-asc' },
-    { label: 'Product Name', value: 'name' },
-    { label: 'Relevance', value: 'relevance' },
+    { label: 'Product Name', value: 'name-asc' },
+    { label: 'Relevance', value: type === 'category' ? 'position-asc' : 'relevance-asc' },
   ];
 
-  const currentSort = options.find((option) => option.value === props.currentSort) || options[3];
+  const currentSort = options.find((option) => option.value === `${props.currentSort}-${props.sortDirection}`) || options[3];
 
-  return html`<div class="sort" disabled=${props.disabled}>
-    <button disabled=${props.disabled}>Sort By: ${currentSort.label}</button>
-    <div class="overlay" ref=${props.sortMenuRef}>
-      <button class="close" onClick=${() => props.sortMenuRef.current.classList.toggle('active')}>Close</button>
+  return html`<div class="sort" disabled=${disabled}>
+    <button disabled=${disabled}>Sort By: ${currentSort.label}</button>
+    <div class="overlay" ref=${sortMenuRef}>
+      <button class="close" onClick=${() => sortMenuRef.current.classList.toggle('active')}>Close</button>
       <ul>
         ${options.map((option) => html`<li>
           <a href="#" class="${currentSort.value === option.value ? 'active' : ''}" onClick=${(e) => {
-  props.sortMenuRef.current.classList.toggle('active');
-  props.onSort?.(option.value);
+  sortMenuRef.current.classList.toggle('active');
+  const [sort, direction = 'asc'] = option.value.split('-');
+  onSort?.(sort, direction);
   e.preventDefault();
 }}>${option.label}</a>
         </li>`)}
@@ -61,192 +67,44 @@ function Sort(props) {
 }
 
 class ProductListPage extends Component {
-  constructor() {
+  constructor(props) {
+    const { type = 'category', category } = props;
     super();
 
     this.facetMenuRef = createRef();
     this.sortMenuRef = createRef();
 
-    const queryParams = ProductListPage.parseQueryParams();
+    const queryParams = parseQueryParams();
+
+    let headline = 'Search Results';
+    let sort = 'relevance';
+    if (type === 'category') {
+      // Get from H1
+      headline = document.querySelector('.default-content-wrapper > h1')?.innerText;
+      sort = 'position';
+    }
 
     this.state = {
       loading: true,
-      pages: 3,
+      pages: 1,
+      currentPage: 1,
+      currentPageSize: 10,
+      type,
       category: {
-        // Get from H1
-        name: document.querySelector('.default-content-wrapper > h1').innerText,
+        name: headline,
+        id: category || null,
       },
-      sort: false,
+      sort,
+      sortDirection: 'asc',
       products: {
-        items: [{
-          sku: 'a22601',
-          url_key: 'a22601',
-          name: 'Comfy Cabin Thermal Holiday Pajama Set',
-          image: 'https://cdn.maidenform.com/catalog/product/H/N/HNS_M21405/HNS_M21405_BabyBlueStripe_Front.jpg',
-          rating: {
-            average: 4.5,
-            count: 50,
-          },
-          price: {
-            regular: 48.00,
-            sale: 20.00,
-          },
-          swatches: [
-            {
-              image: 'https://swatches.maidenform.com/HNS_A22601/HNS_A22601_ClassicRedPlaid_sw.jpg',
-              name: 'Classic Red Plaid',
-              value: 'red-plaid',
-            },
-            {
-              image: 'https://swatches.maidenform.com/HNS_A22601/HNS_A22601_MerlotFairisle_sw.jpg',
-              name: 'Merlot Fairisle',
-              value: 'merlot-fairisle',
-            },
-            {
-              image: 'https://swatches.maidenform.com/HNS_A22601/HNS_A22601_RedAndGreenTreeFairisle_sw.jpg',
-              name: 'Red And Green Tree Fairisle',
-              value: 'red-and-green-tree-fairisle',
-            },
-            {
-              image: 'https://swatches.maidenform.com/HNS_A22601/HNS_A22601_SpruceGreenDot_sw.jpg',
-              name: 'Spruce Green Dot',
-              value: 'spruce-green-dot',
-            },
-          ],
-        },
-        ...Array(9).fill({
-          sku: 'a22601',
-          url_key: 'a22601',
-          name: 'Comfy Cabin Thermal Holiday Pajama Set',
-          image: 'https://cdn.maidenform.com/catalog/product/H/N/HNS_M21405/HNS_M21405_BabyBlueStripe_Front.jpg',
-          rating: {
-            average: 4.5,
-            count: 50,
-          },
-          price: {
-            regular: 48.00,
-            sale: 20.00,
-          },
-          swatches: [
-            {
-              image: 'https://swatches.maidenform.com/HNS_A22601/HNS_A22601_ClassicRedPlaid_sw.jpg',
-              name: 'Classic Red Plaid',
-              value: 'red-plaid',
-            },
-            {
-              image: 'https://swatches.maidenform.com/HNS_A22601/HNS_A22601_MerlotFairisle_sw.jpg',
-              name: 'Merlot Fairisle',
-              value: 'merlot-fairisle',
-            },
-            {
-              image: 'https://swatches.maidenform.com/HNS_A22601/HNS_A22601_RedAndGreenTreeFairisle_sw.jpg',
-              name: 'Red And Green Tree Fairisle',
-              value: 'red-and-green-tree-fairisle',
-            },
-            {
-              image: 'https://swatches.maidenform.com/HNS_A22601/HNS_A22601_SpruceGreenDot_sw.jpg',
-              name: 'Spruce Green Dot',
-              value: 'spruce-green-dot',
-            },
-            {
-              image: 'https://swatches.maidenform.com/HNS_A22601/HNS_A22601_ClassicRedPlaid_sw.jpg',
-              name: 'Classic Red Plaid',
-              value: 'red-plaid-1',
-            },
-            {
-              image: 'https://swatches.maidenform.com/HNS_A22601/HNS_A22601_MerlotFairisle_sw.jpg',
-              name: 'Merlot Fairisle',
-              value: 'merlot-fairisle-1',
-            },
-            {
-              image: 'https://swatches.maidenform.com/HNS_A22601/HNS_A22601_RedAndGreenTreeFairisle_sw.jpg',
-              name: 'Red And Green Tree Fairisle',
-              value: 'red-and-green-tree-fairisle-1',
-            },
-            {
-              image: 'https://swatches.maidenform.com/HNS_A22601/HNS_A22601_SpruceGreenDot_sw.jpg',
-              name: 'Spruce Green Dot',
-              value: 'spruce-green-dot-1',
-            },
-          ],
-        })],
-        total: 10,
+        items: [],
+        total: 0,
       },
       filters: {},
-      facets: [{
-        name: 'Sleep/Loungewear type',
-        id: 'sleep',
-        type: 'radio',
-        options: [
-          { name: 'Tops', count: 12, value: 'tops' },
-          { name: 'Pajamas', count: 12, value: 'pajamas' },
-          { name: 'Pants', count: 12, value: 'pants' },
-          { name: 'Shorts', count: 12, value: 'shorts' },
-        ],
-      },
-      {
-        name: 'Size',
-        id: 'size',
-        type: 'swatch',
-        options: [
-          { name: 'S', value: 's' },
-          { name: 'M', value: 'm' },
-          { name: 'L', value: 'l' },
-          { name: 'XL', value: 'xl' },
-          { name: '1X', value: '1x' },
-        ],
-      },
-      {
-        name: 'Price',
-        id: 'price',
-        type: 'checkbox',
-        options: [
-          { name: 'up to $10', value: '0-10', count: 12 },
-          { name: '$10 to $20', value: '10-20', count: 12 },
-          { name: '$20 to $30', value: '20-30', count: 12 },
-          { name: 'more than $30', value: '30', count: 12 },
-        ],
-      },
-      {
-        name: 'Color',
-        id: 'color',
-        type: 'swatch',
-        options: [
-          { name: 'black', value: 'black', color: 'black' },
-          { name: 'white', value: 'white', color: 'white' },
-          { name: 'red', value: 'red', color: 'red' },
-          { name: 'blue', value: 'blue', color: 'blue' },
-          { name: 'green', value: 'green', color: 'green' },
-          { name: 'yellow', value: 'yellow', color: 'yellow' },
-          { name: 'orange', value: 'orange', color: 'orange' },
-          { name: 'purple', value: 'purple', color: 'purple' },
-        ],
-      }],
+      facets: [],
       ...queryParams,
     };
   }
-
-  static parseQueryParams = () => {
-    const params = new URLSearchParams(window.location.search);
-    const newState = {
-      currentPage: 1,
-      currentPageSize: 10,
-      sort: false,
-      filters: {},
-    };
-    params.forEach((value, key) => {
-      if (key === 'page') {
-        newState.currentPage = parseInt(value, 10) || 1;
-      } else if (key === 'pageSize') {
-        newState.currentPageSize = parseInt(value, 10) || 10;
-      } else if (key === 'sort') {
-        newState.sort = value;
-      } else {
-        newState.filters[key] = value.split(',');
-      }
-    });
-    return newState;
-  };
 
   static updateQueryParams = (params) => {
     const newParams = new URLSearchParams();
@@ -260,19 +118,47 @@ class ProductListPage extends Component {
     window.history.pushState({}, '', `${window.location.pathname}?${newParams.toString()}`);
   };
 
+  loadProductRatings = async () => {
+    const skus = this.state.products.items.map((product) => product.sku);
+    const ratings = await getProductRatings(skus);
+
+    const newProducts = this.state.products.items.map((p) => ({
+      ...p,
+      rating: {
+        average: ratings[p.sku]?.average ?? 0,
+        count: ratings[p.sku]?.count ?? 0,
+      },
+    }));
+
+    this.setState({ products: { ...this.state.products, items: newProducts } });
+  };
+
   loadProducts = async () => {
-    // TODO
     this.setState({ loading: true });
 
-    console.log('This should trigger a query', this.state);
+    const state = await loadCategory(this.state);
 
-    setTimeout(() => {
-      this.setState({ loading: false });
-    }, 200);
+    this.setState({
+      ...state,
+      loading: false,
+    }, () => {
+      this.loadProductRatings();
+    });
   };
 
   componentDidMount() {
-    this.loadProducts();
+    if (window.loadCategoryPromise) {
+      window.loadCategoryPromise.then((state) => {
+        this.setState({
+          ...state,
+          loading: false,
+        }, () => {
+          this.loadProductRatings();
+        });
+      });
+    } else {
+      this.loadProducts();
+    }
   }
 
   componentDidUpdate(_, prevState) {
@@ -281,6 +167,8 @@ class ProductListPage extends Component {
       page: this.state.currentPage,
       pageSize: this.state.currentPageSize,
       sort: this.state.sort,
+      sortDirection: this.state.sortDirection,
+      q: this.state.searchTerm,
       ...this.state.filters,
     });
 
@@ -292,19 +180,21 @@ class ProductListPage extends Component {
       return acc;
     }, {}));
 
-    const keysToCheck = ['filters', 'sort', 'currentPageSize', 'currentPage'];
+    const keysToCheck = ['filters', 'sort', 'sortDirection', 'searchTerm', 'currentPageSize', 'currentPage'];
     if (keysToCheck.some((key) => diff.includes(key))) {
       this.loadProducts();
     }
   }
 
-  render(_, state) {
+  render(props, state) {
+    const { type = 'category' } = props;
+
     return html`<${Fragment}>
     <${FacetList} 
       facets=${state.facets}
       filters=${state.filters}
       facetMenuRef=${this.facetMenuRef}
-      onFilterChange=${(filters) => this.setState({ filters })}
+      onFilterChange=${(filters) => this.setState({ filters, currentPage: 1 })}
       loading=${state.loading} />
     <div class="products">
       <div class="title">
@@ -313,7 +203,9 @@ class ProductListPage extends Component {
         <${Sort}
           disabled=${state.loading}
           currentSort=${state.sort}
-          onSort=${(sort) => this.setState({ sort })}
+          sortDirection=${state.sortDirection}
+          type=${type}
+          onSort=${(sort, direction) => this.setState({ sort, sortDirection: direction })}
           sortMenuRef=${this.sortMenuRef} />
       </div>
       <div class="mobile-menu">
@@ -328,15 +220,17 @@ class ProductListPage extends Component {
         currentPageSize=${state.currentPageSize}
         loading=${state.loading}
         onPageChange=${(page) => this.setState({ currentPage: page })}
-        onPageSizeChange=${(pageSize) => this.setState({ currentPageSize: pageSize })} />
+        onPageSizeChange=${(pageSize) => this.setState({ currentPageSize: pageSize, currentPage: 1 })} />
     </div>
   </>`;
   }
 }
 
 export default function decorate(block) {
+  const config = readBlockConfig(block);
+
   block.textContent = '';
 
-  const app = html`<${ProductListPage} />`;
+  const app = html`<${ProductListPage} ...${config} />`;
   render(app, block);
 }
