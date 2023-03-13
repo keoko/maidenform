@@ -169,17 +169,23 @@ export default async function decorate(block) {
 
     // tools
     const toolContainer = nav.querySelector('.nav-tools');
-    ['heart', 'minicart'].forEach((tool) => {
-      const icon = document.createElement('span');
-      icon.classList.add('icon', `icon-${tool}`);
-      toolContainer.append(icon);
-    });
+    toolContainer.innerHTML = '';
+
+    toolContainer.append(document.createRange().createContextualFragment(
+      '<button class="wishlist">Open Wishlist</button>',
+    ));
+
+    toolContainer.append(document.createRange().createContextualFragment(
+      `<div class="minicart-wrapper">
+        <button class="minicart" aria-label="Open Cart"></button>
+      </div>`,
+    ));
 
     const searchBar = document.createElement('form');
     searchBar.action = '/search';
     searchBar.innerHTML = `
       <input name="q" type="text" data-rfkid="rfkid_6" placeholder="Search" />
-      <button class="search-button" aria-label="submit search query"><span class="icon icon-search" /></button>
+      <button class="search-button" aria-label="submit search query">Search</button>
       <span class="icon icon-x-lg close-button" />
     `;
     toolContainer.append(searchBar);
