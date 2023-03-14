@@ -9,7 +9,7 @@ import {
   getConfigValue,
 } from './configs.js';
 
-const loadScript = (url, attrs) => {
+const loadScript = (url, attrs, prepend = false) => {
   const head = document.querySelector('head');
   const script = document.createElement('script');
   script.src = url;
@@ -19,7 +19,11 @@ const loadScript = (url, attrs) => {
       script.setAttribute(attr, attrs[attr]);
     }
   }
-  head.append(script);
+  if (prepend) {
+    head.prepend(script);
+  } else {
+    head.append(script);
+  }
   return script;
 };
 
@@ -41,3 +45,8 @@ if (otId && onetrustscript) {
 sampleRUM('cwv');
 
 // add more delayed functionality here
+const tealiumConfig = await getConfigValue('tealium-conf');
+loadScript(`//tags.tiqcdn.com/utag/${tealiumConfig}/utag.js`, {
+  type: 'text/javascript',
+  async: true,
+}, true);
