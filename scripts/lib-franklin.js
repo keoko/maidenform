@@ -128,10 +128,8 @@ const ICONS_CACHE = {};
 /**
  * Replace icons with inline SVG and prefix with codeBasePath.
  * @param {Element} element
- * @param {Array<String>} [preservedIcons] exclude icons with these names
  */
-export async function decorateIcons(element, preservedIcons) {
-  const preserveSizingAttributeName = 'data-preserve-sizing';
+export async function decorateIcons(element) {
   // Prepare the inline sprite
   let svgSprite = document.getElementById('franklin-svg-sprite');
   if (!svgSprite) {
@@ -139,15 +137,6 @@ export async function decorateIcons(element, preservedIcons) {
     div.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" id="franklin-svg-sprite" style="display: none"></svg>';
     svgSprite = div.firstElementChild;
     document.body.append(div.firstElementChild);
-  }
-
-  // track names of icons whose width and height have to be preserved
-  const preservedIconsMap = {};
-  if (preservedIcons && preservedIcons.length && preservedIcons.length > 0) {
-    for (let i = 0; i < preservedIcons; i += 1) {
-      const iconName = preservedIcons[i];
-      preservedIconsMap[iconName] = true;
-    }
   }
 
   // Download all new icons
@@ -162,30 +151,28 @@ export async function decorateIcons(element, preservedIcons) {
       ICONS_CACHE[iconName] = true;
       try {
         const response = await fetch(`${window.hlx.codeBasePath}${window.hlx.codeBasePath}/icons/${iconName}.svg`);
-        const svg = await response.text();
-        if (svg.match(/(<style | class=)/)) {
-          ICONS_CACHE[iconName] = {
-            styled: true,
-            html: svg,
-          };
+        const svgSource = await response.text();
+        if (svgSource.match(/(<style | class=)/)) {
+          ICONS_CACHE[iconName] = { styled: true, html: svgSource };
         } else {
           const parser = new DOMParser();
-          const parsedSvg = parser.parseFromString(svg, 'image/svg+xml');
-          const preserveSizing = (parsedSvg.documentElement.getAttribute(preserveSizingAttributeName) === 'true')
-            || span.classList.contains('preserve-symbol-sizing')
-            || preservedIconsMap[iconName];
+          const parsedSvg = parser.parseFromString(svgSource, 'image/svg+xml');
+          const newSvg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
 
-          parsedSvg.documentElement.setAttribute('id', iconName);
+          const { attributes } = parsedSvg.documentElement;
 
-          if (!preserveSizing) {
-            parsedSvg.documentElement.removeAttribute('width');
-            parsedSvg.documentElement.removeAttribute('height');
+          for (let i = 0; i < attributes.length; i += 1) {
+            newSvg.setAttribute(attributes[i].name, attributes[i].value);
           }
 
+          newSvg.setAttribute('id', iconName);
+          newSvg.removeAttribute('width');
+          newSvg.removeAttribute('height');
+
+          newSvg.innerHTML = parsedSvg.documentElement.innerHTML;
+
           ICONS_CACHE[iconName] = {
-            html: parsedSvg.documentElement.outerHTML.toString()
-              .replace('<svg', '<symbol')
-              .replace('</svg>', '</symbol>'),
+            html: newSvg.outerHTML,
           };
         }
       } catch (err) {
@@ -305,7 +292,7 @@ export function readBlockConfig(block) {
 
 /**
  * Decorates all sections in a container element.
- * @param {Element} $main The container element
+ * @param {Element} main The container element
  */
 export function decorateSections(main) {
   main.querySelectorAll(':scope > div').forEach((section) => {
