@@ -128,8 +128,10 @@ const ICONS_CACHE = {};
 /**
  * Replace icons with inline SVG and prefix with codeBasePath.
  * @param {Element} element
+ * @param {Array<String>} [preservedIcons] exclude icons with these names
  */
-export async function decorateIcons(element) {
+export async function decorateIcons(element, preservedIcons) {
+  const preserveSizingAttributeName = 'data-preserve-sizing';
   // Prepare the inline sprite
   let svgSprite = document.getElementById('franklin-svg-sprite');
   if (!svgSprite) {
@@ -137,6 +139,15 @@ export async function decorateIcons(element) {
     div.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" id="franklin-svg-sprite" style="display: none"></svg>';
     svgSprite = div.firstElementChild;
     document.body.append(div.firstElementChild);
+  }
+
+  // track names of icons whose width and height have to be preserved
+  const preservedIconsMap = {};
+  if (preservedIcons && preservedIcons.length && preservedIcons.length > 0) {
+    for (let i = 0; i < preservedIcons; i += 1) {
+      const iconName = preservedIcons[i];
+      preservedIconsMap[iconName] = true;
+    }
   }
 
   // Download all new icons
@@ -153,13 +164,27 @@ export async function decorateIcons(element) {
         const response = await fetch(`${window.hlx.codeBasePath}${window.hlx.codeBasePath}/icons/${iconName}.svg`);
         const svg = await response.text();
         if (svg.match(/(<style | class=)/)) {
-          ICONS_CACHE[iconName] = { styled: true, html: svg };
-        } else {
           ICONS_CACHE[iconName] = {
-            html: svg
-              .replace('<svg', `<symbol id="${iconName}"`)
-              .replace(/ width=".*?"/, '')
-              .replace(/ height=".*?"/, '')
+            styled: true,
+            html: svg,
+          };
+        } else {
+          const parser = new DOMParser();
+          const parsedSvg = parser.parseFromString(svg, 'image/svg+xml');
+          const preserveSizing = (parsedSvg.documentElement.getAttribute(preserveSizingAttributeName) === 'true')
+            || span.classList.contains('preserve-symbol-sizing')
+            || preservedIconsMap[iconName];
+
+          parsedSvg.documentElement.setAttribute('id', iconName);
+
+          if (!preserveSizing) {
+            parsedSvg.documentElement.removeAttribute('width');
+            parsedSvg.documentElement.removeAttribute('height');
+          }
+
+          ICONS_CACHE[iconName] = {
+            html: parsedSvg.documentElement.outerHTML.toString()
+              .replace('<svg', '<symbol')
               .replace('</svg>', '</symbol>'),
           };
         }
