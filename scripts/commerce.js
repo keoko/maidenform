@@ -3,6 +3,9 @@
 import { getConfigValue } from './configs.js';
 import { readBlockConfig } from './lib-franklin.js';
 
+// eslint-disable-next-line import/no-cycle
+import { fetchIndex } from './scripts.js';
+
 const preloadedImages = new Set();
 export const PLACEHOLDER_IMG = new URL('/product-images/placeholder.jpg', document.baseURI).toString();
 
@@ -142,6 +145,30 @@ export const productDetailQuery = `query ProductQuery($sku: String!) {
   }
 }
 ${priceFieldsFragment}`;
+
+export const productBreadcrumbQuery = `
+  query ProductBreadcrumbQuery($urlKey: String!) {
+    products(
+        filter: { url_key: { eq: $urlKey } }
+        pageSize: 20
+        currentPage: 1
+    ) {
+        items {
+            name
+            categories {
+                name
+                url_key
+                url_path
+                breadcrumbs {
+                    category_name
+                    category_url_key
+                    category_url_path
+                }
+            }
+        }
+    }
+}
+`;
 
 /* Queries PLP */
 
@@ -401,10 +428,14 @@ export async function preloadLCPImage() {
   return preloadImage(`${window.origin}/product-images/${getSkuFromUrl().toLowerCase()}.jpg`);
 }
 
+const productsCache = {};
 export async function getProduct(sku) {
-  const productDataPromise = performCatalogServiceQuery(productDetailQuery, { sku });
+  if (productsCache[sku]) {
+    return productsCache[sku];
+  }
+  const rawProductPromise = performCatalogServiceQuery(productDetailQuery, { sku });
 
-  return productDataPromise.then((productData) => {
+  const productPromise = rawProductPromise.then((productData) => {
     if (!productData?.products?.[0]) {
       return null;
     }
@@ -415,6 +446,38 @@ export async function getProduct(sku) {
 
     return product;
   });
+
+  productsCache[sku] = productPromise;
+  return productPromise;
+}
+
+export async function getCategoryNameFromUrlKey() {
+  const possibleProducts = await performMonolithGraphQLQuery(
+    productBreadcrumbQuery,
+    { urlKey: getUrlKeyFromUrl() },
+  );
+  const product = possibleProducts?.products?.items?.[0];
+
+  if (!product) {
+    return null;
+  }
+
+  const clearanceFilter = document.referrer.toLowerCase().includes('clearance')
+    ? (category) => category.name.toLowerCase().includes('clearance')
+    : (category) => !category.name.toLowerCase().includes('clearance');
+
+  // find the category that matches a PLP
+  const plpIndex = (await fetchIndex('query-index')).data;
+
+  const possiblePLPs = product.categories?.filter(
+    (category) => plpIndex.find((plp) => plp.path === `/${category.url_key}`),
+  ).filter(clearanceFilter);
+
+  return possiblePLPs[0] ?? product.categories[0];
+}
+
+export function isPDP() {
+  return window.location.href.match(/\/products\/[\w|-]+\/[\w|-]+/) !== null;
 }
 
 /* PLP specific functionality */

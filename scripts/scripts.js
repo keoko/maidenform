@@ -3,7 +3,7 @@ import {
   decorateIcons,
   decorateSections,
   decorateTemplateAndTheme,
-  loadBlocks,
+  loadBlocks, buildBlock,
   loadCSS,
   getMetadata,
   readBlockConfig,
@@ -11,10 +11,11 @@ import {
   loadHeader,
   sampleRUM,
   waitForLCP,
+  loadBlock, decorateBlock,
 } from './lib-franklin.js';
 import './configs.js';
-
-import { preloadLCPImage, preloadCategory } from './commerce.js';
+// eslint-disable-next-line import/no-cycle
+import { preloadLCPImage, preloadCategory, isPDP } from './commerce.js';
 
 const LCP_BLOCKS = [
   'product-details',
@@ -81,6 +82,20 @@ function buildImageLinks(element) {
   });
 }
 
+let MANUAL_BREADCRUMB;
+function buildBreadcrumb(main) {
+  if (getMetadata('breadcrumb') === 'none') {
+    return;
+  }
+
+  if (getMetadata('breadcrumb') === 'auto') {
+    main.classList.add('with-breadcrumb');
+  } else if (document.querySelector('.breadcrumb')) {
+    MANUAL_BREADCRUMB = document.querySelector('.breadcrumb');
+    main.classList.add('with-breadcrumb');
+  }
+}
+
 export function loadScript(url, attrs, callback) {
   const head = document.querySelector('head');
   const script = document.createElement('script');
@@ -102,6 +117,7 @@ export function loadScript(url, attrs, callback) {
  */
 function buildAutoBlocks(main) {
   try {
+    buildBreadcrumb(main);
     buildImageLinks(main);
   } catch (error) {
     // eslint-disable-next-line no-console
@@ -146,7 +162,7 @@ export async function loadFragment(path) {
  * loads everything needed to get to LCP.
  */
 async function loadEager(doc) {
-  if (window.location.href.match(/\/products\/[\w|-]+\/[\w|-]+/)) {
+  if (isPDP()) {
     preloadLCPImage();
   }
   if (getMetadata('template') === 'plp') {
@@ -181,6 +197,23 @@ export function addFavIcon(href) {
   }
 }
 
+async function loadBreadcrumb(main) {
+  let wrapper;
+  if (MANUAL_BREADCRUMB) {
+    wrapper = MANUAL_BREADCRUMB.parentElement;
+  } else if (getMetadata('breadcrumb') === 'auto') {
+    wrapper = document.createElement('div');
+    const block = buildBlock('breadcrumb', { elems: [document.createElement('ul')] });
+    wrapper.append(block);
+  } else {
+    return;
+  }
+  main.prepend(wrapper);
+
+  decorateBlock(wrapper.firstElementChild);
+  await loadBlock(wrapper.firstElementChild);
+}
+
 /**
  * loads everything that doesn't need to be delayed.
  */
@@ -194,6 +227,7 @@ async function loadLazy(doc) {
 
   loadHeader(doc.querySelector('header'));
   loadFooter(doc.querySelector('footer'));
+  loadBreadcrumb(main);
 
   loadCSS(`${window.hlx.codeBasePath}/styles/lazy-styles.css`);
   addFavIcon(`${window.hlx.codeBasePath}/icons/favicon.ico`);

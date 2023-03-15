@@ -265,6 +265,9 @@
 
   /* section max width */
   --section-max-width: 720px;
+
+  /* breadcrumb height */
+  --breadcrumb-height: 60px;
 }
 
 html {
@@ -414,6 +417,23 @@ a.button.secondary:hover,
 button.secondary:hover {
   background-color: var(--clr-white);
   color: var(--clr-black);
+}
+
+main.with-breadcrumb {
+  position: relative;
+  padding-top: var(--breadcrumb-height);
+}
+
+main.with-breadcrumb .section.breadcrumb-no-padding {
+  padding-top: 0;
+}
+
+main.with-breadcrumb .breadcrumb[data-block-status] {
+  display: none;
+}
+
+main.with-breadcrumb .breadcrumb[data-block-status="loaded"] {
+  display: unset;
 }
 
 main input[type=text] {

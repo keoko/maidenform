@@ -474,10 +474,11 @@
 @media (min-width: 1280px) {
   :root {
     --carousel-control-height: 30px;
+    --pdp-max-width: 1400px;
   }
 
   .product-details-wrapper {
-    max-width: 1400px !important;
+    max-width: var(--pdp-max-width) !important;
   }
 
   .product-details .product-detail-carousel {

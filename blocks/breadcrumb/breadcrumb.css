@@ -2,11 +2,17 @@
     font-family: var(--ff-gilroy-regular);
     font-size: 1.4rem;
     font-weight: 400;
+    height: var(--breadcrumb-height);
+    margin: calc(-1 * var(--breadcrumb-height)) auto 0 auto;
+    overflow: hidden;
+    width: 100%;
+    display: flex !important;
+    align-items: center;
 }
 
 .breadcrumb ul {
     list-style: none;
-    padding: 0;
+    padding: 0 1.6rem;
     margin: 0;
 }
 
@@ -32,4 +38,31 @@
     font-size: 1.4rem;
     padding-left: 6px;
     padding-right: 3px;
+}
+
+@media (min-width: 600px) {
+    .breadcrumb ul {
+        padding: 0 3.2rem;
+    }
+}
+
+
+@media (min-width: 1280px) {
+    main .breadcrumb.block {
+        max-width: var(--section-max-width);
+    }
+
+    main .breadcrumb.breadcrumb-pdp {
+        max-width: var(--pdp-max-width);
+    }
+
+    main .breadcrumb.block:not(.breadcrumb-pdp) ul {
+        padding: 0;
+    }
+}
+
+@media (min-width: 1400px) {
+    main .breadcrumb.block ul {
+        padding: 0;
+    }
 }
