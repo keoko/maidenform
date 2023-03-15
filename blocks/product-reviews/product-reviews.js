@@ -1,8 +1,8 @@
 import loadBazaarVoice from '../../scripts/bazaarvoice.js';
-import { getSku } from '../../scripts/product.js';
+import { getSkuFromUrl } from '../../scripts/commerce.js';
 
 export default function decorate(block) {
-  const productId = getSku();
+  const productId = getSkuFromUrl();
 
   block.innerHTML = `
     <div aria-label="View Reviews or Questions" role="tablist">

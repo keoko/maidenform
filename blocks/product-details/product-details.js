@@ -9,13 +9,15 @@ import Sidebar from './ProductDetailsSidebar.js';
 import Icon from './Icon.js';
 import ProductDetailsShimmer from './ProductDetailsShimmer.js';
 import {
-  getSku, getUrlKey, enrichmentQuery,
+  getSkuFromUrl,
+  getUrlKeyFromUrl,
+  getProductRatings,
+  refineProductQuery,
+  productStockQuery,
   performCatalogServiceQuery,
   performMonolithGraphQLQuery,
-  stockQuery,
-  getProductRatings,
   getProduct,
-} from '../../scripts/product.js';
+} from '../../scripts/commerce.js';
 
 const html = htm.bind(h);
 
@@ -36,7 +38,7 @@ export function errorGettingProduct() {
 
 async function getVariantDetails(variantIds, sku) {
   const result = await performCatalogServiceQuery(
-    enrichmentQuery,
+    refineProductQuery,
     {
       sku,
       variantIds,
@@ -65,7 +67,9 @@ class ProductDetailPage extends Component {
   // Returns a map. Keys to the map are option type ids. Values are arrays of in-stock variant ids,
   // given the other options that are selected.
   async getInStockProducts() {
-    const result = await performMonolithGraphQLQuery(stockQuery, { urlKey: getUrlKey() });
+    const result = await performMonolithGraphQLQuery(productStockQuery, {
+      urlKey: getUrlKeyFromUrl(),
+    });
     const product = result?.products?.items?.[0];
 
     if (!product) {
@@ -92,7 +96,7 @@ class ProductDetailPage extends Component {
   }
 
   async componentDidMount() {
-    const product = await getProduct(getSku());
+    const product = await getProduct(getSkuFromUrl());
 
     if (!product) {
       errorGettingProduct();
@@ -111,12 +115,12 @@ class ProductDetailPage extends Component {
     });
 
     this.getInStockProducts().then((result) => this.setState({ inStockVariants: result }));
-    getProductRatings(getSku()).then((result) => {
+    getProductRatings(getSkuFromUrl()).then((result) => {
       this.setState((oldState) => ({ product: { ...oldState.product, reviewStats: result } }));
     });
     const variantIds = Object.values(selection)
       .map((s) => s.id);
-    getVariantDetails(variantIds, getSku()).then(({ images, price }) => {
+    getVariantDetails(variantIds, getSkuFromUrl()).then(({ images, price }) => {
       this.setState((oldState) => ({
         product: {
           ...oldState.product,
@@ -130,7 +134,9 @@ class ProductDetailPage extends Component {
   onAddToCart = () => {
     if (Object.keys(this.state.selection).length === this.state.product.options.length) {
       const optionsUIDs = Object.values(this.state.selection).map((option) => option.id);
-      console.log({ sku: getSku(), optionsUIDs, quantity: this.state.selectedQuantity ?? 1 });
+      console.log({
+        sku: getSkuFromUrl(), optionsUIDs, quantity: this.state.selectedQuantity ?? 1,
+      });
     }
   };
 
@@ -152,7 +158,7 @@ class ProductDetailPage extends Component {
     // fetch new images and prices
     const variantIds = Object.values({ ...this.state.selection, ...fragment })
       .map((selection) => selection.id);
-    getVariantDetails(variantIds, getSku()).then(({ images, price }) => {
+    getVariantDetails(variantIds, getSkuFromUrl()).then(({ images, price }) => {
       this.setState((oldState) => ({
         product: {
           ...oldState.product,
@@ -191,7 +197,7 @@ class ProductDetailPage extends Component {
 export default async function decorate($block) {
   $block.innerHTML = '<div class="full-height"></div>';
 
-  const sku = getSku();
+  const sku = getSkuFromUrl();
   if (!sku) {
     errorGettingProduct();
   }

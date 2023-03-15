@@ -1,7 +1,15 @@
+/* eslint-disable object-curly-spacing */
 import {
-  h, Component, createRef,
+  h, Component, createRef, Fragment,
 } from '../../scripts/preact.js';
 import htm from '../../scripts/htm.js';
+import {
+  performCatalogServiceQuery,
+  PLACEHOLDER_IMG,
+  productOptionImageQuery,
+  renderFallbackImage,
+  renderPrice,
+} from '../../scripts/commerce.js';
 
 const html = htm.bind(h);
 
@@ -15,7 +23,9 @@ class ProductCard extends Component {
     });
     this.state = {
       selectedVariant: null,
+      imageForOption: {},
     };
+
     this.baseProduct = props.product;
     this.resizeObserver = new ResizeObserver((entries) => {
       entries.forEach((entry) => {
@@ -51,14 +61,64 @@ class ProductCard extends Component {
         this.resizeObserver.disconnect();
       }
     }
-
-    // TODO
-    if (this.state.selectedVariant) {
-      console.log('Load variant', this.state.selectedVariant);
-    }
   }
 
-  render({ product, loading }, state) {
+  async selectVariant(optionId) {
+    const newImageForOption = { ...this.state.imageForOption };
+
+    // Load image for option if not available
+    if (!this.state.imageForOption[optionId]) {
+      try {
+        const option = await performCatalogServiceQuery(productOptionImageQuery, {
+          sku: this.props.product.sku,
+          optionIds: [optionId],
+        });
+        const { images } = option.refineProduct;
+        if (images && images.length > 0) {
+          // Transform image
+          const url = images[0].url
+            .replace('productH', 'product/H')
+            .replace('productM', 'product/M')
+            .replace('cdn.maidenform.com', 'franklin.maidenform.com/images/catalog');
+
+          newImageForOption[optionId] = url;
+        }
+      } catch (err) {
+        console.error('Could not load image for option', err);
+      }
+    }
+
+    this.setState({ selectedVariant: optionId, imageForOption: newImageForOption });
+  }
+
+  renderImage(loading = 'lazy') {
+    const { product } = this.props;
+    const { selectedVariant, imageForOption } = this.state;
+
+    // Placeholder as fallback
+    let image = PLACEHOLDER_IMG;
+
+    // Use base image if available
+    if (product.images && product.images.length > 0) {
+      image = product.images[0].url;
+    }
+
+    // Use option image if available
+    if (selectedVariant && imageForOption[selectedVariant]) {
+      image = imageForOption[selectedVariant];
+    }
+
+    const url = new URL(image);
+    url.search = '';
+
+    return html`<picture>
+      <source type="image/webp" srcset="${url}?width=163&bg-color=255,255,255&format=webply&optimize=medium" media="(max-width: 900px)" />
+      <source type="image/webp" srcset="${url}?width=330&bg-color=255,255,255&format=webply&optimize=medium" />
+      <img class="product-image-photo" src="${url}?width=330&quality=100&bg-color=255,255,255" max-width="330" max-height="396" alt=${product.name} loading=${loading} onerror=${renderFallbackImage} />
+    </picture>`;
+  }
+
+  render({ product, loading, index }, state) {
     if (loading) {
       return html`
       <li>
@@ -75,44 +135,39 @@ class ProductCard extends Component {
       </li>`;
     }
 
+    const isMobile = window.matchMedia('only screen and (max-width: 900px)').matches;
+    const numberOfEagerImages = isMobile ? 2 : 4;
+
     return html`
       <li>
         <div class="picture">
-          <a href="/products/${product.url_key}">
-            <picture>
-              <source media="(min-width: 320px) and (max-width: 767px)" srcset="${product.image}?width=420&amp;quality=100&amp;bg-color=255,255,255" />
-              <source media="(min-width: 768px) and (max-width: 1024x)" srcset="${product.image}?width=768&amp;quality=100&amp;bg-color=255,255,255" />
-              <img class="product-image-photo"
-                srcset="${product.image}?width=247&amp;quality=100&amp;bg-color=255,255,255&amp;dpr=1 1x,
-                  ${product.image}?width=247&amp;quality=100&amp;bg-color=255,255,255&amp;dpr=1.5 1.5x,
-                  ${product.image}?width=247&amp;quality=100&amp;bg-color=255,255,255&amp;dpr=2 2x" 
-                src="${product.image}?width=247&amp;quality=100&amp;bg-color=255,255,255" max-width="247" max-height="313" alt=${product.name} />
-            </picture>
+          <a href="/products/${product.url_key}/${product.sku}">
+            ${this.renderImage(index < numberOfEagerImages ? 'eager' : 'lazy')}
           </a>
           <button class="add-to-cart-action">Add to Bag</button>
         </div>
         <div class="variants">
           <button class="previous" onClick=${this.swatchScrollLeft}>Previous</button>
           <div class="swatches" ref=${this.variantsRef}>
-            ${product.swatches.map(({ value, image, name }) => html`
+            ${product.swatches.map(({ id, image, title }, i) => html`
               <button
-                class="swatch ${value === state.selectedVariant ? 'active' : ''}"
-                value=${value}
-                style="background: url('${image}?width=50&amp;quality=85&amp;fit=bounds') no-repeat center;"
-                onClick=${(event) => this.setState({ selectedVariant: event.target.value })}>${name}</button>
+                class="swatch ${id === state.selectedVariant || (i === 0 && !state.selectedVariant) ? 'active' : ''}"
+                value=${id}
+                style="background: url('${image}?width=26&quality=85&fit=bounds') no-repeat center;"
+                onClick=${() => this.selectVariant(id)}>${title}</button>
             `)}
             </div>
           <button class="next" onClick=${this.swatchScrollRight}>Next</button>
         </div>
         <div class="name">
-          <a href="/products/${product.url_key}">${product.name}</a>
+          <a href="/products/${product.url_key}/${product.sku}" dangerouslySetInnerHTML=${{__html: product.name}} />
         </div>
-        <div class="price">
-          <span class="old-price">${this.formatter.format(product.price.regular)}</span> <span>${this.formatter.format(product.price.sale)}</span>
-        </div>
+        <div class="price">${renderPrice(product, this.formatter.format, html, Fragment)}</div>
         <div class="rating">
-          <div style="--rating: ${product.rating.average};"></div>
-          <span>(${product.rating.count})</span>
+          ${product.rating !== 'loading' && html`<${Fragment}>
+            <div style="--rating: ${product.rating.average};"></div>
+            <span>(${product.rating.count})</span>
+          <//>`}
         </div>
       </li>`;
   }
@@ -127,8 +182,14 @@ const ProductList = ({ products, loading, currentPageSize }) => {
     </div>`;
   }
 
+  if (products.items.length === 0) {
+    return html`<div class="list">
+      <div class="empty">We're sorry, we couldn't find anything that matches your query.</div>
+    </div>`;
+  }
+
   return html`<div class="list">
-    <ol>${products.items.map((product) => html`<${ProductCard} product=${product} />`)}</ol>
+    <ol>${products.items.map((product, index) => html`<${ProductCard} product=${product} index=${index} />`)}</ol>
   </div>`;
 };
 

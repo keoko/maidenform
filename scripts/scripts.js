@@ -1,21 +1,24 @@
 import {
-  sampleRUM,
-  loadHeader,
-  loadFooter,
+  decorateBlocks,
   decorateIcons,
   decorateSections,
-  decorateBlocks,
   decorateTemplateAndTheme,
-  waitForLCP,
   loadBlocks,
   loadCSS,
+  getMetadata,
+  readBlockConfig,
+  loadFooter,
+  loadHeader,
+  sampleRUM,
+  waitForLCP,
 } from './lib-franklin.js';
 import './configs.js';
 
-import { preloadLCPImage } from './product.js';
+import { preloadLCPImage, preloadCategory } from './commerce.js';
 
 const LCP_BLOCKS = [
   'product-details',
+  'product-list-page',
 ]; // add your LCP blocks to the list
 window.hlx.RUM_GENERATION = 'project-1'; // add your RUM generation information here
 
@@ -35,25 +38,26 @@ window.hlx.RUM_GENERATION = 'project-1'; // add your RUM generation information 
  */
 
 function decorateButtons(element) {
-  element.querySelectorAll('a').forEach((a) => {
-    a.title = a.title || a.textContent;
-    if (a.href !== a.textContent) {
-      const up = a.parentElement;
-      const twoup = a.parentElement.parentElement;
-      if (!a.querySelector('img')) {
-        if (up.childNodes.length === 1 && up.tagName === 'STRONG'
-          && twoup.childNodes.length === 1 && twoup.tagName === 'P') {
-          a.className = 'button primary';
-          twoup.classList.add('button-container');
-        }
-        if (up.childNodes.length === 1 && up.tagName === 'EM'
-          && twoup.childNodes.length === 1 && twoup.tagName === 'P') {
-          a.className = 'button secondary';
-          twoup.classList.add('button-container');
+  element.querySelectorAll('a')
+    .forEach((a) => {
+      a.title = a.title || a.textContent;
+      if (a.href !== a.textContent) {
+        const up = a.parentElement;
+        const twoup = a.parentElement.parentElement;
+        if (!a.querySelector('img')) {
+          if (up.childNodes.length === 1 && up.tagName === 'STRONG'
+            && twoup.childNodes.length === 1 && twoup.tagName === 'P') {
+            a.className = 'button primary';
+            twoup.classList.add('button-container');
+          }
+          if (up.childNodes.length === 1 && up.tagName === 'EM'
+            && twoup.childNodes.length === 1 && twoup.tagName === 'P') {
+            a.className = 'button secondary';
+            twoup.classList.add('button-container');
+          }
         }
       }
-    }
-  });
+    });
 }
 
 function buildImageLinks(element) {
@@ -144,6 +148,13 @@ export async function loadFragment(path) {
 async function loadEager(doc) {
   if (window.location.href.match(/\/products\/[\w|-]+\/[\w|-]+/)) {
     preloadLCPImage();
+  }
+  if (getMetadata('template') === 'plp') {
+    const plpBlock = document.querySelector('.product-list-page');
+    const { category } = readBlockConfig(plpBlock);
+    if (category) {
+      preloadCategory();
+    }
   }
   document.documentElement.lang = 'en';
   decorateTemplateAndTheme();
@@ -241,6 +252,78 @@ export async function fetchIndex(indexFile, pageSize = 500) {
   window.index[indexFile] = newIndex;
 
   return newIndex;
+}
+
+/**
+ * Parses file url from a GitHub repo into file metadata.
+ * @return {object} The metadata describing GitHub file
+ */
+export function getGithubFileMetadata(fileURL) {
+  try {
+    const url = new URL(fileURL);
+    const urlHalves = url.pathname.replaceAll('//', '/')
+      .split('/blob/');
+    const repoPathSplit = urlHalves[0].split('/');
+    const owner = repoPathSplit[1];
+    const repo = repoPathSplit[2];
+    const path = urlHalves[1];
+    const rawFileURL = `https://raw.githubusercontent.com/${owner}/${repo}/${path}`;
+
+    return {
+      owner,
+      repo,
+      path,
+      rawFileURL,
+    };
+  } catch (e) {
+    return null;
+  }
+}
+
+/**
+ * Fetches file contents from a remote file, preserving text-based mime types.
+ * @param {string} rawFileURL relative or absolute URL to the file
+ */
+async function getTextFileFromURL(rawFileURL) {
+  const s = await fetch(
+    rawFileURL,
+  )
+    .then((d) => {
+      if (d.ok) {
+        return d.text();
+      }
+      throw new Error(`code=${d.status} message=${d.statusText}`);
+    });
+  return s;
+}
+
+/**
+ * Retrieves HTML fragment from q file, wherever it's publicly hosted - including GitHub repo.
+ * @param {string} fileURL URL to the file - absolute or relative
+ * @return {HTMLElement} The fragment
+ */
+export async function getFragmentFromFile(fileURL) {
+  let rawFileURL = fileURL;
+
+  try {
+    const u = new URL(fileURL);
+    if (u.hostname === 'github.com') {
+      const metadata = getGithubFileMetadata(fileURL);
+      rawFileURL = metadata.rawFileURL;
+    }
+    // eslint-disable-next-line no-empty
+  } catch (e) {
+  }
+
+  const elem = document.createElement('div');
+  const file = await getTextFileFromURL(rawFileURL);
+  const fragmentDoc = new DOMParser().parseFromString(file, 'text/html');
+  const { children } = fragmentDoc;
+  for (let i = 0; i < children.length; i += 1) {
+    elem.appendChild(children[i]);
+  }
+
+  return elem;
 }
 
 async function loadPage() {

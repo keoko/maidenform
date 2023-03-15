@@ -1,6 +1,7 @@
 import { Component, Fragment, h } from '../../scripts/preact.js';
 import htm from '../../scripts/htm.js';
 import Icon from './Icon.js';
+import { renderPrice } from '../../scripts/commerce.js';
 
 const html = htm.bind(h);
 
@@ -54,51 +55,21 @@ function NameAndPriceShimmer() {
   `;
 }
 
-function NameAndPrice({
-  name, sku, shimmer, priceRange, price,
-}) {
+function NameAndPrice({ shimmer, product }) {
+  const {
+    priceRange, price, name, sku,
+  } = product;
+
   if (shimmer || !(priceRange || price)) {
     return html`<${NameAndPriceShimmer} />`;
   }
 
-  const formatPrice = (p) => {
-    const priceFormatter = new Intl.NumberFormat('en-US', {
-      style: 'currency',
-      currency: p.amount.currency,
-    });
-    return priceFormatter.format(p.amount.value);
-  };
+  const priceFormatter = new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD',
+  });
 
-  let priceHtml;
-  if (price && price.final.amount.value !== price.regular.amount.value) {
-    // variant selected, with a discount
-    priceHtml = html`
-        <span class="price-reduced">${formatPrice(price.regular)}</span>
-        <span class="price-actual">${formatPrice(price.final)}</span>
-    `;
-  } else if (price) {
-    // variant selected, no discount
-    priceHtml = html`
-        <span class="price-actual">${formatPrice(price.final)}</span>
-    `;
-  } else if (priceRange.minimum.final.amount.value !== priceRange.maximum.final.amount.value) {
-    // no variant selected, price range
-    priceHtml = html`
-        <span class="price">From ${formatPrice(priceRange.minimum.final)}</span>
-    `;
-  } else if (priceRange.minimum.final.amount.value !== priceRange.minimum.regular.amount.value) {
-    // no variant selected, but minimum and maximum variant prices are the same, with discount
-    priceHtml = html`
-        <span class="price-reduced">${formatPrice(priceRange.minimum.regular)}</span>
-        <span class="price-actual">${formatPrice(priceRange.minimum.final)}</span>
-    `;
-  } else {
-    // no variant selected, but all prices are the same (no discounts or variant differences)
-    priceHtml = html`
-        <span class="price-actual">${formatPrice(priceRange.minimum.final)}</span>
-    `;
-  }
-
+  const priceHtml = renderPrice(product, priceFormatter.format, html, Fragment);
   return html`
     <${Fragment}>
         <h1 dangerouslySetInnerHTML=${{ __html: name }}></h1>
@@ -238,13 +209,13 @@ export default class ProductDetailsSidebar extends Component {
 
     return html`<${Fragment}>
       <div class="product-title desktop-hidden">
-          <${NameAndPrice} shimmer=${this.props.shimmer} name=${product?.name} priceRange=${product?.priceRange} price=${product?.price} sku=${product?.sku} />
+          <${NameAndPrice} shimmer=${this.props.shimmer} product=${product} />
       </div>
       <div class=${`sidebar ${this.props.shimmer ? 'shimmer' : ''}`}>
           ${this.props.shimmer || html`
             <div class="product-title sidebar-section mobile-hidden">
               <${Rating} value=${product?.rating ?? 0} count=${product?.numReviews} />
-              <${NameAndPrice} name=${product?.name} priceRange=${product?.priceRange} price=${product?.price} sku=${product?.sku} />
+              <${NameAndPrice} product=${product} />
           </div>
             ${hasColors && html`
               <${ColorSelector}

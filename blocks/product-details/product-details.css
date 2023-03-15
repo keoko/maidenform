@@ -93,7 +93,7 @@
   align-items: center;
 }
 
-.product-details .product-title .price .price-reduced {
+.product-details .product-title .price .price-regular {
   font-size: 1.8rem;
   line-height: 3.6rem;
   color: #959595;
@@ -101,7 +101,7 @@
   font-family: var(--ff-gilroy-medium);
 }
 
-.product-details .product-title .price .price-actual {
+.product-details .product-title .price .price-final {
   font-size: 2.5rem;
   line-height: 3.6rem;
   color: #c41b53;
