@@ -1,4 +1,5 @@
 // eslint-disable-next-line import/no-cycle
+import { partytownSnippet, SCRIPT_TYPE } from '../~partytown/integration.js';
 import {
   sampleRUM,
 }
@@ -46,7 +47,12 @@ sampleRUM('cwv');
 
 // add more delayed functionality here
 const tealiumConfig = await getConfigValue('tealium-conf');
+
+document.querySelector('head').prepend(document.createRange().createContextualFragment(`
+  <script>${partytownSnippet()}</script>
+`));
+
 loadScript(`//tags.tiqcdn.com/utag/${tealiumConfig}/utag.js`, {
-  type: 'text/javascript',
+  type: SCRIPT_TYPE,
   async: true,
 }, true);

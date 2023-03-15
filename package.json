@@ -26,6 +26,7 @@
     "@adobe/helix-cli": "^14.18.1",
     "@babel/core": "7.19.3",
     "@babel/eslint-parser": "7.19.1",
+    "@builder.io/partytown": "^0.7.5",
     "@esm-bundle/chai": "4.3.4-fix.0",
     "@web/test-runner": "0.14.0",
     "@web/test-runner-commands": "0.6.5",
