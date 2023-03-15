@@ -151,16 +151,28 @@ export async function decorateIcons(element) {
       ICONS_CACHE[iconName] = true;
       try {
         const response = await fetch(`${window.hlx.codeBasePath}${window.hlx.codeBasePath}/icons/${iconName}.svg`);
-        const svg = await response.text();
-        if (svg.match(/(<style | class=)/)) {
-          ICONS_CACHE[iconName] = { styled: true, html: svg };
+        const svgSource = await response.text();
+        if (svgSource.match(/(<style | class=)/)) {
+          ICONS_CACHE[iconName] = { styled: true, html: svgSource };
         } else {
+          const parser = new DOMParser();
+          const parsedSvg = parser.parseFromString(svgSource, 'image/svg+xml');
+          const newSvg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+
+          const { attributes } = parsedSvg.documentElement;
+
+          for (let i = 0; i < attributes.length; i += 1) {
+            newSvg.setAttribute(attributes[i].name, attributes[i].value);
+          }
+
+          newSvg.setAttribute('id', iconName);
+          newSvg.removeAttribute('width');
+          newSvg.removeAttribute('height');
+
+          newSvg.innerHTML = parsedSvg.documentElement.innerHTML;
+
           ICONS_CACHE[iconName] = {
-            html: svg
-              .replace('<svg', `<symbol id="${iconName}"`)
-              .replace(/ width=".*?"/, '')
-              .replace(/ height=".*?"/, '')
-              .replace('</svg>', '</symbol>'),
+            html: newSvg.outerHTML,
           };
         }
       } catch (err) {
@@ -280,7 +292,7 @@ export function readBlockConfig(block) {
 
 /**
  * Decorates all sections in a container element.
- * @param {Element} $main The container element
+ * @param {Element} main The container element
  */
 export function decorateSections(main) {
   main.querySelectorAll(':scope > div').forEach((section) => {
