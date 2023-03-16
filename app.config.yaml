@@ -12,6 +12,8 @@ application:
               LOG_LEVEL: debug
               CAPTCHA_SITE_KEY: $CAPTCHA_SITE_KEY
               CAPTCHA_SECRET_KEY: $CAPTCHA_SECRET_KEY
+              ZETA_PASSWORD: $ZETA_PASSWORD
+              ZETA_SITE_ID: $ZETA_SITE_ID
             annotations:
               require-adobe-auth: false
               final: true
