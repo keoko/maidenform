@@ -66,6 +66,58 @@
     margin: 0;
 }
 
+.newsletter-captcha {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: rgb(0 0 0 / 60%);
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.newsletter-captcha.hidden {
+    display: none;
+}
+
+.newsletter-captcha-inner {
+    background: white;
+    margin-left: 20px;
+    margin-right: 20px;
+    width: 100%;
+    max-width: 400px;
+    padding: 30px;
+    position: relative;
+}
+
+.newsletter-captcha-inner h3 {
+    color: black;
+    font-size: 14px;
+    margin-top: 30px;
+}
+
+.newsletter button[name='close'] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: none;
+    border: none;
+    color: black;
+    font-size: 20px;
+    margin: 0;
+    padding-right: 20px;
+    padding-top: 20px;
+}
+
+.newsletter .icon.icon-x-lg {
+    color: black;
+    width: 24px;
+    height: 24px;
+}
+
 @media (min-width: 768px) {
     .newsletter {
         flex-direction: row;
