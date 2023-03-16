@@ -17,18 +17,6 @@ function getCurrentCategory(document) {
   return css.replace('category', '');
 }
 
-function transformBreadcrumb(document) {
-  document.querySelectorAll('.breadcrumbs').forEach((breadcrumb) => {
-    const items = breadcrumb.querySelector('ul');
-    const cells = [
-      ['Breadcrumb'],
-      [items],
-    ];
-    const table = WebImporter.DOMUtils.createTable(cells, document);
-    breadcrumb.replaceWith(table);
-  });
-}
-
 function transformPLP(document) {
   const dom = document.getElementById('amasty-shopby-product-list');
 
@@ -127,6 +115,7 @@ export default {
 
     const meta = {
       template: 'plp',
+      breadcrumb: 'auto',
     };
 
     const title = document.querySelector('title');
@@ -143,18 +132,16 @@ export default {
 
     [
       transformPLP,
-      transformBreadcrumb,
-
       makeProxySrcs,
       makeAbsoluteLinks,
     ].forEach((f) => f.call(null, document));
 
+    WebImporter.DOMUtils.remove(document.body, [
+      '.breadcrumbs',
+    ]);
+
     return document.body;
   },
-
-  // TODO: Transform breadcrumb
-  // TODO: Transform PLP
-  // TODO: Add metadata block for plp template
 
   /**
    * Return a path that describes the document being transformed (file name, nesting...).
