@@ -44,11 +44,15 @@ const getProducts = async (pageNumber) => {
 
   if (result && result.data) {
     result.data.products.items.forEach((item) => {
+      const baseImageUrl = `https://franklin.maidenform.com/product-images/${item.sku}.jpg`;
       const itemMeta = {
         path: `/products/${item.url_key}/${item.sku}`,
         meta_keyword: (item.meta_keyword !== null) ? item.meta_keyword : '',
         meta_title: he.decode((item.meta_title !== null) ? item.meta_title : item.name),
         meta_description: (item.meta_description !== null) ? item.meta_description : '',
+        'og:image': baseImageUrl,
+        'og:image:secure_url': baseImageUrl,
+        'twitter:image': baseImageUrl,
       };
       prodMetadata.push(itemMeta);
     });
