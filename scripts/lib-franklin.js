@@ -150,22 +150,27 @@ export async function decorateIcons(element) {
     if (!ICONS_CACHE[iconName]) {
       ICONS_CACHE[iconName] = true;
       try {
-        const response = await fetch(`${window.hlx.codeBasePath}${window.hlx.codeBasePath}/icons/${iconName}.svg`);
+        const response = await fetch(`${window.hlx.codeBasePath}/icons/${iconName}.svg`);
         const svgSource = await response.text();
         if (svgSource.match(/(<style | class=)/)) {
           ICONS_CACHE[iconName] = { styled: true, html: svgSource };
         } else {
           const parser = new DOMParser();
           const parsedSvg = parser.parseFromString(svgSource, 'image/svg+xml');
-          const newSvg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+          const newSvg = document.createElementNS('http://www.w3.org/2000/svg', 'symbol');
 
           const { attributes } = parsedSvg.documentElement;
 
           for (let i = 0; i < attributes.length; i += 1) {
-            newSvg.setAttribute(attributes[i].name, attributes[i].value);
+            const { name, value } = attributes[i];
+
+            // remove XML namespace-related attributes
+            if (!name.startsWith('xmlns:') && name !== 'xmlns') {
+              newSvg.setAttribute(name, value);
+            }
           }
 
-          newSvg.setAttribute('id', iconName);
+          newSvg.setAttribute('id', `icons-sprite-${iconName}`);
           newSvg.removeAttribute('width');
           newSvg.removeAttribute('height');
 
@@ -176,6 +181,7 @@ export async function decorateIcons(element) {
           };
         }
       } catch (err) {
+        // eslint-disable-next-line no-console
         console.error(err);
       }
     }
@@ -194,7 +200,13 @@ export async function decorateIcons(element) {
     if (ICONS_CACHE[iconName].styled) {
       parent.innerHTML = ICONS_CACHE[iconName].html;
     } else {
-      parent.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg"><use href="#${iconName}"/></svg>`;
+      const svgElem = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+      const useElem = document.createElement('use');
+
+      useElem.setAttribute('href', `#icons-sprite-${iconName}`);
+
+      svgElem.innerHTML = useElem.outerHTML;
+      parent.innerHTML = svgElem.outerHTML;
     }
   });
 }
