@@ -202,7 +202,6 @@ export default class ProductDetailsSidebar extends Component {
       price: props.product.price,
       sku,
       rating: roundToHalf(props.product.reviewStats?.average ?? 0),
-      ratingsSummary: null,
       numReviews: props.product.reviewStats?.count ?? 0,
       colors,
       options: props.product.options.filter((option) => option.id !== 'color'),
@@ -230,9 +229,9 @@ export default class ProductDetailsSidebar extends Component {
     const dialog = this.base.parentElement.querySelector('#ratings_dialog');
     dialog.removeAttribute('hidden');
 
-    if (!this.props.ratingsSummary) {
+    if (!this.state.ratingsSummary) {
       getProductRatingsSummary(sku).then((ratingsSummary) => {
-        this.props.ratingsSummary = ratingsSummary;
+        this.state.ratingsSummary = ratingsSummary;
       });
     }
   }
@@ -262,7 +261,7 @@ export default class ProductDetailsSidebar extends Component {
               <${Rating} sku=${product?.sku} value=${product?.rating ?? 0} count=${product?.numReviews}
                   onMouseOver=${(sku) => product?.numReviews > 0 && this.displayRatingsModal(sku)}
                   onMouseOut=${product?.numReviews > 0 && this.hideRatingsModal} />
-              ${product?.numReviews > 0 && html`<${RatingModal} ratingsSummary=${product?.ratingsSummary}/>`}
+              ${product?.numReviews > 0 && html`<${RatingModal} ratingsSummary=${this.state.ratingsSummary}/>`}
               <${NameAndPrice} product=${product} />
           </div>
             ${hasColors && html`
