@@ -5,8 +5,9 @@ import { decorateIcons } from '../../scripts/lib-franklin.js';
 /* global grecaptcha */
 
 async function executeSubmit(block, token) {
+  const endpoint = await getConfigValue('newsletter-endpoint');
   const email = block.querySelector('input[name="email"]').value;
-  const response = await fetch('https://53444-458tealmoose-devhannes.adobeioruntime.net/api/v1/web/maidenform-demo/newsletter', {
+  const response = await fetch(endpoint, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
