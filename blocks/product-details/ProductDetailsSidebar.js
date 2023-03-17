@@ -93,15 +93,24 @@ function Rating({
   `;
 }
 
-function RatingModal() {
+function RatingModal({ ratingsSummary }) {
+  const total = ratingsSummary?.map((rating) => rating.count).reduce((a, b) => a + b, 0);
   return html`
     <div role="dialog"
         id="ratings_dialog"
         aria-label="_ reviews"
         aria-modal="true"
         class="sidebar-section reviews-modal"
-        hidden="true">
+        hidden="true"
+        ${total && html`aria-label="${total} reviews"`} >
       <div id="ratings_dialog_ratings">
+        ${ratingsSummary?.map((rating) => `
+        <div aria-label="${rating.count} reviews with ${rating.key} stars. ">
+          <span class="ratings_dialog_ratings_key">${rating.key}</span>
+          <span class="ratings_dialog_ratings_count">${rating.count}</span>
+        </div>
+        `).join('')}
+        <div>Read ${total} reviews</div>
       </div>
   </div>
   `;
@@ -193,6 +202,7 @@ export default class ProductDetailsSidebar extends Component {
       price: props.product.price,
       sku,
       rating: roundToHalf(props.product.reviewStats?.average ?? 0),
+      ratingsSummary: null,
       numReviews: props.product.reviewStats?.count ?? 0,
       colors,
       options: props.product.options.filter((option) => option.id !== 'color'),
@@ -218,28 +228,18 @@ export default class ProductDetailsSidebar extends Component {
 
   displayRatingsModal(sku) {
     const dialog = this.base.parentElement.querySelector('#ratings_dialog');
-    dialog.setAttribute('hidden', 'false')
-    const ratings = dialog.querySelector('#ratings_dialog_ratings');
+    dialog.removeAttribute('hidden');
 
-    if (!ratings.innerHTML) {
+    if (!this.props.ratingsSummary) {
       getProductRatingsSummary(sku).then((ratingsSummary) => {
-        const total = ratingsSummary?.map((rating) => rating.count).reduce((a, b) => a + b, 0);
-        dialog.setAttribute('aria-label', `${total} reviews`);
-
-        ratings.innerHTML = `${ratingsSummary?.map((rating) => `
-          <div aria-label="${rating.count} reviews with ${rating.key} stars. ">
-            <span class="ratings_dialog_ratings_key">${rating.key}</span>
-            <span class="ratings_dialog_ratings_count">${rating.count}</span>
-          </div>
-        `).join('')}
-        <div>Read ${total} reviews</div>`;
+        this.props.ratingsSummary = ratingsSummary;
       });
     }
   }
 
   hideRatingsModal() {
     const dialog = this.base.parentElement.querySelector('#ratings_dialog');
-    dialog.setAttribute('hidden', 'true')
+    dialog.setAttribute('hidden', 'true');
   }
 
   render() {
@@ -262,7 +262,7 @@ export default class ProductDetailsSidebar extends Component {
               <${Rating} sku=${product?.sku} value=${product?.rating ?? 0} count=${product?.numReviews}
                   onMouseOver=${(sku) => product?.numReviews > 0 && this.displayRatingsModal(sku)}
                   onMouseOut=${product?.numReviews > 0 && this.hideRatingsModal} />
-              ${product?.numReviews > 0 && html`<${RatingModal} />`}
+              ${product?.numReviews > 0 && html`<${RatingModal} ratingsSummary=${product?.ratingsSummary}/>`}
               <${NameAndPrice} product=${product} />
           </div>
             ${hasColors && html`

@@ -132,7 +132,7 @@ export async function getProductRatingsSummary(productId) {
   });
   const endpoint = await getConfigValue('bazaarvoice-endpoint');
   const api = new URL(`${endpoint}/data/display/0.2alpha/product/summary`);
-  const response = await fetch(`${endpoint}?${searchParams.toString()}`);
+  const response = await fetch(`${api}?${searchParams.toString()}`);
   if (response.ok) {
     const body = await response.json();
     return body?.reviewSummary?.primaryRating?.distribution;
