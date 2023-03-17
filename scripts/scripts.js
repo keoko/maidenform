@@ -130,7 +130,8 @@ export async function getProductRatingsSummary(productId) {
     rev: 0,
     contentlocale: 'en_GB,en_US',
   });
-  const endpoint = 'https://stg.api.bazaarvoice.com/data/display/0.2alpha/product/summary';
+  const endpoint = await getConfigValue('bazaarvoice-endpoint');
+  const api = new URL(`${endpoint}/data/display/0.2alpha/product/summary`);
   const response = await fetch(`${endpoint}?${searchParams.toString()}`);
   if (response.ok) {
     const body = await response.json();

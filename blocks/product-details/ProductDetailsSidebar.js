@@ -99,7 +99,8 @@ function RatingModal() {
         id="ratings_dialog"
         aria-label="_ reviews"
         aria-modal="true"
-        class="sidebar-section reviews-modal hidden">
+        class="sidebar-section reviews-modal"
+        hidden="true">
       <div id="ratings_dialog_ratings">
       </div>
   </div>
@@ -216,12 +217,10 @@ export default class ProductDetailsSidebar extends Component {
   }
 
   displayRatingsModal(sku) {
-    // TODO no idea if this is the right way to do this
     const dialog = this.base.parentElement.querySelector('#ratings_dialog');
-    dialog.classList.remove('hidden');
+    dialog.setAttribute('hidden', 'false')
     const ratings = dialog.querySelector('#ratings_dialog_ratings');
 
-    // TODO maybe we want to preload this?
     if (!ratings.innerHTML) {
       getProductRatingsSummary(sku).then((ratingsSummary) => {
         const total = ratingsSummary?.map((rating) => rating.count).reduce((a, b) => a + b, 0);
@@ -239,9 +238,8 @@ export default class ProductDetailsSidebar extends Component {
   }
 
   hideRatingsModal() {
-    // TODO no idea if this is the right way to do this
     const dialog = this.base.parentElement.querySelector('#ratings_dialog');
-    dialog.classList.add('hidden');
+    dialog.setAttribute('hidden', 'true')
   }
 
   render() {
