@@ -61,6 +61,12 @@ export default async function decorate(block) {
     block.querySelector('.newsletter-captcha').classList.add('hidden');
   });
 
+  block.querySelector('input[name="email"]').addEventListener('focus', () => {
+    if (!document.querySelector('script[name=captcha]')) {
+      loadScript('https://www.google.com/recaptcha/api.js?render=explicit', { name: 'captcha' });
+    }
+  });
+
   block.querySelector('button[name="signup"]').addEventListener('click', async (event) => {
     event.preventDefault();
 
@@ -70,12 +76,6 @@ export default async function decorate(block) {
 
     block.querySelector('.newsletter-captcha').classList.remove('hidden');
     if (!block.querySelector('iframe[title="reCAPTCHA"]')) {
-      await new Promise((resolve) => {
-        loadScript('https://www.google.com/recaptcha/api.js?render=explicit', {}, () => {
-          resolve();
-        });
-      });
-
       grecaptcha.render('gcaptcha-placeholder', {
         sitekey: captchaSiteKey,
         callback: async (token) => executeSubmit(block, token),
