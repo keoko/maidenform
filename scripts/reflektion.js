@@ -1,3 +1,5 @@
+import { performMonolithGraphQLQuery, urlKeyToSkuQuery } from './commerce.js';
+
 let reflektionLoaded = false;
 
 const loadScript = (url, attrs) => {
@@ -13,6 +15,56 @@ const loadScript = (url, attrs) => {
   head.append(script);
   return script;
 };
+
+// Used to rate-limit link rewriting, to prevent excessive calls to the Monolith GraphQL API
+class RateLimiter {
+  constructor(limit) {
+    this.limit = limit;
+    this.lastCallAt = null;
+    this.nextCallTimeout = null;
+  }
+
+  execute(fn) {
+    if ((this.lastCallAt && ((Date.now() - this.lastCallAt) >= this.limit)) || !this.lastCallAt) {
+      this.lastCallAt = Date.now();
+      fn();
+    } else {
+      const remaining = this.limit - (Date.now() - this.lastCallAt);
+      if (this.nextCallTimeout) {
+        clearTimeout(this.nextCallTimeout);
+      }
+      this.nextCallTimeout = setTimeout(() => {
+        this.lastCallAt = Date.now();
+        fn();
+      }, remaining);
+    }
+  }
+}
+
+const gqlRateLimiter = new RateLimiter(1000);
+
+function replacePDPLinks(links) {
+  if (links === null || links.length === 0) return;
+  if (!links[0].href.includes('.html')) return;
+
+  const toUrlKey = (link) => new URL(link.href).pathname
+    .replace('.html', '')
+    .replace(/^\//, '');
+
+  const keys = [...links].map(toUrlKey);
+
+  gqlRateLimiter.execute(async () => {
+    const skus = (await performMonolithGraphQLQuery(urlKeyToSkuQuery, { urlKeys: keys }))
+      .products.items.reduce((acc, item) => ({ ...acc, [item.url_key]: item.sku }), {});
+
+    links.forEach((link) => {
+      const newUrl = new URL(window.location);
+      const urlKey = toUrlKey(link);
+      newUrl.pathname = skus[urlKey] ? `/products/${urlKey}/${skus[urlKey]}` : '/404';
+      link.href = newUrl.toString();
+    });
+  });
+}
 
 export default async function loadReflektion() {
   if (reflektionLoaded) return;
@@ -62,12 +114,8 @@ export default async function loadReflektion() {
 
     // Rewrite product links
     const productLinks = observedOverlay.querySelectorAll('.rfk_product a');
-    productLinks.forEach((link) => {
-      const url = new URL(link.href);
-      const newUrl = new URL(window.location);
-      newUrl.pathname = `/products${url.pathname.replace('.html', '')}`;
-      link.href = newUrl.toString();
-    });
+
+    replacePDPLinks(productLinks);
   });
   searchOverlayObserver.observe(await searchOverlay, { attributes: true, attributeFilter: ['class'] });
 }

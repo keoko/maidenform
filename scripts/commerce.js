@@ -170,6 +170,21 @@ export const productBreadcrumbQuery = `
 }
 `;
 
+export const urlKeyToSkuQuery = `
+query UrlKeyToSku($urlKeys: [String!]!) {
+    products(
+        filter: { url_key: { in: $urlKeys } }
+        pageSize: 200
+        currentPage: 1
+    ) {
+        items {
+            url_key
+            sku
+        }
+    }
+}
+`;
+
 /* Queries PLP */
 
 export const productSearchQuery = `query ProductSearch(

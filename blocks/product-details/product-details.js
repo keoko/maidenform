@@ -21,12 +21,12 @@ import {
 
 const html = htm.bind(h);
 
-export function errorGettingProduct() {
-  fetch('/404.html').then((response) => {
+export function errorGettingProduct(code = 404) {
+  fetch(`/${code}.html`).then((response) => {
     if (response.ok) {
       return response.text();
     }
-    throw new Error('Error getting 404 page');
+    throw new Error(`Error getting ${code} page`);
   }).then((htmlText) => {
     const parser = new DOMParser();
     const doc = parser.parseFromString(htmlText, 'text/html');
@@ -73,7 +73,8 @@ class ProductDetailPage extends Component {
     const product = result?.products?.items?.[0];
 
     if (!product) {
-      errorGettingProduct();
+      errorGettingProduct(500);
+      return {};
     }
 
     const inStockVariants = product.variants
