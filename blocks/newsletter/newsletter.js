@@ -32,11 +32,6 @@ export default async function decorate(block) {
   const text = block.querySelector(':scope > div > div');
 
   const captchaSiteKey = await getConfigValue('captcha-site-key');
-  await new Promise((resolve) => {
-    loadScript('https://www.google.com/recaptcha/api.js?render=explicit', {}, () => {
-      resolve();
-    });
-  });
 
   block.textContent = '';
   const markup = document.createRange().createContextualFragment(`
@@ -75,6 +70,12 @@ export default async function decorate(block) {
 
     block.querySelector('.newsletter-captcha').classList.remove('hidden');
     if (!block.querySelector('iframe[title="reCAPTCHA"]')) {
+      await new Promise((resolve) => {
+        loadScript('https://www.google.com/recaptcha/api.js?render=explicit', {}, () => {
+          resolve();
+        });
+      });
+
       grecaptcha.render('gcaptcha-placeholder', {
         sitekey: captchaSiteKey,
         callback: async (token) => executeSubmit(block, token),
