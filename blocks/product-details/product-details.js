@@ -82,9 +82,10 @@ class ProductDetailPage extends Component {
         .reduce((acc, curr) => ({ ...acc, [curr.code]: { label: curr.label, id: curr.uid } }), {}));
 
     // for each option, store the in-stock products given all the other options that are selected
-    return this.state.product.options.reduce((acc, curOption) => {
+    return this.state.product?.options.reduce((acc, curOption) => {
       const inStockVariantsForOption = inStockVariants
         .filter((variant) => Object.keys(this.state.selection)
+          .filter((key) => this.state.selection[key]?.id)
           .filter((selectionType) => selectionType !== curOption.id)
           .reduce((inStockSoFar, curr) => inStockSoFar
             && this.state.selection[curr].id === variant[curr].id, true));
@@ -93,7 +94,7 @@ class ProductDetailPage extends Component {
         [curOption.id]: [
           ...new Set(inStockVariantsForOption.map((variant) => variant[curOption.id].id))],
       };
-    }, {});
+    }, {}) ?? {};
   }
 
   async componentDidMount() {
@@ -120,12 +121,13 @@ class ProductDetailPage extends Component {
       this.setState((oldState) => ({ product: { ...oldState.product, reviewStats: result } }));
     });
     const variantIds = Object.values(selection)
+      .filter((s) => s?.id)
       .map((s) => s.id);
     getVariantDetails(variantIds, getSkuFromUrl()).then(({ images, price }) => {
       this.setState((oldState) => ({
         product: {
           ...oldState.product,
-          productImages: [...oldState.product.productImages, ...images],
+          productImages: [...oldState.product.productImages, ...(images ?? [])],
           price,
         },
       }));
