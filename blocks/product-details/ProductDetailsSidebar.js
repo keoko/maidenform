@@ -2,7 +2,7 @@ import { Component, Fragment, h } from '../../scripts/preact.js';
 import htm from '../../scripts/htm.js';
 import Icon from './Icon.js';
 import { renderPrice } from '../../scripts/commerce.js';
-import { getProductRatingsSummary } from '../../scripts/scripts.js';
+import Ratings from './ProductDetailsRatings.js';
 
 const html = htm.bind(h);
 
@@ -79,40 +79,6 @@ function NameAndPrice({ shimmer, product }) {
         </div>
         <div class="style-id">Style #${sku}</div>
     <//>
-  `;
-}
-
-function Rating({
-  sku, value, count, onMouseOver, onMouseOut,
-}) {
-  return html`
-      <div class="rating" onMouseOver=${() => onMouseOver?.(sku)} onMouseOut=${onMouseOut}>
-          <div style="--rating: ${value ?? 0};"></div>
-          <span>(${count})</span>
-      </div>
-  `;
-}
-
-function RatingModal({ ratingsSummary, showRatingsModal }) {
-  const total = ratingsSummary?.map((rating) => rating.count).reduce((a, b) => a + b, 0);
-
-  return html`
-    <div role="dialog"
-        id="ratings_dialog"
-        aria-modal="true"
-        class="sidebar-section reviews-modal"
-        hidden="${showRatingsModal ? undefined : 'true'}"
-        aria-label="${total ? `${total} reviews` : undefined}" >
-      <div id="ratings_dialog_ratings">
-        ${ratingsSummary?.map((rating) => html`
-        <div aria-label="${rating.count} reviews with ${rating.key} stars. ">
-          <span class="ratings_dialog_ratings_key">${rating.key}</span>
-          <span class="ratings_dialog_ratings_count">${rating.count}</span>
-        </div>
-        `)}
-        <div>Read ${total} reviews</div>
-      </div>
-  </div>
   `;
 }
 
@@ -213,8 +179,6 @@ export default class ProductDetailsSidebar extends Component {
 
     this.updateSelection = this.updateSelection.bind(this);
     this.canAddToCart = this.canAddToCart.bind(this);
-    this.displayRatingsModal = this.displayRatingsModal.bind(this);
-    this.hideRatingsModal = this.hideRatingsModal.bind(this);
   }
 
   updateSelection(fragment) {
@@ -223,21 +187,6 @@ export default class ProductDetailsSidebar extends Component {
 
   canAddToCart() {
     return Object.keys(this.props.selection).length === this.props.product.options.length;
-  }
-
-  displayRatingsModal(sku) {
-    if (!this.state.ratingsSummary) {
-      getProductRatingsSummary(sku).then((ratingsSummary) => {
-        this.state.ratingsSummary = ratingsSummary;
-        this.setState({ showRatingsModal: true });
-      });
-    } else {
-      this.setState({ showRatingsModal: true });
-    }
-  }
-
-  hideRatingsModal() {
-    this.setState({ showRatingsModal: false });
   }
 
   render() {
@@ -257,10 +206,7 @@ export default class ProductDetailsSidebar extends Component {
       <div class=${`sidebar ${this.props.shimmer ? 'shimmer' : ''}`}>
           ${this.props.shimmer || html`
             <div class="product-title sidebar-section mobile-hidden">
-              <${Rating} sku=${product?.sku} value=${product?.rating ?? 0} count=${product?.numReviews}
-                  onMouseOver=${(sku) => product?.numReviews > 0 && this.displayRatingsModal(sku)}
-                  onMouseOut=${product?.numReviews > 0 && this.hideRatingsModal} />
-              ${product?.numReviews > 0 && html`<${RatingModal} ratingsSummary=${this.state.ratingsSummary} showRatingsModal=${this.state.showRatingsModal}/>`}
+              <${Ratings} product="${product}" />
               <${NameAndPrice} product=${product} />
           </div>
             ${hasColors && html`
