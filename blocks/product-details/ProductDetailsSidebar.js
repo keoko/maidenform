@@ -93,23 +93,23 @@ function Rating({
   `;
 }
 
-function RatingModal({ ratingsSummary }) {
+function RatingModal({ ratingsSummary, showRatingsModal }) {
   const total = ratingsSummary?.map((rating) => rating.count).reduce((a, b) => a + b, 0);
+
   return html`
     <div role="dialog"
         id="ratings_dialog"
-        aria-label="_ reviews"
         aria-modal="true"
         class="sidebar-section reviews-modal"
-        hidden="true"
-        ${total && html`aria-label="${total} reviews"`} >
+        hidden="${showRatingsModal ? undefined : 'true'}"
+        aria-label="${total ? `${total} reviews` : undefined}" >
       <div id="ratings_dialog_ratings">
-        ${ratingsSummary?.map((rating) => `
+        ${ratingsSummary?.map((rating) => html`
         <div aria-label="${rating.count} reviews with ${rating.key} stars. ">
           <span class="ratings_dialog_ratings_key">${rating.key}</span>
           <span class="ratings_dialog_ratings_count">${rating.count}</span>
         </div>
-        `).join('')}
+        `)}
         <div>Read ${total} reviews</div>
       </div>
   </div>
@@ -226,19 +226,18 @@ export default class ProductDetailsSidebar extends Component {
   }
 
   displayRatingsModal(sku) {
-    const dialog = this.base.parentElement.querySelector('#ratings_dialog');
-    dialog.removeAttribute('hidden');
-
     if (!this.state.ratingsSummary) {
       getProductRatingsSummary(sku).then((ratingsSummary) => {
         this.state.ratingsSummary = ratingsSummary;
+        this.setState({ showRatingsModal: true });
       });
+    } else {
+      this.setState({ showRatingsModal: true });
     }
   }
 
   hideRatingsModal() {
-    const dialog = this.base.parentElement.querySelector('#ratings_dialog');
-    dialog.setAttribute('hidden', 'true');
+    this.setState({ showRatingsModal: false });
   }
 
   render() {
@@ -261,7 +260,7 @@ export default class ProductDetailsSidebar extends Component {
               <${Rating} sku=${product?.sku} value=${product?.rating ?? 0} count=${product?.numReviews}
                   onMouseOver=${(sku) => product?.numReviews > 0 && this.displayRatingsModal(sku)}
                   onMouseOut=${product?.numReviews > 0 && this.hideRatingsModal} />
-              ${product?.numReviews > 0 && html`<${RatingModal} ratingsSummary=${this.state.ratingsSummary}/>`}
+              ${product?.numReviews > 0 && html`<${RatingModal} ratingsSummary=${this.state.ratingsSummary} showRatingsModal=${this.state.showRatingsModal}/>`}
               <${NameAndPrice} product=${product} />
           </div>
             ${hasColors && html`
