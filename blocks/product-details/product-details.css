@@ -61,6 +61,14 @@
   font-size: 1.5rem;
 }
 
+.product-details .ratings_dialog_ratings_key {
+  color: #c41b53;
+}
+
+.product-details .ratings_dialog_ratings_count {
+  color: #12d148;
+}
+
 .product-details .product-rating .icon {
   width: 16px;
   height: 16px;
