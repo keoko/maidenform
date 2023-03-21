@@ -67,7 +67,7 @@ class ProductDetailPage extends Component {
   // Returns a map. Keys to the map are option type ids. Values are arrays of in-stock variant ids,
   // given the other options that are selected.
   async getInStockProducts() {
-    const result = await performMonolithGraphQLQuery(productStockQuery, {
+    const { data: result } = await performMonolithGraphQLQuery(productStockQuery, {
       urlKey: getUrlKeyFromUrl(),
     });
     const product = result?.products?.items?.[0];
@@ -132,12 +132,14 @@ class ProductDetailPage extends Component {
     });
   }
 
-  onAddToCart = () => {
+  onAddToCart = async () => {
     if (Object.keys(this.state.selection).length === this.state.product.options.length) {
       const optionsUIDs = Object.values(this.state.selection).map((option) => option.id);
       console.log({
         sku: getSkuFromUrl(), optionsUIDs, quantity: this.state.selectedQuantity ?? 1,
       });
+      const { cartApi } = await import('../../scripts/cart/init-cart.js');
+      cartApi.addToCart(getSkuFromUrl(), optionsUIDs, this.state.selectedQuantity ?? 1);
     }
   };
 

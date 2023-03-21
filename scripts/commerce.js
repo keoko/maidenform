@@ -358,27 +358,38 @@ export async function performCatalogServiceQuery(query, variables) {
   return queryResponse.data;
 }
 
-export async function performMonolithGraphQLQuery(query, variables) {
+export async function performMonolithGraphQLQuery(query, variables, GET = true) {
   const headers = {
     'Content-Type': 'application/json',
     Store: 'maidenform_store_view',
   };
 
-  const params = new URLSearchParams({
-    query: query.replaceAll(/(?:\r\n|\r|\n|\t|[\s]{4})/g, ' '),
-    variables: JSON.stringify(variables),
-  });
-  const response = await fetch(
-    `https://franklin.maidenform.com/graphql?${params.toString()}`,
-    { headers },
-  );
+  let response;
+  if (!GET) {
+    response = await fetch('https://franklin.maidenform.com/graphql', {
+      method: 'POST',
+      headers,
+      body: JSON.stringify({
+        query: query.replace(/(?:\r\n|\r|\n|\t|[\s]{4})/g, ' ').replace(/\s\s+/g, ' '),
+        variables,
+      }),
+    });
+  } else {
+    const params = new URLSearchParams({
+      query: query.replace(/(?:\r\n|\r|\n|\t|[\s]{4})/g, ' ').replace(/\s\s+/g, ' '),
+      variables: JSON.stringify(variables),
+    });
+    response = await fetch(
+      `https://franklin.maidenform.com/graphql?${params.toString()}`,
+      { headers },
+    );
+  }
 
   if (!response.ok) {
     return null;
   }
 
-  const json = await response.json();
-  return json.data;
+  return response.json();
 }
 
 export function renderPrice(product, format, html, Fragment) {

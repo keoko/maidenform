@@ -1,4 +1,5 @@
 import './commerce-events-sdk.js';
+import { performMonolithGraphQLQuery } from './commerce.js';
 
 const STOREFRONT_QUERY_RESULT_KEY = 'storefront-query-result';
 
@@ -26,30 +27,6 @@ const STOREFRONT_CONTEXT_QUERY = `
     }
 `;
 
-export async function performMonolithGraphQLQuery(query, variables) {
-  const headers = {
-    'Content-Type': 'application/json',
-    Store: 'maidenform_store_view',
-  };
-
-  const params = new URLSearchParams({
-    query: query.replaceAll(/(?:\r\n|\r|\n|\t|[\s]{4})/g, ' '),
-    variables: JSON.stringify(variables),
-  });
-  const response = await fetch(
-    `https://franklin.maidenform.com/graphql?${params.toString()}`,
-    { headers },
-  );
-
-  if (!response.ok) {
-    return null;
-  }
-
-  const json = await response.json();
-
-  return json.data;
-}
-
 const eventsSDKInitialized = false;
 export async function initializeMSEWithStorefrontInstance() {
   if (!eventsSDKInitialized) {
@@ -57,7 +34,7 @@ export async function initializeMSEWithStorefrontInstance() {
     if (window.localStorage.getItem(STOREFRONT_QUERY_RESULT_KEY)) {
       result = JSON.parse(window.localStorage.getItem(STOREFRONT_QUERY_RESULT_KEY));
     } else {
-      result = await performMonolithGraphQLQuery(STOREFRONT_CONTEXT_QUERY, {});
+      ({ data: result } = await performMonolithGraphQLQuery(STOREFRONT_CONTEXT_QUERY, {}));
       window.localStorage.setItem(STOREFRONT_QUERY_RESULT_KEY, JSON.stringify(result));
     }
 
