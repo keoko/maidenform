@@ -1,8 +1,9 @@
 import { decorateIcons } from '../../scripts/lib-franklin.js';
+import { cartApi } from '../../scripts/cart/init-cart.js';
 import loadReflektion from '../../scripts/reflektion.js';
 
-const mobileBreakpoint = 1024;
-let globalWindowWidth = window.innerWidth;
+let elementsWithEventListener = [];
+const mql = window.matchMedia('only screen and (min-width: 1024px)');
 
 function addDropdownIcon(element) {
   const dropdownButton = document.createElement('button');
@@ -46,6 +47,7 @@ function addEventListenersMobile() {
   };
 
   document.querySelectorAll('.menu-expandable, .m-expandable-title').forEach((title) => {
+    elementsWithEventListener.push(title);
     title.addEventListener('click', (e) => {
       e.stopPropagation();
       toggleMenu(title);
@@ -53,6 +55,7 @@ function addEventListenersMobile() {
   });
 
   document.querySelectorAll('.nav-menu .icon-dropdown').forEach((dropdown) => {
+    elementsWithEventListener.push(dropdown);
     dropdown.setAttribute('aria-label', 'Open section');
     dropdown.addEventListener('keydown', (e) => {
       if (e.key === ' ') {
@@ -63,6 +66,7 @@ function addEventListenersMobile() {
     });
   });
 
+  elementsWithEventListener.push(document.querySelector('form .search-button'));
   document.querySelector('form .search-button').addEventListener('click', (e) => {
     const form = e.target.closest('form');
     if (!form.hasAttribute('aria-expanded')) {
@@ -72,6 +76,7 @@ function addEventListenersMobile() {
     }
   });
 
+  elementsWithEventListener.push(document.querySelector('form .close-button'));
   document.querySelector('form .close-button').addEventListener('click', (e) => {
     const form = e.target.closest('form');
     if (form.hasAttribute('aria-expanded')) {
@@ -80,6 +85,15 @@ function addEventListenersMobile() {
       form.removeAttribute('aria-expanded');
     }
   });
+
+  const minicart = document.querySelector('header .nav-tools button.minicart');
+  if (minicart) {
+    elementsWithEventListener.push(minicart);
+    minicart.onclick = () => cartApi.toggleCart();
+    cartApi.cartItemsQuantity.watch((quantity) => {
+      minicart.textContent = quantity || '';
+    });
+  }
 }
 
 function addEventListenersDesktop() {
@@ -92,6 +106,7 @@ function addEventListenersDesktop() {
   }
 
   document.querySelectorAll('.menu-expandable').forEach((linkElement) => {
+    elementsWithEventListener.push(linkElement);
     linkElement.setAttribute('tabindex', '0');
     linkElement.setAttribute('aria-label', `Expand the submenu for ${linkElement.querySelector('a').innerText}`);
 
@@ -105,6 +120,7 @@ function addEventListenersDesktop() {
   });
 
   document.querySelectorAll('.nav-menu > ul > li').forEach((title) => {
+    elementsWithEventListener.push(title);
     title.addEventListener('mouseenter', (e) => {
       e.stopPropagation();
       expandMenu(title);
@@ -117,13 +133,22 @@ function addEventListenersDesktop() {
 
   const searchButton = document.querySelector('.nav-tools form');
   if (searchButton.hasAttribute('aria-expanded')) searchButton.removeAttribute('aria-expanded');
+
+  const minicart = document.querySelector('header .nav-tools button.minicart');
+  if (minicart) {
+    elementsWithEventListener.push(minicart);
+    minicart.onclick = () => cartApi.toggleCart('cart');
+    cartApi.cartItemsQuantity.watch((quantity) => {
+      minicart.textContent = quantity || '';
+    });
+  }
 }
 
 function reAttachEventListeners() {
-  if (window.innerWidth < mobileBreakpoint) {
-    addEventListenersMobile();
-  } else {
+  if (mql.matches) {
     addEventListenersDesktop();
+  } else {
+    addEventListenersMobile();
   }
 }
 
@@ -178,6 +203,7 @@ export default async function decorate(block) {
     toolContainer.append(document.createRange().createContextualFragment(
       `<div class="minicart-wrapper">
         <button class="minicart" aria-label="Open Cart"></button>
+        <div></div>
       </div>`,
     ));
 
@@ -280,27 +306,20 @@ export default async function decorate(block) {
     block.append(nav);
 
     // Handle different event listeners for mobile/desktop on window resize
-    const removeAllEventListeners = (element) => {
-      element.replaceWith(element.cloneNode(true));
+    const removeAllEventListeners = () => {
+      elementsWithEventListener.forEach((el) => {
+        el.replaceWith(el.cloneNode(true));
+      });
+      elementsWithEventListener = [];
     };
 
-    const shouldResize = () => {
-      const resize = (window.innerWidth > mobileBreakpoint && globalWindowWidth <= mobileBreakpoint)
-        || (window.innerWidth < mobileBreakpoint && globalWindowWidth >= mobileBreakpoint);
-      globalWindowWidth = window.innerWidth;
-      return resize;
+    mql.onchange = () => {
+      nav.setAttribute('aria-expanded', 'false');
+      document.querySelector('main').style.visibility = '';
+      removeAllEventListeners();
+      collapseAllSubmenus(block);
+      reAttachEventListeners();
     };
-
-    window.addEventListener('resize', () => {
-      if (shouldResize()) {
-        nav.setAttribute('aria-expanded', 'false');
-        document.querySelector('main').style.visibility = '';
-        removeAllEventListeners(document.querySelector('.nav-menu'));
-        removeAllEventListeners(document.querySelector('.nav-tools'));
-        collapseAllSubmenus(block);
-        reAttachEventListeners();
-      }
-    });
 
     reAttachEventListeners();
   }

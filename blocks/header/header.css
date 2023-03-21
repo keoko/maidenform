@@ -85,6 +85,11 @@ header nav .nav-tools .minicart {
   text-align: center;
 }
 
+header nav .nav-tools .minicart:disabled {
+  color: transparent;
+  background-image: url('../../icons/loader.gif');
+}
+
 .minicart-wrapper {
   position: relative;
 }
