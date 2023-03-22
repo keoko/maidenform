@@ -1,6 +1,5 @@
 import { decorateIcons } from '../../scripts/lib-franklin.js';
 import { cartApi } from '../../scripts/cart/init-cart.js';
-import loadReflektion from '../../scripts/reflektion.js';
 
 let elementsWithEventListener = [];
 const mql = window.matchMedia('only screen and (min-width: 1024px)');
@@ -217,7 +216,7 @@ export default async function decorate(block) {
     toolContainer.append(searchBar);
     const searchInput = toolContainer.querySelector('input[name="q"]');
     searchInput.addEventListener('focus', () => {
-      loadReflektion();
+      import('../../scripts/search/search.js').then((module) => module.default(searchInput));
     }, { once: true });
 
     const login = document.createElement('a');

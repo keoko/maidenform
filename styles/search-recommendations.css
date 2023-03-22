@@ -1,0 +1,9 @@
+.search-recs {
+  position: absolute;
+  top: 50px;
+  width: 500px;
+  height: 300px;
+  right: 20px;
+  background: gray;
+  z-index: 101;
+}
