@@ -108,6 +108,11 @@ class ProductCard extends Component {
       image = imageForOption[selectedVariant];
     }
 
+    // TODO: If color swatch facet is selected and selectedVariant is empty,
+    // ensure that if possible an image that matches the facet is displayed.
+    // For performance reasons this can only be done, once LiveSearch returns
+    // no duplicate images.
+
     const url = new URL(image);
     url.search = '';
 

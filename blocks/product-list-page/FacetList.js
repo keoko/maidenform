@@ -5,25 +5,55 @@ import htm from '../../scripts/htm.js';
 
 const html = htm.bind(h);
 
+// Hardcoded color_family id to hex mapping
+const facetColorIdToStyleMapping = {
+  Black: 'background: #000000',
+  Blue: 'background: #4572ba',
+  Brown: 'background: #91572d',
+  Bronze: 'background: #cc8b4e',
+  Dot: 'background-image: url((https://franklin.maidenform.com/images/catalog/attribute/swatch/swatch_image/30x20/c/o/colorfamily_dot.jpg)',
+  Grey: 'background: #808080',
+  Green: 'background: #367a36',
+  Ivory: 'background: #fffff0',
+  Nude: 'background: #ffdead',
+  Pink: 'background: #ffc0cb',
+  Purple: 'background: #782078',
+  Print: 'background-image: url(https://franklin.maidenform.com/images/catalog/attribute/swatch/swatch_image/30x20/c/o/colorfamily_print.jpg)',
+  Red: 'background: #d12626',
+  Stripe: 'background-image: url((https://franklin.maidenform.com/images/catalog/attribute/swatch/swatch_image/30x20/c/o/colorfamily_stripe.jpg)',
+  White: 'background: #ffffff',
+};
+
 const facetTypeMapping = {
-  bra_type: {
-    type: 'radio',
-  },
   silhouette: {
+    type: 'checkbox',
+  },
+  size: {
     type: 'swatch',
     style: 'facet-size',
+  },
+  bandsize: {
+    type: 'swatch',
+    style: 'facet-size',
+  },
+  cupsize: {
+    type: 'swatch',
+    style: 'facet-size',
+  },
+  color_family: {
+    type: 'swatch',
+    style: 'facet-color',
+  },
+  price: {
+    type: 'price',
   },
 };
 
 function Facet({
   title, attribute, buckets, selection, onSelectionChange,
 }) {
-  // Define type (scalar, stats or range)
-  // const firstBucket = buckets[0];
-  // const type = firstBucket.__typename;
-
-  // Infer display type based on name + type combinations, fallback to default
-  let displayType = 'checkbox';
+  // Infer display type based on facetTypeMapping, fallback to default
+  let displayType = 'radio';
   let displayStyle = '';
 
   if (facetTypeMapping[attribute]) {
@@ -34,7 +64,14 @@ function Facet({
   const renderOptions = () => {
     const handleClickSingle = (event) => {
       const { value } = event.target;
-      if (selection.includes(value)) {
+      if (attribute === 'price') {
+        const [from, to] = value.split(',').map((v) => parseInt(v, 10) || 0);
+        if (selection[0] === from && selection[1] === to) {
+          onSelectionChange(attribute, []);
+        } else {
+          onSelectionChange(attribute, [from, to]);
+        }
+      } else if (selection.includes(value)) {
         onSelectionChange(attribute, []);
       } else {
         onSelectionChange(attribute, [value]);
@@ -54,8 +91,9 @@ function Facet({
       return buckets.map((bucket) => html`
           <li>
             <button
+              title=${bucket.title}
               value=${bucket.id}
-              style="${bucket.color ? `background: ${bucket.color}` : ''}"
+              style="${facetColorIdToStyleMapping[bucket.id] ? facetColorIdToStyleMapping[bucket.id] : ''}"
               class="${selection.includes(bucket.id) ? 'active' : ''}"
               onClick=${handleClickMultiple}>${bucket.title}</button>
           </li>
@@ -77,11 +115,22 @@ function Facet({
           </label>
         </li>`);
     }
+    if (displayType === 'price') {
+      return buckets.map((bucket) => {
+        const id = `${bucket.from},${bucket.to}`;
+        const checked = selection[0] === bucket.from && selection[1] === bucket.to;
+        return html`<li>
+          <input type="radio" name="facet-${attribute}" id="facet-${id}" value=${id} checked=${checked} onClick=${handleClickSingle} />
+          <label for="facet-${id}">
+            ${bucket.title} <span class="count">${bucket.count}</span>
+          </label>
+        </li>`;
+      });
+    }
     return null;
   };
 
-  return html`
-  <div class="facet ${displayType} ${displayStyle || ''}">
+  return html`<div class="facet ${displayType} ${displayStyle || ''}">
     <input type="checkbox" id="facet-toggle-${attribute}" checked=${selection.length > 0}  />
     <label for="facet-toggle-${attribute}">${title}</label>
     <div class="facet-content">

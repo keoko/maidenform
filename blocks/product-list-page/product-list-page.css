@@ -138,11 +138,13 @@ main .section.product-list-page-container > .default-content-wrapper h1:first-ch
 
 /* Radio/Checkbox Facet */
 .product-list-page .facets .facet-list .facet.radio .facet-content ol li,
-.product-list-page .facets .facet-list .facet.checkbox .facet-content ol li {
+.product-list-page .facets .facet-list .facet.checkbox .facet-content ol li,
+.product-list-page .facets .facet-list .facet.price .facet-content ol li {
     margin-bottom: 6px;
 }
 
-.product-list-page .facets .facet-list .facet.radio .facet-content ol input[type=radio] {
+.product-list-page .facets .facet-list .facet.radio .facet-content ol input[type=radio],
+.product-list-page .facets .facet-list .facet.price .facet-content ol input[type=radio] {
     vertical-align: middle;
     position: relative;
     bottom: 2px;
@@ -153,14 +155,16 @@ main .section.product-list-page-container > .default-content-wrapper h1:first-ch
 }
 
 .product-list-page .facets .facet-list .facet.radio .facet-content ol label,
-.product-list-page .facets .facet-list .facet.checkbox .facet-content ol label {
+.product-list-page .facets .facet-list .facet.checkbox .facet-content ol label,
+.product-list-page .facets .facet-list .facet.price .facet-content ol label {
     font-family: var(--ff-gilroy-regular);
     font-size: 1.2rem;
     text-transform: uppercase;
 }
 
 .product-list-page .facets .facet-list .facet.radio .facet-content ol label .count,
-.product-list-page .facets .facet-list .facet.checkbox .facet-content ol label .count {
+.product-list-page .facets .facet-list .facet.checkbox .facet-content ol label .count,
+.product-list-page .facets .facet-list .facet.price .facet-content ol label .count {
     font-family: var(--ff-gilroy-regular);
     font-size: 1.2rem;
     text-transform: none;
@@ -168,12 +172,14 @@ main .section.product-list-page-container > .default-content-wrapper h1:first-ch
 }
 
 .product-list-page .facets .facet-list .facet.radio .facet-content ol label .count::before,
-.product-list-page .facets .facet-list .facet.checkbox .facet-content ol label .count::before {
+.product-list-page .facets .facet-list .facet.checkbox .facet-content ol label .count::before,
+.product-list-page .facets .facet-list .facet.price .facet-content ol label .count::before {
     content: '(';
 }
 
 .product-list-page .facets .facet-list .facet.radio .facet-content ol label .count::after,
-.product-list-page .facets .facet-list .facet.checkbox .facet-content ol label .count::after {
+.product-list-page .facets .facet-list .facet.checkbox .facet-content ol label .count::after,
+.product-list-page .facets .facet-list .facet.price .facet-content ol label .count::after {
     content: ')'
 }
 
@@ -212,6 +218,7 @@ main .section.product-list-page-container > .default-content-wrapper h1:first-ch
 .product-list-page .facets .facet-list .facet.swatch.facet-color .facet-content ol li button {
     color: transparent;
     border: 1px solid var(--clr-black);
+    background-size: cover;
     width: 34px;
     height: 34px;
     border-radius: 100%;

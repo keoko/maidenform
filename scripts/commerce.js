@@ -555,7 +555,12 @@ export async function loadCategory(state) {
     if (Object.keys(state.filters).length > 0) {
       variables.filter = [];
       Object.keys(state.filters).forEach((key) => {
-        if (state.filters[key].length > 1) {
+        if (key === 'price') {
+          const [from, to] = state.filters[key];
+          if (from && to) {
+            variables.filter.push({ attribute: key, range: { from, to } });
+          }
+        } else if (state.filters[key].length > 1) {
           variables.filter.push({ attribute: key, in: state.filters[key] });
         } else if (state.filters[key].length === 1) {
           variables.filter.push({ attribute: key, eq: state.filters[key][0] });
@@ -612,6 +617,8 @@ export function parseQueryParams() {
       newState.sortDirection = value === 'desc' ? 'desc' : 'asc';
     } else if (key === 'q') {
       newState.searchTerm = value;
+    } else if (key === 'price') {
+      newState.filters[key] = value.split(',').map((v) => parseInt(v, 10) || 0);
     } else {
       newState.filters[key] = value.split(',');
     }
