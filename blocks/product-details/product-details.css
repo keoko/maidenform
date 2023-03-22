@@ -61,11 +61,22 @@
   font-size: 1.5rem;
 }
 
-.product-details .ratings_dialog_ratings_key {
+.star {
+  display: inline-block;
+  font-size: 2.3rem;
+  line-height: 1;
+  font-family: 'Times New Roman', Times, serif;
+  color: var(--clr-pink);
+}
+.star::before {
+  content: '★';
+}
+
+.product-details .ratings-dialog-ratings-key {
   color: #c41b53;
 }
 
-.product-details .ratings_dialog_ratings_count {
+.product-details .ratings-dialog-ratings-count {
   color: #12d148;
 }
 

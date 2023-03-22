@@ -28,8 +28,8 @@ function RatingModal({ ratingsSummary, showRatingsModal }) {
       <div id="ratings_dialog_ratings">
         ${ratingsSummary?.map((rating) => html`
         <div aria-label="${rating.count} reviews with ${rating.key} stars. ">
-          <span class="ratings_dialog_ratings_key">${rating.key}</span>
-          <span class="ratings_dialog_ratings_count">${rating.count}</span>
+          <span class="ratings-dialog-ratings-key">${rating.key}<span class="star"/></span>
+          <span class="ratings-dialog-ratings-count">${rating.count}</span>
         </div>
         `)}
         <div>Read ${total} reviews</div>
