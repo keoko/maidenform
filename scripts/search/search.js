@@ -104,8 +104,8 @@ class SearchBox extends Component {
                     <li>
                         <a href="/products/${item.url_key}/${item.sku}">
                             <picture>
-                                <source srcset="/product-images/${item.sku}.jpg?width=163&bg-color=255,255,255&format=webply&optimize=medium" />
-                                <img src="/product-images/${item.sku}.jpg" alt="${item.name}" onerror=${renderFallbackImage} />
+                                <source srcset="/product-images/${item.sku.toLowerCase()}.jpg?width=163&bg-color=255,255,255&format=webply&optimize=medium" />
+                                <img src="/product-images/${item.sku.toLowerCase()}.jpg" alt="${item.name}" onerror=${renderFallbackImage} />
                             </picture>
                             <div dangerouslySetInnerHTML=${{ __html: item.name }}></div>
                         </a>
