@@ -274,6 +274,26 @@ export const productOptionImageQuery = `query ProductOptionImage($sku: String!, 
   }
 }`;
 
+/* Queries for search recommendations */
+export const searchRecommendationsQuery = `
+query($search: String!) {
+  productSearch(
+    phrase: $search,
+    page_size: 6,
+  ) {
+    items {
+      productView {
+        url
+        name
+        sku
+      }
+    }
+    suggestions
+    related_terms
+  }
+}
+`;
+
 /* Common functionality */
 
 export function getSwatchImageUrl(sku, color) {
