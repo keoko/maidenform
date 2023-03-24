@@ -5,12 +5,13 @@ import { getProductRatingsSummary } from '../../scripts/scripts.js';
 const html = htm.bind(h);
 
 function Rating({
-  sku, value, count, onMouseOver, onMouseOut,
+  sku, value, count, onMouseOver, onMouseOut, children,
 }) {
   return html`
       <div class="rating" onMouseOver=${() => onMouseOver?.(sku)} onMouseOut=${onMouseOut}>
-          <div style="--rating: ${value ?? 0};"></div>
+          <div class="stars" style="--rating: ${value ?? 0};"></div>
           <span>(${count})</span>
+          ${children}
       </div>
   `;
 }
@@ -77,12 +78,13 @@ export default class Ratings extends Component {
     return html`
       <${Rating} sku=${product?.sku} value=${product?.rating ?? 0} count=${product?.numReviews}
         onMouseOver=${(sku) => product?.numReviews > 0 && this.displayRatingsModal(sku)}
-        onMouseOut=${product?.numReviews > 0 && this.hideRatingsModal} />
+        onMouseOut=${product?.numReviews > 0 && this.hideRatingsModal}>
         ${product?.numReviews > 0 && html`
           <${RatingModal}
             ratingsSummary=${this.state.ratingsSummary}
             showRatingsModal=${this.state.showRatingsModal}/>
         `}
+      </>
       `;
   }
 }

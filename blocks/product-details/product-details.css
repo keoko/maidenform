@@ -38,7 +38,7 @@
   height: 20px;
 }
 
-.product-details .rating > div {
+.product-details .rating .stars {
   --percent: calc(var(--rating) / 5 * 100%);
 
   display: inline-block;
@@ -61,6 +61,11 @@
   font-size: 1.5rem;
 }
 
+.product-details .rating > [role="dialog"] {
+  background-color: white;
+  z-index: 2;
+}
+
 .star {
   display: inline-block;
   font-size: 2.3rem;
@@ -80,7 +85,7 @@
 
 .bar-filled {
   height: 8px;
-  width: calc(var(--width) * 100%); /* Transform 0-1 value into 0-100% value */
+  width: calc(var(--width) * 80%); /* Transform 0-1 value into 0-80% value to fit width */
   background: #c41b53;
   display: inline-block;
 }
