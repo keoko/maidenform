@@ -65,21 +65,20 @@ class SearchBox extends Component {
   };
 
   handleBlur = () => {
-    setTimeout(() => {
+    if (!this.searchBarElement.matches(':focus-within')) {
       this.setState({ hidden: true });
-    }, 200);
+    }
   };
 
   componentDidMount() {
     this.searchBarElement.addEventListener('keyup', this.handleChange);
-    this.searchBarElement.addEventListener('blur', this.handleBlur);
+    this.searchBarElement.querySelector('input[name=q]').addEventListener('blur', this.handleBlur);
     this.searchBarElement.addEventListener('focus', this.handleFocus);
-    this.runSearch(this.searchBarElement.value);
   }
 
   componentWillUnmount() {
     this.searchBarElement.removeEventListener('keyup', this.handleChange);
-    this.searchBarElement.removeEventListener('blur', this.handleBlur);
+    this.searchBarElement.querySelector('input[name=q]').removeEventListener('blur', this.handleBlur);
     this.searchBarElement.removeEventListener('focus', this.handleFocus);
   }
 
@@ -128,7 +127,7 @@ class SearchBox extends Component {
 export default async function initializeSearchRecommendations(searchBarElement) {
   // eslint-disable-next-line no-promise-executor-return
   await new Promise((resolve) => loadCSS('../../styles/search-recommendations.css', resolve));
-  const parent = document.body;
+  const parent = searchBarElement;
   const searchBoxPlaceholder = document.createElement('div');
   parent.appendChild(searchBoxPlaceholder);
   render(html`<${SearchBox} searchBarElement=${searchBarElement} />`, searchBoxPlaceholder);

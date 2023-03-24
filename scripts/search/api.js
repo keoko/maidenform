@@ -10,6 +10,11 @@ function findMatches(index, query) {
 }
 
 export default async function getRelatedItems(query) {
+  if (!query) {
+    console.log('false')
+    return null;
+  }
+
   if (query.length < 2) {
     return null;
   }

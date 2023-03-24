@@ -216,7 +216,7 @@ export default async function decorate(block) {
     toolContainer.append(searchBar);
     const searchInput = toolContainer.querySelector('input[name="q"]');
     searchInput.addEventListener('focus', () => {
-      import('../../scripts/search/search.js').then((module) => module.default(searchInput));
+      import('../../scripts/search/search.js').then((module) => module.default(searchBar));
     }, { once: true });
 
     const login = document.createElement('a');
