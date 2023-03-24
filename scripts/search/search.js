@@ -19,7 +19,7 @@ class RateLimiter {
     this.debounceTimeout = null;
   }
 
-  execute(fn) {
+  #executeInternal(fn) {
     if ((this.lastCallAt && ((Date.now() - this.lastCallAt) >= this.limit)) || !this.lastCallAt) {
       this.lastCallAt = Date.now();
       fn();
@@ -34,6 +34,19 @@ class RateLimiter {
       }, remaining);
     }
   }
+
+  execute(fn) {
+    if (this.debounce > 0) {
+      if (this.debounceTimeout) {
+        clearTimeout(this.debounceTimeout);
+      }
+      this.debounceTimeout = setTimeout(() => {
+        this.#executeInternal(fn);
+      }, this.debounce);
+    } else {
+      this.#executeInternal(fn);
+    }
+  }
 }
 
 class SearchBox extends Component {
@@ -41,7 +54,7 @@ class SearchBox extends Component {
     super(props);
     this.searchBarElement = props.searchBarElement;
     this.state = { hidden: true, query: '' };
-    this.rateLimiter = new RateLimiter(1000);
+    this.rateLimiter = new RateLimiter(3000, 600);
   }
 
   runSearch = (query) => {
