@@ -15,6 +15,10 @@ function Rating({
   `;
 }
 
+function widthFromRating(count, total) {
+  return total > 0 ? count / total : 0; // 0 to 1
+}
+
 function RatingModal({ ratingsSummary, showRatingsModal }) {
   const total = ratingsSummary?.map((rating) => rating.count).reduce((a, b) => a + b, 0);
 
@@ -29,7 +33,9 @@ function RatingModal({ ratingsSummary, showRatingsModal }) {
         ${ratingsSummary?.map((rating) => html`
         <div aria-label="${rating.count} reviews with ${rating.key} stars. ">
           <span class="ratings-dialog-ratings-key">${rating.key}<span class="star"/></span>
-          <span class="ratings-dialog-ratings-count">${rating.count}</span>
+          <span class="bar">
+            <div class="bar-filled" style="--width: ${widthFromRating(rating.count, total) ?? 0}"></div>
+          </span>
         </div>
         `)}
         <div><a href="#product-reviews">Read ${total} reviews</a></div>
