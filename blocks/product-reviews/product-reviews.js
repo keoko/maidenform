@@ -9,7 +9,7 @@ export default function decorate(block) {
         <button role="tab" aria-selected="true">Reviews</button>
         <button role="tab" aria-selected="false">Questions</button>
     </div>
-    <div role="tabpanel">
+    <div id="product-reviews" role="tabpanel">
         <div data-bv-show="review_highlights" data-bv-product-id="${productId}"></div>
         <div data-bv-show="reviews" data-bv-product-id="${productId}"></div>
     </div>

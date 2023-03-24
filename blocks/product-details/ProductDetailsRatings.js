@@ -32,7 +32,7 @@ function RatingModal({ ratingsSummary, showRatingsModal }) {
           <span class="ratings-dialog-ratings-count">${rating.count}</span>
         </div>
         `)}
-        <div>Read ${total} reviews</div>
+        <div><a href="#product-reviews">Read ${total} reviews</a></div>
       </div>
   </div>
   `;
