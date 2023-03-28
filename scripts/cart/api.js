@@ -40,6 +40,33 @@ const cartQueryFragment = `fragment cartQuery on Cart {
           currency
           value
       }
+      grand_total {
+          currency
+          value
+      }
+      discounts {
+          amount {
+              value
+              currency
+          }
+          label
+      }
+      applied_taxes {
+          amount {
+              currency
+              value
+          }
+          label
+      }
+  }
+  shipping_addresses {
+      selected_shipping_method {
+        method_title 
+          amount {
+              currency
+              value
+          }
+      }
   }
   total_quantity
 }`;
