@@ -28,7 +28,15 @@ const useCheckoutMFE = () => {
 const CheckoutContext = createContext();
 
 function ShippingAddressForm() {
+  const { shippingAddress } = useContext(CheckoutContext);
   const [formState, setFormState] = useState({});
+
+  // Initialize form state with shipping address if empty
+  useEffect(() => {
+    if (Object.keys(formState).length === 0) {
+      setFormState(shippingAddress);
+    }
+  }, [shippingAddress]);
 
   const checkoutState = useContext(CheckoutContext);
   const { countries, regions } = checkoutState.context;
@@ -127,6 +135,7 @@ function ShippingMethodForm() {
                    name="shipping-method"
                    data-carrier-code=${method.carrier_code}
                    data-method-code=${method.method_code}
+                   id=${`${method.carrier_code}-${method.method_code}`}
                    value=${`${method.carrier_code}-${method.method_code}`} />
             <label for=${`${method.carrier_code}-${method.method_code}`}>
               <span class="shipping-method-title">${method.method_title}</span>
@@ -145,22 +154,34 @@ function CheckoutStepWrapper({ title, children, active }) {
   return html`
     <div class="checkout-step-wrapper">
       <h2 class=${active ? 'title-active' : ''}>${title}</h2>
-        ${active && html`
-            <div class="shipping-address-content">
-                ${children}
-            </div>
-        `}
+      <div class="shipping-address-content">
+          ${children}
+      </div>
     </div>
   `;
 }
 
 function ShippingStep({ active }) {
+  const checkoutState = useContext(CheckoutContext);
+  const { context } = checkoutState;
+  const shippingAddress = context?.shippingAddress || {};
   return html`
       <${CheckoutStepWrapper} active=${active} title="STEP 1: Shipping information">
-          <${ShippingAddressForm} />
-          <hr />
-          <${ShippingMethodForm} />
-          <button onClick=${() => CheckoutApi.continueToPayment()}>Continue To Next Step</button>
+          ${active && html`
+              <${ShippingAddressForm} />
+              <hr />
+              <${ShippingMethodForm} />
+              <button onClick=${() => CheckoutApi.continueToPayment()}>Continue To Next Step</button>
+          `}
+          ${!active && Object.keys(shippingAddress).length > 0 && html`
+            <div class="shipping-address-summary">
+              <span>${shippingAddress.firstName} ${shippingAddress.lastName}</span>
+              <span>${shippingAddress.streetAddress1}</span>
+              <span>${shippingAddress.streetAddress2}</span>
+              <span>${shippingAddress.city}</span>
+              <span>${shippingAddress.zipCode}</span>
+              <span>${shippingAddress.country}</span>
+          `}
       <//>
   `;
 }
@@ -185,6 +206,7 @@ function PaymentMethodSelector() {
           <${Fragment}>
             <input type="radio" 
                    name='payment-method' 
+                   id=${method.code}
                    value=${method.code}
                    data-method-code=${method.code}
                    data-method-title=${method.title} />
@@ -216,7 +238,7 @@ function PaymentForm() {
 function PaymentStep({ active }) {
   return html`
       <${CheckoutStepWrapper} active=${active} title="STEP 2: Payment Information">
-          <${PaymentForm} />
+          ${active && html`<${PaymentForm} />`}
       <//>
   `;
 }

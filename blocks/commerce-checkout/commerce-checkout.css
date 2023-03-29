@@ -9,6 +9,10 @@
   padding: 20px;
 }
 
+.commerce-checkout .shipping-address-content:empty {
+  padding: 0;
+}
+
 .commerce-checkout .checkout-step-wrapper {
   max-width: 800px;
   display: block;
