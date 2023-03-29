@@ -1,0 +1,105 @@
+.commerce-checkout .checkout-step-wrapper form {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 20px;
+}
+
+.commerce-checkout .shipping-address-content {
+  border: 1px solid #99969c;
+  padding: 20px;
+}
+
+.commerce-checkout .checkout-step-wrapper {
+  max-width: 800px;
+  display: block;
+  margin: auto;
+}
+
+.commerce-checkout .checkout-step-wrapper h2 {
+  padding: 20px;
+  margin: 0;
+  background: #767676;
+  color: white;
+  font-size: 20px;
+}
+
+.commerce-checkout .checkout-step-wrapper h2.title-active {
+  background: #232d64;
+}
+
+.commerce-checkout .checkout-step-wrapper form input {
+  padding: 12px;
+  border-radius: 0;
+  border-color: #99969c;
+  font-size: 18px;
+  max-width: unset;
+}
+
+.commerce-checkout .shipping-method-selector {
+  grid-column: span 6;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-column-gap: 15px;
+}
+
+.commerce-checkout .shipping-method-selector label {
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (min-width: 900px) {
+  .commerce-checkout .checkout-step-wrapper form {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  .commerce-checkout .checkout-step-wrapper form span {
+    grid-column: span 6;
+    font-size: 18px;
+  }
+
+  .commerce-checkout .checkout-step-wrapper form input[name='email'] {
+    grid-column: span 6;
+  }
+
+  .commerce-checkout .checkout-step-wrapper form input[name='firstName'] {
+    grid-column: span 3;
+  }
+
+  .commerce-checkout .checkout-step-wrapper form input[name='lastName'] {
+    grid-column: span 3;
+  }
+
+  .commerce-checkout .checkout-step-wrapper form input[name='streetAddress1'] {
+    grid-column: span 6;
+  }
+
+  .commerce-checkout .checkout-step-wrapper form input[name='streetAddress2'] {
+    grid-column: span 6;
+  }
+
+  .commerce-checkout .checkout-step-wrapper form input[name='city'] {
+    grid-column: span 2;
+  }
+
+  .commerce-checkout .checkout-step-wrapper form input[name='state'] {
+    grid-column: span 2;
+  }
+
+  .commerce-checkout .checkout-step-wrapper form input[name='zipCode'] {
+    grid-column: span 2;
+  }
+
+  .commerce-checkout .checkout-step-wrapper form input[name='country'] {
+    grid-column: span 3;
+  }
+
+  .commerce-checkout .checkout-step-wrapper form input[name='phoneNumber'] {
+    grid-column: span 3;
+  }
+
+  .commerce-checkout .checkout-step-wrapper form button {
+    grid-column: span 3;
+  }
+}
+
+
