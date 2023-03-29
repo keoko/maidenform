@@ -19,7 +19,13 @@
 .order-summary .promo-code .promo-code-form {
     display: flex;
     padding-top: 20px;
+    gap: 5px;
     justify-content: space-between;
+}
+
+.order-summary .promo-code .promo-code-form > input {
+    flex: 2;
+    margin: 0;
 }
 
 .order-summary .promo-code .promo-code-form > button {

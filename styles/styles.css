@@ -894,4 +894,23 @@ body.product-detail-page main .section > div {
   main .section.privacy-policy ol, main .section.privacy-policy ul {
     padding-left: 4rem;
   }
+
+  .section.side-by-side {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    max-width: var(--section-max-width);
+    margin: 0 auto;
+  }
+
+  .section.side-by-side .commerce-checkout-wrapper {
+    margin: 0;
+    width: 100%;
+    flex: 3;
+  }
+
+  .section.side-by-side .order-summary-wrapper {
+    margin: 0;
+    flex: 1;
+  }
 }
