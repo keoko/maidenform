@@ -235,6 +235,7 @@ export default async function decorate(block) {
       menuDropdownList.classList.add('menu-nav-dropdown');
 
       if (menuHasNoContent(menuDropdownList)) {
+        menuTitle.classList.add('menu-nav-no-content');
         li.append(menuTitle);
         navMenuUl.append(li);
         // eslint-disable-next-line no-continue
