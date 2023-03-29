@@ -111,9 +111,11 @@ function ShippingMethodForm() {
 
   const handleSetShippingMethod = (e) => {
     e.preventDefault();
-    const selectedMethod = e.target.closest('form').querySelector('input:checked').value;
-    console.log(selectedMethod);
-    CheckoutApi.selectShippingMethod(selectedMethod);
+    const selectedInputElement = e.target.closest('form').querySelector('input:checked');
+
+    const carrierCode = selectedInputElement.getAttribute('data-carrier-code');
+    const methodCode = selectedInputElement.getAttribute('data-method-code');
+    CheckoutApi.selectShippingMethod({ carrierCode, methodCode });
   };
 
   return html`
@@ -122,9 +124,11 @@ function ShippingMethodForm() {
       <div class="shipping-method-selector">
         ${shippingMethods.map((method) => html`
             <input type="radio" 
-                   name="shipping-method" 
-                   value=${method.method_code} />
-            <label for=${method.method_code}>
+                   name="shipping-method"
+                   data-carrier-code=${method.carrier_code}
+                   data-method-code=${method.method_code}
+                   value=${`${method.carrier_code}-${method.method_code}`} />
+            <label for=${`${method.carrier_code}-${method.method_code}`}>
               <span class="shipping-method-title">${method.method_title}</span>
               <span class="shipping-method-price">
                 ${method.price_incl_tax.value} ${method.price_incl_tax.currency}
@@ -132,7 +136,7 @@ function ShippingMethodForm() {
             </label>
           `)}
       </div>
-      <button onclick=${handleSetShippingMethod}>Continue to next step</button>
+      <button onclick=${handleSetShippingMethod}>Set payment method</button>
     </form>
   `;
 }
@@ -156,6 +160,7 @@ function ShippingStep({ active }) {
           <${ShippingAddressForm} />
           <hr />
           <${ShippingMethodForm} />
+          <button onClick=${() => CheckoutApi.continueToPayment()}>Continue To Next Step</button>
       <//>
   `;
 }
