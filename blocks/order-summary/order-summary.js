@@ -1,5 +1,6 @@
+/* eslint-disable max-len, no-unsafe-optional-chaining */
 import {
-  h, Component, render, Fragment
+  h, Component, render, Fragment,
 } from '../../scripts/preact.js';
 import htm from '../../scripts/htm.js';
 import { store } from '../../scripts/cart/init-cart.js';
@@ -22,29 +23,21 @@ class OrderSummary extends Component {
   }
 
   componentDidMount() {
-    console.debug('init broadcast channel');
     this.broadcastChannel = new BroadcastChannel('ElsieSDK/EventBus');
 
     this.broadcastChannel.addEventListener('message', (msg) => {
       (async () => {
         console.debug('received message, trigger getCart', msg);
         await getCart();
-        console.debug('getCart done');
       })();
     });
 
     store.subscribe((cart) => {
-      console.debug('got store update', cart);
       this.setState({ cart, loading: false });
     });
-
-    // TODO: Read state from minicart MFE and display tax stuff
-
-    // TODO: When receiving event, call getCart and update display
   }
 
   componentWillUnmount() {
-    console.debug('closing broadcast channel');
     this.broadcastChannel.close();
   }
 
@@ -57,15 +50,20 @@ class OrderSummary extends Component {
 
     const hasTaxes = cart.prices?.applied_taxes?.length > 0;
     const taxes = cart.prices?.applied_taxes.reduce((acc, tax) => acc + tax.amount.value, 0);
-    const hasShipping = cart.shipping_addresses?.length > 0
-      && cart.shipping_addresses[0].selected_shipping_method;
-    const shipping = cart.shipping_addresses?.reduce(
-      (acc, address) => acc + address.selected_shipping_method?.amount.value, 0) || 0;
+    const hasShipping = cart.shipping_addresses?.length > 0 && cart.shipping_addresses[0].selected_shipping_method;
+    const shipping = cart.shipping_addresses?.reduce((acc, address) => acc + address.selected_shipping_method?.amount.value, 0) || 0;
+    const shippingLabel = cart.shipping_addresses[0]?.selected_shipping_method?.method_title;
 
-    console.log('cart', this.state, hasShipping, hasTaxes);
+    console.log('cart', this.state);
     return html`<div>
       <div class="heading">Order Summary</div>
-      <div class="promo-code"></div>
+      <div class="promo-code">
+        <div class="promo-code-heading">Use Promo Code</div>
+        <div class="promo-code-form">
+          <input type="text" name="promo-code" placeholder="Enter your code" />
+          <button>APPLY PROMO</button>
+        </div>
+      </div>
       <div class="prices">
         <div>Item Subtotal (${cart.total_quantity})</div>
         <div>${this.formatter.format(cart.prices.subtotal_excluding_tax.value)}</div>
@@ -73,7 +71,11 @@ class OrderSummary extends Component {
           <div class="discount-label">${discount.label}</div>
           <div class="discount-price">${this.formatter.format(-discount.amount.value)}</div>
         </>`)}
-        ${hasShipping && html`<div>Shipping</div><div>${this.formatter.format(shipping)}</div>`}
+        ${hasShipping && html`<div>
+          Shipping
+          ${shippingLabel && html`<div class="shipping-label">- ${shippingLabel}</div>`}
+        </div>
+        <div>${this.formatter.format(shipping)}</div>`}
         <div>Estimated Tax</div>
         <div>${hasTaxes ? this.formatter.format(taxes) : 'TBD'}</div>
         <div class="order-total-label">Order Total</div>
@@ -87,8 +89,4 @@ export default function decorate(block) {
   block.textContent = '';
   const app = html`<${OrderSummary} />`;
   render(app, block);
-
-  // Listen to events
-
-  // Do something when event is triggered
 }
