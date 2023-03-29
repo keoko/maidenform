@@ -1,5 +1,5 @@
 import {
-  h, render, createContext,
+  h, render, createContext, Fragment,
 } from '../../scripts/preact.js';
 import { useState, useEffect, useContext } from '../../scripts/preact-hooks.js';
 import htm from '../../scripts/htm.js';
@@ -78,18 +78,18 @@ function ShippingAddressForm() {
   return html`
     <form>
       <span>Where should we send your order?</span>
-      <input ...${useField('email')} placeholder="Email" />
-      <input ...${useField('firstName')} placeholder="First Name" />
-      <input ...${useField('lastName')} placeholder="Last Name" />
-      <input ...${useField('streetAddress1')} placeholder="Street Address 1" />
-      <input ...${useField('streetAddress2')} placeholder="Street Address 2" />
-      <input ...${useField('city')} placeholder="City" />
+      <input ...${useField('email')} autocomplete="email" placeholder="Email" />
+      <input ...${useField('firstName')} autocomplete="given-name" placeholder="First Name" />
+      <input ...${useField('lastName')} autocomplete="family-name" placeholder="Last Name" />
+      <input ...${useField('streetAddress1')} autocomplete="address-line1" placeholder="Street Address 1" />
+      <input ...${useField('streetAddress2')} autocomplete="address-line2" placeholder="Street Address 2" />
+      <input ...${useField('city')} autocomplete="address-level2" placeholder="City" />
         <select name="region" onChange=${updateShippingRegion}>
             ${regions?.map((region) => html`
               <option value=${region.code}>${region.name}</option>
           `)}
         </select>
-      <input ...${useField('zipCode')} placeholder="Post Code" />
+      <input ...${useField('zipCode')} autocomplete="postal-code" placeholder="Post Code" />
       <select name="country" onChange=${updateShippingCountry}>
           ${countries?.map((country) => html`
               <option value=${country.id}>${country.full_name_english}</option>
@@ -166,27 +166,49 @@ function ShippingStep({ active }) {
 }
 
 function PaymentMethodSelector() {
+  const checkoutState = useContext(CheckoutContext);
+  const { paymentMethods } = checkoutState.context;
+
+  const handleSetPaymentMethod = (e) => {
+    e.preventDefault();
+    const selectedInputElement = e.target.closest('form').querySelector('input:checked');
+
+    const methodTitle = selectedInputElement.getAttribute('data-method-title');
+    const methodCode = selectedInputElement.getAttribute('data-method-code');
+    CheckoutApi.selectPaymentMethod({ title: methodTitle, code: methodCode });
+  };
+
   return html`
-    <div class="payment-method-selector">
-        <div class="payment-method">
-            <input type="radio" name="payment-method" value="paypal" />
-            <label for="paypal">PayPal</label>
-        </div>
-        <div class="payment-method">
-            <input type="radio" name="payment-method" value="credit-card" />
-            <label for="credit-card">Credit Card</label>
-        </div>
-    </div>
+    <${Fragment}>
+      <div class="payment-method-selector">
+        ${paymentMethods?.map((method) => html`
+          <${Fragment}>
+            <input type="radio" 
+                   name='payment-method' 
+                   value=${method.code}
+                   data-method-code=${method.code}
+                   data-method-title=${method.title} />
+            <label for=${method.code}>${method.title}</label>
+          <//>
+        `)}
+      </div>
+      <button onClick=${handleSetPaymentMethod}>Set payment method</button>
+    <//>
+    
   `;
 }
 
 function PaymentForm() {
+  const handlePlaceOrder = (e) => {
+    e.preventDefault();
+    CheckoutApi.placeOrder();
+  };
+
   return html`
     <form>
-      <span>Have a promotional code?</span>
-      <hr />
       <span>Select payment method</span>
       <${PaymentMethodSelector} />
+      <button onClick=${handlePlaceOrder}>Place Order</button>
     </form>
   `;
 }

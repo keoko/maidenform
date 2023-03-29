@@ -36,14 +36,14 @@
   margin: 0;
 }
 
-.commerce-checkout .shipping-method-selector {
+.commerce-checkout .shipping-method-selector, .commerce-checkout .payment-method-selector {
   grid-column: span 6;
   display: grid;
   grid-template-columns: auto 1fr;
   grid-column-gap: 15px;
 }
 
-.commerce-checkout .shipping-method-selector label {
+.commerce-checkout .shipping-method-selector label, .commerce-checkout .payment-method-selector label {
   display: flex;
   justify-content: space-between;
 }
