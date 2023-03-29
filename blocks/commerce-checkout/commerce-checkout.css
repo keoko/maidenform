@@ -33,6 +33,7 @@
   border-color: #99969c;
   font-size: 18px;
   max-width: unset;
+  margin: 0;
 }
 
 .commerce-checkout .shipping-method-selector {
@@ -45,6 +46,13 @@
 .commerce-checkout .shipping-method-selector label {
   display: flex;
   justify-content: space-between;
+}
+
+.commerce-checkout .checkout-step-wrapper form select {
+  background: none;
+  border: 1px solid #99969c;
+  box-sizing: border-box;
+  padding: 0 0 0 15px;
 }
 
 @media (min-width: 900px) {
@@ -81,7 +89,7 @@
     grid-column: span 2;
   }
 
-  .commerce-checkout .checkout-step-wrapper form input[name='state'] {
+  .commerce-checkout .checkout-step-wrapper form select[name='region'] {
     grid-column: span 2;
   }
 
@@ -89,7 +97,7 @@
     grid-column: span 2;
   }
 
-  .commerce-checkout .checkout-step-wrapper form input[name='country'] {
+  .commerce-checkout .checkout-step-wrapper form select[name='country'] {
     grid-column: span 3;
   }
 
