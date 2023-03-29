@@ -31,11 +31,24 @@ function ShippingAddressForm() {
   const [formState, setFormState] = useState({});
 
   const checkoutState = useContext(CheckoutContext);
-  const { countries } = checkoutState.context;
+  const { countries, regions } = checkoutState.context;
 
   useEffect(() => {
-    setFormState({ country: countries?.[0].id });
+    // Initialize the selected country if a) the country is invalid or b) it is not set
+    if (!countries?.find((country) => country.id === formState.country) || !formState.country) {
+      setFormState((oldState) => ({ ...oldState, country: countries?.[0].id }));
+      CheckoutApi.setShippingCountry(countries?.[0].id);
+    }
   }, [countries]);
+
+  useEffect(() => {
+    if (regions && regions.length > 0) {
+      // Initialize the selected region if a) the region is invalid or b) it is not set
+      if (!regions?.find((region) => region.code === formState.region) || !formState.region) {
+        setFormState((oldState) => ({ ...oldState, region: regions?.[0].code }));
+      }
+    }
+  }, [regions]);
 
   const handleSetShippingAddress = (e) => {
     e.preventDefault();
@@ -44,13 +57,23 @@ function ShippingAddressForm() {
 
   const useField = (name, type = 'text') => ({
     value: formState[name] || '',
-    onChange: (e) => setFormState({
-      ...formState,
+    onChange: (e) => setFormState((oldState) => ({
+      ...oldState,
       [name]: e.target.value,
-    }),
+    })),
     type,
     name,
   });
+
+  const updateShippingRegion = (e) => {
+    // CheckoutApi.setShippingRegion(e.target.value);
+    setFormState((oldState) => ({ ...oldState, region: e.target.value }));
+  };
+
+  const updateShippingCountry = (e) => {
+    CheckoutApi.setShippingCountry(e.target.value);
+    setFormState((oldState) => ({ ...oldState, country: e.target.value }));
+  };
 
   return html`
     <form>
@@ -61,9 +84,13 @@ function ShippingAddressForm() {
       <input ...${useField('streetAddress1')} placeholder="Street Address 1" />
       <input ...${useField('streetAddress2')} placeholder="Street Address 2" />
       <input ...${useField('city')} placeholder="City" />
-      <input ...${useField('state')} placeholder="State" />
+        <select name="region" onChange=${updateShippingRegion}>
+            ${regions?.map((region) => html`
+              <option value=${region.code}>${region.name}</option>
+          `)}
+        </select>
       <input ...${useField('zipCode')} placeholder="Post Code" />
-      <select name="country" onChange=${(e) => setFormState({ country: e.target.value })}>
+      <select name="country" onChange=${updateShippingCountry}>
           ${countries?.map((country) => html`
               <option value=${country.id}>${country.full_name_english}</option>
           `)}
@@ -83,6 +110,7 @@ function ShippingMethodForm() {
   }
 
   const handleSetShippingMethod = (e) => {
+    e.preventDefault();
     const selectedMethod = e.target.closest('form').querySelector('input:checked').value;
     console.log(selectedMethod);
     CheckoutApi.selectShippingMethod(selectedMethod);
