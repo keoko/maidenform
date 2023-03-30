@@ -2,6 +2,7 @@ helix-importer-ui
 tools/picker
 sitemap-redirect.js
 scripts/jquery.min.js
+scripts/dayjs.min.js
 block-picker
 sitemap-redirect.js
 scripts/preact.js
