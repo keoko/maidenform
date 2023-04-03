@@ -8,7 +8,6 @@
     "client": {
       "js": [
         "/runtime.js",
-        "/vendors.js",
         "/client.js"
       ]
     },
@@ -50,7 +49,6 @@
   "bundles": {
     "load": [
       "/runtime.js",
-      "/vendors.js",
       "/client.js"
     ],
     "prefetch": []

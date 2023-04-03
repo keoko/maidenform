@@ -1,5 +1,4 @@
 const { configureWebpack, graphQL } = require('@magento/pwa-buildpack');
-const HTMLWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 const fs = require('fs');
 const { promisify } = require('util');
@@ -80,7 +79,7 @@ module.exports = async env => {
     global.LOCALE = storeConfigData.locale.replace('_', '-');
     global.AVAILABLE_STORE_VIEWS = availableStores;
 
-    const possibleTypes = fs.readFileSync('possibleTypes.json', 'utf8');
+    const possibleTypes = JSON.parse(fs.readFileSync('possibleTypes.json', 'utf8'));
 
     const htmlWebpackConfig = {
         filename: 'index.html',
@@ -118,12 +117,9 @@ module.exports = async env => {
     config.plugins = config.plugins.filter(
         plugin => plugin.constructor.name !== 'RootComponentsPlugin'
     );
-
-    // TODO: Disable UpwardIncludePlugin as well?
-
-    // TODO: RootComponentsPlugin configuration?
+    // TODO: Can RootComponentsPlugin be used instead to configure entrypoints?
     /*
-        {
+    {
         "opts": {
             "rootComponentsDirs": [
                 "/Users/mabecker/Documents/github/hlxsites/maidenform/pwa/node_modules/@magento/venia-ui/RootComponents",
@@ -138,9 +134,10 @@ module.exports = async env => {
     },
     */
 
-    // TODO: Entrypoint for cart, myaccount, checkout, login etc.
-
-    //console.log(JSON.stringify(config.plugins, null, 4));
+    // Disable UpwardIncludePlugin
+    config.plugins = config.plugins.filter(
+        plugin => plugin.constructor.name !== 'UpwardIncludePlugin'
+    );
 
     config.plugins = [
         ...config.plugins,
@@ -162,8 +159,7 @@ module.exports = async env => {
                 process.env.DEFAULT_COUNTRY_CODE || 'US'
             ),
             __DEV__: process.env.NODE_ENV !== 'production'
-        }),
-        /* new HTMLWebpackPlugin(htmlWebpackConfig) */
+        })
     ];
 
     // Add additional entrypoints
@@ -175,6 +171,9 @@ module.exports = async env => {
     // Change output filenames
     config.output.filename = '[name].js';
     config.output.chunkFilename = '[name].js';
+
+    // Prevent removal of console statements
+    config.optimization.minimizer[0].options.terserOptions.compress.drop_console = false;
 
     return [config];
 };

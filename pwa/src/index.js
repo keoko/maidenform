@@ -1,4 +1,4 @@
-import React from 'react';
+/* import React from 'react';
 import { render } from 'react-dom';
 
 import store from './store';
@@ -7,7 +7,7 @@ import Adapter from '@magento/venia-ui/lib/components/Adapter';
 import './index.css';
 
 // server rendering differs from browser rendering
-const isServer = !globalThis.document;
+/* const isServer = !globalThis.document;
 
 // TODO: on the server, the http request should provide the origin
 const origin = isServer
@@ -19,7 +19,7 @@ const styles = new Set();
 
 const configureLinks = links => [...links.values()];
 
-/* const tree = (
+const tree = (
     <Adapter
         configureLinks={configureLinks}
         origin={origin}
@@ -28,11 +28,11 @@ const configureLinks = links => [...links.values()];
     />
 );
 
-render(tree, document.getElementById('root')); */
+render(tree, document.getElementById('root'));
 
 globalThis.addEventListener('online', () => {
     store.dispatch(app.setOnline());
 });
 globalThis.addEventListener('offline', () => {
     store.dispatch(app.setOffline());
-});
+}); */
