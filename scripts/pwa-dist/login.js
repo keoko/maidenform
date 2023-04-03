@@ -72,4 +72,4 @@ for(var s=0;s<l.length;s++)a.call(t,l[s])&&(i[l[s]]=t[l[s]])}}return i}},QCnb:fu
 e.exports=t("+wdc")},iWbB:function(e,n,t){"use strict"
 t.r(n),t.d(n,"default",function(){return l})
 var r=t("q1tI"),o=t.n(r),a=t("i8i4"),l=e=>o.a.createElement("div",null,"Hello Login")
-console.log("Login Loaded"),Object(a.render)(o.a.createElement(l,null),document.querySelector(".block.commerce-login"))}},[[4,0,1]]])
+console.log("Login Loaded"),Object(a.render)(o.a.createElement(l,null),document.querySelector(".block.commerce-login"))}},[[4,1,0]]])

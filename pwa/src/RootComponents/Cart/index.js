@@ -18,6 +18,7 @@ console.log('Cart Loaded');
 
 render((
     <Adapter
+        apiUrl="https://franklin.maidenform.com/graphql"
         configureLinks={configureLinks}
         origin={origin}
         store={store}
