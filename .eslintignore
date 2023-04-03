@@ -8,3 +8,5 @@ scripts/preact.js
 scripts/htm.js
 tools/bulk-metadata
 scripts/magento-recommendations-sdk.js
+pwa
+scripts/pwa-dist

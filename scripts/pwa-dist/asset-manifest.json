@@ -1,0 +1,75 @@
+{
+  "Login.js": "/Login.js",
+  "VeniaLogo.svg": "/VeniaLogo-n77.svg",
+  "account.js": "/account.js",
+  "cart.js": "/cart.js",
+  "checkout.js": "/checkout.js",
+  "client.js": "/client.js",
+  "entrypoints": {
+    "client": {
+      "js": [
+        "/runtime.js",
+        "/vendors.js",
+        "/client.js"
+      ]
+    },
+    "cart": {
+      "js": [
+        "/runtime.js",
+        "/vendors.js",
+        "/cart.js"
+      ]
+    },
+    "checkout": {
+      "js": [
+        "/runtime.js",
+        "/vendors.js",
+        "/checkout.js"
+      ]
+    },
+    "account": {
+      "js": [
+        "/runtime.js",
+        "/vendors.js",
+        "/account.js"
+      ]
+    },
+    "Login": {
+      "js": [
+        "/runtime.js",
+        "/vendors.js",
+        "/Login.js"
+      ]
+    }
+  },
+  "errorViewBackground-1400x600.png": "/errorViewBackground-1400x600-h5e.png",
+  "errorViewBackground-380x600.png": "/errorViewBackground-380x600-ikK.png",
+  "i18n-en_US.js": "/i18n-en_US.js",
+  "runtime.js": "/runtime.js",
+  "vendors.js": "/vendors.js",
+  "bundles": {
+    "load": [
+      "/runtime.js",
+      "/vendors.js",
+      "/client.js"
+    ],
+    "prefetch": []
+  },
+  "js": {
+    "Login": "/Login.js",
+    "account": "/account.js",
+    "cart": "/cart.js",
+    "checkout": "/checkout.js",
+    "client": "/client.js",
+    "i18n-en_US": "/i18n-en_US.js",
+    "runtime": "/runtime.js",
+    "vendors": "/vendors.js"
+  },
+  "svg": {
+    "VeniaLogo": "/VeniaLogo-n77.svg"
+  },
+  "png": {
+    "errorViewBackground-1400x600": "/errorViewBackground-1400x600-h5e.png",
+    "errorViewBackground-380x600": "/errorViewBackground-380x600-ikK.png"
+  }
+}
