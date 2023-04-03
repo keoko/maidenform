@@ -5,23 +5,12 @@ class Store {
     this.key = key;
     this.cartId = null;
     this.type = 'guest';
-
-    const sessionCookie = Store.getCookie(Store.COOKIE_SESSION);
-    const cartCookie = Store.getCookie(Store.COOKIE_CART_ID);
-    // TODO: Handle logged in user with cartId in cookie
-    if (sessionCookie && cartCookie) {
-      this.type = 'customer';
-      this.cartId = cartCookie;
-    } else if (sessionCookie) {
-      // Logged in, but cartId is missing, call customerCart query or delete
-      // session and force re-login
-    }
-
-    // Guest user with cartId in cookie
-    if (cartCookie) {
-      this.cartId = cartCookie;
-    }
+    this.cartId = Store.getPWACartId();
   }
+
+  // TODO: Listen to localStorage changes?
+
+  static PWA_CARTID_STORE = 'M2_VENIA_BROWSER_PERSISTENCE__cartId';
 
   static CART_STORE = 'COMMERCE_CART_CACHE';
 
@@ -36,6 +25,27 @@ class Store {
     id: null,
     total_quantity: 0,
   };
+
+  static getPWACartId() {
+    const cartIdField = window.localStorage.getItem(Store.PWA_CARTID_STORE);
+    if (!cartIdField) {
+      return null;
+    }
+    try {
+      const parsed = JSON.parse(cartIdField);
+      return parsed.value.replaceAll('"', '');
+    } catch (err) {
+      console.error('Could not parse PWA cartId', err);
+      return null;
+    }
+  }
+
+  static setPWACartId(cartId) {
+    window.localStorage.setItem(Store.PWA_CARTID_STORE, JSON.stringify({ 
+      value: `"${cartId}"`,
+      timeStored: Date.now(),
+    }));
+  }
 
   static getCookie(key) {
     return document.cookie
@@ -52,7 +62,7 @@ class Store {
 
   setCartId(cartId) {
     this.cartId = cartId;
-    Store.setCookie(Store.COOKIE_CART_ID, cartId);
+    Store.setPWACartId(cartId);
     this.setCart({
       ...this.getCart(),
       id: cartId,
@@ -90,9 +100,9 @@ class Store {
   }
 
   resetCart() {
+    // TODO: Reset PWA Studio cartId
     window.localStorage.removeItem(`${this.key}_${this.cartId}`);
     this.cartId = null;
-    Store.setCookie(Store.COOKIE_CART_ID, '');
   }
 
   subscribe(callback) {
