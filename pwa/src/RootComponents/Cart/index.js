@@ -14,8 +14,6 @@ const origin = globalThis.location.origin;
 const styles = new Set();
 const configureLinks = links => [...links.values()];
 
-console.log('Cart Loaded');
-
 render((
     <Adapter
         apiUrl="https://franklin.maidenform.com/graphql"

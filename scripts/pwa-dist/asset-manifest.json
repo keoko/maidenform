@@ -1,5 +1,4 @@
 {
-  "VeniaLogo.svg": "/VeniaLogo-n77.svg",
   "account.js": "/account.js",
   "cart.js": "/cart.js",
   "checkout.js": "/checkout.js",
@@ -40,8 +39,6 @@
       ]
     }
   },
-  "errorViewBackground-1400x600.png": "/errorViewBackground-1400x600-h5e.png",
-  "errorViewBackground-380x600.png": "/errorViewBackground-380x600-ikK.png",
   "i18n-en_US.js": "/i18n-en_US.js",
   "login.js": "/login.js",
   "runtime.js": "/runtime.js",
@@ -53,9 +50,6 @@
     ],
     "prefetch": []
   },
-  "svg": {
-    "VeniaLogo": "/VeniaLogo-n77.svg"
-  },
   "js": {
     "account": "/account.js",
     "cart": "/cart.js",
@@ -65,9 +59,5 @@
     "login": "/login.js",
     "runtime": "/runtime.js",
     "vendors": "/vendors.js"
-  },
-  "png": {
-    "errorViewBackground-1400x600": "/errorViewBackground-1400x600-h5e.png",
-    "errorViewBackground-380x600": "/errorViewBackground-380x600-ikK.png"
   }
 }

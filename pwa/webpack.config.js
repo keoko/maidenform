@@ -173,7 +173,9 @@ module.exports = async env => {
     config.output.chunkFilename = '[name].js';
 
     // Prevent removal of console statements
-    config.optimization.minimizer[0].options.terserOptions.compress.drop_console = false;
-
+    if (process.env.NODE_ENV === 'production') {
+        config.optimization.minimizer[0].options.terserOptions.compress.drop_console = false;
+    }
+    
     return [config];
 };
