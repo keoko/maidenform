@@ -177,5 +177,8 @@ module.exports = async env => {
         config.optimization.minimizer[0].options.terserOptions.compress.drop_console = false;
     }
     
+    // Fix publicPath
+    config.output.publicPath = '/scripts/pwa-dist/';
+
     return [config];
 };
