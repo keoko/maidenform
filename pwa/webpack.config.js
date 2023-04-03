@@ -170,7 +170,7 @@ module.exports = async env => {
     config.entry.cart = './src/RootComponents/Cart/index.js';
     config.entry.checkout = './src/RootComponents/Checkout/index.js';
     config.entry.account = './src/RootComponents/Account/index.js';
-    config.entry.Login = './src/RootComponents/Login/index.js';
+    config.entry.login = './src/RootComponents/Login/index.js';
 
     // Change output filenames
     config.output.filename = '[name].js';

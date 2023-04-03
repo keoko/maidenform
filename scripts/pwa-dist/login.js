@@ -1,5 +1,5 @@
 /*! @version pwa-studio: 0.0.1, @magento/venia-ui: ~10.0.0, @magento/venia-sample-payments-checkmo: ^0.0.10, @magento/upward-security-headers: ~1.0.12, @magento/pwa-theme-venia: ~1.4.0, @magento/pwa-buildpack: ~11.4.1, @magento/peregrine: ~13.0.0, @magento/pagebuilder: ~8.0.0, @magento/eslint-config: ~1.5.0, @magento/babel-preset-peregrine: ~1.2.2, @apollo/client: ~3.5.0 */
-(window.webpackJsonp=window.webpackJsonp||[]).push([[2],{"+wdc":function(e,n,t){"use strict"
+(window.webpackJsonp=window.webpackJsonp||[]).push([[7],{"+wdc":function(e,n,t){"use strict"
 var r,a,o,i
 if("object"==typeof performance&&"function"==typeof performance.now){var l=performance
 n.unstable_now=function(){return l.now()}}else{var u=Date,c=u.now()
@@ -56,7 +56,7 @@ break
 default:u=5e3}return e={id:O++,callback:t,priorityLevel:e,startTime:i,expirationTime:u=i+u,sortIndex:-1},i>l?(e.sortIndex=i,H(j,e),null===J(k)&&e===J(j)&&(F?o():F=!0,a(U,i-l))):(e.sortIndex=u,H(k,e),E||C||(E=!0,r(V))),e},n.unstable_wrapCallback=function(e){var n=P
 return function(){var t=P
 P=n
-try{return e.apply(this,arguments)}finally{P=t}}}},4:function(e,n,t){t("FASw"),e.exports=t("iWbB")},FASw:function(e,n,t){globalThis.__fetchLocaleData__=async function getLocale(e){if("en_US"===e)return t.e(7).then(t.t.bind(null,"5I32",3))
+try{return e.apply(this,arguments)}finally{P=t}}}},4:function(e,n,t){t("FASw"),e.exports=t("iWbB")},FASw:function(e,n,t){globalThis.__fetchLocaleData__=async function getLocale(e){if("en_US"===e)return t.e(6).then(t.t.bind(null,"5I32",3))
 throw new Error("Unable to locate locale "+e+" within generated dist directory.")}},MgzW:function(e,n,t){"use strict"
 var r=Object.getOwnPropertySymbols,a=Object.prototype.hasOwnProperty,o=Object.prototype.propertyIsEnumerable
 e.exports=function shouldUseNative(){try{if(!Object.assign)return!1

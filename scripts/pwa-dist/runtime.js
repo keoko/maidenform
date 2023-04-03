@@ -11,7 +11,7 @@ if(0!==t)if(t)r.push(t[2])
 else{var n=new Promise(function(r,n){t=_[e]=[r,n]})
 r.push(t[2]=n)
 var o,u=document.createElement("script")
-u.charset="utf-8",u.timeout=120,__webpack_require__.nc&&u.setAttribute("nonce",__webpack_require__.nc),u.src=function jsonpScriptSrc(e){return __webpack_require__.p+""+({7:"i18n-en_US"}[e]||e)+".js"}(e)
+u.charset="utf-8",u.timeout=120,__webpack_require__.nc&&u.setAttribute("nonce",__webpack_require__.nc),u.src=function jsonpScriptSrc(e){return __webpack_require__.p+""+({6:"i18n-en_US"}[e]||e)+".js"}(e)
 var a=new Error
 o=function(r){u.onerror=u.onload=null,clearTimeout(c)
 var t=_[e]

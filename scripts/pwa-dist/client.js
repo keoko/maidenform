@@ -1,5 +1,5 @@
 /*! @version pwa-studio: 0.0.1, @magento/venia-ui: ~10.0.0, @magento/venia-sample-payments-checkmo: ^0.0.10, @magento/upward-security-headers: ~1.0.12, @magento/pwa-theme-venia: ~1.4.0, @magento/pwa-buildpack: ~11.4.1, @magento/peregrine: ~13.0.0, @magento/pagebuilder: ~8.0.0, @magento/eslint-config: ~1.5.0, @magento/babel-preset-peregrine: ~1.2.2, @apollo/client: ~3.5.0 */
-(window.webpackJsonp=window.webpackJsonp||[]).push([[6],{"+wdc":function(t,n,e){"use strict"
+(window.webpackJsonp=window.webpackJsonp||[]).push([[5],{"+wdc":function(t,n,e){"use strict"
 var r,o,a,i
 if("object"==typeof performance&&"function"==typeof performance.now){var d=performance
 n.unstable_now=function(){return d.now()}}else{var s=Date,l=s.now()
@@ -64,7 +64,7 @@ n.children||(n.children=[]),Object.defineProperty(n,"loaded",{enumerable:!0,get:
 var e,r,o={},a=Object.keys(t)
 for(r=0;r<a.length;r++)e=a[r],n.indexOf(e)>=0||(o[e]=t[e])
 return o},t.exports.default=t.exports,t.exports.__esModule=!0},F39V:function(t,n,e){var r=e("NtLt")
-t.exports=function toCamelCase(t){return r(t).replace(/\s(\w)/g,function(t,n){return n.toUpperCase()})}},FASw:function(t,n,e){globalThis.__fetchLocaleData__=async function getLocale(t){if("en_US"===t)return e.e(7).then(e.t.bind(null,"5I32",3))
+t.exports=function toCamelCase(t){return r(t).replace(/\s(\w)/g,function(t,n){return n.toUpperCase()})}},FASw:function(t,n,e){globalThis.__fetchLocaleData__=async function getLocale(t){if("en_US"===t)return e.e(6).then(e.t.bind(null,"5I32",3))
 throw new Error("Unable to locate locale "+t+" within generated dist directory.")}},JPst:function(t,n,e){"use strict"
 t.exports=function(t){var n=[]
 return n.toString=function toString(){return this.map(function(n){var e=t(n)
