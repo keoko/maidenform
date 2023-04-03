@@ -41,7 +41,7 @@ class Store {
   }
 
   static setPWACartId(cartId) {
-    window.localStorage.setItem(Store.PWA_CARTID_STORE, JSON.stringify({ 
+    window.localStorage.setItem(Store.PWA_CARTID_STORE, JSON.stringify({
       value: `"${cartId}"`,
       timeStored: Date.now(),
     }));
