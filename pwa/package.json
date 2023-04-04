@@ -9,7 +9,7 @@
     "buildpack": "buildpack",
     "build": "npm run build:prod",
     "build:analyze": "npm run clean && mkdir dist && webpack -p --profile --no-progress --env.mode production --json > dist/build-stats.json && webpack-bundle-analyzer dist/build-stats.json",
-    "build:dev": "npm run clean && webpack --no-progress --env.mode development --watch false && npm run copy-franklin",
+    "build:dev": "npm run clean && webpack --no-progress --env.mode development && npm run copy-franklin",
     "build:prod": "npm run clean && webpack --no-progress --env.mode production && npm run copy-franklin",
     "build:report": "buildpack generate-build-report",
     "clean": "rimraf dist && rimraf ../scripts/pwa-dist",
@@ -22,7 +22,8 @@
     "start:debug": "node --inspect-brk ./node_modules/.bin/webpack-dev-server --progress --color --env.mode development",
     "watch": "webpack-dev-server --progress --color --env.mode development",
     "storybook": "start-storybook -p 9001 -c src/.storybook",
-    "storybook:build": "build-storybook -c src/.storybook -o storybook-dist"
+    "storybook:build": "build-storybook -c src/.storybook -o storybook-dist",
+    "postinstall": "patch-package"
   },
   "main": "src/index.js",
   "browser": {
@@ -92,8 +93,10 @@
     "memoize-one": "~5.0.0",
     "memory-fs": "~0.4.1",
     "node-fetch": "~2.3.0",
+    "patch-package": "^6.5.1",
     "postcss": "~8.3.6",
     "postcss-loader": "~4.3.0",
+    "postinstall-postinstall": "^2.1.0",
     "prettier": "~1.16.4",
     "prop-types": "~15.7.2",
     "react": "~17.0.1",

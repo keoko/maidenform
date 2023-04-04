@@ -1,51 +1,70 @@
 {
   "account.js": "/account.js",
+  "account.js.map": "/account.js.map",
   "cart.js": "/cart.js",
+  "cart.js.map": "/cart.js.map",
   "checkout.js": "/checkout.js",
+  "checkout.js.map": "/checkout.js.map",
   "client.js": "/client.js",
+  "client.js.map": "/client.js.map",
   "entrypoints": {
     "client": {
       "js": [
-        "/runtime.js",
         "/client.js"
+      ],
+      "js.map": [
+        "/client.js.map"
       ]
     },
     "cart": {
       "js": [
-        "/runtime.js",
         "/vendors.js",
         "/cart.js"
+      ],
+      "js.map": [
+        "/vendors.js.map",
+        "/cart.js.map"
       ]
     },
     "checkout": {
       "js": [
-        "/runtime.js",
         "/vendors.js",
         "/checkout.js"
+      ],
+      "js.map": [
+        "/vendors.js.map",
+        "/checkout.js.map"
       ]
     },
     "account": {
       "js": [
-        "/runtime.js",
         "/vendors.js",
         "/account.js"
+      ],
+      "js.map": [
+        "/vendors.js.map",
+        "/account.js.map"
       ]
     },
     "login": {
       "js": [
-        "/runtime.js",
         "/vendors.js",
         "/login.js"
+      ],
+      "js.map": [
+        "/vendors.js.map",
+        "/login.js.map"
       ]
     }
   },
   "i18n-en_US.js": "/i18n-en_US.js",
+  "i18n-en_US.js.map": "/i18n-en_US.js.map",
   "login.js": "/login.js",
-  "runtime.js": "/runtime.js",
+  "login.js.map": "/login.js.map",
   "vendors.js": "/vendors.js",
+  "vendors.js.map": "/vendors.js.map",
   "bundles": {
     "load": [
-      "/runtime.js",
       "/client.js"
     ],
     "prefetch": []
@@ -57,7 +76,15 @@
     "client": "/client.js",
     "i18n-en_US": "/i18n-en_US.js",
     "login": "/login.js",
-    "runtime": "/runtime.js",
     "vendors": "/vendors.js"
+  },
+  "map": {
+    "account.js": "/account.js.map",
+    "cart.js": "/cart.js.map",
+    "checkout.js": "/checkout.js.map",
+    "client.js": "/client.js.map",
+    "i18n-en_US.js": "/i18n-en_US.js.map",
+    "login.js": "/login.js.map",
+    "vendors.js": "/vendors.js.map"
   }
 }

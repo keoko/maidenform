@@ -42,7 +42,6 @@ module.exports = class NormalModuleOverridePlugin {
     }
 
     apply(compiler) {
-        console.log('NormalModuleOverridePlugin.apply called');
         if (Object.keys(this.moduleOverrideMap).length === 0) {
             return;
         }

@@ -1,75 +1,1478 @@
-/*! @version pwa-studio: 0.0.1, @magento/venia-ui: ~10.0.0, @magento/venia-sample-payments-checkmo: ^0.0.10, @magento/upward-security-headers: ~1.0.12, @magento/pwa-theme-venia: ~1.4.0, @magento/pwa-buildpack: ~11.4.1, @magento/peregrine: ~13.0.0, @magento/pagebuilder: ~8.0.0, @magento/eslint-config: ~1.5.0, @magento/babel-preset-peregrine: ~1.2.2, @apollo/client: ~3.5.0 */
-(window.webpackJsonp=window.webpackJsonp||[]).push([[2],{"+wdc":function(e,n,t){"use strict"
-var r,a,o,l
-if("object"==typeof performance&&"function"==typeof performance.now){var i=performance
-n.unstable_now=function(){return i.now()}}else{var u=Date,c=u.now()
-n.unstable_now=function(){return u.now()-c}}if("undefined"==typeof window||"function"!=typeof MessageChannel){var s=null,f=null,b=function(){if(null!==s)try{var e=n.unstable_now()
-s(!0,e),s=null}catch(e){throw setTimeout(b,0),e}}
-r=function(e){null!==s?setTimeout(r,0,e):(s=e,setTimeout(b,0))},a=function(e,n){f=setTimeout(e,n)},o=function(){clearTimeout(f)},n.unstable_shouldYield=function(){return!1},l=n.unstable_forceFrameRate=function(){}}else{var d=window.setTimeout,p=window.clearTimeout
-if("undefined"!=typeof console){window.cancelAnimationFrame
-window.requestAnimationFrame}var w=!1,v=null,y=-1,m=5,h=0
-n.unstable_shouldYield=function(){return n.unstable_now()>=h},l=function(){},n.unstable_forceFrameRate=function(e){0>e||125<e||(m=0<e?Math.floor(1e3/e):5)}
-var _=new MessageChannel,g=_.port2
-_.port1.onmessage=function(){if(null!==v){var e=n.unstable_now()
-h=e+m
-try{v(!0,e)?g.postMessage(null):(w=!1,v=null)}catch(e){throw g.postMessage(null),e}}else w=!1},r=function(e){v=e,w||(w=!0,g.postMessage(null))},a=function(e,t){y=d(function(){e(n.unstable_now())},t)},o=function(){p(y),y=-1}}function H(e,n){var t=e.length
-e.push(n)
-e:for(;;){var r=t-1>>>1,a=e[r]
-if(!(void 0!==a&&0<I(a,n)))break e
-e[r]=n,e[t]=a,t=r}}function J(e){return void 0===(e=e[0])?null:e}function K(e){var n=e[0]
-if(void 0!==n){var t=e.pop()
-if(t!==n){e[0]=t
-e:for(var r=0,a=e.length;r<a;){var o=2*(r+1)-1,l=e[o],i=o+1,u=e[i]
-if(void 0!==l&&0>I(l,t))void 0!==u&&0>I(u,l)?(e[r]=u,e[i]=t,r=i):(e[r]=l,e[o]=t,r=o)
-else{if(!(void 0!==u&&0>I(u,t)))break e
-e[r]=u,e[i]=t,r=i}}}return n}return null}function I(e,n){var t=e.sortIndex-n.sortIndex
-return 0!==t?t:e.id-n.id}var k=[],j=[],O=1,x=null,P=3,C=!1,E=!1,F=!1
-function T(e){for(var n=J(j);null!==n;){if(null===n.callback)K(j)
-else{if(!(n.startTime<=e))break
-K(j),n.sortIndex=n.expirationTime,H(k,n)}n=J(j)}}function U(e){if(F=!1,T(e),!E)if(null!==J(k))E=!0,r(V)
-else{var n=J(j)
-null!==n&&a(U,n.startTime-e)}}function V(e,t){E=!1,F&&(F=!1,o()),C=!0
-var r=P
-try{for(T(t),x=J(k);null!==x&&(!(x.expirationTime>t)||e&&!n.unstable_shouldYield());){var l=x.callback
-if("function"==typeof l){x.callback=null,P=x.priorityLevel
-var i=l(x.expirationTime<=t)
-t=n.unstable_now(),"function"==typeof i?x.callback=i:x===J(k)&&K(k),T(t)}else K(k)
-x=J(k)}if(null!==x)var u=!0
-else{var c=J(j)
-null!==c&&a(U,c.startTime-t),u=!1}return u}finally{x=null,P=r,C=!1}}var M=l
-n.unstable_IdlePriority=5,n.unstable_ImmediatePriority=1,n.unstable_LowPriority=4,n.unstable_NormalPriority=3,n.unstable_Profiling=null,n.unstable_UserBlockingPriority=2,n.unstable_cancelCallback=function(e){e.callback=null},n.unstable_continueExecution=function(){E||C||(E=!0,r(V))},n.unstable_getCurrentPriorityLevel=function(){return P},n.unstable_getFirstCallbackNode=function(){return J(k)},n.unstable_next=function(e){switch(P){case 1:case 2:case 3:var n=3
-break
-default:n=P}var t=P
-P=n
-try{return e()}finally{P=t}},n.unstable_pauseExecution=function(){},n.unstable_requestPaint=M,n.unstable_runWithPriority=function(e,n){switch(e){case 1:case 2:case 3:case 4:case 5:break
-default:e=3}var t=P
-P=e
-try{return n()}finally{P=t}},n.unstable_scheduleCallback=function(e,t,l){var i=n.unstable_now()
-switch("object"==typeof l&&null!==l?l="number"==typeof(l=l.delay)&&0<l?i+l:i:l=i,e){case 1:var u=-1
-break
-case 2:u=250
-break
-case 5:u=1073741823
-break
-case 4:u=1e4
-break
-default:u=5e3}return e={id:O++,callback:t,priorityLevel:e,startTime:l,expirationTime:u=l+u,sortIndex:-1},l>i?(e.sortIndex=l,H(j,e),null===J(k)&&e===J(j)&&(F?o():F=!0,a(U,l-i))):(e.sortIndex=u,H(k,e),E||C||(E=!0,r(V))),e},n.unstable_wrapCallback=function(e){var n=P
-return function(){var t=P
-P=n
-try{return e.apply(this,arguments)}finally{P=t}}}},3:function(e,n,t){t("FASw"),e.exports=t("wj6O")},FASw:function(e,n,t){globalThis.__fetchLocaleData__=async function getLocale(e){if("en_US"===e)return t.e(6).then(t.t.bind(null,"5I32",3))
-throw new Error("Unable to locate locale "+e+" within generated dist directory.")}},MgzW:function(e,n,t){"use strict"
-var r=Object.getOwnPropertySymbols,a=Object.prototype.hasOwnProperty,o=Object.prototype.propertyIsEnumerable
-e.exports=function shouldUseNative(){try{if(!Object.assign)return!1
-var e=new String("abc")
-if(e[5]="de","5"===Object.getOwnPropertyNames(e)[0])return!1
-for(var n={},t=0;t<10;t++)n["_"+String.fromCharCode(t)]=t
-if("0123456789"!==Object.getOwnPropertyNames(n).map(function(e){return n[e]}).join(""))return!1
-var r={}
-return"abcdefghijklmnopqrst".split("").forEach(function(e){r[e]=e}),"abcdefghijklmnopqrst"===Object.keys(Object.assign({},r)).join("")}catch(e){return!1}}()?Object.assign:function(e,n){for(var t,l,i=function toObject(e){if(null==e)throw new TypeError("Object.assign cannot be called with null or undefined")
-return Object(e)}(e),u=1;u<arguments.length;u++){for(var c in t=Object(arguments[u]))a.call(t,c)&&(i[c]=t[c])
-if(r){l=r(t)
-for(var s=0;s<l.length;s++)o.call(t,l[s])&&(i[l[s]]=t[l[s]])}}return i}},QCnb:function(e,n,t){"use strict"
-e.exports=t("+wdc")},wj6O:function(e,n,t){"use strict"
-t.r(n),t.d(n,"default",function(){return l})
-var r=t("q1tI"),a=t.n(r),o=t("i8i4"),l=e=>a.a.createElement("div",null,"Hello Account")
-Object(o.render)(a.a.createElement(l,null),document.querySelector(".block.commerce-account"))}},[[3,1,0]]])
+/******/ (function(modules) { // webpackBootstrap
+/******/ 	// install a JSONP callback for chunk loading
+/******/ 	function webpackJsonpCallback(data) {
+/******/ 		var chunkIds = data[0];
+/******/ 		var moreModules = data[1];
+/******/ 		var executeModules = data[2];
+/******/
+/******/ 		// add "moreModules" to the modules object,
+/******/ 		// then flag all "chunkIds" as loaded and fire callback
+/******/ 		var moduleId, chunkId, i = 0, resolves = [];
+/******/ 		for(;i < chunkIds.length; i++) {
+/******/ 			chunkId = chunkIds[i];
+/******/ 			if(Object.prototype.hasOwnProperty.call(installedChunks, chunkId) && installedChunks[chunkId]) {
+/******/ 				resolves.push(installedChunks[chunkId][0]);
+/******/ 			}
+/******/ 			installedChunks[chunkId] = 0;
+/******/ 		}
+/******/ 		for(moduleId in moreModules) {
+/******/ 			if(Object.prototype.hasOwnProperty.call(moreModules, moduleId)) {
+/******/ 				modules[moduleId] = moreModules[moduleId];
+/******/ 			}
+/******/ 		}
+/******/ 		if(parentJsonpFunction) parentJsonpFunction(data);
+/******/
+/******/ 		while(resolves.length) {
+/******/ 			resolves.shift()();
+/******/ 		}
+/******/
+/******/ 		// add entry modules from loaded chunk to deferred list
+/******/ 		deferredModules.push.apply(deferredModules, executeModules || []);
+/******/
+/******/ 		// run deferred modules when all chunks ready
+/******/ 		return checkDeferredModules();
+/******/ 	};
+/******/ 	function checkDeferredModules() {
+/******/ 		var result;
+/******/ 		for(var i = 0; i < deferredModules.length; i++) {
+/******/ 			var deferredModule = deferredModules[i];
+/******/ 			var fulfilled = true;
+/******/ 			for(var j = 1; j < deferredModule.length; j++) {
+/******/ 				var depId = deferredModule[j];
+/******/ 				if(installedChunks[depId] !== 0) fulfilled = false;
+/******/ 			}
+/******/ 			if(fulfilled) {
+/******/ 				deferredModules.splice(i--, 1);
+/******/ 				result = __webpack_require__(__webpack_require__.s = deferredModule[0]);
+/******/ 			}
+/******/ 		}
+/******/
+/******/ 		return result;
+/******/ 	}
+/******/
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// object to store loaded and loading chunks
+/******/ 	// undefined = chunk not loaded, null = chunk preloaded/prefetched
+/******/ 	// Promise = chunk loading, 0 = chunk loaded
+/******/ 	var installedChunks = {
+/******/ 		"account": 0
+/******/ 	};
+/******/
+/******/ 	var deferredModules = [];
+/******/
+/******/ 	// script path function
+/******/ 	function jsonpScriptSrc(chunkId) {
+/******/ 		return __webpack_require__.p + "" + ({"i18n-en_US":"i18n-en_US"}[chunkId]||chunkId) + ".js"
+/******/ 	}
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		var threw = true;
+/******/ 		try {
+/******/ 			modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/ 			threw = false;
+/******/ 		} finally {
+/******/ 			if(threw) delete installedModules[moduleId];
+/******/ 		}
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/ 	// This file contains only the entry chunk.
+/******/ 	// The chunk loading function for additional chunks
+/******/ 	__webpack_require__.e = function requireEnsure(chunkId) {
+/******/ 		var promises = [];
+/******/
+/******/
+/******/ 		// JSONP chunk loading for javascript
+/******/
+/******/ 		var installedChunkData = installedChunks[chunkId];
+/******/ 		if(installedChunkData !== 0) { // 0 means "already installed".
+/******/
+/******/ 			// a Promise means "currently loading".
+/******/ 			if(installedChunkData) {
+/******/ 				promises.push(installedChunkData[2]);
+/******/ 			} else {
+/******/ 				// setup Promise in chunk cache
+/******/ 				var promise = new Promise(function(resolve, reject) {
+/******/ 					installedChunkData = installedChunks[chunkId] = [resolve, reject];
+/******/ 				});
+/******/ 				promises.push(installedChunkData[2] = promise);
+/******/
+/******/ 				// start chunk loading
+/******/ 				var script = document.createElement('script');
+/******/ 				var onScriptComplete;
+/******/
+/******/ 				script.charset = 'utf-8';
+/******/ 				script.timeout = 120;
+/******/ 				if (__webpack_require__.nc) {
+/******/ 					script.setAttribute("nonce", __webpack_require__.nc);
+/******/ 				}
+/******/ 				script.src = jsonpScriptSrc(chunkId);
+/******/
+/******/ 				// create error before stack unwound to get useful stacktrace later
+/******/ 				var error = new Error();
+/******/ 				onScriptComplete = function (event) {
+/******/ 					// avoid mem leaks in IE.
+/******/ 					script.onerror = script.onload = null;
+/******/ 					clearTimeout(timeout);
+/******/ 					var chunk = installedChunks[chunkId];
+/******/ 					if(chunk !== 0) {
+/******/ 						if(chunk) {
+/******/ 							var errorType = event && (event.type === 'load' ? 'missing' : event.type);
+/******/ 							var realSrc = event && event.target && event.target.src;
+/******/ 							error.message = 'Loading chunk ' + chunkId + ' failed.\n(' + errorType + ': ' + realSrc + ')';
+/******/ 							error.name = 'ChunkLoadError';
+/******/ 							error.type = errorType;
+/******/ 							error.request = realSrc;
+/******/ 							chunk[1](error);
+/******/ 						}
+/******/ 						installedChunks[chunkId] = undefined;
+/******/ 					}
+/******/ 				};
+/******/ 				var timeout = setTimeout(function(){
+/******/ 					onScriptComplete({ type: 'timeout', target: script });
+/******/ 				}, 120000);
+/******/ 				script.onerror = script.onload = onScriptComplete;
+/******/ 				document.head.appendChild(script);
+/******/ 			}
+/******/ 		}
+/******/ 		return Promise.all(promises);
+/******/ 	};
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// define __esModule on exports
+/******/ 	__webpack_require__.r = function(exports) {
+/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		}
+/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// create a fake namespace object
+/******/ 	// mode & 1: value is a module id, require it
+/******/ 	// mode & 2: merge all properties of value into the ns
+/******/ 	// mode & 4: return value when already ns object
+/******/ 	// mode & 8|1: behave like require
+/******/ 	__webpack_require__.t = function(value, mode) {
+/******/ 		if(mode & 1) value = __webpack_require__(value);
+/******/ 		if(mode & 8) return value;
+/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
+/******/ 		var ns = Object.create(null);
+/******/ 		__webpack_require__.r(ns);
+/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
+/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
+/******/ 		return ns;
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "/scripts/pwa-dist/";
+/******/
+/******/ 	// on error function for async loading
+/******/ 	__webpack_require__.oe = function(err) { console.error(err); throw err; };
+/******/
+/******/ 	var jsonpArray = window["webpackJsonp"] = window["webpackJsonp"] || [];
+/******/ 	var oldJsonpFunction = jsonpArray.push.bind(jsonpArray);
+/******/ 	jsonpArray.push = webpackJsonpCallback;
+/******/ 	jsonpArray = jsonpArray.slice();
+/******/ 	for(var i = 0; i < jsonpArray.length; i++) webpackJsonpCallback(jsonpArray[i]);
+/******/ 	var parentJsonpFunction = oldJsonpFunction;
+/******/
+/******/
+/******/ 	// add entry module to deferred list
+/******/ 	deferredModules.push([3,"vendors"]);
+/******/ 	// run deferred modules when ready
+/******/ 	return checkDeferredModules();
+/******/ })
+/************************************************************************/
+/******/ ({
+
+/***/ "./node_modules/object-assign/index.js":
+/*!*********************************************!*\
+  !*** ./node_modules/object-assign/index.js ***!
+  \*********************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/*
+object-assign
+(c) Sindre Sorhus
+@license MIT
+*/
+
+
+/* eslint-disable no-unused-vars */
+var getOwnPropertySymbols = Object.getOwnPropertySymbols;
+var hasOwnProperty = Object.prototype.hasOwnProperty;
+var propIsEnumerable = Object.prototype.propertyIsEnumerable;
+
+function toObject(val) {
+	if (val === null || val === undefined) {
+		throw new TypeError('Object.assign cannot be called with null or undefined');
+	}
+
+	return Object(val);
+}
+
+function shouldUseNative() {
+	try {
+		if (!Object.assign) {
+			return false;
+		}
+
+		// Detect buggy property enumeration order in older V8 versions.
+
+		// https://bugs.chromium.org/p/v8/issues/detail?id=4118
+		var test1 = new String('abc');  // eslint-disable-line no-new-wrappers
+		test1[5] = 'de';
+		if (Object.getOwnPropertyNames(test1)[0] === '5') {
+			return false;
+		}
+
+		// https://bugs.chromium.org/p/v8/issues/detail?id=3056
+		var test2 = {};
+		for (var i = 0; i < 10; i++) {
+			test2['_' + String.fromCharCode(i)] = i;
+		}
+		var order2 = Object.getOwnPropertyNames(test2).map(function (n) {
+			return test2[n];
+		});
+		if (order2.join('') !== '0123456789') {
+			return false;
+		}
+
+		// https://bugs.chromium.org/p/v8/issues/detail?id=3056
+		var test3 = {};
+		'abcdefghijklmnopqrst'.split('').forEach(function (letter) {
+			test3[letter] = letter;
+		});
+		if (Object.keys(Object.assign({}, test3)).join('') !==
+				'abcdefghijklmnopqrst') {
+			return false;
+		}
+
+		return true;
+	} catch (err) {
+		// We don't expect any of the above to throw, but better to be safe.
+		return false;
+	}
+}
+
+module.exports = shouldUseNative() ? Object.assign : function (target, source) {
+	var from;
+	var to = toObject(target);
+	var symbols;
+
+	for (var s = 1; s < arguments.length; s++) {
+		from = Object(arguments[s]);
+
+		for (var key in from) {
+			if (hasOwnProperty.call(from, key)) {
+				to[key] = from[key];
+			}
+		}
+
+		if (getOwnPropertySymbols) {
+			symbols = getOwnPropertySymbols(from);
+			for (var i = 0; i < symbols.length; i++) {
+				if (propIsEnumerable.call(from, symbols[i])) {
+					to[symbols[i]] = from[symbols[i]];
+				}
+			}
+		}
+	}
+
+	return to;
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/scheduler/cjs/scheduler-tracing.development.js":
+/*!*********************************************************************!*\
+  !*** ./node_modules/scheduler/cjs/scheduler-tracing.development.js ***!
+  \*********************************************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/** @license React v0.20.2
+ * scheduler-tracing.development.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+
+
+if (true) {
+  (function() {
+'use strict';
+
+var DEFAULT_THREAD_ID = 0; // Counters used to generate unique IDs.
+
+var interactionIDCounter = 0;
+var threadIDCounter = 0; // Set of currently traced interactions.
+// Interactions "stack"–
+// Meaning that newly traced interactions are appended to the previously active set.
+// When an interaction goes out of scope, the previous set (if any) is restored.
+
+exports.__interactionsRef = null; // Listener(s) to notify when interactions begin and end.
+
+exports.__subscriberRef = null;
+
+{
+  exports.__interactionsRef = {
+    current: new Set()
+  };
+  exports.__subscriberRef = {
+    current: null
+  };
+}
+function unstable_clear(callback) {
+
+  var prevInteractions = exports.__interactionsRef.current;
+  exports.__interactionsRef.current = new Set();
+
+  try {
+    return callback();
+  } finally {
+    exports.__interactionsRef.current = prevInteractions;
+  }
+}
+function unstable_getCurrent() {
+  {
+    return exports.__interactionsRef.current;
+  }
+}
+function unstable_getThreadID() {
+  return ++threadIDCounter;
+}
+function unstable_trace(name, timestamp, callback) {
+  var threadID = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : DEFAULT_THREAD_ID;
+
+  var interaction = {
+    __count: 1,
+    id: interactionIDCounter++,
+    name: name,
+    timestamp: timestamp
+  };
+  var prevInteractions = exports.__interactionsRef.current; // Traced interactions should stack/accumulate.
+  // To do that, clone the current interactions.
+  // The previous set will be restored upon completion.
+
+  var interactions = new Set(prevInteractions);
+  interactions.add(interaction);
+  exports.__interactionsRef.current = interactions;
+  var subscriber = exports.__subscriberRef.current;
+  var returnValue;
+
+  try {
+    if (subscriber !== null) {
+      subscriber.onInteractionTraced(interaction);
+    }
+  } finally {
+    try {
+      if (subscriber !== null) {
+        subscriber.onWorkStarted(interactions, threadID);
+      }
+    } finally {
+      try {
+        returnValue = callback();
+      } finally {
+        exports.__interactionsRef.current = prevInteractions;
+
+        try {
+          if (subscriber !== null) {
+            subscriber.onWorkStopped(interactions, threadID);
+          }
+        } finally {
+          interaction.__count--; // If no async work was scheduled for this interaction,
+          // Notify subscribers that it's completed.
+
+          if (subscriber !== null && interaction.__count === 0) {
+            subscriber.onInteractionScheduledWorkCompleted(interaction);
+          }
+        }
+      }
+    }
+  }
+
+  return returnValue;
+}
+function unstable_wrap(callback) {
+  var threadID = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : DEFAULT_THREAD_ID;
+
+  var wrappedInteractions = exports.__interactionsRef.current;
+  var subscriber = exports.__subscriberRef.current;
+
+  if (subscriber !== null) {
+    subscriber.onWorkScheduled(wrappedInteractions, threadID);
+  } // Update the pending async work count for the current interactions.
+  // Update after calling subscribers in case of error.
+
+
+  wrappedInteractions.forEach(function (interaction) {
+    interaction.__count++;
+  });
+  var hasRun = false;
+
+  function wrapped() {
+    var prevInteractions = exports.__interactionsRef.current;
+    exports.__interactionsRef.current = wrappedInteractions;
+    subscriber = exports.__subscriberRef.current;
+
+    try {
+      var returnValue;
+
+      try {
+        if (subscriber !== null) {
+          subscriber.onWorkStarted(wrappedInteractions, threadID);
+        }
+      } finally {
+        try {
+          returnValue = callback.apply(undefined, arguments);
+        } finally {
+          exports.__interactionsRef.current = prevInteractions;
+
+          if (subscriber !== null) {
+            subscriber.onWorkStopped(wrappedInteractions, threadID);
+          }
+        }
+      }
+
+      return returnValue;
+    } finally {
+      if (!hasRun) {
+        // We only expect a wrapped function to be executed once,
+        // But in the event that it's executed more than once–
+        // Only decrement the outstanding interaction counts once.
+        hasRun = true; // Update pending async counts for all wrapped interactions.
+        // If this was the last scheduled async work for any of them,
+        // Mark them as completed.
+
+        wrappedInteractions.forEach(function (interaction) {
+          interaction.__count--;
+
+          if (subscriber !== null && interaction.__count === 0) {
+            subscriber.onInteractionScheduledWorkCompleted(interaction);
+          }
+        });
+      }
+    }
+  }
+
+  wrapped.cancel = function cancel() {
+    subscriber = exports.__subscriberRef.current;
+
+    try {
+      if (subscriber !== null) {
+        subscriber.onWorkCanceled(wrappedInteractions, threadID);
+      }
+    } finally {
+      // Update pending async counts for all wrapped interactions.
+      // If this was the last scheduled async work for any of them,
+      // Mark them as completed.
+      wrappedInteractions.forEach(function (interaction) {
+        interaction.__count--;
+
+        if (subscriber && interaction.__count === 0) {
+          subscriber.onInteractionScheduledWorkCompleted(interaction);
+        }
+      });
+    }
+  };
+
+  return wrapped;
+}
+
+var subscribers = null;
+
+{
+  subscribers = new Set();
+}
+
+function unstable_subscribe(subscriber) {
+  {
+    subscribers.add(subscriber);
+
+    if (subscribers.size === 1) {
+      exports.__subscriberRef.current = {
+        onInteractionScheduledWorkCompleted: onInteractionScheduledWorkCompleted,
+        onInteractionTraced: onInteractionTraced,
+        onWorkCanceled: onWorkCanceled,
+        onWorkScheduled: onWorkScheduled,
+        onWorkStarted: onWorkStarted,
+        onWorkStopped: onWorkStopped
+      };
+    }
+  }
+}
+function unstable_unsubscribe(subscriber) {
+  {
+    subscribers.delete(subscriber);
+
+    if (subscribers.size === 0) {
+      exports.__subscriberRef.current = null;
+    }
+  }
+}
+
+function onInteractionTraced(interaction) {
+  var didCatchError = false;
+  var caughtError = null;
+  subscribers.forEach(function (subscriber) {
+    try {
+      subscriber.onInteractionTraced(interaction);
+    } catch (error) {
+      if (!didCatchError) {
+        didCatchError = true;
+        caughtError = error;
+      }
+    }
+  });
+
+  if (didCatchError) {
+    throw caughtError;
+  }
+}
+
+function onInteractionScheduledWorkCompleted(interaction) {
+  var didCatchError = false;
+  var caughtError = null;
+  subscribers.forEach(function (subscriber) {
+    try {
+      subscriber.onInteractionScheduledWorkCompleted(interaction);
+    } catch (error) {
+      if (!didCatchError) {
+        didCatchError = true;
+        caughtError = error;
+      }
+    }
+  });
+
+  if (didCatchError) {
+    throw caughtError;
+  }
+}
+
+function onWorkScheduled(interactions, threadID) {
+  var didCatchError = false;
+  var caughtError = null;
+  subscribers.forEach(function (subscriber) {
+    try {
+      subscriber.onWorkScheduled(interactions, threadID);
+    } catch (error) {
+      if (!didCatchError) {
+        didCatchError = true;
+        caughtError = error;
+      }
+    }
+  });
+
+  if (didCatchError) {
+    throw caughtError;
+  }
+}
+
+function onWorkStarted(interactions, threadID) {
+  var didCatchError = false;
+  var caughtError = null;
+  subscribers.forEach(function (subscriber) {
+    try {
+      subscriber.onWorkStarted(interactions, threadID);
+    } catch (error) {
+      if (!didCatchError) {
+        didCatchError = true;
+        caughtError = error;
+      }
+    }
+  });
+
+  if (didCatchError) {
+    throw caughtError;
+  }
+}
+
+function onWorkStopped(interactions, threadID) {
+  var didCatchError = false;
+  var caughtError = null;
+  subscribers.forEach(function (subscriber) {
+    try {
+      subscriber.onWorkStopped(interactions, threadID);
+    } catch (error) {
+      if (!didCatchError) {
+        didCatchError = true;
+        caughtError = error;
+      }
+    }
+  });
+
+  if (didCatchError) {
+    throw caughtError;
+  }
+}
+
+function onWorkCanceled(interactions, threadID) {
+  var didCatchError = false;
+  var caughtError = null;
+  subscribers.forEach(function (subscriber) {
+    try {
+      subscriber.onWorkCanceled(interactions, threadID);
+    } catch (error) {
+      if (!didCatchError) {
+        didCatchError = true;
+        caughtError = error;
+      }
+    }
+  });
+
+  if (didCatchError) {
+    throw caughtError;
+  }
+}
+
+exports.unstable_clear = unstable_clear;
+exports.unstable_getCurrent = unstable_getCurrent;
+exports.unstable_getThreadID = unstable_getThreadID;
+exports.unstable_subscribe = unstable_subscribe;
+exports.unstable_trace = unstable_trace;
+exports.unstable_unsubscribe = unstable_unsubscribe;
+exports.unstable_wrap = unstable_wrap;
+  })();
+}
+
+
+/***/ }),
+
+/***/ "./node_modules/scheduler/cjs/scheduler.development.js":
+/*!*************************************************************!*\
+  !*** ./node_modules/scheduler/cjs/scheduler.development.js ***!
+  \*************************************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/** @license React v0.20.2
+ * scheduler.development.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+
+
+if (true) {
+  (function() {
+'use strict';
+
+var enableSchedulerDebugging = false;
+var enableProfiling = false;
+
+var requestHostCallback;
+var requestHostTimeout;
+var cancelHostTimeout;
+var requestPaint;
+var hasPerformanceNow = typeof performance === 'object' && typeof performance.now === 'function';
+
+if (hasPerformanceNow) {
+  var localPerformance = performance;
+
+  exports.unstable_now = function () {
+    return localPerformance.now();
+  };
+} else {
+  var localDate = Date;
+  var initialTime = localDate.now();
+
+  exports.unstable_now = function () {
+    return localDate.now() - initialTime;
+  };
+}
+
+if ( // If Scheduler runs in a non-DOM environment, it falls back to a naive
+// implementation using setTimeout.
+typeof window === 'undefined' || // Check if MessageChannel is supported, too.
+typeof MessageChannel !== 'function') {
+  // If this accidentally gets imported in a non-browser environment, e.g. JavaScriptCore,
+  // fallback to a naive implementation.
+  var _callback = null;
+  var _timeoutID = null;
+
+  var _flushCallback = function () {
+    if (_callback !== null) {
+      try {
+        var currentTime = exports.unstable_now();
+        var hasRemainingTime = true;
+
+        _callback(hasRemainingTime, currentTime);
+
+        _callback = null;
+      } catch (e) {
+        setTimeout(_flushCallback, 0);
+        throw e;
+      }
+    }
+  };
+
+  requestHostCallback = function (cb) {
+    if (_callback !== null) {
+      // Protect against re-entrancy.
+      setTimeout(requestHostCallback, 0, cb);
+    } else {
+      _callback = cb;
+      setTimeout(_flushCallback, 0);
+    }
+  };
+
+  requestHostTimeout = function (cb, ms) {
+    _timeoutID = setTimeout(cb, ms);
+  };
+
+  cancelHostTimeout = function () {
+    clearTimeout(_timeoutID);
+  };
+
+  exports.unstable_shouldYield = function () {
+    return false;
+  };
+
+  requestPaint = exports.unstable_forceFrameRate = function () {};
+} else {
+  // Capture local references to native APIs, in case a polyfill overrides them.
+  var _setTimeout = window.setTimeout;
+  var _clearTimeout = window.clearTimeout;
+
+  if (typeof console !== 'undefined') {
+    // TODO: Scheduler no longer requires these methods to be polyfilled. But
+    // maybe we want to continue warning if they don't exist, to preserve the
+    // option to rely on it in the future?
+    var requestAnimationFrame = window.requestAnimationFrame;
+    var cancelAnimationFrame = window.cancelAnimationFrame;
+
+    if (typeof requestAnimationFrame !== 'function') {
+      // Using console['error'] to evade Babel and ESLint
+      console['error']("This browser doesn't support requestAnimationFrame. " + 'Make sure that you load a ' + 'polyfill in older browsers. https://reactjs.org/link/react-polyfills');
+    }
+
+    if (typeof cancelAnimationFrame !== 'function') {
+      // Using console['error'] to evade Babel and ESLint
+      console['error']("This browser doesn't support cancelAnimationFrame. " + 'Make sure that you load a ' + 'polyfill in older browsers. https://reactjs.org/link/react-polyfills');
+    }
+  }
+
+  var isMessageLoopRunning = false;
+  var scheduledHostCallback = null;
+  var taskTimeoutID = -1; // Scheduler periodically yields in case there is other work on the main
+  // thread, like user events. By default, it yields multiple times per frame.
+  // It does not attempt to align with frame boundaries, since most tasks don't
+  // need to be frame aligned; for those that do, use requestAnimationFrame.
+
+  var yieldInterval = 5;
+  var deadline = 0; // TODO: Make this configurable
+
+  {
+    // `isInputPending` is not available. Since we have no way of knowing if
+    // there's pending input, always yield at the end of the frame.
+    exports.unstable_shouldYield = function () {
+      return exports.unstable_now() >= deadline;
+    }; // Since we yield every frame regardless, `requestPaint` has no effect.
+
+
+    requestPaint = function () {};
+  }
+
+  exports.unstable_forceFrameRate = function (fps) {
+    if (fps < 0 || fps > 125) {
+      // Using console['error'] to evade Babel and ESLint
+      console['error']('forceFrameRate takes a positive int between 0 and 125, ' + 'forcing frame rates higher than 125 fps is not supported');
+      return;
+    }
+
+    if (fps > 0) {
+      yieldInterval = Math.floor(1000 / fps);
+    } else {
+      // reset the framerate
+      yieldInterval = 5;
+    }
+  };
+
+  var performWorkUntilDeadline = function () {
+    if (scheduledHostCallback !== null) {
+      var currentTime = exports.unstable_now(); // Yield after `yieldInterval` ms, regardless of where we are in the vsync
+      // cycle. This means there's always time remaining at the beginning of
+      // the message event.
+
+      deadline = currentTime + yieldInterval;
+      var hasTimeRemaining = true;
+
+      try {
+        var hasMoreWork = scheduledHostCallback(hasTimeRemaining, currentTime);
+
+        if (!hasMoreWork) {
+          isMessageLoopRunning = false;
+          scheduledHostCallback = null;
+        } else {
+          // If there's more work, schedule the next message event at the end
+          // of the preceding one.
+          port.postMessage(null);
+        }
+      } catch (error) {
+        // If a scheduler task throws, exit the current browser task so the
+        // error can be observed.
+        port.postMessage(null);
+        throw error;
+      }
+    } else {
+      isMessageLoopRunning = false;
+    } // Yielding to the browser will give it a chance to paint, so we can
+  };
+
+  var channel = new MessageChannel();
+  var port = channel.port2;
+  channel.port1.onmessage = performWorkUntilDeadline;
+
+  requestHostCallback = function (callback) {
+    scheduledHostCallback = callback;
+
+    if (!isMessageLoopRunning) {
+      isMessageLoopRunning = true;
+      port.postMessage(null);
+    }
+  };
+
+  requestHostTimeout = function (callback, ms) {
+    taskTimeoutID = _setTimeout(function () {
+      callback(exports.unstable_now());
+    }, ms);
+  };
+
+  cancelHostTimeout = function () {
+    _clearTimeout(taskTimeoutID);
+
+    taskTimeoutID = -1;
+  };
+}
+
+function push(heap, node) {
+  var index = heap.length;
+  heap.push(node);
+  siftUp(heap, node, index);
+}
+function peek(heap) {
+  var first = heap[0];
+  return first === undefined ? null : first;
+}
+function pop(heap) {
+  var first = heap[0];
+
+  if (first !== undefined) {
+    var last = heap.pop();
+
+    if (last !== first) {
+      heap[0] = last;
+      siftDown(heap, last, 0);
+    }
+
+    return first;
+  } else {
+    return null;
+  }
+}
+
+function siftUp(heap, node, i) {
+  var index = i;
+
+  while (true) {
+    var parentIndex = index - 1 >>> 1;
+    var parent = heap[parentIndex];
+
+    if (parent !== undefined && compare(parent, node) > 0) {
+      // The parent is larger. Swap positions.
+      heap[parentIndex] = node;
+      heap[index] = parent;
+      index = parentIndex;
+    } else {
+      // The parent is smaller. Exit.
+      return;
+    }
+  }
+}
+
+function siftDown(heap, node, i) {
+  var index = i;
+  var length = heap.length;
+
+  while (index < length) {
+    var leftIndex = (index + 1) * 2 - 1;
+    var left = heap[leftIndex];
+    var rightIndex = leftIndex + 1;
+    var right = heap[rightIndex]; // If the left or right node is smaller, swap with the smaller of those.
+
+    if (left !== undefined && compare(left, node) < 0) {
+      if (right !== undefined && compare(right, left) < 0) {
+        heap[index] = right;
+        heap[rightIndex] = node;
+        index = rightIndex;
+      } else {
+        heap[index] = left;
+        heap[leftIndex] = node;
+        index = leftIndex;
+      }
+    } else if (right !== undefined && compare(right, node) < 0) {
+      heap[index] = right;
+      heap[rightIndex] = node;
+      index = rightIndex;
+    } else {
+      // Neither child is smaller. Exit.
+      return;
+    }
+  }
+}
+
+function compare(a, b) {
+  // Compare sort index first, then task id.
+  var diff = a.sortIndex - b.sortIndex;
+  return diff !== 0 ? diff : a.id - b.id;
+}
+
+// TODO: Use symbols?
+var ImmediatePriority = 1;
+var UserBlockingPriority = 2;
+var NormalPriority = 3;
+var LowPriority = 4;
+var IdlePriority = 5;
+
+function markTaskErrored(task, ms) {
+}
+
+/* eslint-disable no-var */
+// Math.pow(2, 30) - 1
+// 0b111111111111111111111111111111
+
+var maxSigned31BitInt = 1073741823; // Times out immediately
+
+var IMMEDIATE_PRIORITY_TIMEOUT = -1; // Eventually times out
+
+var USER_BLOCKING_PRIORITY_TIMEOUT = 250;
+var NORMAL_PRIORITY_TIMEOUT = 5000;
+var LOW_PRIORITY_TIMEOUT = 10000; // Never times out
+
+var IDLE_PRIORITY_TIMEOUT = maxSigned31BitInt; // Tasks are stored on a min heap
+
+var taskQueue = [];
+var timerQueue = []; // Incrementing id counter. Used to maintain insertion order.
+
+var taskIdCounter = 1; // Pausing the scheduler is useful for debugging.
+var currentTask = null;
+var currentPriorityLevel = NormalPriority; // This is set while performing work, to prevent re-entrancy.
+
+var isPerformingWork = false;
+var isHostCallbackScheduled = false;
+var isHostTimeoutScheduled = false;
+
+function advanceTimers(currentTime) {
+  // Check for tasks that are no longer delayed and add them to the queue.
+  var timer = peek(timerQueue);
+
+  while (timer !== null) {
+    if (timer.callback === null) {
+      // Timer was cancelled.
+      pop(timerQueue);
+    } else if (timer.startTime <= currentTime) {
+      // Timer fired. Transfer to the task queue.
+      pop(timerQueue);
+      timer.sortIndex = timer.expirationTime;
+      push(taskQueue, timer);
+    } else {
+      // Remaining timers are pending.
+      return;
+    }
+
+    timer = peek(timerQueue);
+  }
+}
+
+function handleTimeout(currentTime) {
+  isHostTimeoutScheduled = false;
+  advanceTimers(currentTime);
+
+  if (!isHostCallbackScheduled) {
+    if (peek(taskQueue) !== null) {
+      isHostCallbackScheduled = true;
+      requestHostCallback(flushWork);
+    } else {
+      var firstTimer = peek(timerQueue);
+
+      if (firstTimer !== null) {
+        requestHostTimeout(handleTimeout, firstTimer.startTime - currentTime);
+      }
+    }
+  }
+}
+
+function flushWork(hasTimeRemaining, initialTime) {
+
+
+  isHostCallbackScheduled = false;
+
+  if (isHostTimeoutScheduled) {
+    // We scheduled a timeout but it's no longer needed. Cancel it.
+    isHostTimeoutScheduled = false;
+    cancelHostTimeout();
+  }
+
+  isPerformingWork = true;
+  var previousPriorityLevel = currentPriorityLevel;
+
+  try {
+    if (enableProfiling) {
+      try {
+        return workLoop(hasTimeRemaining, initialTime);
+      } catch (error) {
+        if (currentTask !== null) {
+          var currentTime = exports.unstable_now();
+          markTaskErrored(currentTask, currentTime);
+          currentTask.isQueued = false;
+        }
+
+        throw error;
+      }
+    } else {
+      // No catch in prod code path.
+      return workLoop(hasTimeRemaining, initialTime);
+    }
+  } finally {
+    currentTask = null;
+    currentPriorityLevel = previousPriorityLevel;
+    isPerformingWork = false;
+  }
+}
+
+function workLoop(hasTimeRemaining, initialTime) {
+  var currentTime = initialTime;
+  advanceTimers(currentTime);
+  currentTask = peek(taskQueue);
+
+  while (currentTask !== null && !(enableSchedulerDebugging )) {
+    if (currentTask.expirationTime > currentTime && (!hasTimeRemaining || exports.unstable_shouldYield())) {
+      // This currentTask hasn't expired, and we've reached the deadline.
+      break;
+    }
+
+    var callback = currentTask.callback;
+
+    if (typeof callback === 'function') {
+      currentTask.callback = null;
+      currentPriorityLevel = currentTask.priorityLevel;
+      var didUserCallbackTimeout = currentTask.expirationTime <= currentTime;
+
+      var continuationCallback = callback(didUserCallbackTimeout);
+      currentTime = exports.unstable_now();
+
+      if (typeof continuationCallback === 'function') {
+        currentTask.callback = continuationCallback;
+      } else {
+
+        if (currentTask === peek(taskQueue)) {
+          pop(taskQueue);
+        }
+      }
+
+      advanceTimers(currentTime);
+    } else {
+      pop(taskQueue);
+    }
+
+    currentTask = peek(taskQueue);
+  } // Return whether there's additional work
+
+
+  if (currentTask !== null) {
+    return true;
+  } else {
+    var firstTimer = peek(timerQueue);
+
+    if (firstTimer !== null) {
+      requestHostTimeout(handleTimeout, firstTimer.startTime - currentTime);
+    }
+
+    return false;
+  }
+}
+
+function unstable_runWithPriority(priorityLevel, eventHandler) {
+  switch (priorityLevel) {
+    case ImmediatePriority:
+    case UserBlockingPriority:
+    case NormalPriority:
+    case LowPriority:
+    case IdlePriority:
+      break;
+
+    default:
+      priorityLevel = NormalPriority;
+  }
+
+  var previousPriorityLevel = currentPriorityLevel;
+  currentPriorityLevel = priorityLevel;
+
+  try {
+    return eventHandler();
+  } finally {
+    currentPriorityLevel = previousPriorityLevel;
+  }
+}
+
+function unstable_next(eventHandler) {
+  var priorityLevel;
+
+  switch (currentPriorityLevel) {
+    case ImmediatePriority:
+    case UserBlockingPriority:
+    case NormalPriority:
+      // Shift down to normal priority
+      priorityLevel = NormalPriority;
+      break;
+
+    default:
+      // Anything lower than normal priority should remain at the current level.
+      priorityLevel = currentPriorityLevel;
+      break;
+  }
+
+  var previousPriorityLevel = currentPriorityLevel;
+  currentPriorityLevel = priorityLevel;
+
+  try {
+    return eventHandler();
+  } finally {
+    currentPriorityLevel = previousPriorityLevel;
+  }
+}
+
+function unstable_wrapCallback(callback) {
+  var parentPriorityLevel = currentPriorityLevel;
+  return function () {
+    // This is a fork of runWithPriority, inlined for performance.
+    var previousPriorityLevel = currentPriorityLevel;
+    currentPriorityLevel = parentPriorityLevel;
+
+    try {
+      return callback.apply(this, arguments);
+    } finally {
+      currentPriorityLevel = previousPriorityLevel;
+    }
+  };
+}
+
+function unstable_scheduleCallback(priorityLevel, callback, options) {
+  var currentTime = exports.unstable_now();
+  var startTime;
+
+  if (typeof options === 'object' && options !== null) {
+    var delay = options.delay;
+
+    if (typeof delay === 'number' && delay > 0) {
+      startTime = currentTime + delay;
+    } else {
+      startTime = currentTime;
+    }
+  } else {
+    startTime = currentTime;
+  }
+
+  var timeout;
+
+  switch (priorityLevel) {
+    case ImmediatePriority:
+      timeout = IMMEDIATE_PRIORITY_TIMEOUT;
+      break;
+
+    case UserBlockingPriority:
+      timeout = USER_BLOCKING_PRIORITY_TIMEOUT;
+      break;
+
+    case IdlePriority:
+      timeout = IDLE_PRIORITY_TIMEOUT;
+      break;
+
+    case LowPriority:
+      timeout = LOW_PRIORITY_TIMEOUT;
+      break;
+
+    case NormalPriority:
+    default:
+      timeout = NORMAL_PRIORITY_TIMEOUT;
+      break;
+  }
+
+  var expirationTime = startTime + timeout;
+  var newTask = {
+    id: taskIdCounter++,
+    callback: callback,
+    priorityLevel: priorityLevel,
+    startTime: startTime,
+    expirationTime: expirationTime,
+    sortIndex: -1
+  };
+
+  if (startTime > currentTime) {
+    // This is a delayed task.
+    newTask.sortIndex = startTime;
+    push(timerQueue, newTask);
+
+    if (peek(taskQueue) === null && newTask === peek(timerQueue)) {
+      // All tasks are delayed, and this is the task with the earliest delay.
+      if (isHostTimeoutScheduled) {
+        // Cancel an existing timeout.
+        cancelHostTimeout();
+      } else {
+        isHostTimeoutScheduled = true;
+      } // Schedule a timeout.
+
+
+      requestHostTimeout(handleTimeout, startTime - currentTime);
+    }
+  } else {
+    newTask.sortIndex = expirationTime;
+    push(taskQueue, newTask);
+    // wait until the next time we yield.
+
+
+    if (!isHostCallbackScheduled && !isPerformingWork) {
+      isHostCallbackScheduled = true;
+      requestHostCallback(flushWork);
+    }
+  }
+
+  return newTask;
+}
+
+function unstable_pauseExecution() {
+}
+
+function unstable_continueExecution() {
+
+  if (!isHostCallbackScheduled && !isPerformingWork) {
+    isHostCallbackScheduled = true;
+    requestHostCallback(flushWork);
+  }
+}
+
+function unstable_getFirstCallbackNode() {
+  return peek(taskQueue);
+}
+
+function unstable_cancelCallback(task) {
+  // remove from the queue because you can't remove arbitrary nodes from an
+  // array based heap, only the first one.)
+
+
+  task.callback = null;
+}
+
+function unstable_getCurrentPriorityLevel() {
+  return currentPriorityLevel;
+}
+
+var unstable_requestPaint = requestPaint;
+var unstable_Profiling =  null;
+
+exports.unstable_IdlePriority = IdlePriority;
+exports.unstable_ImmediatePriority = ImmediatePriority;
+exports.unstable_LowPriority = LowPriority;
+exports.unstable_NormalPriority = NormalPriority;
+exports.unstable_Profiling = unstable_Profiling;
+exports.unstable_UserBlockingPriority = UserBlockingPriority;
+exports.unstable_cancelCallback = unstable_cancelCallback;
+exports.unstable_continueExecution = unstable_continueExecution;
+exports.unstable_getCurrentPriorityLevel = unstable_getCurrentPriorityLevel;
+exports.unstable_getFirstCallbackNode = unstable_getFirstCallbackNode;
+exports.unstable_next = unstable_next;
+exports.unstable_pauseExecution = unstable_pauseExecution;
+exports.unstable_requestPaint = unstable_requestPaint;
+exports.unstable_runWithPriority = unstable_runWithPriority;
+exports.unstable_scheduleCallback = unstable_scheduleCallback;
+exports.unstable_wrapCallback = unstable_wrapCallback;
+  })();
+}
+
+
+/***/ }),
+
+/***/ "./node_modules/scheduler/index.js":
+/*!*****************************************!*\
+  !*** ./node_modules/scheduler/index.js ***!
+  \*****************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+if (false) {} else {
+  module.exports = __webpack_require__(/*! ./cjs/scheduler.development.js */ "./node_modules/scheduler/cjs/scheduler.development.js");
+}
+
+
+/***/ }),
+
+/***/ "./node_modules/scheduler/tracing.js":
+/*!*******************************************!*\
+  !*** ./node_modules/scheduler/tracing.js ***!
+  \*******************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+if (false) {} else {
+  module.exports = __webpack_require__(/*! ./cjs/scheduler-tracing.development.js */ "./node_modules/scheduler/cjs/scheduler-tracing.development.js");
+}
+
+
+/***/ }),
+
+/***/ "./node_modules/webpack-inject-plugin/dist/webpack-inject-plugin.loader.js?id=webpack-inject-module-1!./":
+/*!***********************************************************************************************!*\
+  !*** (webpack)-inject-plugin/dist/webpack-inject-plugin.loader.js?id=webpack-inject-module-1 ***!
+  \***********************************************************************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+;globalThis.__fetchLocaleData__ = (function () {
+            return async function getLocale(locale) {
+                if (locale === "en_US") {
+                        return __webpack_require__.e(/*! import() | i18n-en_US */ "i18n-en_US").then(__webpack_require__.t.bind(null, /*! ./en_US.json */ "./en_US.json", 3));
+                    }
+
+                throw new Error('Unable to locate locale ' + locale + ' within generated dist directory.');
+            }
+        })()
+
+/***/ }),
+
+/***/ "./src/RootComponents/Account/index.js":
+/*!*********************************************************!*\
+  !*** ./src/RootComponents/Account/index.js + 1 modules ***!
+  \*********************************************************/
+/*! exports provided: default */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-dom/index.js (<- Module is not an ECMAScript module) */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react/index.js (<- Module is not an ECMAScript module) */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+// ESM COMPAT FLAG
+__webpack_require__.r(__webpack_exports__);
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, "default", function() { return /* reexport */ account; });
+
+// EXTERNAL MODULE: ./node_modules/react/index.js
+var react = __webpack_require__("./node_modules/react/index.js");
+var react_default = /*#__PURE__*/__webpack_require__.n(react);
+
+// EXTERNAL MODULE: ./node_modules/react-dom/index.js
+var react_dom = __webpack_require__("./node_modules/react-dom/index.js");
+
+// CONCATENATED MODULE: ./src/RootComponents/Account/account.js
+
+const Account = props => {
+  return /*#__PURE__*/react_default.a.createElement("div", null, "Hello Account");
+};
+/* harmony default export */ var account = (Account);
+// CONCATENATED MODULE: ./src/RootComponents/Account/index.js
+/**
+ * @RootComponent
+ * description = 'Basic Account Page'
+ * pageTypes = ACCOUNT
+ */
+
+
+
+console.log('Account Loaded');
+Object(react_dom["render"])( /*#__PURE__*/react_default.a.createElement(account, null), document.querySelector('.block.commerce-account'));
+
+
+/***/ }),
+
+/***/ 3:
+/*!****************************************************************************************************************************************!*\
+  !*** multi (webpack)-inject-plugin/dist/webpack-inject-plugin.loader?id=webpack-inject-module-1 ./src/RootComponents/Account/index.js ***!
+  \****************************************************************************************************************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(/*! /Users/mabecker/Documents/github/hlxsites/maidenform/pwa/node_modules/webpack-inject-plugin/dist/webpack-inject-plugin.loader?id=webpack-inject-module-1! */"./node_modules/webpack-inject-plugin/dist/webpack-inject-plugin.loader.js?id=webpack-inject-module-1!./");
+module.exports = __webpack_require__(/*! ./src/RootComponents/Account/index.js */"./src/RootComponents/Account/index.js");
+
+
+/***/ })
+
+/******/ });
+//# sourceMappingURL=account.js.map
