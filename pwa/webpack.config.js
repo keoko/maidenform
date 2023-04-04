@@ -6,6 +6,7 @@ const ModuleOverridePlugin = require('./moduleOverrideWebpackPlugin');
 
 const componentOverrideMapping = {
  '@magento/peregrine/lib/talons/CartPage/ProductListing/productListingFragments.gql.js': './src/talons/CartPage/ProductListing/productListingFragments.gql.js',
+ '@magento/venia-ui/lib/components/Portal/portal.js': './src/components/Portal/portal.js',
 };
 
 const {
