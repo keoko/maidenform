@@ -2,6 +2,11 @@ const { configureWebpack, graphQL } = require('@magento/pwa-buildpack');
 const webpack = require('webpack');
 const fs = require('fs');
 const { promisify } = require('util');
+const ModuleOverridePlugin = require('./moduleOverrideWebpackPlugin');
+
+const componentOverrideMapping = {
+ '@magento/peregrine/lib/talons/CartPage/ProductListing/productListingFragments.gql.js': './src/talons/CartPage/ProductListing/productListingFragments.gql.js',
+};
 
 const {
     getMediaURL,
@@ -159,7 +164,8 @@ module.exports = async env => {
                 process.env.DEFAULT_COUNTRY_CODE || 'US'
             ),
             __DEV__: process.env.NODE_ENV !== 'production'
-        })
+        }),
+        new ModuleOverridePlugin(componentOverrideMapping),
     ];
 
     // Add additional entrypoints
