@@ -10,13 +10,15 @@ import Cart from './cart';
 import store from '../../store';
 import Adapter from '../../components/Adapter/adapter.js';
 
+import '../../index.css';
+
 const origin = globalThis.location.origin;
 const styles = new Set();
 const configureLinks = links => [...links.values()];
 
 render((
     <Adapter
-        apiUrl="https://franklin.maidenform.com/graphql"
+        apiUrl="https://www.marbec.click/graphql-maidenform-qa"
         configureLinks={configureLinks}
         origin={origin}
         store={store}

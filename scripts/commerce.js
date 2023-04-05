@@ -366,7 +366,7 @@ export async function performMonolithGraphQLQuery(query, variables, GET = true) 
 
   let response;
   if (!GET) {
-    response = await fetch('https://franklin.maidenform.com/graphql', {
+    response = await fetch('https://www.marbec.click/graphql-maidenform-qa', {
       method: 'POST',
       headers,
       body: JSON.stringify({
@@ -380,7 +380,7 @@ export async function performMonolithGraphQLQuery(query, variables, GET = true) 
       variables: JSON.stringify(variables),
     });
     response = await fetch(
-      `https://franklin.maidenform.com/graphql?${params.toString()}`,
+      `https://www.marbec.click/graphql-maidenform-qa?${params.toString()}`,
       { headers },
     );
   }
