@@ -1,3 +1,6 @@
+// TODO move this to top level
+import { initializeMSEWithStorefrontInstance } from '../../scripts/mse-utils.js';
+
 import {
   Component, Fragment, h, render,
 } from '../../scripts/preact.js';
@@ -97,10 +100,30 @@ class ProductDetailPage extends Component {
   }
 
   async componentDidMount() {
+    // todo move this to top level
+    await initializeMSEWithStorefrontInstance();
+
     const product = await getProduct(getSkuFromUrl());
 
     if (!product) {
       errorGettingProduct();
+    }
+
+    if (window.magentoStorefrontEvents) {
+      const productCtx = {
+        name: product.name,
+        productId: product.id,
+        sku: product.sku,
+        pricing: {
+          regularPrice: product.priceRange?.maximum?.final.amount.value,
+          minimalPrice: product.priceRange?.maximum?.regular.amount.value,
+          maximalPrice: product.priceRange?.minimum?.regular.amount.value,
+          currencyCode: product.priceRange?.maximum?.final.amount.value,
+        },
+        // TODO add product image url + selected options
+      };
+      window.magentoStorefrontEvents.context.setProduct(productCtx);
+      window.magentoStorefrontEvents.publish.productPageView();
     }
 
     const selection = {
@@ -133,6 +156,7 @@ class ProductDetailPage extends Component {
   }
 
   onAddToCart = async () => {
+    // TODO set cart context and generate cart event
     if (Object.keys(this.state.selection).length === this.state.product.options.length) {
       const optionsUIDs = Object.values(this.state.selection).map((option) => option.id);
       console.log({
