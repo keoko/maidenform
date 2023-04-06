@@ -74,7 +74,7 @@ var useQuery = __webpack_require__("./node_modules/@apollo/client/react/hooks/us
 var lodash_debounce = __webpack_require__("./node_modules/lodash.debounce/index.js");
 var lodash_debounce_default = /*#__PURE__*/__webpack_require__.n(lodash_debounce);
 
-// EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/context/cart.js + 1 modules
+// EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/context/cart.js
 var context_cart = __webpack_require__("./node_modules/@magento/peregrine/lib/context/cart.js");
 
 // EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/util/shallowMerge.js

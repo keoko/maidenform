@@ -64,7 +64,7 @@ var esm = __webpack_require__("./node_modules/informed/dist/esm/index.js");
 // EXTERNAL MODULE: ./node_modules/@apollo/client/react/hooks/useQuery.js
 var useQuery = __webpack_require__("./node_modules/@apollo/client/react/hooks/useQuery.js");
 
-// EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/context/cart.js + 1 modules
+// EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/context/cart.js
 var cart = __webpack_require__("./node_modules/@magento/peregrine/lib/context/cart.js");
 
 // EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/util/shallowMerge.js

@@ -96,7 +96,7 @@ var useQuery = __webpack_require__("./node_modules/@apollo/client/react/hooks/us
 // EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/util/shallowMerge.js
 var shallowMerge = __webpack_require__("./node_modules/@magento/peregrine/lib/util/shallowMerge.js");
 
-// EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/context/cart.js + 1 modules
+// EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/context/cart.js
 var cart = __webpack_require__("./node_modules/@magento/peregrine/lib/context/cart.js");
 
 // CONCATENATED MODULE: ./node_modules/@magento/peregrine/lib/util/findMatchingProductVariant.js

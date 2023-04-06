@@ -61,7 +61,7 @@ var useQuery = __webpack_require__("./node_modules/@apollo/client/react/hooks/us
 // EXTERNAL MODULE: ./node_modules/@apollo/client/react/hooks/useMutation.js
 var useMutation = __webpack_require__("./node_modules/@apollo/client/react/hooks/useMutation.js");
 
-// EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/context/cart.js + 1 modules
+// EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/context/cart.js
 var cart = __webpack_require__("./node_modules/@magento/peregrine/lib/context/cart.js");
 
 // EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/util/shallowMerge.js

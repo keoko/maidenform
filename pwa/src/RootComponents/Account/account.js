@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { Fragment } from 'react';
+import MyAccount from '@magento/venia-ui/lib/components/MyAccount';
 
 const Account = props => {
-    return <div>Hello Account</div>;
-};
-
+    console.debug('props', props)
+    return <Fragment><MyAccount {...props} /></Fragment>;
+}
 export default Account;

@@ -3136,42 +3136,22 @@ const useToasts = () => {
 
 /***/ }),
 
-/***/ "./node_modules/@magento/peregrine/lib/context/cart.js":
-/*!*************************************************************************!*\
-  !*** ./node_modules/@magento/peregrine/lib/context/cart.js + 1 modules ***!
-  \*************************************************************************/
-/*! exports provided: default, useCartContext */
-/*! exports used: default, useCartContext */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/react/hooks/useApolloClient.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/react/hooks/useMutation.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/hooks/useEventListener.js because of ./src/RootComponents/Cart/index.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/store/actions/cart/actions.js because of ./src/RootComponents/Cart/index.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/store/actions/cart/asyncActions.js because of ./src/RootComponents/Cart/index.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/bindActionCreators.js because of ./src/RootComponents/Cart/index.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/simplePersistence.js because of ./src/RootComponents/Cart/index.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-redux/es/index.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react/index.js (<- Module is not an ECMAScript module) */
+/***/ "./node_modules/@magento/peregrine/lib/context/app.js":
+/*!************************************************************!*\
+  !*** ./node_modules/@magento/peregrine/lib/context/app.js ***!
+  \************************************************************/
+/*! exports provided: default, useAppContext */
+/*! exports used: default, useAppContext */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
-// EXPORTS
-__webpack_require__.d(__webpack_exports__, "b", function() { return /* binding */ useCartContext; });
-
-// EXTERNAL MODULE: ./node_modules/react/index.js
-var react = __webpack_require__("./node_modules/react/index.js");
-var react_default = /*#__PURE__*/__webpack_require__.n(react);
-
-// EXTERNAL MODULE: ./node_modules/react-redux/es/index.js + 26 modules
-var es = __webpack_require__("./node_modules/react-redux/es/index.js");
-
-// EXTERNAL MODULE: ./node_modules/@apollo/client/react/hooks/useMutation.js
-var useMutation = __webpack_require__("./node_modules/@apollo/client/react/hooks/useMutation.js");
-
-// EXTERNAL MODULE: ./node_modules/@apollo/client/react/hooks/useApolloClient.js
-var useApolloClient = __webpack_require__("./node_modules/@apollo/client/react/hooks/useApolloClient.js");
-
-// CONCATENATED MODULE: ./node_modules/@magento/peregrine/lib/hooks/useAwaitQuery.js
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return useAppContext; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _store_actions_app_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../store/actions/app/actions */ "./node_modules/@magento/peregrine/lib/store/actions/app/actions.js");
+/* harmony import */ var _store_actions_app_asyncActions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../store/actions/app/asyncActions */ "./node_modules/@magento/peregrine/lib/store/actions/app/asyncActions.js");
+/* harmony import */ var _util_bindActionCreators__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../util/bindActionCreators */ "./node_modules/@magento/peregrine/lib/util/bindActionCreators.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
 function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -3180,60 +3160,73 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
 
 
 
-/**
- * A hook that will return a invokable query that returns a Promise. Intended
- * to be used in Redux thunks that shouldn't have knowledge of queries being ran
- * but needed the ability to fetch data asyncronously inside of their actions.
- *
- * NOTE: We have discovered a potential bug in Apollo that when passing the
- * fetchQuery option "network-only", results from the cache will still be
- * returned instead of the data from the network fetch. We suggest using
- * the "no-cache" option if you expect your queries to always return fresh
- * data, or data is sensitive that you do not want to persist in the app.
- *
- * @param {DocumentNode} query - parsed GraphQL operation description
- *
- * @returns {Function} callback that runs the query and returns a Promise
- */
-const useAwaitQuery = query => {
-  const apolloClient = Object(useApolloClient["a" /* useApolloClient */])();
-  return Object(react["useCallback"])(options => {
-    return apolloClient.query(_objectSpread(_objectSpread({}, options), {}, {
-      query
-    }));
-  }, [apolloClient, query]);
+
+
+const AppContext = Object(react__WEBPACK_IMPORTED_MODULE_0__["createContext"])();
+const AppContextProvider = props => {
+  const {
+    actions,
+    appState,
+    asyncActions,
+    children
+  } = props;
+  const appApi = Object(react__WEBPACK_IMPORTED_MODULE_0__["useMemo"])(() => _objectSpread({
+    actions
+  }, asyncActions), [actions, asyncActions]);
+  const contextValue = Object(react__WEBPACK_IMPORTED_MODULE_0__["useMemo"])(() => [appState, appApi], [appApi, appState]);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(AppContext.Provider, {
+    value: contextValue
+  }, children);
 };
-// EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/store/actions/cart/actions.js
-var cart_actions = __webpack_require__("./node_modules/@magento/peregrine/lib/store/actions/cart/actions.js");
+const mapStateToProps = ({
+  app
+}) => ({
+  appState: app
+});
+const mapDispatchToProps = dispatch => ({
+  actions: Object(_util_bindActionCreators__WEBPACK_IMPORTED_MODULE_4__[/* default */ "a"])(_store_actions_app_actions__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"], dispatch),
+  asyncActions: Object(_util_bindActionCreators__WEBPACK_IMPORTED_MODULE_4__[/* default */ "a"])(_store_actions_app_asyncActions__WEBPACK_IMPORTED_MODULE_3__, dispatch)
+});
+/* harmony default export */ __webpack_exports__["a"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__[/* connect */ "b"])(mapStateToProps, mapDispatchToProps)(AppContextProvider));
+const useAppContext = () => Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(AppContext);
 
-// EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/store/actions/cart/asyncActions.js
-var cart_asyncActions = __webpack_require__("./node_modules/@magento/peregrine/lib/store/actions/cart/asyncActions.js");
+/***/ }),
 
-// EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/util/bindActionCreators.js
-var bindActionCreators = __webpack_require__("./node_modules/@magento/peregrine/lib/util/bindActionCreators.js");
+/***/ "./node_modules/@magento/peregrine/lib/context/cart.js":
+/*!*************************************************************!*\
+  !*** ./node_modules/@magento/peregrine/lib/context/cart.js ***!
+  \*************************************************************/
+/*! exports provided: default, useCartContext */
+/*! exports used: default, useCartContext */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-// EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/hooks/useEventListener.js
-var useEventListener = __webpack_require__("./node_modules/@magento/peregrine/lib/hooks/useEventListener.js");
-
-// EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/util/simplePersistence.js
-var simplePersistence = __webpack_require__("./node_modules/@magento/peregrine/lib/util/simplePersistence.js");
-
-// CONCATENATED MODULE: ./node_modules/@magento/peregrine/lib/context/cart.js
-function cart_ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
-function cart_objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? cart_ownKeys(Object(source), !0).forEach(function (key) { cart_defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : cart_ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
-function cart_defineProperty(obj, key, value) { key = cart_toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-function cart_toPropertyKey(arg) { var key = cart_toPrimitive(arg, "string"); return typeof key === "symbol" ? key : String(key); }
-function cart_toPrimitive(input, hint) { if (typeof input !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (typeof res !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
-
-
-
-
-
-
-
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return useCartContext; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _apollo_client__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @apollo/client */ "./node_modules/@apollo/client/react/hooks/useMutation.js");
+/* harmony import */ var _magento_peregrine_lib_hooks_useAwaitQuery__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @magento/peregrine/lib/hooks/useAwaitQuery */ "./node_modules/@magento/peregrine/lib/hooks/useAwaitQuery.js");
+/* harmony import */ var _store_actions_cart_actions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../store/actions/cart/actions */ "./node_modules/@magento/peregrine/lib/store/actions/cart/actions.js");
+/* harmony import */ var _store_actions_cart_asyncActions__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../store/actions/cart/asyncActions */ "./node_modules/@magento/peregrine/lib/store/actions/cart/asyncActions.js");
+/* harmony import */ var _util_bindActionCreators__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../util/bindActionCreators */ "./node_modules/@magento/peregrine/lib/util/bindActionCreators.js");
+/* harmony import */ var _hooks_useEventListener__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../hooks/useEventListener */ "./node_modules/@magento/peregrine/lib/hooks/useEventListener.js");
+/* harmony import */ var _util_simplePersistence__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../util/simplePersistence */ "./node_modules/@magento/peregrine/lib/util/simplePersistence.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
+function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return typeof key === "symbol" ? key : String(key); }
+function _toPrimitive(input, hint) { if (typeof input !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (typeof res !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
 
 
-const CartContext = Object(react["createContext"])();
+
+
+
+
+
+
+
+const CartContext = Object(react__WEBPACK_IMPORTED_MODULE_0__["createContext"])();
 const isCartEmpty = cart => !cart || !cart.details.items || cart.details.items.length === 0;
 const getTotalQuantity = items => items.reduce((total, item) => total + item.quantity, 0);
 const CartContextProvider = props => {
@@ -3245,7 +3238,7 @@ const CartContextProvider = props => {
   } = props;
 
   // Make deeply nested details easier to retrieve and provide empty defaults
-  const derivedDetails = Object(react["useMemo"])(() => {
+  const derivedDetails = Object(react__WEBPACK_IMPORTED_MODULE_0__["useMemo"])(() => {
     if (isCartEmpty(cartState)) {
       return {
         currencyCode: 'USD',
@@ -3260,22 +3253,22 @@ const CartContextProvider = props => {
       };
     }
   }, [cartState]);
-  const cartApi = Object(react["useMemo"])(() => cart_objectSpread({
+  const cartApi = Object(react__WEBPACK_IMPORTED_MODULE_0__["useMemo"])(() => _objectSpread({
     actions
   }, asyncActions), [actions, asyncActions]);
-  const contextValue = Object(react["useMemo"])(() => {
-    const derivedCartState = cart_objectSpread(cart_objectSpread({}, cartState), {}, {
+  const contextValue = Object(react__WEBPACK_IMPORTED_MODULE_0__["useMemo"])(() => {
+    const derivedCartState = _objectSpread(_objectSpread({}, cartState), {}, {
       isEmpty: isCartEmpty(cartState),
       derivedDetails
     });
     return [derivedCartState, cartApi];
   }, [cartApi, cartState, derivedDetails]);
-  const [fetchCartId] = Object(useMutation["a" /* useMutation */])(CREATE_CART_MUTATION);
-  const fetchCartDetails = useAwaitQuery(CART_DETAILS_QUERY);
+  const [fetchCartId] = Object(_apollo_client__WEBPACK_IMPORTED_MODULE_2__[/* useMutation */ "a"])(CREATE_CART_MUTATION);
+  const fetchCartDetails = Object(_magento_peregrine_lib_hooks_useAwaitQuery__WEBPACK_IMPORTED_MODULE_3__[/* useAwaitQuery */ "a"])(CART_DETAILS_QUERY);
 
   // Storage listener to force a state update if cartId changes from another browser tab.
-  const storageListener = Object(react["useCallback"])(() => {
-    const storage = new simplePersistence["a" /* default */]();
+  const storageListener = Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])(() => {
+    const storage = new _util_simplePersistence__WEBPACK_IMPORTED_MODULE_8__[/* default */ "a"]();
     const currentCartId = storage.getItem('cartId');
     const {
       cartId
@@ -3284,15 +3277,15 @@ const CartContextProvider = props => {
       globalThis.location && globalThis.location.reload();
     }
   }, [cartState]);
-  Object(useEventListener["a" /* useEventListener */])(globalThis, 'storage', storageListener);
-  Object(react["useEffect"])(() => {
+  Object(_hooks_useEventListener__WEBPACK_IMPORTED_MODULE_7__[/* useEventListener */ "a"])(globalThis, 'storage', storageListener);
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
     // cartApi.getCartDetails initializes the cart if there isn't one.
     cartApi.getCartDetails({
       fetchCartId,
       fetchCartDetails
     });
   }, [cartApi, fetchCartDetails, fetchCartId]);
-  return /*#__PURE__*/react_default.a.createElement(CartContext.Provider, {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(CartContext.Provider, {
     value: contextValue
   }, children);
 };
@@ -3302,11 +3295,11 @@ const mapStateToProps = ({
   cartState: cart
 });
 const mapDispatchToProps = dispatch => ({
-  actions: Object(bindActionCreators["a" /* default */])(cart_actions["a" /* default */], dispatch),
-  asyncActions: Object(bindActionCreators["a" /* default */])(cart_asyncActions, dispatch)
+  actions: Object(_util_bindActionCreators__WEBPACK_IMPORTED_MODULE_6__[/* default */ "a"])(_store_actions_cart_actions__WEBPACK_IMPORTED_MODULE_4__[/* default */ "a"], dispatch),
+  asyncActions: Object(_util_bindActionCreators__WEBPACK_IMPORTED_MODULE_6__[/* default */ "a"])(_store_actions_cart_asyncActions__WEBPACK_IMPORTED_MODULE_5__, dispatch)
 });
-/* harmony default export */ var cart = __webpack_exports__["a"] = (Object(es["b" /* connect */])(mapStateToProps, mapDispatchToProps)(CartContextProvider));
-const useCartContext = () => Object(react["useContext"])(CartContext);
+/* harmony default export */ __webpack_exports__["a"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__[/* connect */ "b"])(mapStateToProps, mapDispatchToProps)(CartContextProvider));
+const useCartContext = () => Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(CartContext);
 
 /**
  * We normally do not keep GQL queries in Peregrine. All components should pass
@@ -3489,6 +3482,115 @@ const useEventingContext = () => Object(react__WEBPACK_IMPORTED_MODULE_0__["useC
 
 /***/ }),
 
+/***/ "./node_modules/@magento/peregrine/lib/context/user.js":
+/*!*************************************************************!*\
+  !*** ./node_modules/@magento/peregrine/lib/context/user.js ***!
+  \*************************************************************/
+/*! exports provided: default, useUserContext */
+/*! exports used: default, useUserContext */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return useUserContext; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _store_actions_user_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../store/actions/user/actions */ "./node_modules/@magento/peregrine/lib/store/actions/user/actions.js");
+/* harmony import */ var _store_actions_user_asyncActions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../store/actions/user/asyncActions */ "./node_modules/@magento/peregrine/lib/store/actions/user/asyncActions.js");
+/* harmony import */ var _util_bindActionCreators__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../util/bindActionCreators */ "./node_modules/@magento/peregrine/lib/util/bindActionCreators.js");
+/* harmony import */ var _util_simplePersistence__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../util/simplePersistence */ "./node_modules/@magento/peregrine/lib/util/simplePersistence.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
+function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return typeof key === "symbol" ? key : String(key); }
+function _toPrimitive(input, hint) { if (typeof input !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (typeof res !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
+
+
+
+
+
+
+const UserContext = Object(react__WEBPACK_IMPORTED_MODULE_0__["createContext"])();
+const UserContextProvider = props => {
+  const {
+    actions,
+    asyncActions,
+    children,
+    userState
+  } = props;
+  const userApi = Object(react__WEBPACK_IMPORTED_MODULE_0__["useMemo"])(() => _objectSpread({
+    actions
+  }, asyncActions), [actions, asyncActions]);
+  const contextValue = Object(react__WEBPACK_IMPORTED_MODULE_0__["useMemo"])(() => [userState, userApi], [userApi, userState]);
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
+    // check if the user's token is not expired
+    const storage = new _util_simplePersistence__WEBPACK_IMPORTED_MODULE_5__[/* default */ "a"]();
+    const item = storage.getRawItem('signin_token');
+    if (item) {
+      const {
+        ttl,
+        timeStored
+      } = JSON.parse(item);
+      const now = Date.now();
+
+      // if the token's TTYL has expired, we need to sign out
+      if (ttl && now - timeStored > ttl * 1000) {
+        asyncActions.signOut();
+      }
+    }
+  }, [asyncActions]);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(UserContext.Provider, {
+    value: contextValue
+  }, children);
+};
+const mapStateToProps = ({
+  user
+}) => ({
+  userState: user
+});
+const mapDispatchToProps = dispatch => ({
+  actions: Object(_util_bindActionCreators__WEBPACK_IMPORTED_MODULE_4__[/* default */ "a"])(_store_actions_user_actions__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"], dispatch),
+  asyncActions: Object(_util_bindActionCreators__WEBPACK_IMPORTED_MODULE_4__[/* default */ "a"])(_store_actions_user_asyncActions__WEBPACK_IMPORTED_MODULE_3__, dispatch)
+});
+/* harmony default export */ __webpack_exports__["a"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__[/* connect */ "b"])(mapStateToProps, mapDispatchToProps)(UserContextProvider));
+
+/**
+ * @typedef {Object} UserState
+ *
+ * @property {CurrentUser} currentUser Current user details
+ * @property {Error} getDetailsError Get Details call related error
+ * @property {Boolean} isGettingDetails Boolean if true indicates that user details are being fetched. False otherwise.
+ * @property {Boolean} isResettingPassword Deprecated
+ * @property {Boolean} isSignedIn Boolean if true indicates that the user is signed in. False otherwise.
+ * @property {Error} resetPasswordError Deprecated
+ *
+ */
+
+/**
+ * @typedef {Object} CurrentUser
+ *
+ * @property {String} email Current user's email
+ * @property {String} firstname Current user's first name
+ * @property {String} lastname Current user's last name
+ */
+
+/**
+ * @typedef {Object} UserActions
+ *
+ * @property {Function} clearToken Callback to clear user token in browser persistence storage
+ * @property {Function} getUserDetails Callback to get user details
+ * @property {Function} resetPassword Deprecated
+ * @property {Function} setToken Callback to set user token in browser persistence storage
+ * @property {Function} signOut Callback to sign the user out
+ */
+
+/**
+ * @returns {[UserState, UserActions]}
+ */
+const useUserContext = () => Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(UserContext);
+
+/***/ }),
+
 /***/ "./node_modules/@magento/peregrine/lib/hooks/hook-wrappers/useInformedFieldStateWrapper.js":
 /*!*************************************************************************************************!*\
   !*** ./node_modules/@magento/peregrine/lib/hooks/hook-wrappers/useInformedFieldStateWrapper.js ***!
@@ -3525,6 +3627,53 @@ const useInformedFieldStateWrapper = field => {
   return fieldState;
 };
 /* harmony default export */ __webpack_exports__["a"] = (useInformedFieldStateWrapper);
+
+/***/ }),
+
+/***/ "./node_modules/@magento/peregrine/lib/hooks/useAwaitQuery.js":
+/*!********************************************************************!*\
+  !*** ./node_modules/@magento/peregrine/lib/hooks/useAwaitQuery.js ***!
+  \********************************************************************/
+/*! exports provided: useAwaitQuery */
+/*! exports used: useAwaitQuery */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return useAwaitQuery; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _apollo_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @apollo/client */ "./node_modules/@apollo/client/react/hooks/useApolloClient.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
+function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return typeof key === "symbol" ? key : String(key); }
+function _toPrimitive(input, hint) { if (typeof input !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (typeof res !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
+
+
+
+/**
+ * A hook that will return a invokable query that returns a Promise. Intended
+ * to be used in Redux thunks that shouldn't have knowledge of queries being ran
+ * but needed the ability to fetch data asyncronously inside of their actions.
+ *
+ * NOTE: We have discovered a potential bug in Apollo that when passing the
+ * fetchQuery option "network-only", results from the cache will still be
+ * returned instead of the data from the network fetch. We suggest using
+ * the "no-cache" option if you expect your queries to always return fresh
+ * data, or data is sensitive that you do not want to persist in the app.
+ *
+ * @param {DocumentNode} query - parsed GraphQL operation description
+ *
+ * @returns {Function} callback that runs the query and returns a Promise
+ */
+const useAwaitQuery = query => {
+  const apolloClient = Object(_apollo_client__WEBPACK_IMPORTED_MODULE_1__[/* useApolloClient */ "a"])();
+  return Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])(options => {
+    return apolloClient.query(_objectSpread(_objectSpread({}, options), {}, {
+      query
+    }));
+  }, [apolloClient, query]);
+};
 
 /***/ }),
 
@@ -4114,6 +4263,35 @@ async function writeImageToCache(item = {}) {
 function isInvalidCart(error) {
   return !!(error.graphQLErrors && error.graphQLErrors.find(err => err.message.includes('Could not find a cart') || err.message.includes("The cart isn't active") || err.message.includes('The current user cannot perform operations on cart')));
 }
+
+/***/ }),
+
+/***/ "./node_modules/@magento/peregrine/lib/store/actions/catalog/actions.js":
+/*!******************************************************************************!*\
+  !*** ./node_modules/@magento/peregrine/lib/store/actions/catalog/actions.js ***!
+  \******************************************************************************/
+/*! exports provided: default */
+/*! exports used: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var redux_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! redux-actions */ "./node_modules/redux-actions/es/createActions.js");
+
+const prefix = 'CATALOG';
+const actionTypes = ['UPDATE_CATEGORIES'];
+const actionMap = {
+  SET_CURRENT_PAGE: {
+    REQUEST: null,
+    RECEIVE: null
+  },
+  SET_PREV_PAGE_TOTAL: {
+    REQUEST: null,
+    RECEIVE: null
+  }
+};
+/* harmony default export */ __webpack_exports__["a"] = (Object(redux_actions__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"])(actionMap, ...actionTypes, {
+  prefix
+}));
 
 /***/ }),
 
@@ -5130,6 +5308,23 @@ const clearToken = () => async function thunk(...args) {
 
 /***/ }),
 
+/***/ "./node_modules/@magento/peregrine/lib/store/middleware/thunk.js":
+/*!***********************************************************************!*\
+  !*** ./node_modules/@magento/peregrine/lib/store/middleware/thunk.js ***!
+  \***********************************************************************/
+/*! exports provided: extraArgument, default */
+/*! exports used: default, extraArgument */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return extraArgument; });
+/* harmony import */ var redux_thunk__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! redux-thunk */ "./node_modules/redux-thunk/es/index.js");
+
+const extraArgument = {};
+/* harmony default export */ __webpack_exports__["a"] = (redux_thunk__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"].withExtraArgument(extraArgument));
+
+/***/ }),
+
 /***/ "./node_modules/@magento/peregrine/lib/talons/CartPage/GiftCards/giftCardFragments.gql.ee.js":
 /*!***************************************************************************************************!*\
   !*** ./node_modules/@magento/peregrine/lib/talons/CartPage/GiftCards/giftCardFragments.gql.ee.js ***!
@@ -5261,7 +5456,7 @@ const ShippingMethodsCartFragment = _apollo_client__WEBPACK_IMPORTED_MODULE_0__[
 /*! exports provided: GrandTotalFragment, PriceSummaryFragment */
 /*! exports used: PriceSummaryFragment */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/talons/CartPage/PriceSummary/queries/giftOptionsSummary.ee.js because of ./node_modules/@magento/peregrine/lib/talons/CartPage/PriceAdjustments/GiftOptions/giftOptionsFragments.gql.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql-tag/lib/index.js because of ./src/RootComponents/Cart/index.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql-tag/lib/index.js because of ./node_modules/@magento/venia-ui/lib/components/CartPage/cartPage.js */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -5984,7 +6179,7 @@ _defineProperty(BrowserPersistence, "KEY", 'M2_VENIA_BROWSER_PERSISTENCE');
 /*! exports provided: default */
 /*! exports used: default */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/shallowMerge.js because of ./src/RootComponents/Cart/index.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@react-aria/button/dist/module.js because of ./src/RootComponents/Cart/index.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@react-aria/button/dist/module.js because of ./node_modules/@magento/venia-ui/lib/components/LegacyMiniCart/section.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/Button/button.module.css (<- Module uses module.id) */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/prop-types/index.js (<- Module is not an ECMAScript module) */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react/index.js (<- Module is not an ECMAScript module) */
@@ -6130,15 +6325,15 @@ Button.defaultProps = {
   \************************************************************************************/
 /*! exports provided: default */
 /*! exports used: default */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/shallowMerge.js because of ./src/RootComponents/Cart/index.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Button/button.js because of ./src/RootComponents/Cart/index.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/shallowMerge.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Button/button.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Icon/icon.js because of ./src/RootComponents/Cart/index.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-feather/dist/icons/x.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/Dialog/dialog.module.css (<- Module uses module.id) */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/informed/dist/esm/index.js (<- Module uses injected variables (process)) */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/prop-types/index.js (<- Module is not an ECMAScript module) */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-dom/index.js (<- Module is not an ECMAScript module) */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-intl/lib/src/components/message.js because of ./src/RootComponents/Cart/index.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-intl/lib/src/components/message.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react/index.js (<- Module is not an ECMAScript module) */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js (<- Module is not an ECMAScript module) */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -6438,7 +6633,7 @@ Dialog.defaultProps = {
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/shallowMerge.js because of ./src/RootComponents/Cart/index.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/Field/field.module.css (<- Module uses module.id) */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/prop-types/index.js (<- Module is not an ECMAScript module) */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-intl/lib/src/components/message.js because of ./src/RootComponents/Cart/index.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-intl/lib/src/components/message.js because of ./node_modules/@magento/venia-ui/lib/components/CartPage/cartPage.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react/index.js (<- Module is not an ECMAScript module) */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js (<- Module is not an ECMAScript module) */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -6614,7 +6809,7 @@ FieldIcons.propTypes = {
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/shallowMerge.js because of ./src/RootComponents/Cart/index.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/Field/message.module.css (<- Module uses module.id) */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/prop-types/index.js (<- Module is not an ECMAScript module) */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-intl/lib/src/components/useIntl.js because of ./src/RootComponents/Cart/index.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-intl/lib/src/components/useIntl.js because of ./node_modules/@magento/venia-ui/lib/components/CartPage/cartPage.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react/index.js (<- Module is not an ECMAScript module) */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js (<- Module is not an ECMAScript module) */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -6720,7 +6915,7 @@ Message.propTypes = {
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/ErrorMessage/errorMessage.module.css (<- Module uses module.id) */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/FormError/formError.module.css (<- Module uses module.id) */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/prop-types/index.js (<- Module is not an ECMAScript module) */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-intl/lib/src/components/useIntl.js because of ./src/RootComponents/Cart/index.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-intl/lib/src/components/useIntl.js because of ./node_modules/@magento/venia-ui/lib/components/CartPage/cartPage.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react/index.js (<- Module is not an ECMAScript module) */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js (<- Module is not an ECMAScript module) */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -6898,13 +7093,103 @@ FormError.defaultProps = {
 
 /***/ }),
 
+/***/ "./node_modules/@magento/venia-ui/lib/components/Head/index.js":
+/*!*********************************************************************!*\
+  !*** ./node_modules/@magento/venia-ui/lib/components/Head/index.js ***!
+  \*********************************************************************/
+/*! exports provided: HeadProvider, Link, Meta, Style, Title, StoreTitle */
+/*! exports used: StoreTitle */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* unused harmony export Link */
+/* unused harmony export Meta */
+/* unused harmony export Style */
+/* unused harmony export Title */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return StoreTitle; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _apollo_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @apollo/client */ "./node_modules/graphql-tag/lib/index.js");
+/* harmony import */ var _apollo_client__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @apollo/client */ "./node_modules/@apollo/client/react/hooks/useQuery.js");
+/* harmony import */ var react_helmet_async__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-helmet-async */ "./node_modules/react-helmet-async/lib/index.module.js");
+const _excluded = ["children"],
+  _excluded2 = ["children"],
+  _excluded3 = ["children"],
+  _excluded4 = ["children"],
+  _excluded5 = ["children"];
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
+
+
+
+react_helmet_async__WEBPACK_IMPORTED_MODULE_3__[/* Helmet */ "a"].defaultProps.defer = false;
+const Link = props => {
+  const {
+      children
+    } = props,
+    tagProps = _objectWithoutProperties(props, _excluded);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_helmet_async__WEBPACK_IMPORTED_MODULE_3__[/* Helmet */ "a"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("link", tagProps, children));
+};
+const Meta = props => {
+  const {
+      children
+    } = props,
+    tagProps = _objectWithoutProperties(props, _excluded2);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_helmet_async__WEBPACK_IMPORTED_MODULE_3__[/* Helmet */ "a"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("meta", tagProps, children));
+};
+const Style = props => {
+  const {
+      children
+    } = props,
+    tagProps = _objectWithoutProperties(props, _excluded3);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_helmet_async__WEBPACK_IMPORTED_MODULE_3__[/* Helmet */ "a"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("style", tagProps, children));
+};
+const Title = props => {
+  const {
+      children
+    } = props,
+    tagProps = _objectWithoutProperties(props, _excluded4);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_helmet_async__WEBPACK_IMPORTED_MODULE_3__[/* Helmet */ "a"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("title", tagProps, children));
+};
+const STORE_NAME_QUERY = _apollo_client__WEBPACK_IMPORTED_MODULE_1__[/* gql */ "a"]`
+    query getStoreName {
+        # eslint-disable-next-line @graphql-eslint/require-id-when-available
+        storeConfig {
+            store_code
+            store_name
+        }
+    }
+`;
+const StoreTitle = props => {
+  const {
+      children
+    } = props,
+    tagProps = _objectWithoutProperties(props, _excluded5);
+  const {
+    data: storeNameData
+  } = Object(_apollo_client__WEBPACK_IMPORTED_MODULE_2__[/* useQuery */ "a"])(STORE_NAME_QUERY);
+  const storeName = Object(react__WEBPACK_IMPORTED_MODULE_0__["useMemo"])(() => {
+    return storeNameData ? storeNameData.storeConfig.store_name : "Maidenform Store View";
+  }, [storeNameData]);
+  let titleText;
+  if (children) {
+    titleText = `${children} - ${storeName}`;
+  } else {
+    titleText = storeName;
+  }
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_helmet_async__WEBPACK_IMPORTED_MODULE_3__[/* Helmet */ "a"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("title", tagProps, titleText));
+};
+
+/***/ }),
+
 /***/ "./node_modules/@magento/venia-ui/lib/components/Icon/icon.js":
 /*!********************************************************************************!*\
   !*** ./node_modules/@magento/venia-ui/lib/components/Icon/icon.js + 1 modules ***!
   \********************************************************************************/
 /*! exports provided: default */
 /*! exports used: default */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/shallowMerge.js because of ./src/RootComponents/Cart/index.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/shallowMerge.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/Icon/icon.module.css (<- Module uses module.id) */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/prop-types/index.js (<- Module is not an ECMAScript module) */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react/index.js (<- Module is not an ECMAScript module) */
@@ -6996,7 +7281,7 @@ Icon.propTypes = {
 /*! exports provided: default */
 /*! exports used: default */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/imageUtils.js because of ./node_modules/@magento/venia-ui/lib/components/ProductOptions/swatch.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/shallowMerge.js because of ./src/RootComponents/Cart/index.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/shallowMerge.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/Image/image.module.css (<- Module uses module.id) */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/prop-types/index.js (<- Module is not an ECMAScript module) */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react/index.js (<- Module is not an ECMAScript module) */
@@ -7570,7 +7855,7 @@ Image.defaultProps = {
   \*************************************************************************************************/
 /*! exports provided: default */
 /*! exports used: default */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/shallowMerge.js because of ./src/RootComponents/Cart/index.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/shallowMerge.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Icon/icon.js because of ./src/RootComponents/Cart/index.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-feather/dist/icons/loader.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/LoadingIndicator/indicator.module.css (<- Module uses module.id) */
@@ -7725,17 +8010,17 @@ Price.defaultProps = {
   \******************************************************************************************************/
 /*! exports provided: default */
 /*! exports used: default */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/hooks/hook-wrappers/useInformedFieldStateWrapper.js because of ./node_modules/@magento/venia-ui/lib/components/CartPage/PriceAdjustments/CouponCode/couponCode.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/shallowMerge.js because of ./src/RootComponents/Cart/index.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Field/message.js because of ./node_modules/@magento/venia-ui/lib/components/CartPage/PriceAdjustments/CouponCode/couponCode.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/hooks/hook-wrappers/useInformedFieldStateWrapper.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/shallowMerge.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Field/message.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Icon/icon.js because of ./src/RootComponents/Cart/index.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/TextInput/textInput.js because of ./node_modules/@magento/venia-ui/lib/components/CartPage/PriceAdjustments/CouponCode/couponCode.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/TextInput/textInput.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-feather/dist/icons/minus.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-feather/dist/icons/plus.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/QuantityStepper/quantityStepper.module.css (<- Module uses module.id) */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/informed/dist/esm/index.js (<- Module uses injected variables (process)) */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/lodash.debounce/index.js (<- Module is not an ECMAScript module) */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-intl/lib/src/components/useIntl.js because of ./src/RootComponents/Cart/index.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-intl/lib/src/components/useIntl.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react/index.js (<- Module is not an ECMAScript module) */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js (<- Module is not an ECMAScript module) */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -8014,10 +8299,10 @@ QuantityStepper.defaultProps = {
   \******************************************************************************************/
 /*! exports provided: default */
 /*! exports used: default */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/hooks/hook-wrappers/useInformedFieldStateWrapper.js because of ./node_modules/@magento/venia-ui/lib/components/TextArea/textArea.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/hooks/hook-wrappers/useInformedFieldStateWrapper.js because of ./node_modules/@magento/venia-ui/lib/components/RadioGroup/radioGroup.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/shallowMerge.js because of ./src/RootComponents/Cart/index.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Field/fieldIcons.js because of ./node_modules/@magento/venia-ui/lib/components/Select/select.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Field/message.js because of ./src/RootComponents/Cart/index.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Field/message.js because of ./node_modules/@magento/venia-ui/lib/components/QuantityStepper/quantityStepper.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/TextInput/textInput.module.css (<- Module uses module.id) */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/informed/dist/esm/index.js (<- Module uses injected variables (process)) */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/prop-types/index.js (<- Module is not an ECMAScript module) */
@@ -18109,7 +18394,7 @@ gql["default"] = gql;
   \****************************************************************/
 /*! exports provided: syntaxError */
 /*! exports used: syntaxError */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql/polyfills/symbols.mjs because of ./src/RootComponents/Cart/index.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql/polyfills/symbols.mjs because of ./node_modules/@magento/venia-ui/lib/components/CartPage/cartPage.js */
 /***/ (function(__webpack_module__, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -18676,7 +18961,7 @@ var nodejsCustomInspectSymbol = typeof Symbol === 'function' && typeof Symbol.fo
   \***********************************************************/
 /*! exports provided: Location, Token, isNode */
 /*! exports used: Location, Token, isNode */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql/jsutils/nodejsCustomInspectSymbol.mjs because of ./node_modules/@apollo/client/link/http/selectHttpOptionsAndBody.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql/jsutils/nodejsCustomInspectSymbol.mjs because of ./node_modules/@magento/venia-ui/lib/components/CartPage/cartPage.js */
 /***/ (function(__webpack_module__, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -20009,7 +20294,7 @@ function hasMultilineItems(maybeArray) {
 /*! exports provided: Source, isSource */
 /*! exports used: Source, isSource */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql/jsutils/inspect.mjs because of ./node_modules/@apollo/client/link/http/selectHttpOptionsAndBody.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql/polyfills/symbols.mjs because of ./src/RootComponents/Cart/index.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql/polyfills/symbols.mjs because of ./node_modules/@magento/venia-ui/lib/components/CartPage/cartPage.js */
 /***/ (function(__webpack_module__, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -28020,6 +28305,34 @@ module.exports = function isEqual(a, b) {
 
 /***/ }),
 
+/***/ "./node_modules/react-helmet-async/lib/index.module.js":
+/*!*************************************************************!*\
+  !*** ./node_modules/react-helmet-async/lib/index.module.js ***!
+  \*************************************************************/
+/*! exports provided: Helmet, HelmetData, HelmetProvider */
+/*! exports used: Helmet, HelmetProvider */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return W; });
+/* unused harmony export HelmetData */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return q; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/react-helmet-async/node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_fast_compare__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-fast-compare */ "./node_modules/react-fast-compare/index.js");
+/* harmony import */ var react_fast_compare__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_fast_compare__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var invariant__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! invariant */ "./node_modules/invariant/browser.js");
+/* harmony import */ var invariant__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(invariant__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var shallowequal__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! shallowequal */ "./node_modules/shallowequal/index.js");
+/* harmony import */ var shallowequal__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(shallowequal__WEBPACK_IMPORTED_MODULE_4__);
+function a(){return a=Object.assign||function(t){for(var e=1;e<arguments.length;e++){var r=arguments[e];for(var n in r)Object.prototype.hasOwnProperty.call(r,n)&&(t[n]=r[n])}return t},a.apply(this,arguments)}function s(t,e){t.prototype=Object.create(e.prototype),t.prototype.constructor=t,c(t,e)}function c(t,e){return c=Object.setPrototypeOf||function(t,e){return t.__proto__=e,t},c(t,e)}function u(t,e){if(null==t)return{};var r,n,i={},o=Object.keys(t);for(n=0;n<o.length;n++)e.indexOf(r=o[n])>=0||(i[r]=t[r]);return i}var l={BASE:"base",BODY:"body",HEAD:"head",HTML:"html",LINK:"link",META:"meta",NOSCRIPT:"noscript",SCRIPT:"script",STYLE:"style",TITLE:"title",FRAGMENT:"Symbol(react.fragment)"},p={rel:["amphtml","canonical","alternate"]},f={type:["application/ld+json"]},d={charset:"",name:["robots","description"],property:["og:type","og:title","og:url","og:image","og:image:alt","og:description","twitter:url","twitter:title","twitter:description","twitter:image","twitter:image:alt","twitter:card","twitter:site"]},h=Object.keys(l).map(function(t){return l[t]}),m={accesskey:"accessKey",charset:"charSet",class:"className",contenteditable:"contentEditable",contextmenu:"contextMenu","http-equiv":"httpEquiv",itemprop:"itemProp",tabindex:"tabIndex"},y=Object.keys(m).reduce(function(t,e){return t[m[e]]=e,t},{}),T=function(t,e){for(var r=t.length-1;r>=0;r-=1){var n=t[r];if(Object.prototype.hasOwnProperty.call(n,e))return n[e]}return null},g=function(t){var e=T(t,l.TITLE),r=T(t,"titleTemplate");if(Array.isArray(e)&&(e=e.join("")),r&&e)return r.replace(/%s/g,function(){return e});var n=T(t,"defaultTitle");return e||n||void 0},b=function(t){return T(t,"onChangeClientState")||function(){}},v=function(t,e){return e.filter(function(e){return void 0!==e[t]}).map(function(e){return e[t]}).reduce(function(t,e){return a({},t,e)},{})},A=function(t,e){return e.filter(function(t){return void 0!==t[l.BASE]}).map(function(t){return t[l.BASE]}).reverse().reduce(function(e,r){if(!e.length)for(var n=Object.keys(r),i=0;i<n.length;i+=1){var o=n[i].toLowerCase();if(-1!==t.indexOf(o)&&r[o])return e.concat(r)}return e},[])},C=function(t,e,r){var n={};return r.filter(function(e){return!!Array.isArray(e[t])||(void 0!==e[t]&&console&&"function"==typeof console.warn&&console.warn("Helmet: "+t+' should be of type "Array". Instead found type "'+typeof e[t]+'"'),!1)}).map(function(e){return e[t]}).reverse().reduce(function(t,r){var i={};r.filter(function(t){for(var r,o=Object.keys(t),a=0;a<o.length;a+=1){var s=o[a],c=s.toLowerCase();-1===e.indexOf(c)||"rel"===r&&"canonical"===t[r].toLowerCase()||"rel"===c&&"stylesheet"===t[c].toLowerCase()||(r=c),-1===e.indexOf(s)||"innerHTML"!==s&&"cssText"!==s&&"itemprop"!==s||(r=s)}if(!r||!t[r])return!1;var u=t[r].toLowerCase();return n[r]||(n[r]={}),i[r]||(i[r]={}),!n[r][u]&&(i[r][u]=!0,!0)}).reverse().forEach(function(e){return t.push(e)});for(var o=Object.keys(i),s=0;s<o.length;s+=1){var c=o[s],u=a({},n[c],i[c]);n[c]=u}return t},[]).reverse()},O=function(t,e){if(Array.isArray(t)&&t.length)for(var r=0;r<t.length;r+=1)if(t[r][e])return!0;return!1},S=function(t){return Array.isArray(t)?t.join(""):t},E=function(t,e){return Array.isArray(t)?t.reduce(function(t,r){return function(t,e){for(var r=Object.keys(t),n=0;n<r.length;n+=1)if(e[r[n]]&&e[r[n]].includes(t[r[n]]))return!0;return!1}(r,e)?t.priority.push(r):t.default.push(r),t},{priority:[],default:[]}):{default:t}},I=function(t,e){var r;return a({},t,((r={})[e]=void 0,r))},P=[l.NOSCRIPT,l.SCRIPT,l.STYLE],w=function(t,e){return void 0===e&&(e=!0),!1===e?String(t):String(t).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/'/g,"&#x27;")},x=function(t){return Object.keys(t).reduce(function(e,r){var n=void 0!==t[r]?r+'="'+t[r]+'"':""+r;return e?e+" "+n:n},"")},L=function(t,e){return void 0===e&&(e={}),Object.keys(t).reduce(function(e,r){return e[m[r]||r]=t[r],e},e)},j=function(e,r){return r.map(function(r,n){var i,o=((i={key:n})["data-rh"]=!0,i);return Object.keys(r).forEach(function(t){var e=m[t]||t;"innerHTML"===e||"cssText"===e?o.dangerouslySetInnerHTML={__html:r.innerHTML||r.cssText}:o[e]=r[t]}),react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(e,o)})},M=function(e,r,n){switch(e){case l.TITLE:return{toComponent:function(){return n=r.titleAttributes,(i={key:e=r.title})["data-rh"]=!0,o=L(n,i),[react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(l.TITLE,o,e)];var e,n,i,o},toString:function(){return function(t,e,r,n){var i=x(r),o=S(e);return i?"<"+t+' data-rh="true" '+i+">"+w(o,n)+"</"+t+">":"<"+t+' data-rh="true">'+w(o,n)+"</"+t+">"}(e,r.title,r.titleAttributes,n)}};case"bodyAttributes":case"htmlAttributes":return{toComponent:function(){return L(r)},toString:function(){return x(r)}};default:return{toComponent:function(){return j(e,r)},toString:function(){return function(t,e,r){return e.reduce(function(e,n){var i=Object.keys(n).filter(function(t){return!("innerHTML"===t||"cssText"===t)}).reduce(function(t,e){var i=void 0===n[e]?e:e+'="'+w(n[e],r)+'"';return t?t+" "+i:i},""),o=n.innerHTML||n.cssText||"",a=-1===P.indexOf(t);return e+"<"+t+' data-rh="true" '+i+(a?"/>":">"+o+"</"+t+">")},"")}(e,r,n)}}}},k=function(t){var e=t.baseTag,r=t.bodyAttributes,n=t.encode,i=t.htmlAttributes,o=t.noscriptTags,a=t.styleTags,s=t.title,c=void 0===s?"":s,u=t.titleAttributes,h=t.linkTags,m=t.metaTags,y=t.scriptTags,T={toComponent:function(){},toString:function(){return""}};if(t.prioritizeSeoTags){var g=function(t){var e=t.linkTags,r=t.scriptTags,n=t.encode,i=E(t.metaTags,d),o=E(e,p),a=E(r,f);return{priorityMethods:{toComponent:function(){return[].concat(j(l.META,i.priority),j(l.LINK,o.priority),j(l.SCRIPT,a.priority))},toString:function(){return M(l.META,i.priority,n)+" "+M(l.LINK,o.priority,n)+" "+M(l.SCRIPT,a.priority,n)}},metaTags:i.default,linkTags:o.default,scriptTags:a.default}}(t);T=g.priorityMethods,h=g.linkTags,m=g.metaTags,y=g.scriptTags}return{priority:T,base:M(l.BASE,e,n),bodyAttributes:M("bodyAttributes",r,n),htmlAttributes:M("htmlAttributes",i,n),link:M(l.LINK,h,n),meta:M(l.META,m,n),noscript:M(l.NOSCRIPT,o,n),script:M(l.SCRIPT,y,n),style:M(l.STYLE,a,n),title:M(l.TITLE,{title:c,titleAttributes:u},n)}},H=[],N=function(t,e){var r=this;void 0===e&&(e="undefined"!=typeof document),this.instances=[],this.value={setHelmet:function(t){r.context.helmet=t},helmetInstances:{get:function(){return r.canUseDOM?H:r.instances},add:function(t){(r.canUseDOM?H:r.instances).push(t)},remove:function(t){var e=(r.canUseDOM?H:r.instances).indexOf(t);(r.canUseDOM?H:r.instances).splice(e,1)}}},this.context=t,this.canUseDOM=e,e||(t.helmet=k({baseTag:[],bodyAttributes:{},encodeSpecialCharacters:!0,htmlAttributes:{},linkTags:[],metaTags:[],noscriptTags:[],scriptTags:[],styleTags:[],title:"",titleAttributes:{}}))},R=react__WEBPACK_IMPORTED_MODULE_0___default.a.createContext({}),D=prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.shape({setHelmet:prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func,helmetInstances:prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.shape({get:prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func,add:prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func,remove:prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func})}),U="undefined"!=typeof document,q=/*#__PURE__*/function(e){function r(t){var n;return(n=e.call(this,t)||this).helmetData=new N(n.props.context,r.canUseDOM),n}return s(r,e),r.prototype.render=function(){/*#__PURE__*/return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(R.Provider,{value:this.helmetData.value},this.props.children)},r}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);q.canUseDOM=U,q.propTypes={context:prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.shape({helmet:prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.shape()}),children:prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.node.isRequired},q.defaultProps={context:{}},q.displayName="HelmetProvider";var Y=function(t,e){var r,n=document.head||document.querySelector(l.HEAD),i=n.querySelectorAll(t+"[data-rh]"),o=[].slice.call(i),a=[];return e&&e.length&&e.forEach(function(e){var n=document.createElement(t);for(var i in e)Object.prototype.hasOwnProperty.call(e,i)&&("innerHTML"===i?n.innerHTML=e.innerHTML:"cssText"===i?n.styleSheet?n.styleSheet.cssText=e.cssText:n.appendChild(document.createTextNode(e.cssText)):n.setAttribute(i,void 0===e[i]?"":e[i]));n.setAttribute("data-rh","true"),o.some(function(t,e){return r=e,n.isEqualNode(t)})?o.splice(r,1):a.push(n)}),o.forEach(function(t){return t.parentNode.removeChild(t)}),a.forEach(function(t){return n.appendChild(t)}),{oldTags:o,newTags:a}},B=function(t,e){var r=document.getElementsByTagName(t)[0];if(r){for(var n=r.getAttribute("data-rh"),i=n?n.split(","):[],o=[].concat(i),a=Object.keys(e),s=0;s<a.length;s+=1){var c=a[s],u=e[c]||"";r.getAttribute(c)!==u&&r.setAttribute(c,u),-1===i.indexOf(c)&&i.push(c);var l=o.indexOf(c);-1!==l&&o.splice(l,1)}for(var p=o.length-1;p>=0;p-=1)r.removeAttribute(o[p]);i.length===o.length?r.removeAttribute("data-rh"):r.getAttribute("data-rh")!==a.join(",")&&r.setAttribute("data-rh",a.join(","))}},K=function(t,e){var r=t.baseTag,n=t.htmlAttributes,i=t.linkTags,o=t.metaTags,a=t.noscriptTags,s=t.onChangeClientState,c=t.scriptTags,u=t.styleTags,p=t.title,f=t.titleAttributes;B(l.BODY,t.bodyAttributes),B(l.HTML,n),function(t,e){void 0!==t&&document.title!==t&&(document.title=S(t)),B(l.TITLE,e)}(p,f);var d={baseTag:Y(l.BASE,r),linkTags:Y(l.LINK,i),metaTags:Y(l.META,o),noscriptTags:Y(l.NOSCRIPT,a),scriptTags:Y(l.SCRIPT,c),styleTags:Y(l.STYLE,u)},h={},m={};Object.keys(d).forEach(function(t){var e=d[t],r=e.newTags,n=e.oldTags;r.length&&(h[t]=r),n.length&&(m[t]=d[t].oldTags)}),e&&e(),s(t,h,m)},_=null,z=/*#__PURE__*/function(t){function e(){for(var e,r=arguments.length,n=new Array(r),i=0;i<r;i++)n[i]=arguments[i];return(e=t.call.apply(t,[this].concat(n))||this).rendered=!1,e}s(e,t);var r=e.prototype;return r.shouldComponentUpdate=function(t){return!shallowequal__WEBPACK_IMPORTED_MODULE_4___default()(t,this.props)},r.componentDidUpdate=function(){this.emitChange()},r.componentWillUnmount=function(){this.props.context.helmetInstances.remove(this),this.emitChange()},r.emitChange=function(){var t,e,r=this.props.context,n=r.setHelmet,i=null,o=(t=r.helmetInstances.get().map(function(t){var e=a({},t.props);return delete e.context,e}),{baseTag:A(["href"],t),bodyAttributes:v("bodyAttributes",t),defer:T(t,"defer"),encode:T(t,"encodeSpecialCharacters"),htmlAttributes:v("htmlAttributes",t),linkTags:C(l.LINK,["rel","href"],t),metaTags:C(l.META,["name","charset","http-equiv","property","itemprop"],t),noscriptTags:C(l.NOSCRIPT,["innerHTML"],t),onChangeClientState:b(t),scriptTags:C(l.SCRIPT,["src","innerHTML"],t),styleTags:C(l.STYLE,["cssText"],t),title:g(t),titleAttributes:v("titleAttributes",t),prioritizeSeoTags:O(t,"prioritizeSeoTags")});q.canUseDOM?(e=o,_&&cancelAnimationFrame(_),e.defer?_=requestAnimationFrame(function(){K(e,function(){_=null})}):(K(e),_=null)):k&&(i=k(o)),n(i)},r.init=function(){this.rendered||(this.rendered=!0,this.props.context.helmetInstances.add(this),this.emitChange())},r.render=function(){return this.init(),null},e}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);z.propTypes={context:D.isRequired},z.displayName="HelmetDispatcher";var F=["children"],G=["children"],W=/*#__PURE__*/function(e){function r(){return e.apply(this,arguments)||this}s(r,e);var o=r.prototype;return o.shouldComponentUpdate=function(t){return!react_fast_compare__WEBPACK_IMPORTED_MODULE_2___default()(I(this.props,"helmetData"),I(t,"helmetData"))},o.mapNestedChildrenToProps=function(t,e){if(!e)return null;switch(t.type){case l.SCRIPT:case l.NOSCRIPT:return{innerHTML:e};case l.STYLE:return{cssText:e};default:throw new Error("<"+t.type+" /> elements are self-closing and can not contain children. Refer to our API for more information.")}},o.flattenArrayTypeChildren=function(t){var e,r=t.child,n=t.arrayTypeChildren;return a({},n,((e={})[r.type]=[].concat(n[r.type]||[],[a({},t.newChildProps,this.mapNestedChildrenToProps(r,t.nestedChildren))]),e))},o.mapObjectTypeChildren=function(t){var e,r,n=t.child,i=t.newProps,o=t.newChildProps,s=t.nestedChildren;switch(n.type){case l.TITLE:return a({},i,((e={})[n.type]=s,e.titleAttributes=a({},o),e));case l.BODY:return a({},i,{bodyAttributes:a({},o)});case l.HTML:return a({},i,{htmlAttributes:a({},o)});default:return a({},i,((r={})[n.type]=a({},o),r))}},o.mapArrayTypeChildrenToProps=function(t,e){var r=a({},e);return Object.keys(t).forEach(function(e){var n;r=a({},r,((n={})[e]=t[e],n))}),r},o.warnOnInvalidChildren=function(t,e){return invariant__WEBPACK_IMPORTED_MODULE_3___default()(h.some(function(e){return t.type===e}),"function"==typeof t.type?"You may be attempting to nest <Helmet> components within each other, which is not allowed. Refer to our API for more information.":"Only elements types "+h.join(", ")+" are allowed. Helmet does not support rendering <"+t.type+"> elements. Refer to our API for more information."),invariant__WEBPACK_IMPORTED_MODULE_3___default()(!e||"string"==typeof e||Array.isArray(e)&&!e.some(function(t){return"string"!=typeof t}),"Helmet expects a string as a child of <"+t.type+">. Did you forget to wrap your children in braces? ( <"+t.type+">{``}</"+t.type+"> ) Refer to our API for more information."),!0},o.mapChildrenToProps=function(e,r){var n=this,i={};return react__WEBPACK_IMPORTED_MODULE_0___default.a.Children.forEach(e,function(t){if(t&&t.props){var e=t.props,o=e.children,a=u(e,F),s=Object.keys(a).reduce(function(t,e){return t[y[e]||e]=a[e],t},{}),c=t.type;switch("symbol"==typeof c?c=c.toString():n.warnOnInvalidChildren(t,o),c){case l.FRAGMENT:r=n.mapChildrenToProps(o,r);break;case l.LINK:case l.META:case l.NOSCRIPT:case l.SCRIPT:case l.STYLE:i=n.flattenArrayTypeChildren({child:t,arrayTypeChildren:i,newChildProps:s,nestedChildren:o});break;default:r=n.mapObjectTypeChildren({child:t,newProps:r,newChildProps:s,nestedChildren:o})}}}),this.mapArrayTypeChildrenToProps(i,r)},o.render=function(){var e=this.props,r=e.children,n=u(e,G),i=a({},n),o=n.helmetData;return r&&(i=this.mapChildrenToProps(r,i)),!o||o instanceof N||(o=new N(o.context,o.instances)),o?/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(z,a({},i,{context:o.value,helmetData:void 0})):/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(R.Consumer,null,function(e){/*#__PURE__*/return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(z,a({},i,{context:e}))})},r}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);W.propTypes={base:prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.object,bodyAttributes:prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.object,children:prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.oneOfType([prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.arrayOf(prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.node),prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.node]),defaultTitle:prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,defer:prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.bool,encodeSpecialCharacters:prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.bool,htmlAttributes:prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.object,link:prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.arrayOf(prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.object),meta:prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.arrayOf(prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.object),noscript:prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.arrayOf(prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.object),onChangeClientState:prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func,script:prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.arrayOf(prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.object),style:prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.arrayOf(prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.object),title:prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,titleAttributes:prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.object,titleTemplate:prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,prioritizeSeoTags:prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.bool,helmetData:prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.object},W.defaultProps={defer:!0,encodeSpecialCharacters:!0,prioritizeSeoTags:!1},W.displayName="Helmet";
+//# sourceMappingURL=index.module.js.map
+
+
+/***/ }),
+
 /***/ "./node_modules/react-helmet-async/node_modules/prop-types/checkPropTypes.js":
 /*!***********************************************************************************!*\
   !*** ./node_modules/react-helmet-async/node_modules/prop-types/checkPropTypes.js ***!
@@ -29243,7 +29556,7 @@ if (false) {} else {
   !*** ./node_modules/react-router/esm/react-router.js + 2 modules ***!
   \*******************************************************************/
 /*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __HistoryContext, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter */
-/*! exports used: Router, __RouterContext, matchPath, useHistory, useRouteMatch */
+/*! exports used: Router, __RouterContext, matchPath, useHistory, useLocation, useRouteMatch */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/history/esm/history.js because of ./node_modules/react-router-dom/esm/react-router-dom.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/hoist-non-react-statics/dist/hoist-non-react-statics.cjs.js (<- Module is not an ECMAScript module) */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-is/index.js (<- Module is not an ECMAScript module) */
@@ -29263,9 +29576,10 @@ __webpack_require__.d(__webpack_exports__, "a", function() { return /* binding *
 __webpack_require__.d(__webpack_exports__, "b", function() { return /* binding */ react_router_context; });
 __webpack_require__.d(__webpack_exports__, "c", function() { return /* binding */ matchPath; });
 __webpack_require__.d(__webpack_exports__, "d", function() { return /* binding */ useHistory; });
-__webpack_require__.d(__webpack_exports__, "e", function() { return /* binding */ useRouteMatch; });
+__webpack_require__.d(__webpack_exports__, "e", function() { return /* binding */ useLocation; });
+__webpack_require__.d(__webpack_exports__, "f", function() { return /* binding */ useRouteMatch; });
 
-// UNUSED EXPORTS: MemoryRouter, Prompt, Redirect, Route, StaticRouter, Switch, __HistoryContext, generatePath, useLocation, useParams, withRouter
+// UNUSED EXPORTS: MemoryRouter, Prompt, Redirect, Route, StaticRouter, Switch, __HistoryContext, generatePath, useParams, withRouter
 
 // EXTERNAL MODULE: ./node_modules/react-router/node_modules/@babel/runtime/helpers/esm/inheritsLoose.js + 1 modules
 var inheritsLoose = __webpack_require__("./node_modules/react-router/node_modules/@babel/runtime/helpers/esm/inheritsLoose.js");
@@ -35287,60 +35601,39 @@ if (hasSymbols()) {
 /***/ }),
 
 /***/ "./src/RootComponents/Cart/index.js":
-/*!********************************************************!*\
-  !*** ./src/RootComponents/Cart/index.js + 125 modules ***!
-  \********************************************************/
+/*!*******************************************************!*\
+  !*** ./src/RootComponents/Cart/index.js + 65 modules ***!
+  \*******************************************************/
 /*! exports provided: default */
 /*! all exports used */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@adobe/apollo-link-mutation-queue/dist/index.js (<- Module is not an ECMAScript module) */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/cache/inmemory/inMemoryCache.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/core/ApolloClient.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/link/context/index.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/link/core/ApolloLink.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/link/error/index.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/link/http/createHttpLink.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/link/retry/retryLink.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/react/context/ApolloProvider.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/react/hooks/useApolloClient.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/react/hooks/useLazyQuery.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/react/hooks/useMutation.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/react/hooks/useQuery.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@formatjs/ecma402-abstract/lib/utils.js because of ./node_modules/@magento/peregrine/lib/Price/price.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@formatjs/icu-messageformat-parser/lib/index.js because of ./node_modules/@magento/peregrine/lib/Price/price.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@formatjs/intl/lib/src/error.js because of ./node_modules/@magento/peregrine/lib/Price/price.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@formatjs/intl/lib/src/utils.js because of ./node_modules/@magento/peregrine/lib/Price/price.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/Toasts/useToastContext.js because of ./node_modules/@magento/venia-ui/lib/components/CartPage/PriceAdjustments/CouponCode/couponCode.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/Toasts/useToasts.js because of ./node_modules/@magento/venia-ui/lib/components/CartPage/PriceAdjustments/CouponCode/couponCode.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/context/cart.js because of ./node_modules/@magento/peregrine/lib/talons/CartPage/PriceAdjustments/CouponCode/useCouponCode.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/context/eventing.js because of ./node_modules/@magento/peregrine/lib/talons/CartPage/ProductListing/EditModal/useProductForm.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/hooks/useEventListener.js because of ./node_modules/@magento/peregrine/lib/talons/CartPage/PriceAdjustments/CouponCode/useCouponCode.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/store/actions/app/actions.js because of ./node_modules/@magento/peregrine/lib/talons/CartPage/PriceAdjustments/CouponCode/useCouponCode.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/store/actions/app/asyncActions.js because of ./node_modules/@magento/peregrine/lib/talons/CartPage/PriceAdjustments/CouponCode/useCouponCode.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/store/actions/cart/actions.js because of ./node_modules/@magento/peregrine/lib/talons/CartPage/PriceAdjustments/CouponCode/useCouponCode.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/store/actions/checkout/actions.js because of ./node_modules/@magento/peregrine/lib/talons/CartPage/PriceAdjustments/CouponCode/useCouponCode.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/store/actions/checkout/asyncActions.js because of ./node_modules/@magento/peregrine/lib/talons/CartPage/PriceAdjustments/CouponCode/useCouponCode.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/store/actions/user/actions.js because of ./node_modules/@magento/peregrine/lib/talons/CartPage/PriceAdjustments/CouponCode/useCouponCode.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/store/actions/user/asyncActions.js because of ./node_modules/@magento/peregrine/lib/talons/CartPage/PriceAdjustments/CouponCode/useCouponCode.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/Toasts/useToasts.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/context/cart.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/context/eventing.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/context/user.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/hooks/useEventListener.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/talons/CartPage/PriceAdjustments/ShippingMethods/shippingMethodsFragments.gql.js because of ./node_modules/@magento/venia-ui/lib/components/CartPage/PriceAdjustments/ShippingMethods/shippingRadios.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/talons/CartPage/PriceSummary/priceSummaryFragments.gql.js because of ./node_modules/@magento/venia-ui/lib/components/CartPage/PriceAdjustments/ShippingMethods/shippingRadios.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/talons/CartPage/cartPageFragments.gql.js because of ./node_modules/@magento/venia-ui/lib/components/CartPage/PriceAdjustments/ShippingMethods/shippingRadios.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/bindActionCreators.js because of ./node_modules/@magento/peregrine/lib/talons/CartPage/PriceAdjustments/CouponCode/useCouponCode.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/talons/CartPage/PriceSummary/priceSummaryFragments.gql.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/talons/CartPage/cartPageFragments.gql.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/configuredVariant.js because of ./node_modules/@magento/venia-ui/lib/components/CartPage/ProductListing/EditModal/productDetail.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/deriveErrorMessage.js because of ./node_modules/@magento/venia-ui/lib/components/CartPage/PriceAdjustments/CouponCode/couponCode.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/deriveErrorMessage.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/makeUrl.js because of ./node_modules/@magento/venia-ui/lib/components/CartPage/ProductListing/EditModal/productDetail.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/shallowMerge.js because of ./node_modules/@magento/peregrine/lib/talons/CartPage/PriceAdjustments/CouponCode/useCouponCode.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/simplePersistence.js because of ./node_modules/@magento/peregrine/lib/talons/CartPage/PriceAdjustments/CouponCode/useCouponCode.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Button/button.js because of ./node_modules/@magento/venia-ui/lib/components/CartPage/PriceAdjustments/ShippingMethods/shippingMethods.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/shallowMerge.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Button/button.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Dialog/dialog.js because of ./node_modules/@magento/venia-ui/lib/components/CartPage/ProductListing/EditModal/productForm.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Field/field.js because of ./node_modules/@magento/venia-ui/lib/components/CartPage/PriceAdjustments/CouponCode/couponCode.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/FormError/formError.js because of ./node_modules/@magento/venia-ui/lib/components/CartPage/PriceAdjustments/ShippingMethods/shippingForm.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Icon/icon.js because of ./node_modules/@magento/venia-ui/lib/components/CartPage/GiftCards/giftCards.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Field/field.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/FormError/formError.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Head/index.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Icon/icon.js because of ./node_modules/@magento/venia-ui/lib/components/LoadingIndicator/spinner.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Image/image.js because of ./node_modules/@magento/venia-ui/lib/components/CartPage/ProductListing/EditModal/productDetail.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/LoadingIndicator/indicator.js because of ./node_modules/@magento/venia-ui/lib/components/CartPage/GiftCards/giftCards.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/LoadingIndicator/indicator.js because of ./node_modules/@magento/venia-ui/lib/components/CartPage/ProductListing/EditModal/productForm.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Price/price.js because of ./node_modules/@magento/venia-ui/lib/components/CartPage/PriceAdjustments/GiftOptions/giftOptions.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/QuantityStepper/quantityStepper.js because of ./node_modules/@magento/venia-ui/lib/components/CartPage/ProductListing/EditModal/productForm.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/TextInput/textInput.js because of ./node_modules/@magento/venia-ui/lib/components/CartPage/PriceAdjustments/CouponCode/couponCode.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/util/formValidators.js because of ./node_modules/@magento/venia-ui/lib/components/CartPage/PriceAdjustments/ShippingMethods/shippingForm.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/TextInput/textInput.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/util/formValidators.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-feather/dist/icons/alert-circle.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-feather/dist/icons/check.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-feather/dist/icons/chevron-down.js */
@@ -35350,10 +35643,10 @@ if (hasSymbols()) {
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-feather/dist/icons/info.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-feather/dist/icons/more-vertical.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-feather/dist/icons/trash.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-feather/dist/icons/x.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./src/talons/CartPage/ProductListing/productListingFragments.gql.js because of ./node_modules/@magento/venia-ui/lib/components/CartPage/PriceAdjustments/ShippingMethods/shippingRadios.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@react-aria/button/dist/module.js because of ./node_modules/@magento/venia-ui/lib/components/CartPage/PriceAdjustments/ShippingMethods/shippingMethods.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/apollo-cache-persist/index.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./src/components/Adapter/adapter.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./src/store.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./src/talons/CartPage/ProductListing/productListingFragments.gql.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@react-aria/button/dist/module.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/Accordion/accordion.module.css (<- Module uses module.id) */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/Accordion/section.module.css (<- Module uses module.id) */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/CartPage/PriceAdjustments/priceAdjustments.module.css (<- Module uses module.id) */
@@ -35371,41 +35664,17 @@ if (hasSymbols()) {
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/Wishlist/WishlistDialog/CreateWishlistForm/createWishlistForm.module.css (<- Module uses module.id) */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/Wishlist/WishlistDialog/WishlistLineItem/wishlistLineItem.module.css (<- Module uses module.id) */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/Wishlist/WishlistDialog/wishlistDialog.module.css (<- Module uses module.id) */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./src/components/Icon/icon.module.css (<- Module uses module.id) */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./src/components/ToastContainer/toast.module.css (<- Module uses module.id) */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./src/components/ToastContainer/toastContainer.module.css (<- Module uses module.id) */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql-tag/lib/index.js because of ./node_modules/@magento/venia-ui/lib/components/CartPage/PriceAdjustments/ShippingMethods/shippingRadios.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql/language/blockString.mjs because of ./node_modules/@apollo/client/link/http/selectHttpOptionsAndBody.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql/language/lexer.mjs because of ./node_modules/@magento/venia-ui/lib/components/CartPage/PriceAdjustments/ShippingMethods/shippingRadios.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql/language/source.mjs because of ./node_modules/@apollo/client/utilities/globals/fix-graphql.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql/language/tokenKind.mjs because of ./node_modules/@magento/venia-ui/lib/components/CartPage/PriceAdjustments/ShippingMethods/shippingRadios.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql-tag/lib/index.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/informed/dist/esm/index.js (<- Module uses injected variables (process)) */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/intl-messageformat/lib/src/core.js because of ./node_modules/@magento/peregrine/lib/Price/price.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/intl-messageformat/lib/src/error.js because of ./node_modules/@magento/peregrine/lib/Price/price.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/intl-messageformat/lib/src/formatters.js because of ./node_modules/@magento/peregrine/lib/Price/price.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/invariant/browser.js (<- Module is not an ECMAScript module) */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/lodash.get/index.js (<- Module is not an ECMAScript module) */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/lodash.set/index.js (<- Module is not an ECMAScript module) */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/prop-types/index.js (<- Module is not an ECMAScript module) */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-animate-height/lib/AnimateHeight.js (<- Module is not an ECMAScript module) */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-dom/index.js (<- Module is not an ECMAScript module) */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-fast-compare/index.js (<- Module is not an ECMAScript module) */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-helmet-async/node_modules/prop-types/index.js (<- Module is not an ECMAScript module) */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-intl/lib/src/components/injectIntl.js because of ./node_modules/@magento/peregrine/lib/Price/price.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-intl/lib/src/components/message.js because of ./node_modules/@magento/venia-ui/lib/components/CartPage/PriceAdjustments/CouponCode/couponCode.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-intl/lib/src/components/useIntl.js because of ./node_modules/@magento/peregrine/lib/Price/price.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-intl/lib/src/utils.js because of ./node_modules/@magento/peregrine/lib/Price/price.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-redux/es/index.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-intl/lib/src/components/message.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-intl/lib/src/components/useIntl.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-router-dom/esm/react-router-dom.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-router/esm/react-router.js because of ./node_modules/react-router-dom/esm/react-router-dom.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-router/esm/react-router.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react/index.js (<- Module is not an ECMAScript module) */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/redux-actions/es/createActions.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/redux-actions/es/handleActions.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/redux-thunk/es/index.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/redux/es/redux.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/shallowequal/index.js (<- Module is not an ECMAScript module) */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js (<- Module is not an ECMAScript module) */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/tslib/tslib.es6.js because of ./node_modules/@apollo/client/core/ApolloClient.js */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -35414,12 +35683,6 @@ __webpack_require__.r(__webpack_exports__);
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, "default", function() { return /* reexport */ Cart_cart; });
-
-// NAMESPACE OBJECT: ./node_modules/@magento/peregrine/lib/store/actions/catalog/asyncActions.js
-var asyncActions_namespaceObject = {};
-__webpack_require__.r(asyncActions_namespaceObject);
-__webpack_require__.d(asyncActions_namespaceObject, "setCurrentPage", function() { return setCurrentPage; });
-__webpack_require__.d(asyncActions_namespaceObject, "setPrevPageTotal", function() { return setPrevPageTotal; });
 
 // EXTERNAL MODULE: ./node_modules/react/index.js
 var react = __webpack_require__("./node_modules/react/index.js");
@@ -35440,7 +35703,7 @@ var check = __webpack_require__("./node_modules/react-feather/dist/icons/check.j
 // EXTERNAL MODULE: ./node_modules/@apollo/client/react/hooks/useLazyQuery.js
 var useLazyQuery = __webpack_require__("./node_modules/@apollo/client/react/hooks/useLazyQuery.js");
 
-// EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/context/cart.js + 1 modules
+// EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/context/cart.js
 var cart = __webpack_require__("./node_modules/@magento/peregrine/lib/context/cart.js");
 
 // EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/util/shallowMerge.js
@@ -35593,98 +35856,9 @@ var useToasts = __webpack_require__("./node_modules/@magento/peregrine/lib/Toast
 // EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/Icon/icon.js + 1 modules
 var Icon_icon = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/Icon/icon.js");
 
-// EXTERNAL MODULE: ./node_modules/@apollo/client/react/hooks/useQuery.js
-var useQuery = __webpack_require__("./node_modules/@apollo/client/react/hooks/useQuery.js");
+// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/Head/index.js
+var Head = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/Head/index.js");
 
-// EXTERNAL MODULE: ./node_modules/react-helmet-async/node_modules/prop-types/index.js
-var prop_types = __webpack_require__("./node_modules/react-helmet-async/node_modules/prop-types/index.js");
-var prop_types_default = /*#__PURE__*/__webpack_require__.n(prop_types);
-
-// EXTERNAL MODULE: ./node_modules/react-fast-compare/index.js
-var react_fast_compare = __webpack_require__("./node_modules/react-fast-compare/index.js");
-var react_fast_compare_default = /*#__PURE__*/__webpack_require__.n(react_fast_compare);
-
-// EXTERNAL MODULE: ./node_modules/invariant/browser.js
-var browser = __webpack_require__("./node_modules/invariant/browser.js");
-var browser_default = /*#__PURE__*/__webpack_require__.n(browser);
-
-// EXTERNAL MODULE: ./node_modules/shallowequal/index.js
-var shallowequal = __webpack_require__("./node_modules/shallowequal/index.js");
-var shallowequal_default = /*#__PURE__*/__webpack_require__.n(shallowequal);
-
-// CONCATENATED MODULE: ./node_modules/react-helmet-async/lib/index.module.js
-function a(){return a=Object.assign||function(t){for(var e=1;e<arguments.length;e++){var r=arguments[e];for(var n in r)Object.prototype.hasOwnProperty.call(r,n)&&(t[n]=r[n])}return t},a.apply(this,arguments)}function s(t,e){t.prototype=Object.create(e.prototype),t.prototype.constructor=t,c(t,e)}function c(t,e){return c=Object.setPrototypeOf||function(t,e){return t.__proto__=e,t},c(t,e)}function u(t,e){if(null==t)return{};var r,n,i={},o=Object.keys(t);for(n=0;n<o.length;n++)e.indexOf(r=o[n])>=0||(i[r]=t[r]);return i}var l={BASE:"base",BODY:"body",HEAD:"head",HTML:"html",LINK:"link",META:"meta",NOSCRIPT:"noscript",SCRIPT:"script",STYLE:"style",TITLE:"title",FRAGMENT:"Symbol(react.fragment)"},p={rel:["amphtml","canonical","alternate"]},f={type:["application/ld+json"]},d={charset:"",name:["robots","description"],property:["og:type","og:title","og:url","og:image","og:image:alt","og:description","twitter:url","twitter:title","twitter:description","twitter:image","twitter:image:alt","twitter:card","twitter:site"]},h=Object.keys(l).map(function(t){return l[t]}),m={accesskey:"accessKey",charset:"charSet",class:"className",contenteditable:"contentEditable",contextmenu:"contextMenu","http-equiv":"httpEquiv",itemprop:"itemProp",tabindex:"tabIndex"},y=Object.keys(m).reduce(function(t,e){return t[m[e]]=e,t},{}),T=function(t,e){for(var r=t.length-1;r>=0;r-=1){var n=t[r];if(Object.prototype.hasOwnProperty.call(n,e))return n[e]}return null},g=function(t){var e=T(t,l.TITLE),r=T(t,"titleTemplate");if(Array.isArray(e)&&(e=e.join("")),r&&e)return r.replace(/%s/g,function(){return e});var n=T(t,"defaultTitle");return e||n||void 0},b=function(t){return T(t,"onChangeClientState")||function(){}},index_module_v=function(t,e){return e.filter(function(e){return void 0!==e[t]}).map(function(e){return e[t]}).reduce(function(t,e){return a({},t,e)},{})},A=function(t,e){return e.filter(function(t){return void 0!==t[l.BASE]}).map(function(t){return t[l.BASE]}).reverse().reduce(function(e,r){if(!e.length)for(var n=Object.keys(r),i=0;i<n.length;i+=1){var o=n[i].toLowerCase();if(-1!==t.indexOf(o)&&r[o])return e.concat(r)}return e},[])},C=function(t,e,r){var n={};return r.filter(function(e){return!!Array.isArray(e[t])||(void 0!==e[t]&&console&&"function"==typeof console.warn&&console.warn("Helmet: "+t+' should be of type "Array". Instead found type "'+typeof e[t]+'"'),!1)}).map(function(e){return e[t]}).reverse().reduce(function(t,r){var i={};r.filter(function(t){for(var r,o=Object.keys(t),a=0;a<o.length;a+=1){var s=o[a],c=s.toLowerCase();-1===e.indexOf(c)||"rel"===r&&"canonical"===t[r].toLowerCase()||"rel"===c&&"stylesheet"===t[c].toLowerCase()||(r=c),-1===e.indexOf(s)||"innerHTML"!==s&&"cssText"!==s&&"itemprop"!==s||(r=s)}if(!r||!t[r])return!1;var u=t[r].toLowerCase();return n[r]||(n[r]={}),i[r]||(i[r]={}),!n[r][u]&&(i[r][u]=!0,!0)}).reverse().forEach(function(e){return t.push(e)});for(var o=Object.keys(i),s=0;s<o.length;s+=1){var c=o[s],u=a({},n[c],i[c]);n[c]=u}return t},[]).reverse()},O=function(t,e){if(Array.isArray(t)&&t.length)for(var r=0;r<t.length;r+=1)if(t[r][e])return!0;return!1},S=function(t){return Array.isArray(t)?t.join(""):t},E=function(t,e){return Array.isArray(t)?t.reduce(function(t,r){return function(t,e){for(var r=Object.keys(t),n=0;n<r.length;n+=1)if(e[r[n]]&&e[r[n]].includes(t[r[n]]))return!0;return!1}(r,e)?t.priority.push(r):t.default.push(r),t},{priority:[],default:[]}):{default:t}},I=function(t,e){var r;return a({},t,((r={})[e]=void 0,r))},P=[l.NOSCRIPT,l.SCRIPT,l.STYLE],w=function(t,e){return void 0===e&&(e=!0),!1===e?String(t):String(t).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/'/g,"&#x27;")},x=function(t){return Object.keys(t).reduce(function(e,r){var n=void 0!==t[r]?r+'="'+t[r]+'"':""+r;return e?e+" "+n:n},"")},L=function(t,e){return void 0===e&&(e={}),Object.keys(t).reduce(function(e,r){return e[m[r]||r]=t[r],e},e)},j=function(e,r){return r.map(function(r,n){var i,o=((i={key:n})["data-rh"]=!0,i);return Object.keys(r).forEach(function(t){var e=m[t]||t;"innerHTML"===e||"cssText"===e?o.dangerouslySetInnerHTML={__html:r.innerHTML||r.cssText}:o[e]=r[t]}),react_default.a.createElement(e,o)})},M=function(e,r,n){switch(e){case l.TITLE:return{toComponent:function(){return n=r.titleAttributes,(i={key:e=r.title})["data-rh"]=!0,o=L(n,i),[react_default.a.createElement(l.TITLE,o,e)];var e,n,i,o},toString:function(){return function(t,e,r,n){var i=x(r),o=S(e);return i?"<"+t+' data-rh="true" '+i+">"+w(o,n)+"</"+t+">":"<"+t+' data-rh="true">'+w(o,n)+"</"+t+">"}(e,r.title,r.titleAttributes,n)}};case"bodyAttributes":case"htmlAttributes":return{toComponent:function(){return L(r)},toString:function(){return x(r)}};default:return{toComponent:function(){return j(e,r)},toString:function(){return function(t,e,r){return e.reduce(function(e,n){var i=Object.keys(n).filter(function(t){return!("innerHTML"===t||"cssText"===t)}).reduce(function(t,e){var i=void 0===n[e]?e:e+'="'+w(n[e],r)+'"';return t?t+" "+i:i},""),o=n.innerHTML||n.cssText||"",a=-1===P.indexOf(t);return e+"<"+t+' data-rh="true" '+i+(a?"/>":">"+o+"</"+t+">")},"")}(e,r,n)}}}},index_module_k=function(t){var e=t.baseTag,r=t.bodyAttributes,n=t.encode,i=t.htmlAttributes,o=t.noscriptTags,a=t.styleTags,s=t.title,c=void 0===s?"":s,u=t.titleAttributes,h=t.linkTags,m=t.metaTags,y=t.scriptTags,T={toComponent:function(){},toString:function(){return""}};if(t.prioritizeSeoTags){var g=function(t){var e=t.linkTags,r=t.scriptTags,n=t.encode,i=E(t.metaTags,d),o=E(e,p),a=E(r,f);return{priorityMethods:{toComponent:function(){return[].concat(j(l.META,i.priority),j(l.LINK,o.priority),j(l.SCRIPT,a.priority))},toString:function(){return M(l.META,i.priority,n)+" "+M(l.LINK,o.priority,n)+" "+M(l.SCRIPT,a.priority,n)}},metaTags:i.default,linkTags:o.default,scriptTags:a.default}}(t);T=g.priorityMethods,h=g.linkTags,m=g.metaTags,y=g.scriptTags}return{priority:T,base:M(l.BASE,e,n),bodyAttributes:M("bodyAttributes",r,n),htmlAttributes:M("htmlAttributes",i,n),link:M(l.LINK,h,n),meta:M(l.META,m,n),noscript:M(l.NOSCRIPT,o,n),script:M(l.SCRIPT,y,n),style:M(l.STYLE,a,n),title:M(l.TITLE,{title:c,titleAttributes:u},n)}},H=[],N=function(t,e){var r=this;void 0===e&&(e="undefined"!=typeof document),this.instances=[],this.value={setHelmet:function(t){r.context.helmet=t},helmetInstances:{get:function(){return r.canUseDOM?H:r.instances},add:function(t){(r.canUseDOM?H:r.instances).push(t)},remove:function(t){var e=(r.canUseDOM?H:r.instances).indexOf(t);(r.canUseDOM?H:r.instances).splice(e,1)}}},this.context=t,this.canUseDOM=e,e||(t.helmet=index_module_k({baseTag:[],bodyAttributes:{},encodeSpecialCharacters:!0,htmlAttributes:{},linkTags:[],metaTags:[],noscriptTags:[],scriptTags:[],styleTags:[],title:"",titleAttributes:{}}))},R=react_default.a.createContext({}),D=prop_types_default.a.shape({setHelmet:prop_types_default.a.func,helmetInstances:prop_types_default.a.shape({get:prop_types_default.a.func,add:prop_types_default.a.func,remove:prop_types_default.a.func})}),U="undefined"!=typeof document,q=/*#__PURE__*/function(e){function r(t){var n;return(n=e.call(this,t)||this).helmetData=new N(n.props.context,r.canUseDOM),n}return s(r,e),r.prototype.render=function(){/*#__PURE__*/return react_default.a.createElement(R.Provider,{value:this.helmetData.value},this.props.children)},r}(react["Component"]);q.canUseDOM=U,q.propTypes={context:prop_types_default.a.shape({helmet:prop_types_default.a.shape()}),children:prop_types_default.a.node.isRequired},q.defaultProps={context:{}},q.displayName="HelmetProvider";var Y=function(t,e){var r,n=document.head||document.querySelector(l.HEAD),i=n.querySelectorAll(t+"[data-rh]"),o=[].slice.call(i),a=[];return e&&e.length&&e.forEach(function(e){var n=document.createElement(t);for(var i in e)Object.prototype.hasOwnProperty.call(e,i)&&("innerHTML"===i?n.innerHTML=e.innerHTML:"cssText"===i?n.styleSheet?n.styleSheet.cssText=e.cssText:n.appendChild(document.createTextNode(e.cssText)):n.setAttribute(i,void 0===e[i]?"":e[i]));n.setAttribute("data-rh","true"),o.some(function(t,e){return r=e,n.isEqualNode(t)})?o.splice(r,1):a.push(n)}),o.forEach(function(t){return t.parentNode.removeChild(t)}),a.forEach(function(t){return n.appendChild(t)}),{oldTags:o,newTags:a}},B=function(t,e){var r=document.getElementsByTagName(t)[0];if(r){for(var n=r.getAttribute("data-rh"),i=n?n.split(","):[],o=[].concat(i),a=Object.keys(e),s=0;s<a.length;s+=1){var c=a[s],u=e[c]||"";r.getAttribute(c)!==u&&r.setAttribute(c,u),-1===i.indexOf(c)&&i.push(c);var l=o.indexOf(c);-1!==l&&o.splice(l,1)}for(var p=o.length-1;p>=0;p-=1)r.removeAttribute(o[p]);i.length===o.length?r.removeAttribute("data-rh"):r.getAttribute("data-rh")!==a.join(",")&&r.setAttribute("data-rh",a.join(","))}},K=function(t,e){var r=t.baseTag,n=t.htmlAttributes,i=t.linkTags,o=t.metaTags,a=t.noscriptTags,s=t.onChangeClientState,c=t.scriptTags,u=t.styleTags,p=t.title,f=t.titleAttributes;B(l.BODY,t.bodyAttributes),B(l.HTML,n),function(t,e){void 0!==t&&document.title!==t&&(document.title=S(t)),B(l.TITLE,e)}(p,f);var d={baseTag:Y(l.BASE,r),linkTags:Y(l.LINK,i),metaTags:Y(l.META,o),noscriptTags:Y(l.NOSCRIPT,a),scriptTags:Y(l.SCRIPT,c),styleTags:Y(l.STYLE,u)},h={},m={};Object.keys(d).forEach(function(t){var e=d[t],r=e.newTags,n=e.oldTags;r.length&&(h[t]=r),n.length&&(m[t]=d[t].oldTags)}),e&&e(),s(t,h,m)},_=null,z=/*#__PURE__*/function(t){function e(){for(var e,r=arguments.length,n=new Array(r),i=0;i<r;i++)n[i]=arguments[i];return(e=t.call.apply(t,[this].concat(n))||this).rendered=!1,e}s(e,t);var r=e.prototype;return r.shouldComponentUpdate=function(t){return!shallowequal_default()(t,this.props)},r.componentDidUpdate=function(){this.emitChange()},r.componentWillUnmount=function(){this.props.context.helmetInstances.remove(this),this.emitChange()},r.emitChange=function(){var t,e,r=this.props.context,n=r.setHelmet,i=null,o=(t=r.helmetInstances.get().map(function(t){var e=a({},t.props);return delete e.context,e}),{baseTag:A(["href"],t),bodyAttributes:index_module_v("bodyAttributes",t),defer:T(t,"defer"),encode:T(t,"encodeSpecialCharacters"),htmlAttributes:index_module_v("htmlAttributes",t),linkTags:C(l.LINK,["rel","href"],t),metaTags:C(l.META,["name","charset","http-equiv","property","itemprop"],t),noscriptTags:C(l.NOSCRIPT,["innerHTML"],t),onChangeClientState:b(t),scriptTags:C(l.SCRIPT,["src","innerHTML"],t),styleTags:C(l.STYLE,["cssText"],t),title:g(t),titleAttributes:index_module_v("titleAttributes",t),prioritizeSeoTags:O(t,"prioritizeSeoTags")});q.canUseDOM?(e=o,_&&cancelAnimationFrame(_),e.defer?_=requestAnimationFrame(function(){K(e,function(){_=null})}):(K(e),_=null)):index_module_k&&(i=index_module_k(o)),n(i)},r.init=function(){this.rendered||(this.rendered=!0,this.props.context.helmetInstances.add(this),this.emitChange())},r.render=function(){return this.init(),null},e}(react["Component"]);z.propTypes={context:D.isRequired},z.displayName="HelmetDispatcher";var F=["children"],G=["children"],W=/*#__PURE__*/function(e){function r(){return e.apply(this,arguments)||this}s(r,e);var o=r.prototype;return o.shouldComponentUpdate=function(t){return!react_fast_compare_default()(I(this.props,"helmetData"),I(t,"helmetData"))},o.mapNestedChildrenToProps=function(t,e){if(!e)return null;switch(t.type){case l.SCRIPT:case l.NOSCRIPT:return{innerHTML:e};case l.STYLE:return{cssText:e};default:throw new Error("<"+t.type+" /> elements are self-closing and can not contain children. Refer to our API for more information.")}},o.flattenArrayTypeChildren=function(t){var e,r=t.child,n=t.arrayTypeChildren;return a({},n,((e={})[r.type]=[].concat(n[r.type]||[],[a({},t.newChildProps,this.mapNestedChildrenToProps(r,t.nestedChildren))]),e))},o.mapObjectTypeChildren=function(t){var e,r,n=t.child,i=t.newProps,o=t.newChildProps,s=t.nestedChildren;switch(n.type){case l.TITLE:return a({},i,((e={})[n.type]=s,e.titleAttributes=a({},o),e));case l.BODY:return a({},i,{bodyAttributes:a({},o)});case l.HTML:return a({},i,{htmlAttributes:a({},o)});default:return a({},i,((r={})[n.type]=a({},o),r))}},o.mapArrayTypeChildrenToProps=function(t,e){var r=a({},e);return Object.keys(t).forEach(function(e){var n;r=a({},r,((n={})[e]=t[e],n))}),r},o.warnOnInvalidChildren=function(t,e){return browser_default()(h.some(function(e){return t.type===e}),"function"==typeof t.type?"You may be attempting to nest <Helmet> components within each other, which is not allowed. Refer to our API for more information.":"Only elements types "+h.join(", ")+" are allowed. Helmet does not support rendering <"+t.type+"> elements. Refer to our API for more information."),browser_default()(!e||"string"==typeof e||Array.isArray(e)&&!e.some(function(t){return"string"!=typeof t}),"Helmet expects a string as a child of <"+t.type+">. Did you forget to wrap your children in braces? ( <"+t.type+">{``}</"+t.type+"> ) Refer to our API for more information."),!0},o.mapChildrenToProps=function(e,r){var n=this,i={};return react_default.a.Children.forEach(e,function(t){if(t&&t.props){var e=t.props,o=e.children,a=u(e,F),s=Object.keys(a).reduce(function(t,e){return t[y[e]||e]=a[e],t},{}),c=t.type;switch("symbol"==typeof c?c=c.toString():n.warnOnInvalidChildren(t,o),c){case l.FRAGMENT:r=n.mapChildrenToProps(o,r);break;case l.LINK:case l.META:case l.NOSCRIPT:case l.SCRIPT:case l.STYLE:i=n.flattenArrayTypeChildren({child:t,arrayTypeChildren:i,newChildProps:s,nestedChildren:o});break;default:r=n.mapObjectTypeChildren({child:t,newProps:r,newChildProps:s,nestedChildren:o})}}}),this.mapArrayTypeChildrenToProps(i,r)},o.render=function(){var e=this.props,r=e.children,n=u(e,G),i=a({},n),o=n.helmetData;return r&&(i=this.mapChildrenToProps(r,i)),!o||o instanceof N||(o=new N(o.context,o.instances)),o?/*#__PURE__*/react_default.a.createElement(z,a({},i,{context:o.value,helmetData:void 0})):/*#__PURE__*/react_default.a.createElement(R.Consumer,null,function(e){/*#__PURE__*/return react_default.a.createElement(z,a({},i,{context:e}))})},r}(react["Component"]);W.propTypes={base:prop_types_default.a.object,bodyAttributes:prop_types_default.a.object,children:prop_types_default.a.oneOfType([prop_types_default.a.arrayOf(prop_types_default.a.node),prop_types_default.a.node]),defaultTitle:prop_types_default.a.string,defer:prop_types_default.a.bool,encodeSpecialCharacters:prop_types_default.a.bool,htmlAttributes:prop_types_default.a.object,link:prop_types_default.a.arrayOf(prop_types_default.a.object),meta:prop_types_default.a.arrayOf(prop_types_default.a.object),noscript:prop_types_default.a.arrayOf(prop_types_default.a.object),onChangeClientState:prop_types_default.a.func,script:prop_types_default.a.arrayOf(prop_types_default.a.object),style:prop_types_default.a.arrayOf(prop_types_default.a.object),title:prop_types_default.a.string,titleAttributes:prop_types_default.a.object,titleTemplate:prop_types_default.a.string,prioritizeSeoTags:prop_types_default.a.bool,helmetData:prop_types_default.a.object},W.defaultProps={defer:!0,encodeSpecialCharacters:!0,prioritizeSeoTags:!1},W.displayName="Helmet";
-//# sourceMappingURL=index.module.js.map
-
-// CONCATENATED MODULE: ./node_modules/@magento/venia-ui/lib/components/Head/index.js
-const _excluded = ["children"],
-  _excluded2 = ["children"],
-  _excluded3 = ["children"],
-  _excluded4 = ["children"],
-  _excluded5 = ["children"];
-function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
-function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-
-
-
-
-W.defaultProps.defer = false;
-const Link = props => {
-  const {
-      children
-    } = props,
-    tagProps = _objectWithoutProperties(props, _excluded);
-  return /*#__PURE__*/react_default.a.createElement(W, null, /*#__PURE__*/react_default.a.createElement("link", tagProps, children));
-};
-const Meta = props => {
-  const {
-      children
-    } = props,
-    tagProps = _objectWithoutProperties(props, _excluded2);
-  return /*#__PURE__*/react_default.a.createElement(W, null, /*#__PURE__*/react_default.a.createElement("meta", tagProps, children));
-};
-const Style = props => {
-  const {
-      children
-    } = props,
-    tagProps = _objectWithoutProperties(props, _excluded3);
-  return /*#__PURE__*/react_default.a.createElement(W, null, /*#__PURE__*/react_default.a.createElement("style", tagProps, children));
-};
-const Title = props => {
-  const {
-      children
-    } = props,
-    tagProps = _objectWithoutProperties(props, _excluded4);
-  return /*#__PURE__*/react_default.a.createElement(W, null, /*#__PURE__*/react_default.a.createElement("title", tagProps, children));
-};
-const STORE_NAME_QUERY = lib["a" /* gql */]`
-    query getStoreName {
-        # eslint-disable-next-line @graphql-eslint/require-id-when-available
-        storeConfig {
-            store_code
-            store_name
-        }
-    }
-`;
-const StoreTitle = props => {
-  const {
-      children
-    } = props,
-    tagProps = _objectWithoutProperties(props, _excluded5);
-  const {
-    data: storeNameData
-  } = Object(useQuery["a" /* useQuery */])(STORE_NAME_QUERY);
-  const storeName = Object(react["useMemo"])(() => {
-    return storeNameData ? storeNameData.storeConfig.store_name : "Maidenform Store View";
-  }, [storeNameData]);
-  let titleText;
-  if (children) {
-    titleText = `${children} - ${storeName}`;
-  } else {
-    titleText = storeName;
-  }
-  return /*#__PURE__*/react_default.a.createElement(W, null, /*#__PURE__*/react_default.a.createElement("title", tagProps, titleText));
-};
 // EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/LoadingIndicator/indicator.js + 1 modules
 var indicator = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/LoadingIndicator/indicator.js");
 
@@ -35700,7 +35874,7 @@ const staticIndicator = /*#__PURE__*/react_default.a.createElement(indicator["a"
 }));
 /* harmony default export */ var LoadingIndicator_static = (staticIndicator);
 // EXTERNAL MODULE: ./node_modules/prop-types/index.js
-var node_modules_prop_types = __webpack_require__("./node_modules/prop-types/index.js");
+var prop_types = __webpack_require__("./node_modules/prop-types/index.js");
 
 // CONCATENATED MODULE: ./node_modules/@magento/peregrine/lib/talons/StockStatusMessage/useStockStatusMessage.js
 
@@ -35781,13 +35955,13 @@ StockStatusMessage.defaultProps = {
   message: 'An item in your cart is currently out-of-stock and must be removed in order to Checkout.'
 };
 StockStatusMessage.propTypes = {
-  cartItems: Object(node_modules_prop_types["arrayOf"])(Object(node_modules_prop_types["shape"])({
-    product: Object(node_modules_prop_types["shape"])({
-      stock_status: node_modules_prop_types["string"]
+  cartItems: Object(prop_types["arrayOf"])(Object(prop_types["shape"])({
+    product: Object(prop_types["shape"])({
+      stock_status: prop_types["string"]
     })
   })),
-  messageId: node_modules_prop_types["string"],
-  message: node_modules_prop_types["node"]
+  messageId: prop_types["string"],
+  message: prop_types["node"]
 };
 // CONCATENATED MODULE: ./node_modules/@magento/peregrine/lib/talons/Accordion/useAccordion.js
 
@@ -35928,10 +36102,10 @@ var section_module_update = injectStylesIntoStyleTag_default()(section_module["a
 
 /* harmony default export */ var Accordion_section_module = (section_module["a" /* default */].locals || {});
 // CONCATENATED MODULE: ./node_modules/@magento/venia-ui/lib/components/Accordion/section.js
-const section_excluded = ["children", "id", "title"];
+const _excluded = ["children", "id", "title"];
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-function section_objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = section_objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
-function section_objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
 
 
@@ -35944,7 +36118,7 @@ const Section = props => {
       id,
       title
     } = props,
-    restProps = section_objectWithoutProperties(props, section_excluded);
+    restProps = _objectWithoutProperties(props, _excluded);
 
   // Remove isOpen from restProps to avoid having it in the root container
   delete restProps.isOpen;
@@ -36005,6 +36179,9 @@ const GiftCardSection = props => {
   })));
 };
 /* harmony default export */ var giftCardSection_ee = (GiftCardSection);
+// EXTERNAL MODULE: ./node_modules/@apollo/client/react/hooks/useQuery.js
+var useQuery = __webpack_require__("./node_modules/@apollo/client/react/hooks/useQuery.js");
+
 // CONCATENATED MODULE: ./node_modules/@magento/peregrine/lib/talons/CartPage/PriceAdjustments/giftOptionsSection.gql.js
 
 const GET_GIFT_OPTIONS_CONFIG = lib["a" /* gql */]`
@@ -36197,7 +36374,7 @@ const PriceAdjustments = props => {
 };
 /* harmony default export */ var PriceAdjustments_priceAdjustments = (PriceAdjustments);
 PriceAdjustments.propTypes = {
-  setIsCartUpdating: node_modules_prop_types["func"]
+  setIsCartUpdating: prop_types["func"]
 };
 // EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/Price/price.js
 var Price_price = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/Price/price.js");
@@ -36281,7 +36458,7 @@ const usePriceSummary = (props = {}) => {
   }] = Object(cart["b" /* useCartContext */])();
   const history = Object(react_router["d" /* useHistory */])();
   // We don't want to display "Estimated" or the "Proceed" button in checkout.
-  const match = Object(react_router["e" /* useRouteMatch */])('/checkout');
+  const match = Object(react_router["f" /* useRouteMatch */])('/checkout');
   const isCheckout = !!match;
   const {
     error,
@@ -37472,12 +37649,12 @@ const Kebab = props => {
   }, children));
 };
 Kebab.propTypes = {
-  children: node_modules_prop_types["node"],
-  classes: Object(node_modules_prop_types["shape"])({
-    dropdown: node_modules_prop_types["string"],
-    dropdown_active: node_modules_prop_types["string"],
-    kebab: node_modules_prop_types["string"],
-    root: node_modules_prop_types["string"]
+  children: prop_types["node"],
+  classes: Object(prop_types["shape"])({
+    dropdown: prop_types["string"],
+    dropdown_active: prop_types["string"],
+    kebab: prop_types["string"],
+    root: prop_types["string"]
   })
 };
 /* harmony default export */ var kebab = (Kebab);
@@ -37532,9 +37709,9 @@ const ProductOptions = props => {
   }, displayOptions);
 };
 ProductOptions.propTypes = {
-  options: Object(node_modules_prop_types["arrayOf"])(Object(node_modules_prop_types["shape"])({
-    label: node_modules_prop_types["string"],
-    value: node_modules_prop_types["string"]
+  options: Object(prop_types["arrayOf"])(Object(prop_types["shape"])({
+    label: prop_types["string"],
+    value: prop_types["string"]
   }))
 };
 /* harmony default export */ var productOptions = (ProductOptions);
@@ -37565,10 +37742,10 @@ var LegacyMiniCart_section_module_update = injectStylesIntoStyleTag_default()(Le
 var dist_module = __webpack_require__("./node_modules/@react-aria/button/dist/module.js");
 
 // CONCATENATED MODULE: ./node_modules/@magento/venia-ui/lib/components/LegacyMiniCart/section.js
-const LegacyMiniCart_section_excluded = ["icon", "isFilled", "onClick", "text", "classes"];
+const section_excluded = ["icon", "isFilled", "onClick", "text", "classes"];
 function section_extends() { section_extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return section_extends.apply(this, arguments); }
-function LegacyMiniCart_section_objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = LegacyMiniCart_section_objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
-function LegacyMiniCart_section_objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+function section_objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = section_objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+function section_objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
 
 
@@ -37585,7 +37762,7 @@ const section_Section = props => {
       text,
       classes: propClasses
     } = props,
-    restProps = LegacyMiniCart_section_objectWithoutProperties(props, LegacyMiniCart_section_excluded);
+    restProps = section_objectWithoutProperties(props, section_excluded);
   const classes = Object(shallowMerge["a" /* default */])(components_LegacyMiniCart_section_module, propClasses);
   const iconClasses = {
     root: classes.icon
@@ -37618,127 +37795,25 @@ const section_Section = props => {
   }, text)));
 };
 section_Section.propTypes = {
-  classes: Object(node_modules_prop_types["shape"])({
-    button: node_modules_prop_types["string"],
-    icon: node_modules_prop_types["string"],
-    icon_filled: node_modules_prop_types["string"],
-    menuItem: node_modules_prop_types["string"],
-    text: node_modules_prop_types["string"]
+  classes: Object(prop_types["shape"])({
+    button: prop_types["string"],
+    icon: prop_types["string"],
+    icon_filled: prop_types["string"],
+    menuItem: prop_types["string"],
+    text: prop_types["string"]
   }),
-  icon: Object(node_modules_prop_types["oneOf"])(['Edit2', 'Heart', 'Trash']),
-  isFilled: node_modules_prop_types["bool"],
-  onClick: node_modules_prop_types["func"],
-  text: node_modules_prop_types["string"]
+  icon: Object(prop_types["oneOf"])(['Edit2', 'Heart', 'Trash']),
+  isFilled: prop_types["bool"],
+  onClick: prop_types["func"],
+  text: prop_types["string"]
 };
 /* harmony default export */ var LegacyMiniCart_section = (section_Section);
 // EXTERNAL MODULE: ./node_modules/@apollo/client/react/hooks/useApolloClient.js
 var useApolloClient = __webpack_require__("./node_modules/@apollo/client/react/hooks/useApolloClient.js");
 
-// EXTERNAL MODULE: ./node_modules/react-redux/es/index.js + 26 modules
-var es = __webpack_require__("./node_modules/react-redux/es/index.js");
+// EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/context/user.js
+var user = __webpack_require__("./node_modules/@magento/peregrine/lib/context/user.js");
 
-// EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/store/actions/user/actions.js
-var user_actions = __webpack_require__("./node_modules/@magento/peregrine/lib/store/actions/user/actions.js");
-
-// EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/store/actions/user/asyncActions.js
-var user_asyncActions = __webpack_require__("./node_modules/@magento/peregrine/lib/store/actions/user/asyncActions.js");
-
-// EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/util/bindActionCreators.js
-var bindActionCreators = __webpack_require__("./node_modules/@magento/peregrine/lib/util/bindActionCreators.js");
-
-// EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/util/simplePersistence.js
-var simplePersistence = __webpack_require__("./node_modules/@magento/peregrine/lib/util/simplePersistence.js");
-
-// CONCATENATED MODULE: ./node_modules/@magento/peregrine/lib/context/user.js
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
-function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return typeof key === "symbol" ? key : String(key); }
-function _toPrimitive(input, hint) { if (typeof input !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (typeof res !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
-
-
-
-
-
-
-const UserContext = Object(react["createContext"])();
-const UserContextProvider = props => {
-  const {
-    actions,
-    asyncActions,
-    children,
-    userState
-  } = props;
-  const userApi = Object(react["useMemo"])(() => _objectSpread({
-    actions
-  }, asyncActions), [actions, asyncActions]);
-  const contextValue = Object(react["useMemo"])(() => [userState, userApi], [userApi, userState]);
-  Object(react["useEffect"])(() => {
-    // check if the user's token is not expired
-    const storage = new simplePersistence["a" /* default */]();
-    const item = storage.getRawItem('signin_token');
-    if (item) {
-      const {
-        ttl,
-        timeStored
-      } = JSON.parse(item);
-      const now = Date.now();
-
-      // if the token's TTYL has expired, we need to sign out
-      if (ttl && now - timeStored > ttl * 1000) {
-        asyncActions.signOut();
-      }
-    }
-  }, [asyncActions]);
-  return /*#__PURE__*/react_default.a.createElement(UserContext.Provider, {
-    value: contextValue
-  }, children);
-};
-const mapStateToProps = ({
-  user
-}) => ({
-  userState: user
-});
-const mapDispatchToProps = dispatch => ({
-  actions: Object(bindActionCreators["a" /* default */])(user_actions["a" /* default */], dispatch),
-  asyncActions: Object(bindActionCreators["a" /* default */])(user_asyncActions, dispatch)
-});
-/* harmony default export */ var user = (Object(es["b" /* connect */])(mapStateToProps, mapDispatchToProps)(UserContextProvider));
-
-/**
- * @typedef {Object} UserState
- *
- * @property {CurrentUser} currentUser Current user details
- * @property {Error} getDetailsError Get Details call related error
- * @property {Boolean} isGettingDetails Boolean if true indicates that user details are being fetched. False otherwise.
- * @property {Boolean} isResettingPassword Deprecated
- * @property {Boolean} isSignedIn Boolean if true indicates that the user is signed in. False otherwise.
- * @property {Error} resetPasswordError Deprecated
- *
- */
-
-/**
- * @typedef {Object} CurrentUser
- *
- * @property {String} email Current user's email
- * @property {String} firstname Current user's first name
- * @property {String} lastname Current user's last name
- */
-
-/**
- * @typedef {Object} UserActions
- *
- * @property {Function} clearToken Callback to clear user token in browser persistence storage
- * @property {Function} getUserDetails Callback to get user details
- * @property {Function} resetPassword Deprecated
- * @property {Function} setToken Callback to set user token in browser persistence storage
- * @property {Function} signOut Callback to sign the user out
- */
-
-/**
- * @returns {[UserState, UserActions]}
- */
-const useUserContext = () => Object(react["useContext"])(UserContext);
 // CONCATENATED MODULE: ./node_modules/@magento/peregrine/lib/talons/Wishlist/AddToListButton/addToListButton.gql.js
 
 const ADD_TO_WISHLIST = lib["a" /* gql */]`
@@ -37800,7 +37875,7 @@ const useSingleWishlist = props => {
   } = Object(useIntl["a" /* default */])();
   const [{
     isSignedIn
-  }] = useUserContext();
+  }] = Object(user["b" /* useUserContext */])();
   const handleClick = Object(react["useCallback"])(async () => {
     if (!isSignedIn) {
       setShowLoginToast(current => ++current);
@@ -37889,11 +37964,11 @@ const useSingleWishlist = props => {
   };
 };
 // CONCATENATED MODULE: ./node_modules/@magento/peregrine/lib/talons/Wishlist/AddToListButton/useAddToListButton.ee.js
-function useAddToListButton_ee_ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
-function useAddToListButton_ee_objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? useAddToListButton_ee_ownKeys(Object(source), !0).forEach(function (key) { useAddToListButton_ee_defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : useAddToListButton_ee_ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
-function useAddToListButton_ee_defineProperty(obj, key, value) { key = useAddToListButton_ee_toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-function useAddToListButton_ee_toPropertyKey(arg) { var key = useAddToListButton_ee_toPrimitive(arg, "string"); return typeof key === "symbol" ? key : String(key); }
-function useAddToListButton_ee_toPrimitive(input, hint) { if (typeof input !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (typeof res !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
+function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return typeof key === "symbol" ? key : String(key); }
+function _toPrimitive(input, hint) { if (typeof input !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (typeof res !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
 
 
 
@@ -37911,7 +37986,7 @@ const useAddToListButton = props => {
   const [successToastName, setSuccessToastName] = Object(react["useState"])();
   const [{
     isSignedIn
-  }] = useUserContext();
+  }] = Object(user["b" /* useUserContext */])();
   const {
     formatMessage
   } = Object(useIntl["a" /* default */])();
@@ -37920,7 +37995,7 @@ const useAddToListButton = props => {
   const buttonProps = Object(react["useMemo"])(() => {
     const singleButtonProps = singleWishlistProps.buttonProps;
     if (storeConfig.enable_multiple_wishlists === '1' && isSignedIn) {
-      return useAddToListButton_ee_objectSpread(useAddToListButton_ee_objectSpread({}, singleButtonProps), {}, {
+      return _objectSpread(_objectSpread({}, singleButtonProps), {}, {
         'aria-haspopup': 'dialog',
         onPress: () => {
           setIsModalOpen(true);
@@ -37974,7 +38049,7 @@ const useAddToListButton = props => {
     }
     return singleWishlistProps.successToastProps;
   }, [singleWishlistProps.successToastProps, formatMessage, successToastName]);
-  return useAddToListButton_ee_objectSpread(useAddToListButton_ee_objectSpread({}, singleWishlistProps), {}, {
+  return _objectSpread(_objectSpread({}, singleWishlistProps), {}, {
     buttonProps,
     modalProps,
     successToastProps
@@ -38268,17 +38343,17 @@ const CreateWishlistForm = props => {
 };
 /* harmony default export */ var createWishlistForm = (CreateWishlistForm);
 CreateWishlistForm.defaultProps = {
-  classes: Object(node_modules_prop_types["shape"])({
-    actions: node_modules_prop_types["string"],
-    formErrors: node_modules_prop_types["string"],
-    listname: node_modules_prop_types["string"],
-    radioContents: node_modules_prop_types["string"],
-    radioRoot: node_modules_prop_types["string"],
-    visibility: node_modules_prop_types["string"]
+  classes: Object(prop_types["shape"])({
+    actions: prop_types["string"],
+    formErrors: prop_types["string"],
+    listname: prop_types["string"],
+    radioContents: prop_types["string"],
+    radioRoot: prop_types["string"],
+    visibility: prop_types["string"]
   }),
-  onCancel: node_modules_prop_types["func"].isRequired,
-  onCreateList: node_modules_prop_types["func"].isRequired,
-  isAddLoading: node_modules_prop_types["bool"].isRequired
+  onCancel: prop_types["func"].isRequired,
+  onCreateList: prop_types["func"].isRequired,
+  isAddLoading: prop_types["bool"].isRequired
 };
 // EXTERNAL MODULE: ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/Wishlist/WishlistDialog/WishlistLineItem/wishlistLineItem.module.css
 var wishlistLineItem_module = __webpack_require__("./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/Wishlist/WishlistDialog/WishlistLineItem/wishlistLineItem.module.css");
@@ -38326,9 +38401,9 @@ const WishlistLineItem = props => {
 };
 /* harmony default export */ var wishlistLineItem = (WishlistLineItem);
 WishlistLineItem.defaultProps = {
-  id: node_modules_prop_types["number"],
-  isDisabled: node_modules_prop_types["bool"],
-  onClick: node_modules_prop_types["func"].isRequired
+  id: prop_types["number"],
+  isDisabled: prop_types["bool"],
+  onClick: prop_types["func"].isRequired
 };
 // EXTERNAL MODULE: ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/Wishlist/WishlistDialog/wishlistDialog.module.css
 var wishlistDialog_module = __webpack_require__("./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/Wishlist/WishlistDialog/wishlistDialog.module.css");
@@ -38442,21 +38517,21 @@ const WishlistDialog = props => {
 };
 /* harmony default export */ var wishlistDialog = (WishlistDialog);
 WishlistDialog.propTypes = {
-  classes: Object(node_modules_prop_types["shape"])({}),
-  isOpen: node_modules_prop_types["bool"],
-  isLoading: node_modules_prop_types["bool"],
-  itemOptions: Object(node_modules_prop_types["shape"])({
-    entered_options: Object(node_modules_prop_types["arrayOf"])(Object(node_modules_prop_types["shape"])({
-      uid: node_modules_prop_types["number"].isRequired,
-      value: node_modules_prop_types["string"].isRequired
+  classes: Object(prop_types["shape"])({}),
+  isOpen: prop_types["bool"],
+  isLoading: prop_types["bool"],
+  itemOptions: Object(prop_types["shape"])({
+    entered_options: Object(prop_types["arrayOf"])(Object(prop_types["shape"])({
+      uid: prop_types["number"].isRequired,
+      value: prop_types["string"].isRequired
     })),
-    parent_sku: node_modules_prop_types["string"],
-    sku: node_modules_prop_types["string"].isRequired,
-    selected_options: Object(node_modules_prop_types["arrayOf"])(node_modules_prop_types["string"]),
-    quantity: node_modules_prop_types["number"].isRequired
+    parent_sku: prop_types["string"],
+    sku: prop_types["string"].isRequired,
+    selected_options: Object(prop_types["arrayOf"])(prop_types["string"]),
+    quantity: prop_types["number"].isRequired
   }),
-  onClose: node_modules_prop_types["func"],
-  onSuccess: node_modules_prop_types["func"]
+  onClose: prop_types["func"],
+  onSuccess: prop_types["func"]
 };
 // EXTERNAL MODULE: ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/Wishlist/AddToListButton/addToListButton.module.css
 var addToListButton_module = __webpack_require__("./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/Wishlist/AddToListButton/addToListButton.module.css");
@@ -38585,13 +38660,13 @@ AddToListButton.defaultProps = {
   icon: HeartIcon
 };
 AddToListButton.propTypes = {
-  afterAdd: node_modules_prop_types["func"],
-  beforeAdd: node_modules_prop_types["func"],
-  classes: Object(node_modules_prop_types["shape"])({
-    root: node_modules_prop_types["string"],
-    root_selected: node_modules_prop_types["string"]
+  afterAdd: prop_types["func"],
+  beforeAdd: prop_types["func"],
+  classes: Object(prop_types["shape"])({
+    root: prop_types["string"],
+    root_selected: prop_types["string"]
   }),
-  icon: node_modules_prop_types["element"]
+  icon: prop_types["element"]
 };
 // EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/QuantityStepper/quantityStepper.js + 2 modules
 var quantityStepper = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/QuantityStepper/quantityStepper.js");
@@ -38609,12 +38684,12 @@ const Quantity = props => {
   }, /*#__PURE__*/react_default.a.createElement(quantityStepper["a" /* default */], props));
 };
 Quantity.propTypes = {
-  initialValue: node_modules_prop_types["number"],
-  itemId: node_modules_prop_types["string"],
-  label: node_modules_prop_types["string"],
-  min: node_modules_prop_types["number"],
-  onChange: node_modules_prop_types["func"],
-  message: node_modules_prop_types["string"]
+  initialValue: prop_types["number"],
+  itemId: prop_types["string"],
+  label: prop_types["string"],
+  min: prop_types["number"],
+  onChange: prop_types["func"],
+  message: prop_types["string"]
 };
 Quantity.defaultProps = {
   label: 'Quantity',
@@ -38884,11 +38959,11 @@ ErrorMessage.defaultProps = {
   error: null
 };
 ErrorMessage.propTypes = {
-  classes: Object(node_modules_prop_types["shape"])({
-    root: node_modules_prop_types["string"]
+  classes: Object(prop_types["shape"])({
+    root: prop_types["string"]
   }),
-  error: Object(node_modules_prop_types["shape"])({
-    message: node_modules_prop_types["string"]
+  error: Object(prop_types["shape"])({
+    message: prop_types["string"]
   })
 };
 /* harmony default export */ var ProductListing_errorMessage = (ErrorMessage);
@@ -39070,7 +39145,7 @@ const CartPage = props => {
   return /*#__PURE__*/react_default.a.createElement("div", {
     className: classes.root,
     "data-cy": "CartPage-root"
-  }, /*#__PURE__*/react_default.a.createElement(StoreTitle, null, formatMessage({
+  }, /*#__PURE__*/react_default.a.createElement(Head["a" /* StoreTitle */], null, formatMessage({
     id: 'cartPage.title',
     defaultMessage: 'Cart'
   })), /*#__PURE__*/react_default.a.createElement("div", {
@@ -39113,960 +39188,119 @@ const Cart = props => {
   return /*#__PURE__*/react_default.a.createElement(react["Fragment"], null, /*#__PURE__*/react_default.a.createElement("div", null, "Hello Cart 2"), /*#__PURE__*/react_default.a.createElement(cartPage, null));
 };
 /* harmony default export */ var Cart_cart = (Cart);
-// EXTERNAL MODULE: ./node_modules/redux/es/redux.js
-var redux = __webpack_require__("./node_modules/redux/es/redux.js");
+// EXTERNAL MODULE: ./src/store.js + 13 modules
+var store = __webpack_require__("./src/store.js");
 
-// EXTERNAL MODULE: ./node_modules/redux-actions/es/handleActions.js + 5 modules
-var handleActions = __webpack_require__("./node_modules/redux-actions/es/handleActions.js");
+// EXTERNAL MODULE: ./src/components/Adapter/adapter.js + 39 modules
+var adapter = __webpack_require__("./src/components/Adapter/adapter.js");
 
-// EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/store/actions/app/actions.js
-var app_actions = __webpack_require__("./node_modules/@magento/peregrine/lib/store/actions/app/actions.js");
-
-// CONCATENATED MODULE: ./node_modules/@magento/peregrine/lib/store/reducers/app.js
-function app_ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
-function app_objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? app_ownKeys(Object(source), !0).forEach(function (key) { app_defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : app_ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
-function app_defineProperty(obj, key, value) { key = app_toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-function app_toPropertyKey(arg) { var key = app_toPrimitive(arg, "string"); return typeof key === "symbol" ? key : String(key); }
-function app_toPrimitive(input, hint) { if (typeof input !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (typeof res !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
-
-
-const app_name = 'app';
-
-// as far as the server is concerned, the app is always online
-const isServer = !globalThis.navigator;
-const isOnline = !isServer && navigator.onLine;
-const hasBeenOffline = !isServer && !navigator.onLine;
-const initialState = {
-  drawer: null,
-  hasBeenOffline,
-  isOnline,
-  isPageLoading: false,
-  overlay: false,
-  pending: {},
-  searchOpen: false,
-  nextRootComponent: null
-};
-const reducerMap = {
-  [app_actions["a" /* default */].toggleDrawer]: (state, {
-    payload
-  }) => {
-    return app_objectSpread(app_objectSpread({}, state), {}, {
-      drawer: payload,
-      overlay: !!payload
-    });
-  },
-  [app_actions["a" /* default */].toggleSearch]: state => {
-    return app_objectSpread(app_objectSpread({}, state), {}, {
-      searchOpen: !state.searchOpen
-    });
-  },
-  [app_actions["a" /* default */].setOnline]: state => {
-    return app_objectSpread(app_objectSpread({}, state), {}, {
-      isOnline: true
-    });
-  },
-  [app_actions["a" /* default */].setOffline]: state => {
-    return app_objectSpread(app_objectSpread({}, state), {}, {
-      isOnline: false,
-      hasBeenOffline: true
-    });
-  },
-  [app_actions["a" /* default */].setPageLoading]: (state, {
-    payload
-  }) => {
-    return app_objectSpread(app_objectSpread({}, state), {}, {
-      isPageLoading: !!payload
-    });
-  },
-  [app_actions["a" /* default */].setNextRootComponent]: (state, {
-    payload
-  }) => {
-    return app_objectSpread(app_objectSpread({}, state), {}, {
-      nextRootComponent: payload
-    });
-  }
-};
-/* harmony default export */ var app = (Object(handleActions["a" /* default */])(reducerMap, initialState));
-// EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/store/actions/cart/actions.js
-var cart_actions = __webpack_require__("./node_modules/@magento/peregrine/lib/store/actions/cart/actions.js");
-
-// CONCATENATED MODULE: ./node_modules/@magento/peregrine/lib/store/reducers/cart.js
-function cart_ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
-function cart_objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? cart_ownKeys(Object(source), !0).forEach(function (key) { cart_defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : cart_ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
-function cart_defineProperty(obj, key, value) { key = cart_toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-function cart_toPropertyKey(arg) { var key = cart_toPrimitive(arg, "string"); return typeof key === "symbol" ? key : String(key); }
-function cart_toPrimitive(input, hint) { if (typeof input !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (typeof res !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
-
-
-const cart_name = 'cart';
-const cart_initialState = {
-  addItemError: null,
-  cartId: null,
-  details: {},
-  detailsError: null,
-  getCartError: null,
-  isLoading: false,
-  isUpdatingItem: false,
-  isAddingItem: false,
-  removeItemError: null,
-  shippingMethods: [],
-  updateItemError: null
-};
-const cart_reducerMap = {
-  [cart_actions["a" /* default */].getCart.receive]: (state, {
-    payload,
-    error
-  }) => {
-    if (error) {
-      return cart_objectSpread(cart_objectSpread({}, cart_initialState), {}, {
-        getCartError: payload
-      });
-    }
-    return cart_objectSpread(cart_objectSpread({}, state), {}, {
-      cartId: String(payload),
-      getCartError: null
-    });
-  },
-  [cart_actions["a" /* default */].getDetails.request]: state => {
-    return cart_objectSpread(cart_objectSpread({}, state), {}, {
-      isLoading: true
-    });
-  },
-  [cart_actions["a" /* default */].getDetails.receive]: (state, {
-    payload,
-    error
-  }) => {
-    if (error) {
-      return cart_objectSpread(cart_objectSpread({}, state), {}, {
-        detailsError: payload,
-        isLoading: false
-      });
-    }
-    return cart_objectSpread(cart_objectSpread(cart_objectSpread({}, state), payload), {}, {
-      isLoading: false
-    });
-  },
-  [cart_actions["a" /* default */].addItem.request]: state => {
-    return cart_objectSpread(cart_objectSpread({}, state), {}, {
-      isAddingItem: true
-    });
-  },
-  [cart_actions["a" /* default */].addItem.receive]: (state, {
-    payload,
-    error
-  }) => {
-    if (error) {
-      return cart_objectSpread(cart_objectSpread({}, state), {}, {
-        addItemError: payload,
-        isAddingItem: false
-      });
-    }
-    return cart_objectSpread(cart_objectSpread({}, state), {}, {
-      isAddingItem: false
-    });
-  },
-  [cart_actions["a" /* default */].updateItem.request]: state => {
-    return cart_objectSpread(cart_objectSpread({}, state), {}, {
-      isUpdatingItem: true
-    });
-  },
-  [cart_actions["a" /* default */].updateItem.receive]: (state, {
-    payload,
-    error
-  }) => {
-    if (error) {
-      return cart_objectSpread(cart_objectSpread({}, state), {}, {
-        isUpdatingItem: false,
-        updateItemError: payload
-      });
-    }
-
-    // We don't actually have to update any items here
-    // because we force a refresh from the server.
-    return cart_objectSpread(cart_objectSpread({}, state), {}, {
-      isUpdatingItem: false
-    });
-  },
-  [cart_actions["a" /* default */].removeItem.receive]: (state, {
-    payload,
-    error
-  }) => {
-    if (error) {
-      return cart_objectSpread(cart_objectSpread({}, state), {}, {
-        removeItemError: payload
-      });
-    }
-    return cart_objectSpread({}, state);
-  },
-  [cart_actions["a" /* default */].reset]: () => cart_initialState
-};
-/* harmony default export */ var reducers_cart = (Object(handleActions["a" /* default */])(cart_reducerMap, cart_initialState));
-// EXTERNAL MODULE: ./node_modules/redux-actions/es/createActions.js + 10 modules
-var createActions = __webpack_require__("./node_modules/redux-actions/es/createActions.js");
-
-// CONCATENATED MODULE: ./node_modules/@magento/peregrine/lib/store/actions/catalog/actions.js
-
-const prefix = 'CATALOG';
-const actionTypes = ['UPDATE_CATEGORIES'];
-const actionMap = {
-  SET_CURRENT_PAGE: {
-    REQUEST: null,
-    RECEIVE: null
-  },
-  SET_PREV_PAGE_TOTAL: {
-    REQUEST: null,
-    RECEIVE: null
-  }
-};
-/* harmony default export */ var catalog_actions = (Object(createActions["a" /* default */])(actionMap, ...actionTypes, {
-  prefix
-}));
-// CONCATENATED MODULE: ./node_modules/@magento/peregrine/lib/store/reducers/catalog.js
-function catalog_ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
-function catalog_objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? catalog_ownKeys(Object(source), !0).forEach(function (key) { catalog_defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : catalog_ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
-function catalog_defineProperty(obj, key, value) { key = catalog_toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-function catalog_toPropertyKey(arg) { var key = catalog_toPrimitive(arg, "string"); return typeof key === "symbol" ? key : String(key); }
-function catalog_toPrimitive(input, hint) { if (typeof input !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (typeof res !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
-
-
-const catalog_name = 'catalog';
-const fromPairs = pairs => {
-  const result = {};
-  for (const [key, value] of pairs) {
-    result[key] = value;
-  }
-  return result;
-};
-const catalog_initialState = {
-  categories: {},
-  currentPage: 1,
-  pageSize: 6,
-  prevPageTotal: null
-};
-const catalog_reducerMap = {
-  [catalog_actions.updateCategories]: (state, {
-    payload
-  }) => {
-    const {
-      uid
-    } = payload;
-    const currentCategory = state.categories[uid] || {};
-
-    // if category has already been fetched, do nothing
-    if (currentCategory.children) {
-      return state;
-    }
-
-    // sort children by `position`
-    const children = [...payload.children].sort((a, b) => {
-      if (a.position > b.position) {
-        return 1;
-      } else if (a.position === b.position && a.uid > b.uid) {
-        return 1;
-      } else {
-        return -1;
-      }
-    });
-
-    // use a Map to preserve sort order
-    // since a plain object with numeric keys would lose it
-    const childMap = new Map();
-
-    // merge children and add them to the Map, keyed by `id`
-    for (const child of children) {
-      childMap.set(child.uid, catalog_objectSpread(catalog_objectSpread(catalog_objectSpread({}, child), state.categories[child.uid] || {}), {}, {
-        parentId: uid
-      }));
-    }
-
-    // merge in the fetched child last
-    return catalog_objectSpread(catalog_objectSpread({}, state), {}, {
-      categories: catalog_objectSpread(catalog_objectSpread(catalog_objectSpread({}, state.categories), fromPairs(childMap)), {}, {
-        [uid]: catalog_objectSpread(catalog_objectSpread(catalog_objectSpread({}, currentCategory), payload), {}, {
-          children: [...childMap.keys()],
-          children_count: childMap.size
-        })
-      })
-    });
-  },
-  [catalog_actions.setCurrentPage.receive]: (state, {
-    payload,
-    error
-  }) => {
-    if (error) {
-      return state;
-    }
-    return catalog_objectSpread(catalog_objectSpread({}, state), {}, {
-      currentPage: payload
-    });
-  },
-  [catalog_actions.setPrevPageTotal.receive]: (state, {
-    payload,
-    error
-  }) => {
-    if (error) {
-      return state;
-    }
-    return catalog_objectSpread(catalog_objectSpread({}, state), {}, {
-      prevPageTotal: payload
-    });
-  }
-};
-/* harmony default export */ var catalog = (Object(handleActions["a" /* default */])(catalog_reducerMap, catalog_initialState));
-// EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/store/actions/checkout/actions.js
-var checkout_actions = __webpack_require__("./node_modules/@magento/peregrine/lib/store/actions/checkout/actions.js");
-
-// CONCATENATED MODULE: ./node_modules/@magento/peregrine/lib/store/reducers/checkout.js
-function checkout_ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
-function checkout_objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? checkout_ownKeys(Object(source), !0).forEach(function (key) { checkout_defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : checkout_ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
-function checkout_defineProperty(obj, key, value) { key = checkout_toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-function checkout_toPropertyKey(arg) { var key = checkout_toPrimitive(arg, "string"); return typeof key === "symbol" ? key : String(key); }
-function checkout_toPrimitive(input, hint) { if (typeof input !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (typeof res !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
-
-
-const checkout_name = 'checkout';
-const checkout_initialState = {
-  availableShippingMethods: [],
-  billingAddress: null,
-  billingAddressError: null,
-  isSubmitting: false,
-  orderError: null,
-  paymentMethodError: null,
-  paymentCode: '',
-  paymentData: null,
-  receipt: {
-    order: {}
-  },
-  shippingAddress: {},
-  shippingAddressError: null,
-  shippingMethod: '',
-  shippingMethodError: null,
-  shippingTitle: ''
-};
-const checkout_reducerMap = {
-  [checkout_actions["a" /* default */].begin]: (state, {
-    payload
-  }) => {
-    return checkout_objectSpread(checkout_objectSpread({}, state), payload);
-  },
-  [checkout_actions["a" /* default */].billingAddress.submit]: state => checkout_objectSpread(checkout_objectSpread({}, state), {}, {
-    billingAddressError: null,
-    isSubmitting: true
-  }),
-  [checkout_actions["a" /* default */].billingAddress.accept]: (state, {
-    payload
-  }) => {
-    // Billing address can either be an object with address props OR
-    // an object with a single prop, `sameAsShippingAddress`, so we need
-    // to do some special handling to make sure the store reflects that.
-    const newState = checkout_objectSpread(checkout_objectSpread({}, state), {}, {
-      isSubmitting: false
-    });
-    if (payload.sameAsShippingAddress) {
-      newState.billingAddress = checkout_objectSpread({}, payload);
-    } else if (!payload.sameAsShippingAddress) {
-      newState.billingAddress = checkout_objectSpread(checkout_objectSpread({}, payload), {}, {
-        street: [...payload.street]
-      });
-    }
-    return newState;
-  },
-  [checkout_actions["a" /* default */].billingAddress.reject]: (state, {
-    payload
-  }) => {
-    return checkout_objectSpread(checkout_objectSpread({}, state), {}, {
-      billingAddressError: payload,
-      isSubmitting: false
-    });
-  },
-  [checkout_actions["a" /* default */].getShippingMethods.receive]: (state, {
-    payload,
-    error
-  }) => {
-    if (error) {
-      return state;
-    }
-    return checkout_objectSpread(checkout_objectSpread({}, state), {}, {
-      availableShippingMethods: payload.map(method => checkout_objectSpread(checkout_objectSpread({}, method), {}, {
-        code: method.carrier_code,
-        title: method.carrier_title
-      }))
-    });
-  },
-  [checkout_actions["a" /* default */].shippingAddress.submit]: state => checkout_objectSpread(checkout_objectSpread({}, state), {}, {
-    isSubmitting: true,
-    shippingAddressError: null
-  }),
-  [checkout_actions["a" /* default */].shippingAddress.accept]: (state, {
-    payload
-  }) => {
-    return checkout_objectSpread(checkout_objectSpread({}, state), {}, {
-      isSubmitting: false,
-      shippingAddress: checkout_objectSpread(checkout_objectSpread(checkout_objectSpread({}, state.shippingAddress), payload), {}, {
-        street: [...payload.street]
-      })
-    });
-  },
-  [checkout_actions["a" /* default */].shippingAddress.reject]: (state, {
-    payload
-  }) => {
-    return checkout_objectSpread(checkout_objectSpread({}, state), {}, {
-      isSubmitting: false,
-      shippingAddressError: payload
-    });
-  },
-  [checkout_actions["a" /* default */].paymentMethod.submit]: state => checkout_objectSpread(checkout_objectSpread({}, state), {}, {
-    isSubmitting: true,
-    paymentMethodError: null
-  }),
-  [checkout_actions["a" /* default */].paymentMethod.accept]: (state, {
-    payload
-  }) => {
-    return checkout_objectSpread(checkout_objectSpread({}, state), {}, {
-      isSubmitting: false,
-      paymentCode: payload.code,
-      paymentData: payload.data
-    });
-  },
-  [checkout_actions["a" /* default */].paymentMethod.reject]: (state, {
-    payload
-  }) => {
-    return checkout_objectSpread(checkout_objectSpread({}, state), {}, {
-      isSubmitting: false,
-      paymentMethodError: payload
-    });
-  },
-  [checkout_actions["a" /* default */].receipt.setOrder]: (state, {
-    payload
-  }) => checkout_objectSpread(checkout_objectSpread({}, state), {}, {
-    receipt: {
-      order: payload
-    }
-  }),
-  [checkout_actions["a" /* default */].receipt.reset]: state => checkout_objectSpread(checkout_objectSpread({}, state), {}, {
-    receipt: checkout_objectSpread({}, checkout_initialState.receipt)
-  }),
-  [checkout_actions["a" /* default */].shippingMethod.submit]: state => checkout_objectSpread(checkout_objectSpread({}, state), {}, {
-    isSubmitting: true,
-    shippingMethodError: null
-  }),
-  [checkout_actions["a" /* default */].shippingMethod.accept]: (state, {
-    payload
-  }) => {
-    return checkout_objectSpread(checkout_objectSpread({}, state), {}, {
-      isSubmitting: false,
-      shippingMethod: payload.carrier_code,
-      shippingTitle: payload.carrier_title
-    });
-  },
-  [checkout_actions["a" /* default */].shippingMethod.reject]: (state, {
-    payload
-  }) => {
-    return checkout_objectSpread(checkout_objectSpread({}, state), {}, {
-      isSubmitting: false,
-      shippingMethodError: payload
-    });
-  },
-  [checkout_actions["a" /* default */].order.submit]: state => checkout_objectSpread(checkout_objectSpread({}, state), {}, {
-    isSubmitting: true,
-    orderError: null
-  }),
-  [checkout_actions["a" /* default */].order.accept]: state => checkout_objectSpread(checkout_objectSpread({}, state), {}, {
-    isSubmitting: false
-  }),
-  [checkout_actions["a" /* default */].order.reject]: (state, {
-    payload
-  }) => {
-    return checkout_objectSpread(checkout_objectSpread({}, state), {}, {
-      isSubmitting: false,
-      orderError: payload
-    });
-  },
-  [checkout_actions["a" /* default */].reset]: () => checkout_initialState
-};
-/* harmony default export */ var checkout = (Object(handleActions["a" /* default */])(checkout_reducerMap, checkout_initialState));
-// CONCATENATED MODULE: ./node_modules/@magento/peregrine/lib/store/reducers/user.js
-function user_ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
-function user_objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? user_ownKeys(Object(source), !0).forEach(function (key) { user_defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : user_ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
-function user_defineProperty(obj, key, value) { key = user_toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-function user_toPropertyKey(arg) { var key = user_toPrimitive(arg, "string"); return typeof key === "symbol" ? key : String(key); }
-function user_toPrimitive(input, hint) { if (typeof input !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (typeof res !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
-
-
-const user_storage = new simplePersistence["a" /* default */]();
-
-const user_name = 'user';
-const rawSignInToken = user_storage.getRawItem('signin_token');
-const user_isSignedIn = () => !!rawSignInToken;
-const getToken = () => {
-  if (!rawSignInToken) {
-    return undefined;
-  }
-  const {
-    value
-  } = JSON.parse(rawSignInToken);
-  return value;
-};
-const user_initialState = {
-  currentUser: {
-    email: '',
-    firstname: '',
-    lastname: ''
-  },
-  getDetailsError: null,
-  isGettingDetails: false,
-  isResettingPassword: false,
-  isSignedIn: user_isSignedIn(),
-  resetPasswordError: null,
-  token: getToken()
-};
-const user_reducerMap = {
-  [user_actions["a" /* default */].setToken]: (state, {
-    payload
-  }) => {
-    return user_objectSpread(user_objectSpread({}, state), {}, {
-      isSignedIn: true,
-      token: payload
-    });
-  },
-  [user_actions["a" /* default */].clearToken]: state => {
-    return user_objectSpread(user_objectSpread({}, state), {}, {
-      isSignedIn: false,
-      token: null
-    });
-  },
-  [user_actions["a" /* default */].getDetails.request]: state => {
-    return user_objectSpread(user_objectSpread({}, state), {}, {
-      getDetailsError: null,
-      isGettingDetails: true
-    });
-  },
-  [user_actions["a" /* default */].getDetails.receive]: (state, {
-    payload,
-    error
-  }) => {
-    if (error) {
-      return user_objectSpread(user_objectSpread({}, state), {}, {
-        getDetailsError: payload,
-        isGettingDetails: false
-      });
-    }
-    return user_objectSpread(user_objectSpread({}, state), {}, {
-      currentUser: payload,
-      getDetailsError: null,
-      isGettingDetails: false
-    });
-  },
-  [user_actions["a" /* default */].resetPassword.request]: state => user_objectSpread(user_objectSpread({}, state), {}, {
-    isResettingPassword: true
-  }),
-  // TODO: handle the reset password response from the API.
-  [user_actions["a" /* default */].resetPassword.receive]: (state, {
-    payload,
-    error
-  }) => {
-    if (error) {
-      return user_objectSpread(user_objectSpread({}, state), {}, {
-        isResettingPassword: false,
-        resetPasswordError: payload
-      });
-    }
-    return user_objectSpread(user_objectSpread({}, state), {}, {
-      isResettingPassword: false,
-      resetPasswordError: null
-    });
-  },
-  [user_actions["a" /* default */].reset]: () => {
-    return user_objectSpread(user_objectSpread({}, user_initialState), {}, {
-      isSignedIn: false,
-      token: null
-    });
-  }
-};
-/* harmony default export */ var reducers_user = (Object(handleActions["a" /* default */])(user_reducerMap, user_initialState));
-// CONCATENATED MODULE: ./node_modules/@magento/peregrine/lib/store/reducers/index.js
-
-
-
-
-
-const reducers = {
-  app: app,
-  cart: reducers_cart,
-  catalog: catalog,
-  checkout: checkout,
-  user: reducers_user
-};
-/* harmony default export */ var store_reducers = (reducers);
-// CONCATENATED MODULE: ./node_modules/@magento/peregrine/lib/util/createErrorRecord.js
-// Cache the generated error records, but let them be garbage collected.
-const errorRecords = new WeakMap();
-const {
-  error: logError
-} = console;
-
+// CONCATENATED MODULE: ./src/RootComponents/Cart/index.js
 /**
- * This function builds an {error, id, loc} tuple from errors. It aids in
- * production-mode debugging by providing a unique ID to each error, plus a
- * hint as to the error source location, for a user to report on a support
- * call.
- * @param {Error} error The error to create or retrieve a record for.
- * @param {Window} window Window object, as an argument for testability.
- * @param {Object} context Context codesite to help make useful stacktraces.
- * @param {Object} customStack React custom stack trace for render errors.
- */
-function errorRecord(error, window, context, customStack) {
-  const {
-    Date,
-    Math
-  } = window;
-  let record = errorRecords.get(error);
-  if (record) {
-    return record;
-  }
-  record = {
-    error,
-    loc: ''
-  };
-  const {
-    constructor,
-    message,
-    name
-  } = error;
-  // Reasonably unique, yet readable error ID.
-  const seconds = new Date().getSeconds();
-  const randomChar = Math.random().toString(36).slice(2, 3).toUpperCase();
-  record.id = (constructor && constructor.name || name) + seconds + randomChar;
-
-  // Add offending line, if possible.
-  let stack;
-  if (customStack) {
-    stack = customStack;
-  } else {
-    /* istanbul ignore next */
-    if (Error.captureStackTrace) {
-      Error.captureStackTrace(error, context);
-    }
-    stack = error.stack;
-  }
-  const messageStart = stack.indexOf(message);
-  const {
-    origin
-  } = globalThis.location || {};
-  if (messageStart > -1) {
-    const traceStart = messageStart + message.length;
-    record.loc = stack.slice(traceStart).replace(origin, '').trim().split('\n')[0];
-  }
-  errorRecords.set(error, record);
-  // In development mode, React logs these already.
-  // Log in production mode so that users can give Support helpful debug info.
-  /* istanbul ignore next */
-  if (false) {}
-  return record;
-}
-// CONCATENATED MODULE: ./node_modules/@magento/peregrine/lib/store/enhancers/errorHandler.js
-const errorHandler_excluded = ["unhandledErrors"];
-function errorHandler_objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = errorHandler_objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
-function errorHandler_objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-function errorHandler_ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
-function errorHandler_objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? errorHandler_ownKeys(Object(source), !0).forEach(function (key) { errorHandler_defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : errorHandler_ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
-function errorHandler_defineProperty(obj, key, value) { key = errorHandler_toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-function errorHandler_toPropertyKey(arg) { var key = errorHandler_toPrimitive(arg, "string"); return typeof key === "symbol" ? key : String(key); }
-function errorHandler_toPrimitive(input, hint) { if (typeof input !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (typeof res !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
-/**
- * Handle unhandled errors by setting a global error state.
- *
- * "store slice" reducers may want to handle errors in a custom way, in order
- * to display more specific error states (such as form field validation).
- *
- * These reducers can indicate that an error is handled and needs no more UI
- * response, by assigning the error object to the `error` property on their
- * store slice.
- *
- * This reducer activates when the action has an `error` property. It then
- * checks each store slice for an `error` property which equals the error in
- * the action, indicating that the error has already been handled. If it
- * detects that the error is not present in any store slice, it assumes the
- * error is unhandled and pushes it into an `errors` array property on the root
- * store.
- *
- * This `errors` collection represents unhandled errors to be displayed in the
- * next render. To dismiss an error, dispatch the ERROR_DISMISS action with the
- * error as payload, and this reducer will remove it from the array.
- *
+ * @RootComponent
+ * description = 'Basic Cart Page'
+ * pageTypes = CART
  */
 
 
-const APP_DISMISS_ERROR = app_actions["a" /* default */].markErrorHandled.toString();
-
-/**
- * This function returns the name of the slice for logging purposes, and
- * undefined if no slice handling this error is found. It uses
- * Object.entries() to create a [name, sliceObject] pair for each slice;
- * the iteratee only tests the value, but we destructure the name into the
- * final return value. For instance, the cart slice is represented as an
- * entry ["cart", cartState]. If cartState has any property whose value is
- * the provided error, then this function will return the string "cart".
- *
- * @param {object} fullStoreState
- * @param {Error} error
- *
- */
-function sliceHandledError(state, error) {
-  const foundEntry = Object.entries(state).find(([, slice]) => typeof slice === 'object' &&
-  // A slice is considered to have "handled" the error if it
-  // includes a root property (of any name) with the error as a
-  // value. This is the pattern with existing reducers.
-  Object.values(slice).includes(error));
-  if (foundEntry) {
-    // Return the name of the slice.
-    return foundEntry[0];
-  }
-}
-
-/**
- * This reducer handles the full store state (all slices) and adds any
- * unhandled errors (as defined by the selector function
- * sliceHandledError() defined above) to a root `unhandledErrors`
- * collection. It also handles the app-level action `APP_DISMISS_ERROR` by
- * removing the passed error from that collection. Any global error UI can
- * use this action (as a click handler, for instance) to dismiss the error.
- *
- * @param {object} fullStoreState
- * @param {object} action
- */
-function errorReducer(state, action) {
-  const {
-    unhandledErrors
-  } = state;
-  const {
-    type,
-    payload
-  } = action;
-
-  // The `error` property should be boolean and the payload is the error
-  // itself, but just in case someone got that wrong...
-  let error;
-  if (action.error instanceof Error) {
-    error = action.error;
-  } else if (payload instanceof Error) {
-    error = payload;
-  } else {
-    // No error, so nothing this reducer can do.
-    return state;
-  }
-  if (type === APP_DISMISS_ERROR) {
-    const errorsMinusDismissed = unhandledErrors.filter(record => record.error !== error);
-    // If the array is the same size, then the error wasn't here
-    // but it should have been!
-    if ( true && errorsMinusDismissed.length == unhandledErrors.length) {
-      console.error('Received ${APP_DISMISS_ERROR} action, but provided error "${error}" was not present in the state.unhandledErrors collection. The error object in the action payload must be strictly equal to the error to be dismissed.', error);
-    }
-    return errorHandler_objectSpread(errorHandler_objectSpread({}, state), {}, {
-      unhandledErrors: errorsMinusDismissed
-    });
-  }
-
-  // Handle any other action that may have produced an error.
-  const sliceHandled = sliceHandledError(state, error);
-  if (!sliceHandled) {
-    // No one took this one. Add it to the unhandled list.
-    const allErrors = [
-    // Dedupe errors in case this one is dispatched repeatedly
-    ...new Set(unhandledErrors).add(errorRecord(error,
-    // `errorRecord()` requires the window argument for
-    // testability, through injection of the
-    // non-idempotent Date and Math methods for IDs.
-    globalThis,
-    // Also call `errorRecord()` with the current
-    // context, which is the root reducer; that enables
-    // it to trim useful stack traces by omitting
-    // useless lines.
-    this))];
-    return errorHandler_objectSpread(errorHandler_objectSpread({}, state), {}, {
-      unhandledErrors: allErrors
-    });
-  }
-  // If we get here, a slice DID handle it and indicated that by
-  // setting it as a root property of the slice.
-  return state;
-}
-
-/**
- * Wrapper function for a Redux reducer which adds an error reducer and a root
- * `unhandledErrors` collection to state. Since many reducers validate their
- * state objects, they will error if they see the "unrecognized"
- * `unhandledErrors` property. This function hides that property by extracting
- * it from state, then running the passed root reducer on the clean state, then
- * recombining the state and transforming it with the error reducer.
- *
- * @param {Function} rootReducer Original root reducer.
- */
-function wrapReducerWithErrorHandling(rootReducer) {
-  return function errorHandlingRootReducer(state = {}, action) {
-    const {
-        unhandledErrors = []
-      } = state,
-      restOfState = errorHandler_objectWithoutProperties(state, errorHandler_excluded);
-    const nextState = rootReducer(restOfState, action);
-    nextState.unhandledErrors = unhandledErrors;
-    // Apply errorReducer in the context of this root reducer,
-    // so it can trim stack traces using `this`.
-    return errorReducer.call(errorHandlingRootReducer, nextState, action);
-  };
-}
-
-/**
- * Store enhancer which returns a StoreCreator, which accepts a
- * root reducer and an initial state and returns a new store.
- * It is in this function that we can intercept the root reducer
- * and wrap it with error handling.
- */
-function createErrorHandlingStore(createStore) {
-  return (reducer, ...args) => createStore(wrapReducerWithErrorHandling(reducer), ...args);
-}
-// CONCATENATED MODULE: ./node_modules/@magento/peregrine/lib/store/middleware/auth.js
-
-
-const timeouts = new Map();
-const intervals = new Map();
-const auth_storage = new simplePersistence["a" /* default */]();
-const SET_TOKEN = user_actions["a" /* default */].setToken.toString();
-const CLEAR_TOKEN = user_actions["a" /* default */].clearToken.toString();
-const GET_DETAILS = user_actions["a" /* default */].getDetails.request.toString();
-const isSigningIn = type => type === SET_TOKEN || type === GET_DETAILS;
-const isSigningOut = type => type === CLEAR_TOKEN;
-
-/**
- * This function adheres to Redux's middleware pattern.
- *
- * @param {Store} store The store to augment.
- * @returns {Function}
- */
-const scheduleSignOut = store => next => action => {
-  const {
-    dispatch
-  } = store;
-  if (isSigningIn(action.type)) {
-    // `BrowserPersistence.getItem()` only returns the value
-    // but we need the full item with timestamp and ttl
-    const item = auth_storage.getRawItem('signin_token');
-
-    // exit if there's nothing in storage
-    if (!item) return next(action);
-    const {
-      timeStored,
-      ttl,
-      value
-    } = JSON.parse(item);
-    const parsedValue = JSON.parse(value);
-    const preciseTTL = ttl * 1000;
-    const elapsed = Date.now() - timeStored;
-    const expiry = Math.max(preciseTTL - elapsed, 0);
-
-    // establish a sign-out routine
-    const callback = () => {
-      dispatch(Object(user_asyncActions["signOut"])()).then(() => {
-        timeouts.delete(parsedValue);
-        intervals.delete(parsedValue);
-
-        // refresh the page, important for checkout
-        history.go(0);
-      });
-    };
-
-    // set a timeout that runs once when the token expires
-    if (!timeouts.has(parsedValue)) {
-      const timeoutId = setTimeout(callback, expiry);
-      timeouts.set(parsedValue, timeoutId);
-    }
-
-    // then set an interval that runs once per second
-    // on mobile, the timeout won't fire if the tab is inactive
-    if (!intervals.has(parsedValue)) {
-      const intervalId = setInterval(() => {
-        const hasExpired = Date.now() - timeStored > preciseTTL;
-        if (hasExpired) callback();
-      }, 1000);
-      intervals.set(parsedValue, intervalId);
-    }
-  } else if (isSigningOut(action.type)) {
-    for (const timeoutId of timeouts) {
-      clearTimeout(timeoutId);
-    }
-    for (const intervalId of intervals) {
-      clearInterval(intervalId);
-    }
-    timeouts.clear();
-    intervals.clear();
-  }
-  return next(action);
-};
-/* harmony default export */ var auth = (scheduleSignOut);
-// CONCATENATED MODULE: ./node_modules/@magento/peregrine/lib/store/middleware/log.js
-/**
- * Log actions and state to the browser console.
- * This function adheres to Redux's middleware pattern.
- *
- * @param {Store} store The store to augment.
- * @returns {Function}
- */
-const log = store => next => action => {
-  const result = next(action);
-  console.groupCollapsed(action.type);
-  console.group('payload');
-  console.log(action.payload);
-  console.groupEnd();
-  console.group('next state');
-  console.log(store.getState());
-  console.groupEnd();
-  console.groupEnd();
-  return result;
-};
-/* harmony default export */ var middleware_log = (log);
-// EXTERNAL MODULE: ./node_modules/redux-thunk/es/index.js
-var redux_thunk_es = __webpack_require__("./node_modules/redux-thunk/es/index.js");
-
-// CONCATENATED MODULE: ./node_modules/@magento/peregrine/lib/store/middleware/thunk.js
-
-const extraArgument = {};
-/* harmony default export */ var middleware_thunk = (redux_thunk_es["a" /* default */].withExtraArgument(extraArgument));
-// CONCATENATED MODULE: ./node_modules/@magento/peregrine/lib/store/enhancers/middleware.js
 
 
 
-
-const middleware = [middleware_thunk, auth];
-if (true) {
-  middleware.push(middleware_log);
-}
-/* harmony default export */ var enhancers_middleware = (Object(redux["a" /* applyMiddleware */])(...middleware));
-// CONCATENATED MODULE: ./node_modules/@magento/peregrine/lib/util/composeEnhancers.js
-
-const composeEnhancers =  true && globalThis.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ? globalThis.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({}) : redux["d" /* compose */];
-/* harmony default export */ var util_composeEnhancers = (composeEnhancers);
-// CONCATENATED MODULE: ./node_modules/@magento/peregrine/lib/store/enhancers/index.js
-
+const origin = globalThis.location.origin;
+const styles = new Set();
+const configureLinks = links => [...links.values()];
+Object(react_dom["render"])( /*#__PURE__*/react_default.a.createElement(adapter["a" /* default */], {
+  apiUrl: "https://franklin.maidenform.com/graphql",
+  configureLinks: configureLinks,
+  origin: origin,
+  store: store["a" /* default */],
+  styles: styles
+}, /*#__PURE__*/react_default.a.createElement(Cart_cart, null)), document.querySelector('.block.commerce-cart'));
 
 
-const enhancer = util_composeEnhancers(enhancers_middleware, createErrorHandlingStore);
-/* harmony default export */ var enhancers = (enhancer);
-// CONCATENATED MODULE: ./src/store.js
+/***/ }),
 
+/***/ "./src/components/Adapter/adapter.js":
+/*!********************************************************!*\
+  !*** ./src/components/Adapter/adapter.js + 39 modules ***!
+  \********************************************************/
+/*! exports provided: default */
+/*! exports used: default */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@adobe/apollo-link-mutation-queue/dist/index.js (<- Module is not an ECMAScript module) */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/cache/inmemory/inMemoryCache.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/core/ApolloClient.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/link/context/index.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/link/core/ApolloLink.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/link/error/index.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/link/http/createHttpLink.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/link/retry/retryLink.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/react/context/ApolloProvider.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@formatjs/ecma402-abstract/lib/utils.js because of ./node_modules/@magento/venia-ui/lib/components/CartPage/cartPage.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@formatjs/icu-messageformat-parser/lib/index.js because of ./node_modules/@magento/venia-ui/lib/components/CartPage/cartPage.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@formatjs/intl/lib/src/error.js because of ./node_modules/@magento/venia-ui/lib/components/CartPage/cartPage.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@formatjs/intl/lib/src/utils.js because of ./node_modules/@magento/venia-ui/lib/components/CartPage/cartPage.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/Toasts/useToastContext.js because of ./node_modules/@magento/venia-ui/lib/components/CartPage/cartPage.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/Toasts/useToasts.js because of ./node_modules/@magento/venia-ui/lib/components/CartPage/cartPage.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/context/app.js because of ./node_modules/@magento/peregrine/lib/talons/MyAccount/useMyAccount.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/context/cart.js because of ./node_modules/@magento/peregrine/lib/talons/CartPage/useCartPage.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/context/eventing.js because of ./node_modules/@magento/peregrine/lib/talons/CartPage/useCartPage.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/context/user.js because of ./node_modules/@magento/peregrine/lib/talons/SignInPage/useSignInPage.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/hooks/useEventListener.js because of ./node_modules/@magento/peregrine/lib/talons/CartPage/useCartPage.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/store/actions/app/actions.js because of ./node_modules/@magento/peregrine/lib/talons/MyAccount/useMyAccount.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/store/actions/catalog/actions.js because of ./src/RootComponents/Cart/index.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/store/actions/checkout/actions.js because of ./node_modules/@magento/peregrine/lib/talons/CartPage/useCartPage.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/store/actions/checkout/asyncActions.js because of ./node_modules/@magento/peregrine/lib/talons/CartPage/useCartPage.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/store/middleware/thunk.js because of ./src/RootComponents/Cart/index.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/bindActionCreators.js because of ./node_modules/@magento/peregrine/lib/talons/CartPage/useCartPage.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/shallowMerge.js because of ./node_modules/@magento/peregrine/lib/talons/CartPage/useCartPage.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/simplePersistence.js because of ./node_modules/@magento/peregrine/lib/talons/SignInPage/useSignInPage.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-feather/dist/icons/x.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/apollo-cache-persist/index.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./src/components/Icon/icon.module.css (<- Module uses module.id) */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./src/components/ToastContainer/toast.module.css (<- Module uses module.id) */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./src/components/ToastContainer/toastContainer.module.css (<- Module uses module.id) */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql/language/blockString.mjs because of ./node_modules/@magento/venia-ui/lib/components/CartPage/cartPage.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql/language/lexer.mjs because of ./node_modules/@magento/venia-ui/lib/components/CartPage/cartPage.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql/language/source.mjs because of ./node_modules/@magento/venia-ui/lib/components/CartPage/cartPage.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql/language/tokenKind.mjs because of ./node_modules/@magento/venia-ui/lib/components/CartPage/cartPage.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/intl-messageformat/lib/src/core.js because of ./node_modules/@magento/venia-ui/lib/components/CartPage/cartPage.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/intl-messageformat/lib/src/error.js because of ./node_modules/@magento/venia-ui/lib/components/CartPage/cartPage.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/intl-messageformat/lib/src/formatters.js because of ./node_modules/@magento/venia-ui/lib/components/CartPage/cartPage.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/lodash.get/index.js (<- Module is not an ECMAScript module) */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/lodash.set/index.js (<- Module is not an ECMAScript module) */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/prop-types/index.js (<- Module is not an ECMAScript module) */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-helmet-async/lib/index.module.js because of ./node_modules/@magento/venia-ui/lib/components/CartPage/cartPage.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-intl/lib/src/components/injectIntl.js because of ./node_modules/@magento/venia-ui/lib/components/CartPage/cartPage.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-intl/lib/src/utils.js because of ./node_modules/@magento/venia-ui/lib/components/CartPage/cartPage.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-redux/es/index.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-router-dom/esm/react-router-dom.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react/index.js (<- Module is not an ECMAScript module) */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js (<- Module is not an ECMAScript module) */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/tslib/tslib.es6.js because of ./node_modules/@apollo/client/core/ApolloClient.js */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
+"use strict";
 
-// This is the connective layer between the Peregrine store and the
-// venia-concept UI. You can add your own reducers/enhancers here and combine
-// them with the Peregrine exports.
-//
-// example:
-// const rootReducer = combineReducers({ ...reducers, ...myReducers });
-// const rootEnhancer = composeEnhancers(enhancer, myEnhancer);
-// export default createStore(rootReducer, rootEnhancer);
-const rootReducer = Object(redux["c" /* combineReducers */])(store_reducers);
-/* harmony default export */ var src_store = (Object(redux["e" /* createStore */])(rootReducer, enhancers));
+// NAMESPACE OBJECT: ./node_modules/@magento/peregrine/lib/store/actions/catalog/asyncActions.js
+var asyncActions_namespaceObject = {};
+__webpack_require__.r(asyncActions_namespaceObject);
+__webpack_require__.d(asyncActions_namespaceObject, "setCurrentPage", function() { return setCurrentPage; });
+__webpack_require__.d(asyncActions_namespaceObject, "setPrevPageTotal", function() { return setPrevPageTotal; });
+
+// EXTERNAL MODULE: ./node_modules/react/index.js
+var react = __webpack_require__("./node_modules/react/index.js");
+var react_default = /*#__PURE__*/__webpack_require__.n(react);
+
 // EXTERNAL MODULE: ./node_modules/@apollo/client/react/context/ApolloProvider.js
 var ApolloProvider = __webpack_require__("./node_modules/@apollo/client/react/context/ApolloProvider.js");
+
+// EXTERNAL MODULE: ./node_modules/react-redux/es/index.js + 26 modules
+var es = __webpack_require__("./node_modules/react-redux/es/index.js");
+
+// EXTERNAL MODULE: ./node_modules/react-router-dom/esm/react-router-dom.js + 4 modules
+var react_router_dom = __webpack_require__("./node_modules/react-router-dom/esm/react-router-dom.js");
+
+// EXTERNAL MODULE: ./node_modules/react-helmet-async/lib/index.module.js
+var index_module = __webpack_require__("./node_modules/react-helmet-async/lib/index.module.js");
 
 // EXTERNAL MODULE: ./node_modules/@apollo/client/link/core/ApolloLink.js + 3 modules
 var ApolloLink = __webpack_require__("./node_modules/@apollo/client/link/core/ApolloLink.js");
@@ -40080,10 +39314,13 @@ var ApolloClient = __webpack_require__("./node_modules/@apollo/client/core/Apoll
 // EXTERNAL MODULE: ./node_modules/apollo-cache-persist/index.js + 9 modules
 var apollo_cache_persist = __webpack_require__("./node_modules/apollo-cache-persist/index.js");
 
+// EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/store/middleware/thunk.js
+var middleware_thunk = __webpack_require__("./node_modules/@magento/peregrine/lib/store/middleware/thunk.js");
+
 // CONCATENATED MODULE: ./node_modules/@magento/peregrine/lib/Apollo/attachClientToStore.js
 
 const attachClientToStore = apolloClient => {
-  Object.assign(extraArgument, {
+  Object.assign(middleware_thunk["b" /* extraArgument */], {
     apolloClient
   });
 };
@@ -40149,32 +39386,35 @@ var createHttpLink = __webpack_require__("./node_modules/@apollo/client/link/htt
 // EXTERNAL MODULE: ./node_modules/@apollo/client/link/context/index.js
 var context = __webpack_require__("./node_modules/@apollo/client/link/context/index.js");
 
+// EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/util/simplePersistence.js
+var simplePersistence = __webpack_require__("./node_modules/@magento/peregrine/lib/util/simplePersistence.js");
+
 // CONCATENATED MODULE: ./node_modules/@magento/peregrine/lib/Apollo/links/authLink.js
-function authLink_ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
-function authLink_objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? authLink_ownKeys(Object(source), !0).forEach(function (key) { authLink_defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : authLink_ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
-function authLink_defineProperty(obj, key, value) { key = authLink_toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-function authLink_toPropertyKey(arg) { var key = authLink_toPrimitive(arg, "string"); return typeof key === "symbol" ? key : String(key); }
-function authLink_toPrimitive(input, hint) { if (typeof input !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (typeof res !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
+function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return typeof key === "symbol" ? key : String(key); }
+function _toPrimitive(input, hint) { if (typeof input !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (typeof res !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
 
 
-const authLink_storage = new simplePersistence["a" /* default */]();
+const storage = new simplePersistence["a" /* default */]();
 function createAuthLink() {
   return Object(context["a" /* setContext */])((_, {
     headers
   }) => {
     // get the authentication token from local storage if it exists.
-    const token = authLink_storage.getItem('signin_token');
+    const token = storage.getItem('signin_token');
 
     // return the headers to the context so httpLink can read them
     return {
-      headers: authLink_objectSpread(authLink_objectSpread({}, headers), {}, {
+      headers: _objectSpread(_objectSpread({}, headers), {}, {
         authorization: token ? `Bearer ${token}` : ''
       })
     };
   });
 }
 // EXTERNAL MODULE: ./node_modules/@apollo/client/link/error/index.js
-var link_error = __webpack_require__("./node_modules/@apollo/client/link/error/index.js");
+var error = __webpack_require__("./node_modules/@apollo/client/link/error/index.js");
 
 // EXTERNAL MODULE: ./node_modules/lodash.get/index.js
 var lodash_get = __webpack_require__("./node_modules/lodash.get/index.js");
@@ -40189,7 +39429,7 @@ var lodash_set_default = /*#__PURE__*/__webpack_require__.n(lodash_set);
 
 
 function createErrorLink() {
-  return Object(link_error["a" /* onError */])(handler => {
+  return Object(error["a" /* onError */])(handler => {
     const {
       graphQLErrors,
       networkError,
@@ -40335,7 +39575,7 @@ var retry_retryLink = __webpack_require__("./node_modules/@apollo/client/link/re
 
 // CONCATENATED MODULE: ./node_modules/@magento/peregrine/lib/Apollo/links/retryLink.js
 
-const retryLink_isServer = !globalThis.document;
+const isServer = !globalThis.document;
 function createRetryLink() {
   return new retry_retryLink["a" /* RetryLink */]({
     delay: {
@@ -40345,7 +39585,7 @@ function createRetryLink() {
     },
     attempts: {
       max: 5,
-      retryIf: error => error && !retryLink_isServer && navigator.onLine
+      retryIf: error => error && !isServer && navigator.onLine
     }
   });
 }
@@ -41067,6 +40307,16 @@ const preInstantiatedCache = new inMemoryCache["a" /* InMemoryCache */]({
   possibleTypes: {"AttributeMetadataInterface":["ProductAttributeMetadata"],"UiInputTypeInterface":["UiAttributeTypeSelect","UiAttributeTypeMultiSelect","UiAttributeTypeBoolean","UiAttributeTypeAny","UiAttributeTypeTextarea","UiAttributeTypeTextEditor","UiAttributeTypePageBuilder","UiAttributeTypeFixedProductTax"],"CartAddressInterface":["BillingCartAddress","ShippingCartAddress"],"CartItemInterface":["SimpleCartItem","VirtualCartItem","DownloadableCartItem","BundleCartItem","GiftCardCartItem","ConfigurableCartItem"],"ProductInterface":["VirtualProduct","SimpleProduct","DownloadableProduct","BundleProduct","GiftCardProduct","GroupedProduct","ConfigurableProduct"],"CategoryInterface":["CategoryTree"],"AttributeOptionInterface":["AttributeOption"],"MediaGalleryInterface":["ProductImage","ProductVideo"],"ProductLinksInterface":["ProductLinks"],"RoutableInterface":["CategoryTree","CmsPage","VirtualProduct","SimpleProduct","DownloadableProduct","BundleProduct","GiftCardProduct","GroupedProduct","ConfigurableProduct"],"GiftRegistryDynamicAttributeInterface":["GiftRegistryDynamicAttribute","GiftRegistryRegistrantDynamicAttribute"],"GiftRegistryItemInterface":["GiftRegistryItem"],"GiftRegistryDynamicAttributeMetadataInterface":["GiftRegistryDynamicAttributeMetadata"],"CreditMemoItemInterface":["DownloadableCreditMemoItem","BundleCreditMemoItem","GiftCardCreditMemoItem","CreditMemoItem"],"OrderItemInterface":["DownloadableOrderItem","BundleOrderItem","GiftCardOrderItem","OrderItem"],"InvoiceItemInterface":["DownloadableInvoiceItem","BundleInvoiceItem","GiftCardInvoiceItem","InvoiceItem"],"ShipmentItemInterface":["BundleShipmentItem","GiftCardShipmentItem","ShipmentItem"],"RequisitionListItemInterface":["SimpleRequisitionListItem","VirtualRequisitionListItem","DownloadableRequisitionListItem","BundleRequisitionListItem","ConfigurableRequisitionListItem","GiftCardRequisitionListItem"],"WishlistItemInterface":["SimpleWishlistItem","VirtualWishlistItem","DownloadableWishlistItem","BundleWishlistItem","GiftCardWishlistItem","GroupedProductWishlistItem","ConfigurableWishlistItem"],"CompanyStructureEntity":["CompanyTeam","Customer"],"NegotiableQuoteAddressInterface":["NegotiableQuoteBillingAddress","NegotiableQuoteShippingAddress"],"AggregationOptionInterface":["AggregationOption"],"LayerFilterItemInterface":["LayerFilterItem","SwatchLayerFilterItem"],"CloseNegotiableQuoteOperationResult":["NegotiableQuoteUidOperationSuccess","CloseNegotiableQuoteOperationFailure"],"NegotiableQuoteUidNonFatalResultInterface":["NegotiableQuoteUidOperationSuccess"],"CloseNegotiableQuoteError":["NegotiableQuoteInvalidStateError","NoSuchEntityUidError","InternalError"],"ErrorInterface":["NegotiableQuoteInvalidStateError","NoSuchEntityUidError","InternalError"],"DeleteNegotiableQuoteOperationResult":["NegotiableQuoteUidOperationSuccess","DeleteNegotiableQuoteOperationFailure"],"DeleteNegotiableQuoteError":["NegotiableQuoteInvalidStateError","NoSuchEntityUidError","InternalError"],"GiftRegistryOutputInterface":["MoveCartItemsToGiftRegistryOutput","GiftRegistryOutput"],"GiftRegistryItemUserErrorInterface":["MoveCartItemsToGiftRegistryOutput","GiftRegistryItemUserErrors"],"AttributeOptionsInterface":["AttributeOptions","UiAttributeTypeSelect","UiAttributeTypeMultiSelect","UiAttributeTypeBoolean"],"SelectableInputTypeInterface":["UiAttributeTypeSelect","UiAttributeTypeMultiSelect","UiAttributeTypeBoolean"],"PhysicalProductInterface":["SimpleProduct","BundleProduct","GiftCardProduct","GroupedProduct","ConfigurableProduct"],"CustomizableOptionInterface":["CustomizableAreaOption","CustomizableDateOption","CustomizableDropDownOption","CustomizableMultipleOption","CustomizableFieldOption","CustomizableFileOption","CustomizableRadioOption","CustomizableCheckboxOption"],"CustomizableProductInterface":["VirtualProduct","SimpleProduct","DownloadableProduct","BundleProduct","GiftCardProduct","ConfigurableProduct"],"SwatchDataInterface":["ImageSwatchData","TextSwatchData","ColorSwatchData"],"SwatchLayerFilterItemInterface":["SwatchLayerFilterItem"]},
   typePolicies: policies
 });
+// EXTERNAL MODULE: ./node_modules/prop-types/index.js
+var prop_types = __webpack_require__("./node_modules/prop-types/index.js");
+
+// EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/Toasts/useToasts.js
+var useToasts = __webpack_require__("./node_modules/@magento/peregrine/lib/Toasts/useToasts.js");
+
+// EXTERNAL MODULE: ./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js
+var injectStylesIntoStyleTag = __webpack_require__("./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+var injectStylesIntoStyleTag_default = /*#__PURE__*/__webpack_require__.n(injectStylesIntoStyleTag);
+
 // EXTERNAL MODULE: ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./src/components/ToastContainer/toast.module.css
 var toast_module = __webpack_require__("./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./src/components/ToastContainer/toast.module.css");
 
@@ -41079,11 +40329,14 @@ var toast_module_options = {"injectType":"styleTag"};
 toast_module_options.insert = "head";
 toast_module_options.singleton = false;
 
-var toast_module_update = injectStylesIntoStyleTag_default()(toast_module["a" /* default */], toast_module_options);
+var update = injectStylesIntoStyleTag_default()(toast_module["a" /* default */], toast_module_options);
 
 
 
 /* harmony default export */ var ToastContainer_toast_module = (toast_module["a" /* default */].locals || {});
+// EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/util/shallowMerge.js
+var shallowMerge = __webpack_require__("./node_modules/@magento/peregrine/lib/util/shallowMerge.js");
+
 // EXTERNAL MODULE: ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./src/components/Icon/icon.module.css
 var icon_module = __webpack_require__("./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./src/components/Icon/icon.module.css");
 
@@ -41102,11 +40355,11 @@ var icon_module_update = injectStylesIntoStyleTag_default()(icon_module["a" /* d
 
 /* harmony default export */ var Icon_icon_module = (icon_module["a" /* default */].locals || {});
 // CONCATENATED MODULE: ./src/components/Icon/icon.js
-const icon_excluded = ["attrs", "classes", "size", "src"],
-  icon_excluded2 = ["width"];
-function icon_extends() { icon_extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return icon_extends.apply(this, arguments); }
-function icon_objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = icon_objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
-function icon_objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+const _excluded = ["attrs", "classes", "size", "src"],
+  _excluded2 = ["width"];
+function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
 
 
@@ -41119,32 +40372,32 @@ const Icon = props => {
       size,
       src: Component
     } = props,
-    restProps = icon_objectWithoutProperties(props, icon_excluded);
+    restProps = _objectWithoutProperties(props, _excluded);
   const _ref = attrs || {},
     {
       width
     } = _ref,
-    restAttrs = icon_objectWithoutProperties(_ref, icon_excluded2);
+    restAttrs = _objectWithoutProperties(_ref, _excluded2);
   const classes = Object(shallowMerge["a" /* default */])(Icon_icon_module, propClasses);
-  return /*#__PURE__*/react_default.a.createElement("span", icon_extends({
+  return /*#__PURE__*/react_default.a.createElement("span", _extends({
     className: classes.root
-  }, restProps), /*#__PURE__*/react_default.a.createElement(Component, icon_extends({
+  }, restProps), /*#__PURE__*/react_default.a.createElement(Component, _extends({
     className: classes.icon,
     size: size || width
   }, restAttrs)));
 };
-/* harmony default export */ var components_Icon_icon = (Icon);
+/* harmony default export */ var Icon_icon = (Icon);
 Icon.propTypes = {
-  attrs: Object(node_modules_prop_types["shape"])({}),
-  classes: Object(node_modules_prop_types["shape"])({
-    icon: node_modules_prop_types["string"],
-    root: node_modules_prop_types["string"]
+  attrs: Object(prop_types["shape"])({}),
+  classes: Object(prop_types["shape"])({
+    icon: prop_types["string"],
+    root: prop_types["string"]
   }),
-  size: node_modules_prop_types["number"],
-  src: node_modules_prop_types["object"].isRequired
+  size: prop_types["number"],
+  src: prop_types["object"].isRequired
 };
 // EXTERNAL MODULE: ./node_modules/react-feather/dist/icons/x.js
-var icons_x = __webpack_require__("./node_modules/react-feather/dist/icons/x.js");
+var x = __webpack_require__("./node_modules/react-feather/dist/icons/x.js");
 
 // CONCATENATED MODULE: ./src/components/ToastContainer/toast.js
 
@@ -41172,8 +40425,8 @@ const Toast = props => {
   const controls = onDismiss || dismissable ? /*#__PURE__*/react_default.a.createElement("button", {
     className: classes.dismissButton,
     onClick: handleDismiss
-  }, /*#__PURE__*/react_default.a.createElement(components_Icon_icon, {
-    src: icons_x["a" /* default */],
+  }, /*#__PURE__*/react_default.a.createElement(Icon_icon, {
+    src: x["a" /* default */],
     attrs: {
       width: 14
     }
@@ -41203,16 +40456,16 @@ const Toast = props => {
   }, controls), actions);
 };
 Toast.propTypes = {
-  actionText: node_modules_prop_types["string"],
-  dismissable: node_modules_prop_types["bool"],
-  icon: node_modules_prop_types["object"],
-  id: node_modules_prop_types["number"],
-  message: node_modules_prop_types["string"].isRequired,
-  onAction: node_modules_prop_types["func"],
-  onDismiss: node_modules_prop_types["func"],
-  handleAction: node_modules_prop_types["func"],
-  handleDismiss: node_modules_prop_types["func"],
-  type: Object(node_modules_prop_types["oneOf"])(['info', 'warning', 'error', 'success']).isRequired
+  actionText: prop_types["string"],
+  dismissable: prop_types["bool"],
+  icon: prop_types["object"],
+  id: prop_types["number"],
+  message: prop_types["string"].isRequired,
+  onAction: prop_types["func"],
+  onDismiss: prop_types["func"],
+  handleAction: prop_types["func"],
+  handleDismiss: prop_types["func"],
+  type: Object(prop_types["oneOf"])(['info', 'warning', 'error', 'success']).isRequired
 };
 /* harmony default export */ var ToastContainer_toast = (Toast);
 // EXTERNAL MODULE: ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./src/components/ToastContainer/toastContainer.module.css
@@ -41285,66 +40538,37 @@ const ToastContainer = props => {
  * @property {String} classes.root CSS classes for the root container
  */
 ToastContainer.propTypes = {
-  classes: Object(node_modules_prop_types["shape"])({
-    root: node_modules_prop_types["string"]
+  classes: Object(prop_types["shape"])({
+    root: prop_types["string"]
   })
 };
 /* harmony default export */ var toastContainer = (ToastContainer);
-// EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/store/actions/app/asyncActions.js
-var app_asyncActions = __webpack_require__("./node_modules/@magento/peregrine/lib/store/actions/app/asyncActions.js");
+// EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/context/app.js
+var app = __webpack_require__("./node_modules/@magento/peregrine/lib/context/app.js");
 
-// CONCATENATED MODULE: ./node_modules/@magento/peregrine/lib/context/app.js
-function context_app_ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
-function context_app_objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? context_app_ownKeys(Object(source), !0).forEach(function (key) { context_app_defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : context_app_ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
-function context_app_defineProperty(obj, key, value) { key = context_app_toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-function context_app_toPropertyKey(arg) { var key = context_app_toPrimitive(arg, "string"); return typeof key === "symbol" ? key : String(key); }
-function context_app_toPrimitive(input, hint) { if (typeof input !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (typeof res !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
+// EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/context/cart.js
+var cart = __webpack_require__("./node_modules/@magento/peregrine/lib/context/cart.js");
 
+// EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/store/actions/catalog/actions.js
+var catalog_actions = __webpack_require__("./node_modules/@magento/peregrine/lib/store/actions/catalog/actions.js");
 
-
-
-
-const AppContext = Object(react["createContext"])();
-const AppContextProvider = props => {
-  const {
-    actions,
-    appState,
-    asyncActions,
-    children
-  } = props;
-  const appApi = Object(react["useMemo"])(() => context_app_objectSpread({
-    actions
-  }, asyncActions), [actions, asyncActions]);
-  const contextValue = Object(react["useMemo"])(() => [appState, appApi], [appApi, appState]);
-  return /*#__PURE__*/react_default.a.createElement(AppContext.Provider, {
-    value: contextValue
-  }, children);
-};
-const app_mapStateToProps = ({
-  app
-}) => ({
-  appState: app
-});
-const app_mapDispatchToProps = dispatch => ({
-  actions: Object(bindActionCreators["a" /* default */])(app_actions["a" /* default */], dispatch),
-  asyncActions: Object(bindActionCreators["a" /* default */])(app_asyncActions, dispatch)
-});
-/* harmony default export */ var context_app = (Object(es["b" /* connect */])(app_mapStateToProps, app_mapDispatchToProps)(AppContextProvider));
-const useAppContext = () => Object(react["useContext"])(AppContext);
 // CONCATENATED MODULE: ./node_modules/@magento/peregrine/lib/store/actions/catalog/asyncActions.js
 
 const setCurrentPage = payload => async function thunk(dispatch) {
-  dispatch(catalog_actions.setCurrentPage.receive(payload));
+  dispatch(catalog_actions["a" /* default */].setCurrentPage.receive(payload));
 };
 const setPrevPageTotal = payload => async function thunk(dispatch) {
-  dispatch(catalog_actions.setPrevPageTotal.receive(payload));
+  dispatch(catalog_actions["a" /* default */].setPrevPageTotal.receive(payload));
 };
+// EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/util/bindActionCreators.js
+var bindActionCreators = __webpack_require__("./node_modules/@magento/peregrine/lib/util/bindActionCreators.js");
+
 // CONCATENATED MODULE: ./node_modules/@magento/peregrine/lib/context/catalog.js
-function context_catalog_ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
-function context_catalog_objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? context_catalog_ownKeys(Object(source), !0).forEach(function (key) { context_catalog_defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : context_catalog_ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
-function context_catalog_defineProperty(obj, key, value) { key = context_catalog_toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-function context_catalog_toPropertyKey(arg) { var key = context_catalog_toPrimitive(arg, "string"); return typeof key === "symbol" ? key : String(key); }
-function context_catalog_toPrimitive(input, hint) { if (typeof input !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (typeof res !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
+function catalog_ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+function catalog_objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? catalog_ownKeys(Object(source), !0).forEach(function (key) { catalog_defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : catalog_ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
+function catalog_defineProperty(obj, key, value) { key = catalog_toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+function catalog_toPropertyKey(arg) { var key = catalog_toPrimitive(arg, "string"); return typeof key === "symbol" ? key : String(key); }
+function catalog_toPrimitive(input, hint) { if (typeof input !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (typeof res !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
 
 
 
@@ -41358,7 +40582,7 @@ const CatalogContextProvider = props => {
     catalogState,
     children
   } = props;
-  const catalogApi = Object(react["useMemo"])(() => context_catalog_objectSpread({
+  const catalogApi = Object(react["useMemo"])(() => catalog_objectSpread({
     actions
   }, asyncActions), [actions, asyncActions]);
   const contextValue = Object(react["useMemo"])(() => [catalogState, catalogApi], [catalogApi, catalogState]);
@@ -41366,26 +40590,29 @@ const CatalogContextProvider = props => {
     value: contextValue
   }, children);
 };
-const catalog_mapStateToProps = ({
+const mapStateToProps = ({
   catalog
 }) => ({
   catalogState: catalog
 });
-const catalog_mapDispatchToProps = dispatch => ({
-  actions: Object(bindActionCreators["a" /* default */])(catalog_actions, dispatch),
+const mapDispatchToProps = dispatch => ({
+  actions: Object(bindActionCreators["a" /* default */])(catalog_actions["a" /* default */], dispatch),
   asyncActions: Object(bindActionCreators["a" /* default */])(asyncActions_namespaceObject, dispatch)
 });
-/* harmony default export */ var context_catalog = (Object(es["b" /* connect */])(catalog_mapStateToProps, catalog_mapDispatchToProps)(CatalogContextProvider));
+/* harmony default export */ var catalog = (Object(es["b" /* connect */])(mapStateToProps, mapDispatchToProps)(CatalogContextProvider));
 const useCatalogContext = () => Object(react["useContext"])(CatalogContext);
+// EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/store/actions/checkout/actions.js
+var checkout_actions = __webpack_require__("./node_modules/@magento/peregrine/lib/store/actions/checkout/actions.js");
+
 // EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/store/actions/checkout/asyncActions.js + 5 modules
 var checkout_asyncActions = __webpack_require__("./node_modules/@magento/peregrine/lib/store/actions/checkout/asyncActions.js");
 
 // CONCATENATED MODULE: ./node_modules/@magento/peregrine/lib/context/checkout.js
-function context_checkout_ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
-function context_checkout_objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? context_checkout_ownKeys(Object(source), !0).forEach(function (key) { context_checkout_defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : context_checkout_ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
-function context_checkout_defineProperty(obj, key, value) { key = context_checkout_toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-function context_checkout_toPropertyKey(arg) { var key = context_checkout_toPrimitive(arg, "string"); return typeof key === "symbol" ? key : String(key); }
-function context_checkout_toPrimitive(input, hint) { if (typeof input !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (typeof res !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
+function checkout_ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+function checkout_objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? checkout_ownKeys(Object(source), !0).forEach(function (key) { checkout_defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : checkout_ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
+function checkout_defineProperty(obj, key, value) { key = checkout_toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+function checkout_toPropertyKey(arg) { var key = checkout_toPrimitive(arg, "string"); return typeof key === "symbol" ? key : String(key); }
+function checkout_toPrimitive(input, hint) { if (typeof input !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (typeof res !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
 
 
 
@@ -41399,7 +40626,7 @@ const CheckoutContextProvider = props => {
     checkoutState,
     children
   } = props;
-  const checkoutApi = Object(react["useMemo"])(() => context_checkout_objectSpread({
+  const checkoutApi = Object(react["useMemo"])(() => checkout_objectSpread({
     actions
   }, asyncActions), [actions, asyncActions]);
   const contextValue = Object(react["useMemo"])(() => [checkoutState, checkoutApi], [checkoutApi, checkoutState]);
@@ -41416,8 +40643,11 @@ const checkout_mapDispatchToProps = dispatch => ({
   actions: Object(bindActionCreators["a" /* default */])(checkout_actions["a" /* default */], dispatch),
   asyncActions: Object(bindActionCreators["a" /* default */])(checkout_asyncActions, dispatch)
 });
-/* harmony default export */ var context_checkout = (Object(es["b" /* connect */])(checkout_mapStateToProps, checkout_mapDispatchToProps)(CheckoutContextProvider));
+/* harmony default export */ var checkout = (Object(es["b" /* connect */])(checkout_mapStateToProps, checkout_mapDispatchToProps)(CheckoutContextProvider));
 const useCheckoutContext = () => Object(react["useContext"])(CheckoutContext);
+// EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/store/actions/app/actions.js
+var app_actions = __webpack_require__("./node_modules/@magento/peregrine/lib/store/actions/app/actions.js");
+
 // CONCATENATED MODULE: ./node_modules/@magento/peregrine/lib/context/unhandledErrors.js
 
 
@@ -41447,6 +40677,9 @@ const unhandledErrors_mapDispatchToProps = {
 };
 /* harmony default export */ var context_unhandledErrors = (Object(es["b" /* connect */])(unhandledErrors_mapStateToProps, unhandledErrors_mapDispatchToProps)(ErrorContextProvider));
 const useErrorContext = () => Object(react["useContext"])(ErrorContext);
+// EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/context/eventing.js
+var eventing = __webpack_require__("./node_modules/@magento/peregrine/lib/context/eventing.js");
+
 // CONCATENATED MODULE: ./node_modules/@magento/peregrine/lib/context/rootComponents.js
 
 const RootComponentsContext = Object(react["createContext"])();
@@ -41461,6 +40694,9 @@ const RootComponentsProvider = props => {
 };
 /* harmony default export */ var rootComponents = (RootComponentsProvider);
 const useRootComponents = () => Object(react["useContext"])(RootComponentsContext);
+// EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/context/user.js
+var user = __webpack_require__("./node_modules/@magento/peregrine/lib/context/user.js");
+
 // CONCATENATED MODULE: ./node_modules/@magento/peregrine/lib/PeregrineContextProvider/peregrineContextProvider.js
 
 
@@ -41477,7 +40713,7 @@ const useRootComponents = () => Object(react["useContext"])(RootComponentsContex
  *
  * @property {React.Component[]} contextProviders
  */
-const contextProviders = [context_unhandledErrors, eventing["a" /* default */], context_app, user, context_catalog, cart["a" /* default */], context_checkout, rootComponents];
+const contextProviders = [context_unhandledErrors, eventing["a" /* default */], app["a" /* default */], user["a" /* default */], catalog, cart["a" /* default */], checkout, rootComponents];
 const PeregrineContextProvider = ({
   children
 }) => {
@@ -41486,6 +40722,9 @@ const PeregrineContextProvider = ({
   }, children);
 };
 /* harmony default export */ var peregrineContextProvider = (PeregrineContextProvider);
+// EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/hooks/useEventListener.js
+var useEventListener = __webpack_require__("./node_modules/@magento/peregrine/lib/hooks/useEventListener.js");
+
 // CONCATENATED MODULE: ./node_modules/@magento/peregrine/lib/hooks/useWindowSize.js
 
 
@@ -41571,7 +40810,7 @@ var core = __webpack_require__("./node_modules/intl-messageformat/lib/src/core.j
 var src_error = __webpack_require__("./node_modules/@formatjs/intl/lib/src/error.js");
 
 // EXTERNAL MODULE: ./node_modules/@formatjs/icu-messageformat-parser/lib/index.js + 8 modules
-var icu_messageformat_parser_lib = __webpack_require__("./node_modules/@formatjs/icu-messageformat-parser/lib/index.js");
+var lib = __webpack_require__("./node_modules/@formatjs/icu-messageformat-parser/lib/index.js");
 
 // CONCATENATED MODULE: ./node_modules/@formatjs/intl/lib/src/message.js
 
@@ -41599,7 +40838,7 @@ function deepMergeFormatsAndSetTimeZone(f1, timeZone) {
     var mfFormats = core["a" /* IntlMessageFormat */].formats;
     return Object(tslib_es6["a" /* __assign */])(Object(tslib_es6["a" /* __assign */])(Object(tslib_es6["a" /* __assign */])({}, mfFormats), f1), { date: deepMergeOptions(setTimeZoneInOptions(mfFormats.date, timeZone), setTimeZoneInOptions(f1.date || {}, timeZone)), time: deepMergeOptions(setTimeZoneInOptions(mfFormats.time, timeZone), setTimeZoneInOptions(f1.time || {}, timeZone)) });
 }
-function message_formatMessage(_a, state, messageDescriptor, values, opts) {
+function formatMessage(_a, state, messageDescriptor, values, opts) {
     var locale = _a.locale, formats = _a.formats, messages = _a.messages, defaultLocale = _a.defaultLocale, defaultFormats = _a.defaultFormats, onError = _a.onError, timeZone = _a.timeZone, defaultRichTextElements = _a.defaultRichTextElements;
     if (messageDescriptor === void 0) { messageDescriptor = { id: '' }; }
     var msgId = messageDescriptor.id, defaultMessage = messageDescriptor.defaultMessage;
@@ -41616,7 +40855,7 @@ function message_formatMessage(_a, state, messageDescriptor, values, opts) {
     // IMPORTANT: Hot path if `message` is AST with a single literal node
     if (Array.isArray(message) &&
         message.length === 1 &&
-        message[0].type === icu_messageformat_parser_lib["a" /* TYPE */].literal) {
+        message[0].type === lib["a" /* TYPE */].literal) {
         return message[0].value;
     }
     // IMPORTANT: Hot path straight lookup for performance
@@ -42052,7 +41291,7 @@ function createIntl(config, cache) {
         onError(new src_error["e" /* MissingDataError */]("Missing locale data for locale: \"" + locale + "\" in Intl.DateTimeFormat. Using default locale: \"" + defaultLocale + "\" as fallback. See https://formatjs.io/docs/react-intl#runtime-requirements for more details"));
     }
     verifyConfigMessages(resolvedConfig);
-    return Object(tslib_es6["a" /* __assign */])(Object(tslib_es6["a" /* __assign */])({}, resolvedConfig), { formatters: formatters, formatNumber: formatNumber.bind(null, resolvedConfig, formatters.getNumberFormat), formatNumberToParts: formatNumberToParts.bind(null, resolvedConfig, formatters.getNumberFormat), formatRelativeTime: formatRelativeTime.bind(null, resolvedConfig, formatters.getRelativeTimeFormat), formatDate: formatDate.bind(null, resolvedConfig, formatters.getDateTimeFormat), formatDateToParts: formatDateToParts.bind(null, resolvedConfig, formatters.getDateTimeFormat), formatTime: formatTime.bind(null, resolvedConfig, formatters.getDateTimeFormat), formatDateTimeRange: formatDateTimeRange.bind(null, resolvedConfig, formatters.getDateTimeFormat), formatTimeToParts: formatTimeToParts.bind(null, resolvedConfig, formatters.getDateTimeFormat), formatPlural: formatPlural.bind(null, resolvedConfig, formatters.getPluralRules), formatMessage: message_formatMessage.bind(null, resolvedConfig, formatters), formatList: formatList.bind(null, resolvedConfig, formatters.getListFormat), formatListToParts: formatListToParts.bind(null, resolvedConfig, formatters.getListFormat), formatDisplayName: formatDisplayName.bind(null, resolvedConfig, formatters.getDisplayNames) });
+    return Object(tslib_es6["a" /* __assign */])(Object(tslib_es6["a" /* __assign */])({}, resolvedConfig), { formatters: formatters, formatNumber: formatNumber.bind(null, resolvedConfig, formatters.getNumberFormat), formatNumberToParts: formatNumberToParts.bind(null, resolvedConfig, formatters.getNumberFormat), formatRelativeTime: formatRelativeTime.bind(null, resolvedConfig, formatters.getRelativeTimeFormat), formatDate: formatDate.bind(null, resolvedConfig, formatters.getDateTimeFormat), formatDateToParts: formatDateToParts.bind(null, resolvedConfig, formatters.getDateTimeFormat), formatTime: formatTime.bind(null, resolvedConfig, formatters.getDateTimeFormat), formatDateTimeRange: formatDateTimeRange.bind(null, resolvedConfig, formatters.getDateTimeFormat), formatTimeToParts: formatTimeToParts.bind(null, resolvedConfig, formatters.getDateTimeFormat), formatPlural: formatPlural.bind(null, resolvedConfig, formatters.getPluralRules), formatMessage: formatMessage.bind(null, resolvedConfig, formatters), formatList: formatList.bind(null, resolvedConfig, formatters.getListFormat), formatListToParts: formatListToParts.bind(null, resolvedConfig, formatters.getListFormat), formatDisplayName: formatDisplayName.bind(null, resolvedConfig, formatters.getDisplayNames) });
 }
 
 // EXTERNAL MODULE: ./node_modules/intl-messageformat/lib/src/formatters.js
@@ -42102,7 +41341,7 @@ var provider_formatMessage = function (config, formatters, descriptor, rawValues
         rest[_i - 4] = arguments[_i];
     }
     var values = assignUniqueKeysToFormatXMLElementFnArgument(rawValues);
-    var chunks = message_formatMessage.apply(void 0, Object(tslib_es6["f" /* __spreadArray */])([config,
+    var chunks = formatMessage.apply(void 0, Object(tslib_es6["f" /* __spreadArray */])([config,
         formatters,
         descriptor,
         values], rest));
@@ -42241,32 +41480,976 @@ const Adapter = props => {
     console.debug('Adapter not initialized...');
     return null;
   }
+  if (initialized) {
+    console.debug('Adapter initialized');
+  }
   const children = props.children;
-  return /*#__PURE__*/react_default.a.createElement(ApolloProvider["a" /* ApolloProvider */], apolloProps, /*#__PURE__*/react_default.a.createElement(es["a" /* Provider */], reduxProps, /*#__PURE__*/react_default.a.createElement(react_router_dom["a" /* BrowserRouter */], routerProps, /*#__PURE__*/react_default.a.createElement(contextProvider, null, /*#__PURE__*/react_default.a.createElement(q, null, children, /*#__PURE__*/react_default.a.createElement(toastContainer, null))))));
+  return /*#__PURE__*/react_default.a.createElement(ApolloProvider["a" /* ApolloProvider */], apolloProps, /*#__PURE__*/react_default.a.createElement(es["a" /* Provider */], reduxProps, /*#__PURE__*/react_default.a.createElement(react_router_dom["a" /* BrowserRouter */], routerProps, /*#__PURE__*/react_default.a.createElement(contextProvider, null, /*#__PURE__*/react_default.a.createElement(index_module["b" /* HelmetProvider */], null, children, /*#__PURE__*/react_default.a.createElement(toastContainer, null))))));
 };
-/* harmony default export */ var adapter = (Adapter);
-// CONCATENATED MODULE: ./src/RootComponents/Cart/index.js
+/* harmony default export */ var adapter = __webpack_exports__["a"] = (Adapter);
+
+/***/ }),
+
+/***/ "./src/store.js":
+/*!***********************************!*\
+  !*** ./src/store.js + 13 modules ***!
+  \***********************************/
+/*! exports provided: default */
+/*! exports used: default */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/store/actions/app/actions.js because of ./src/RootComponents/Cart/index.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/store/actions/cart/actions.js because of ./src/RootComponents/Cart/index.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/store/actions/catalog/actions.js because of ./src/RootComponents/Cart/index.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/store/actions/checkout/actions.js because of ./src/RootComponents/Cart/index.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/store/actions/user/actions.js because of ./src/RootComponents/Cart/index.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/store/actions/user/asyncActions.js because of ./src/RootComponents/Cart/index.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/store/middleware/thunk.js because of ./src/RootComponents/Cart/index.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/simplePersistence.js because of ./src/RootComponents/Cart/index.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/redux-actions/es/handleActions.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/redux/es/redux.js */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+
+// EXTERNAL MODULE: ./node_modules/redux/es/redux.js
+var redux = __webpack_require__("./node_modules/redux/es/redux.js");
+
+// EXTERNAL MODULE: ./node_modules/redux-actions/es/handleActions.js + 5 modules
+var handleActions = __webpack_require__("./node_modules/redux-actions/es/handleActions.js");
+
+// EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/store/actions/app/actions.js
+var actions = __webpack_require__("./node_modules/@magento/peregrine/lib/store/actions/app/actions.js");
+
+// CONCATENATED MODULE: ./node_modules/@magento/peregrine/lib/store/reducers/app.js
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
+function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return typeof key === "symbol" ? key : String(key); }
+function _toPrimitive(input, hint) { if (typeof input !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (typeof res !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
+
+
+const app_name = 'app';
+
+// as far as the server is concerned, the app is always online
+const isServer = !globalThis.navigator;
+const isOnline = !isServer && navigator.onLine;
+const hasBeenOffline = !isServer && !navigator.onLine;
+const initialState = {
+  drawer: null,
+  hasBeenOffline,
+  isOnline,
+  isPageLoading: false,
+  overlay: false,
+  pending: {},
+  searchOpen: false,
+  nextRootComponent: null
+};
+const reducerMap = {
+  [actions["a" /* default */].toggleDrawer]: (state, {
+    payload
+  }) => {
+    return _objectSpread(_objectSpread({}, state), {}, {
+      drawer: payload,
+      overlay: !!payload
+    });
+  },
+  [actions["a" /* default */].toggleSearch]: state => {
+    return _objectSpread(_objectSpread({}, state), {}, {
+      searchOpen: !state.searchOpen
+    });
+  },
+  [actions["a" /* default */].setOnline]: state => {
+    return _objectSpread(_objectSpread({}, state), {}, {
+      isOnline: true
+    });
+  },
+  [actions["a" /* default */].setOffline]: state => {
+    return _objectSpread(_objectSpread({}, state), {}, {
+      isOnline: false,
+      hasBeenOffline: true
+    });
+  },
+  [actions["a" /* default */].setPageLoading]: (state, {
+    payload
+  }) => {
+    return _objectSpread(_objectSpread({}, state), {}, {
+      isPageLoading: !!payload
+    });
+  },
+  [actions["a" /* default */].setNextRootComponent]: (state, {
+    payload
+  }) => {
+    return _objectSpread(_objectSpread({}, state), {}, {
+      nextRootComponent: payload
+    });
+  }
+};
+/* harmony default export */ var app = (Object(handleActions["a" /* default */])(reducerMap, initialState));
+// EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/store/actions/cart/actions.js
+var cart_actions = __webpack_require__("./node_modules/@magento/peregrine/lib/store/actions/cart/actions.js");
+
+// CONCATENATED MODULE: ./node_modules/@magento/peregrine/lib/store/reducers/cart.js
+function cart_ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+function cart_objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? cart_ownKeys(Object(source), !0).forEach(function (key) { cart_defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : cart_ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
+function cart_defineProperty(obj, key, value) { key = cart_toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+function cart_toPropertyKey(arg) { var key = cart_toPrimitive(arg, "string"); return typeof key === "symbol" ? key : String(key); }
+function cart_toPrimitive(input, hint) { if (typeof input !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (typeof res !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
+
+
+const cart_name = 'cart';
+const cart_initialState = {
+  addItemError: null,
+  cartId: null,
+  details: {},
+  detailsError: null,
+  getCartError: null,
+  isLoading: false,
+  isUpdatingItem: false,
+  isAddingItem: false,
+  removeItemError: null,
+  shippingMethods: [],
+  updateItemError: null
+};
+const cart_reducerMap = {
+  [cart_actions["a" /* default */].getCart.receive]: (state, {
+    payload,
+    error
+  }) => {
+    if (error) {
+      return cart_objectSpread(cart_objectSpread({}, cart_initialState), {}, {
+        getCartError: payload
+      });
+    }
+    return cart_objectSpread(cart_objectSpread({}, state), {}, {
+      cartId: String(payload),
+      getCartError: null
+    });
+  },
+  [cart_actions["a" /* default */].getDetails.request]: state => {
+    return cart_objectSpread(cart_objectSpread({}, state), {}, {
+      isLoading: true
+    });
+  },
+  [cart_actions["a" /* default */].getDetails.receive]: (state, {
+    payload,
+    error
+  }) => {
+    if (error) {
+      return cart_objectSpread(cart_objectSpread({}, state), {}, {
+        detailsError: payload,
+        isLoading: false
+      });
+    }
+    return cart_objectSpread(cart_objectSpread(cart_objectSpread({}, state), payload), {}, {
+      isLoading: false
+    });
+  },
+  [cart_actions["a" /* default */].addItem.request]: state => {
+    return cart_objectSpread(cart_objectSpread({}, state), {}, {
+      isAddingItem: true
+    });
+  },
+  [cart_actions["a" /* default */].addItem.receive]: (state, {
+    payload,
+    error
+  }) => {
+    if (error) {
+      return cart_objectSpread(cart_objectSpread({}, state), {}, {
+        addItemError: payload,
+        isAddingItem: false
+      });
+    }
+    return cart_objectSpread(cart_objectSpread({}, state), {}, {
+      isAddingItem: false
+    });
+  },
+  [cart_actions["a" /* default */].updateItem.request]: state => {
+    return cart_objectSpread(cart_objectSpread({}, state), {}, {
+      isUpdatingItem: true
+    });
+  },
+  [cart_actions["a" /* default */].updateItem.receive]: (state, {
+    payload,
+    error
+  }) => {
+    if (error) {
+      return cart_objectSpread(cart_objectSpread({}, state), {}, {
+        isUpdatingItem: false,
+        updateItemError: payload
+      });
+    }
+
+    // We don't actually have to update any items here
+    // because we force a refresh from the server.
+    return cart_objectSpread(cart_objectSpread({}, state), {}, {
+      isUpdatingItem: false
+    });
+  },
+  [cart_actions["a" /* default */].removeItem.receive]: (state, {
+    payload,
+    error
+  }) => {
+    if (error) {
+      return cart_objectSpread(cart_objectSpread({}, state), {}, {
+        removeItemError: payload
+      });
+    }
+    return cart_objectSpread({}, state);
+  },
+  [cart_actions["a" /* default */].reset]: () => cart_initialState
+};
+/* harmony default export */ var cart = (Object(handleActions["a" /* default */])(cart_reducerMap, cart_initialState));
+// EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/store/actions/catalog/actions.js
+var catalog_actions = __webpack_require__("./node_modules/@magento/peregrine/lib/store/actions/catalog/actions.js");
+
+// CONCATENATED MODULE: ./node_modules/@magento/peregrine/lib/store/reducers/catalog.js
+function catalog_ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+function catalog_objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? catalog_ownKeys(Object(source), !0).forEach(function (key) { catalog_defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : catalog_ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
+function catalog_defineProperty(obj, key, value) { key = catalog_toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+function catalog_toPropertyKey(arg) { var key = catalog_toPrimitive(arg, "string"); return typeof key === "symbol" ? key : String(key); }
+function catalog_toPrimitive(input, hint) { if (typeof input !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (typeof res !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
+
+
+const catalog_name = 'catalog';
+const fromPairs = pairs => {
+  const result = {};
+  for (const [key, value] of pairs) {
+    result[key] = value;
+  }
+  return result;
+};
+const catalog_initialState = {
+  categories: {},
+  currentPage: 1,
+  pageSize: 6,
+  prevPageTotal: null
+};
+const catalog_reducerMap = {
+  [catalog_actions["a" /* default */].updateCategories]: (state, {
+    payload
+  }) => {
+    const {
+      uid
+    } = payload;
+    const currentCategory = state.categories[uid] || {};
+
+    // if category has already been fetched, do nothing
+    if (currentCategory.children) {
+      return state;
+    }
+
+    // sort children by `position`
+    const children = [...payload.children].sort((a, b) => {
+      if (a.position > b.position) {
+        return 1;
+      } else if (a.position === b.position && a.uid > b.uid) {
+        return 1;
+      } else {
+        return -1;
+      }
+    });
+
+    // use a Map to preserve sort order
+    // since a plain object with numeric keys would lose it
+    const childMap = new Map();
+
+    // merge children and add them to the Map, keyed by `id`
+    for (const child of children) {
+      childMap.set(child.uid, catalog_objectSpread(catalog_objectSpread(catalog_objectSpread({}, child), state.categories[child.uid] || {}), {}, {
+        parentId: uid
+      }));
+    }
+
+    // merge in the fetched child last
+    return catalog_objectSpread(catalog_objectSpread({}, state), {}, {
+      categories: catalog_objectSpread(catalog_objectSpread(catalog_objectSpread({}, state.categories), fromPairs(childMap)), {}, {
+        [uid]: catalog_objectSpread(catalog_objectSpread(catalog_objectSpread({}, currentCategory), payload), {}, {
+          children: [...childMap.keys()],
+          children_count: childMap.size
+        })
+      })
+    });
+  },
+  [catalog_actions["a" /* default */].setCurrentPage.receive]: (state, {
+    payload,
+    error
+  }) => {
+    if (error) {
+      return state;
+    }
+    return catalog_objectSpread(catalog_objectSpread({}, state), {}, {
+      currentPage: payload
+    });
+  },
+  [catalog_actions["a" /* default */].setPrevPageTotal.receive]: (state, {
+    payload,
+    error
+  }) => {
+    if (error) {
+      return state;
+    }
+    return catalog_objectSpread(catalog_objectSpread({}, state), {}, {
+      prevPageTotal: payload
+    });
+  }
+};
+/* harmony default export */ var catalog = (Object(handleActions["a" /* default */])(catalog_reducerMap, catalog_initialState));
+// EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/store/actions/checkout/actions.js
+var checkout_actions = __webpack_require__("./node_modules/@magento/peregrine/lib/store/actions/checkout/actions.js");
+
+// CONCATENATED MODULE: ./node_modules/@magento/peregrine/lib/store/reducers/checkout.js
+function checkout_ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+function checkout_objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? checkout_ownKeys(Object(source), !0).forEach(function (key) { checkout_defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : checkout_ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
+function checkout_defineProperty(obj, key, value) { key = checkout_toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+function checkout_toPropertyKey(arg) { var key = checkout_toPrimitive(arg, "string"); return typeof key === "symbol" ? key : String(key); }
+function checkout_toPrimitive(input, hint) { if (typeof input !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (typeof res !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
+
+
+const checkout_name = 'checkout';
+const checkout_initialState = {
+  availableShippingMethods: [],
+  billingAddress: null,
+  billingAddressError: null,
+  isSubmitting: false,
+  orderError: null,
+  paymentMethodError: null,
+  paymentCode: '',
+  paymentData: null,
+  receipt: {
+    order: {}
+  },
+  shippingAddress: {},
+  shippingAddressError: null,
+  shippingMethod: '',
+  shippingMethodError: null,
+  shippingTitle: ''
+};
+const checkout_reducerMap = {
+  [checkout_actions["a" /* default */].begin]: (state, {
+    payload
+  }) => {
+    return checkout_objectSpread(checkout_objectSpread({}, state), payload);
+  },
+  [checkout_actions["a" /* default */].billingAddress.submit]: state => checkout_objectSpread(checkout_objectSpread({}, state), {}, {
+    billingAddressError: null,
+    isSubmitting: true
+  }),
+  [checkout_actions["a" /* default */].billingAddress.accept]: (state, {
+    payload
+  }) => {
+    // Billing address can either be an object with address props OR
+    // an object with a single prop, `sameAsShippingAddress`, so we need
+    // to do some special handling to make sure the store reflects that.
+    const newState = checkout_objectSpread(checkout_objectSpread({}, state), {}, {
+      isSubmitting: false
+    });
+    if (payload.sameAsShippingAddress) {
+      newState.billingAddress = checkout_objectSpread({}, payload);
+    } else if (!payload.sameAsShippingAddress) {
+      newState.billingAddress = checkout_objectSpread(checkout_objectSpread({}, payload), {}, {
+        street: [...payload.street]
+      });
+    }
+    return newState;
+  },
+  [checkout_actions["a" /* default */].billingAddress.reject]: (state, {
+    payload
+  }) => {
+    return checkout_objectSpread(checkout_objectSpread({}, state), {}, {
+      billingAddressError: payload,
+      isSubmitting: false
+    });
+  },
+  [checkout_actions["a" /* default */].getShippingMethods.receive]: (state, {
+    payload,
+    error
+  }) => {
+    if (error) {
+      return state;
+    }
+    return checkout_objectSpread(checkout_objectSpread({}, state), {}, {
+      availableShippingMethods: payload.map(method => checkout_objectSpread(checkout_objectSpread({}, method), {}, {
+        code: method.carrier_code,
+        title: method.carrier_title
+      }))
+    });
+  },
+  [checkout_actions["a" /* default */].shippingAddress.submit]: state => checkout_objectSpread(checkout_objectSpread({}, state), {}, {
+    isSubmitting: true,
+    shippingAddressError: null
+  }),
+  [checkout_actions["a" /* default */].shippingAddress.accept]: (state, {
+    payload
+  }) => {
+    return checkout_objectSpread(checkout_objectSpread({}, state), {}, {
+      isSubmitting: false,
+      shippingAddress: checkout_objectSpread(checkout_objectSpread(checkout_objectSpread({}, state.shippingAddress), payload), {}, {
+        street: [...payload.street]
+      })
+    });
+  },
+  [checkout_actions["a" /* default */].shippingAddress.reject]: (state, {
+    payload
+  }) => {
+    return checkout_objectSpread(checkout_objectSpread({}, state), {}, {
+      isSubmitting: false,
+      shippingAddressError: payload
+    });
+  },
+  [checkout_actions["a" /* default */].paymentMethod.submit]: state => checkout_objectSpread(checkout_objectSpread({}, state), {}, {
+    isSubmitting: true,
+    paymentMethodError: null
+  }),
+  [checkout_actions["a" /* default */].paymentMethod.accept]: (state, {
+    payload
+  }) => {
+    return checkout_objectSpread(checkout_objectSpread({}, state), {}, {
+      isSubmitting: false,
+      paymentCode: payload.code,
+      paymentData: payload.data
+    });
+  },
+  [checkout_actions["a" /* default */].paymentMethod.reject]: (state, {
+    payload
+  }) => {
+    return checkout_objectSpread(checkout_objectSpread({}, state), {}, {
+      isSubmitting: false,
+      paymentMethodError: payload
+    });
+  },
+  [checkout_actions["a" /* default */].receipt.setOrder]: (state, {
+    payload
+  }) => checkout_objectSpread(checkout_objectSpread({}, state), {}, {
+    receipt: {
+      order: payload
+    }
+  }),
+  [checkout_actions["a" /* default */].receipt.reset]: state => checkout_objectSpread(checkout_objectSpread({}, state), {}, {
+    receipt: checkout_objectSpread({}, checkout_initialState.receipt)
+  }),
+  [checkout_actions["a" /* default */].shippingMethod.submit]: state => checkout_objectSpread(checkout_objectSpread({}, state), {}, {
+    isSubmitting: true,
+    shippingMethodError: null
+  }),
+  [checkout_actions["a" /* default */].shippingMethod.accept]: (state, {
+    payload
+  }) => {
+    return checkout_objectSpread(checkout_objectSpread({}, state), {}, {
+      isSubmitting: false,
+      shippingMethod: payload.carrier_code,
+      shippingTitle: payload.carrier_title
+    });
+  },
+  [checkout_actions["a" /* default */].shippingMethod.reject]: (state, {
+    payload
+  }) => {
+    return checkout_objectSpread(checkout_objectSpread({}, state), {}, {
+      isSubmitting: false,
+      shippingMethodError: payload
+    });
+  },
+  [checkout_actions["a" /* default */].order.submit]: state => checkout_objectSpread(checkout_objectSpread({}, state), {}, {
+    isSubmitting: true,
+    orderError: null
+  }),
+  [checkout_actions["a" /* default */].order.accept]: state => checkout_objectSpread(checkout_objectSpread({}, state), {}, {
+    isSubmitting: false
+  }),
+  [checkout_actions["a" /* default */].order.reject]: (state, {
+    payload
+  }) => {
+    return checkout_objectSpread(checkout_objectSpread({}, state), {}, {
+      isSubmitting: false,
+      orderError: payload
+    });
+  },
+  [checkout_actions["a" /* default */].reset]: () => checkout_initialState
+};
+/* harmony default export */ var checkout = (Object(handleActions["a" /* default */])(checkout_reducerMap, checkout_initialState));
+// EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/util/simplePersistence.js
+var simplePersistence = __webpack_require__("./node_modules/@magento/peregrine/lib/util/simplePersistence.js");
+
+// EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/store/actions/user/actions.js
+var user_actions = __webpack_require__("./node_modules/@magento/peregrine/lib/store/actions/user/actions.js");
+
+// CONCATENATED MODULE: ./node_modules/@magento/peregrine/lib/store/reducers/user.js
+function user_ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+function user_objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? user_ownKeys(Object(source), !0).forEach(function (key) { user_defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : user_ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
+function user_defineProperty(obj, key, value) { key = user_toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+function user_toPropertyKey(arg) { var key = user_toPrimitive(arg, "string"); return typeof key === "symbol" ? key : String(key); }
+function user_toPrimitive(input, hint) { if (typeof input !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (typeof res !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
+
+
+const storage = new simplePersistence["a" /* default */]();
+
+const user_name = 'user';
+const rawSignInToken = storage.getRawItem('signin_token');
+const isSignedIn = () => !!rawSignInToken;
+const getToken = () => {
+  if (!rawSignInToken) {
+    return undefined;
+  }
+  const {
+    value
+  } = JSON.parse(rawSignInToken);
+  return value;
+};
+const user_initialState = {
+  currentUser: {
+    email: '',
+    firstname: '',
+    lastname: ''
+  },
+  getDetailsError: null,
+  isGettingDetails: false,
+  isResettingPassword: false,
+  isSignedIn: isSignedIn(),
+  resetPasswordError: null,
+  token: getToken()
+};
+const user_reducerMap = {
+  [user_actions["a" /* default */].setToken]: (state, {
+    payload
+  }) => {
+    return user_objectSpread(user_objectSpread({}, state), {}, {
+      isSignedIn: true,
+      token: payload
+    });
+  },
+  [user_actions["a" /* default */].clearToken]: state => {
+    return user_objectSpread(user_objectSpread({}, state), {}, {
+      isSignedIn: false,
+      token: null
+    });
+  },
+  [user_actions["a" /* default */].getDetails.request]: state => {
+    return user_objectSpread(user_objectSpread({}, state), {}, {
+      getDetailsError: null,
+      isGettingDetails: true
+    });
+  },
+  [user_actions["a" /* default */].getDetails.receive]: (state, {
+    payload,
+    error
+  }) => {
+    if (error) {
+      return user_objectSpread(user_objectSpread({}, state), {}, {
+        getDetailsError: payload,
+        isGettingDetails: false
+      });
+    }
+    return user_objectSpread(user_objectSpread({}, state), {}, {
+      currentUser: payload,
+      getDetailsError: null,
+      isGettingDetails: false
+    });
+  },
+  [user_actions["a" /* default */].resetPassword.request]: state => user_objectSpread(user_objectSpread({}, state), {}, {
+    isResettingPassword: true
+  }),
+  // TODO: handle the reset password response from the API.
+  [user_actions["a" /* default */].resetPassword.receive]: (state, {
+    payload,
+    error
+  }) => {
+    if (error) {
+      return user_objectSpread(user_objectSpread({}, state), {}, {
+        isResettingPassword: false,
+        resetPasswordError: payload
+      });
+    }
+    return user_objectSpread(user_objectSpread({}, state), {}, {
+      isResettingPassword: false,
+      resetPasswordError: null
+    });
+  },
+  [user_actions["a" /* default */].reset]: () => {
+    return user_objectSpread(user_objectSpread({}, user_initialState), {}, {
+      isSignedIn: false,
+      token: null
+    });
+  }
+};
+/* harmony default export */ var user = (Object(handleActions["a" /* default */])(user_reducerMap, user_initialState));
+// CONCATENATED MODULE: ./node_modules/@magento/peregrine/lib/store/reducers/index.js
+
+
+
+
+
+const reducers = {
+  app: app,
+  cart: cart,
+  catalog: catalog,
+  checkout: checkout,
+  user: user
+};
+/* harmony default export */ var store_reducers = (reducers);
+// CONCATENATED MODULE: ./node_modules/@magento/peregrine/lib/util/createErrorRecord.js
+// Cache the generated error records, but let them be garbage collected.
+const errorRecords = new WeakMap();
+const {
+  error: logError
+} = console;
+
 /**
- * @RootComponent
- * description = 'Basic Cart Page'
- * pageTypes = CART
+ * This function builds an {error, id, loc} tuple from errors. It aids in
+ * production-mode debugging by providing a unique ID to each error, plus a
+ * hint as to the error source location, for a user to report on a support
+ * call.
+ * @param {Error} error The error to create or retrieve a record for.
+ * @param {Window} window Window object, as an argument for testability.
+ * @param {Object} context Context codesite to help make useful stacktraces.
+ * @param {Object} customStack React custom stack trace for render errors.
+ */
+function errorRecord(error, window, context, customStack) {
+  const {
+    Date,
+    Math
+  } = window;
+  let record = errorRecords.get(error);
+  if (record) {
+    return record;
+  }
+  record = {
+    error,
+    loc: ''
+  };
+  const {
+    constructor,
+    message,
+    name
+  } = error;
+  // Reasonably unique, yet readable error ID.
+  const seconds = new Date().getSeconds();
+  const randomChar = Math.random().toString(36).slice(2, 3).toUpperCase();
+  record.id = (constructor && constructor.name || name) + seconds + randomChar;
+
+  // Add offending line, if possible.
+  let stack;
+  if (customStack) {
+    stack = customStack;
+  } else {
+    /* istanbul ignore next */
+    if (Error.captureStackTrace) {
+      Error.captureStackTrace(error, context);
+    }
+    stack = error.stack;
+  }
+  const messageStart = stack.indexOf(message);
+  const {
+    origin
+  } = globalThis.location || {};
+  if (messageStart > -1) {
+    const traceStart = messageStart + message.length;
+    record.loc = stack.slice(traceStart).replace(origin, '').trim().split('\n')[0];
+  }
+  errorRecords.set(error, record);
+  // In development mode, React logs these already.
+  // Log in production mode so that users can give Support helpful debug info.
+  /* istanbul ignore next */
+  if (false) {}
+  return record;
+}
+// CONCATENATED MODULE: ./node_modules/@magento/peregrine/lib/store/enhancers/errorHandler.js
+const _excluded = ["unhandledErrors"];
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+function errorHandler_ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+function errorHandler_objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? errorHandler_ownKeys(Object(source), !0).forEach(function (key) { errorHandler_defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : errorHandler_ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
+function errorHandler_defineProperty(obj, key, value) { key = errorHandler_toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+function errorHandler_toPropertyKey(arg) { var key = errorHandler_toPrimitive(arg, "string"); return typeof key === "symbol" ? key : String(key); }
+function errorHandler_toPrimitive(input, hint) { if (typeof input !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (typeof res !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
+/**
+ * Handle unhandled errors by setting a global error state.
+ *
+ * "store slice" reducers may want to handle errors in a custom way, in order
+ * to display more specific error states (such as form field validation).
+ *
+ * These reducers can indicate that an error is handled and needs no more UI
+ * response, by assigning the error object to the `error` property on their
+ * store slice.
+ *
+ * This reducer activates when the action has an `error` property. It then
+ * checks each store slice for an `error` property which equals the error in
+ * the action, indicating that the error has already been handled. If it
+ * detects that the error is not present in any store slice, it assumes the
+ * error is unhandled and pushes it into an `errors` array property on the root
+ * store.
+ *
+ * This `errors` collection represents unhandled errors to be displayed in the
+ * next render. To dismiss an error, dispatch the ERROR_DISMISS action with the
+ * error as payload, and this reducer will remove it from the array.
+ *
  */
 
 
+const APP_DISMISS_ERROR = actions["a" /* default */].markErrorHandled.toString();
+
+/**
+ * This function returns the name of the slice for logging purposes, and
+ * undefined if no slice handling this error is found. It uses
+ * Object.entries() to create a [name, sliceObject] pair for each slice;
+ * the iteratee only tests the value, but we destructure the name into the
+ * final return value. For instance, the cart slice is represented as an
+ * entry ["cart", cartState]. If cartState has any property whose value is
+ * the provided error, then this function will return the string "cart".
+ *
+ * @param {object} fullStoreState
+ * @param {Error} error
+ *
+ */
+function sliceHandledError(state, error) {
+  const foundEntry = Object.entries(state).find(([, slice]) => typeof slice === 'object' &&
+  // A slice is considered to have "handled" the error if it
+  // includes a root property (of any name) with the error as a
+  // value. This is the pattern with existing reducers.
+  Object.values(slice).includes(error));
+  if (foundEntry) {
+    // Return the name of the slice.
+    return foundEntry[0];
+  }
+}
+
+/**
+ * This reducer handles the full store state (all slices) and adds any
+ * unhandled errors (as defined by the selector function
+ * sliceHandledError() defined above) to a root `unhandledErrors`
+ * collection. It also handles the app-level action `APP_DISMISS_ERROR` by
+ * removing the passed error from that collection. Any global error UI can
+ * use this action (as a click handler, for instance) to dismiss the error.
+ *
+ * @param {object} fullStoreState
+ * @param {object} action
+ */
+function errorReducer(state, action) {
+  const {
+    unhandledErrors
+  } = state;
+  const {
+    type,
+    payload
+  } = action;
+
+  // The `error` property should be boolean and the payload is the error
+  // itself, but just in case someone got that wrong...
+  let error;
+  if (action.error instanceof Error) {
+    error = action.error;
+  } else if (payload instanceof Error) {
+    error = payload;
+  } else {
+    // No error, so nothing this reducer can do.
+    return state;
+  }
+  if (type === APP_DISMISS_ERROR) {
+    const errorsMinusDismissed = unhandledErrors.filter(record => record.error !== error);
+    // If the array is the same size, then the error wasn't here
+    // but it should have been!
+    if ( true && errorsMinusDismissed.length == unhandledErrors.length) {
+      console.error('Received ${APP_DISMISS_ERROR} action, but provided error "${error}" was not present in the state.unhandledErrors collection. The error object in the action payload must be strictly equal to the error to be dismissed.', error);
+    }
+    return errorHandler_objectSpread(errorHandler_objectSpread({}, state), {}, {
+      unhandledErrors: errorsMinusDismissed
+    });
+  }
+
+  // Handle any other action that may have produced an error.
+  const sliceHandled = sliceHandledError(state, error);
+  if (!sliceHandled) {
+    // No one took this one. Add it to the unhandled list.
+    const allErrors = [
+    // Dedupe errors in case this one is dispatched repeatedly
+    ...new Set(unhandledErrors).add(errorRecord(error,
+    // `errorRecord()` requires the window argument for
+    // testability, through injection of the
+    // non-idempotent Date and Math methods for IDs.
+    globalThis,
+    // Also call `errorRecord()` with the current
+    // context, which is the root reducer; that enables
+    // it to trim useful stack traces by omitting
+    // useless lines.
+    this))];
+    return errorHandler_objectSpread(errorHandler_objectSpread({}, state), {}, {
+      unhandledErrors: allErrors
+    });
+  }
+  // If we get here, a slice DID handle it and indicated that by
+  // setting it as a root property of the slice.
+  return state;
+}
+
+/**
+ * Wrapper function for a Redux reducer which adds an error reducer and a root
+ * `unhandledErrors` collection to state. Since many reducers validate their
+ * state objects, they will error if they see the "unrecognized"
+ * `unhandledErrors` property. This function hides that property by extracting
+ * it from state, then running the passed root reducer on the clean state, then
+ * recombining the state and transforming it with the error reducer.
+ *
+ * @param {Function} rootReducer Original root reducer.
+ */
+function wrapReducerWithErrorHandling(rootReducer) {
+  return function errorHandlingRootReducer(state = {}, action) {
+    const {
+        unhandledErrors = []
+      } = state,
+      restOfState = _objectWithoutProperties(state, _excluded);
+    const nextState = rootReducer(restOfState, action);
+    nextState.unhandledErrors = unhandledErrors;
+    // Apply errorReducer in the context of this root reducer,
+    // so it can trim stack traces using `this`.
+    return errorReducer.call(errorHandlingRootReducer, nextState, action);
+  };
+}
+
+/**
+ * Store enhancer which returns a StoreCreator, which accepts a
+ * root reducer and an initial state and returns a new store.
+ * It is in this function that we can intercept the root reducer
+ * and wrap it with error handling.
+ */
+function createErrorHandlingStore(createStore) {
+  return (reducer, ...args) => createStore(wrapReducerWithErrorHandling(reducer), ...args);
+}
+// EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/store/actions/user/asyncActions.js
+var asyncActions = __webpack_require__("./node_modules/@magento/peregrine/lib/store/actions/user/asyncActions.js");
+
+// CONCATENATED MODULE: ./node_modules/@magento/peregrine/lib/store/middleware/auth.js
+
+
+const timeouts = new Map();
+const intervals = new Map();
+const auth_storage = new simplePersistence["a" /* default */]();
+const SET_TOKEN = user_actions["a" /* default */].setToken.toString();
+const CLEAR_TOKEN = user_actions["a" /* default */].clearToken.toString();
+const GET_DETAILS = user_actions["a" /* default */].getDetails.request.toString();
+const isSigningIn = type => type === SET_TOKEN || type === GET_DETAILS;
+const isSigningOut = type => type === CLEAR_TOKEN;
+
+/**
+ * This function adheres to Redux's middleware pattern.
+ *
+ * @param {Store} store The store to augment.
+ * @returns {Function}
+ */
+const scheduleSignOut = store => next => action => {
+  const {
+    dispatch
+  } = store;
+  if (isSigningIn(action.type)) {
+    // `BrowserPersistence.getItem()` only returns the value
+    // but we need the full item with timestamp and ttl
+    const item = auth_storage.getRawItem('signin_token');
+
+    // exit if there's nothing in storage
+    if (!item) return next(action);
+    const {
+      timeStored,
+      ttl,
+      value
+    } = JSON.parse(item);
+    const parsedValue = JSON.parse(value);
+    const preciseTTL = ttl * 1000;
+    const elapsed = Date.now() - timeStored;
+    const expiry = Math.max(preciseTTL - elapsed, 0);
+
+    // establish a sign-out routine
+    const callback = () => {
+      dispatch(Object(asyncActions["signOut"])()).then(() => {
+        timeouts.delete(parsedValue);
+        intervals.delete(parsedValue);
+
+        // refresh the page, important for checkout
+        history.go(0);
+      });
+    };
+
+    // set a timeout that runs once when the token expires
+    if (!timeouts.has(parsedValue)) {
+      const timeoutId = setTimeout(callback, expiry);
+      timeouts.set(parsedValue, timeoutId);
+    }
+
+    // then set an interval that runs once per second
+    // on mobile, the timeout won't fire if the tab is inactive
+    if (!intervals.has(parsedValue)) {
+      const intervalId = setInterval(() => {
+        const hasExpired = Date.now() - timeStored > preciseTTL;
+        if (hasExpired) callback();
+      }, 1000);
+      intervals.set(parsedValue, intervalId);
+    }
+  } else if (isSigningOut(action.type)) {
+    for (const timeoutId of timeouts) {
+      clearTimeout(timeoutId);
+    }
+    for (const intervalId of intervals) {
+      clearInterval(intervalId);
+    }
+    timeouts.clear();
+    intervals.clear();
+  }
+  return next(action);
+};
+/* harmony default export */ var auth = (scheduleSignOut);
+// CONCATENATED MODULE: ./node_modules/@magento/peregrine/lib/store/middleware/log.js
+/**
+ * Log actions and state to the browser console.
+ * This function adheres to Redux's middleware pattern.
+ *
+ * @param {Store} store The store to augment.
+ * @returns {Function}
+ */
+const log = store => next => action => {
+  const result = next(action);
+  console.groupCollapsed(action.type);
+  console.group('payload');
+  console.log(action.payload);
+  console.groupEnd();
+  console.group('next state');
+  console.log(store.getState());
+  console.groupEnd();
+  console.groupEnd();
+  return result;
+};
+/* harmony default export */ var middleware_log = (log);
+// EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/store/middleware/thunk.js
+var thunk = __webpack_require__("./node_modules/@magento/peregrine/lib/store/middleware/thunk.js");
+
+// CONCATENATED MODULE: ./node_modules/@magento/peregrine/lib/store/enhancers/middleware.js
 
 
 
-const Cart_origin = globalThis.location.origin;
-const Cart_styles = new Set();
-const Cart_configureLinks = links => [...links.values()];
-Object(react_dom["render"])( /*#__PURE__*/react_default.a.createElement(adapter, {
-  apiUrl: "https://franklin.maidenform.com/graphql",
-  configureLinks: Cart_configureLinks,
-  origin: Cart_origin,
-  store: src_store,
-  styles: Cart_styles
-}, /*#__PURE__*/react_default.a.createElement(Cart_cart, null)), document.querySelector('.block.commerce-cart'));
 
+const middleware = [thunk["a" /* default */], auth];
+if (true) {
+  middleware.push(middleware_log);
+}
+/* harmony default export */ var enhancers_middleware = (Object(redux["a" /* applyMiddleware */])(...middleware));
+// CONCATENATED MODULE: ./node_modules/@magento/peregrine/lib/util/composeEnhancers.js
+
+const composeEnhancers =  true && globalThis.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ? globalThis.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({}) : redux["d" /* compose */];
+/* harmony default export */ var util_composeEnhancers = (composeEnhancers);
+// CONCATENATED MODULE: ./node_modules/@magento/peregrine/lib/store/enhancers/index.js
+
+
+
+const enhancer = util_composeEnhancers(enhancers_middleware, createErrorHandlingStore);
+/* harmony default export */ var enhancers = (enhancer);
+// CONCATENATED MODULE: ./src/store.js
+
+
+
+// This is the connective layer between the Peregrine store and the
+// venia-concept UI. You can add your own reducers/enhancers here and combine
+// them with the Peregrine exports.
+//
+// example:
+// const rootReducer = combineReducers({ ...reducers, ...myReducers });
+// const rootEnhancer = composeEnhancers(enhancer, myEnhancer);
+// export default createStore(rootReducer, rootEnhancer);
+const rootReducer = Object(redux["c" /* combineReducers */])(store_reducers);
+/* harmony default export */ var src_store = __webpack_exports__["a"] = (Object(redux["e" /* createStore */])(rootReducer, enhancers));
 
 /***/ }),
 
@@ -42360,7 +42543,7 @@ const ProductListingFragment = _apollo_client__WEBPACK_IMPORTED_MODULE_0__[/* gq
 /*! ModuleConcatenation bailout: Module is not an ECMAScript module */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/mabecker/Documents/github/hlxsites/maidenform/pwa/node_modules/webpack-inject-plugin/dist/webpack-inject-plugin.loader?id=webpack-inject-module-1! */"./node_modules/webpack-inject-plugin/dist/webpack-inject-plugin.loader.js?id=webpack-inject-module-1!./");
+__webpack_require__(/*! /Users/adicagno/src/maidenform/pwa/node_modules/webpack-inject-plugin/dist/webpack-inject-plugin.loader?id=webpack-inject-module-1! */"./node_modules/webpack-inject-plugin/dist/webpack-inject-plugin.loader.js?id=webpack-inject-module-1!./");
 module.exports = __webpack_require__(/*! ./src/RootComponents/Cart/index.js */"./src/RootComponents/Cart/index.js");
 
 
