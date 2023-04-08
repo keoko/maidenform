@@ -5456,7 +5456,7 @@ const ShippingMethodsCartFragment = _apollo_client__WEBPACK_IMPORTED_MODULE_0__[
 /*! exports provided: GrandTotalFragment, PriceSummaryFragment */
 /*! exports used: PriceSummaryFragment */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/talons/CartPage/PriceSummary/queries/giftOptionsSummary.ee.js because of ./node_modules/@magento/peregrine/lib/talons/CartPage/PriceAdjustments/GiftOptions/giftOptionsFragments.gql.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql-tag/lib/index.js because of ./node_modules/@magento/venia-ui/lib/components/CartPage/cartPage.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql-tag/lib/index.js */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -6327,7 +6327,7 @@ Button.defaultProps = {
 /*! exports used: default */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/shallowMerge.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Button/button.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Icon/icon.js because of ./src/RootComponents/Cart/index.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Icon/icon.js because of ./node_modules/@magento/venia-ui/lib/components/CartPage/cartPage.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-feather/dist/icons/x.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/Dialog/dialog.module.css (<- Module uses module.id) */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/informed/dist/esm/index.js (<- Module uses injected variables (process)) */
@@ -6910,7 +6910,7 @@ Message.propTypes = {
   \******************************************************************************************/
 /*! exports provided: default */
 /*! exports used: default */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/deriveErrorMessage.js because of ./node_modules/@magento/venia-ui/lib/components/CartPage/PriceAdjustments/CouponCode/couponCode.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/deriveErrorMessage.js because of ./node_modules/@magento/peregrine/lib/talons/CartPage/ProductListing/useProduct.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/shallowMerge.js because of ./src/RootComponents/Cart/index.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/ErrorMessage/errorMessage.module.css (<- Module uses module.id) */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/FormError/formError.module.css (<- Module uses module.id) */
@@ -7276,12 +7276,14 @@ Icon.propTypes = {
 
 /***/ "./node_modules/@magento/venia-ui/lib/components/Image/image.js":
 /*!**********************************************************************************!*\
-  !*** ./node_modules/@magento/venia-ui/lib/components/Image/image.js + 8 modules ***!
+  !*** ./node_modules/@magento/venia-ui/lib/components/Image/image.js + 4 modules ***!
   \**********************************************************************************/
 /*! exports provided: default */
 /*! exports used: default */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/imageUtils.js because of ./node_modules/@magento/venia-ui/lib/components/ProductOptions/swatch.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/shallowMerge.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Image/placeholderImage.js because of ./node_modules/@magento/venia-ui/lib/components/OrderHistoryPage/OrderDetails/item.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Image/simpleImage.js because of ./node_modules/@magento/venia-ui/lib/components/OrderHistoryPage/OrderDetails/item.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/Image/image.module.css (<- Module uses module.id) */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/prop-types/index.js (<- Module is not an ECMAScript module) */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react/index.js (<- Module is not an ECMAScript module) */
@@ -7370,173 +7372,9 @@ const useImage = props => {
 // EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/util/imageUtils.js
 var imageUtils = __webpack_require__("./node_modules/@magento/peregrine/lib/util/imageUtils.js");
 
-// CONCATENATED MODULE: ./node_modules/@magento/peregrine/lib/util/images.js
-// 4x5 transparent svg
-// svg source = <svg xmlns='http://www.w3.org/2000/svg' width='4' height='5'><rect width='4' height='5' style='fill: none' /></svg>
-const transparentPlaceholder = 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPSc0JyBoZWlnaHQ9JzUnPjxyZWN0IHdpZHRoPSc0JyBoZWlnaHQ9JzUnIHN0eWxlPSdmaWxsOiBub25lJyAvPjwvc3ZnPg==';
-// CONCATENATED MODULE: ./node_modules/@magento/peregrine/lib/talons/Image/usePlaceholderImage.js
-/**
- * The talon for working with PlaceholderImages.
- * Determines whether the visual placeholder should be rendered or not.
- *
- * @param {bool}     props.displayPlaceholder whether or not to display a visual placeholder.
- * @param {string}   props.imageHasError there was an error loading the actual image.
- * @param {string}   props.imageIsLoaded the actual image is loaded.
- */
-const usePlaceholderImage = props => {
-  const {
-    displayPlaceholder,
-    imageHasError,
-    imageIsLoaded
-  } = props;
+// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/Image/placeholderImage.js + 2 modules
+var placeholderImage = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/Image/placeholderImage.js");
 
-  // Render the placeholder unless we've been told not to,
-  // or we've already loaded without error.
-  const hidePlaceholder = !displayPlaceholder || imageIsLoaded && !imageHasError;
-  const shouldRenderPlaceholder = !hidePlaceholder;
-  return {
-    shouldRenderPlaceholder
-  };
-};
-// CONCATENATED MODULE: ./node_modules/@magento/venia-ui/lib/components/Image/simpleImage.js
-const _excluded = ["alt", "className", "handleError", "handleLoad", "height", "src", "width"];
-function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
-function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-
-
-
-/**
- * Renders an img element directly using the supplied src.
- *
- * @param {String}  props.alt - The alt attribute for the img element.
- * @param {String}  props.className - The class name to apply to the img element.
- * @param {Func}    props.handleError - The function to call if the image fails to load.
- * @param {Func}    props.handleLoad - The function to call if the image successfully loads.
- * @param {Number}  props.height - The height of the img element.
- * @param {String}  props.src - The src attribute for the img element.
- * @param {Number}  props.width - The width of the img element.
- */
-const SimpleImage = props => {
-  const {
-      alt,
-      className,
-      handleError,
-      handleLoad,
-      height,
-      src,
-      width
-    } = props,
-    rest = _objectWithoutProperties(props, _excluded);
-  const dimensionAttributes = {};
-  if (typeof height !== 'undefined') {
-    dimensionAttributes['--height'] = height + 'px';
-  }
-  if (typeof width !== 'undefined') {
-    dimensionAttributes['--width'] = width + 'px';
-  }
-  // Note: Attributes that are allowed to be overridden must appear before the spread of `rest`.
-  return /*#__PURE__*/react_default.a.createElement("img", _extends({
-    loading: "lazy",
-    style: dimensionAttributes
-  }, rest, {
-    alt: alt,
-    className: className,
-    height: height,
-    onError: handleError,
-    onLoad: handleLoad,
-    src: src,
-    width: width
-  }));
-};
-SimpleImage.propTypes = {
-  alt: prop_types["string"].isRequired,
-  className: prop_types["string"],
-  handleError: prop_types["func"],
-  handleLoad: prop_types["func"],
-  height: Object(prop_types["oneOfType"])([prop_types["number"], prop_types["string"]]),
-  src: prop_types["string"].isRequired,
-  width: Object(prop_types["oneOfType"])([prop_types["number"], prop_types["string"]])
-};
-/* harmony default export */ var simpleImage = (SimpleImage);
-// CONCATENATED MODULE: ./node_modules/@magento/venia-ui/lib/components/Image/placeholderImage.js
-const placeholderImage_excluded = ["alt", "classes", "displayPlaceholder", "height", "imageHasError", "imageIsLoaded", "src", "width"];
-function placeholderImage_extends() { placeholderImage_extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return placeholderImage_extends.apply(this, arguments); }
-function placeholderImage_objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = placeholderImage_objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
-function placeholderImage_objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-
-
-
-
-
-
-/**
- * A placeholder to use until the actual image is loaded.
- * This is used both for user experience and layout purposes.
- * Callers can disable the "user experience" part by setting displayPlaceholder to false.
- *
- * @param {string}   props.alt the alt attribute to apply to the image.
- * @param {object}   props.classes the pre-merged classes to apply to this component.
- * @param {bool}     props.displayPlaceholder whether or not to display a visual placeholder.
- * @param {number}   props.height the intrinsic height of the image.
- * @param {string}   props.imageHasError there was an error loading the actual image.
- * @param {string}   props.imageIsLoaded the actual image is loaded.
- * @param {string}   props.src the actual src of the placeholder image.
- * @param {number}   props.width the intrinsic width of the image.
- */
-const PlaceholderImage = props => {
-  const {
-      alt,
-      classes,
-      displayPlaceholder,
-      height,
-      imageHasError,
-      imageIsLoaded,
-      src,
-      width
-    } = props,
-    rest = placeholderImage_objectWithoutProperties(props, placeholderImage_excluded);
-  const talonProps = usePlaceholderImage({
-    displayPlaceholder,
-    imageHasError,
-    imageIsLoaded
-  });
-  const {
-    shouldRenderPlaceholder
-  } = talonProps;
-  const placeholderClass = shouldRenderPlaceholder ? classes.placeholder : classes.placeholder_layoutOnly;
-  const placeholderFullClass = `${classes.image} ${placeholderClass}`;
-
-  // Note: Attributes that are allowed to be overridden must appear before the spread of `rest`.
-  return /*#__PURE__*/react_default.a.createElement(simpleImage, placeholderImage_extends({
-    loading: "eager",
-    "aria-hidden": "true",
-    height: height,
-    width: width
-  }, rest, {
-    alt: alt,
-    className: placeholderFullClass,
-    src: src
-  }));
-};
-PlaceholderImage.propTypes = {
-  alt: prop_types["string"].isRequired,
-  classes: Object(prop_types["shape"])({
-    image: prop_types["string"],
-    placeholder: prop_types["string"],
-    placeholder_layoutOnly: prop_types["string"]
-  }).isRequired,
-  displayPlaceholder: prop_types["bool"],
-  height: Object(prop_types["oneOfType"])([prop_types["number"], prop_types["string"]]),
-  imageHasError: prop_types["bool"],
-  imageIsLoaded: prop_types["bool"],
-  src: prop_types["string"],
-  width: Object(prop_types["oneOfType"])([prop_types["number"], prop_types["string"]])
-};
-PlaceholderImage.defaultProps = {
-  src: transparentPlaceholder
-};
-/* harmony default export */ var placeholderImage = (PlaceholderImage);
 // CONCATENATED MODULE: ./node_modules/@magento/peregrine/lib/talons/Image/useResourceImage.js
 
 
@@ -7596,10 +7434,10 @@ const useResourceImage = props => {
   };
 };
 // CONCATENATED MODULE: ./node_modules/@magento/venia-ui/lib/components/Image/resourceImage.js
-const resourceImage_excluded = ["alt", "className", "handleError", "handleLoad", "height", "resource", "type", "width", "widths", "ratio"];
-function resourceImage_extends() { resourceImage_extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return resourceImage_extends.apply(this, arguments); }
-function resourceImage_objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = resourceImage_objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
-function resourceImage_objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+const _excluded = ["alt", "className", "handleError", "handleLoad", "height", "resource", "type", "width", "widths", "ratio"];
+function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
 
 
@@ -7632,7 +7470,7 @@ const ResourceImage = props => {
       widths,
       ratio
     } = props,
-    rest = resourceImage_objectWithoutProperties(props, resourceImage_excluded);
+    rest = _objectWithoutProperties(props, _excluded);
   const talonProps = useResourceImage({
     generateSrcset: imageUtils["b" /* generateSrcset */],
     generateUrl: imageUtils["c" /* generateUrl */],
@@ -7656,7 +7494,7 @@ const ResourceImage = props => {
     dimensionAttributes['--width'] = width + 'px';
   }
   // Note: Attributes that are allowed to be overridden must appear before the spread of `rest`.
-  return /*#__PURE__*/react_default.a.createElement("img", resourceImage_extends({
+  return /*#__PURE__*/react_default.a.createElement("img", _extends({
     loading: "lazy",
     style: dimensionAttributes
   }, rest, {
@@ -7685,6 +7523,9 @@ ResourceImage.defaultProps = {
   type: 'image-product'
 };
 /* harmony default export */ var resourceImage = (ResourceImage);
+// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/Image/simpleImage.js
+var simpleImage = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/Image/simpleImage.js");
+
 // EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/util/shallowMerge.js
 var shallowMerge = __webpack_require__("./node_modules/@magento/peregrine/lib/util/shallowMerge.js");
 
@@ -7778,7 +7619,7 @@ const Image = props => {
   const imageClass = `${classes.image} ${isLoadedClass}`;
 
   // If we have a src, use it directly. If not, assume this is a resource image.
-  const actualImage = src ? /*#__PURE__*/react_default.a.createElement(simpleImage, image_extends({
+  const actualImage = src ? /*#__PURE__*/react_default.a.createElement(simpleImage["a" /* default */], image_extends({
     alt: alt,
     className: imageClass,
     handleError: handleError,
@@ -7800,7 +7641,7 @@ const Image = props => {
   }, rest));
   return /*#__PURE__*/react_default.a.createElement("div", {
     className: containerClass
-  }, /*#__PURE__*/react_default.a.createElement(placeholderImage, image_extends({
+  }, /*#__PURE__*/react_default.a.createElement(placeholderImage["a" /* default */], image_extends({
     alt: alt,
     classes: classes,
     displayPlaceholder: displayPlaceholder,
@@ -7849,6 +7690,303 @@ Image.defaultProps = {
 
 /***/ }),
 
+/***/ "./node_modules/@magento/venia-ui/lib/components/Image/placeholderImage.js":
+/*!*********************************************************************************************!*\
+  !*** ./node_modules/@magento/venia-ui/lib/components/Image/placeholderImage.js + 2 modules ***!
+  \*********************************************************************************************/
+/*! exports provided: default */
+/*! exports used: default */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Image/simpleImage.js because of ./node_modules/@magento/venia-ui/lib/components/CartPage/ProductListing/product.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/prop-types/index.js (<- Module is not an ECMAScript module) */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react/index.js (<- Module is not an ECMAScript module) */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+
+// EXTERNAL MODULE: ./node_modules/react/index.js
+var react = __webpack_require__("./node_modules/react/index.js");
+var react_default = /*#__PURE__*/__webpack_require__.n(react);
+
+// EXTERNAL MODULE: ./node_modules/prop-types/index.js
+var prop_types = __webpack_require__("./node_modules/prop-types/index.js");
+
+// CONCATENATED MODULE: ./node_modules/@magento/peregrine/lib/util/images.js
+// 4x5 transparent svg
+// svg source = <svg xmlns='http://www.w3.org/2000/svg' width='4' height='5'><rect width='4' height='5' style='fill: none' /></svg>
+const transparentPlaceholder = 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPSc0JyBoZWlnaHQ9JzUnPjxyZWN0IHdpZHRoPSc0JyBoZWlnaHQ9JzUnIHN0eWxlPSdmaWxsOiBub25lJyAvPjwvc3ZnPg==';
+// CONCATENATED MODULE: ./node_modules/@magento/peregrine/lib/talons/Image/usePlaceholderImage.js
+/**
+ * The talon for working with PlaceholderImages.
+ * Determines whether the visual placeholder should be rendered or not.
+ *
+ * @param {bool}     props.displayPlaceholder whether or not to display a visual placeholder.
+ * @param {string}   props.imageHasError there was an error loading the actual image.
+ * @param {string}   props.imageIsLoaded the actual image is loaded.
+ */
+const usePlaceholderImage = props => {
+  const {
+    displayPlaceholder,
+    imageHasError,
+    imageIsLoaded
+  } = props;
+
+  // Render the placeholder unless we've been told not to,
+  // or we've already loaded without error.
+  const hidePlaceholder = !displayPlaceholder || imageIsLoaded && !imageHasError;
+  const shouldRenderPlaceholder = !hidePlaceholder;
+  return {
+    shouldRenderPlaceholder
+  };
+};
+// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/Image/simpleImage.js
+var simpleImage = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/Image/simpleImage.js");
+
+// CONCATENATED MODULE: ./node_modules/@magento/venia-ui/lib/components/Image/placeholderImage.js
+const _excluded = ["alt", "classes", "displayPlaceholder", "height", "imageHasError", "imageIsLoaded", "src", "width"];
+function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
+
+
+
+
+
+/**
+ * A placeholder to use until the actual image is loaded.
+ * This is used both for user experience and layout purposes.
+ * Callers can disable the "user experience" part by setting displayPlaceholder to false.
+ *
+ * @param {string}   props.alt the alt attribute to apply to the image.
+ * @param {object}   props.classes the pre-merged classes to apply to this component.
+ * @param {bool}     props.displayPlaceholder whether or not to display a visual placeholder.
+ * @param {number}   props.height the intrinsic height of the image.
+ * @param {string}   props.imageHasError there was an error loading the actual image.
+ * @param {string}   props.imageIsLoaded the actual image is loaded.
+ * @param {string}   props.src the actual src of the placeholder image.
+ * @param {number}   props.width the intrinsic width of the image.
+ */
+const PlaceholderImage = props => {
+  const {
+      alt,
+      classes,
+      displayPlaceholder,
+      height,
+      imageHasError,
+      imageIsLoaded,
+      src,
+      width
+    } = props,
+    rest = _objectWithoutProperties(props, _excluded);
+  const talonProps = usePlaceholderImage({
+    displayPlaceholder,
+    imageHasError,
+    imageIsLoaded
+  });
+  const {
+    shouldRenderPlaceholder
+  } = talonProps;
+  const placeholderClass = shouldRenderPlaceholder ? classes.placeholder : classes.placeholder_layoutOnly;
+  const placeholderFullClass = `${classes.image} ${placeholderClass}`;
+
+  // Note: Attributes that are allowed to be overridden must appear before the spread of `rest`.
+  return /*#__PURE__*/react_default.a.createElement(simpleImage["a" /* default */], _extends({
+    loading: "eager",
+    "aria-hidden": "true",
+    height: height,
+    width: width
+  }, rest, {
+    alt: alt,
+    className: placeholderFullClass,
+    src: src
+  }));
+};
+PlaceholderImage.propTypes = {
+  alt: prop_types["string"].isRequired,
+  classes: Object(prop_types["shape"])({
+    image: prop_types["string"],
+    placeholder: prop_types["string"],
+    placeholder_layoutOnly: prop_types["string"]
+  }).isRequired,
+  displayPlaceholder: prop_types["bool"],
+  height: Object(prop_types["oneOfType"])([prop_types["number"], prop_types["string"]]),
+  imageHasError: prop_types["bool"],
+  imageIsLoaded: prop_types["bool"],
+  src: prop_types["string"],
+  width: Object(prop_types["oneOfType"])([prop_types["number"], prop_types["string"]])
+};
+PlaceholderImage.defaultProps = {
+  src: transparentPlaceholder
+};
+/* harmony default export */ var placeholderImage = __webpack_exports__["a"] = (PlaceholderImage);
+
+/***/ }),
+
+/***/ "./node_modules/@magento/venia-ui/lib/components/Image/simpleImage.js":
+/*!****************************************************************************!*\
+  !*** ./node_modules/@magento/venia-ui/lib/components/Image/simpleImage.js ***!
+  \****************************************************************************/
+/*! exports provided: default */
+/*! exports used: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+const _excluded = ["alt", "className", "handleError", "handleLoad", "height", "src", "width"];
+function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
+
+
+/**
+ * Renders an img element directly using the supplied src.
+ *
+ * @param {String}  props.alt - The alt attribute for the img element.
+ * @param {String}  props.className - The class name to apply to the img element.
+ * @param {Func}    props.handleError - The function to call if the image fails to load.
+ * @param {Func}    props.handleLoad - The function to call if the image successfully loads.
+ * @param {Number}  props.height - The height of the img element.
+ * @param {String}  props.src - The src attribute for the img element.
+ * @param {Number}  props.width - The width of the img element.
+ */
+const SimpleImage = props => {
+  const {
+      alt,
+      className,
+      handleError,
+      handleLoad,
+      height,
+      src,
+      width
+    } = props,
+    rest = _objectWithoutProperties(props, _excluded);
+  const dimensionAttributes = {};
+  if (typeof height !== 'undefined') {
+    dimensionAttributes['--height'] = height + 'px';
+  }
+  if (typeof width !== 'undefined') {
+    dimensionAttributes['--width'] = width + 'px';
+  }
+  // Note: Attributes that are allowed to be overridden must appear before the spread of `rest`.
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", _extends({
+    loading: "lazy",
+    style: dimensionAttributes
+  }, rest, {
+    alt: alt,
+    className: className,
+    height: height,
+    onError: handleError,
+    onLoad: handleLoad,
+    src: src,
+    width: width
+  }));
+};
+SimpleImage.propTypes = {
+  alt: prop_types__WEBPACK_IMPORTED_MODULE_1__["string"].isRequired,
+  className: prop_types__WEBPACK_IMPORTED_MODULE_1__["string"],
+  handleError: prop_types__WEBPACK_IMPORTED_MODULE_1__["func"],
+  handleLoad: prop_types__WEBPACK_IMPORTED_MODULE_1__["func"],
+  height: Object(prop_types__WEBPACK_IMPORTED_MODULE_1__["oneOfType"])([prop_types__WEBPACK_IMPORTED_MODULE_1__["number"], prop_types__WEBPACK_IMPORTED_MODULE_1__["string"]]),
+  src: prop_types__WEBPACK_IMPORTED_MODULE_1__["string"].isRequired,
+  width: Object(prop_types__WEBPACK_IMPORTED_MODULE_1__["oneOfType"])([prop_types__WEBPACK_IMPORTED_MODULE_1__["number"], prop_types__WEBPACK_IMPORTED_MODULE_1__["string"]])
+};
+/* harmony default export */ __webpack_exports__["a"] = (SimpleImage);
+
+/***/ }),
+
+/***/ "./node_modules/@magento/venia-ui/lib/components/LegacyMiniCart/productOptions.js":
+/*!****************************************************************************************************!*\
+  !*** ./node_modules/@magento/venia-ui/lib/components/LegacyMiniCart/productOptions.js + 1 modules ***!
+  \****************************************************************************************************/
+/*! exports provided: default */
+/*! exports used: default */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/shallowMerge.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/LegacyMiniCart/productOptions.module.css (<- Module uses module.id) */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/prop-types/index.js (<- Module is not an ECMAScript module) */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react/index.js (<- Module is not an ECMAScript module) */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js (<- Module is not an ECMAScript module) */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+
+// EXTERNAL MODULE: ./node_modules/react/index.js
+var react = __webpack_require__("./node_modules/react/index.js");
+var react_default = /*#__PURE__*/__webpack_require__.n(react);
+
+// EXTERNAL MODULE: ./node_modules/prop-types/index.js
+var prop_types = __webpack_require__("./node_modules/prop-types/index.js");
+
+// EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/util/shallowMerge.js
+var shallowMerge = __webpack_require__("./node_modules/@magento/peregrine/lib/util/shallowMerge.js");
+
+// EXTERNAL MODULE: ./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js
+var injectStylesIntoStyleTag = __webpack_require__("./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+var injectStylesIntoStyleTag_default = /*#__PURE__*/__webpack_require__.n(injectStylesIntoStyleTag);
+
+// EXTERNAL MODULE: ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/LegacyMiniCart/productOptions.module.css
+var productOptions_module = __webpack_require__("./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/LegacyMiniCart/productOptions.module.css");
+
+// CONCATENATED MODULE: ./node_modules/@magento/venia-ui/lib/components/LegacyMiniCart/productOptions.module.css
+
+            
+
+var productOptions_module_options = {"injectType":"styleTag"};
+
+productOptions_module_options.insert = "head";
+productOptions_module_options.singleton = false;
+
+var update = injectStylesIntoStyleTag_default()(productOptions_module["a" /* default */], productOptions_module_options);
+
+
+
+/* harmony default export */ var LegacyMiniCart_productOptions_module = (productOptions_module["a" /* default */].locals || {});
+// CONCATENATED MODULE: ./node_modules/@magento/venia-ui/lib/components/LegacyMiniCart/productOptions.js
+
+
+
+
+const ProductOptions = props => {
+  const {
+    options = []
+  } = props;
+  const classes = Object(shallowMerge["a" /* default */])(LegacyMiniCart_productOptions_module, props.classes);
+  const displayOptions = Object(react["useMemo"])(() => options.map(({
+    option_label,
+    value_label
+  }) => {
+    const key = `${option_label}${value_label}`;
+    const optionLabelString = `${option_label} :`;
+    return /*#__PURE__*/react_default.a.createElement("div", {
+      key: key,
+      className: classes.optionLabel
+    }, /*#__PURE__*/react_default.a.createElement("dt", {
+      className: classes.optionName
+    }, optionLabelString), /*#__PURE__*/react_default.a.createElement("dd", {
+      className: classes.optionValue,
+      "data-cy": "ProductOptions-optionValue"
+    }, value_label));
+  }), [classes, options]);
+  if (displayOptions.length === 0) {
+    return null;
+  }
+  return /*#__PURE__*/react_default.a.createElement("dl", {
+    className: classes.options
+  }, displayOptions);
+};
+ProductOptions.propTypes = {
+  options: Object(prop_types["arrayOf"])(Object(prop_types["shape"])({
+    label: prop_types["string"],
+    value: prop_types["string"]
+  }))
+};
+/* harmony default export */ var productOptions = __webpack_exports__["a"] = (ProductOptions);
+
+/***/ }),
+
 /***/ "./node_modules/@magento/venia-ui/lib/components/LoadingIndicator/indicator.js":
 /*!*************************************************************************************************!*\
   !*** ./node_modules/@magento/venia-ui/lib/components/LoadingIndicator/indicator.js + 1 modules ***!
@@ -7856,7 +7994,7 @@ Image.defaultProps = {
 /*! exports provided: default */
 /*! exports used: default */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/shallowMerge.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Icon/icon.js because of ./src/RootComponents/Cart/index.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Icon/icon.js because of ./node_modules/@magento/venia-ui/lib/components/CartPage/cartPage.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-feather/dist/icons/loader.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/LoadingIndicator/indicator.module.css (<- Module uses module.id) */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react/index.js (<- Module is not an ECMAScript module) */
@@ -7921,6 +8059,32 @@ const LoadingIndicator = props => {
   }, props.children));
 };
 /* harmony default export */ var indicator = __webpack_exports__["a"] = (LoadingIndicator);
+
+/***/ }),
+
+/***/ "./node_modules/@magento/venia-ui/lib/components/LoadingIndicator/static.js":
+/*!**********************************************************************************!*\
+  !*** ./node_modules/@magento/venia-ui/lib/components/LoadingIndicator/static.js ***!
+  \**********************************************************************************/
+/*! exports provided: default */
+/*! exports used: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_intl__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-intl */ "./node_modules/react-intl/lib/src/components/message.js");
+/* harmony import */ var _indicator__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./indicator */ "./node_modules/@magento/venia-ui/lib/components/LoadingIndicator/indicator.js");
+
+
+
+const staticIndicator = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_indicator__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"], {
+  global: true
+}, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_intl__WEBPACK_IMPORTED_MODULE_1__[/* default */ "a"], {
+  id: 'loadingIndicator.message',
+  defaultMessage: 'Fetching Data...'
+}));
+/* harmony default export */ __webpack_exports__["a"] = (staticIndicator);
 
 /***/ }),
 
@@ -8013,7 +8177,7 @@ Price.defaultProps = {
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/hooks/hook-wrappers/useInformedFieldStateWrapper.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/shallowMerge.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Field/message.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Icon/icon.js because of ./src/RootComponents/Cart/index.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Icon/icon.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/TextInput/textInput.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-feather/dist/icons/minus.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-feather/dist/icons/plus.js */
@@ -8299,10 +8463,10 @@ QuantityStepper.defaultProps = {
   \******************************************************************************************/
 /*! exports provided: default */
 /*! exports used: default */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/hooks/hook-wrappers/useInformedFieldStateWrapper.js because of ./node_modules/@magento/venia-ui/lib/components/RadioGroup/radioGroup.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/hooks/hook-wrappers/useInformedFieldStateWrapper.js because of ./node_modules/@magento/peregrine/lib/talons/QuantityStepper/useQuantityStepper.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/shallowMerge.js because of ./src/RootComponents/Cart/index.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Field/fieldIcons.js because of ./node_modules/@magento/venia-ui/lib/components/Select/select.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Field/message.js because of ./node_modules/@magento/venia-ui/lib/components/QuantityStepper/quantityStepper.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Field/message.js because of ./node_modules/@magento/venia-ui/lib/components/AccountInformationPage/accountInformationPage.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/TextInput/textInput.module.css (<- Module uses module.id) */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/informed/dist/esm/index.js (<- Module uses injected variables (process)) */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/prop-types/index.js (<- Module is not an ECMAScript module) */
@@ -8407,19 +8571,19 @@ TextInput.propTypes = {
   !*** ./node_modules/@magento/venia-ui/lib/util/formValidators.js ***!
   \*******************************************************************/
 /*! exports provided: hasLengthAtLeast, hasLengthAtMost, hasLengthExactly, isRequired, mustBeChecked, validateRegionCode, validatePassword, isEqualToField, isNotEqualToField */
-/*! exports used: isRequired */
+/*! exports used: hasLengthAtLeast, isNotEqualToField, isRequired, validatePassword */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* unused harmony export hasLengthAtLeast */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return hasLengthAtLeast; });
 /* unused harmony export hasLengthAtMost */
 /* unused harmony export hasLengthExactly */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return isRequired; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return isRequired; });
 /* unused harmony export mustBeChecked */
 /* unused harmony export validateRegionCode */
-/* unused harmony export validatePassword */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return validatePassword; });
 /* unused harmony export isEqualToField */
-/* unused harmony export isNotEqualToField */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return isNotEqualToField; });
 /**
  * @fileoverview This file houses functions that can be used for
  * validation of form fields.
@@ -16587,7 +16751,7 @@ module.exports = function (data, opts) {
 /*! exports provided: gql, resetCaches, disableFragmentWarnings, enableExperimentalFragmentVariables, disableExperimentalFragmentVariables, default */
 /*! exports used: gql */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql/error/syntaxError.mjs because of ./src/RootComponents/Cart/index.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql/language/ast.mjs because of ./node_modules/@apollo/client/link/http/selectHttpOptionsAndBody.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql/language/ast.mjs because of ./src/RootComponents/Cart/index.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql/language/lexer.mjs because of ./src/RootComponents/Cart/index.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql/language/source.mjs because of ./src/RootComponents/Cart/index.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql/language/tokenKind.mjs because of ./src/RootComponents/Cart/index.js */
@@ -18394,7 +18558,7 @@ gql["default"] = gql;
   \****************************************************************/
 /*! exports provided: syntaxError */
 /*! exports used: syntaxError */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql/polyfills/symbols.mjs because of ./node_modules/@magento/venia-ui/lib/components/CartPage/cartPage.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql/polyfills/symbols.mjs because of ./src/RootComponents/Cart/index.js */
 /***/ (function(__webpack_module__, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -18961,7 +19125,7 @@ var nodejsCustomInspectSymbol = typeof Symbol === 'function' && typeof Symbol.fo
   \***********************************************************/
 /*! exports provided: Location, Token, isNode */
 /*! exports used: Location, Token, isNode */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql/jsutils/nodejsCustomInspectSymbol.mjs because of ./node_modules/@magento/venia-ui/lib/components/CartPage/cartPage.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql/jsutils/nodejsCustomInspectSymbol.mjs because of ./node_modules/@apollo/client/link/http/selectHttpOptionsAndBody.js */
 /***/ (function(__webpack_module__, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -20294,7 +20458,7 @@ function hasMultilineItems(maybeArray) {
 /*! exports provided: Source, isSource */
 /*! exports used: Source, isSource */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql/jsutils/inspect.mjs because of ./node_modules/@apollo/client/link/http/selectHttpOptionsAndBody.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql/polyfills/symbols.mjs because of ./node_modules/@magento/venia-ui/lib/components/CartPage/cartPage.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql/polyfills/symbols.mjs because of ./src/RootComponents/Cart/index.js */
 /***/ (function(__webpack_module__, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -35602,7 +35766,7 @@ if (hasSymbols()) {
 
 /***/ "./src/RootComponents/Cart/index.js":
 /*!*******************************************************!*\
-  !*** ./src/RootComponents/Cart/index.js + 65 modules ***!
+  !*** ./src/RootComponents/Cart/index.js + 62 modules ***!
   \*******************************************************/
 /*! exports provided: default */
 /*! all exports used */
@@ -35620,17 +35784,19 @@ if (hasSymbols()) {
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/talons/CartPage/cartPageFragments.gql.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/configuredVariant.js because of ./node_modules/@magento/venia-ui/lib/components/CartPage/ProductListing/EditModal/productDetail.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/deriveErrorMessage.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/makeUrl.js because of ./node_modules/@magento/venia-ui/lib/components/CartPage/ProductListing/EditModal/productDetail.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/makeUrl.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/shallowMerge.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Button/button.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Dialog/dialog.js because of ./node_modules/@magento/venia-ui/lib/components/CartPage/ProductListing/EditModal/productForm.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Dialog/dialog.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Field/field.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/FormError/formError.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Head/index.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Icon/icon.js because of ./node_modules/@magento/venia-ui/lib/components/LoadingIndicator/spinner.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Image/image.js because of ./node_modules/@magento/venia-ui/lib/components/CartPage/ProductListing/EditModal/productDetail.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/LoadingIndicator/indicator.js because of ./node_modules/@magento/venia-ui/lib/components/CartPage/ProductListing/EditModal/productForm.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Price/price.js because of ./node_modules/@magento/venia-ui/lib/components/CartPage/PriceAdjustments/GiftOptions/giftOptions.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Icon/icon.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Image/image.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/LegacyMiniCart/productOptions.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/LoadingIndicator/indicator.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/LoadingIndicator/static.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Price/price.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/QuantityStepper/quantityStepper.js because of ./node_modules/@magento/venia-ui/lib/components/CartPage/ProductListing/EditModal/productForm.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/TextInput/textInput.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/util/formValidators.js */
@@ -35657,7 +35823,6 @@ if (hasSymbols()) {
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/CartPage/ProductListing/productListing.module.css (<- Module uses module.id) */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/CartPage/cartPage.module.css (<- Module uses module.id) */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/LegacyMiniCart/kebab.module.css (<- Module uses module.id) */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/LegacyMiniCart/productOptions.module.css (<- Module uses module.id) */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/LegacyMiniCart/section.module.css (<- Module uses module.id) */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/StockStatusMessage/stockStatusMessage.module.css (<- Module uses module.id) */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/Wishlist/AddToListButton/addToListButton.module.css (<- Module uses module.id) */
@@ -35859,20 +36024,9 @@ var Icon_icon = __webpack_require__("./node_modules/@magento/venia-ui/lib/compon
 // EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/Head/index.js
 var Head = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/Head/index.js");
 
-// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/LoadingIndicator/indicator.js + 1 modules
-var indicator = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/LoadingIndicator/indicator.js");
+// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/LoadingIndicator/static.js
+var LoadingIndicator_static = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/LoadingIndicator/static.js");
 
-// CONCATENATED MODULE: ./node_modules/@magento/venia-ui/lib/components/LoadingIndicator/static.js
-
-
-
-const staticIndicator = /*#__PURE__*/react_default.a.createElement(indicator["a" /* default */], {
-  global: true
-}, /*#__PURE__*/react_default.a.createElement(components_message["a" /* default */], {
-  id: 'loadingIndicator.message',
-  defaultMessage: 'Fetching Data...'
-}));
-/* harmony default export */ var LoadingIndicator_static = (staticIndicator);
 // EXTERNAL MODULE: ./node_modules/prop-types/index.js
 var prop_types = __webpack_require__("./node_modules/prop-types/index.js");
 
@@ -35963,6 +36117,9 @@ StockStatusMessage.propTypes = {
   messageId: prop_types["string"],
   message: prop_types["node"]
 };
+// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/LoadingIndicator/indicator.js + 1 modules
+var indicator = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/LoadingIndicator/indicator.js");
+
 // CONCATENATED MODULE: ./node_modules/@magento/peregrine/lib/talons/Accordion/useAccordion.js
 
 const useAccordion = props => {
@@ -36260,7 +36417,7 @@ const useGiftOptionsSection = (props = {}) => {
 
 
 
-const GiftOptions = react_default.a.lazy(() => Promise.all(/*! import() */[__webpack_require__.e("vendors"), __webpack_require__.e(2)]).then(__webpack_require__.bind(null, /*! ./GiftOptions */ "./node_modules/@magento/venia-ui/lib/components/CartPage/PriceAdjustments/GiftOptions/index.js")));
+const GiftOptions = react_default.a.lazy(() => Promise.all(/*! import() */[__webpack_require__.e("vendors"), __webpack_require__.e(1)]).then(__webpack_require__.bind(null, /*! ./GiftOptions */ "./node_modules/@magento/venia-ui/lib/components/CartPage/PriceAdjustments/GiftOptions/index.js")));
 const GiftOptionsSection = () => {
   const {
     formatMessage
@@ -37549,7 +37706,7 @@ const flattenProduct = (item, configurableThumbnailSource, storeUrlSuffix) => {
 // EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/util/makeUrl.js
 var makeUrl = __webpack_require__("./node_modules/@magento/peregrine/lib/util/makeUrl.js");
 
-// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/Image/image.js + 8 modules
+// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/Image/image.js + 4 modules
 var Image_image = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/Image/image.js");
 
 // EXTERNAL MODULE: ./node_modules/react-feather/dist/icons/more-vertical.js
@@ -37658,63 +37815,9 @@ Kebab.propTypes = {
   })
 };
 /* harmony default export */ var kebab = (Kebab);
-// EXTERNAL MODULE: ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/LegacyMiniCart/productOptions.module.css
-var productOptions_module = __webpack_require__("./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/LegacyMiniCart/productOptions.module.css");
+// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/LegacyMiniCart/productOptions.js + 1 modules
+var productOptions = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/LegacyMiniCart/productOptions.js");
 
-// CONCATENATED MODULE: ./node_modules/@magento/venia-ui/lib/components/LegacyMiniCart/productOptions.module.css
-
-            
-
-var productOptions_module_options = {"injectType":"styleTag"};
-
-productOptions_module_options.insert = "head";
-productOptions_module_options.singleton = false;
-
-var productOptions_module_update = injectStylesIntoStyleTag_default()(productOptions_module["a" /* default */], productOptions_module_options);
-
-
-
-/* harmony default export */ var LegacyMiniCart_productOptions_module = (productOptions_module["a" /* default */].locals || {});
-// CONCATENATED MODULE: ./node_modules/@magento/venia-ui/lib/components/LegacyMiniCart/productOptions.js
-
-
-
-
-const ProductOptions = props => {
-  const {
-    options = []
-  } = props;
-  const classes = Object(shallowMerge["a" /* default */])(LegacyMiniCart_productOptions_module, props.classes);
-  const displayOptions = Object(react["useMemo"])(() => options.map(({
-    option_label,
-    value_label
-  }) => {
-    const key = `${option_label}${value_label}`;
-    const optionLabelString = `${option_label} :`;
-    return /*#__PURE__*/react_default.a.createElement("div", {
-      key: key,
-      className: classes.optionLabel
-    }, /*#__PURE__*/react_default.a.createElement("dt", {
-      className: classes.optionName
-    }, optionLabelString), /*#__PURE__*/react_default.a.createElement("dd", {
-      className: classes.optionValue,
-      "data-cy": "ProductOptions-optionValue"
-    }, value_label));
-  }), [classes, options]);
-  if (displayOptions.length === 0) {
-    return null;
-  }
-  return /*#__PURE__*/react_default.a.createElement("dl", {
-    className: classes.options
-  }, displayOptions);
-};
-ProductOptions.propTypes = {
-  options: Object(prop_types["arrayOf"])(Object(prop_types["shape"])({
-    label: prop_types["string"],
-    value: prop_types["string"]
-  }))
-};
-/* harmony default export */ var productOptions = (ProductOptions);
 // EXTERNAL MODULE: ./node_modules/react-feather/dist/icons/edit-2.js
 var edit_2 = __webpack_require__("./node_modules/react-feather/dist/icons/edit-2.js");
 
@@ -38325,7 +38428,7 @@ const CreateWishlistForm = props => {
   }, /*#__PURE__*/react_default.a.createElement(textInput["a" /* default */], {
     id: classes.listname,
     field: "listname",
-    validate: formValidators["a" /* isRequired */],
+    validate: formValidators["c" /* isRequired */],
     "data-cy": "createWishlistForm-listname"
   }))), /*#__PURE__*/react_default.a.createElement("div", {
     className: classes.actions
@@ -38835,7 +38938,7 @@ const Product = props => {
     "data-cy": "Product-name"
   }, /*#__PURE__*/react_default.a.createElement(react_router_dom["b" /* Link */], {
     to: itemLink
-  }, name)), /*#__PURE__*/react_default.a.createElement(productOptions, {
+  }, name)), /*#__PURE__*/react_default.a.createElement(productOptions["a" /* default */], {
     options: options,
     classes: {
       options: classes.options,
@@ -38976,7 +39079,7 @@ ErrorMessage.propTypes = {
 
 
 
-const EditModal = react_default.a.lazy(() => __webpack_require__.e(/*! import() */ 1).then(__webpack_require__.bind(null, /*! ./EditModal */ "./node_modules/@magento/venia-ui/lib/components/CartPage/ProductListing/EditModal/index.js")));
+const EditModal = react_default.a.lazy(() => __webpack_require__.e(/*! import() */ 2).then(__webpack_require__.bind(null, /*! ./EditModal */ "./node_modules/@magento/venia-ui/lib/components/CartPage/ProductListing/EditModal/index.js")));
 /**
  * A child component of the CartPage component.
  * This component renders the product listing on the cart page.
@@ -39126,7 +39229,7 @@ const CartPage = props => {
     }
   }, [addToast, wishlistSuccessProps]);
   if (shouldShowLoadingIndicator) {
-    return LoadingIndicator_static;
+    return LoadingIndicator_static["a" /* default */];
   }
   const productListing = hasItems ? /*#__PURE__*/react_default.a.createElement(ProductListing_productListing, {
     onAddToWishlistSuccess: onAddToWishlistSuccess,
@@ -39240,19 +39343,19 @@ Object(react_dom["render"])( /*#__PURE__*/react_default.a.createElement(adapter[
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@formatjs/intl/lib/src/utils.js because of ./node_modules/@magento/venia-ui/lib/components/CartPage/cartPage.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/Toasts/useToastContext.js because of ./node_modules/@magento/venia-ui/lib/components/CartPage/cartPage.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/Toasts/useToasts.js because of ./node_modules/@magento/venia-ui/lib/components/CartPage/cartPage.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/context/app.js because of ./node_modules/@magento/peregrine/lib/talons/MyAccount/useMyAccount.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/context/app.js because of ./node_modules/@magento/peregrine/lib/talons/OrderHistoryPage/useOrderHistoryPage.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/context/cart.js because of ./node_modules/@magento/peregrine/lib/talons/CartPage/useCartPage.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/context/eventing.js because of ./node_modules/@magento/peregrine/lib/talons/CartPage/useCartPage.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/context/user.js because of ./node_modules/@magento/peregrine/lib/talons/SignInPage/useSignInPage.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/context/user.js because of ./node_modules/@magento/peregrine/lib/talons/AccountInformationPage/useAccountInformationPage.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/hooks/useEventListener.js because of ./node_modules/@magento/peregrine/lib/talons/CartPage/useCartPage.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/store/actions/app/actions.js because of ./node_modules/@magento/peregrine/lib/talons/MyAccount/useMyAccount.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/store/actions/app/actions.js because of ./node_modules/@magento/peregrine/lib/talons/OrderHistoryPage/useOrderHistoryPage.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/store/actions/catalog/actions.js because of ./src/RootComponents/Cart/index.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/store/actions/checkout/actions.js because of ./node_modules/@magento/peregrine/lib/talons/CartPage/useCartPage.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/store/actions/checkout/asyncActions.js because of ./node_modules/@magento/peregrine/lib/talons/CartPage/useCartPage.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/store/middleware/thunk.js because of ./src/RootComponents/Cart/index.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/bindActionCreators.js because of ./node_modules/@magento/peregrine/lib/talons/CartPage/useCartPage.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/bindActionCreators.js because of ./node_modules/@magento/peregrine/lib/talons/OrderHistoryPage/useOrderHistoryPage.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/shallowMerge.js because of ./node_modules/@magento/peregrine/lib/talons/CartPage/useCartPage.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/simplePersistence.js because of ./node_modules/@magento/peregrine/lib/talons/SignInPage/useSignInPage.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/simplePersistence.js because of ./node_modules/@magento/peregrine/lib/talons/AccountInformationPage/useAccountInformationPage.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-feather/dist/icons/x.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/apollo-cache-persist/index.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./src/components/Icon/icon.module.css (<- Module uses module.id) */
@@ -42543,7 +42646,7 @@ const ProductListingFragment = _apollo_client__WEBPACK_IMPORTED_MODULE_0__[/* gq
 /*! ModuleConcatenation bailout: Module is not an ECMAScript module */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/adicagno/src/maidenform/pwa/node_modules/webpack-inject-plugin/dist/webpack-inject-plugin.loader?id=webpack-inject-module-1! */"./node_modules/webpack-inject-plugin/dist/webpack-inject-plugin.loader.js?id=webpack-inject-module-1!./");
+__webpack_require__(/*! /Users/hhertach/Documents/code/maidenform/pwa/node_modules/webpack-inject-plugin/dist/webpack-inject-plugin.loader?id=webpack-inject-module-1! */"./node_modules/webpack-inject-plugin/dist/webpack-inject-plugin.loader.js?id=webpack-inject-module-1!./");
 module.exports = __webpack_require__(/*! ./src/RootComponents/Cart/index.js */"./src/RootComponents/Cart/index.js");
 
 

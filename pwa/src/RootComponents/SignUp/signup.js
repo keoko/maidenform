@@ -1,8 +1,8 @@
 import React from 'react';
 
 import store from '../../store';
-import SignInPage from '@magento/venia-ui/lib/components/SignInPage';
 import Adapter from '../../components/Adapter/adapter';
+import CreateAccountPage from '@magento/venia-ui/lib/components/CreateAccountPage';
 
 const origin = globalThis.location.origin;
 const styles = new Set();
@@ -13,15 +13,15 @@ const configureLinks = links => [...links.values()];
  * description = 'Basic Account Page'
  * pageTypes = ACCOUNT
  */
-function Login() {
+function SignUp() {
     return <Adapter
         apiUrl="https://www.marbec.click/graphql-maidenform-qa"
         configureLinks={configureLinks}
         origin={origin}
         store={store}
         styles={styles}>
-        <SignInPage createAccountPageUrl='/customer/account/create' forgotPasswordPageUrl='/customer/account/forgotpassword' />
+        <CreateAccountPage />
     </Adapter>
 }
 
-export default Login;
+export default SignUp;

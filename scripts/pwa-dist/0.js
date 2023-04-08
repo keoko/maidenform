@@ -2,7 +2,7 @@
 
 /***/ "./node_modules/@magento/venia-ui/lib/components/CartPage/PriceAdjustments/ShippingMethods/index.js":
 /*!***********************************************************************************************************************!*\
-  !*** ./node_modules/@magento/venia-ui/lib/components/CartPage/PriceAdjustments/ShippingMethods/index.js + 30 modules ***!
+  !*** ./node_modules/@magento/venia-ui/lib/components/CartPage/PriceAdjustments/ShippingMethods/index.js + 17 modules ***!
   \***********************************************************************************************************************/
 /*! exports provided: default */
 /*! all exports used */
@@ -15,26 +15,20 @@
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/talons/CartPage/cartPageFragments.gql.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/shallowMerge.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Button/button.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Field/field.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Field/fieldIcons.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Country/country.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Field/message.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/FormError/formError.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Icon/icon.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Postcode/postcode.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Price/price.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/TextInput/textInput.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Region/region.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/util/formValidators.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-feather/dist/icons/chevron-down.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-feather/dist/icons/circle.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/CartPage/PriceAdjustments/ShippingMethods/shippingForm.module.css (<- Module uses module.id) */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/CartPage/PriceAdjustments/ShippingMethods/shippingMethods.module.css (<- Module uses module.id) */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/CartPage/PriceAdjustments/ShippingMethods/shippingRadio.module.css (<- Module uses module.id) */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/CartPage/PriceAdjustments/ShippingMethods/shippingRadios.module.css (<- Module uses module.id) */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/Country/country.module.css (<- Module uses module.id) */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/Postcode/postcode.module.css (<- Module uses module.id) */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/RadioGroup/radio.module.css (<- Module uses module.id) */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/RadioGroup/radioGroup.module.css (<- Module uses module.id) */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/Region/region.module.css (<- Module uses module.id) */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/Select/select.module.css (<- Module uses module.id) */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql-tag/lib/index.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/informed/dist/esm/index.js (<- Module uses injected variables (process)) */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/prop-types/index.js (<- Module is not an ECMAScript module) */
@@ -483,617 +477,22 @@ const useShippingForm = props => {
 // EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/util/formValidators.js
 var formValidators = __webpack_require__("./node_modules/@magento/venia-ui/lib/util/formValidators.js");
 
-// CONCATENATED MODULE: ./node_modules/@magento/peregrine/lib/talons/Country/useCountry.js
+// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/Country/country.js + 3 modules
+var country = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/Country/country.js");
 
-const useCountry = props => {
-  const {
-    queries: {
-      getCountriesQuery
-    }
-  } = props;
-  const {
-    data,
-    error,
-    loading
-  } = Object(useQuery["a" /* useQuery */])(getCountriesQuery);
-  let formattedCountriesData = [{
-    label: 'Loading Countries...',
-    value: ''
-  }];
-  if (!loading && !error) {
-    const {
-      countries
-    } = data;
-    formattedCountriesData = countries.map(country => ({
-      // If a country is missing the full english name just show the abbreviation.
-      label: country.full_name_english || country.two_letter_abbreviation,
-      value: country.two_letter_abbreviation
-    }));
-    formattedCountriesData.sort((a, b) => a.label < b.label ? -1 : 1);
-  }
-  return {
-    countries: formattedCountriesData,
-    loading
-  };
-};
-// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/Field/field.js + 1 modules
-var Field_field = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/Field/field.js");
+// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/FormError/formError.js + 5 modules
+var formError = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/FormError/formError.js");
 
-// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/Field/fieldIcons.js + 1 modules
-var fieldIcons = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/Field/fieldIcons.js");
+// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/Region/region.js + 3 modules
+var region = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/Region/region.js");
 
-// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/Field/message.js + 1 modules
-var Field_message = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/Field/message.js");
+// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/Postcode/postcode.js + 2 modules
+var postcode = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/Postcode/postcode.js");
 
 // EXTERNAL MODULE: ./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js
 var injectStylesIntoStyleTag = __webpack_require__("./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
 var injectStylesIntoStyleTag_default = /*#__PURE__*/__webpack_require__.n(injectStylesIntoStyleTag);
 
-// EXTERNAL MODULE: ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/Select/select.module.css
-var select_module = __webpack_require__("./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/Select/select.module.css");
-
-// CONCATENATED MODULE: ./node_modules/@magento/venia-ui/lib/components/Select/select.module.css
-
-            
-
-var select_module_options = {"injectType":"styleTag"};
-
-select_module_options.insert = "head";
-select_module_options.singleton = false;
-
-var update = injectStylesIntoStyleTag_default()(select_module["a" /* default */], select_module_options);
-
-
-
-/* harmony default export */ var Select_select_module = (select_module["a" /* default */].locals || {});
-// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/Icon/icon.js + 1 modules
-var icon = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/Icon/icon.js");
-
-// EXTERNAL MODULE: ./node_modules/react-feather/dist/icons/chevron-down.js
-var chevron_down = __webpack_require__("./node_modules/react-feather/dist/icons/chevron-down.js");
-
-// CONCATENATED MODULE: ./node_modules/@magento/venia-ui/lib/components/Select/select.js
-const _excluded = ["before", "classes", "field", "items", "message"];
-function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
-function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-
-
-
-
-
-
-
-
-const arrow = /*#__PURE__*/react_default.a.createElement(icon["a" /* default */], {
-  src: chevron_down["a" /* default */],
-  size: 24
-});
-const Select = props => {
-  const {
-      before,
-      classes: propClasses,
-      field,
-      items,
-      message
-    } = props,
-    rest = _objectWithoutProperties(props, _excluded);
-  const fieldState = Object(esm["k" /* useFieldState */])(field);
-  const classes = Object(shallowMerge["a" /* default */])(Select_select_module, propClasses);
-  const inputClass = fieldState.error ? classes.input_error : classes.input;
-  const options = items.map(({
-    disabled = null,
-    hidden = null,
-    label,
-    value,
-    key = value
-  }) => /*#__PURE__*/react_default.a.createElement(esm["c" /* Option */], {
-    key: key,
-    disabled: disabled,
-    hidden: hidden,
-    value: value
-  }, label || (value != null ? value : '')));
-  return /*#__PURE__*/react_default.a.createElement(react["Fragment"], null, /*#__PURE__*/react_default.a.createElement(fieldIcons["a" /* default */], {
-    after: arrow,
-    before: before
-  }, /*#__PURE__*/react_default.a.createElement(esm["g" /* Select */], _extends({}, rest, {
-    className: inputClass,
-    field: field
-  }), options)), /*#__PURE__*/react_default.a.createElement(Field_message["a" /* default */], {
-    fieldState: fieldState
-  }, message));
-};
-/* harmony default export */ var Select_select = (Select);
-Select.propTypes = {
-  before: prop_types["node"],
-  classes: Object(prop_types["shape"])({
-    input: prop_types["string"]
-  }),
-  field: prop_types["string"].isRequired,
-  items: Object(prop_types["arrayOf"])(Object(prop_types["shape"])({
-    key: Object(prop_types["oneOfType"])([prop_types["number"], prop_types["string"]]),
-    label: prop_types["string"],
-    value: Object(prop_types["oneOfType"])([prop_types["number"], prop_types["string"]])
-  })),
-  message: prop_types["node"]
-};
-// EXTERNAL MODULE: ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/Country/country.module.css
-var country_module = __webpack_require__("./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/Country/country.module.css");
-
-// CONCATENATED MODULE: ./node_modules/@magento/venia-ui/lib/components/Country/country.module.css
-
-            
-
-var country_module_options = {"injectType":"styleTag"};
-
-country_module_options.insert = "head";
-country_module_options.singleton = false;
-
-var country_module_update = injectStylesIntoStyleTag_default()(country_module["a" /* default */], country_module_options);
-
-
-
-/* harmony default export */ var Country_country_module = (country_module["a" /* default */].locals || {});
-// CONCATENATED MODULE: ./node_modules/@magento/venia-ui/lib/components/Country/country.gql.js
-
-const GET_COUNTRIES_QUERY = lib["a" /* gql */]`
-    query GetCountries {
-        countries {
-            id
-            full_name_english
-            two_letter_abbreviation
-        }
-    }
-`;
-// CONCATENATED MODULE: ./node_modules/@magento/venia-ui/lib/components/Country/country.js
-const country_excluded = ["classes", "field", "label", "translationId"];
-function country_extends() { country_extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return country_extends.apply(this, arguments); }
-function country_ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
-function country_objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? country_ownKeys(Object(source), !0).forEach(function (key) { country_defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : country_ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
-function country_defineProperty(obj, key, value) { key = country_toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-function country_toPropertyKey(arg) { var key = country_toPrimitive(arg, "string"); return typeof key === "symbol" ? key : String(key); }
-function country_toPrimitive(input, hint) { if (typeof input !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (typeof res !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
-function country_objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = country_objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
-function country_objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-
-
-
-
-
-
-
-
-
-const Country = props => {
-  const talonProps = useCountry({
-    queries: {
-      getCountriesQuery: GET_COUNTRIES_QUERY
-    }
-  });
-  const {
-    countries,
-    loading
-  } = talonProps;
-  const {
-      classes: propClasses,
-      field,
-      label,
-      translationId
-    } = props,
-    inputProps = country_objectWithoutProperties(props, country_excluded);
-  const {
-    formatMessage
-  } = Object(useIntl["a" /* default */])();
-  const classes = Object(shallowMerge["a" /* default */])(Country_country_module, propClasses);
-  const selectProps = country_objectSpread({
-    classes,
-    disabled: loading,
-    field,
-    items: countries
-  }, inputProps);
-  return /*#__PURE__*/react_default.a.createElement(Field_field["a" /* default */], {
-    id: classes.root,
-    label: formatMessage({
-      id: translationId,
-      defaultMessage: label
-    }),
-    classes: {
-      root: classes.root
-    }
-  }, /*#__PURE__*/react_default.a.createElement(Select_select, country_extends({}, selectProps, {
-    id: classes.root
-  })));
-};
-/* harmony default export */ var Country_country = (Country);
-Country.defaultProps = {
-  field: 'country',
-  label: 'Country',
-  translationId: 'country.label'
-};
-Country.propTypes = {
-  classes: Object(prop_types["shape"])({
-    root: prop_types["string"]
-  }),
-  field: prop_types["string"],
-  label: prop_types["string"],
-  translationId: prop_types["string"],
-  validate: prop_types["func"],
-  initialValue: prop_types["string"]
-};
-// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/FormError/formError.js + 5 modules
-var formError = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/FormError/formError.js");
-
-// EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/hooks/hook-wrappers/useInformedFieldStateWrapper.js
-var useInformedFieldStateWrapper = __webpack_require__("./node_modules/@magento/peregrine/lib/hooks/hook-wrappers/useInformedFieldStateWrapper.js");
-
-// CONCATENATED MODULE: ./node_modules/@magento/peregrine/lib/talons/Region/useRegion.js
-
-
-
-
-
-/**
- * The useRegion talon handles logic for:
- *
- *  * Resetting the region field value when the country changes.
- *  * Querying for available regions for a country and rendering them.
- *
- * @param {Object} props
- * @param {string} props.countryCodeField
- * @param {string} props.fieldInput - the reference field path for free form text input Defaults to "region".
- * @param {string} props.fieldSelect - the reference field path for selectable list of regions. Defaults to "region".
- * @param {string} props.optionValueKey - the key used to get the value for the field. Defaults to "code"
- * @param {GraphQLAST} props.queries.getRegionsQuery - query to fetch regions for a country.
- *
- * @return {RegionTalonProps}
- */
-const useRegion = props => {
-  const {
-    countryCodeField = 'country',
-    fieldInput = 'region',
-    fieldSelect = 'region',
-    optionValueKey = 'code',
-    queries: {
-      getRegionsQuery
-    }
-  } = props;
-  const hasInitialized = Object(react["useRef"])(false);
-  const countryFieldState = Object(useInformedFieldStateWrapper["a" /* default */])(countryCodeField);
-  const {
-    value: country
-  } = countryFieldState;
-  const regionInputFieldApi = Object(esm["j" /* useFieldApi */])(fieldInput);
-  const regionSelectFieldApi = Object(esm["j" /* useFieldApi */])(fieldSelect);
-  const {
-    data,
-    loading
-  } = Object(useQuery["a" /* useQuery */])(getRegionsQuery, {
-    variables: {
-      countryCode: country
-    },
-    skip: !country
-  });
-
-  // Reset region value when country changes. Because of how Informed sets
-  // initialValues, we want to skip the first state change of the value being
-  // initialized.
-  Object(react["useEffect"])(() => {
-    if (country && !loading) {
-      if (hasInitialized.current) {
-        regionInputFieldApi.exists() && regionInputFieldApi.setValue();
-        regionSelectFieldApi.exists() && regionSelectFieldApi.setValue();
-      } else {
-        hasInitialized.current = true;
-      }
-    }
-  }, [country, regionInputFieldApi, regionSelectFieldApi, loading]);
-  let formattedRegionsData = [{
-    label: 'Loading Regions...',
-    value: ''
-  }];
-  if (data) {
-    const {
-      country
-    } = data;
-    const {
-      available_regions: availableRegions
-    } = country;
-    if (availableRegions) {
-      formattedRegionsData = availableRegions.map(region => ({
-        key: region.id,
-        label: region.name,
-        value: region[optionValueKey]
-      }));
-      formattedRegionsData.unshift({
-        disabled: true,
-        hidden: true,
-        label: '',
-        value: ''
-      });
-    } else {
-      formattedRegionsData = [];
-    }
-  }
-  return {
-    loading,
-    regions: formattedRegionsData
-  };
-};
-
-/** JSDocs type definitions */
-
-/**
- * @typedef {Object} RegionTalonProps
- *
- * @property {boolean} loading whether the regions are loading
- * @property {Array<Region>} regions array of formatted regions for the country
- *
- */
-
-/**
- * @typedef {Object} Region
- *
- * @property {number} key the id of the region
- * @property {String} label the label of the region
- * @property {String} value the value of the region
- */
-// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/TextInput/textInput.js + 1 modules
-var textInput = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/TextInput/textInput.js");
-
-// EXTERNAL MODULE: ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/Region/region.module.css
-var region_module = __webpack_require__("./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/Region/region.module.css");
-
-// CONCATENATED MODULE: ./node_modules/@magento/venia-ui/lib/components/Region/region.module.css
-
-            
-
-var region_module_options = {"injectType":"styleTag"};
-
-region_module_options.insert = "head";
-region_module_options.singleton = false;
-
-var region_module_update = injectStylesIntoStyleTag_default()(region_module["a" /* default */], region_module_options);
-
-
-
-/* harmony default export */ var Region_region_module = (region_module["a" /* default */].locals || {});
-// CONCATENATED MODULE: ./node_modules/@magento/venia-ui/lib/components/Region/region.gql.js
-
-const GET_REGIONS_QUERY = lib["a" /* gql */]`
-    query GetRegions($countryCode: String!) {
-        country(id: $countryCode) {
-            id
-            available_regions {
-                id
-                code
-                name
-            }
-        }
-    }
-`;
-// CONCATENATED MODULE: ./node_modules/@magento/venia-ui/lib/components/Region/region.js
-const region_excluded = ["classes", "countryCodeField", "fieldInput", "fieldSelect", "label", "translationId", "optionValueKey"];
-function region_extends() { region_extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return region_extends.apply(this, arguments); }
-function region_ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
-function region_objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? region_ownKeys(Object(source), !0).forEach(function (key) { region_defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : region_ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
-function region_defineProperty(obj, key, value) { key = region_toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-function region_toPropertyKey(arg) { var key = region_toPrimitive(arg, "string"); return typeof key === "symbol" ? key : String(key); }
-function region_toPrimitive(input, hint) { if (typeof input !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (typeof res !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
-function region_objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = region_objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
-function region_objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-
-
-
-
-
-
-
-
-
-
-
-/**
- * Form component for Region that is seeded with backend data.
- *
- * @param {string} props.optionValueKey - Key to use for returned option values. In a future release, this will be removed and hard-coded to use "id" once GraphQL has resolved MC-30886.
- */
-const Region = props => {
-  const {
-      classes: propClasses,
-      countryCodeField,
-      fieldInput,
-      fieldSelect,
-      label,
-      translationId,
-      optionValueKey
-    } = props,
-    inputProps = region_objectWithoutProperties(props, region_excluded);
-  const {
-    formatMessage
-  } = Object(useIntl["a" /* default */])();
-  const talonProps = useRegion({
-    countryCodeField,
-    fieldInput,
-    fieldSelect,
-    optionValueKey,
-    queries: {
-      getRegionsQuery: GET_REGIONS_QUERY
-    }
-  });
-  const {
-    loading,
-    regions
-  } = talonProps;
-  const classes = Object(shallowMerge["a" /* default */])(Region_region_module, propClasses);
-  const regionProps = region_objectSpread({
-    classes,
-    disabled: loading
-  }, inputProps);
-  const regionField = regions.length || loading ? /*#__PURE__*/react_default.a.createElement(Select_select, region_extends({}, regionProps, {
-    field: fieldSelect,
-    id: classes.root,
-    items: regions
-  })) : /*#__PURE__*/react_default.a.createElement(textInput["a" /* default */], region_extends({}, regionProps, {
-    field: fieldInput,
-    id: classes.root
-  }));
-  return /*#__PURE__*/react_default.a.createElement(Field_field["a" /* default */], {
-    id: classes.root,
-    label: formatMessage({
-      id: translationId,
-      defaultMessage: label
-    }),
-    classes: {
-      root: classes.root
-    }
-  }, regionField);
-};
-/* harmony default export */ var region = (Region);
-Region.defaultProps = {
-  countryCodeField: 'country',
-  fieldInput: 'region',
-  fieldSelect: 'region',
-  label: 'State',
-  translationId: 'region.label',
-  optionValueKey: 'code'
-};
-Region.propTypes = {
-  classes: Object(prop_types["shape"])({
-    root: prop_types["string"]
-  }),
-  countryCodeField: prop_types["string"],
-  fieldInput: prop_types["string"],
-  fieldSelect: prop_types["string"],
-  label: prop_types["string"],
-  translationId: prop_types["string"],
-  optionValueKey: prop_types["string"],
-  validate: prop_types["func"],
-  initialValue: Object(prop_types["oneOfType"])([prop_types["number"], prop_types["string"]])
-};
-// CONCATENATED MODULE: ./node_modules/@magento/peregrine/lib/talons/Postcode/usePostcode.js
-
-
-
-
-/**
- * The usePostcode talon handles logic for resetting the postcode field value when the country changes.
- *
- * @param {Object} props
- * @param {string} props.countryCodeField
- * @param {string} props.fieldInput - the reference field path for free form text input Defaults to "postcode".
- *
- * @return {PostcodeTalonProps}
- */
-const usePostcode = props => {
-  const {
-    countryCodeField = 'country',
-    fieldInput = 'postcode'
-  } = props;
-  const hasInitialized = Object(react["useRef"])(false);
-  const countryFieldState = Object(useInformedFieldStateWrapper["a" /* default */])(countryCodeField);
-  const {
-    value: country
-  } = countryFieldState;
-  const postcodeInputFieldApi = Object(esm["j" /* useFieldApi */])(fieldInput);
-
-  // Reset postcode when country changes. Because of how Informed sets
-  // initialValues, we want to skip the first state change of the value being
-  // initialized.
-  Object(react["useEffect"])(() => {
-    if (country) {
-      if (hasInitialized.current) {
-        postcodeInputFieldApi.reset();
-      } else {
-        hasInitialized.current = true;
-      }
-    }
-  }, [country, postcodeInputFieldApi]);
-  return {};
-};
-
-/** JSDocs type definitions */
-
-/**
- * @typedef {Object} PostcodeTalonProps
- */
-// EXTERNAL MODULE: ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/Postcode/postcode.module.css
-var postcode_module = __webpack_require__("./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/Postcode/postcode.module.css");
-
-// CONCATENATED MODULE: ./node_modules/@magento/venia-ui/lib/components/Postcode/postcode.module.css
-
-            
-
-var postcode_module_options = {"injectType":"styleTag"};
-
-postcode_module_options.insert = "head";
-postcode_module_options.singleton = false;
-
-var postcode_module_update = injectStylesIntoStyleTag_default()(postcode_module["a" /* default */], postcode_module_options);
-
-
-
-/* harmony default export */ var Postcode_postcode_module = (postcode_module["a" /* default */].locals || {});
-// CONCATENATED MODULE: ./node_modules/@magento/venia-ui/lib/components/Postcode/postcode.js
-const postcode_excluded = ["classes", "fieldInput", "label"];
-function postcode_extends() { postcode_extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return postcode_extends.apply(this, arguments); }
-function postcode_ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
-function postcode_objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? postcode_ownKeys(Object(source), !0).forEach(function (key) { postcode_defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : postcode_ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
-function postcode_defineProperty(obj, key, value) { key = postcode_toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-function postcode_toPropertyKey(arg) { var key = postcode_toPrimitive(arg, "string"); return typeof key === "symbol" ? key : String(key); }
-function postcode_toPrimitive(input, hint) { if (typeof input !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (typeof res !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
-function postcode_objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = postcode_objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
-function postcode_objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-
-
-
-
-
-
-
-
-const Postcode = props => {
-  const {
-      classes: propClasses,
-      fieldInput,
-      label
-    } = props,
-    inputProps = postcode_objectWithoutProperties(props, postcode_excluded);
-  const classes = Object(shallowMerge["a" /* default */])(Postcode_postcode_module, propClasses);
-  const postcodeProps = postcode_objectSpread({
-    classes
-  }, inputProps);
-  const {
-    formatMessage
-  } = Object(useIntl["a" /* default */])();
-  const fieldLabel = label || formatMessage({
-    id: 'postcode.label',
-    defaultMessage: 'ZIP / Postal Code'
-  });
-  usePostcode({
-    fieldInput
-  });
-  return /*#__PURE__*/react_default.a.createElement(Field_field["a" /* default */], {
-    id: classes.root,
-    label: fieldLabel,
-    classes: {
-      root: classes.root
-    }
-  }, /*#__PURE__*/react_default.a.createElement(textInput["a" /* default */], postcode_extends({}, postcodeProps, {
-    field: fieldInput,
-    id: classes.root
-  })));
-};
-/* harmony default export */ var postcode = (Postcode);
-Postcode.defaultProps = {
-  fieldInput: 'postcode'
-};
-Postcode.propTypes = {
-  classes: Object(prop_types["shape"])({
-    root: prop_types["string"]
-  }),
-  fieldInput: prop_types["string"],
-  label: prop_types["string"]
-};
 // EXTERNAL MODULE: ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/CartPage/PriceAdjustments/ShippingMethods/shippingForm.module.css
 var shippingForm_module = __webpack_require__("./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/CartPage/PriceAdjustments/ShippingMethods/shippingForm.module.css");
 
@@ -1106,7 +505,7 @@ var shippingForm_module_options = {"injectType":"styleTag"};
 shippingForm_module_options.insert = "head";
 shippingForm_module_options.singleton = false;
 
-var shippingForm_module_update = injectStylesIntoStyleTag_default()(shippingForm_module["a" /* default */], shippingForm_module_options);
+var update = injectStylesIntoStyleTag_default()(shippingForm_module["a" /* default */], shippingForm_module_options);
 
 
 
@@ -1163,16 +562,16 @@ const ShippingForm = props => {
     className: classes.root,
     initialValues: selectedShippingFields,
     onSubmit: handleOnSubmit
-  }, /*#__PURE__*/react_default.a.createElement(Country_country, {
+  }, /*#__PURE__*/react_default.a.createElement(country["a" /* default */], {
     "data-cy": "ShippingMethods-ShippingForm-country",
-    validate: formValidators["a" /* isRequired */]
-  }), /*#__PURE__*/react_default.a.createElement(region, {
+    validate: formValidators["c" /* isRequired */]
+  }), /*#__PURE__*/react_default.a.createElement(region["a" /* default */], {
     "data-cy": "ShippingMethods-ShippingForm-region",
-    validate: formValidators["a" /* isRequired */]
-  }), /*#__PURE__*/react_default.a.createElement(postcode, {
+    validate: formValidators["c" /* isRequired */]
+  }), /*#__PURE__*/react_default.a.createElement(postcode["a" /* default */], {
     fieldInput: "zip",
     "data-cy": "ShippingMethods-ShippingForm-postCode",
-    validate: formValidators["a" /* isRequired */],
+    validate: formValidators["c" /* isRequired */],
     onValueChange: handleZipChange
   }), !hasMethods ? /*#__PURE__*/react_default.a.createElement(Button_button["a" /* default */], {
     classes: {
@@ -1319,6 +718,12 @@ const useShippingRadios = props => {
  * @property {Object} formattedShippingMethods Shipping method data that has been formatted.
  * @property {function} handleShippingSelection Callback function for handling shipping selection form updates.
  */
+// EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/hooks/hook-wrappers/useInformedFieldStateWrapper.js
+var useInformedFieldStateWrapper = __webpack_require__("./node_modules/@magento/peregrine/lib/hooks/hook-wrappers/useInformedFieldStateWrapper.js");
+
+// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/Field/message.js + 1 modules
+var Field_message = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/Field/message.js");
+
 // EXTERNAL MODULE: ./node_modules/react-feather/dist/icons/circle.js
 var circle = __webpack_require__("./node_modules/react-feather/dist/icons/circle.js");
 
@@ -1340,10 +745,10 @@ var radio_module_update = injectStylesIntoStyleTag_default()(radio_module["a" /*
 
 /* harmony default export */ var RadioGroup_radio_module = (radio_module["a" /* default */].locals || {});
 // CONCATENATED MODULE: ./node_modules/@magento/venia-ui/lib/components/RadioGroup/radio.js
-const radio_excluded = ["ariaLabel", "classes", "id", "label", "value"];
-function radio_extends() { radio_extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return radio_extends.apply(this, arguments); }
-function radio_objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = radio_objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
-function radio_objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+const _excluded = ["ariaLabel", "classes", "id", "label", "value"];
+function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
 
 
@@ -1362,13 +767,13 @@ const RadioOption = props => {
       label,
       value
     } = props,
-    rest = radio_objectWithoutProperties(props, radio_excluded);
+    rest = _objectWithoutProperties(props, _excluded);
   const classes = Object(shallowMerge["a" /* default */])(RadioGroup_radio_module, propClasses);
   return /*#__PURE__*/react_default.a.createElement("label", {
     className: classes.root,
     htmlFor: id,
     "aria-label": ariaLabel ? ariaLabel : ''
-  }, /*#__PURE__*/react_default.a.createElement(esm["d" /* Radio */], radio_extends({}, rest, {
+  }, /*#__PURE__*/react_default.a.createElement(esm["d" /* Radio */], _extends({}, rest, {
     className: classes.input,
     id: id,
     value: value
@@ -1724,6 +1129,809 @@ const ShippingMethods = props => {
 /* harmony default export */ var ShippingMethods_shippingMethods = (ShippingMethods);
 // CONCATENATED MODULE: ./node_modules/@magento/venia-ui/lib/components/CartPage/PriceAdjustments/ShippingMethods/index.js
 
+
+/***/ }),
+
+/***/ "./node_modules/@magento/venia-ui/lib/components/Country/country.js":
+/*!**************************************************************************************!*\
+  !*** ./node_modules/@magento/venia-ui/lib/components/Country/country.js + 3 modules ***!
+  \**************************************************************************************/
+/*! exports provided: default */
+/*! exports used: default */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/react/hooks/useQuery.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/shallowMerge.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Field/field.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Select/select.js because of ./node_modules/@magento/venia-ui/lib/components/CartPage/PriceAdjustments/ShippingMethods/shippingForm.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/Country/country.module.css (<- Module uses module.id) */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql-tag/lib/index.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/prop-types/index.js (<- Module is not an ECMAScript module) */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-intl/lib/src/components/useIntl.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react/index.js (<- Module is not an ECMAScript module) */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js (<- Module is not an ECMAScript module) */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+
+// EXTERNAL MODULE: ./node_modules/react/index.js
+var react = __webpack_require__("./node_modules/react/index.js");
+var react_default = /*#__PURE__*/__webpack_require__.n(react);
+
+// EXTERNAL MODULE: ./node_modules/react-intl/lib/src/components/useIntl.js
+var useIntl = __webpack_require__("./node_modules/react-intl/lib/src/components/useIntl.js");
+
+// EXTERNAL MODULE: ./node_modules/prop-types/index.js
+var prop_types = __webpack_require__("./node_modules/prop-types/index.js");
+
+// EXTERNAL MODULE: ./node_modules/@apollo/client/react/hooks/useQuery.js
+var useQuery = __webpack_require__("./node_modules/@apollo/client/react/hooks/useQuery.js");
+
+// CONCATENATED MODULE: ./node_modules/@magento/peregrine/lib/talons/Country/useCountry.js
+
+const useCountry = props => {
+  const {
+    queries: {
+      getCountriesQuery
+    }
+  } = props;
+  const {
+    data,
+    error,
+    loading
+  } = Object(useQuery["a" /* useQuery */])(getCountriesQuery);
+  let formattedCountriesData = [{
+    label: 'Loading Countries...',
+    value: ''
+  }];
+  if (!loading && !error) {
+    const {
+      countries
+    } = data;
+    formattedCountriesData = countries.map(country => ({
+      // If a country is missing the full english name just show the abbreviation.
+      label: country.full_name_english || country.two_letter_abbreviation,
+      value: country.two_letter_abbreviation
+    }));
+    formattedCountriesData.sort((a, b) => a.label < b.label ? -1 : 1);
+  }
+  return {
+    countries: formattedCountriesData,
+    loading
+  };
+};
+// EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/util/shallowMerge.js
+var shallowMerge = __webpack_require__("./node_modules/@magento/peregrine/lib/util/shallowMerge.js");
+
+// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/Field/field.js + 1 modules
+var Field_field = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/Field/field.js");
+
+// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/Select/select.js + 1 modules
+var Select_select = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/Select/select.js");
+
+// EXTERNAL MODULE: ./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js
+var injectStylesIntoStyleTag = __webpack_require__("./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+var injectStylesIntoStyleTag_default = /*#__PURE__*/__webpack_require__.n(injectStylesIntoStyleTag);
+
+// EXTERNAL MODULE: ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/Country/country.module.css
+var country_module = __webpack_require__("./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/Country/country.module.css");
+
+// CONCATENATED MODULE: ./node_modules/@magento/venia-ui/lib/components/Country/country.module.css
+
+            
+
+var options = {"injectType":"styleTag"};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = injectStylesIntoStyleTag_default()(country_module["a" /* default */], options);
+
+
+
+/* harmony default export */ var Country_country_module = (country_module["a" /* default */].locals || {});
+// EXTERNAL MODULE: ./node_modules/graphql-tag/lib/index.js + 3 modules
+var lib = __webpack_require__("./node_modules/graphql-tag/lib/index.js");
+
+// CONCATENATED MODULE: ./node_modules/@magento/venia-ui/lib/components/Country/country.gql.js
+
+const GET_COUNTRIES_QUERY = lib["a" /* gql */]`
+    query GetCountries {
+        countries {
+            id
+            full_name_english
+            two_letter_abbreviation
+        }
+    }
+`;
+// CONCATENATED MODULE: ./node_modules/@magento/venia-ui/lib/components/Country/country.js
+const _excluded = ["classes", "field", "label", "translationId"];
+function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
+function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return typeof key === "symbol" ? key : String(key); }
+function _toPrimitive(input, hint) { if (typeof input !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (typeof res !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
+
+
+
+
+
+
+
+
+const Country = props => {
+  const talonProps = useCountry({
+    queries: {
+      getCountriesQuery: GET_COUNTRIES_QUERY
+    }
+  });
+  const {
+    countries,
+    loading
+  } = talonProps;
+  const {
+      classes: propClasses,
+      field,
+      label,
+      translationId
+    } = props,
+    inputProps = _objectWithoutProperties(props, _excluded);
+  const {
+    formatMessage
+  } = Object(useIntl["a" /* default */])();
+  const classes = Object(shallowMerge["a" /* default */])(Country_country_module, propClasses);
+  const selectProps = _objectSpread({
+    classes,
+    disabled: loading,
+    field,
+    items: countries
+  }, inputProps);
+  return /*#__PURE__*/react_default.a.createElement(Field_field["a" /* default */], {
+    id: classes.root,
+    label: formatMessage({
+      id: translationId,
+      defaultMessage: label
+    }),
+    classes: {
+      root: classes.root
+    }
+  }, /*#__PURE__*/react_default.a.createElement(Select_select["a" /* default */], _extends({}, selectProps, {
+    id: classes.root
+  })));
+};
+/* harmony default export */ var country = __webpack_exports__["a"] = (Country);
+Country.defaultProps = {
+  field: 'country',
+  label: 'Country',
+  translationId: 'country.label'
+};
+Country.propTypes = {
+  classes: Object(prop_types["shape"])({
+    root: prop_types["string"]
+  }),
+  field: prop_types["string"],
+  label: prop_types["string"],
+  translationId: prop_types["string"],
+  validate: prop_types["func"],
+  initialValue: prop_types["string"]
+};
+
+/***/ }),
+
+/***/ "./node_modules/@magento/venia-ui/lib/components/Postcode/postcode.js":
+/*!****************************************************************************************!*\
+  !*** ./node_modules/@magento/venia-ui/lib/components/Postcode/postcode.js + 2 modules ***!
+  \****************************************************************************************/
+/*! exports provided: default */
+/*! exports used: default */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/hooks/hook-wrappers/useInformedFieldStateWrapper.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/shallowMerge.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Field/field.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/TextInput/textInput.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/Postcode/postcode.module.css (<- Module uses module.id) */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/informed/dist/esm/index.js (<- Module uses injected variables (process)) */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/prop-types/index.js (<- Module is not an ECMAScript module) */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-intl/lib/src/components/useIntl.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react/index.js (<- Module is not an ECMAScript module) */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js (<- Module is not an ECMAScript module) */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+
+// EXTERNAL MODULE: ./node_modules/react/index.js
+var react = __webpack_require__("./node_modules/react/index.js");
+var react_default = /*#__PURE__*/__webpack_require__.n(react);
+
+// EXTERNAL MODULE: ./node_modules/prop-types/index.js
+var prop_types = __webpack_require__("./node_modules/prop-types/index.js");
+
+// EXTERNAL MODULE: ./node_modules/react-intl/lib/src/components/useIntl.js
+var useIntl = __webpack_require__("./node_modules/react-intl/lib/src/components/useIntl.js");
+
+// EXTERNAL MODULE: ./node_modules/informed/dist/esm/index.js
+var esm = __webpack_require__("./node_modules/informed/dist/esm/index.js");
+
+// EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/hooks/hook-wrappers/useInformedFieldStateWrapper.js
+var useInformedFieldStateWrapper = __webpack_require__("./node_modules/@magento/peregrine/lib/hooks/hook-wrappers/useInformedFieldStateWrapper.js");
+
+// CONCATENATED MODULE: ./node_modules/@magento/peregrine/lib/talons/Postcode/usePostcode.js
+
+
+
+
+/**
+ * The usePostcode talon handles logic for resetting the postcode field value when the country changes.
+ *
+ * @param {Object} props
+ * @param {string} props.countryCodeField
+ * @param {string} props.fieldInput - the reference field path for free form text input Defaults to "postcode".
+ *
+ * @return {PostcodeTalonProps}
+ */
+const usePostcode = props => {
+  const {
+    countryCodeField = 'country',
+    fieldInput = 'postcode'
+  } = props;
+  const hasInitialized = Object(react["useRef"])(false);
+  const countryFieldState = Object(useInformedFieldStateWrapper["a" /* default */])(countryCodeField);
+  const {
+    value: country
+  } = countryFieldState;
+  const postcodeInputFieldApi = Object(esm["j" /* useFieldApi */])(fieldInput);
+
+  // Reset postcode when country changes. Because of how Informed sets
+  // initialValues, we want to skip the first state change of the value being
+  // initialized.
+  Object(react["useEffect"])(() => {
+    if (country) {
+      if (hasInitialized.current) {
+        postcodeInputFieldApi.reset();
+      } else {
+        hasInitialized.current = true;
+      }
+    }
+  }, [country, postcodeInputFieldApi]);
+  return {};
+};
+
+/** JSDocs type definitions */
+
+/**
+ * @typedef {Object} PostcodeTalonProps
+ */
+// EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/util/shallowMerge.js
+var shallowMerge = __webpack_require__("./node_modules/@magento/peregrine/lib/util/shallowMerge.js");
+
+// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/Field/field.js + 1 modules
+var field = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/Field/field.js");
+
+// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/TextInput/textInput.js + 1 modules
+var textInput = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/TextInput/textInput.js");
+
+// EXTERNAL MODULE: ./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js
+var injectStylesIntoStyleTag = __webpack_require__("./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+var injectStylesIntoStyleTag_default = /*#__PURE__*/__webpack_require__.n(injectStylesIntoStyleTag);
+
+// EXTERNAL MODULE: ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/Postcode/postcode.module.css
+var postcode_module = __webpack_require__("./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/Postcode/postcode.module.css");
+
+// CONCATENATED MODULE: ./node_modules/@magento/venia-ui/lib/components/Postcode/postcode.module.css
+
+            
+
+var options = {"injectType":"styleTag"};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = injectStylesIntoStyleTag_default()(postcode_module["a" /* default */], options);
+
+
+
+/* harmony default export */ var Postcode_postcode_module = (postcode_module["a" /* default */].locals || {});
+// CONCATENATED MODULE: ./node_modules/@magento/venia-ui/lib/components/Postcode/postcode.js
+const _excluded = ["classes", "fieldInput", "label"];
+function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
+function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return typeof key === "symbol" ? key : String(key); }
+function _toPrimitive(input, hint) { if (typeof input !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (typeof res !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
+
+
+
+
+
+
+
+const Postcode = props => {
+  const {
+      classes: propClasses,
+      fieldInput,
+      label
+    } = props,
+    inputProps = _objectWithoutProperties(props, _excluded);
+  const classes = Object(shallowMerge["a" /* default */])(Postcode_postcode_module, propClasses);
+  const postcodeProps = _objectSpread({
+    classes
+  }, inputProps);
+  const {
+    formatMessage
+  } = Object(useIntl["a" /* default */])();
+  const fieldLabel = label || formatMessage({
+    id: 'postcode.label',
+    defaultMessage: 'ZIP / Postal Code'
+  });
+  usePostcode({
+    fieldInput
+  });
+  return /*#__PURE__*/react_default.a.createElement(field["a" /* default */], {
+    id: classes.root,
+    label: fieldLabel,
+    classes: {
+      root: classes.root
+    }
+  }, /*#__PURE__*/react_default.a.createElement(textInput["a" /* default */], _extends({}, postcodeProps, {
+    field: fieldInput,
+    id: classes.root
+  })));
+};
+/* harmony default export */ var postcode = __webpack_exports__["a"] = (Postcode);
+Postcode.defaultProps = {
+  fieldInput: 'postcode'
+};
+Postcode.propTypes = {
+  classes: Object(prop_types["shape"])({
+    root: prop_types["string"]
+  }),
+  fieldInput: prop_types["string"],
+  label: prop_types["string"]
+};
+
+/***/ }),
+
+/***/ "./node_modules/@magento/venia-ui/lib/components/Region/region.js":
+/*!************************************************************************************!*\
+  !*** ./node_modules/@magento/venia-ui/lib/components/Region/region.js + 3 modules ***!
+  \************************************************************************************/
+/*! exports provided: default */
+/*! exports used: default */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/react/hooks/useQuery.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/hooks/hook-wrappers/useInformedFieldStateWrapper.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/shallowMerge.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Field/field.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Select/select.js because of ./node_modules/@magento/venia-ui/lib/components/CartPage/PriceAdjustments/ShippingMethods/shippingForm.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/TextInput/textInput.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/Region/region.module.css (<- Module uses module.id) */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql-tag/lib/index.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/informed/dist/esm/index.js (<- Module uses injected variables (process)) */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/prop-types/index.js (<- Module is not an ECMAScript module) */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-intl/lib/src/components/useIntl.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react/index.js (<- Module is not an ECMAScript module) */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js (<- Module is not an ECMAScript module) */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+
+// EXTERNAL MODULE: ./node_modules/react/index.js
+var react = __webpack_require__("./node_modules/react/index.js");
+var react_default = /*#__PURE__*/__webpack_require__.n(react);
+
+// EXTERNAL MODULE: ./node_modules/react-intl/lib/src/components/useIntl.js
+var useIntl = __webpack_require__("./node_modules/react-intl/lib/src/components/useIntl.js");
+
+// EXTERNAL MODULE: ./node_modules/prop-types/index.js
+var prop_types = __webpack_require__("./node_modules/prop-types/index.js");
+
+// EXTERNAL MODULE: ./node_modules/@apollo/client/react/hooks/useQuery.js
+var useQuery = __webpack_require__("./node_modules/@apollo/client/react/hooks/useQuery.js");
+
+// EXTERNAL MODULE: ./node_modules/informed/dist/esm/index.js
+var esm = __webpack_require__("./node_modules/informed/dist/esm/index.js");
+
+// EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/hooks/hook-wrappers/useInformedFieldStateWrapper.js
+var useInformedFieldStateWrapper = __webpack_require__("./node_modules/@magento/peregrine/lib/hooks/hook-wrappers/useInformedFieldStateWrapper.js");
+
+// CONCATENATED MODULE: ./node_modules/@magento/peregrine/lib/talons/Region/useRegion.js
+
+
+
+
+
+/**
+ * The useRegion talon handles logic for:
+ *
+ *  * Resetting the region field value when the country changes.
+ *  * Querying for available regions for a country and rendering them.
+ *
+ * @param {Object} props
+ * @param {string} props.countryCodeField
+ * @param {string} props.fieldInput - the reference field path for free form text input Defaults to "region".
+ * @param {string} props.fieldSelect - the reference field path for selectable list of regions. Defaults to "region".
+ * @param {string} props.optionValueKey - the key used to get the value for the field. Defaults to "code"
+ * @param {GraphQLAST} props.queries.getRegionsQuery - query to fetch regions for a country.
+ *
+ * @return {RegionTalonProps}
+ */
+const useRegion = props => {
+  const {
+    countryCodeField = 'country',
+    fieldInput = 'region',
+    fieldSelect = 'region',
+    optionValueKey = 'code',
+    queries: {
+      getRegionsQuery
+    }
+  } = props;
+  const hasInitialized = Object(react["useRef"])(false);
+  const countryFieldState = Object(useInformedFieldStateWrapper["a" /* default */])(countryCodeField);
+  const {
+    value: country
+  } = countryFieldState;
+  const regionInputFieldApi = Object(esm["j" /* useFieldApi */])(fieldInput);
+  const regionSelectFieldApi = Object(esm["j" /* useFieldApi */])(fieldSelect);
+  const {
+    data,
+    loading
+  } = Object(useQuery["a" /* useQuery */])(getRegionsQuery, {
+    variables: {
+      countryCode: country
+    },
+    skip: !country
+  });
+
+  // Reset region value when country changes. Because of how Informed sets
+  // initialValues, we want to skip the first state change of the value being
+  // initialized.
+  Object(react["useEffect"])(() => {
+    if (country && !loading) {
+      if (hasInitialized.current) {
+        regionInputFieldApi.exists() && regionInputFieldApi.setValue();
+        regionSelectFieldApi.exists() && regionSelectFieldApi.setValue();
+      } else {
+        hasInitialized.current = true;
+      }
+    }
+  }, [country, regionInputFieldApi, regionSelectFieldApi, loading]);
+  let formattedRegionsData = [{
+    label: 'Loading Regions...',
+    value: ''
+  }];
+  if (data) {
+    const {
+      country
+    } = data;
+    const {
+      available_regions: availableRegions
+    } = country;
+    if (availableRegions) {
+      formattedRegionsData = availableRegions.map(region => ({
+        key: region.id,
+        label: region.name,
+        value: region[optionValueKey]
+      }));
+      formattedRegionsData.unshift({
+        disabled: true,
+        hidden: true,
+        label: '',
+        value: ''
+      });
+    } else {
+      formattedRegionsData = [];
+    }
+  }
+  return {
+    loading,
+    regions: formattedRegionsData
+  };
+};
+
+/** JSDocs type definitions */
+
+/**
+ * @typedef {Object} RegionTalonProps
+ *
+ * @property {boolean} loading whether the regions are loading
+ * @property {Array<Region>} regions array of formatted regions for the country
+ *
+ */
+
+/**
+ * @typedef {Object} Region
+ *
+ * @property {number} key the id of the region
+ * @property {String} label the label of the region
+ * @property {String} value the value of the region
+ */
+// EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/util/shallowMerge.js
+var shallowMerge = __webpack_require__("./node_modules/@magento/peregrine/lib/util/shallowMerge.js");
+
+// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/Field/field.js + 1 modules
+var field = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/Field/field.js");
+
+// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/Select/select.js + 1 modules
+var Select_select = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/Select/select.js");
+
+// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/TextInput/textInput.js + 1 modules
+var textInput = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/TextInput/textInput.js");
+
+// EXTERNAL MODULE: ./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js
+var injectStylesIntoStyleTag = __webpack_require__("./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+var injectStylesIntoStyleTag_default = /*#__PURE__*/__webpack_require__.n(injectStylesIntoStyleTag);
+
+// EXTERNAL MODULE: ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/Region/region.module.css
+var region_module = __webpack_require__("./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/Region/region.module.css");
+
+// CONCATENATED MODULE: ./node_modules/@magento/venia-ui/lib/components/Region/region.module.css
+
+            
+
+var options = {"injectType":"styleTag"};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = injectStylesIntoStyleTag_default()(region_module["a" /* default */], options);
+
+
+
+/* harmony default export */ var Region_region_module = (region_module["a" /* default */].locals || {});
+// EXTERNAL MODULE: ./node_modules/graphql-tag/lib/index.js + 3 modules
+var lib = __webpack_require__("./node_modules/graphql-tag/lib/index.js");
+
+// CONCATENATED MODULE: ./node_modules/@magento/venia-ui/lib/components/Region/region.gql.js
+
+const GET_REGIONS_QUERY = lib["a" /* gql */]`
+    query GetRegions($countryCode: String!) {
+        country(id: $countryCode) {
+            id
+            available_regions {
+                id
+                code
+                name
+            }
+        }
+    }
+`;
+// CONCATENATED MODULE: ./node_modules/@magento/venia-ui/lib/components/Region/region.js
+const _excluded = ["classes", "countryCodeField", "fieldInput", "fieldSelect", "label", "translationId", "optionValueKey"];
+function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
+function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return typeof key === "symbol" ? key : String(key); }
+function _toPrimitive(input, hint) { if (typeof input !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (typeof res !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
+
+
+
+
+
+
+
+
+
+
+/**
+ * Form component for Region that is seeded with backend data.
+ *
+ * @param {string} props.optionValueKey - Key to use for returned option values. In a future release, this will be removed and hard-coded to use "id" once GraphQL has resolved MC-30886.
+ */
+const Region = props => {
+  const {
+      classes: propClasses,
+      countryCodeField,
+      fieldInput,
+      fieldSelect,
+      label,
+      translationId,
+      optionValueKey
+    } = props,
+    inputProps = _objectWithoutProperties(props, _excluded);
+  const {
+    formatMessage
+  } = Object(useIntl["a" /* default */])();
+  const talonProps = useRegion({
+    countryCodeField,
+    fieldInput,
+    fieldSelect,
+    optionValueKey,
+    queries: {
+      getRegionsQuery: GET_REGIONS_QUERY
+    }
+  });
+  const {
+    loading,
+    regions
+  } = talonProps;
+  const classes = Object(shallowMerge["a" /* default */])(Region_region_module, propClasses);
+  const regionProps = _objectSpread({
+    classes,
+    disabled: loading
+  }, inputProps);
+  const regionField = regions.length || loading ? /*#__PURE__*/react_default.a.createElement(Select_select["a" /* default */], _extends({}, regionProps, {
+    field: fieldSelect,
+    id: classes.root,
+    items: regions
+  })) : /*#__PURE__*/react_default.a.createElement(textInput["a" /* default */], _extends({}, regionProps, {
+    field: fieldInput,
+    id: classes.root
+  }));
+  return /*#__PURE__*/react_default.a.createElement(field["a" /* default */], {
+    id: classes.root,
+    label: formatMessage({
+      id: translationId,
+      defaultMessage: label
+    }),
+    classes: {
+      root: classes.root
+    }
+  }, regionField);
+};
+/* harmony default export */ var region = __webpack_exports__["a"] = (Region);
+Region.defaultProps = {
+  countryCodeField: 'country',
+  fieldInput: 'region',
+  fieldSelect: 'region',
+  label: 'State',
+  translationId: 'region.label',
+  optionValueKey: 'code'
+};
+Region.propTypes = {
+  classes: Object(prop_types["shape"])({
+    root: prop_types["string"]
+  }),
+  countryCodeField: prop_types["string"],
+  fieldInput: prop_types["string"],
+  fieldSelect: prop_types["string"],
+  label: prop_types["string"],
+  translationId: prop_types["string"],
+  optionValueKey: prop_types["string"],
+  validate: prop_types["func"],
+  initialValue: Object(prop_types["oneOfType"])([prop_types["number"], prop_types["string"]])
+};
+
+/***/ }),
+
+/***/ "./node_modules/@magento/venia-ui/lib/components/Select/select.js":
+/*!************************************************************************************!*\
+  !*** ./node_modules/@magento/venia-ui/lib/components/Select/select.js + 1 modules ***!
+  \************************************************************************************/
+/*! exports provided: default */
+/*! exports used: default */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/shallowMerge.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Field/fieldIcons.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Field/message.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Icon/icon.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-feather/dist/icons/chevron-down.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/Select/select.module.css (<- Module uses module.id) */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/informed/dist/esm/index.js (<- Module uses injected variables (process)) */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/prop-types/index.js (<- Module is not an ECMAScript module) */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react/index.js (<- Module is not an ECMAScript module) */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js (<- Module is not an ECMAScript module) */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+
+// EXTERNAL MODULE: ./node_modules/react/index.js
+var react = __webpack_require__("./node_modules/react/index.js");
+var react_default = /*#__PURE__*/__webpack_require__.n(react);
+
+// EXTERNAL MODULE: ./node_modules/prop-types/index.js
+var prop_types = __webpack_require__("./node_modules/prop-types/index.js");
+
+// EXTERNAL MODULE: ./node_modules/informed/dist/esm/index.js
+var esm = __webpack_require__("./node_modules/informed/dist/esm/index.js");
+
+// EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/util/shallowMerge.js
+var shallowMerge = __webpack_require__("./node_modules/@magento/peregrine/lib/util/shallowMerge.js");
+
+// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/Field/fieldIcons.js + 1 modules
+var fieldIcons = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/Field/fieldIcons.js");
+
+// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/Field/message.js + 1 modules
+var Field_message = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/Field/message.js");
+
+// EXTERNAL MODULE: ./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js
+var injectStylesIntoStyleTag = __webpack_require__("./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+var injectStylesIntoStyleTag_default = /*#__PURE__*/__webpack_require__.n(injectStylesIntoStyleTag);
+
+// EXTERNAL MODULE: ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/Select/select.module.css
+var select_module = __webpack_require__("./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/Select/select.module.css");
+
+// CONCATENATED MODULE: ./node_modules/@magento/venia-ui/lib/components/Select/select.module.css
+
+            
+
+var select_module_options = {"injectType":"styleTag"};
+
+select_module_options.insert = "head";
+select_module_options.singleton = false;
+
+var update = injectStylesIntoStyleTag_default()(select_module["a" /* default */], select_module_options);
+
+
+
+/* harmony default export */ var Select_select_module = (select_module["a" /* default */].locals || {});
+// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/Icon/icon.js + 1 modules
+var icon = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/Icon/icon.js");
+
+// EXTERNAL MODULE: ./node_modules/react-feather/dist/icons/chevron-down.js
+var chevron_down = __webpack_require__("./node_modules/react-feather/dist/icons/chevron-down.js");
+
+// CONCATENATED MODULE: ./node_modules/@magento/venia-ui/lib/components/Select/select.js
+const _excluded = ["before", "classes", "field", "items", "message"];
+function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
+
+
+
+
+
+
+
+const arrow = /*#__PURE__*/react_default.a.createElement(icon["a" /* default */], {
+  src: chevron_down["a" /* default */],
+  size: 24
+});
+const Select = props => {
+  const {
+      before,
+      classes: propClasses,
+      field,
+      items,
+      message
+    } = props,
+    rest = _objectWithoutProperties(props, _excluded);
+  const fieldState = Object(esm["k" /* useFieldState */])(field);
+  const classes = Object(shallowMerge["a" /* default */])(Select_select_module, propClasses);
+  const inputClass = fieldState.error ? classes.input_error : classes.input;
+  const options = items.map(({
+    disabled = null,
+    hidden = null,
+    label,
+    value,
+    key = value
+  }) => /*#__PURE__*/react_default.a.createElement(esm["c" /* Option */], {
+    key: key,
+    disabled: disabled,
+    hidden: hidden,
+    value: value
+  }, label || (value != null ? value : '')));
+  return /*#__PURE__*/react_default.a.createElement(react["Fragment"], null, /*#__PURE__*/react_default.a.createElement(fieldIcons["a" /* default */], {
+    after: arrow,
+    before: before
+  }, /*#__PURE__*/react_default.a.createElement(esm["g" /* Select */], _extends({}, rest, {
+    className: inputClass,
+    field: field
+  }), options)), /*#__PURE__*/react_default.a.createElement(Field_message["a" /* default */], {
+    fieldState: fieldState
+  }, message));
+};
+/* harmony default export */ var Select_select = __webpack_exports__["a"] = (Select);
+Select.propTypes = {
+  before: prop_types["node"],
+  classes: Object(prop_types["shape"])({
+    input: prop_types["string"]
+  }),
+  field: prop_types["string"].isRequired,
+  items: Object(prop_types["arrayOf"])(Object(prop_types["shape"])({
+    key: Object(prop_types["oneOfType"])([prop_types["number"], prop_types["string"]]),
+    label: prop_types["string"],
+    value: Object(prop_types["oneOfType"])([prop_types["number"], prop_types["string"]])
+  })),
+  message: prop_types["node"]
+};
 
 /***/ }),
 

@@ -287,8 +287,8 @@ globalThis.addEventListener('offline', () => {
 /*! ModuleConcatenation bailout: Module is not an ECMAScript module */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/adicagno/src/maidenform/pwa/node_modules/webpack-inject-plugin/dist/webpack-inject-plugin.loader?id=webpack-inject-module-1! */"./node_modules/webpack-inject-plugin/dist/webpack-inject-plugin.loader.js?id=webpack-inject-module-1!./");
-module.exports = __webpack_require__(/*! /Users/adicagno/src/maidenform/pwa/src/index.js */"./src/index.js");
+__webpack_require__(/*! /Users/hhertach/Documents/code/maidenform/pwa/node_modules/webpack-inject-plugin/dist/webpack-inject-plugin.loader?id=webpack-inject-module-1! */"./node_modules/webpack-inject-plugin/dist/webpack-inject-plugin.loader.js?id=webpack-inject-module-1!./");
+module.exports = __webpack_require__(/*! /Users/hhertach/Documents/code/maidenform/pwa/src/index.js */"./src/index.js");
 
 
 /***/ })

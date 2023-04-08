@@ -725,7 +725,7 @@ const GiftCards = props => {
       id: 'giftCards.cardEntry',
       defaultMessage: 'Enter card number'
     }),
-    validate: formValidators["a" /* isRequired */]
+    validate: formValidators["c" /* isRequired */]
   })), cardBalance), /*#__PURE__*/react_default.a.createElement(field["a" /* default */], {
     classes: {
       label: classes.applyLabel

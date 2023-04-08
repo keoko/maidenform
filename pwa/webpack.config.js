@@ -7,6 +7,7 @@ const ModuleOverridePlugin = require('./moduleOverrideWebpackPlugin');
 const componentOverrideMapping = {
  '@magento/peregrine/lib/talons/CartPage/ProductListing/productListingFragments.gql.js': './src/talons/CartPage/ProductListing/productListingFragments.gql.js',
  '@magento/venia-ui/lib/components/Portal/portal.js': './src/components/Portal/portal.js',
+ '@magento/peregrine/lib/talons/SignInPage/useSignInPage.js': './src/talons/SignInPage/useSignInPage.js',
 };
 
 const {
@@ -174,6 +175,7 @@ module.exports = async env => {
     config.entry.checkout = './src/RootComponents/Checkout/index.js';
     config.entry.account = './src/RootComponents/Account/index.js';
     config.entry.login = './src/RootComponents/Login/index.js';
+    config.entry.signup = './src/RootComponents/SignUp/index.js';
 
     // Change output filenames
     config.output.filename = '[name].js';
@@ -183,7 +185,7 @@ module.exports = async env => {
     if (env.mode === 'production') {
         config.optimization.minimizer[0].options.terserOptions.compress.drop_console = false;
     }
-    
+
     // Fix publicPath
     config.output.publicPath = '/scripts/pwa-dist/';
 
