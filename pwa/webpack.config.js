@@ -8,6 +8,7 @@ const componentOverrideMapping = {
  '@magento/peregrine/lib/talons/CartPage/ProductListing/productListingFragments.gql.js': './src/talons/CartPage/ProductListing/productListingFragments.gql.js',
  '@magento/venia-ui/lib/components/Portal/portal.js': './src/components/Portal/portal.js',
  '@magento/peregrine/lib/talons/SignInPage/useSignInPage.js': './src/talons/SignInPage/useSignInPage.js',
+ '@magento/peregrine/lib/hooks/useGoogleReCaptcha/useGoogleReCaptcha.js': './src/hooks/useGoogleReCaptcha/useGoogleReCaptcha.js',
 };
 
 const {

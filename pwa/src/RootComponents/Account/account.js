@@ -33,7 +33,7 @@ const AccountTypeHandler = props => {
 
 const Account = props => {
     return (<Adapter
-        apiUrl="https://www.marbec.click/graphql-maidenform-qa"
+        apiUrl="https://franklin.maidenform.com/graphql"
         configureLinks={configureLinks}
         origin={origin}
         store={store}

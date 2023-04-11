@@ -15,7 +15,7 @@ const configureLinks = links => [...links.values()];
  */
 function Login() {
     return <Adapter
-        apiUrl="https://www.marbec.click/graphql-maidenform-qa"
+        apiUrl="https://franklin.maidenform.com/graphql"
         configureLinks={configureLinks}
         origin={origin}
         store={store}
