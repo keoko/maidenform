@@ -8,6 +8,8 @@ const origin = globalThis.location.origin;
 const styles = new Set();
 const configureLinks = links => [...links.values()];
 
+import classes from './login.module.css';
+
 /**
  * @RootComponent
  * description = 'Basic Account Page'
@@ -20,7 +22,9 @@ function Login() {
         origin={origin}
         store={store}
         styles={styles}>
-        <SignInPage createAccountPageUrl='/customer/account/create' forgotPasswordPageUrl='/customer/account/forgotpassword' />
+        <div className={classes.container}>
+            <SignInPage createAccountPageUrl='/customer/account/create' forgotPasswordPageUrl='/customer/account/forgotpassword' />
+        </div>
     </Adapter>
 }
 
