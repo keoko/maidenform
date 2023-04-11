@@ -5,14 +5,13 @@ import { useCartPage } from '@magento/peregrine/lib/talons/CartPage/useCartPage'
 import { useStyle } from '@magento/venia-ui/lib/classify';
 import { useToasts } from '@magento/peregrine';
 
-import Icon from '../Icon';
-import { StoreTitle } from '../Head';
-import { fullPageLoadingIndicator } from '../LoadingIndicator';
-import StockStatusMessage from '../StockStatusMessage';
-import PriceAdjustments from './PriceAdjustments';
+import Icon from '@magento/venia-ui/lib/components/Icon';
+import { fullPageLoadingIndicator } from '@magento/venia-ui/lib/components/LoadingIndicator';
+import StockStatusMessage from '@magento/venia-ui/lib/components/StockStatusMessage';
+import PriceAdjustments from '@magento/venia-ui/lib/components/CartPage/PriceAdjustments';
 import PriceSummary from './PriceSummary';
 import ProductListing from './ProductListing';
-import defaultClasses from './cartPage.module.css';
+import defaultClasses from '@magento/venia-ui/lib/components/CartPage/cartPage.module.css';
 
 const CheckIcon = <Icon size={20} src={Check} />;
 
@@ -86,12 +85,6 @@ const CartPage = props => {
 
     return (
         <div className={classes.root} data-cy="CartPage-root">
-            <StoreTitle>
-                {formatMessage({
-                    id: 'cartPage.title',
-                    defaultMessage: 'Cart'
-                })}
-            </StoreTitle>
             <div className={classes.heading_container}>
                 <h1
                     aria-live="polite"

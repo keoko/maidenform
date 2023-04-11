@@ -2,13 +2,15 @@ import React, { Fragment, Suspense } from 'react';
 import { FormattedMessage } from 'react-intl';
 import { useProductListing } from '@magento/peregrine/lib/talons/CartPage/ProductListing/useProductListing';
 
-import { useStyle } from '../../../classify';
-import LoadingIndicator from '../../LoadingIndicator';
-import defaultClasses from './productListing.module.css';
+import { useStyle } from '@magento/venia-ui/lib/classify';
+import LoadingIndicator from '@magento/venia-ui/lib/components/LoadingIndicator';
+import defaultClasses from '@magento/venia-ui/lib/components/CartPage/ProductListing/productListing.module.css';
 import Product from './product';
 import ErrorMessage from './errorMessage';
 
-const EditModal = React.lazy(() => import('./EditModal'));
+const EditModal = React.lazy(() =>
+    async () => await import('@magento/venia-ui/lib/components/CartPage/ProductListing/EditModal').default
+);
 /**
  * A child component of the CartPage component.
  * This component renders the product listing on the cart page.

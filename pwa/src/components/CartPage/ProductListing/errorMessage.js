@@ -1,6 +1,6 @@
 import React from 'react';
 import { shape, string } from 'prop-types';
-import { useStyle } from '../../../classify';
+import { useStyle } from '@magento/venia-ui/lib/classify';
 import defaultClasses from './errorMessage.module.css';
 
 const ErrorMessage = props => {
