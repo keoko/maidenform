@@ -102,22 +102,22 @@ var isArray = function (a) { return Array.isArray(a); };
   \*********************************************************************************/
 /*! exports provided: InMemoryCache */
 /*! exports used: InMemoryCache */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/cache/inmemory/helpers.js because of ./node_modules/@magento/peregrine/lib/talons/CartPage/useCartPage.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/cache/inmemory/object-canon.js because of ./node_modules/@magento/peregrine/lib/talons/CartPage/useCartPage.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/cache/inmemory/reactiveVars.js because of ./node_modules/@magento/peregrine/lib/talons/CartPage/useCartPage.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/utilities/common/arrays.js because of ./node_modules/@magento/peregrine/lib/talons/CartPage/useCartPage.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/utilities/common/canUse.js because of ./node_modules/@magento/peregrine/lib/talons/CartPage/useCartPage.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/utilities/common/cloneDeep.js because of ./node_modules/@magento/peregrine/lib/talons/CartPage/useCartPage.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/utilities/common/compact.js because of ./node_modules/@magento/peregrine/lib/talons/CartPage/useCartPage.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/utilities/common/makeUniqueId.js because of ./node_modules/@magento/peregrine/lib/talons/CartPage/useCartPage.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/utilities/common/mergeDeep.js because of ./node_modules/@magento/peregrine/lib/talons/CartPage/useCartPage.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/utilities/common/objects.js because of ./node_modules/@magento/peregrine/lib/talons/CartPage/useCartPage.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/utilities/globals/index.js because of ./node_modules/@magento/peregrine/lib/talons/CartPage/useCartPage.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/utilities/graphql/directives.js because of ./node_modules/@magento/peregrine/lib/talons/CartPage/useCartPage.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/utilities/graphql/fragments.js because of ./node_modules/@magento/peregrine/lib/talons/CartPage/useCartPage.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/utilities/graphql/getFromAST.js because of ./node_modules/@magento/peregrine/lib/talons/CartPage/useCartPage.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/utilities/graphql/storeUtils.js because of ./node_modules/@magento/peregrine/lib/talons/CartPage/useCartPage.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/utilities/graphql/transform.js because of ./node_modules/@magento/peregrine/lib/talons/CartPage/useCartPage.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/cache/inmemory/helpers.js because of ./node_modules/@magento/peregrine/lib/talons/Adapter/useAdapter.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/cache/inmemory/object-canon.js because of ./node_modules/@magento/peregrine/lib/talons/Adapter/useAdapter.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/cache/inmemory/reactiveVars.js because of ./node_modules/@magento/peregrine/lib/talons/Adapter/useAdapter.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/utilities/common/arrays.js because of ./node_modules/@magento/peregrine/lib/talons/Adapter/useAdapter.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/utilities/common/canUse.js because of ./node_modules/@magento/peregrine/lib/talons/Adapter/useAdapter.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/utilities/common/cloneDeep.js because of ./node_modules/@magento/peregrine/lib/talons/Adapter/useAdapter.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/utilities/common/compact.js because of ./node_modules/@magento/peregrine/lib/talons/Adapter/useAdapter.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/utilities/common/makeUniqueId.js because of ./node_modules/@magento/peregrine/lib/talons/Adapter/useAdapter.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/utilities/common/mergeDeep.js because of ./node_modules/@magento/peregrine/lib/talons/Adapter/useAdapter.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/utilities/common/objects.js because of ./node_modules/@magento/peregrine/lib/talons/Adapter/useAdapter.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/utilities/globals/index.js because of ./node_modules/@magento/peregrine/lib/talons/Adapter/useAdapter.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/utilities/graphql/directives.js because of ./node_modules/@magento/peregrine/lib/talons/Adapter/useAdapter.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/utilities/graphql/fragments.js because of ./node_modules/@magento/peregrine/lib/talons/Adapter/useAdapter.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/utilities/graphql/getFromAST.js because of ./node_modules/@magento/peregrine/lib/talons/Adapter/useAdapter.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/utilities/graphql/storeUtils.js because of ./node_modules/@magento/peregrine/lib/talons/Adapter/useAdapter.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/utilities/graphql/transform.js because of ./node_modules/@magento/peregrine/lib/talons/Adapter/useAdapter.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@wry/equality/lib/equality.esm.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@wry/trie/lib/trie.esm.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/optimism/lib/bundle.esm.js */
@@ -2553,17 +2553,17 @@ function broadcast(cache) {
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/cache/inmemory/object-canon.js because of ./node_modules/@magento/peregrine/lib/talons/Adapter/useAdapter.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/cache/inmemory/reactiveVars.js because of ./node_modules/@magento/peregrine/lib/talons/Adapter/useAdapter.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/core/networkStatus.js because of ./node_modules/@magento/peregrine/lib/talons/CartPage/useCartPage.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/errors/index.js because of ./node_modules/@magento/peregrine/lib/talons/CartPage/useCartPage.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/errors/index.js because of ./node_modules/@magento/peregrine/lib/talons/AccountInformationPage/useAccountInformationPage.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/link/core/ApolloLink.js because of ./node_modules/@magento/peregrine/lib/talons/Adapter/useAdapter.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/link/http/createHttpLink.js because of ./node_modules/@magento/peregrine/lib/Apollo/links/index.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/utilities/common/arrays.js because of ./node_modules/@magento/peregrine/lib/talons/CartPage/useCartPage.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/utilities/common/arrays.js because of ./node_modules/@magento/peregrine/lib/talons/AccountInformationPage/useAccountInformationPage.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/utilities/common/canUse.js because of ./src/components/Adapter/adapter.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/utilities/common/cloneDeep.js because of ./node_modules/@magento/peregrine/lib/talons/Adapter/useAdapter.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/utilities/common/compact.js because of ./node_modules/@magento/peregrine/lib/talons/Adapter/useAdapter.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/utilities/common/makeUniqueId.js because of ./node_modules/@magento/peregrine/lib/talons/Adapter/useAdapter.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/utilities/common/mergeDeep.js because of ./node_modules/@magento/peregrine/lib/talons/Adapter/useAdapter.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/utilities/common/objects.js because of ./node_modules/@magento/peregrine/lib/talons/Adapter/useAdapter.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/utilities/globals/index.js because of ./node_modules/@magento/peregrine/lib/talons/CartPage/useCartPage.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/utilities/globals/index.js because of ./node_modules/@magento/peregrine/lib/talons/AccountInformationPage/useAccountInformationPage.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/utilities/graphql/directives.js because of ./node_modules/@magento/peregrine/lib/talons/Adapter/useAdapter.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/utilities/graphql/fragments.js because of ./node_modules/@magento/peregrine/lib/talons/Adapter/useAdapter.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/utilities/graphql/getFromAST.js because of ./node_modules/@magento/peregrine/lib/talons/Adapter/useAdapter.js */
@@ -5094,8 +5094,8 @@ function setContext(setter) {
   \*************************************************************************/
 /*! exports provided: ApolloLink */
 /*! exports used: ApolloLink */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/utilities/globals/index.js because of ./node_modules/@magento/peregrine/lib/talons/CartPage/useCartPage.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/utilities/graphql/getFromAST.js because of ./node_modules/@magento/peregrine/lib/talons/CartPage/useCartPage.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/utilities/globals/index.js because of ./node_modules/@magento/peregrine/lib/talons/Adapter/useAdapter.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/utilities/graphql/getFromAST.js because of ./node_modules/@magento/peregrine/lib/talons/Adapter/useAdapter.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/tslib/tslib.es6.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/zen-observable-ts/module.js */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -5388,8 +5388,8 @@ var ErrorLink = (function (_super) {
   \*****************************************************************************/
 /*! exports provided: createHttpLink */
 /*! exports used: createHttpLink */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/link/core/ApolloLink.js because of ./node_modules/@magento/peregrine/lib/talons/CartPage/useCartPage.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/utilities/globals/index.js because of ./node_modules/@magento/peregrine/lib/talons/CartPage/useCartPage.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/link/core/ApolloLink.js because of ./node_modules/@magento/peregrine/lib/talons/Adapter/useAdapter.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/utilities/globals/index.js because of ./node_modules/@magento/peregrine/lib/talons/Adapter/useAdapter.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql/language/printer.mjs */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql/language/visitor.mjs */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/tslib/tslib.es6.js */
@@ -5761,7 +5761,7 @@ var createHttpLink = function (linkOptions) {
   \*************************************************************************/
 /*! exports provided: RetryLink */
 /*! exports used: RetryLink */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/link/core/ApolloLink.js because of ./node_modules/@magento/peregrine/lib/talons/CartPage/useCartPage.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/link/core/ApolloLink.js because of ./node_modules/@magento/peregrine/lib/talons/Adapter/useAdapter.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/tslib/tslib.es6.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/zen-observable-ts/module.js */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -7579,10 +7579,10 @@ function isInlineFragment(selection) {
   \********************************************************************************/
 /*! exports provided: removeDirectivesFromDocument, addTypenameToDocument, removeConnectionDirectiveFromDocument, removeArgumentsFromDocument, removeFragmentSpreadFromDocument, buildQueryFromSelectionSet, removeClientSetsFromDocument */
 /*! exports used: addTypenameToDocument, buildQueryFromSelectionSet, removeClientSetsFromDocument, removeConnectionDirectiveFromDocument */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/utilities/globals/index.js because of ./node_modules/@magento/peregrine/lib/talons/CartPage/useCartPage.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/utilities/graphql/fragments.js because of ./node_modules/@magento/peregrine/lib/talons/CartPage/useCartPage.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/utilities/graphql/getFromAST.js because of ./node_modules/@magento/peregrine/lib/talons/CartPage/useCartPage.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/utilities/graphql/storeUtils.js because of ./node_modules/@magento/peregrine/lib/talons/CartPage/useCartPage.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/utilities/globals/index.js because of ./node_modules/@magento/peregrine/lib/talons/Adapter/useAdapter.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/utilities/graphql/fragments.js because of ./node_modules/@magento/peregrine/lib/talons/Adapter/useAdapter.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/utilities/graphql/getFromAST.js because of ./node_modules/@magento/peregrine/lib/talons/Adapter/useAdapter.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/utilities/graphql/storeUtils.js because of ./node_modules/@magento/peregrine/lib/talons/Adapter/useAdapter.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql/language/visitor.mjs */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/tslib/tslib.es6.js */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -49115,15 +49115,15 @@ function actionCreatorsFromIdentityActions(identityActions, options) {
 /*! exports used: default */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/invariant/browser.js (<- Module is not an ECMAScript module) */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/reduce-reducers/es/index.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/redux-actions/es/constants.js because of ./node_modules/@magento/peregrine/lib/store/actions/cart/actions.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/redux-actions/es/utils/flattenWhenNode.js because of ./node_modules/@magento/peregrine/lib/store/actions/cart/actions.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/redux-actions/es/utils/get.js because of ./node_modules/@magento/peregrine/lib/store/actions/cart/actions.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/redux-actions/es/utils/identity.js because of ./node_modules/@magento/peregrine/lib/store/actions/cart/actions.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/redux-actions/es/utils/isFunction.js because of ./node_modules/@magento/peregrine/lib/store/actions/cart/actions.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/redux-actions/es/utils/isMap.js because of ./node_modules/@magento/peregrine/lib/store/actions/cart/actions.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/redux-actions/es/utils/isNil.js because of ./node_modules/@magento/peregrine/lib/store/actions/cart/actions.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/redux-actions/es/utils/isPlainObject.js because of ./node_modules/@magento/peregrine/lib/store/actions/cart/actions.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/redux-actions/es/utils/ownKeys.js because of ./node_modules/@magento/peregrine/lib/store/actions/cart/actions.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/redux-actions/es/constants.js because of ./node_modules/@magento/peregrine/lib/store/actions/user/actions.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/redux-actions/es/utils/flattenWhenNode.js because of ./node_modules/@magento/peregrine/lib/store/actions/user/actions.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/redux-actions/es/utils/get.js because of ./node_modules/@magento/peregrine/lib/store/actions/user/actions.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/redux-actions/es/utils/identity.js because of ./node_modules/@magento/peregrine/lib/store/actions/user/actions.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/redux-actions/es/utils/isFunction.js because of ./node_modules/@magento/peregrine/lib/store/actions/user/actions.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/redux-actions/es/utils/isMap.js because of ./node_modules/@magento/peregrine/lib/store/actions/user/actions.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/redux-actions/es/utils/isNil.js because of ./node_modules/@magento/peregrine/lib/store/actions/user/actions.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/redux-actions/es/utils/isPlainObject.js because of ./node_modules/@magento/peregrine/lib/store/actions/user/actions.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/redux-actions/es/utils/ownKeys.js because of ./node_modules/@magento/peregrine/lib/store/actions/user/actions.js */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
