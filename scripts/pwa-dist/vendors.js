@@ -102,22 +102,22 @@ var isArray = function (a) { return Array.isArray(a); };
   \*********************************************************************************/
 /*! exports provided: InMemoryCache */
 /*! exports used: InMemoryCache */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/cache/inmemory/helpers.js because of ./node_modules/@magento/peregrine/lib/talons/CartPage/useCartPage.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/cache/inmemory/object-canon.js because of ./node_modules/@magento/peregrine/lib/talons/CartPage/useCartPage.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/cache/inmemory/reactiveVars.js because of ./node_modules/@magento/peregrine/lib/talons/CartPage/useCartPage.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/utilities/common/arrays.js because of ./node_modules/@magento/peregrine/lib/talons/CartPage/useCartPage.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/utilities/common/canUse.js because of ./node_modules/@magento/peregrine/lib/talons/CartPage/useCartPage.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/utilities/common/cloneDeep.js because of ./node_modules/@magento/peregrine/lib/talons/CartPage/useCartPage.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/utilities/common/compact.js because of ./node_modules/@magento/peregrine/lib/talons/CartPage/useCartPage.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/utilities/common/makeUniqueId.js because of ./node_modules/@magento/peregrine/lib/talons/CartPage/useCartPage.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/utilities/common/mergeDeep.js because of ./node_modules/@magento/peregrine/lib/talons/CartPage/useCartPage.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/utilities/common/objects.js because of ./node_modules/@magento/peregrine/lib/talons/CartPage/useCartPage.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/utilities/globals/index.js because of ./node_modules/@magento/peregrine/lib/talons/CartPage/useCartPage.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/utilities/graphql/directives.js because of ./node_modules/@magento/peregrine/lib/talons/CartPage/useCartPage.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/utilities/graphql/fragments.js because of ./node_modules/@magento/peregrine/lib/talons/CartPage/useCartPage.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/utilities/graphql/getFromAST.js because of ./node_modules/@magento/peregrine/lib/talons/CartPage/useCartPage.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/utilities/graphql/storeUtils.js because of ./node_modules/@magento/peregrine/lib/talons/CartPage/useCartPage.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/utilities/graphql/transform.js because of ./node_modules/@magento/peregrine/lib/talons/CartPage/useCartPage.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/cache/inmemory/helpers.js because of ./node_modules/@magento/peregrine/lib/talons/Adapter/useAdapter.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/cache/inmemory/object-canon.js because of ./node_modules/@magento/peregrine/lib/talons/Adapter/useAdapter.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/cache/inmemory/reactiveVars.js because of ./node_modules/@magento/peregrine/lib/talons/Adapter/useAdapter.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/utilities/common/arrays.js because of ./src/talons/CheckoutPage/useCheckoutPage.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/utilities/common/canUse.js because of ./node_modules/@magento/peregrine/lib/talons/Adapter/useAdapter.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/utilities/common/cloneDeep.js because of ./node_modules/@magento/peregrine/lib/talons/Adapter/useAdapter.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/utilities/common/compact.js because of ./node_modules/@magento/peregrine/lib/talons/Adapter/useAdapter.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/utilities/common/makeUniqueId.js because of ./node_modules/@magento/peregrine/lib/talons/Adapter/useAdapter.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/utilities/common/mergeDeep.js because of ./node_modules/@magento/peregrine/lib/talons/Adapter/useAdapter.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/utilities/common/objects.js because of ./node_modules/@magento/peregrine/lib/talons/Adapter/useAdapter.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/utilities/globals/index.js because of ./src/talons/CheckoutPage/useCheckoutPage.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/utilities/graphql/directives.js because of ./node_modules/@magento/peregrine/lib/talons/Adapter/useAdapter.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/utilities/graphql/fragments.js because of ./node_modules/@magento/peregrine/lib/talons/Adapter/useAdapter.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/utilities/graphql/getFromAST.js because of ./node_modules/@magento/peregrine/lib/talons/Adapter/useAdapter.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/utilities/graphql/storeUtils.js because of ./node_modules/@magento/peregrine/lib/talons/Adapter/useAdapter.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/utilities/graphql/transform.js because of ./node_modules/@magento/peregrine/lib/talons/Adapter/useAdapter.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@wry/equality/lib/equality.esm.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@wry/trie/lib/trie.esm.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/optimism/lib/bundle.esm.js */
@@ -2552,18 +2552,18 @@ function broadcast(cache) {
 /*! exports used: ApolloClient, mergeOptions */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/cache/inmemory/object-canon.js because of ./node_modules/@magento/peregrine/lib/talons/Adapter/useAdapter.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/cache/inmemory/reactiveVars.js because of ./node_modules/@magento/peregrine/lib/talons/Adapter/useAdapter.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/core/networkStatus.js because of ./node_modules/@magento/peregrine/lib/talons/CartPage/useCartPage.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/errors/index.js because of ./node_modules/@magento/peregrine/lib/talons/CartPage/useCartPage.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/core/networkStatus.js because of ./src/talons/CheckoutPage/useCheckoutPage.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/errors/index.js because of ./src/talons/CheckoutPage/useCheckoutPage.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/link/core/ApolloLink.js because of ./node_modules/@magento/peregrine/lib/talons/Adapter/useAdapter.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/link/http/createHttpLink.js because of ./node_modules/@magento/peregrine/lib/Apollo/links/index.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/utilities/common/arrays.js because of ./node_modules/@magento/peregrine/lib/talons/CartPage/useCartPage.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/utilities/common/canUse.js because of ./node_modules/@magento/peregrine/lib/talons/Adapter/useAdapter.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/utilities/common/arrays.js because of ./src/talons/CheckoutPage/useCheckoutPage.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/utilities/common/canUse.js because of ./src/components/Adapter/adapter.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/utilities/common/cloneDeep.js because of ./node_modules/@magento/peregrine/lib/talons/Adapter/useAdapter.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/utilities/common/compact.js because of ./node_modules/@magento/peregrine/lib/talons/Adapter/useAdapter.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/utilities/common/makeUniqueId.js because of ./node_modules/@magento/peregrine/lib/talons/Adapter/useAdapter.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/utilities/common/mergeDeep.js because of ./node_modules/@magento/peregrine/lib/talons/Adapter/useAdapter.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/utilities/common/objects.js because of ./node_modules/@magento/peregrine/lib/talons/Adapter/useAdapter.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/utilities/globals/index.js because of ./node_modules/@magento/peregrine/lib/talons/CartPage/useCartPage.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/utilities/globals/index.js because of ./src/talons/CheckoutPage/useCheckoutPage.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/utilities/graphql/directives.js because of ./node_modules/@magento/peregrine/lib/talons/Adapter/useAdapter.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/utilities/graphql/fragments.js because of ./node_modules/@magento/peregrine/lib/talons/Adapter/useAdapter.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/utilities/graphql/getFromAST.js because of ./node_modules/@magento/peregrine/lib/talons/Adapter/useAdapter.js */
@@ -5094,8 +5094,8 @@ function setContext(setter) {
   \*************************************************************************/
 /*! exports provided: ApolloLink */
 /*! exports used: ApolloLink */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/utilities/globals/index.js because of ./node_modules/@magento/peregrine/lib/talons/CartPage/useCartPage.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/utilities/graphql/getFromAST.js because of ./node_modules/@magento/peregrine/lib/talons/CartPage/useCartPage.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/utilities/globals/index.js because of ./src/talons/CheckoutPage/useCheckoutPage.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/utilities/graphql/getFromAST.js because of ./node_modules/@magento/peregrine/lib/talons/Adapter/useAdapter.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/tslib/tslib.es6.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/zen-observable-ts/module.js */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -5388,8 +5388,8 @@ var ErrorLink = (function (_super) {
   \*****************************************************************************/
 /*! exports provided: createHttpLink */
 /*! exports used: createHttpLink */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/link/core/ApolloLink.js because of ./node_modules/@magento/peregrine/lib/talons/CartPage/useCartPage.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/utilities/globals/index.js because of ./node_modules/@magento/peregrine/lib/talons/CartPage/useCartPage.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/link/core/ApolloLink.js because of ./node_modules/@magento/peregrine/lib/talons/Adapter/useAdapter.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/utilities/globals/index.js because of ./src/talons/CheckoutPage/useCheckoutPage.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql/language/printer.mjs */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql/language/visitor.mjs */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/tslib/tslib.es6.js */
@@ -5761,7 +5761,7 @@ var createHttpLink = function (linkOptions) {
   \*************************************************************************/
 /*! exports provided: RetryLink */
 /*! exports used: RetryLink */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/link/core/ApolloLink.js because of ./node_modules/@magento/peregrine/lib/talons/CartPage/useCartPage.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/link/core/ApolloLink.js because of ./node_modules/@magento/peregrine/lib/talons/Adapter/useAdapter.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/tslib/tslib.es6.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/zen-observable-ts/module.js */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -7579,10 +7579,10 @@ function isInlineFragment(selection) {
   \********************************************************************************/
 /*! exports provided: removeDirectivesFromDocument, addTypenameToDocument, removeConnectionDirectiveFromDocument, removeArgumentsFromDocument, removeFragmentSpreadFromDocument, buildQueryFromSelectionSet, removeClientSetsFromDocument */
 /*! exports used: addTypenameToDocument, buildQueryFromSelectionSet, removeClientSetsFromDocument, removeConnectionDirectiveFromDocument */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/utilities/globals/index.js because of ./node_modules/@magento/peregrine/lib/talons/CartPage/useCartPage.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/utilities/graphql/fragments.js because of ./node_modules/@magento/peregrine/lib/talons/CartPage/useCartPage.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/utilities/graphql/getFromAST.js because of ./node_modules/@magento/peregrine/lib/talons/CartPage/useCartPage.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/utilities/graphql/storeUtils.js because of ./node_modules/@magento/peregrine/lib/talons/CartPage/useCartPage.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/utilities/globals/index.js because of ./src/talons/CheckoutPage/useCheckoutPage.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/utilities/graphql/fragments.js because of ./node_modules/@magento/peregrine/lib/talons/Adapter/useAdapter.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/utilities/graphql/getFromAST.js because of ./node_modules/@magento/peregrine/lib/talons/Adapter/useAdapter.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/utilities/graphql/storeUtils.js because of ./node_modules/@magento/peregrine/lib/talons/Adapter/useAdapter.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql/language/visitor.mjs */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/tslib/tslib.es6.js */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -40255,6 +40255,187 @@ Edit2.displayName = 'Edit2';
 
 /***/ }),
 
+/***/ "./node_modules/react-feather/dist/icons/eye-off.js":
+/*!**********************************************************!*\
+  !*** ./node_modules/react-feather/dist/icons/eye-off.js ***!
+  \**********************************************************/
+/*! exports provided: default */
+/*! exports used: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/react-feather/node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+function _extends() {
+  _extends = Object.assign || function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }
+    return target;
+  };
+  return _extends.apply(this, arguments);
+}
+function _objectWithoutProperties(source, excluded) {
+  if (source == null) return {};
+  var target = _objectWithoutPropertiesLoose(source, excluded);
+  var key, i;
+  if (Object.getOwnPropertySymbols) {
+    var sourceSymbolKeys = Object.getOwnPropertySymbols(source);
+    for (i = 0; i < sourceSymbolKeys.length; i++) {
+      key = sourceSymbolKeys[i];
+      if (excluded.indexOf(key) >= 0) continue;
+      if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue;
+      target[key] = source[key];
+    }
+  }
+  return target;
+}
+function _objectWithoutPropertiesLoose(source, excluded) {
+  if (source == null) return {};
+  var target = {};
+  var sourceKeys = Object.keys(source);
+  var key, i;
+  for (i = 0; i < sourceKeys.length; i++) {
+    key = sourceKeys[i];
+    if (excluded.indexOf(key) >= 0) continue;
+    target[key] = source[key];
+  }
+  return target;
+}
+
+
+var EyeOff = Object(react__WEBPACK_IMPORTED_MODULE_0__["forwardRef"])(function (_ref, ref) {
+  var _ref$color = _ref.color,
+    color = _ref$color === void 0 ? 'currentColor' : _ref$color,
+    _ref$size = _ref.size,
+    size = _ref$size === void 0 ? 24 : _ref$size,
+    rest = _objectWithoutProperties(_ref, ["color", "size"]);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", _extends({
+    ref: ref,
+    xmlns: "http://www.w3.org/2000/svg",
+    width: size,
+    height: size,
+    viewBox: "0 0 24 24",
+    fill: "none",
+    stroke: color,
+    strokeWidth: "2",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }, rest), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
+    d: "M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("line", {
+    x1: "1",
+    y1: "1",
+    x2: "23",
+    y2: "23"
+  }));
+});
+EyeOff.propTypes = {
+  color: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
+  size: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.oneOfType([prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string, prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.number])
+};
+EyeOff.displayName = 'EyeOff';
+/* harmony default export */ __webpack_exports__["a"] = (EyeOff);
+
+/***/ }),
+
+/***/ "./node_modules/react-feather/dist/icons/eye.js":
+/*!******************************************************!*\
+  !*** ./node_modules/react-feather/dist/icons/eye.js ***!
+  \******************************************************/
+/*! exports provided: default */
+/*! exports used: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/react-feather/node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+function _extends() {
+  _extends = Object.assign || function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }
+    return target;
+  };
+  return _extends.apply(this, arguments);
+}
+function _objectWithoutProperties(source, excluded) {
+  if (source == null) return {};
+  var target = _objectWithoutPropertiesLoose(source, excluded);
+  var key, i;
+  if (Object.getOwnPropertySymbols) {
+    var sourceSymbolKeys = Object.getOwnPropertySymbols(source);
+    for (i = 0; i < sourceSymbolKeys.length; i++) {
+      key = sourceSymbolKeys[i];
+      if (excluded.indexOf(key) >= 0) continue;
+      if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue;
+      target[key] = source[key];
+    }
+  }
+  return target;
+}
+function _objectWithoutPropertiesLoose(source, excluded) {
+  if (source == null) return {};
+  var target = {};
+  var sourceKeys = Object.keys(source);
+  var key, i;
+  for (i = 0; i < sourceKeys.length; i++) {
+    key = sourceKeys[i];
+    if (excluded.indexOf(key) >= 0) continue;
+    target[key] = source[key];
+  }
+  return target;
+}
+
+
+var Eye = Object(react__WEBPACK_IMPORTED_MODULE_0__["forwardRef"])(function (_ref, ref) {
+  var _ref$color = _ref.color,
+    color = _ref$color === void 0 ? 'currentColor' : _ref$color,
+    _ref$size = _ref.size,
+    size = _ref$size === void 0 ? 24 : _ref$size,
+    rest = _objectWithoutProperties(_ref, ["color", "size"]);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", _extends({
+    ref: ref,
+    xmlns: "http://www.w3.org/2000/svg",
+    width: size,
+    height: size,
+    viewBox: "0 0 24 24",
+    fill: "none",
+    stroke: color,
+    strokeWidth: "2",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }, rest), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
+    d: "M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("circle", {
+    cx: "12",
+    cy: "12",
+    r: "3"
+  }));
+});
+Eye.propTypes = {
+  color: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
+  size: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.oneOfType([prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string, prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.number])
+};
+Eye.displayName = 'Eye';
+/* harmony default export */ __webpack_exports__["a"] = (Eye);
+
+/***/ }),
+
 /***/ "./node_modules/react-feather/dist/icons/heart.js":
 /*!********************************************************!*\
   !*** ./node_modules/react-feather/dist/icons/heart.js ***!
@@ -40745,6 +40926,107 @@ MoreVertical.propTypes = {
 };
 MoreVertical.displayName = 'MoreVertical';
 /* harmony default export */ __webpack_exports__["a"] = (MoreVertical);
+
+/***/ }),
+
+/***/ "./node_modules/react-feather/dist/icons/plus-square.js":
+/*!**************************************************************!*\
+  !*** ./node_modules/react-feather/dist/icons/plus-square.js ***!
+  \**************************************************************/
+/*! exports provided: default */
+/*! exports used: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/react-feather/node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+function _extends() {
+  _extends = Object.assign || function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }
+    return target;
+  };
+  return _extends.apply(this, arguments);
+}
+function _objectWithoutProperties(source, excluded) {
+  if (source == null) return {};
+  var target = _objectWithoutPropertiesLoose(source, excluded);
+  var key, i;
+  if (Object.getOwnPropertySymbols) {
+    var sourceSymbolKeys = Object.getOwnPropertySymbols(source);
+    for (i = 0; i < sourceSymbolKeys.length; i++) {
+      key = sourceSymbolKeys[i];
+      if (excluded.indexOf(key) >= 0) continue;
+      if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue;
+      target[key] = source[key];
+    }
+  }
+  return target;
+}
+function _objectWithoutPropertiesLoose(source, excluded) {
+  if (source == null) return {};
+  var target = {};
+  var sourceKeys = Object.keys(source);
+  var key, i;
+  for (i = 0; i < sourceKeys.length; i++) {
+    key = sourceKeys[i];
+    if (excluded.indexOf(key) >= 0) continue;
+    target[key] = source[key];
+  }
+  return target;
+}
+
+
+var PlusSquare = Object(react__WEBPACK_IMPORTED_MODULE_0__["forwardRef"])(function (_ref, ref) {
+  var _ref$color = _ref.color,
+    color = _ref$color === void 0 ? 'currentColor' : _ref$color,
+    _ref$size = _ref.size,
+    size = _ref$size === void 0 ? 24 : _ref$size,
+    rest = _objectWithoutProperties(_ref, ["color", "size"]);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", _extends({
+    ref: ref,
+    xmlns: "http://www.w3.org/2000/svg",
+    width: size,
+    height: size,
+    viewBox: "0 0 24 24",
+    fill: "none",
+    stroke: color,
+    strokeWidth: "2",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }, rest), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("rect", {
+    x: "3",
+    y: "3",
+    width: "18",
+    height: "18",
+    rx: "2",
+    ry: "2"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("line", {
+    x1: "12",
+    y1: "8",
+    x2: "12",
+    y2: "16"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("line", {
+    x1: "8",
+    y1: "12",
+    x2: "16",
+    y2: "12"
+  }));
+});
+PlusSquare.propTypes = {
+  color: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
+  size: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.oneOfType([prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string, prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.number])
+};
+PlusSquare.displayName = 'PlusSquare';
+/* harmony default export */ __webpack_exports__["a"] = (PlusSquare);
 
 /***/ }),
 

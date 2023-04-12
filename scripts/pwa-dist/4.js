@@ -1,28 +1,34 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[4],{
 
-/***/ "./node_modules/@magento/venia-ui/lib/components/CartPage/PriceAdjustments/CouponCode/index.js":
-/*!*****************************************************************************************************************!*\
-  !*** ./node_modules/@magento/venia-ui/lib/components/CartPage/PriceAdjustments/CouponCode/index.js + 4 modules ***!
-  \*****************************************************************************************************************/
+/***/ "./node_modules/@magento/venia-ui/lib/components/CartPage/GiftCards/index.js":
+/*!***********************************************************************************************!*\
+  !*** ./node_modules/@magento/venia-ui/lib/components/CartPage/GiftCards/index.js + 8 modules ***!
+  \***********************************************************************************************/
 /*! exports provided: default */
 /*! all exports used */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/react/hooks/useLazyQuery.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/react/hooks/useMutation.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/react/hooks/useQuery.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/Toasts/useToasts.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/context/cart.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/talons/CartPage/PriceAdjustments/CouponCode/couponCodeFragments.gql.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/talons/CartPage/GiftCards/giftCardFragments.gql.ee.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/talons/CartPage/cartPageFragments.gql.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/deriveErrorMessage.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/intlPatches.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/shallowMerge.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Button/button.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Field/field.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Icon/icon.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/LinkButton/linkButton.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/LoadingIndicator/indicator.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Price/price.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/TextInput/textInput.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/util/formValidators.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-feather/dist/icons/alert-circle.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/CartPage/PriceAdjustments/CouponCode/couponCode.module.css (<- Module uses module.id) */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/CartPage/GiftCards/giftCard.module.css (<- Module uses module.id) */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/CartPage/GiftCards/giftCards.module.css (<- Module uses module.id) */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql-tag/lib/index.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/informed/dist/esm/index.js (<- Module uses injected variables (process)) */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/prop-types/index.js (<- Module is not an ECMAScript module) */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-intl/lib/src/components/message.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-intl/lib/src/components/useIntl.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react/index.js (<- Module is not an ECMAScript module) */
@@ -34,7 +40,7 @@
 __webpack_require__.r(__webpack_exports__);
 
 // EXPORTS
-__webpack_require__.d(__webpack_exports__, "default", function() { return /* reexport */ couponCode; });
+__webpack_require__.d(__webpack_exports__, "default", function() { return /* reexport */ giftCards; });
 
 // EXTERNAL MODULE: ./node_modules/react/index.js
 var react = __webpack_require__("./node_modules/react/index.js");
@@ -46,22 +52,22 @@ var useIntl = __webpack_require__("./node_modules/react-intl/lib/src/components/
 // EXTERNAL MODULE: ./node_modules/react-intl/lib/src/components/message.js
 var message = __webpack_require__("./node_modules/react-intl/lib/src/components/message.js");
 
+// EXTERNAL MODULE: ./node_modules/informed/dist/esm/index.js
+var esm = __webpack_require__("./node_modules/informed/dist/esm/index.js");
+
 // EXTERNAL MODULE: ./node_modules/react-feather/dist/icons/alert-circle.js
 var alert_circle = __webpack_require__("./node_modules/react-feather/dist/icons/alert-circle.js");
-
-// EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/Toasts/useToasts.js
-var useToasts = __webpack_require__("./node_modules/@magento/peregrine/lib/Toasts/useToasts.js");
-
-// EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/util/deriveErrorMessage.js
-var deriveErrorMessage = __webpack_require__("./node_modules/@magento/peregrine/lib/util/deriveErrorMessage.js");
 
 // EXTERNAL MODULE: ./node_modules/@apollo/client/react/hooks/useQuery.js
 var useQuery = __webpack_require__("./node_modules/@apollo/client/react/hooks/useQuery.js");
 
+// EXTERNAL MODULE: ./node_modules/@apollo/client/react/hooks/useLazyQuery.js
+var useLazyQuery = __webpack_require__("./node_modules/@apollo/client/react/hooks/useLazyQuery.js");
+
 // EXTERNAL MODULE: ./node_modules/@apollo/client/react/hooks/useMutation.js
 var useMutation = __webpack_require__("./node_modules/@apollo/client/react/hooks/useMutation.js");
 
-// EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/context/cart.js + 1 modules
+// EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/context/cart.js
 var cart = __webpack_require__("./node_modules/@magento/peregrine/lib/context/cart.js");
 
 // EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/util/shallowMerge.js
@@ -73,26 +79,39 @@ var lib = __webpack_require__("./node_modules/graphql-tag/lib/index.js");
 // EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/talons/CartPage/cartPageFragments.gql.js
 var cartPageFragments_gql = __webpack_require__("./node_modules/@magento/peregrine/lib/talons/CartPage/cartPageFragments.gql.js");
 
-// EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/talons/CartPage/PriceAdjustments/CouponCode/couponCodeFragments.gql.js
-var couponCodeFragments_gql = __webpack_require__("./node_modules/@magento/peregrine/lib/talons/CartPage/PriceAdjustments/CouponCode/couponCodeFragments.gql.js");
+// EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/talons/CartPage/GiftCards/giftCardFragments.gql.ee.js
+var giftCardFragments_gql_ee = __webpack_require__("./node_modules/@magento/peregrine/lib/talons/CartPage/GiftCards/giftCardFragments.gql.ee.js");
 
-// CONCATENATED MODULE: ./node_modules/@magento/peregrine/lib/talons/CartPage/PriceAdjustments/CouponCode/couponCode.gql.js
+// CONCATENATED MODULE: ./node_modules/@magento/peregrine/lib/talons/CartPage/GiftCards/giftCardQueries.gql.ee.js
 
 
 
-const GET_APPLIED_COUPONS = lib["a" /* gql */]`
-    query getAppliedCoupons($cartId: String!) {
+const GET_APPLIED_GIFT_CARDS_QUERY = lib["a" /* gql */]`
+    query getAppliedGiftCards($cartId: String!) {
         cart(cart_id: $cartId) {
             id
-            ...AppliedCouponsFragment
+            ...GiftCardFragment
         }
     }
-    ${couponCodeFragments_gql["a" /* AppliedCouponsFragment */]}
+    ${giftCardFragments_gql_ee["a" /* GiftCardFragment */]}
 `;
-const APPLY_COUPON_MUTATION = lib["a" /* gql */]`
-    mutation applyCouponToCart($cartId: String!, $couponCode: String!) {
-        applyCouponToCart(
-            input: { cart_id: $cartId, coupon_code: $couponCode }
+const GET_GIFT_CARD_BALANCE_QUERY = lib["a" /* gql */]`
+    query getGiftCardBalance($giftCardCode: String!) {
+        giftCardAccount(input: { gift_card_code: $giftCardCode }) {
+            balance {
+                currency
+                value
+            }
+            code
+            expiration_date
+            id: code
+        }
+    }
+`;
+const APPLY_GIFT_CARD_MUTATION = lib["a" /* gql */]`
+    mutation applyGiftCardToCart($cartId: String!, $giftCardCode: String!) {
+        applyGiftCardToCart(
+            input: { cart_id: $cartId, gift_card_code: $giftCardCode }
         ) {
             cart {
                 id
@@ -107,9 +126,11 @@ const APPLY_COUPON_MUTATION = lib["a" /* gql */]`
     }
     ${cartPageFragments_gql["a" /* CartPageFragment */]}
 `;
-const REMOVE_COUPON_MUTATION = lib["a" /* gql */]`
-    mutation removeCouponFromCart($cartId: String!) {
-        removeCouponFromCart(input: { cart_id: $cartId }) {
+const REMOVE_GIFT_CARD_MUTATION = lib["a" /* gql */]`
+    mutation removeGiftCard($cartId: String!, $giftCardCode: String!) {
+        removeGiftCardFromCart(
+            input: { cart_id: $cartId, gift_card_code: $giftCardCode }
+        ) {
             cart {
                 id
                 ...CartPageFragment
@@ -123,56 +144,73 @@ const REMOVE_COUPON_MUTATION = lib["a" /* gql */]`
     }
     ${cartPageFragments_gql["a" /* CartPageFragment */]}
 `;
-/* harmony default export */ var couponCode_gql = ({
-  getAppliedCouponsQuery: GET_APPLIED_COUPONS,
-  applyCouponMutation: APPLY_COUPON_MUTATION,
-  removeCouponMutation: REMOVE_COUPON_MUTATION
+/* harmony default export */ var giftCardQueries_gql_ee = ({
+  getAppliedGiftCardsQuery: GET_APPLIED_GIFT_CARDS_QUERY,
+  getGiftCardBalanceQuery: GET_GIFT_CARD_BALANCE_QUERY,
+  applyGiftCardMutation: APPLY_GIFT_CARD_MUTATION,
+  removeGiftCardMutation: REMOVE_GIFT_CARD_MUTATION
 });
-// CONCATENATED MODULE: ./node_modules/@magento/peregrine/lib/talons/CartPage/PriceAdjustments/CouponCode/useCouponCode.js
+// CONCATENATED MODULE: ./node_modules/@magento/peregrine/lib/talons/CartPage/GiftCards/useGiftCards.js
 
 
 
 
 
+
+
+// To keep track of the most recent action taken.
+const actions = {
+  APPLY: 'apply',
+  CHECK_BALANCE: 'check',
+  REMOVE: 'remove'
+};
 
 /**
- * This talon contains the logic for a coupon code form component.
- * It performs effects and returns props data for rendering the component.
+ * Handles the logic for a component that renders a list of gift cards.
+ * It performs effects and returns the prop data necessary for rendering
+ * the component.
  *
  * This talon performs the following effects:
  *
- * - Fetch all coupons associated with the cart
- * - Manage the updating state of the cart while a coupon is being applied or removed
+ * - Fetch the currently applied gift cards for a cart
+ * - Manage the updating state of the cart while a gift card is being applied or removed
  *
  * @function
  *
  * @param {Object} props
  * @param {function} props.setIsCartUpdating Callback function for setting the update state for the cart.
- * @param {CouponCodeMutations} props.mutations GraphQL mutations for a cart's coupon code.
- * @param {CouponCodeQueries} props.queries GraphQL queries for a cart's coupon code.
+ * @param {GiftCardsMutations} props.mutations GraphQL mutations for Gift Cards
+ * @param {GiftCardsQueries} props.queries GraphQL queries for Gift Cards
  *
- * @return {CouponCodeTalonProps}
+ * @returns {GiftCardsTalonProps}
  *
  * @example <caption>Importing into your project</caption>
- * import { useCouponCode } from '@magento/peregrine/lib/talons/CartPage/PriceAdjustments/CouponCode/useCouponCode';
+ * import { useGiftCards } from '@magento/peregrine/lib/talons/CartPage/GiftCards'
  */
-const useCouponCode = props => {
-  const operations = Object(shallowMerge["a" /* default */])(couponCode_gql, props.operations);
+const useGiftCards = props => {
+  const operations = Object(shallowMerge["a" /* default */])(giftCardQueries_gql_ee, props.operations);
   const {
-    getAppliedCouponsQuery,
-    applyCouponMutation,
-    removeCouponMutation
+    getAppliedGiftCardsQuery,
+    getGiftCardBalanceQuery,
+    applyGiftCardMutation,
+    removeGiftCardMutation
   } = operations;
   const {
     setIsCartUpdating
   } = props;
+
+  // We need the cartId for all of our queries and mutations.
   const [{
     cartId
   }] = Object(cart["b" /* useCartContext */])();
-  const {
-    data,
-    error: fetchError
-  } = Object(useQuery["a" /* useQuery */])(getAppliedCouponsQuery, {
+  const formApi = Object(esm["l" /* useFormApi */])();
+
+  /*
+   * Apollo hooks.
+   *
+   * Immediately execute the cart query and set up the other graphql actions.
+   */
+  const appliedCardsResult = Object(useQuery["a" /* useQuery */])(getAppliedGiftCardsQuery, {
     fetchPolicy: 'cache-and-network',
     nextFetchPolicy: 'cache-first',
     skip: !cartId,
@@ -180,108 +218,220 @@ const useCouponCode = props => {
       cartId
     }
   });
-  const [applyCoupon, {
-    called: applyCouponCalled,
-    error: applyError,
-    loading: applyingCoupon
-  }] = Object(useMutation["a" /* useMutation */])(applyCouponMutation);
-  const [removeCoupon, {
-    called: removeCouponCalled,
-    error: removeCouponError,
-    loading: removingCoupon
-  }] = Object(useMutation["a" /* useMutation */])(removeCouponMutation);
-  const handleApplyCoupon = Object(react["useCallback"])(async ({
-    couponCode
-  }) => {
-    if (!couponCode) return;
-    try {
-      await applyCoupon({
-        variables: {
-          cartId,
-          couponCode
-        }
-      });
-    } catch (e) {
-      // Error is logged by apollo link - no need to double log.
-    }
-  }, [applyCoupon, cartId]);
-  const handleRemoveCoupon = Object(react["useCallback"])(async couponCode => {
-    try {
-      await removeCoupon({
-        variables: {
-          cartId,
-          couponCode
-        }
-      });
-    } catch (e) {
-      // Error is logged by apollo link - no need to double log.
-    }
-  }, [cartId, removeCoupon]);
-  Object(react["useEffect"])(() => {
-    if (applyCouponCalled || removeCouponCalled) {
-      // If a coupon mutation is in flight, tell the cart.
-      setIsCartUpdating(applyingCoupon || removingCoupon);
-    }
-  }, [applyCouponCalled, applyingCoupon, removeCouponCalled, removingCoupon, setIsCartUpdating]);
+  const [checkCardBalance, balanceResult] = Object(useLazyQuery["a" /* useLazyQuery */])(getGiftCardBalanceQuery, {
+    // For security, always fetch this from the network and never cache the
+    // result.
+    fetchPolicy: 'no-cache'
+  });
+  const [applyCard, applyCardResult] = Object(useMutation["a" /* useMutation */])(applyGiftCardMutation);
+  const [removeCard, removeCardResult] = Object(useMutation["a" /* useMutation */])(removeGiftCardMutation);
 
-  // Create a memoized error map and toggle individual errors when they change
-  const errors = Object(react["useMemo"])(() => new Map([['getAppliedCouponsQuery', fetchError], ['applyCouponMutation', applyError], ['removeCouponMutation', removeCouponError]]), [applyError, fetchError, removeCouponError]);
+  /*
+   *  useState hooks.
+   */
+  const [mostRecentAction, setMostRecentAction] = Object(react["useState"])(null);
+
+  /*
+   * useCallback hooks.
+   */
+  const applyGiftCard = Object(react["useCallback"])(async () => {
+    setMostRecentAction(actions.APPLY);
+    const giftCardCode = formApi.getValue('card');
+    await applyCard({
+      variables: {
+        cartId,
+        giftCardCode
+      }
+    });
+
+    // Clear the input form after successful apply.
+    formApi.reset();
+  }, [formApi, applyCard, cartId]);
+  const checkGiftCardBalance = Object(react["useCallback"])(() => {
+    setMostRecentAction(actions.CHECK_BALANCE);
+    const giftCardCode = formApi.getValue('card');
+    checkCardBalance({
+      variables: {
+        giftCardCode
+      }
+    });
+  }, [formApi, checkCardBalance]);
+  const removeGiftCard = Object(react["useCallback"])(async giftCardCode => {
+    setMostRecentAction(actions.REMOVE);
+    try {
+      await removeCard({
+        variables: {
+          cartId,
+          giftCardCode
+        }
+      });
+    } catch (err) {
+      // do nothing
+    }
+  }, [cartId, removeCard]);
+  const {
+    called: applyCardCalled,
+    loading: applyCardLoading
+  } = applyCardResult;
+  const {
+    called: removeCardCalled,
+    loading: removeCardLoading
+  } = removeCardResult;
+  Object(react["useEffect"])(() => {
+    if (applyCardCalled || removeCardCalled) {
+      // If a gift card mutation is in flight, tell the cart.
+      setIsCartUpdating(applyCardLoading || removeCardLoading);
+    }
+  }, [applyCardCalled, applyCardLoading, removeCardCalled, removeCardLoading, setIsCartUpdating]);
+  const shouldDisplayCardBalance = mostRecentAction === actions.CHECK_BALANCE && Boolean(balanceResult.data);
+
+  // We should only display the last card error if the most recent action was apply or check and they had an error
+  const shouldDisplayCardError = mostRecentAction === actions.APPLY && applyCardResult.error || mostRecentAction === actions.CHECK_BALANCE && balanceResult.error;
   return {
-    applyingCoupon,
-    data,
-    errors,
-    handleApplyCoupon,
-    handleRemoveCoupon,
-    removingCoupon
+    applyGiftCard,
+    checkBalanceData: balanceResult.data && balanceResult.data.giftCardAccount,
+    checkGiftCardBalance,
+    errorLoadingGiftCards: Boolean(appliedCardsResult.error),
+    errorRemovingCard: Boolean(removeCardResult.error),
+    giftCardsData: appliedCardsResult.data && appliedCardsResult.data.cart.applied_gift_cards || [],
+    isLoadingGiftCards: appliedCardsResult.loading,
+    isApplyingCard: applyCardLoading,
+    isCheckingBalance: balanceResult.loading,
+    isRemovingCard: removeCardLoading,
+    removeGiftCard,
+    shouldDisplayCardBalance,
+    shouldDisplayCardError
   };
 };
 
-/** JSDocs type definitions */
+/** JSDoc type definitions */
 
 /**
- * GraphQL mutations for a cart's coupon code.
- * This is a type used by the {@link useCouponCode} talon.
+ * GraphQL mutations for Gift Cards.
  *
- * @typedef {Object} CouponCodeMutations
+ * @typedef {Object} GiftCardsMutations
  *
- * @property {GraphQLAST} applyCouponMutation Mutation for applying a coupon code to a cart.
- * @property {GraphQLAST} removeCouponMutation Mutation for removing a coupon code from a cart.
+ * @property {GraphQLAST} applyGiftCardMutation The mutation used to apply a gift card to the cart.
+ * @property {GraphQLAST} removeGiftCardMutation The mutation used to remove a gift card from the cart.
  *
- * @see [CouponCode.js]{@link https://github.com/magento/pwa-studio/blob/develop/packages/venia-ui/lib/components/CartPage/PriceAdjustments/CouponCode/couponCode.js}
- * for the queries used Venia
+ * @see [`giftCardQueries.ee.js`]{@link https://github.com/magento/pwa-studio/blob/develop/packages/peregrine/lib/talons/CartPage/GiftCards/giftCardQueries.gql.ee.js}
+ * for queries used in Venia
  */
 
 /**
- * GraphQL queries for a cart's coupon code.
- * This is a type used by the {@link useCouponCode} talon.
+ * GraphQL queries for Gift Cards.
  *
- * @typedef {Object} CouponCodeQueries
+ * @typedef {Object} GiftCardsQueries
  *
- * @property {GraphQLAST} getAppliedCouponsQuery Query to fetch the currently applied coupons for a cart.
+ * @property {GraphQLAST} getAppliedGiftCardsQuery The query used to get the gift cards currently applied to the cart.
+ * @property {GraphQLAST} getGiftCardBalanceQuery The query used to get the gift cards currently applied to the cart.
  *
- * @see [CouponCode.js]{@link https://github.com/magento/pwa-studio/blob/develop/packages/venia-ui/lib/components/CartPage/PriceAdjustments/CouponCode/couponCode.js}
- * for the queries used Venia
+ * @see [`giftCardQueries.ee.js`]{@link https://github.com/magento/pwa-studio/blob/develop/packages/peregrine/lib/talons/CartPage/GiftCards/giftCardQueries.gql.ee.js}
+ * for queries used in Venia
  */
 
 /**
- * Object type returned by the {@link useCouponCode} talon.
- * It provides props data to use when rendering a coupon code component.
+ * Props data to use when rendering a list of gift cards.
  *
- * @typedef {Object} CouponCodeTalonProps
+ * @typedef {Object} GiftCardsTalonProps
  *
- * @property {boolean} applyingCoupon True if a coupon is currently being applied. False otherwise.
- * @property {Object} data Data returned from the `getAppliedCouponsQuery`.
- * @property {String} errorMessage If GraphQL error occurs, this value is set.
- * @property {Object} fetchError The error data object returned by a GraphQL query.
- * @property {function} handleApplyCoupon Function to call for handling the application of a coupon code to a cart.
- * @property {function} handleRemoveCoupon Function to call for handling the removal of a coupon code from a cart
- * @property {boolean} removingCoupon True if a coupon code is currently being removed. False otherwise.
+ * @property {function}  applyGiftCard - A callback to apply a gift card to the cart.
+ * @property {Object}    checkBalanceData - The giftCardAccount object of the most recent successful check balance GraphQL query.
+ * @property {function}  checkGiftCardBalance - A callback to check the balance of a gift card.
+ * @property {boolean}   errorLoadingGiftCards - Whether there was an error loading the cart's gift cards.
+ * @property {boolean}   errorApplyingCard - Whether there was an error applying the gift card.
+ * @property {boolean}   errorCheckingBalance - Whether there was an error checking the balance of the gift card.
+ * @property {boolean}   errorRemovingCard - Whether there was an error removing the gift card.
+ * @property {Array}     giftCardsData - The applied_gift_cards object of the cart query.
+ * @property {boolean}   isLoadingGiftCards - Whether the cart's gift card data is loading.
+ * @property {boolean}   isApplyingCard - Whether the apply gift card operation is in progress.
+ * @property {boolean}   isCheckingBalance - Whether the check gift card balance operation is in progress.
+ * @property {boolean}   isRemovingCard - Whether the remove gift card operation is in progress.
+ * @property {function}  removeGiftCard - A callback to remove a gift card from the cart.
+ * @property {boolean}   shouldDisplayCardBalance - Whether to display the gift card balance to the user
+ * @property {boolean}   shouldDisplayCardError - Whether to display an error message under the card input field.
  */
+// EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/Toasts/useToasts.js
+var useToasts = __webpack_require__("./node_modules/@magento/peregrine/lib/Toasts/useToasts.js");
+
+// EXTERNAL MODULE: ./node_modules/prop-types/index.js
+var prop_types = __webpack_require__("./node_modules/prop-types/index.js");
+
+// EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/util/intlPatches.js
+var intlPatches = __webpack_require__("./node_modules/@magento/peregrine/lib/util/intlPatches.js");
+
+// CONCATENATED MODULE: ./node_modules/@magento/peregrine/lib/Price/price.js
+
+
+
+
+
+/**
+ * @deprecated - replaced by to @magento/venia-ui/lib/components/Price
+ *
+ * The **Price** component is used anywhere a price needs to be displayed.
+ *
+ * Formatting of prices and currency symbol selection is handled entirely by the ECMAScript Internationalization API available in modern browsers.
+ *
+ * A [polyfill][] is required for any JavaScript runtime that does not have [Intl.NumberFormat.prototype.formatToParts][].
+ *
+ * [polyfill]: https://www.npmjs.com/package/intl
+ * [Intl.NumberFormat.prototype.formatToParts]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DateTimeFormat/formatToParts
+ */
+const Price = props => {
+  const {
+    locale
+  } = Object(useIntl["a" /* default */])();
+  const {
+    value,
+    currencyCode,
+    classes
+  } = props;
+
+  // If the optional locale prop is not provided or is undefined,
+  // the runtime's default locale is used in the Intl.NumberFormat() constructor.
+  const parts = intlPatches["a" /* default */].toParts.call(new Intl.NumberFormat(locale, {
+    style: 'currency',
+    currency: currencyCode
+  }), value);
+  const children = parts.map((part, i) => {
+    const partClass = classes[part.type];
+    const key = `${i}-${part.value}`;
+    return /*#__PURE__*/react_default.a.createElement("span", {
+      key: key,
+      className: partClass
+    }, part.value);
+  });
+  return /*#__PURE__*/react_default.a.createElement(react["Fragment"], null, children);
+};
+Price.propTypes = {
+  /**
+   * Class names to use when styling this component
+   */
+  classes: Object(prop_types["shape"])({
+    currency: prop_types["string"],
+    integer: prop_types["string"],
+    decimal: prop_types["string"],
+    fraction: prop_types["string"]
+  }),
+  /**
+   * The numeric price
+   */
+  value: prop_types["number"].isRequired,
+  /**
+   * A string with any of the currency code supported by Intl.NumberFormat
+   */
+  currencyCode: prop_types["string"].isRequired
+};
+Price.defaultProps = {
+  classes: {}
+};
+/* harmony default export */ var price = (Price);
+// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/util/formValidators.js
+var formValidators = __webpack_require__("./node_modules/@magento/venia-ui/lib/util/formValidators.js");
+
 // EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/Button/button.js + 1 modules
 var Button_button = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/Button/button.js");
-
-// EXTERNAL MODULE: ./node_modules/informed/dist/esm/index.js
-var esm = __webpack_require__("./node_modules/informed/dist/esm/index.js");
 
 // EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/Field/field.js + 1 modules
 var field = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/Field/field.js");
@@ -292,6 +442,9 @@ var icon = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/
 // EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/LinkButton/linkButton.js + 1 modules
 var linkButton = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/LinkButton/linkButton.js");
 
+// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/LoadingIndicator/indicator.js + 1 modules
+var indicator = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/LoadingIndicator/indicator.js");
+
 // EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/TextInput/textInput.js + 1 modules
 var textInput = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/TextInput/textInput.js");
 
@@ -299,10 +452,10 @@ var textInput = __webpack_require__("./node_modules/@magento/venia-ui/lib/compon
 var injectStylesIntoStyleTag = __webpack_require__("./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
 var injectStylesIntoStyleTag_default = /*#__PURE__*/__webpack_require__.n(injectStylesIntoStyleTag);
 
-// EXTERNAL MODULE: ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/CartPage/PriceAdjustments/CouponCode/couponCode.module.css
-var couponCode_module = __webpack_require__("./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/CartPage/PriceAdjustments/CouponCode/couponCode.module.css");
+// EXTERNAL MODULE: ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/CartPage/GiftCards/giftCards.module.css
+var giftCards_module = __webpack_require__("./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/CartPage/GiftCards/giftCards.module.css");
 
-// CONCATENATED MODULE: ./node_modules/@magento/venia-ui/lib/components/CartPage/PriceAdjustments/CouponCode/couponCode.module.css
+// CONCATENATED MODULE: ./node_modules/@magento/venia-ui/lib/components/CartPage/GiftCards/giftCards.module.css
 
             
 
@@ -311,12 +464,116 @@ var options = {"injectType":"styleTag"};
 options.insert = "head";
 options.singleton = false;
 
-var update = injectStylesIntoStyleTag_default()(couponCode_module["a" /* default */], options);
+var update = injectStylesIntoStyleTag_default()(giftCards_module["a" /* default */], options);
 
 
 
-/* harmony default export */ var CouponCode_couponCode_module = (couponCode_module["a" /* default */].locals || {});
-// CONCATENATED MODULE: ./node_modules/@magento/venia-ui/lib/components/CartPage/PriceAdjustments/CouponCode/couponCode.js
+/* harmony default export */ var GiftCards_giftCards_module = (giftCards_module["a" /* default */].locals || {});
+// CONCATENATED MODULE: ./node_modules/@magento/peregrine/lib/talons/CartPage/GiftCards/useGiftCard.js
+
+
+/**
+ * Provide logic for a single gift card component.
+ *
+ * @function
+ *
+ * @param {Object} props
+ * @param {String} props.code Gift card's code
+ * @param {function} props.removeGiftCard A function that removes a gift card when provided a code
+ *
+ * @return {GiftCardTalonProps}
+ *
+ * @example <caption>Importing into your project</caption>
+ * import { useGiftCard } from '@magento/peregrine/lib/talons/CartPage/GiftCards/useGiftCard';
+ */
+const useGiftCard = props => {
+  const {
+    code,
+    removeGiftCard
+  } = props;
+  const removeGiftCardWithCode = Object(react["useCallback"])(() => {
+    removeGiftCard(code);
+  }, [code, removeGiftCard]);
+  return {
+    removeGiftCardWithCode
+  };
+};
+
+/** JSDoc type definitions */
+
+/**
+ * Props data to use when rendering a single gift card component.
+ * @typedef {Object} GiftCardTalonProps
+ *
+ * @property {function} removeGiftCardWithCode Function for removing a gift card associated with the code passed into this talon.
+ */
+// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/Price/price.js
+var Price_price = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/Price/price.js");
+
+// EXTERNAL MODULE: ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/CartPage/GiftCards/giftCard.module.css
+var giftCard_module = __webpack_require__("./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/CartPage/GiftCards/giftCard.module.css");
+
+// CONCATENATED MODULE: ./node_modules/@magento/venia-ui/lib/components/CartPage/GiftCards/giftCard.module.css
+
+            
+
+var giftCard_module_options = {"injectType":"styleTag"};
+
+giftCard_module_options.insert = "head";
+giftCard_module_options.singleton = false;
+
+var giftCard_module_update = injectStylesIntoStyleTag_default()(giftCard_module["a" /* default */], giftCard_module_options);
+
+
+
+/* harmony default export */ var GiftCards_giftCard_module = (giftCard_module["a" /* default */].locals || {});
+// CONCATENATED MODULE: ./node_modules/@magento/venia-ui/lib/components/CartPage/GiftCards/giftCard.js
+
+
+
+
+
+
+
+const GiftCard = props => {
+  const {
+    code,
+    currentBalance,
+    isRemovingCard,
+    removeGiftCard
+  } = props;
+  const {
+    removeGiftCardWithCode
+  } = useGiftCard({
+    code,
+    removeGiftCard
+  });
+  const classes = Object(shallowMerge["a" /* default */])(GiftCards_giftCard_module, props.classes);
+  return /*#__PURE__*/react_default.a.createElement(react["Fragment"], null, /*#__PURE__*/react_default.a.createElement("div", {
+    className: classes.card_info
+  }, /*#__PURE__*/react_default.a.createElement("span", {
+    className: classes.code
+  }, code), /*#__PURE__*/react_default.a.createElement("span", {
+    className: classes.balance
+  }, /*#__PURE__*/react_default.a.createElement(message["a" /* default */], {
+    id: 'giftCard.balance',
+    defaultMessage: 'Balance: '
+  }), /*#__PURE__*/react_default.a.createElement(Price_price["a" /* default */], {
+    value: currentBalance.value,
+    currencyCode: currentBalance.currency
+  }))), /*#__PURE__*/react_default.a.createElement(linkButton["a" /* default */], {
+    disabled: isRemovingCard,
+    onClick: removeGiftCardWithCode,
+    "data-cy": "GiftCards-GiftCard-removeButton"
+  }, /*#__PURE__*/react_default.a.createElement(message["a" /* default */], {
+    id: 'giftCard.remove',
+    defaultMessage: 'Remove'
+  })));
+};
+/* harmony default export */ var giftCard = (GiftCard);
+// CONCATENATED MODULE: ./node_modules/@magento/venia-ui/lib/components/CartPage/GiftCards/giftCards.js
+
+
 
 
 
@@ -339,120 +596,168 @@ const errorIcon = /*#__PURE__*/react_default.a.createElement(icon["a" /* default
 });
 
 /**
- * A child component of the PriceAdjustments component.
- * This component renders a form for addingg a coupon code to the cart.
+ * GiftCards is a child component of the CartPage component.
+ * This component shows a form for applying gift cards along with a list of applied
+ * Gift Cards in the shopping cart.
  *
- * @param {Object} props
- * @param {Function} props.setIsCartUpdating Function for setting the updating state for the cart.
+ * @param {Object} props Component props
+ * @param {Function} props.setIsCartUpdating Callback function to call when adding or removing a gift card
  * @param {Object} props.classes CSS className overrides.
- * See [couponCode.module.css]{@link https://github.com/magento/pwa-studio/blob/develop/packages/venia-ui/lib/components/CartPage/PriceAdjustments/CouponCode/couponCode.module.css}
+ * See [giftCards.module.css]{@link https://github.com/magento/pwa-studio/blob/develop/packages/venia-ui/lib/components/CartPage/GiftCards/giftCards.module.css}
  * for a list of classes you can override.
  *
  * @returns {React.Element}
  *
  * @example <caption>Importing into your project</caption>
- * import CouponCode from "@magento/venia-ui/lib/components/CartPage/PriceAdjustments/CouponCode";
+ * import GiftCards from '@magento/venia-ui/lib/components/CartPage/GiftCards';
  */
-const CouponCode = props => {
-  const classes = Object(shallowMerge["a" /* default */])(CouponCode_couponCode_module, props.classes);
-  const talonProps = useCouponCode({
+const GiftCards = props => {
+  const talonProps = useGiftCards({
     setIsCartUpdating: props.setIsCartUpdating
   });
-  const [, {
-    addToast
-  }] = Object(useToasts["a" /* useToasts */])();
   const {
-    applyingCoupon,
-    data,
-    errors,
-    handleApplyCoupon,
-    handleRemoveCoupon,
-    removingCoupon
+    applyGiftCard,
+    checkBalanceData,
+    checkGiftCardBalance,
+    errorLoadingGiftCards,
+    errorRemovingCard,
+    giftCardsData,
+    isLoadingGiftCards,
+    isApplyingCard,
+    isCheckingBalance,
+    isRemovingCard,
+    removeGiftCard,
+    shouldDisplayCardBalance,
+    shouldDisplayCardError
   } = talonProps;
+  const classes = Object(shallowMerge["a" /* default */])(GiftCards_giftCards_module, props.classes);
   const {
     formatMessage
   } = Object(useIntl["a" /* default */])();
-  const removeCouponError = Object(deriveErrorMessage["a" /* deriveErrorMessage */])([errors.get('removeCouponMutation')]);
+  const [, {
+    addToast
+  }] = Object(useToasts["a" /* useToasts */])();
   Object(react["useEffect"])(() => {
-    if (removeCouponError) {
+    if (errorRemovingCard) {
       addToast({
         type: 'error',
         icon: errorIcon,
-        message: removeCouponError,
+        message: formatMessage({
+          id: 'giftCards.errorRemoving',
+          defaultMessage: 'Unable to remove gift card. Please try again.'
+        }),
         dismissable: true,
-        timeout: 10000
+        timeout: 7000
       });
     }
-  }, [addToast, removeCouponError]);
-  if (!data) {
-    return null;
-  }
-  if (errors.get('getAppliedCouponsQuery')) {
-    return /*#__PURE__*/react_default.a.createElement("div", {
-      className: classes.errorContainer
-    }, /*#__PURE__*/react_default.a.createElement(message["a" /* default */], {
-      id: 'couponCode.errorContainer',
-      defaultMessage: 'Something went wrong. Please refresh and try again.'
+  }, [addToast, errorRemovingCard, formatMessage]);
+  if (isLoadingGiftCards) {
+    return /*#__PURE__*/react_default.a.createElement(indicator["a" /* default */], null, /*#__PURE__*/react_default.a.createElement(message["a" /* default */], {
+      id: 'giftCards.loading',
+      defaultMessage: 'Loading Gift Cards...'
     }));
   }
-  if (data.cart.applied_coupons) {
-    const codes = data.cart.applied_coupons.map(({
-      code
-    }) => {
-      return /*#__PURE__*/react_default.a.createElement(react["Fragment"], {
-        key: code
-      }, /*#__PURE__*/react_default.a.createElement("span", null, code), /*#__PURE__*/react_default.a.createElement(linkButton["a" /* default */], {
-        className: classes.removeButton,
-        disabled: removingCoupon,
-        "data-cy": "CouponCode-removeCouponButton",
-        onClick: () => {
-          handleRemoveCoupon(code);
-        }
-      }, /*#__PURE__*/react_default.a.createElement(message["a" /* default */], {
-        id: 'couponCode.removeButton',
-        defaultMessage: 'Remove'
-      })));
-    });
-    return /*#__PURE__*/react_default.a.createElement("div", {
-      className: classes.appliedCoupon
-    }, codes);
-  } else {
-    const errorMessage = Object(deriveErrorMessage["a" /* deriveErrorMessage */])([errors.get('applyCouponMutation')]);
-    const formClass = errorMessage ? classes.entryFormError : classes.entryForm;
-    return /*#__PURE__*/react_default.a.createElement(esm["b" /* Form */], {
-      "data-cy": "CouponCode-form",
-      className: formClass,
-      onSubmit: handleApplyCoupon
-    }, /*#__PURE__*/react_default.a.createElement(field["a" /* default */], {
-      id: "couponCode",
-      label: formatMessage({
-        id: 'cartPage.couponCode',
-        defaultMessage: 'Coupon Code'
-      })
-    }, /*#__PURE__*/react_default.a.createElement(textInput["a" /* default */], {
-      field: "couponCode",
-      id: 'couponCode',
-      "data-cy": "CouponCode-couponCode",
-      placeholder: formatMessage({
-        id: 'couponCode.enterCode',
-        defaultMessage: 'Enter code'
-      }),
-      mask: value => value && value.trim(),
-      maskOnBlur: true,
-      message: errorMessage
-    })), /*#__PURE__*/react_default.a.createElement(field["a" /* default */], null, /*#__PURE__*/react_default.a.createElement(Button_button["a" /* default */], {
-      "data-cy": "CouponCode-submit",
-      disabled: applyingCoupon,
-      priority: 'normal',
-      type: 'submit'
+  const cardEntryErrorMessage = shouldDisplayCardError ? formatMessage({
+    id: 'giftCards.errorInvalid',
+    defaultMessage: 'Invalid card. Please try again.'
+  }) : null;
+  let appliedGiftCards = null;
+  if (errorLoadingGiftCards) {
+    appliedGiftCards = /*#__PURE__*/react_default.a.createElement("span", {
+      className: classes.errorText
     }, /*#__PURE__*/react_default.a.createElement(message["a" /* default */], {
-      id: 'couponCode.apply',
-      defaultMessage: 'Apply'
-    }))));
+      id: 'giftCards.errorLoading',
+      defaultMessage: 'There was an error loading applied gift cards. Please refresh and try again.'
+    }));
   }
+  if (giftCardsData.length > 0) {
+    const cardList = giftCardsData.map(giftCardData => {
+      const {
+        code,
+        current_balance
+      } = giftCardData;
+      return /*#__PURE__*/react_default.a.createElement(giftCard, {
+        code: code,
+        currentBalance: current_balance,
+        isRemovingCard: isRemovingCard,
+        key: code,
+        removeGiftCard: removeGiftCard
+      });
+    });
+    appliedGiftCards = /*#__PURE__*/react_default.a.createElement("div", {
+      className: classes.cards_container
+    }, cardList);
+  }
+  const cardBalance = shouldDisplayCardBalance && /*#__PURE__*/react_default.a.createElement("div", {
+    className: classes.balance
+  }, /*#__PURE__*/react_default.a.createElement("span", {
+    className: classes.price
+  }, /*#__PURE__*/react_default.a.createElement(message["a" /* default */], {
+    id: 'giftCards.balance',
+    defaultMessage: 'Balance: '
+  }), /*#__PURE__*/react_default.a.createElement(price, {
+    value: checkBalanceData.balance.value,
+    currencyCode: checkBalanceData.balance.currency
+  })));
+  const containerClass = shouldDisplayCardError ? classes.card_input_container_error : classes.card_input_container;
+  const cardEntryContents = /*#__PURE__*/react_default.a.createElement("div", {
+    className: classes.card
+  }, /*#__PURE__*/react_default.a.createElement(field["a" /* default */], {
+    classes: {
+      root: classes.entry
+    },
+    id: classes.card,
+    label: formatMessage({
+      id: 'giftCards.cardNumber',
+      defaultMessage: 'Gift Card Number'
+    })
+  }, /*#__PURE__*/react_default.a.createElement("div", {
+    className: containerClass
+  }, /*#__PURE__*/react_default.a.createElement(textInput["a" /* default */], {
+    id: classes.card,
+    "data-cy": "GiftCards-card",
+    disabled: isApplyingCard || isCheckingBalance,
+    field: "card",
+    mask: value => value && value.trim(),
+    maskOnBlur: true,
+    message: cardEntryErrorMessage,
+    placeholder: formatMessage({
+      id: 'giftCards.cardEntry',
+      defaultMessage: 'Enter card number'
+    }),
+    validate: formValidators["b" /* isRequired */]
+  })), cardBalance), /*#__PURE__*/react_default.a.createElement(field["a" /* default */], {
+    classes: {
+      label: classes.applyLabel
+    }
+  }, /*#__PURE__*/react_default.a.createElement(Button_button["a" /* default */], {
+    priority: 'normal',
+    "data-cy": "GiftCards-apply",
+    disabled: isApplyingCard,
+    onClick: applyGiftCard
+  }, /*#__PURE__*/react_default.a.createElement(message["a" /* default */], {
+    id: 'giftCards.apply',
+    defaultMessage: 'Apply'
+  }))), /*#__PURE__*/react_default.a.createElement(linkButton["a" /* default */], {
+    className: classes.check_balance_button,
+    disabled: isCheckingBalance,
+    onClick: checkGiftCardBalance
+  }, /*#__PURE__*/react_default.a.createElement(message["a" /* default */], {
+    id: 'giftCards.checkBalance',
+    defaultMessage: 'Check balance'
+  })));
+  return /*#__PURE__*/react_default.a.createElement("div", {
+    className: classes.root
+  }, /*#__PURE__*/react_default.a.createElement("div", {
+    className: classes.entryForm
+  }, cardEntryContents), appliedGiftCards);
 };
-/* harmony default export */ var couponCode = (CouponCode);
-// CONCATENATED MODULE: ./node_modules/@magento/venia-ui/lib/components/CartPage/PriceAdjustments/CouponCode/index.js
+/* harmony default export */ var giftCards = (props => {
+  return /*#__PURE__*/react_default.a.createElement(esm["b" /* Form */], {
+    "data-cy": "GiftCards-form"
+  }, /*#__PURE__*/react_default.a.createElement(GiftCards, props));
+});
+// CONCATENATED MODULE: ./node_modules/@magento/venia-ui/lib/components/CartPage/GiftCards/index.js
 
 
 /***/ }),
@@ -568,35 +873,77 @@ LinkButton.defaultProps = {
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/CartPage/PriceAdjustments/CouponCode/couponCode.module.css":
-/*!********************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/CartPage/PriceAdjustments/CouponCode/couponCode.module.css ***!
-  \********************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/CartPage/GiftCards/giftCard.module.css":
+/*!************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/CartPage/GiftCards/giftCard.module.css ***!
+  \************************************************************************************************************************************************************************************************/
 /*! exports provided: default */
 /*! exports used: default */
 /*! ModuleConcatenation bailout: Module uses module.id */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var _css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../../../../css-loader/dist/runtime/cssWithMappingToString.js */ "./node_modules/css-loader/dist/runtime/cssWithMappingToString.js");
+/* harmony import */ var _css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../../../css-loader/dist/runtime/cssWithMappingToString.js */ "./node_modules/css-loader/dist/runtime/cssWithMappingToString.js");
 /* harmony import */ var _css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../../../css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../../css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 /* harmony import */ var _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _css_loader_dist_cjs_js_ref_6_oneOf_0_1_postcss_loader_dist_cjs_js_LinkButton_linkButton_module_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! -!../../../../../../../css-loader/dist/cjs.js??ref--6-oneOf-0-1!../../../../../../../postcss-loader/dist/cjs.js!../../../LinkButton/linkButton.module.css */ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/LinkButton/linkButton.module.css");
 // Imports
+
+
+var ___CSS_LOADER_EXPORT___ = _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()(_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default.a);
+// Module
+___CSS_LOADER_EXPORT___.push([module.i, ".giftCard-card_info-TFA {\n}\n\n.giftCard-balance-b7r {\n}\n\n.giftCard-code-ZJO {\n}\n", "",{"version":3,"sources":["webpack://./node_modules/@magento/venia-ui/lib/components/CartPage/GiftCards/giftCard.module.css"],"names":[],"mappings":"AAAA;AAGA;;AAEA;AAEA;;AAEA;AACA","sourcesContent":[".card_info {\n    composes: grid from global;\n    composes: gap-y-2xs from global;\n}\n\n.balance {\n    composes: text-sm from global;\n}\n\n.code {\n}\n"],"sourceRoot":""}]);
+// Exports
+___CSS_LOADER_EXPORT___.locals = {
+	"card_info": "giftCard-card_info-TFA grid gap-y-2xs",
+	"balance": "giftCard-balance-b7r text-sm",
+	"code": "giftCard-code-ZJO"
+};
+/* harmony default export */ __webpack_exports__["a"] = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/CartPage/GiftCards/giftCards.module.css":
+/*!*************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/CartPage/GiftCards/giftCards.module.css ***!
+  \*************************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/*! exports used: default */
+/*! ModuleConcatenation bailout: Module uses module.id */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var _css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../../../css-loader/dist/runtime/cssWithMappingToString.js */ "./node_modules/css-loader/dist/runtime/cssWithMappingToString.js");
+/* harmony import */ var _css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../../css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _css_loader_dist_cjs_js_ref_6_oneOf_0_1_postcss_loader_dist_cjs_js_LinkButton_linkButton_module_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! -!../../../../../../css-loader/dist/cjs.js??ref--6-oneOf-0-1!../../../../../../postcss-loader/dist/cjs.js!../../LinkButton/linkButton.module.css */ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/LinkButton/linkButton.module.css");
+/* harmony import */ var _css_loader_dist_cjs_js_ref_6_oneOf_0_1_postcss_loader_dist_cjs_js_Field_field_module_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! -!../../../../../../css-loader/dist/cjs.js??ref--6-oneOf-0-1!../../../../../../postcss-loader/dist/cjs.js!../../Field/field.module.css */ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/Field/field.module.css");
+// Imports
+
 
 
 
 var ___CSS_LOADER_EXPORT___ = _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()(_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default.a);
 ___CSS_LOADER_EXPORT___.i(_css_loader_dist_cjs_js_ref_6_oneOf_0_1_postcss_loader_dist_cjs_js_LinkButton_linkButton_module_css__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"], "", true);
+___CSS_LOADER_EXPORT___.i(_css_loader_dist_cjs_js_ref_6_oneOf_0_1_postcss_loader_dist_cjs_js_Field_field_module_css__WEBPACK_IMPORTED_MODULE_3__[/* default */ "a"], "", true);
 // Module
-___CSS_LOADER_EXPORT___.push([module.i, "/* Styles for \"add\" view. */\n.couponCode-entryForm-a6A,\n.couponCode-entryFormError-ZLm {\n}\n\n/* on mobile... */\n@media (max-width: 959px) {\n    .couponCode-entryForm-a6A,\n    .couponCode-entryFormError-ZLm {\n        /* switch to rows. */\n        grid-template-columns: unset;\n        grid-template-rows: 1fr 1fr;\n    }\n}\n\n/* TODO @TW: cannot compose */\n.couponCode-entryFormError-ZLm input {\n    /* composes: border-error from global; */\n    border-color: rgb(var(--venia-global-color-red-400));\n}\n\n/* TODO @TW: cannot compose */\n.couponCode-entryFormError-ZLm input:focus {\n    /* composes: border-gray-600 from global; */\n    border-color: rgb(var(--venia-global-color-gray-600));\n}\n\n/* TODO @TW: cannot compose */\n.couponCode-entryFormError-ZLm p {\n    /* composes: text-error from global; */\n    color: rgb(var(--venia-global-color-error));\n    /* composes: font-semibold from global; */\n    font-weight: 600;\n}\n\n.couponCode-errorContainer-GWW {\n    /* Duplicate the left/right/bottom padding on the accordion section */\n}\n\n/* Styles for \"removal\" view. */\n.couponCode-removeButton-E4y {\n}\n", "",{"version":3,"sources":["webpack://./node_modules/@magento/venia-ui/lib/components/CartPage/PriceAdjustments/CouponCode/couponCode.module.css"],"names":[],"mappings":"AAAA,2BAA2B;AAC3B;;AAKA;;AAEA,iBAAiB;AACjB;IACI;;QAEI,oBAAoB;QACpB,4BAA4B;QAC5B,2BAA2B;IAC/B;AACJ;;AAEA,6BAA6B;AAC7B;IACI,wCAAwC;IACxC,oDAAoD;AACxD;;AAEA,6BAA6B;AAC7B;IACI,2CAA2C;IAC3C,qDAAqD;AACzD;;AAEA,6BAA6B;AAC7B;IACI,sCAAsC;IACtC,2CAA2C;IAC3C,yCAAyC;IACzC,gBAAgB;AACpB;;AAEA;IAEI,qEAAqE;AAGzE;;AAEA,+BAA+B;AAC/B;AAIA","sourcesContent":["/* Styles for \"add\" view. */\n.entryForm,\n.entryFormError {\n    composes: gap-x-sm from global;\n    composes: grid from global;\n    composes: grid-cols-autoLast from global;\n}\n\n/* on mobile... */\n@media (max-width: 959px) {\n    .entryForm,\n    .entryFormError {\n        /* switch to rows. */\n        grid-template-columns: unset;\n        grid-template-rows: 1fr 1fr;\n    }\n}\n\n/* TODO @TW: cannot compose */\n.entryFormError input {\n    /* composes: border-error from global; */\n    border-color: rgb(var(--venia-global-color-red-400));\n}\n\n/* TODO @TW: cannot compose */\n.entryFormError input:focus {\n    /* composes: border-gray-600 from global; */\n    border-color: rgb(var(--venia-global-color-gray-600));\n}\n\n/* TODO @TW: cannot compose */\n.entryFormError p {\n    /* composes: text-error from global; */\n    color: rgb(var(--venia-global-color-error));\n    /* composes: font-semibold from global; */\n    font-weight: 600;\n}\n\n.errorContainer {\n    composes: leading-normal from global;\n    /* Duplicate the left/right/bottom padding on the accordion section */\n    composes: pt-sm from global;\n    composes: text-error from global;\n}\n\n/* Styles for \"removal\" view. */\n.removeButton {\n    composes: root from '../../../LinkButton/linkButton.module.css';\n\n    composes: ml-xs from global;\n}\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.i, ".giftCards-root-Hgt {\n}\n\n.giftCards-errorText-5Vu {\n}\n\n.giftCards-balance-1JD {\n    grid-template-columns: max-content 1fr;\n}\n\n.giftCards-card-F61 {\n    grid-template-areas:\n        'card_entry'\n        'check_balance_button'\n        'apply_button';\n}\n\n@media (min-width: 960px) {\n    .giftCards-card-F61 {\n        grid-template-areas:\n            'card_entry apply_button'\n            'check_balance_button check_balance_button';\n    }\n}\n\n.giftCards-card_input_container-ogL {\n}\n\n/* TODO @TW: cannot compose */\n.giftCards-card_input_container_error-t6H input {\n    /* composes: border-error from global; */\n    border-color: rgb(var(--venia-global-color-red-400));\n}\n\n/* TODO @TW: cannot compose */\n.giftCards-card_input_container_error-t6H input:focus {\n    /* composes: border-gray-600 from global; */\n    border-color: rgb(var(--venia-global-color-gray-600));\n}\n\n/* TODO @TW: cannot compose */\n.giftCards-card_input_container_error-t6H p {\n    /* composes: text-error from global; */\n    color: rgb(var(--venia-global-color-error));\n    /* composes: font-semibold from global; */\n    font-weight: 600;\n}\n\n.giftCards-cards_container-ogd {\n    grid-template-columns: max-content auto;\n}\n\n.giftCards-check_balance_button-JRl {\n    grid-area: check_balance_button;\n}\n\n.giftCards-entry-e3g {\n    grid-area: card_entry;\n}\n\n.giftCards-price-k2T {\n}\n\n.giftCards-entryForm-XoW {\n}\n\n.giftCards-applyLabel-sGo {\n}\n", "",{"version":3,"sources":["webpack://./node_modules/@magento/venia-ui/lib/components/CartPage/GiftCards/giftCards.module.css"],"names":[],"mappings":"AAAA;AAGA;;AAEA;AAGA;;AAEA;IAMI,sCAAsC;AAC1C;;AAEA;IAKI;;;sBAGkB;AAGtB;;AAEA;IACI;QACI;;uDAE+C;IACnD;AACJ;;AAEA;AACA;;AAEA,6BAA6B;AAC7B;IACI,wCAAwC;IACxC,oDAAoD;AACxD;;AAEA,6BAA6B;AAC7B;IACI,2CAA2C;IAC3C,qDAAqD;AACzD;;AAEA,6BAA6B;AAC7B;IACI,sCAAsC;IACtC,2CAA2C;IAC3C,yCAAyC;IACzC,gBAAgB;AACpB;;AAEA;IAKI,uCAAuC;AAC3C;;AAEA;IAII,+BAA+B;AAGnC;;AAEA;IACI,qBAAqB;AACzB;;AAEA;AACA;;AAEA;AACA;;AAEA;AAMA","sourcesContent":[".root {\n    composes: grid from global;\n    composes: gap-md from global;\n}\n\n.errorText {\n    composes: leading-normal from global;\n    composes: text-error from global;\n}\n\n.balance {\n    composes: grid from global;\n    composes: italic from global;\n    composes: items-start from global;\n    composes: pt-1.5 from global;\n    composes: text-sm from global;\n    grid-template-columns: max-content 1fr;\n}\n\n.card {\n    composes: gap-sm from global;\n    composes: grid from global;\n    composes: grid-cols-1 from global;\n    composes: items-start from global;\n    grid-template-areas:\n        'card_entry'\n        'check_balance_button'\n        'apply_button';\n\n    composes: lg_grid-cols-autoLast from global;\n}\n\n@media (min-width: 960px) {\n    .card {\n        grid-template-areas:\n            'card_entry apply_button'\n            'check_balance_button check_balance_button';\n    }\n}\n\n.card_input_container {\n}\n\n/* TODO @TW: cannot compose */\n.card_input_container_error input {\n    /* composes: border-error from global; */\n    border-color: rgb(var(--venia-global-color-red-400));\n}\n\n/* TODO @TW: cannot compose */\n.card_input_container_error input:focus {\n    /* composes: border-gray-600 from global; */\n    border-color: rgb(var(--venia-global-color-gray-600));\n}\n\n/* TODO @TW: cannot compose */\n.card_input_container_error p {\n    /* composes: text-error from global; */\n    color: rgb(var(--venia-global-color-error));\n    /* composes: font-semibold from global; */\n    font-weight: 600;\n}\n\n.cards_container {\n    composes: gap-sm from global;\n    composes: grid from global;\n    composes: items-baseline from global;\n    composes: justify-start from global;\n    grid-template-columns: max-content auto;\n}\n\n.check_balance_button {\n    composes: root from '../../LinkButton/linkButton.module.css';\n\n    composes: justify-self-center from global;\n    grid-area: check_balance_button;\n\n    composes: lg_justify-self-start from global;\n}\n\n.entry {\n    grid-area: card_entry;\n}\n\n.price {\n}\n\n.entryForm {\n}\n\n.applyLabel {\n    composes: label from '../../Field/field.module.css';\n\n    composes: hidden from global;\n\n    composes: lg_block from global;\n}\n"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
-	"entryForm": "couponCode-entryForm-a6A gap-x-sm grid grid-cols-autoLast",
-	"entryFormError": "couponCode-entryFormError-ZLm gap-x-sm grid grid-cols-autoLast",
-	"errorContainer": "couponCode-errorContainer-GWW leading-normal pt-sm text-error",
-	"removeButton": "couponCode-removeButton-E4y " + _css_loader_dist_cjs_js_ref_6_oneOf_0_1_postcss_loader_dist_cjs_js_LinkButton_linkButton_module_css__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"].locals["root"] + " ml-xs"
+	"root": "giftCards-root-Hgt grid gap-md",
+	"errorText": "giftCards-errorText-5Vu leading-normal text-error",
+	"balance": "giftCards-balance-1JD grid italic items-start pt-1.5 text-sm",
+	"card": "giftCards-card-F61 gap-sm grid grid-cols-1 items-start lg_grid-cols-autoLast",
+	"card_input_container": "giftCards-card_input_container-ogL",
+	"card_input_container_error": "giftCards-card_input_container_error-t6H",
+	"cards_container": "giftCards-cards_container-ogd gap-sm grid items-baseline justify-start",
+	"check_balance_button": "giftCards-check_balance_button-JRl " + _css_loader_dist_cjs_js_ref_6_oneOf_0_1_postcss_loader_dist_cjs_js_LinkButton_linkButton_module_css__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"].locals["root"] + " justify-self-center lg_justify-self-start",
+	"entry": "giftCards-entry-e3g",
+	"price": "giftCards-price-k2T",
+	"entryForm": "giftCards-entryForm-XoW",
+	"applyLabel": "giftCards-applyLabel-sGo " + _css_loader_dist_cjs_js_ref_6_oneOf_0_1_postcss_loader_dist_cjs_js_Field_field_module_css__WEBPACK_IMPORTED_MODULE_3__[/* default */ "a"].locals["label"] + " hidden lg_block"
 };
 /* harmony default export */ __webpack_exports__["a"] = (___CSS_LOADER_EXPORT___);
 

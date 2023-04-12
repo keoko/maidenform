@@ -6,10 +6,25 @@
 import React from 'react';
 import { render } from 'react-dom';
 
+import store from '../../store';
+import Adapter from '../../components/Adapter/adapter.js';
 import Checkout from './checkout';
+
+const origin = globalThis.location.origin;
+const styles = new Set();
+const configureLinks = links => [...links.values()];
 
 console.log('Checkout Loaded');
 
-render(<Checkout />, document.querySelector('.block.commerce-checkout'));
+render((
+    <Adapter
+        apiUrl="https://franklin.maidenform.com/graphql"
+        configureLinks={configureLinks}
+        origin={origin}
+        store={store}
+        styles={styles}>
+        <Checkout />
+    </Adapter>
+), document.querySelector('.block.commerce-checkout'));
 
 export { Checkout as default };

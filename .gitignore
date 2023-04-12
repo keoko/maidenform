@@ -9,3 +9,5 @@ helix-importer-ui
 node_modules
 .parcel-cache
 tools/product-image-importer/product-images/*
+
+.env
