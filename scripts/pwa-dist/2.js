@@ -368,17 +368,17 @@ const useGiftOptions = (props = {}) => {
   const cardToProps = {
     disabled: !giftMessageIsChecked || savingOptions.includes('giftMessage'),
     field: 'cardTo',
-    validate: formValidators["b" /* isRequired */]
+    validate: formValidators["c" /* isRequired */]
   };
   const cardFromProps = {
     disabled: !giftMessageIsChecked || savingOptions.includes('giftMessage'),
     field: 'cardFrom',
-    validate: formValidators["b" /* isRequired */]
+    validate: formValidators["c" /* isRequired */]
   };
   const cardMessageProps = {
     disabled: !giftMessageIsChecked || savingOptions.includes('giftMessage'),
     field: 'cardMessage',
-    validate: formValidators["b" /* isRequired */]
+    validate: formValidators["c" /* isRequired */]
   };
   const optionsFormProps = {
     initialValues,

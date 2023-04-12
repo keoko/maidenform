@@ -23,6 +23,10 @@ const Adapter = props => {
         return null;
     }
 
+    if (initialized) {
+        console.debug('Adapter initialized');
+    }
+
     const children = props.children;
 
     return (
@@ -30,10 +34,9 @@ const Adapter = props => {
             <ReduxProvider {...reduxProps}>
                 <BrowserRouter {...routerProps}>
                     <AppContextProvider>
-                        {/* TODO: Remove HeadProvider again after copying over CartPage files */}
                         <HeadProvider>
                             {children}
-                            <ToastContainer />
+                            <ToastContainer/>
                         </HeadProvider>
                     </AppContextProvider>
                 </BrowserRouter>

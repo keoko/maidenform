@@ -1348,7 +1348,7 @@ var Price_price = __webpack_require__("./node_modules/@magento/venia-ui/lib/comp
 // EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/util/configuredVariant.js
 var configuredVariant = __webpack_require__("./node_modules/@magento/peregrine/lib/util/configuredVariant.js");
 
-// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/Image/image.js + 8 modules
+// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/Image/image.js + 4 modules
 var Image_image = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/Image/image.js");
 
 // EXTERNAL MODULE: ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/CartPage/ProductListing/EditModal/productDetail.module.css

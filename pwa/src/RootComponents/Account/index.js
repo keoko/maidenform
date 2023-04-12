@@ -5,11 +5,13 @@
  */
 import React from 'react';
 import { render } from 'react-dom';
-
 import Account from './account';
+import '../../index.css';
 
 console.log('Account Loaded');
 
-render(<Account />, document.querySelector('.block.commerce-account'));
+const pageTypeScript = document.querySelector('script[id="account-page-type"]');
+const pageTypeObject = JSON.parse(pageTypeScript.innerHTML) || ({"pageType": "myaccount"});
+const pageType = pageTypeObject.pageType;
 
-export { Account as default };
+render(<Account pageType={pageType} />, document.querySelector('.block.commerce-account'));

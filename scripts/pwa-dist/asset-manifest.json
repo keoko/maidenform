@@ -55,12 +55,24 @@
         "/vendors.js.map",
         "/login.js.map"
       ]
+    },
+    "signup": {
+      "js": [
+        "/vendors.js",
+        "/signup.js"
+      ],
+      "js.map": [
+        "/vendors.js.map",
+        "/signup.js.map"
+      ]
     }
   },
   "i18n-en_US.js": "/i18n-en_US.js",
   "i18n-en_US.js.map": "/i18n-en_US.js.map",
   "login.js": "/login.js",
   "login.js.map": "/login.js.map",
+  "signup.js": "/signup.js",
+  "signup.js.map": "/signup.js.map",
   "vendors.js": "/vendors.js",
   "vendors.js.map": "/vendors.js.map",
   "bundles": {
@@ -76,6 +88,7 @@
     "client": "/client.js",
     "i18n-en_US": "/i18n-en_US.js",
     "login": "/login.js",
+    "signup": "/signup.js",
     "vendors": "/vendors.js"
   },
   "map": {
@@ -85,6 +98,7 @@
     "client.js": "/client.js.map",
     "i18n-en_US.js": "/i18n-en_US.js.map",
     "login.js": "/login.js.map",
+    "signup.js": "/signup.js.map",
     "vendors.js": "/vendors.js.map"
   }
 }

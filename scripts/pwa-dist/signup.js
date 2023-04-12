@@ -57,7 +57,7 @@
 /******/ 	// undefined = chunk not loaded, null = chunk preloaded/prefetched
 /******/ 	// Promise = chunk loading, 0 = chunk loaded
 /******/ 	var installedChunks = {
-/******/ 		"login": 0
+/******/ 		"signup": 0
 /******/ 	};
 /******/
 /******/ 	var deferredModules = [];
@@ -223,7 +223,7 @@
 /******/
 /******/
 /******/ 	// add entry module to deferred list
-/******/ 	deferredModules.push([4,"vendors"]);
+/******/ 	deferredModules.push([5,"vendors"]);
 /******/ 	// run deferred modules when ready
 /******/ 	return checkDeferredModules();
 /******/ })
@@ -5722,250 +5722,6 @@ const extraArgument = {};
 
 /***/ }),
 
-/***/ "./node_modules/@magento/peregrine/lib/talons/CartPage/GiftCards/giftCardFragments.gql.ee.js":
-/*!***************************************************************************************************!*\
-  !*** ./node_modules/@magento/peregrine/lib/talons/CartPage/GiftCards/giftCardFragments.gql.ee.js ***!
-  \***************************************************************************************************/
-/*! exports provided: GiftCardFragment */
-/*! exports used: GiftCardFragment */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return GiftCardFragment; });
-/* harmony import */ var _apollo_client__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @apollo/client */ "./node_modules/graphql-tag/lib/index.js");
-
-const GiftCardFragment = _apollo_client__WEBPACK_IMPORTED_MODULE_0__[/* gql */ "a"]`
-    fragment GiftCardFragment on Cart {
-        applied_gift_cards {
-            code
-            current_balance {
-                currency
-                value
-            }
-        }
-        id
-    }
-`;
-
-/***/ }),
-
-/***/ "./node_modules/@magento/peregrine/lib/talons/CartPage/PriceAdjustments/CouponCode/couponCodeFragments.gql.js":
-/*!********************************************************************************************************************!*\
-  !*** ./node_modules/@magento/peregrine/lib/talons/CartPage/PriceAdjustments/CouponCode/couponCodeFragments.gql.js ***!
-  \********************************************************************************************************************/
-/*! exports provided: AppliedCouponsFragment */
-/*! exports used: AppliedCouponsFragment */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppliedCouponsFragment; });
-/* harmony import */ var _apollo_client__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @apollo/client */ "./node_modules/graphql-tag/lib/index.js");
-
-const AppliedCouponsFragment = _apollo_client__WEBPACK_IMPORTED_MODULE_0__[/* gql */ "a"]`
-    fragment AppliedCouponsFragment on Cart {
-        id
-        applied_coupons {
-            code
-        }
-    }
-`;
-
-/***/ }),
-
-/***/ "./node_modules/@magento/peregrine/lib/talons/CartPage/PriceSummary/priceSummaryFragments.gql.js":
-/*!*******************************************************************************************************************!*\
-  !*** ./node_modules/@magento/peregrine/lib/talons/CartPage/PriceSummary/priceSummaryFragments.gql.js + 4 modules ***!
-  \*******************************************************************************************************************/
-/*! exports provided: GrandTotalFragment, PriceSummaryFragment */
-/*! exports used: PriceSummaryFragment */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/talons/CartPage/PriceSummary/queries/giftOptionsSummary.ee.js because of ./node_modules/@magento/peregrine/lib/talons/CartPage/PriceAdjustments/GiftOptions/giftOptionsFragments.gql.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql-tag/lib/index.js */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-
-// EXPORTS
-__webpack_require__.d(__webpack_exports__, "a", function() { return /* binding */ PriceSummaryFragment; });
-
-// UNUSED EXPORTS: GrandTotalFragment
-
-// EXTERNAL MODULE: ./node_modules/graphql-tag/lib/index.js + 3 modules
-var lib = __webpack_require__("./node_modules/graphql-tag/lib/index.js");
-
-// CONCATENATED MODULE: ./node_modules/@magento/peregrine/lib/talons/CartPage/PriceSummary/discountSummary.gql.js
-
-const DiscountSummaryFragment = lib["a" /* gql */]`
-    fragment DiscountSummaryFragment on CartPrices {
-        discounts {
-            amount {
-                currency
-                value
-            }
-            label
-        }
-    }
-`;
-// CONCATENATED MODULE: ./node_modules/@magento/peregrine/lib/talons/CartPage/PriceSummary/queries/giftCardSummary.ee.js
-
-const GiftCardSummaryFragment = lib["a" /* gql */]`
-    fragment GiftCardSummaryFragment on Cart {
-        id
-        applied_gift_cards {
-            # code is "id" of the gift cards, used to merge cache data with incoming.
-            code
-            applied_balance {
-                value
-                currency
-            }
-        }
-    }
-`;
-// EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/talons/CartPage/PriceSummary/queries/giftOptionsSummary.ee.js
-var giftOptionsSummary_ee = __webpack_require__("./node_modules/@magento/peregrine/lib/talons/CartPage/PriceSummary/queries/giftOptionsSummary.ee.js");
-
-// CONCATENATED MODULE: ./node_modules/@magento/peregrine/lib/talons/CartPage/PriceSummary/shippingSummary.gql.js
-
-const ShippingSummaryFragment = lib["a" /* gql */]`
-    fragment ShippingSummaryFragment on Cart {
-        id
-        shipping_addresses {
-            selected_shipping_method {
-                amount {
-                    currency
-                    value
-                }
-            }
-            street
-        }
-    }
-`;
-// CONCATENATED MODULE: ./node_modules/@magento/peregrine/lib/talons/CartPage/PriceSummary/taxSummary.gql.js
-
-const TaxSummaryFragment = lib["a" /* gql */]`
-    fragment TaxSummaryFragment on CartPrices {
-        applied_taxes {
-            amount {
-                currency
-                value
-            }
-        }
-    }
-`;
-// CONCATENATED MODULE: ./node_modules/@magento/peregrine/lib/talons/CartPage/PriceSummary/priceSummaryFragments.gql.js
-
-
-
-
-
-
-const GrandTotalFragment = lib["a" /* gql */]`
-    fragment GrandTotalFragment on CartPrices {
-        grand_total {
-            currency
-            value
-        }
-    }
-`;
-const PriceSummaryFragment = lib["a" /* gql */]`
-    fragment PriceSummaryFragment on Cart {
-        id
-        # eslint-disable-next-line @graphql-eslint/require-id-when-available
-        items {
-            uid
-            quantity
-        }
-        ...ShippingSummaryFragment
-        prices {
-            ...TaxSummaryFragment
-            ...DiscountSummaryFragment
-            ...GrandTotalFragment
-            subtotal_excluding_tax {
-                currency
-                value
-            }
-            subtotal_including_tax {
-                currency
-                value
-            }
-        }
-        ...GiftCardSummaryFragment
-        ...GiftOptionsSummaryFragment
-    }
-    ${DiscountSummaryFragment}
-    ${GiftCardSummaryFragment}
-    ${giftOptionsSummary_ee["a" /* GiftOptionsSummaryFragment */]}
-    ${GrandTotalFragment}
-    ${ShippingSummaryFragment}
-    ${TaxSummaryFragment}
-`;
-
-/***/ }),
-
-/***/ "./node_modules/@magento/peregrine/lib/talons/CartPage/PriceSummary/queries/giftOptionsSummary.ee.js":
-/*!***********************************************************************************************************!*\
-  !*** ./node_modules/@magento/peregrine/lib/talons/CartPage/PriceSummary/queries/giftOptionsSummary.ee.js ***!
-  \***********************************************************************************************************/
-/*! exports provided: GiftOptionsSummaryFragment */
-/*! exports used: GiftOptionsSummaryFragment */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return GiftOptionsSummaryFragment; });
-/* harmony import */ var _apollo_client__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @apollo/client */ "./node_modules/graphql-tag/lib/index.js");
-
-const GiftOptionsSummaryFragment = _apollo_client__WEBPACK_IMPORTED_MODULE_0__[/* gql */ "a"]`
-    fragment GiftOptionsSummaryFragment on Cart {
-        id
-        prices {
-            gift_options {
-                printed_card {
-                    value
-                    currency
-                }
-            }
-        }
-    }
-`;
-
-/***/ }),
-
-/***/ "./node_modules/@magento/peregrine/lib/talons/CartPage/cartPageFragments.gql.js":
-/*!**************************************************************************************!*\
-  !*** ./node_modules/@magento/peregrine/lib/talons/CartPage/cartPageFragments.gql.js ***!
-  \**************************************************************************************/
-/*! exports provided: CartPageFragment */
-/*! exports used: CartPageFragment */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CartPageFragment; });
-/* harmony import */ var _apollo_client__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @apollo/client */ "./node_modules/graphql-tag/lib/index.js");
-/* harmony import */ var _GiftCards_giftCardFragments_gql__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./GiftCards/giftCardFragments.gql */ "./node_modules/@magento/peregrine/lib/talons/CartPage/GiftCards/giftCardFragments.gql.ee.js");
-/* harmony import */ var _ProductListing_productListingFragments_gql__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ProductListing/productListingFragments.gql */ "./src/talons/CartPage/ProductListing/productListingFragments.gql.js");
-/* harmony import */ var _magento_peregrine_lib_talons_CartPage_PriceSummary_priceSummaryFragments_gql__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @magento/peregrine/lib/talons/CartPage/PriceSummary/priceSummaryFragments.gql */ "./node_modules/@magento/peregrine/lib/talons/CartPage/PriceSummary/priceSummaryFragments.gql.js");
-/* harmony import */ var _PriceAdjustments_CouponCode_couponCodeFragments_gql__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./PriceAdjustments/CouponCode/couponCodeFragments.gql */ "./node_modules/@magento/peregrine/lib/talons/CartPage/PriceAdjustments/CouponCode/couponCodeFragments.gql.js");
-
-
-
-
-
-const CartPageFragment = _apollo_client__WEBPACK_IMPORTED_MODULE_0__[/* gql */ "a"]`
-    fragment CartPageFragment on Cart {
-        id
-        total_quantity
-        ...AppliedCouponsFragment
-        ...GiftCardFragment
-        ...ProductListingFragment
-        ...PriceSummaryFragment
-    }
-    ${_PriceAdjustments_CouponCode_couponCodeFragments_gql__WEBPACK_IMPORTED_MODULE_4__[/* AppliedCouponsFragment */ "a"]}
-    ${_GiftCards_giftCardFragments_gql__WEBPACK_IMPORTED_MODULE_1__[/* GiftCardFragment */ "a"]}
-    ${_ProductListing_productListingFragments_gql__WEBPACK_IMPORTED_MODULE_2__[/* ProductListingFragment */ "a"]}
-    ${_magento_peregrine_lib_talons_CartPage_PriceSummary_priceSummaryFragments_gql__WEBPACK_IMPORTED_MODULE_3__[/* PriceSummaryFragment */ "a"]}
-`;
-
-/***/ }),
-
 /***/ "./node_modules/@magento/peregrine/lib/talons/CheckoutPage/checkoutPageFragments.gql.js":
 /*!**********************************************************************************************!*\
   !*** ./node_modules/@magento/peregrine/lib/talons/CheckoutPage/checkoutPageFragments.gql.js ***!
@@ -6337,6 +6093,858 @@ Button.defaultProps = {
   disabled: false
 };
 /* harmony default export */ var Button_button = __webpack_exports__["a"] = (Button);
+
+/***/ }),
+
+/***/ "./node_modules/@magento/venia-ui/lib/components/Checkbox/checkbox.js":
+/*!****************************************************************************************!*\
+  !*** ./node_modules/@magento/venia-ui/lib/components/Checkbox/checkbox.js + 1 modules ***!
+  \****************************************************************************************/
+/*! exports provided: default */
+/*! exports used: default */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/hooks/hook-wrappers/useInformedFieldStateWrapper.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/shallowMerge.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Field/message.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-feather/dist/icons/check-square.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-feather/dist/icons/square.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/Checkbox/checkbox.module.css (<- Module uses module.id) */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/informed/dist/esm/index.js (<- Module uses injected variables (process)) */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/prop-types/index.js (<- Module is not an ECMAScript module) */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react/index.js (<- Module is not an ECMAScript module) */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js (<- Module is not an ECMAScript module) */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+
+// EXTERNAL MODULE: ./node_modules/react/index.js
+var react = __webpack_require__("./node_modules/react/index.js");
+var react_default = /*#__PURE__*/__webpack_require__.n(react);
+
+// EXTERNAL MODULE: ./node_modules/prop-types/index.js
+var prop_types = __webpack_require__("./node_modules/prop-types/index.js");
+
+// EXTERNAL MODULE: ./node_modules/informed/dist/esm/index.js
+var esm = __webpack_require__("./node_modules/informed/dist/esm/index.js");
+
+// EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/hooks/hook-wrappers/useInformedFieldStateWrapper.js
+var useInformedFieldStateWrapper = __webpack_require__("./node_modules/@magento/peregrine/lib/hooks/hook-wrappers/useInformedFieldStateWrapper.js");
+
+// EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/util/shallowMerge.js
+var shallowMerge = __webpack_require__("./node_modules/@magento/peregrine/lib/util/shallowMerge.js");
+
+// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/Field/message.js + 1 modules
+var Field_message = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/Field/message.js");
+
+// EXTERNAL MODULE: ./node_modules/react-feather/dist/icons/check-square.js
+var check_square = __webpack_require__("./node_modules/react-feather/dist/icons/check-square.js");
+
+// EXTERNAL MODULE: ./node_modules/react-feather/dist/icons/square.js
+var square = __webpack_require__("./node_modules/react-feather/dist/icons/square.js");
+
+// EXTERNAL MODULE: ./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js
+var injectStylesIntoStyleTag = __webpack_require__("./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+var injectStylesIntoStyleTag_default = /*#__PURE__*/__webpack_require__.n(injectStylesIntoStyleTag);
+
+// EXTERNAL MODULE: ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/Checkbox/checkbox.module.css
+var checkbox_module = __webpack_require__("./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/Checkbox/checkbox.module.css");
+
+// CONCATENATED MODULE: ./node_modules/@magento/venia-ui/lib/components/Checkbox/checkbox.module.css
+
+            
+
+var options = {"injectType":"styleTag"};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = injectStylesIntoStyleTag_default()(checkbox_module["a" /* default */], options);
+
+
+
+/* harmony default export */ var Checkbox_checkbox_module = (checkbox_module["a" /* default */].locals || {});
+// CONCATENATED MODULE: ./node_modules/@magento/venia-ui/lib/components/Checkbox/checkbox.js
+const _excluded = ["ariaLabel", "classes", "field", "fieldValue", "id", "label", "message"];
+function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
+
+
+
+
+
+
+
+
+/* TODO: change lint config to use `label-has-associated-control` */
+/* eslint-disable jsx-a11y/label-has-for */
+
+const checkedIcon = /*#__PURE__*/react_default.a.createElement(check_square["a" /* default */], null);
+const uncheckedIcon = /*#__PURE__*/react_default.a.createElement(square["a" /* default */], null);
+const Checkbox = props => {
+  const {
+      ariaLabel,
+      classes: propClasses,
+      field,
+      fieldValue,
+      id,
+      label,
+      message
+    } = props,
+    rest = _objectWithoutProperties(props, _excluded);
+  const fieldApi = Object(esm["j" /* useFieldApi */])(field);
+  const fieldState = Object(useInformedFieldStateWrapper["a" /* default */])(field);
+  const classes = Object(shallowMerge["a" /* default */])(Checkbox_checkbox_module, propClasses);
+  const icon = fieldState.value ? checkedIcon : uncheckedIcon;
+  Object(react["useEffect"])(() => {
+    if (fieldValue != null && fieldValue !== fieldState.value) {
+      fieldApi.setValue(fieldValue);
+    }
+  }, [fieldApi, fieldState.value, fieldValue]);
+  return /*#__PURE__*/react_default.a.createElement(react["Fragment"], null, /*#__PURE__*/react_default.a.createElement("label", {
+    "data-cy": "Checkbox-label",
+    "aria-label": ariaLabel,
+    className: classes.root,
+    htmlFor: id
+  }, /*#__PURE__*/react_default.a.createElement(esm["a" /* Checkbox */], _extends({}, rest, {
+    className: classes.input,
+    field: field,
+    id: id
+  })), /*#__PURE__*/react_default.a.createElement("span", {
+    className: classes.icon
+  }, icon), /*#__PURE__*/react_default.a.createElement("span", {
+    className: classes.label
+  }, label)), /*#__PURE__*/react_default.a.createElement(Field_message["a" /* default */], {
+    fieldState: fieldState
+  }, message));
+};
+/* harmony default export */ var Checkbox_checkbox = __webpack_exports__["a"] = (Checkbox);
+Checkbox.propTypes = {
+  ariaLabel: prop_types["string"],
+  classes: Object(prop_types["shape"])({
+    icon: prop_types["string"],
+    input: prop_types["string"],
+    label: prop_types["string"],
+    message: prop_types["string"],
+    root: prop_types["string"]
+  }),
+  field: prop_types["string"].isRequired,
+  id: prop_types["string"],
+  label: prop_types["node"].isRequired,
+  message: prop_types["node"]
+};
+
+/* eslint-enable jsx-a11y/label-has-for */
+
+/***/ }),
+
+/***/ "./node_modules/@magento/venia-ui/lib/components/CreateAccount/createAccount.js":
+/*!**************************************************************************************************!*\
+  !*** ./node_modules/@magento/venia-ui/lib/components/CreateAccount/createAccount.js + 3 modules ***!
+  \**************************************************************************************************/
+/*! exports provided: default */
+/*! exports used: default */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/react/hooks/useApolloClient.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/react/hooks/useMutation.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/context/cart.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/context/eventing.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/context/user.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/hooks/useAwaitQuery.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/hooks/useGoogleReCaptcha/useGoogleReCaptcha.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/store/actions/cart/asyncActions.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/talons/CheckoutPage/checkoutPageFragments.gql.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/shallowMerge.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Button/button.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Checkbox/checkbox.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Field/field.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/FormError/formError.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/GoogleReCaptcha/googleReCaptcha.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Password/password.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/TextInput/textInput.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/util/combineValidators.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/util/formValidators.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/CreateAccount/createAccount.module.css (<- Module uses module.id) */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql-tag/lib/index.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/informed/dist/esm/index.js (<- Module uses injected variables (process)) */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/prop-types/index.js (<- Module is not an ECMAScript module) */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-intl/lib/src/components/message.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-intl/lib/src/components/useIntl.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react/index.js (<- Module is not an ECMAScript module) */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js (<- Module is not an ECMAScript module) */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+
+// EXTERNAL MODULE: ./node_modules/react/index.js
+var react = __webpack_require__("./node_modules/react/index.js");
+var react_default = /*#__PURE__*/__webpack_require__.n(react);
+
+// EXTERNAL MODULE: ./node_modules/react-intl/lib/src/components/useIntl.js
+var useIntl = __webpack_require__("./node_modules/react-intl/lib/src/components/useIntl.js");
+
+// EXTERNAL MODULE: ./node_modules/react-intl/lib/src/components/message.js
+var message = __webpack_require__("./node_modules/react-intl/lib/src/components/message.js");
+
+// EXTERNAL MODULE: ./node_modules/informed/dist/esm/index.js
+var esm = __webpack_require__("./node_modules/informed/dist/esm/index.js");
+
+// EXTERNAL MODULE: ./node_modules/prop-types/index.js
+var prop_types = __webpack_require__("./node_modules/prop-types/index.js");
+
+// EXTERNAL MODULE: ./node_modules/@apollo/client/react/hooks/useApolloClient.js
+var useApolloClient = __webpack_require__("./node_modules/@apollo/client/react/hooks/useApolloClient.js");
+
+// EXTERNAL MODULE: ./node_modules/@apollo/client/react/hooks/useMutation.js
+var useMutation = __webpack_require__("./node_modules/@apollo/client/react/hooks/useMutation.js");
+
+// EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/util/shallowMerge.js
+var shallowMerge = __webpack_require__("./node_modules/@magento/peregrine/lib/util/shallowMerge.js");
+
+// EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/context/user.js
+var user = __webpack_require__("./node_modules/@magento/peregrine/lib/context/user.js");
+
+// EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/context/cart.js
+var cart = __webpack_require__("./node_modules/@magento/peregrine/lib/context/cart.js");
+
+// EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/hooks/useAwaitQuery.js
+var useAwaitQuery = __webpack_require__("./node_modules/@magento/peregrine/lib/hooks/useAwaitQuery.js");
+
+// EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/store/actions/cart/asyncActions.js
+var asyncActions = __webpack_require__("./node_modules/@magento/peregrine/lib/store/actions/cart/asyncActions.js");
+
+// EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/hooks/useGoogleReCaptcha/useGoogleReCaptcha.js + 2 modules
+var useGoogleReCaptcha = __webpack_require__("./node_modules/@magento/peregrine/lib/hooks/useGoogleReCaptcha/useGoogleReCaptcha.js");
+
+// EXTERNAL MODULE: ./node_modules/graphql-tag/lib/index.js + 3 modules
+var lib = __webpack_require__("./node_modules/graphql-tag/lib/index.js");
+
+// EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/talons/CheckoutPage/checkoutPageFragments.gql.js
+var checkoutPageFragments_gql = __webpack_require__("./node_modules/@magento/peregrine/lib/talons/CheckoutPage/checkoutPageFragments.gql.js");
+
+// CONCATENATED MODULE: ./node_modules/@magento/peregrine/lib/talons/CreateAccount/createAccount.gql.js
+
+
+const CREATE_ACCOUNT = lib["a" /* gql */]`
+    mutation CreateAccount(
+        $email: String!
+        $firstname: String!
+        $lastname: String!
+        $password: String!
+        $is_subscribed: Boolean!
+    ) {
+        createCustomer(
+            input: {
+                email: $email
+                firstname: $firstname
+                lastname: $lastname
+                password: $password
+                is_subscribed: $is_subscribed
+            }
+        ) {
+            # The createCustomer mutation returns a non-nullable CustomerOutput type
+            # which requires that at least one of the sub fields be returned.
+
+            # eslint-disable-next-line @graphql-eslint/require-id-when-available
+            customer {
+                email
+            }
+        }
+    }
+`;
+const GET_CUSTOMER = lib["a" /* gql */]`
+    query GetCustomerAfterCreate {
+        # eslint-disable-next-line @graphql-eslint/require-id-when-available
+        customer {
+            email
+            firstname
+            lastname
+            is_subscribed
+        }
+    }
+`;
+const SIGN_IN = lib["a" /* gql */]`
+    mutation SignInAfterCreate($email: String!, $password: String!) {
+        generateCustomerToken(email: $email, password: $password) {
+            token
+        }
+    }
+`;
+const CREATE_CART = lib["a" /* gql */]`
+    mutation CreateCartAfterAccountCreation {
+        cartId: createEmptyCart
+    }
+`;
+const GET_CART_DETAILS = lib["a" /* gql */]`
+    query GetCartDetailsAfterAccountCreation($cartId: String!) {
+        cart(cart_id: $cartId) {
+            id
+            # eslint-disable-next-line @graphql-eslint/require-id-when-available
+            items {
+                uid
+                prices {
+                    price {
+                        value
+                    }
+                }
+                # eslint-disable-next-line @graphql-eslint/require-id-when-available
+                product {
+                    uid
+                    name
+                    sku
+                    small_image {
+                        url
+                        label
+                    }
+                    price {
+                        regularPrice {
+                            amount {
+                                value
+                            }
+                        }
+                    }
+                }
+                quantity
+                # eslint-disable-next-line @graphql-eslint/require-id-when-available
+                ... on ConfigurableCartItem {
+                    # eslint-disable-next-line @graphql-eslint/require-id-when-available
+                    configurable_options {
+                        configurable_product_option_uid
+                        option_label
+                        configurable_product_option_value_uid
+                        value_label
+                    }
+                }
+            }
+            prices {
+                grand_total {
+                    value
+                    currency
+                }
+            }
+        }
+    }
+`;
+const MERGE_CARTS = lib["a" /* gql */]`
+    mutation MergeCartsAfterAccountCreation(
+        $sourceCartId: String!
+        $destinationCartId: String!
+    ) {
+        mergeCarts(
+            source_cart_id: $sourceCartId
+            destination_cart_id: $destinationCartId
+        ) {
+            id
+            # eslint-disable-next-line @graphql-eslint/require-id-when-available
+            items {
+                uid
+            }
+            ...CheckoutPageFragment
+        }
+    }
+    ${checkoutPageFragments_gql["a" /* CheckoutPageFragment */]}
+`;
+/* harmony default export */ var createAccount_gql = ({
+  createAccountMutation: CREATE_ACCOUNT,
+  createCartMutation: CREATE_CART,
+  getCartDetailsQuery: GET_CART_DETAILS,
+  getCustomerQuery: GET_CUSTOMER,
+  mergeCartsMutation: MERGE_CARTS,
+  signInMutation: SIGN_IN
+});
+// EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/context/eventing.js
+var eventing = __webpack_require__("./node_modules/@magento/peregrine/lib/context/eventing.js");
+
+// CONCATENATED MODULE: ./node_modules/@magento/peregrine/lib/talons/CreateAccount/useCreateAccount.js
+const _excluded = ["email", "firstName", "lastName"];
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
+function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return typeof key === "symbol" ? key : String(key); }
+function _toPrimitive(input, hint) { if (typeof input !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (typeof res !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
+
+
+
+
+
+
+
+
+
+
+
+/**
+ * Returns props necessary to render CreateAccount component. In particular this
+ * talon handles the submission flow by first doing a pre-submisson validation
+ * and then, on success, invokes the `onSubmit` prop, which is usually the action.
+ *
+ * @param {CreateAccountQueries} props.queries queries used by the talon
+ * @param {CreateAccountMutations} props.mutations mutations used by the talon
+ * @param {InitialValues} props.initialValues initial values to sanitize and seed the form
+ * @param {Function} props.onSubmit the post submit callback
+ * @param {Function} props.onCancel the cancel callback
+ *
+ * @returns {CreateAccountProps}
+ *
+ * @example <caption>Importing into your project</caption>
+ * import { useForgotPassword } from '@magento/peregrine/lib/talons/CreateAccount/useCreateAccount.js';
+ */
+const useCreateAccount = props => {
+  const {
+    initialValues = {},
+    onSubmit,
+    onCancel
+  } = props;
+  const operations = Object(shallowMerge["a" /* default */])(createAccount_gql, props.operations);
+  const {
+    createAccountMutation,
+    createCartMutation,
+    getCartDetailsQuery,
+    getCustomerQuery,
+    mergeCartsMutation,
+    signInMutation
+  } = operations;
+  const apolloClient = Object(useApolloClient["a" /* useApolloClient */])();
+  const [isSubmitting, setIsSubmitting] = Object(react["useState"])(false);
+  const [{
+    cartId
+  }, {
+    createCart,
+    removeCart,
+    getCartDetails
+  }] = Object(cart["b" /* useCartContext */])();
+  const [{
+    isGettingDetails
+  }, {
+    getUserDetails,
+    setToken
+  }] = Object(user["b" /* useUserContext */])();
+  const [, {
+    dispatch
+  }] = Object(eventing["b" /* useEventingContext */])();
+  const [fetchCartId] = Object(useMutation["a" /* useMutation */])(createCartMutation);
+  const [mergeCarts] = Object(useMutation["a" /* useMutation */])(mergeCartsMutation);
+
+  // For create account and sign in mutations, we don't want to cache any
+  // personally identifiable information (PII). So we set fetchPolicy to 'no-cache'.
+  const [createAccount, {
+    error: createAccountError
+  }] = Object(useMutation["a" /* useMutation */])(createAccountMutation, {
+    fetchPolicy: 'no-cache'
+  });
+  const [signIn, {
+    error: signInError
+  }] = Object(useMutation["a" /* useMutation */])(signInMutation, {
+    fetchPolicy: 'no-cache'
+  });
+  const fetchUserDetails = Object(useAwaitQuery["a" /* useAwaitQuery */])(getCustomerQuery);
+  const fetchCartDetails = Object(useAwaitQuery["a" /* useAwaitQuery */])(getCartDetailsQuery);
+  const {
+    generateReCaptchaData,
+    recaptchaLoading,
+    recaptchaWidgetProps
+  } = Object(useGoogleReCaptcha["a" /* useGoogleReCaptcha */])({
+    currentForm: 'CUSTOMER_CREATE',
+    formAction: 'createAccount'
+  });
+  const handleCancel = Object(react["useCallback"])(() => {
+    onCancel();
+  }, [onCancel]);
+  const handleSubmit = Object(react["useCallback"])(async formValues => {
+    setIsSubmitting(true);
+    try {
+      // Get source cart id (guest cart id).
+      const sourceCartId = cartId;
+
+      // Get reCaptchaV3 Data for createAccount mutation
+      const recaptchaDataForCreateAccount = await generateReCaptchaData();
+
+      // Create the account and then sign in.
+      await createAccount(_objectSpread({
+        variables: {
+          email: formValues.customer.email,
+          firstname: formValues.customer.firstname,
+          lastname: formValues.customer.lastname,
+          password: formValues.password,
+          is_subscribed: !!formValues.subscribe
+        }
+      }, recaptchaDataForCreateAccount));
+      dispatch({
+        type: 'USER_CREATE_ACCOUNT',
+        payload: {
+          email: formValues.customer.email,
+          firstName: formValues.customer.firstname,
+          lastName: formValues.customer.lastname,
+          isSubscribed: !!formValues.subscribe
+        }
+      });
+
+      // Get reCaptchaV3 Data for signIn mutation
+      const recaptchaDataForSignIn = await generateReCaptchaData();
+      const signInResponse = await signIn(_objectSpread({
+        variables: {
+          email: formValues.customer.email,
+          password: formValues.password
+        }
+      }, recaptchaDataForSignIn));
+      const token = signInResponse.data.generateCustomerToken.token;
+      await setToken(token);
+
+      // Clear all cart/customer data from cache and redux.
+      await apolloClient.clearCacheData(apolloClient, 'cart');
+      await apolloClient.clearCacheData(apolloClient, 'customer');
+      await removeCart();
+
+      // Create and get the customer's cart id.
+      await createCart({
+        fetchCartId
+      });
+      const destinationCartId = await Object(asyncActions["retrieveCartId"])();
+
+      // Merge the guest cart into the customer cart.
+      await mergeCarts({
+        variables: {
+          destinationCartId,
+          sourceCartId
+        }
+      });
+
+      // Ensure old stores are updated with any new data.
+      await getUserDetails({
+        fetchUserDetails
+      });
+      await getCartDetails({
+        fetchCartId,
+        fetchCartDetails
+      });
+
+      // Finally, invoke the post-submission callback.
+      if (onSubmit) {
+        onSubmit();
+      }
+    } catch (error) {
+      if (true) {
+        console.error(error);
+      }
+      setIsSubmitting(false);
+    }
+  }, [cartId, generateReCaptchaData, createAccount, signIn, setToken, apolloClient, removeCart, createCart, fetchCartId, mergeCarts, getUserDetails, fetchUserDetails, getCartDetails, fetchCartDetails, onSubmit, dispatch]);
+  const sanitizedInitialValues = Object(react["useMemo"])(() => {
+    const {
+        email,
+        firstName,
+        lastName
+      } = initialValues,
+      rest = _objectWithoutProperties(initialValues, _excluded);
+    return _objectSpread({
+      customer: {
+        email,
+        firstname: firstName,
+        lastname: lastName
+      }
+    }, rest);
+  }, [initialValues]);
+  const errors = Object(react["useMemo"])(() => new Map([['createAccountQuery', createAccountError], ['signInMutation', signInError]]), [createAccountError, signInError]);
+  return {
+    errors,
+    handleCancel,
+    handleSubmit,
+    initialValues: sanitizedInitialValues,
+    isDisabled: isSubmitting || isGettingDetails || recaptchaLoading,
+    recaptchaWidgetProps
+  };
+};
+
+/** JSDocs type definitions */
+
+/**
+ * GraphQL queries for the create account form.
+ * This is a type used by the {@link useCreateAccount} talon.
+ *
+ * @typedef {Object} CreateAccountQueries
+ *
+ * @property {GraphQLAST} customerQuery query to fetch customer details
+ * @property {GraphQLAST} getCartDetailsQuery query to get cart details
+ */
+
+/**
+ * GraphQL mutations for the create account form.
+ * This is a type used by the {@link useCreateAccount} talon.
+ *
+ * @typedef {Object} CreateAccountMutations
+ *
+ * @property {GraphQLAST} createAccountMutation mutation for creating new account
+ * @property {GraphQLAST} createCartMutation mutation for creating new cart
+ * @property {GraphQLAST} mergeCartsMutation mutation for merging carts
+ * @property {GraphQLAST} signInMutation mutation for signing
+ */
+
+/**
+ * Initial values for the create account form.
+ * This is a type used by the {@link useCreateAccount} talon.
+ *
+ * @typedef {Object} InitialValues
+ *
+ * @property {String} email email id of the user
+ * @property {String} firstName first name of the user
+ * @property {String} lastName last name of the user
+ */
+
+/**
+ * Sanitized initial values for the create account form.
+ * This is a type used by the {@link useCreateAccount} talon.
+ *
+ * @typedef {Object} SanitizedInitialValues
+ *
+ * @property {String} email email id of the user
+ * @property {String} firstname first name of the user
+ * @property {String} lastname last name of the user
+ */
+
+/**
+ * Object type returned by the {@link useCreateAccount} talon.
+ * It provides props data to use when rendering the create account form component.
+ *
+ * @typedef {Object} CreateAccountProps
+ *
+ * @property {Map} errors a map of errors to their respective mutations
+ * @property {Function} handleCancel callback function to handle form cancellations
+ * @property {Function} handleSubmit callback function to handle form submission
+ * @property {SanitizedInitialValues} initialValues initial values for the create account form
+ * @property {Boolean} isDisabled true if either details are being fetched or form is being submitted. False otherwise.
+ * @property {Object} recaptchaWidgetProps - Props for the GoogleReCaptcha component.
+ * @property {Function} recaptchaWidgetProps.containerElement - Container reference callback.
+ * @property {Boolean} recaptchaWidgetProps.shouldRender - Checks if component should be rendered.
+ */
+// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/util/combineValidators.js
+var combineValidators = __webpack_require__("./node_modules/@magento/venia-ui/lib/util/combineValidators.js");
+
+// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/util/formValidators.js
+var formValidators = __webpack_require__("./node_modules/@magento/venia-ui/lib/util/formValidators.js");
+
+// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/Button/button.js + 1 modules
+var Button_button = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/Button/button.js");
+
+// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/Checkbox/checkbox.js + 1 modules
+var Checkbox_checkbox = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/Checkbox/checkbox.js");
+
+// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/Field/field.js + 1 modules
+var field = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/Field/field.js");
+
+// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/TextInput/textInput.js + 1 modules
+var textInput = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/TextInput/textInput.js");
+
+// EXTERNAL MODULE: ./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js
+var injectStylesIntoStyleTag = __webpack_require__("./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+var injectStylesIntoStyleTag_default = /*#__PURE__*/__webpack_require__.n(injectStylesIntoStyleTag);
+
+// EXTERNAL MODULE: ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/CreateAccount/createAccount.module.css
+var createAccount_module = __webpack_require__("./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/CreateAccount/createAccount.module.css");
+
+// CONCATENATED MODULE: ./node_modules/@magento/venia-ui/lib/components/CreateAccount/createAccount.module.css
+
+            
+
+var options = {"injectType":"styleTag"};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = injectStylesIntoStyleTag_default()(createAccount_module["a" /* default */], options);
+
+
+
+/* harmony default export */ var CreateAccount_createAccount_module = (createAccount_module["a" /* default */].locals || {});
+// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/FormError/formError.js + 5 modules
+var formError = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/FormError/formError.js");
+
+// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/Password/password.js + 2 modules
+var Password_password = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/Password/password.js");
+
+// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/GoogleReCaptcha/googleReCaptcha.js + 1 modules
+var googleReCaptcha = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/GoogleReCaptcha/googleReCaptcha.js");
+
+// CONCATENATED MODULE: ./node_modules/@magento/venia-ui/lib/components/CreateAccount/createAccount.js
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const CreateAccount = props => {
+  const talonProps = useCreateAccount({
+    initialValues: props.initialValues,
+    onSubmit: props.onSubmit,
+    onCancel: props.onCancel
+  });
+  const {
+    errors,
+    handleCancel,
+    handleSubmit,
+    handleEnterKeyPress,
+    isDisabled,
+    initialValues,
+    recaptchaWidgetProps
+  } = talonProps;
+  const {
+    formatMessage
+  } = Object(useIntl["a" /* default */])();
+  const classes = Object(shallowMerge["a" /* default */])(CreateAccount_createAccount_module, props.classes);
+  const cancelButton = props.isCancelButtonHidden ? null : /*#__PURE__*/react_default.a.createElement(Button_button["a" /* default */], {
+    "data-cy": "CreateAccount-cancelButton",
+    className: classes.cancelButton,
+    disabled: isDisabled,
+    type: "button",
+    priority: "low",
+    onClick: handleCancel
+  }, /*#__PURE__*/react_default.a.createElement(message["a" /* default */], {
+    id: 'createAccount.cancelText',
+    defaultMessage: 'Cancel'
+  }));
+  const submitButton = /*#__PURE__*/react_default.a.createElement(Button_button["a" /* default */], {
+    className: classes.submitButton,
+    disabled: isDisabled,
+    type: "submit",
+    priority: "high",
+    onKeyDown: handleEnterKeyPress,
+    "data-cy": "CreateAccount-submitButton"
+  }, /*#__PURE__*/react_default.a.createElement(message["a" /* default */], {
+    id: 'createAccount.createAccountText',
+    defaultMessage: 'Create an Account'
+  }));
+  return /*#__PURE__*/react_default.a.createElement(esm["b" /* Form */], {
+    "data-cy": "CreateAccount-form",
+    className: classes.root,
+    initialValues: initialValues,
+    onSubmit: handleSubmit
+  }, /*#__PURE__*/react_default.a.createElement("h2", {
+    "data-cy": "CreateAccount-title",
+    className: classes.title
+  }, /*#__PURE__*/react_default.a.createElement(message["a" /* default */], {
+    id: 'createAccount.createAccountText',
+    defaultMessage: 'Create an Account'
+  })), /*#__PURE__*/react_default.a.createElement(formError["a" /* default */], {
+    errors: Array.from(errors.values())
+  }), /*#__PURE__*/react_default.a.createElement(field["a" /* default */], {
+    id: "firstName",
+    label: formatMessage({
+      id: 'createAccount.firstNameText',
+      defaultMessage: 'First Name'
+    })
+  }, /*#__PURE__*/react_default.a.createElement(textInput["a" /* default */], {
+    id: "firstName",
+    field: "customer.firstname",
+    autoComplete: "given-name",
+    validate: formValidators["c" /* isRequired */],
+    validateOnBlur: true,
+    mask: value => value && value.trim(),
+    maskOnBlur: true,
+    "data-cy": "customer-firstname",
+    "aria-label": formatMessage({
+      id: 'global.firstNameRequired',
+      defaultMessage: 'First Name Required'
+    })
+  })), /*#__PURE__*/react_default.a.createElement(field["a" /* default */], {
+    id: "lastName",
+    label: formatMessage({
+      id: 'createAccount.lastNameText',
+      defaultMessage: 'Last Name'
+    })
+  }, /*#__PURE__*/react_default.a.createElement(textInput["a" /* default */], {
+    id: "lastName",
+    field: "customer.lastname",
+    autoComplete: "family-name",
+    validate: formValidators["c" /* isRequired */],
+    validateOnBlur: true,
+    mask: value => value && value.trim(),
+    maskOnBlur: true,
+    "data-cy": "customer-lastname",
+    "aria-label": formatMessage({
+      id: 'global.lastNameRequired',
+      defaultMessage: 'Last Name Required'
+    })
+  })), /*#__PURE__*/react_default.a.createElement(field["a" /* default */], {
+    id: "Email",
+    label: formatMessage({
+      id: 'createAccount.emailText',
+      defaultMessage: 'Email'
+    })
+  }, /*#__PURE__*/react_default.a.createElement(textInput["a" /* default */], {
+    id: "Email",
+    field: "customer.email",
+    autoComplete: "email",
+    validate: formValidators["c" /* isRequired */],
+    validateOnBlur: true,
+    mask: value => value && value.trim(),
+    maskOnBlur: true,
+    "data-cy": "customer-email",
+    "aria-label": formatMessage({
+      id: 'global.emailRequired',
+      defaultMessage: 'Email Required'
+    })
+  })), /*#__PURE__*/react_default.a.createElement(Password_password["a" /* default */], {
+    id: "Password",
+    autoComplete: "new-password",
+    fieldName: "password",
+    isToggleButtonHidden: false,
+    label: formatMessage({
+      id: 'createAccount.passwordText',
+      defaultMessage: 'Password'
+    }),
+    validate: Object(combineValidators["a" /* default */])([formValidators["c" /* isRequired */], [formValidators["a" /* hasLengthAtLeast */], 8], formValidators["d" /* validatePassword */]]),
+    validateOnBlur: true,
+    mask: value => value && value.trim(),
+    maskOnBlur: true,
+    "data-cy": "password",
+    "aria-label": formatMessage({
+      id: 'global.passwordRequired',
+      defaultMessage: 'Password Required'
+    })
+  }), /*#__PURE__*/react_default.a.createElement("div", {
+    className: classes.subscribe
+  }, /*#__PURE__*/react_default.a.createElement(Checkbox_checkbox["a" /* default */], {
+    field: "subscribe",
+    id: "subscribe",
+    label: formatMessage({
+      id: 'createAccount.subscribeText',
+      defaultMessage: 'Subscribe to news and updates'
+    })
+  })), /*#__PURE__*/react_default.a.createElement(googleReCaptcha["a" /* default */], recaptchaWidgetProps), /*#__PURE__*/react_default.a.createElement("div", {
+    className: classes.actions
+  }, submitButton, cancelButton));
+};
+CreateAccount.propTypes = {
+  classes: Object(prop_types["shape"])({
+    actions: prop_types["string"],
+    lead: prop_types["string"],
+    root: prop_types["string"],
+    subscribe: prop_types["string"]
+  }),
+  initialValues: Object(prop_types["shape"])({
+    email: prop_types["string"],
+    firstName: prop_types["string"],
+    lastName: prop_types["string"]
+  }),
+  isCancelButtonHidden: prop_types["bool"],
+  onSubmit: prop_types["func"],
+  onCancel: prop_types["func"]
+};
+CreateAccount.defaultProps = {
+  onCancel: () => {},
+  isCancelButtonHidden: true
+};
+/* harmony default export */ var CreateAccount_createAccount = __webpack_exports__["a"] = (CreateAccount);
 
 /***/ }),
 
@@ -7000,117 +7608,6 @@ const StoreTitle = props => {
 
 /***/ }),
 
-/***/ "./node_modules/@magento/venia-ui/lib/components/LinkButton/linkButton.js":
-/*!********************************************************************************************!*\
-  !*** ./node_modules/@magento/venia-ui/lib/components/LinkButton/linkButton.js + 1 modules ***!
-  \********************************************************************************************/
-/*! exports provided: default */
-/*! exports used: default */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/shallowMerge.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Button/button.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/LinkButton/linkButton.module.css (<- Module uses module.id) */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/prop-types/index.js (<- Module is not an ECMAScript module) */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react/index.js (<- Module is not an ECMAScript module) */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js (<- Module is not an ECMAScript module) */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-
-// EXTERNAL MODULE: ./node_modules/react/index.js
-var react = __webpack_require__("./node_modules/react/index.js");
-var react_default = /*#__PURE__*/__webpack_require__.n(react);
-
-// EXTERNAL MODULE: ./node_modules/prop-types/index.js
-var prop_types = __webpack_require__("./node_modules/prop-types/index.js");
-
-// EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/util/shallowMerge.js
-var shallowMerge = __webpack_require__("./node_modules/@magento/peregrine/lib/util/shallowMerge.js");
-
-// EXTERNAL MODULE: ./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js
-var injectStylesIntoStyleTag = __webpack_require__("./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
-var injectStylesIntoStyleTag_default = /*#__PURE__*/__webpack_require__.n(injectStylesIntoStyleTag);
-
-// EXTERNAL MODULE: ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/LinkButton/linkButton.module.css
-var linkButton_module = __webpack_require__("./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/LinkButton/linkButton.module.css");
-
-// CONCATENATED MODULE: ./node_modules/@magento/venia-ui/lib/components/LinkButton/linkButton.module.css
-
-            
-
-var options = {"injectType":"styleTag"};
-
-options.insert = "head";
-options.singleton = false;
-
-var update = injectStylesIntoStyleTag_default()(linkButton_module["a" /* default */], options);
-
-
-
-/* harmony default export */ var LinkButton_linkButton_module = (linkButton_module["a" /* default */].locals || {});
-// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/Button/button.js + 1 modules
-var Button_button = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/Button/button.js");
-
-// CONCATENATED MODULE: ./node_modules/@magento/venia-ui/lib/components/LinkButton/linkButton.js
-const _excluded = ["children", "classes", "type"];
-function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
-function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-
-
-
-
-
-
-/**
- * A component for link buttons.
- *
- * @typedef LinkButton
- * @kind functional component
- *
- * @param {props} props React component props
- *
- * @returns {React.Element} A React component that displays a single link button.
- */
-const LinkButton = props => {
-  const {
-      children,
-      classes: propClasses,
-      type
-    } = props,
-    restProps = _objectWithoutProperties(props, _excluded);
-  const classes = Object(shallowMerge["a" /* default */])(LinkButton_linkButton_module, propClasses);
-  return /*#__PURE__*/react_default.a.createElement(Button_button["a" /* default */], _extends({
-    priority: 'normal',
-    classes: {
-      root_normalPriority: classes.root
-    },
-    type: type
-  }, restProps), children);
-};
-
-/**
- * Props for {@link Button}
- *
- * @typedef props
- *
- * @property {Object} classes An object containing the class names for the
- * Button component.
- * @property {string} classes.root classes for root container
- * @property {string} type the type of the Button
- */
-LinkButton.propTypes = {
-  classes: Object(prop_types["shape"])({
-    root: prop_types["string"]
-  }),
-  type: Object(prop_types["oneOf"])(['button', 'reset', 'submit']).isRequired
-};
-LinkButton.defaultProps = {
-  type: 'button'
-};
-/* harmony default export */ var linkButton = __webpack_exports__["a"] = (LinkButton);
-
-/***/ }),
-
 /***/ "./node_modules/@magento/venia-ui/lib/components/Password/password.js":
 /*!****************************************************************************************!*\
   !*** ./node_modules/@magento/venia-ui/lib/components/Password/password.js + 2 modules ***!
@@ -7323,748 +7820,6 @@ Password.defaultProps = {
 
 /***/ }),
 
-/***/ "./node_modules/@magento/venia-ui/lib/components/SignIn/signIn.js":
-/*!************************************************************************************!*\
-  !*** ./node_modules/@magento/venia-ui/lib/components/SignIn/signIn.js + 4 modules ***!
-  \************************************************************************************/
-/*! exports provided: default */
-/*! exports used: default */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/react/hooks/useApolloClient.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/react/hooks/useMutation.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/context/cart.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/context/eventing.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/context/user.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/hooks/useAwaitQuery.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/hooks/useGoogleReCaptcha/useGoogleReCaptcha.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/store/actions/cart/asyncActions.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/talons/CartPage/cartPageFragments.gql.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/talons/CheckoutPage/checkoutPageFragments.gql.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/shallowMerge.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Button/button.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Field/field.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/FormError/formError.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/GoogleReCaptcha/googleReCaptcha.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/LinkButton/linkButton.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Password/password.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/TextInput/textInput.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/util/formValidators.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/SignIn/signIn.module.css (<- Module uses module.id) */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql-tag/lib/index.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/informed/dist/esm/index.js (<- Module uses injected variables (process)) */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/prop-types/index.js (<- Module is not an ECMAScript module) */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-intl/lib/src/components/message.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-intl/lib/src/components/useIntl.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react/index.js (<- Module is not an ECMAScript module) */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js (<- Module is not an ECMAScript module) */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-
-// EXTERNAL MODULE: ./node_modules/react/index.js
-var react = __webpack_require__("./node_modules/react/index.js");
-var react_default = /*#__PURE__*/__webpack_require__.n(react);
-
-// EXTERNAL MODULE: ./node_modules/react-intl/lib/src/components/useIntl.js
-var useIntl = __webpack_require__("./node_modules/react-intl/lib/src/components/useIntl.js");
-
-// EXTERNAL MODULE: ./node_modules/react-intl/lib/src/components/message.js
-var message = __webpack_require__("./node_modules/react-intl/lib/src/components/message.js");
-
-// EXTERNAL MODULE: ./node_modules/prop-types/index.js
-var prop_types = __webpack_require__("./node_modules/prop-types/index.js");
-
-// EXTERNAL MODULE: ./node_modules/informed/dist/esm/index.js
-var esm = __webpack_require__("./node_modules/informed/dist/esm/index.js");
-
-// EXTERNAL MODULE: ./node_modules/@apollo/client/react/hooks/useApolloClient.js
-var useApolloClient = __webpack_require__("./node_modules/@apollo/client/react/hooks/useApolloClient.js");
-
-// EXTERNAL MODULE: ./node_modules/@apollo/client/react/hooks/useMutation.js
-var useMutation = __webpack_require__("./node_modules/@apollo/client/react/hooks/useMutation.js");
-
-// EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/hooks/useGoogleReCaptcha/useGoogleReCaptcha.js + 2 modules
-var useGoogleReCaptcha = __webpack_require__("./node_modules/@magento/peregrine/lib/hooks/useGoogleReCaptcha/useGoogleReCaptcha.js");
-
-// EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/util/shallowMerge.js
-var shallowMerge = __webpack_require__("./node_modules/@magento/peregrine/lib/util/shallowMerge.js");
-
-// EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/context/cart.js
-var cart = __webpack_require__("./node_modules/@magento/peregrine/lib/context/cart.js");
-
-// EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/context/user.js
-var user = __webpack_require__("./node_modules/@magento/peregrine/lib/context/user.js");
-
-// EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/hooks/useAwaitQuery.js
-var useAwaitQuery = __webpack_require__("./node_modules/@magento/peregrine/lib/hooks/useAwaitQuery.js");
-
-// EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/store/actions/cart/asyncActions.js
-var asyncActions = __webpack_require__("./node_modules/@magento/peregrine/lib/store/actions/cart/asyncActions.js");
-
-// EXTERNAL MODULE: ./node_modules/graphql-tag/lib/index.js + 3 modules
-var lib = __webpack_require__("./node_modules/graphql-tag/lib/index.js");
-
-// EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/talons/CheckoutPage/checkoutPageFragments.gql.js
-var checkoutPageFragments_gql = __webpack_require__("./node_modules/@magento/peregrine/lib/talons/CheckoutPage/checkoutPageFragments.gql.js");
-
-// CONCATENATED MODULE: ./node_modules/@magento/peregrine/lib/talons/SignIn/signIn.gql.js
-
-
-const GET_CUSTOMER = lib["a" /* gql */]`
-    query GetCustomerAfterSignIn {
-        # eslint-disable-next-line @graphql-eslint/require-id-when-available
-        customer {
-            email
-            firstname
-            lastname
-            is_subscribed
-        }
-    }
-`;
-const SIGN_IN = lib["a" /* gql */]`
-    mutation SignIn($email: String!, $password: String!) {
-        generateCustomerToken(email: $email, password: $password) {
-            token
-        }
-    }
-`;
-const CREATE_CART = lib["a" /* gql */]`
-    mutation CreateCartAfterSignIn {
-        cartId: createEmptyCart
-    }
-`;
-const MERGE_CARTS = lib["a" /* gql */]`
-    mutation MergeCartsAfterSignIn(
-        $sourceCartId: String!
-        $destinationCartId: String!
-    ) {
-        mergeCarts(
-            source_cart_id: $sourceCartId
-            destination_cart_id: $destinationCartId
-        ) {
-            id
-            # eslint-disable-next-line @graphql-eslint/require-id-when-available
-            items {
-                uid
-            }
-            ...CheckoutPageFragment
-        }
-    }
-    ${checkoutPageFragments_gql["a" /* CheckoutPageFragment */]}
-`;
-/* harmony default export */ var signIn_gql = ({
-  createCartMutation: CREATE_CART,
-  getCustomerQuery: GET_CUSTOMER,
-  mergeCartsMutation: MERGE_CARTS,
-  signInMutation: SIGN_IN
-});
-// EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/context/eventing.js
-var eventing = __webpack_require__("./node_modules/@magento/peregrine/lib/context/eventing.js");
-
-// CONCATENATED MODULE: ./node_modules/@magento/peregrine/lib/talons/SignIn/useSignIn.js
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
-function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return typeof key === "symbol" ? key : String(key); }
-function _toPrimitive(input, hint) { if (typeof input !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (typeof res !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
-
-
-
-
-
-
-
-
-
-
-const useSignIn = props => {
-  const {
-    getCartDetailsQuery,
-    setDefaultUsername,
-    showCreateAccount,
-    showForgotPassword
-  } = props;
-  const operations = Object(shallowMerge["a" /* default */])(signIn_gql, props.operations);
-  const {
-    createCartMutation,
-    getCustomerQuery,
-    mergeCartsMutation,
-    signInMutation
-  } = operations;
-  const apolloClient = Object(useApolloClient["a" /* useApolloClient */])();
-  const [isSigningIn, setIsSigningIn] = Object(react["useState"])(false);
-  const [{
-    cartId
-  }, {
-    createCart,
-    removeCart,
-    getCartDetails
-  }] = Object(cart["b" /* useCartContext */])();
-  const [{
-    isGettingDetails,
-    getDetailsError
-  }, {
-    getUserDetails,
-    setToken
-  }] = Object(user["b" /* useUserContext */])();
-  const [, {
-    dispatch
-  }] = Object(eventing["b" /* useEventingContext */])();
-  const [signIn, {
-    error: signInError
-  }] = Object(useMutation["a" /* useMutation */])(signInMutation, {
-    fetchPolicy: 'no-cache'
-  });
-  const {
-    generateReCaptchaData,
-    recaptchaLoading,
-    recaptchaWidgetProps
-  } = Object(useGoogleReCaptcha["a" /* useGoogleReCaptcha */])({
-    currentForm: 'CUSTOMER_LOGIN',
-    formAction: 'signIn'
-  });
-  const [fetchCartId] = Object(useMutation["a" /* useMutation */])(createCartMutation);
-  const [mergeCarts] = Object(useMutation["a" /* useMutation */])(mergeCartsMutation);
-  const fetchUserDetails = Object(useAwaitQuery["a" /* useAwaitQuery */])(getCustomerQuery);
-  const fetchCartDetails = Object(useAwaitQuery["a" /* useAwaitQuery */])(getCartDetailsQuery);
-  const formApiRef = Object(react["useRef"])(null);
-  const setFormApi = Object(react["useCallback"])(api => formApiRef.current = api, []);
-  const handleSubmit = Object(react["useCallback"])(async ({
-    email,
-    password
-  }) => {
-    setIsSigningIn(true);
-    try {
-      // Get source cart id (guest cart id).
-      const sourceCartId = cartId;
-
-      // Get recaptchaV3 data for login
-      const recaptchaData = await generateReCaptchaData();
-
-      // Sign in and set the token.
-      const signInResponse = await signIn(_objectSpread({
-        variables: {
-          email,
-          password
-        }
-      }, recaptchaData));
-      const token = signInResponse.data.generateCustomerToken.token;
-      await setToken(token);
-
-      // Clear all cart/customer data from cache and redux.
-      await apolloClient.clearCacheData(apolloClient, 'cart');
-      await apolloClient.clearCacheData(apolloClient, 'customer');
-      await removeCart();
-
-      // Create and get the customer's cart id.
-      await createCart({
-        fetchCartId
-      });
-      const destinationCartId = await Object(asyncActions["retrieveCartId"])();
-
-      // Merge the guest cart into the customer cart.
-      await mergeCarts({
-        variables: {
-          destinationCartId,
-          sourceCartId
-        }
-      });
-
-      // Ensure old stores are updated with any new data.
-
-      await getUserDetails({
-        fetchUserDetails
-      });
-      const {
-        data
-      } = await fetchUserDetails({
-        fetchPolicy: 'cache-only'
-      });
-      dispatch({
-        type: 'USER_SIGN_IN',
-        payload: _objectSpread({}, data.customer)
-      });
-      getCartDetails({
-        fetchCartId,
-        fetchCartDetails
-      });
-    } catch (error) {
-      if (true) {
-        console.error(error);
-      }
-      setIsSigningIn(false);
-    }
-  }, [cartId, generateReCaptchaData, signIn, setToken, apolloClient, removeCart, createCart, fetchCartId, mergeCarts, getUserDetails, fetchUserDetails, getCartDetails, fetchCartDetails, dispatch]);
-  const handleForgotPassword = Object(react["useCallback"])(() => {
-    const {
-      current: formApi
-    } = formApiRef;
-    if (formApi) {
-      setDefaultUsername(formApi.getValue('email'));
-    }
-    showForgotPassword();
-  }, [setDefaultUsername, showForgotPassword]);
-  const handleCreateAccount = Object(react["useCallback"])(() => {
-    const {
-      current: formApi
-    } = formApiRef;
-    if (formApi) {
-      setDefaultUsername(formApi.getValue('email'));
-    }
-    showCreateAccount();
-  }, [setDefaultUsername, showCreateAccount]);
-  const handleEnterKeyPress = Object(react["useCallback"])(() => {
-    event => {
-      if (event.key === 'Enter') {
-        handleCreateAccount();
-      }
-    };
-  }, [handleCreateAccount]);
-  const errors = Object(react["useMemo"])(() => new Map([['getUserDetailsQuery', getDetailsError], ['signInMutation', signInError]]), [getDetailsError, signInError]);
-  return {
-    errors,
-    handleCreateAccount,
-    handleEnterKeyPress,
-    handleForgotPassword,
-    handleSubmit,
-    isBusy: isGettingDetails || isSigningIn || recaptchaLoading,
-    setFormApi,
-    recaptchaWidgetProps
-  };
-};
-// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/util/formValidators.js
-var formValidators = __webpack_require__("./node_modules/@magento/venia-ui/lib/util/formValidators.js");
-
-// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/Button/button.js + 1 modules
-var Button_button = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/Button/button.js");
-
-// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/Field/field.js + 1 modules
-var field = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/Field/field.js");
-
-// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/TextInput/textInput.js + 1 modules
-var textInput = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/TextInput/textInput.js");
-
-// EXTERNAL MODULE: ./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js
-var injectStylesIntoStyleTag = __webpack_require__("./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
-var injectStylesIntoStyleTag_default = /*#__PURE__*/__webpack_require__.n(injectStylesIntoStyleTag);
-
-// EXTERNAL MODULE: ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/SignIn/signIn.module.css
-var signIn_module = __webpack_require__("./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/SignIn/signIn.module.css");
-
-// CONCATENATED MODULE: ./node_modules/@magento/venia-ui/lib/components/SignIn/signIn.module.css
-
-            
-
-var options = {"injectType":"styleTag"};
-
-options.insert = "head";
-options.singleton = false;
-
-var update = injectStylesIntoStyleTag_default()(signIn_module["a" /* default */], options);
-
-
-
-/* harmony default export */ var SignIn_signIn_module = (signIn_module["a" /* default */].locals || {});
-// EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/talons/CartPage/cartPageFragments.gql.js
-var cartPageFragments_gql = __webpack_require__("./node_modules/@magento/peregrine/lib/talons/CartPage/cartPageFragments.gql.js");
-
-// CONCATENATED MODULE: ./node_modules/@magento/venia-ui/lib/components/SignIn/signIn.gql.js
-
-
-const GET_CART_DETAILS_QUERY = lib["a" /* gql */]`
-    query GetCartDetailsAfterSignIn($cartId: String!) {
-        cart(cart_id: $cartId) {
-            id
-            # eslint-disable-next-line @graphql-eslint/require-id-when-available
-            items {
-                uid
-                # eslint-disable-next-line @graphql-eslint/require-id-when-available
-                product {
-                    uid
-                    name
-                    sku
-                    small_image {
-                        url
-                        label
-                    }
-                    price {
-                        regularPrice {
-                            amount {
-                                value
-                            }
-                        }
-                    }
-                }
-                quantity
-                # eslint-disable-next-line @graphql-eslint/require-id-when-available
-                ... on ConfigurableCartItem {
-                    # eslint-disable-next-line @graphql-eslint/require-id-when-available
-                    configurable_options {
-                        configurable_product_option_uid
-                        option_label
-                        configurable_product_option_value_uid
-                        value_label
-                    }
-                }
-            }
-            prices {
-                grand_total {
-                    value
-                    currency
-                }
-            }
-            ...CartPageFragment
-        }
-    }
-    ${cartPageFragments_gql["a" /* CartPageFragment */]}
-`;
-// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/LinkButton/linkButton.js + 1 modules
-var linkButton = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/LinkButton/linkButton.js");
-
-// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/Password/password.js + 2 modules
-var Password_password = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/Password/password.js");
-
-// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/FormError/formError.js + 5 modules
-var formError = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/FormError/formError.js");
-
-// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/GoogleReCaptcha/googleReCaptcha.js + 1 modules
-var googleReCaptcha = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/GoogleReCaptcha/googleReCaptcha.js");
-
-// CONCATENATED MODULE: ./node_modules/@magento/venia-ui/lib/components/SignIn/signIn.js
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-const SignIn = props => {
-  const classes = Object(shallowMerge["a" /* default */])(SignIn_signIn_module, props.classes);
-  const {
-    setDefaultUsername,
-    showCreateAccount,
-    showForgotPassword,
-    initialValues
-  } = props;
-  const {
-    formatMessage
-  } = Object(useIntl["a" /* default */])();
-  const talonProps = useSignIn({
-    getCartDetailsQuery: GET_CART_DETAILS_QUERY,
-    setDefaultUsername,
-    showCreateAccount,
-    showForgotPassword
-  });
-  const {
-    errors,
-    handleCreateAccount,
-    handleEnterKeyPress,
-    handleForgotPassword,
-    handleSubmit,
-    isBusy,
-    setFormApi,
-    recaptchaWidgetProps
-  } = talonProps;
-  const forgotPasswordClasses = {
-    root: classes.forgotPasswordButton
-  };
-  return /*#__PURE__*/react_default.a.createElement("div", {
-    "data-cy": "SignIn-root",
-    className: classes.root
-  }, /*#__PURE__*/react_default.a.createElement("span", {
-    "data-cy": "SignIn-title",
-    className: classes.title
-  }, /*#__PURE__*/react_default.a.createElement(message["a" /* default */], {
-    id: 'signIn.titleText',
-    defaultMessage: 'Sign-in to Your Account'
-  })), /*#__PURE__*/react_default.a.createElement(formError["a" /* default */], {
-    errors: Array.from(errors.values())
-  }), /*#__PURE__*/react_default.a.createElement(esm["b" /* Form */], {
-    getApi: setFormApi,
-    className: classes.form,
-    onSubmit: handleSubmit,
-    "data-cy": "SignIn-form",
-    initialValues: initialValues && initialValues
-  }, /*#__PURE__*/react_default.a.createElement(field["a" /* default */], {
-    id: "email",
-    label: formatMessage({
-      id: 'signIn.emailAddressText',
-      defaultMessage: 'Email address'
-    })
-  }, /*#__PURE__*/react_default.a.createElement(textInput["a" /* default */], {
-    id: "email",
-    "data-cy": "SignIn-email",
-    autoComplete: "email",
-    field: "email",
-    validate: formValidators["c" /* isRequired */],
-    "data-cy": "email",
-    "aria-label": formatMessage({
-      id: 'global.emailRequired',
-      defaultMessage: 'Email Required'
-    })
-  })), /*#__PURE__*/react_default.a.createElement(Password_password["a" /* default */], {
-    "data-cy": "SignIn-password",
-    fieldName: "password",
-    id: "Password",
-    label: formatMessage({
-      id: 'signIn.passwordText',
-      defaultMessage: 'Password'
-    }),
-    validate: formValidators["c" /* isRequired */],
-    autoComplete: "current-password",
-    isToggleButtonHidden: false,
-    "data-cy": "password",
-    "aria-label": formatMessage({
-      id: 'global.passwordRequired',
-      defaultMessage: 'Password Required'
-    })
-  }), /*#__PURE__*/react_default.a.createElement("div", {
-    className: classes.forgotPasswordButtonContainer
-  }, /*#__PURE__*/react_default.a.createElement(linkButton["a" /* default */], {
-    classes: forgotPasswordClasses,
-    type: "button",
-    onClick: handleForgotPassword,
-    "data-cy": "SignIn-forgotPasswordButton"
-  }, /*#__PURE__*/react_default.a.createElement(message["a" /* default */], {
-    id: 'signIn.forgotPasswordText',
-    defaultMessage: 'Forgot Password?'
-  }))), /*#__PURE__*/react_default.a.createElement(googleReCaptcha["a" /* default */], recaptchaWidgetProps), /*#__PURE__*/react_default.a.createElement("div", {
-    className: classes.buttonsContainer
-  }, /*#__PURE__*/react_default.a.createElement(Button_button["a" /* default */], {
-    priority: "high",
-    type: "submit",
-    "data-cy": "SignInButton-root_highPriority",
-    disabled: isBusy
-  }, /*#__PURE__*/react_default.a.createElement(message["a" /* default */], {
-    id: 'signIn.signInText',
-    defaultMessage: 'Sign In'
-  })), /*#__PURE__*/react_default.a.createElement(Button_button["a" /* default */], {
-    priority: "normal",
-    type: "button",
-    onClick: handleCreateAccount,
-    "data-cy": "CreateAccount-initiateButton",
-    onKeyDown: handleEnterKeyPress
-  }, /*#__PURE__*/react_default.a.createElement(message["a" /* default */], {
-    id: 'signIn.createAccountText',
-    defaultMessage: 'Create an Account'
-  })))));
-};
-/* harmony default export */ var SignIn_signIn = __webpack_exports__["a"] = (SignIn);
-SignIn.propTypes = {
-  classes: Object(prop_types["shape"])({
-    buttonsContainer: prop_types["string"],
-    form: prop_types["string"],
-    forgotPasswordButton: prop_types["string"],
-    forgotPasswordButtonContainer: prop_types["string"],
-    root: prop_types["string"],
-    title: prop_types["string"]
-  }),
-  setDefaultUsername: prop_types["func"],
-  showCreateAccount: prop_types["func"],
-  showForgotPassword: prop_types["func"],
-  initialValues: Object(prop_types["shape"])({
-    email: prop_types["string"].isRequired
-  })
-};
-SignIn.defaultProps = {
-  setDefaultUsername: () => {},
-  showCreateAccount: () => {},
-  showForgotPassword: () => {}
-};
-
-/***/ }),
-
-/***/ "./node_modules/@magento/venia-ui/lib/components/SignInPage/signInPage.js":
-/*!********************************************************************************************!*\
-  !*** ./node_modules/@magento/venia-ui/lib/components/SignInPage/signInPage.js + 2 modules ***!
-  \********************************************************************************************/
-/*! exports provided: default */
-/*! exports used: default */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/context/user.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/shallowMerge.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Head/index.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/SignIn/signIn.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/SignInPage/signInPage.module.css (<- Module uses module.id) */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/prop-types/index.js (<- Module is not an ECMAScript module) */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-intl/lib/src/components/message.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-intl/lib/src/components/useIntl.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-router/esm/react-router.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react/index.js (<- Module is not an ECMAScript module) */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js (<- Module is not an ECMAScript module) */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-
-// EXTERNAL MODULE: ./node_modules/react/index.js
-var react = __webpack_require__("./node_modules/react/index.js");
-var react_default = /*#__PURE__*/__webpack_require__.n(react);
-
-// EXTERNAL MODULE: ./node_modules/prop-types/index.js
-var prop_types = __webpack_require__("./node_modules/prop-types/index.js");
-
-// EXTERNAL MODULE: ./node_modules/react-intl/lib/src/components/useIntl.js
-var useIntl = __webpack_require__("./node_modules/react-intl/lib/src/components/useIntl.js");
-
-// EXTERNAL MODULE: ./node_modules/react-intl/lib/src/components/message.js
-var message = __webpack_require__("./node_modules/react-intl/lib/src/components/message.js");
-
-// EXTERNAL MODULE: ./node_modules/react-router/esm/react-router.js + 2 modules
-var react_router = __webpack_require__("./node_modules/react-router/esm/react-router.js");
-
-// EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/context/user.js
-var user = __webpack_require__("./node_modules/@magento/peregrine/lib/context/user.js");
-
-// CONCATENATED MODULE: ./src/talons/SignInPage/useSignInPage.js
-
-
-
-
-/**
- * @typedef {function} useSignInPage
- *
- * @param {String} props.createAccountPageUrl - Create Account Password Page url
- * @param {String} props.forgotPasswordPageUrl - Forgot Password Page url
- * @param {String} props.signedInRedirectUrl - Url to push when user is signed in
- *
- * @returns {{
- *   signInProps: object
- * }}
- */
-const useSignInPage = props => {
-  const {
-    createAccountPageUrl,
-    forgotPasswordPageUrl,
-    signedInRedirectUrl
-  } = props;
-  const history = Object(react_router["d" /* useHistory */])();
-  const [{
-    isSignedIn
-  }] = Object(user["b" /* useUserContext */])();
-
-  // Keep location state in memory when pushing history and redirect to
-  // the `from` url instead when signing in
-  const historyState = Object(react["useMemo"])(() => {
-    return history && history.location.state ? history.location.state : {};
-  }, [history]);
-  const fromRedirectUrl = historyState.from || null;
-
-  // Redirect if user is signed in
-  Object(react["useEffect"])(() => {
-    if (isSignedIn) {
-      if (fromRedirectUrl || signedInRedirectUrl) {
-        history.push(fromRedirectUrl || signedInRedirectUrl);
-      }
-    }
-  }, [history, isSignedIn, fromRedirectUrl, signedInRedirectUrl]);
-  const handleShowCreateAccount = Object(react["useCallback"])(() => {
-    if (createAccountPageUrl) {
-      window.location = createAccountPageUrl;
-    }
-  }, [createAccountPageUrl, history, historyState]);
-  const handleShowForgotPassword = Object(react["useCallback"])(() => {
-    if (forgotPasswordPageUrl) {
-      window.location = forgotPasswordPageUrl;
-    }
-  }, [forgotPasswordPageUrl, history, historyState]);
-  const signInProps = {
-    classes: {
-      modal_active: undefined
-    },
-    showCreateAccount: handleShowCreateAccount,
-    showForgotPassword: handleShowForgotPassword
-  };
-  return {
-    signInProps
-  };
-};
-// EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/util/shallowMerge.js
-var shallowMerge = __webpack_require__("./node_modules/@magento/peregrine/lib/util/shallowMerge.js");
-
-// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/Head/index.js
-var Head = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/Head/index.js");
-
-// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/SignIn/signIn.js + 4 modules
-var signIn = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/SignIn/signIn.js");
-
-// EXTERNAL MODULE: ./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js
-var injectStylesIntoStyleTag = __webpack_require__("./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
-var injectStylesIntoStyleTag_default = /*#__PURE__*/__webpack_require__.n(injectStylesIntoStyleTag);
-
-// EXTERNAL MODULE: ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/SignInPage/signInPage.module.css
-var signInPage_module = __webpack_require__("./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/SignInPage/signInPage.module.css");
-
-// CONCATENATED MODULE: ./node_modules/@magento/venia-ui/lib/components/SignInPage/signInPage.module.css
-
-            
-
-var options = {"injectType":"styleTag"};
-
-options.insert = "head";
-options.singleton = false;
-
-var update = injectStylesIntoStyleTag_default()(signInPage_module["a" /* default */], options);
-
-
-
-/* harmony default export */ var SignInPage_signInPage_module = (signInPage_module["a" /* default */].locals || {});
-// CONCATENATED MODULE: ./node_modules/@magento/venia-ui/lib/components/SignInPage/signInPage.js
-
-
-
-
-
-
-
-
-const SignInPage = props => {
-  const classes = Object(shallowMerge["a" /* default */])(SignInPage_signInPage_module, props.classes);
-  const {
-    signInProps
-  } = useSignInPage(props);
-  const {
-    formatMessage
-  } = Object(useIntl["a" /* default */])();
-  return /*#__PURE__*/react_default.a.createElement("div", {
-    className: classes.root
-  }, /*#__PURE__*/react_default.a.createElement(Head["a" /* StoreTitle */], null, formatMessage({
-    id: 'signInPage.title',
-    defaultMessage: 'Sign In'
-  })), /*#__PURE__*/react_default.a.createElement("h1", {
-    className: classes.header
-  }, /*#__PURE__*/react_default.a.createElement(message["a" /* default */], {
-    id: "signInPage.header",
-    defaultMessage: "Sign In or Create Account"
-  })), /*#__PURE__*/react_default.a.createElement("div", {
-    className: classes.contentContainer
-  }, /*#__PURE__*/react_default.a.createElement(signIn["a" /* default */], signInProps)));
-};
-SignInPage.defaultProps = {
-  createAccountPageUrl: '/create-account',
-  forgotPasswordPageUrl: '/forgot-password',
-  signedInRedirectUrl: '/order-history'
-};
-SignInPage.propTypes = {
-  classes: Object(prop_types["shape"])({
-    root: prop_types["string"],
-    header: prop_types["string"],
-    contentContainer: prop_types["string"]
-  }),
-  createAccountPageUrl: prop_types["string"],
-  forgotPasswordPageUrl: prop_types["string"],
-  signedInRedirectUrl: prop_types["string"]
-};
-/* harmony default export */ var signInPage = __webpack_exports__["a"] = (SignInPage);
-
-/***/ }),
-
 /***/ "./node_modules/@magento/venia-ui/lib/components/TextInput/textInput.js":
 /*!******************************************************************************************!*\
   !*** ./node_modules/@magento/venia-ui/lib/components/TextInput/textInput.js + 1 modules ***!
@@ -8171,6 +7926,84 @@ TextInput.propTypes = {
   field: prop_types["string"].isRequired,
   message: prop_types["node"]
 };
+
+/***/ }),
+
+/***/ "./node_modules/@magento/venia-ui/lib/util/combineValidators.js":
+/*!**********************************************************************!*\
+  !*** ./node_modules/@magento/venia-ui/lib/util/combineValidators.js ***!
+  \**********************************************************************/
+/*! exports provided: default */
+/*! exports used: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/**
+ * The function purpose is to group validation callbacks into a chain within single callback function.
+ *
+ * The single callback function should be passed as `validation` prop to an input component. It's being
+ * called by the React Controller on a form submit.
+ * The `callbacks` param is the array contains validators. Each validator should be either function or array. In case of a
+ * validator is a function it is called the same way as React Controller does, with a field `value` and a form `values` params. If
+ * the validator is an array, this means that it is extended validator which requires additional param for configuration.
+ * The first index of that array should be a extended validator function, the second index is extended param, which is needed for
+ * that function. So the function is called with three params on the form submit, with a field `value`, a form `values`
+ * and an `extended param`.
+ *
+ * Example usage of the function:
+ *
+ * <input validate={combine([
+ * foo
+ * ])} .../>
+ *
+ * foo - validation function
+ * It will be called on form submitting within chain as:
+ * `foo(value, values)`
+ *
+ * Example usage of the function with extended callback:
+ *
+ * <input validate={combine([
+ * [foo, bar]
+ * ])} .../>
+ *
+ * foo - extended validator
+ * bar - additional param
+ * It will be called on form submitting within chain as:
+ * `foo(value, values, bar)`
+ *
+ * Each callback being called one after another, according to their index in callbacks array, if one item returned the error
+ * message, validation is failed, and rest validator are not supposed to be called.
+ *
+ * @param {Array} callbacks
+ * @return {function(value, values): *}
+ */
+/* harmony default export */ __webpack_exports__["a"] = (callbacks => {
+  if (callbacks == null || !Array.isArray(callbacks)) {
+    throw new Error('Expected `callbacks` to be array.');
+  }
+  return (value, values) => {
+    let result = null;
+    for (let i = 0; i < callbacks.length; i++) {
+      const callback = callbacks[i];
+      if (callback == null || !Array.isArray(callback) && typeof callback !== 'function') {
+        throw new Error('Expected `callbacks[' + i + ']` to be array or function.');
+      }
+      if (Array.isArray(callback)) {
+        const [extendedCallback, extendedParam] = callback;
+        if (typeof extendedCallback !== 'function') {
+          throw new Error('Expected `callbacks[' + i + '][0]` to be function.');
+        }
+        result = extendedCallback(value, values, extendedParam);
+      } else {
+        result = callback(value, values);
+      }
+      if (result) {
+        break;
+      }
+    }
+    return result;
+  };
+});
 
 /***/ }),
 
@@ -14541,6 +14374,107 @@ ___CSS_LOADER_EXPORT___.locals = {
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/Checkbox/checkbox.module.css":
+/*!**************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/Checkbox/checkbox.module.css ***!
+  \**************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/*! exports used: default */
+/*! ModuleConcatenation bailout: Module uses module.id */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var _css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../../css-loader/dist/runtime/cssWithMappingToString.js */ "./node_modules/css-loader/dist/runtime/cssWithMappingToString.js");
+/* harmony import */ var _css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+// Imports
+
+
+var ___CSS_LOADER_EXPORT___ = _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()(_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default.a);
+// Module
+___CSS_LOADER_EXPORT___.push([module.i, ".checkbox-root-hF1 {\n    --stroke: var(--venia-global-color-gray-600);\n    grid-template-areas: 'input label';\n    grid-template-columns: min-content 1fr;\n}\n\n.checkbox-input-WEy {\n    grid-area: input;\n\n    /* TODO @TW: review, replaces input:disabled. Check if working. */\n}\n\n.checkbox-icon-eiW {\n    grid-area: input;\n}\n\n.checkbox-icon-eiW svg {\n    stroke: rgb(var(--stroke));\n}\n\n.checkbox-label-wHh {\n    grid-area: label;\n}\n\n/* When the input is disabled, update the cursor on the sibling label element. */\n/* TODO @TW: cannot compose */\n.checkbox-input-WEy:disabled ~ .checkbox-label-wHh {\n    cursor: default;\n}\n\n.checkbox-input-WEy:checked:enabled + .checkbox-icon-eiW {\n    --stroke: var(--venia-brand-color-1-700);\n}\n\n/* TODO @TW: cannot compose, needs \"checked\" variant enabled. Cannot combine variants. */\n.checkbox-input-WEy:active:enabled,\n.checkbox-input-WEy:focus:enabled {\n    /* composes: active_shadow-radioActive from global; */\n    /* composes: focus_shadow-radioFocus from global; */\n    box-shadow: -3px 3px rgb(var(--venia-brand-color-1-100));\n    outline: none;\n}\n\n.checkbox-input_shimmer-yEr {\n}\n", "",{"version":3,"sources":["webpack://./node_modules/@magento/venia-ui/lib/components/Checkbox/checkbox.module.css"],"names":[],"mappings":"AAAA;IACI,4CAA4C;IAS5C,kCAAkC;IAClC,sCAAsC;AAC1C;;AAEA;IAUI,gBAAgB;;IAEhB,iEAAiE;AAErE;;AAEA;IAII,gBAAgB;AACpB;;AAEA;IACI,0BAA0B;AAC9B;;AAEA;IAII,gBAAgB;AACpB;;AAEA,gFAAgF;AAChF,6BAA6B;AAC7B;IACI,eAAe;AACnB;;AAEA;IACI,wCAAwC;AAC5C;;AAEA,wFAAwF;AACxF;;IAEI,qDAAqD;IACrD,mDAAmD;IACnD,wDAAwD;IACxD,aAAa;AACjB;;AAEA;AAIA","sourcesContent":[".root {\n    --stroke: var(--venia-global-color-gray-600);\n\n    composes: gap-3 from global;\n    composes: grid from global;\n    composes: grid-flow-col from global;\n    composes: items-center from global;\n    composes: justify-items-center from global;\n    composes: leading-normal from global;\n    composes: text-colorDefault from global;\n    grid-template-areas: 'input label';\n    grid-template-columns: min-content 1fr;\n}\n\n.input {\n    composes: appearance-none from global;\n    composes: bg-transparent from global;\n    composes: border-2 from global;\n    composes: border-solid from global;\n    composes: border-transparent from global;\n    composes: cursor-pointer from global;\n    composes: h-[1.5rem] from global;\n    composes: rounded from global;\n    composes: w-[1.5rem] from global;\n    grid-area: input;\n\n    /* TODO @TW: review, replaces input:disabled. Check if working. */\n    composes: disabled_cursor-not-allowed from global;\n}\n\n.icon {\n    composes: h-[1.5rem] from global;\n    composes: pointer-events-none from global;\n    composes: w-[1.5rem] from global;\n    grid-area: input;\n}\n\n.icon svg {\n    stroke: rgb(var(--stroke));\n}\n\n.label {\n    composes: cursor-pointer from global;\n    composes: justify-self-start from global;\n    composes: text-colorDefault from global;\n    grid-area: label;\n}\n\n/* When the input is disabled, update the cursor on the sibling label element. */\n/* TODO @TW: cannot compose */\n.input:disabled ~ .label {\n    cursor: default;\n}\n\n.input:checked:enabled + .icon {\n    --stroke: var(--venia-brand-color-1-700);\n}\n\n/* TODO @TW: cannot compose, needs \"checked\" variant enabled. Cannot combine variants. */\n.input:active:enabled,\n.input:focus:enabled {\n    /* composes: active_shadow-radioActive from global; */\n    /* composes: focus_shadow-radioFocus from global; */\n    box-shadow: -3px 3px rgb(var(--venia-brand-color-1-100));\n    outline: none;\n}\n\n.input_shimmer {\n    composes: h-[1.5rem] from global;\n    composes: rounded from global;\n    composes: w-[1.5rem] from global;\n}\n"],"sourceRoot":""}]);
+// Exports
+___CSS_LOADER_EXPORT___.locals = {
+	"root": "checkbox-root-hF1 gap-3 grid grid-flow-col items-center justify-items-center leading-normal text-colorDefault",
+	"input": "checkbox-input-WEy appearance-none bg-transparent border-2 border-solid border-transparent cursor-pointer h-[1.5rem] rounded w-[1.5rem] disabled_cursor-not-allowed",
+	"icon": "checkbox-icon-eiW h-[1.5rem] pointer-events-none w-[1.5rem]",
+	"label": "checkbox-label-wHh cursor-pointer justify-self-start text-colorDefault",
+	"input_shimmer": "checkbox-input_shimmer-yEr h-[1.5rem] rounded w-[1.5rem]"
+};
+/* harmony default export */ __webpack_exports__["a"] = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/CreateAccount/createAccount.module.css":
+/*!************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/CreateAccount/createAccount.module.css ***!
+  \************************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/*! exports used: default */
+/*! ModuleConcatenation bailout: Module uses module.id */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var _css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../../css-loader/dist/runtime/cssWithMappingToString.js */ "./node_modules/css-loader/dist/runtime/cssWithMappingToString.js");
+/* harmony import */ var _css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _css_loader_dist_cjs_js_ref_6_oneOf_0_1_postcss_loader_dist_cjs_js_Button_button_module_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! -!../../../../../css-loader/dist/cjs.js??ref--6-oneOf-0-1!../../../../../postcss-loader/dist/cjs.js!../Button/button.module.css */ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/Button/button.module.css");
+// Imports
+
+
+
+var ___CSS_LOADER_EXPORT___ = _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()(_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default.a);
+___CSS_LOADER_EXPORT___.i(_css_loader_dist_cjs_js_ref_6_oneOf_0_1_postcss_loader_dist_cjs_js_Button_button_module_css__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"], "", true);
+// Module
+___CSS_LOADER_EXPORT___.push([module.i, ".createAccount-root-0KV {\n}\n\n.createAccount-message-oLV {\n}\n\n/* TODO @TW: cannot compose */\n.createAccount-message-oLV:empty {\n    display: none;\n}\n\n.createAccount-actions-UUv {\n}\n\n.createAccount-cancelButton-92E {\n}\n\n.createAccount-submitButton-tNK {\n}\n\n.createAccount-subscribe-I-6 {\n}\n", "",{"version":3,"sources":["webpack://./node_modules/@magento/venia-ui/lib/components/CreateAccount/createAccount.module.css"],"names":[],"mappings":"AAAA;AAMA;;AAEA;AAMA;;AAEA,6BAA6B;AAC7B;IACI,aAAa;AACjB;;AAEA;AASA;;AAEA;AAEA;;AAEA;AAMA;;AAEA;AAEA","sourcesContent":[".root {\n    composes: gap-xs from global;\n    composes: grid from global;\n    composes: justify-items-stretch from global;\n    composes: px-sm from global;\n    composes: py-xs from global;\n}\n\n.message {\n    composes: bg-subtle from global;\n    composes: leading-tight from global;\n    composes: p-xs from global;\n    composes: rounded from global;\n    composes: text-sm from global;\n}\n\n/* TODO @TW: cannot compose */\n.message:empty {\n    display: none;\n}\n\n.actions {\n    composes: gap-xs from global;\n    composes: grid from global;\n    composes: grid-flow-row from global;\n    composes: justify-center from global;\n    composes: mt-xs from global;\n    composes: text-center from global;\n\n    composes: lg_grid-flow-col from global;\n}\n\n.cancelButton {\n    composes: root_lowPriority from '../Button/button.module.css';\n}\n\n.submitButton {\n    composes: root_highPriority from '../Button/button.module.css';\n\n    composes: col-start-auto from global;\n\n    composes: lg_col-start-2 from global;\n}\n\n.subscribe {\n    composes: -ml-1.5 from global;\n}\n"],"sourceRoot":""}]);
+// Exports
+___CSS_LOADER_EXPORT___.locals = {
+	"root": "createAccount-root-0KV gap-xs grid justify-items-stretch px-sm py-xs",
+	"message": "createAccount-message-oLV bg-subtle leading-tight p-xs rounded text-sm",
+	"actions": "createAccount-actions-UUv gap-xs grid grid-flow-row justify-center mt-xs text-center lg_grid-flow-col",
+	"cancelButton": "createAccount-cancelButton-92E " + _css_loader_dist_cjs_js_ref_6_oneOf_0_1_postcss_loader_dist_cjs_js_Button_button_module_css__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"].locals["root_lowPriority"] + "",
+	"submitButton": "createAccount-submitButton-tNK " + _css_loader_dist_cjs_js_ref_6_oneOf_0_1_postcss_loader_dist_cjs_js_Button_button_module_css__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"].locals["root_highPriority"] + " col-start-auto lg_col-start-2",
+	"subscribe": "createAccount-subscribe-I-6 -ml-1.5"
+};
+/* harmony default export */ __webpack_exports__["a"] = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/CreateAccountPage/createAccountPage.module.css":
+/*!********************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/CreateAccountPage/createAccountPage.module.css ***!
+  \********************************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/*! exports used: default */
+/*! ModuleConcatenation bailout: Module uses module.id */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var _css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../../css-loader/dist/runtime/cssWithMappingToString.js */ "./node_modules/css-loader/dist/runtime/cssWithMappingToString.js");
+/* harmony import */ var _css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+// Imports
+
+
+var ___CSS_LOADER_EXPORT___ = _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()(_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default.a);
+// Module
+___CSS_LOADER_EXPORT___.push([module.i, ".createAccountPage-root-5tc {\n    grid-template-columns: minmax(auto, 512px);\n}\n\n.createAccountPage-header-77p {\n}\n\n.createAccountPage-contentContainer-0Td {\n}\n", "",{"version":3,"sources":["webpack://./node_modules/@magento/venia-ui/lib/components/CreateAccountPage/createAccountPage.module.css"],"names":[],"mappings":"AAAA;IAOI,0CAA0C;AAC9C;;AAEA;AAEA;;AAEA;AAMA","sourcesContent":[".root {\n    composes: gap-y-md from global;\n    composes: grid from global;\n    composes: justify-center from global;\n    composes: px-0 from global;\n    composes: py-md from global;\n    composes: text-center from global;\n    grid-template-columns: minmax(auto, 512px);\n}\n\n.header {\n    composes: font-serif from global;\n}\n\n.contentContainer {\n    composes: lg_border-2 from global;\n    composes: lg_border-solid from global;\n    composes: lg_border-subtle from global;\n    composes: lg_pb-md from global;\n    composes: lg_rounded-md from global;\n}\n"],"sourceRoot":""}]);
+// Exports
+___CSS_LOADER_EXPORT___.locals = {
+	"root": "createAccountPage-root-5tc gap-y-md grid justify-center px-0 py-md text-center",
+	"header": "createAccountPage-header-77p font-serif",
+	"contentContainer": "createAccountPage-contentContainer-0Td lg_border-2 lg_border-solid lg_border-subtle lg_pb-md lg_rounded-md"
+};
+/* harmony default export */ __webpack_exports__["a"] = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/ErrorMessage/errorMessage.module.css":
 /*!**********************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/ErrorMessage/errorMessage.module.css ***!
@@ -14721,38 +14655,6 @@ ___CSS_LOADER_EXPORT___.locals = {
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/LinkButton/linkButton.module.css":
-/*!******************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/LinkButton/linkButton.module.css ***!
-  \******************************************************************************************************************************************************************************************/
-/*! exports provided: default */
-/*! exports used: default */
-/*! ModuleConcatenation bailout: Module uses module.id */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var _css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../../css-loader/dist/runtime/cssWithMappingToString.js */ "./node_modules/css-loader/dist/runtime/cssWithMappingToString.js");
-/* harmony import */ var _css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
-/* harmony import */ var _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _css_loader_dist_cjs_js_ref_6_oneOf_0_1_postcss_loader_dist_cjs_js_clickable_module_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! -!../../../../../css-loader/dist/cjs.js??ref--6-oneOf-0-1!../../../../../postcss-loader/dist/cjs.js!../clickable.module.css */ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/clickable.module.css");
-// Imports
-
-
-
-var ___CSS_LOADER_EXPORT___ = _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()(_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default.a);
-___CSS_LOADER_EXPORT___.i(_css_loader_dist_cjs_js_ref_6_oneOf_0_1_postcss_loader_dist_cjs_js_clickable_module_css__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"], "", true);
-// Module
-___CSS_LOADER_EXPORT___.push([module.i, ".linkButton-root-HUs {\n}\n", "",{"version":3,"sources":["webpack://./node_modules/@magento/venia-ui/lib/components/LinkButton/linkButton.module.css"],"names":[],"mappings":"AAAA;AAWA","sourcesContent":[".root {\n    composes: root from '../clickable.module.css';\n\n    composes: font-semibold from global;\n    composes: leading-tight from global;\n    composes: max-w-full from global;\n    composes: text-colorDefault from global;\n    composes: text-brand-dark from global;\n    composes: underline from global;\n\n    composes: hover_text-colorDefault from global;\n}\n"],"sourceRoot":""}]);
-// Exports
-___CSS_LOADER_EXPORT___.locals = {
-	"root": "linkButton-root-HUs " + _css_loader_dist_cjs_js_ref_6_oneOf_0_1_postcss_loader_dist_cjs_js_clickable_module_css__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"].locals["root"] + " font-semibold leading-tight max-w-full text-colorDefault text-brand-dark underline hover_text-colorDefault"
-};
-/* harmony default export */ __webpack_exports__["a"] = (___CSS_LOADER_EXPORT___);
-
-
-/***/ }),
-
 /***/ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/Password/password.module.css":
 /*!**************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/Password/password.module.css ***!
@@ -14780,77 +14682,6 @@ ___CSS_LOADER_EXPORT___.push([module.i, ".password-root-dSI:active {\n    --stro
 ___CSS_LOADER_EXPORT___.locals = {
 	"root": "password-root-dSI",
 	"passwordButton": "password-passwordButton-v9x " + _css_loader_dist_cjs_js_ref_6_oneOf_0_1_postcss_loader_dist_cjs_js_Button_button_module_css__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"].locals["root"] + " bg-transparent border-none border-0 min-w-0 p-0 rounded-none focus_shadow-none"
-};
-/* harmony default export */ __webpack_exports__["a"] = (___CSS_LOADER_EXPORT___);
-
-
-/***/ }),
-
-/***/ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/SignIn/signIn.module.css":
-/*!**********************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/SignIn/signIn.module.css ***!
-  \**********************************************************************************************************************************************************************************/
-/*! exports provided: default */
-/*! exports used: default */
-/*! ModuleConcatenation bailout: Module uses module.id */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var _css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../../css-loader/dist/runtime/cssWithMappingToString.js */ "./node_modules/css-loader/dist/runtime/cssWithMappingToString.js");
-/* harmony import */ var _css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
-/* harmony import */ var _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _css_loader_dist_cjs_js_ref_6_oneOf_0_1_postcss_loader_dist_cjs_js_LinkButton_linkButton_module_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! -!../../../../../css-loader/dist/cjs.js??ref--6-oneOf-0-1!../../../../../postcss-loader/dist/cjs.js!../LinkButton/linkButton.module.css */ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/LinkButton/linkButton.module.css");
-// Imports
-
-
-
-var ___CSS_LOADER_EXPORT___ = _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()(_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default.a);
-___CSS_LOADER_EXPORT___.i(_css_loader_dist_cjs_js_ref_6_oneOf_0_1_postcss_loader_dist_cjs_js_LinkButton_linkButton_module_css__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"], "", true);
-// Module
-___CSS_LOADER_EXPORT___.push([module.i, ".signIn-root-oCW {\n}\n\n.signIn-forgotPassword-Ou9 {\n}\n\n.signIn-form-oZY {\n}\n\n.signIn-modal-t1O {\n\n    /* TODO @TW: review (B6) */\n    /* composes: invisible from global; */\n    visibility: hidden;\n}\n\n.signIn-modal_active-lb3 {\n\n    /* TODO @TW: review (B6) */\n    /* composes: visible from global; */\n    visibility: visible;\n}\n\n.signIn-buttonsContainer-vpV {\n}\n\n.signIn-forgotPasswordButtonContainer-khi {\n}\n\n.signIn-forgotPasswordButton-2EO {\n}\n\n.signIn-title-rkd {\n}\n", "",{"version":3,"sources":["webpack://./node_modules/@magento/venia-ui/lib/components/SignIn/signIn.module.css"],"names":[],"mappings":"AAAA;AAMA;;AAEA;AAKA;;AAEA;AAGA;;AAEA;;IAQI,0BAA0B;IAC1B,qCAAqC;IACrC,kBAAkB;AACtB;;AAEA;;IAII,0BAA0B;IAC1B,mCAAmC;IACnC,mBAAmB;AACvB;;AAEA;AAOA;;AAEA;AAMA;;AAEA;AAIA;;AAEA;AAIA","sourcesContent":[".root {\n    composes: gap-sm from global;\n    composes: grid from global;\n    composes: justify-items-stretch from global;\n    composes: px-sm from global;\n    composes: py-xs from global;\n}\n\n.forgotPassword {\n    composes: block from global;\n    composes: text-error from global;\n    composes: text-sm from global;\n    composes: underline from global;\n}\n\n.form {\n    composes: grid from global;\n    composes: gap-y-xs from global;\n}\n\n.modal {\n    composes: absolute from global;\n    composes: bg-subtle from global;\n    composes: bottom-0 from global;\n    composes: h-full from global;\n    composes: text-center from global;\n    composes: w-full from global;\n\n    /* TODO @TW: review (B6) */\n    /* composes: invisible from global; */\n    visibility: hidden;\n}\n\n.modal_active {\n    composes: modal;\n    composes: opacity-90 from global;\n\n    /* TODO @TW: review (B6) */\n    /* composes: visible from global; */\n    visibility: visible;\n}\n\n.buttonsContainer {\n    composes: gap-sm from global;\n    composes: grid from global;\n    composes: grid-flow-row from global;\n    composes: justify-center from global;\n    composes: mt-xs from global;\n    composes: w-full from global;\n}\n\n.forgotPasswordButtonContainer {\n    composes: flex from global;\n    composes: items-center from global;\n    composes: justify-center from global;\n    composes: justify-self-start from global;\n    composes: text-center from global;\n}\n\n.forgotPasswordButton {\n    composes: root from '../LinkButton/linkButton.module.css';\n\n    composes: p-0 from global;\n}\n\n.title {\n    composes: capitalize from global;\n    composes: pt-2xs from global;\n    composes: text-lg from global;\n}\n"],"sourceRoot":""}]);
-// Exports
-___CSS_LOADER_EXPORT___.locals = {
-	"root": "signIn-root-oCW gap-sm grid justify-items-stretch px-sm py-xs",
-	"forgotPassword": "signIn-forgotPassword-Ou9 block text-error text-sm underline",
-	"form": "signIn-form-oZY grid gap-y-xs",
-	"modal": "signIn-modal-t1O absolute bg-subtle bottom-0 h-full text-center w-full",
-	"modal_active": "signIn-modal_active-lb3 signIn-modal-t1O absolute bg-subtle bottom-0 h-full text-center w-full opacity-90",
-	"buttonsContainer": "signIn-buttonsContainer-vpV gap-sm grid grid-flow-row justify-center mt-xs w-full",
-	"forgotPasswordButtonContainer": "signIn-forgotPasswordButtonContainer-khi flex items-center justify-center justify-self-start text-center",
-	"forgotPasswordButton": "signIn-forgotPasswordButton-2EO " + _css_loader_dist_cjs_js_ref_6_oneOf_0_1_postcss_loader_dist_cjs_js_LinkButton_linkButton_module_css__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"].locals["root"] + " p-0",
-	"title": "signIn-title-rkd capitalize pt-2xs text-lg"
-};
-/* harmony default export */ __webpack_exports__["a"] = (___CSS_LOADER_EXPORT___);
-
-
-/***/ }),
-
-/***/ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/SignInPage/signInPage.module.css":
-/*!******************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/SignInPage/signInPage.module.css ***!
-  \******************************************************************************************************************************************************************************************/
-/*! exports provided: default */
-/*! exports used: default */
-/*! ModuleConcatenation bailout: Module uses module.id */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var _css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../../css-loader/dist/runtime/cssWithMappingToString.js */ "./node_modules/css-loader/dist/runtime/cssWithMappingToString.js");
-/* harmony import */ var _css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
-/* harmony import */ var _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
-// Imports
-
-
-var ___CSS_LOADER_EXPORT___ = _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()(_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default.a);
-// Module
-___CSS_LOADER_EXPORT___.push([module.i, ".signInPage-root-Lz7 {\n    grid-template-columns: minmax(auto, 512px);\n}\n\n.signInPage-header-HZU {\n}\n\n.signInPage-contentContainer-Wjb {\n}\n", "",{"version":3,"sources":["webpack://./node_modules/@magento/venia-ui/lib/components/SignInPage/signInPage.module.css"],"names":[],"mappings":"AAAA;IAOI,0CAA0C;AAC9C;;AAEA;AAEA;;AAEA;AAMA","sourcesContent":[".root {\n    composes: gap-y-md from global;\n    composes: grid from global;\n    composes: justify-center from global;\n    composes: px-0 from global;\n    composes: py-lg from global;\n    composes: text-center from global;\n    grid-template-columns: minmax(auto, 512px);\n}\n\n.header {\n    composes: font-serif from global;\n}\n\n.contentContainer {\n    composes: lg_border-2 from global;\n    composes: lg_border-solid from global;\n    composes: lg_border-subtle from global;\n    composes: lg_pb-md from global;\n    composes: lg_rounded-md from global;\n}\n"],"sourceRoot":""}]);
-// Exports
-___CSS_LOADER_EXPORT___.locals = {
-	"root": "signInPage-root-Lz7 gap-y-md grid justify-center px-0 py-lg text-center",
-	"header": "signInPage-header-HZU font-serif",
-	"contentContainer": "signInPage-contentContainer-Wjb lg_border-2 lg_border-solid lg_border-subtle lg_pb-md lg_rounded-md"
 };
 /* harmony default export */ __webpack_exports__["a"] = (___CSS_LOADER_EXPORT___);
 
@@ -14885,35 +14716,6 @@ ___CSS_LOADER_EXPORT___.locals = {
 	"input": "textInput-input-PzO " + _css_loader_dist_cjs_js_ref_6_oneOf_0_1_postcss_loader_dist_cjs_js_Field_field_module_css__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"].locals["input"] + " disabled_text-subtle",
 	"input_error": "textInput-input_error-2j1 " + _css_loader_dist_cjs_js_ref_6_oneOf_0_1_postcss_loader_dist_cjs_js_Field_field_module_css__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"].locals["input"] + " border-error",
 	"input_shimmer": "textInput-input_shimmer-BRC h-[2.5rem] m-0 max-w-full rounded-md w-full"
-};
-/* harmony default export */ __webpack_exports__["a"] = (___CSS_LOADER_EXPORT___);
-
-
-/***/ }),
-
-/***/ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/clickable.module.css":
-/*!******************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/clickable.module.css ***!
-  \******************************************************************************************************************************************************************************/
-/*! exports provided: default */
-/*! exports used: default */
-/*! ModuleConcatenation bailout: Module uses module.id */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var _css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../css-loader/dist/runtime/cssWithMappingToString.js */ "./node_modules/css-loader/dist/runtime/cssWithMappingToString.js");
-/* harmony import */ var _css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
-/* harmony import */ var _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
-// Imports
-
-
-var ___CSS_LOADER_EXPORT___ = _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()(_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default.a);
-// Module
-___CSS_LOADER_EXPORT___.push([module.i, ".clickable-root-sDL {\n}\n", "",{"version":3,"sources":["webpack://./node_modules/@magento/venia-ui/lib/components/clickable.module.css"],"names":[],"mappings":"AAAA;AAQA","sourcesContent":[".root {\n    composes: cursor-pointer from global;\n    composes: inline-flex from global;\n    composes: items-center from global;\n    composes: justify-center from global;\n    composes: leading-none from global;\n    composes: pointer-events-auto from global;\n    composes: text-center from global;\n}\n"],"sourceRoot":""}]);
-// Exports
-___CSS_LOADER_EXPORT___.locals = {
-	"root": "clickable-root-sDL cursor-pointer inline-flex items-center justify-center leading-none pointer-events-auto text-center"
 };
 /* harmony default export */ __webpack_exports__["a"] = (___CSS_LOADER_EXPORT___);
 
@@ -33092,18 +32894,27 @@ if (hasSymbols()) {
 
 /***/ }),
 
-/***/ "./src/RootComponents/Login/index.js":
-/*!*******************************************************!*\
-  !*** ./src/RootComponents/Login/index.js + 1 modules ***!
-  \*******************************************************/
+/***/ "./src/RootComponents/SignUp/index.js":
+/*!********************************************************!*\
+  !*** ./src/RootComponents/SignUp/index.js + 4 modules ***!
+  \********************************************************/
 /*! no exports provided */
 /*! all exports used */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/SignInPage/signInPage.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/context/user.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/shallowMerge.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/CreateAccount/createAccount.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Head/index.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./src/components/Adapter/adapter.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./src/store.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/CreateAccountPage/createAccountPage.module.css (<- Module uses module.id) */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/prop-types/index.js (<- Module is not an ECMAScript module) */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-dom/index.js (<- Module is not an ECMAScript module) */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-intl/lib/src/components/message.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-intl/lib/src/components/useIntl.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-router/esm/react-router.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react/index.js (<- Module is not an ECMAScript module) */
 /*! ModuleConcatenation bailout: Cannot concat with ./src/index.css */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js (<- Module is not an ECMAScript module) */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -33120,13 +32931,170 @@ var react_dom = __webpack_require__("./node_modules/react-dom/index.js");
 // EXTERNAL MODULE: ./src/store.js + 13 modules
 var store = __webpack_require__("./src/store.js");
 
-// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/SignInPage/signInPage.js + 2 modules
-var signInPage = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/SignInPage/signInPage.js");
-
 // EXTERNAL MODULE: ./src/components/Adapter/adapter.js + 37 modules
 var adapter = __webpack_require__("./src/components/Adapter/adapter.js");
 
-// CONCATENATED MODULE: ./src/RootComponents/Login/login.js
+// EXTERNAL MODULE: ./node_modules/prop-types/index.js
+var prop_types = __webpack_require__("./node_modules/prop-types/index.js");
+
+// EXTERNAL MODULE: ./node_modules/react-intl/lib/src/components/useIntl.js
+var useIntl = __webpack_require__("./node_modules/react-intl/lib/src/components/useIntl.js");
+
+// EXTERNAL MODULE: ./node_modules/react-intl/lib/src/components/message.js
+var message = __webpack_require__("./node_modules/react-intl/lib/src/components/message.js");
+
+// EXTERNAL MODULE: ./node_modules/react-router/esm/react-router.js + 2 modules
+var react_router = __webpack_require__("./node_modules/react-router/esm/react-router.js");
+
+// EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/context/user.js
+var user = __webpack_require__("./node_modules/@magento/peregrine/lib/context/user.js");
+
+// CONCATENATED MODULE: ./node_modules/@magento/peregrine/lib/talons/CreateAccountPage/useCreateAccountPage.js
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
+function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return typeof key === "symbol" ? key : String(key); }
+function _toPrimitive(input, hint) { if (typeof input !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (typeof res !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
+
+
+
+const validCreateAccountParams = ['email', 'firstName', 'lastName'];
+const getCreateAccountInitialValues = search => {
+  const params = new URLSearchParams(search);
+  return validCreateAccountParams.reduce((values, param) => _objectSpread(_objectSpread({}, values), {}, {
+    [param]: params.get(param)
+  }), {});
+};
+
+/**
+ * @typedef {function} useCreateAccountPage
+ *
+ * @param {String} props.signedInRedirectUrl - Url to push when user is signed in
+ * @param {String} props.signInPageUrl - Sign In Page url
+ *
+ * @returns {{
+ *   createAccountProps: object
+ * }}
+ */
+const useCreateAccountPage = props => {
+  const {
+    signedInRedirectUrl,
+    signInPageUrl
+  } = props;
+  const history = Object(react_router["d" /* useHistory */])();
+  const [{
+    isSignedIn
+  }] = Object(user["b" /* useUserContext */])();
+  const {
+    search
+  } = Object(react_router["e" /* useLocation */])();
+
+  // Keep location state in memory when pushing history and redirect to
+  // the `from` url instead when creating an account
+  const historyState = Object(react["useMemo"])(() => {
+    return history && history.location.state ? history.location.state : {};
+  }, [history]);
+  const fromRedirectUrl = historyState.from || null;
+
+  // Redirect if user is signed in
+  Object(react["useEffect"])(() => {
+    if (isSignedIn) {
+      if (fromRedirectUrl || signedInRedirectUrl) {
+        history.push(fromRedirectUrl || signedInRedirectUrl);
+      }
+    }
+  }, [fromRedirectUrl, history, isSignedIn, signedInRedirectUrl]);
+  const handleOnCancel = Object(react["useCallback"])(() => {
+    if (signInPageUrl) {
+      history.push(signInPageUrl, historyState);
+    }
+  }, [history, historyState, signInPageUrl]);
+  const initialValues = Object(react["useMemo"])(() => getCreateAccountInitialValues(search), [search]);
+  const createAccountProps = {
+    initialValues,
+    isCancelButtonHidden: false,
+    onCancel: handleOnCancel
+  };
+  return {
+    createAccountProps
+  };
+};
+// EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/util/shallowMerge.js
+var shallowMerge = __webpack_require__("./node_modules/@magento/peregrine/lib/util/shallowMerge.js");
+
+// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/CreateAccount/createAccount.js + 3 modules
+var createAccount = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/CreateAccount/createAccount.js");
+
+// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/Head/index.js
+var Head = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/Head/index.js");
+
+// EXTERNAL MODULE: ./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js
+var injectStylesIntoStyleTag = __webpack_require__("./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+var injectStylesIntoStyleTag_default = /*#__PURE__*/__webpack_require__.n(injectStylesIntoStyleTag);
+
+// EXTERNAL MODULE: ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/CreateAccountPage/createAccountPage.module.css
+var createAccountPage_module = __webpack_require__("./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/CreateAccountPage/createAccountPage.module.css");
+
+// CONCATENATED MODULE: ./node_modules/@magento/venia-ui/lib/components/CreateAccountPage/createAccountPage.module.css
+
+            
+
+var options = {"injectType":"styleTag"};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = injectStylesIntoStyleTag_default()(createAccountPage_module["a" /* default */], options);
+
+
+
+/* harmony default export */ var CreateAccountPage_createAccountPage_module = (createAccountPage_module["a" /* default */].locals || {});
+// CONCATENATED MODULE: ./node_modules/@magento/venia-ui/lib/components/CreateAccountPage/createAccountPage.js
+
+
+
+
+
+
+
+
+const CreateAccountPage = props => {
+  const classes = Object(shallowMerge["a" /* default */])(CreateAccountPage_createAccountPage_module, props.classes);
+  const {
+    createAccountProps
+  } = useCreateAccountPage(props);
+  const {
+    formatMessage
+  } = Object(useIntl["a" /* default */])();
+  return /*#__PURE__*/react_default.a.createElement("div", {
+    className: classes.root
+  }, /*#__PURE__*/react_default.a.createElement(Head["a" /* StoreTitle */], null, formatMessage({
+    id: 'createAccountPage.title',
+    defaultMessage: 'Create an Account'
+  })), /*#__PURE__*/react_default.a.createElement("h1", {
+    className: classes.header
+  }, /*#__PURE__*/react_default.a.createElement(message["a" /* default */], {
+    id: "createAccountPage.header",
+    defaultMessage: "Create an Account"
+  })), /*#__PURE__*/react_default.a.createElement("div", {
+    className: classes.contentContainer
+  }, /*#__PURE__*/react_default.a.createElement(createAccount["a" /* default */], createAccountProps)));
+};
+CreateAccountPage.defaultProps = {
+  signedInRedirectUrl: '/order-history',
+  signInPageUrl: '/sign-in'
+};
+CreateAccountPage.propTypes = {
+  classes: Object(prop_types["shape"])({
+    root: prop_types["string"],
+    header: prop_types["string"],
+    contentContainer: prop_types["string"]
+  }),
+  signedInRedirectUrl: prop_types["string"],
+  signInPageUrl: prop_types["string"]
+};
+/* harmony default export */ var createAccountPage = (CreateAccountPage);
+// CONCATENATED MODULE: ./src/RootComponents/SignUp/signup.js
 
 
 
@@ -33140,23 +33108,20 @@ const configureLinks = links => [...links.values()];
  * description = 'Basic Account Page'
  * pageTypes = ACCOUNT
  */
-function Login() {
+function SignUp() {
   return /*#__PURE__*/react_default.a.createElement(adapter["a" /* default */], {
     apiUrl: "https://www.marbec.click/graphql-maidenform-qa",
     configureLinks: configureLinks,
     origin: origin,
     store: store["a" /* default */],
     styles: styles
-  }, /*#__PURE__*/react_default.a.createElement(signInPage["a" /* default */], {
-    createAccountPageUrl: "/customer/account/create",
-    forgotPasswordPageUrl: "/customer/account/forgotpassword"
-  }));
+  }, /*#__PURE__*/react_default.a.createElement(createAccountPage, null));
 }
-/* harmony default export */ var login = (Login);
+/* harmony default export */ var signup = (SignUp);
 // EXTERNAL MODULE: ./src/index.css
 var src = __webpack_require__("./src/index.css");
 
-// CONCATENATED MODULE: ./src/RootComponents/Login/index.js
+// CONCATENATED MODULE: ./src/RootComponents/SignUp/index.js
 /**
  * @RootComponent
  * description = 'Basic Login Page'
@@ -33167,7 +33132,7 @@ var src = __webpack_require__("./src/index.css");
 
 
 console.log('Login Loaded');
-Object(react_dom["render"])( /*#__PURE__*/react_default.a.createElement(login, null), document.querySelector('.block.commerce-login'));
+Object(react_dom["render"])( /*#__PURE__*/react_default.a.createElement(signup, null), document.querySelector('.block.commerce-signup'));
 
 /***/ }),
 
@@ -36350,101 +36315,20 @@ const rootReducer = Object(redux["c" /* combineReducers */])(store_reducers);
 
 /***/ }),
 
-/***/ "./src/talons/CartPage/ProductListing/productListingFragments.gql.js":
-/*!***************************************************************************!*\
-  !*** ./src/talons/CartPage/ProductListing/productListingFragments.gql.js ***!
-  \***************************************************************************/
-/*! exports provided: ProductListingFragment */
-/*! exports used: ProductListingFragment */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProductListingFragment; });
-/* harmony import */ var _apollo_client__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @apollo/client */ "./node_modules/graphql-tag/lib/index.js");
-
-const ProductListingFragment = _apollo_client__WEBPACK_IMPORTED_MODULE_0__[/* gql */ "a"]`
-    fragment ProductListingFragment on Cart {
-        id
-        # eslint-disable-next-line @graphql-eslint/require-id-when-available
-        items {
-            uid
-            # eslint-disable-next-line @graphql-eslint/require-id-when-available
-            product {
-                uid
-                name
-                sku
-                url_key
-                thumbnail {
-                    url
-                }
-                small_image {
-                    url
-                }
-                stock_status
-                # eslint-disable-next-line @graphql-eslint/require-id-when-available
-                ... on ConfigurableProduct {
-                    variants {
-                        attributes {
-                            uid
-                            code
-                            value_index
-                        }
-                        # eslint-disable-next-line @graphql-eslint/require-id-when-available
-                        product {
-                            uid
-                            stock_status
-                            small_image {
-                                url
-                            }
-                        }
-                    }
-                }
-            }
-            prices {
-                price {
-                    currency
-                    value
-                }
-                row_total {
-                    value
-                }
-                total_item_discount {
-                    value
-                }
-            }
-            quantity
-            # eslint-disable-next-line @graphql-eslint/require-id-when-available
-            ... on ConfigurableCartItem {
-                # eslint-disable-next-line @graphql-eslint/require-id-when-available
-                configurable_options {
-                    id
-                    configurable_product_option_uid
-                    option_label
-                    configurable_product_option_value_uid
-                    value_label
-                    value_id
-                }
-            }
-        }
-    }
-`;
-
-/***/ }),
-
-/***/ 4:
-/*!**************************************************************************************************************************************!*\
-  !*** multi (webpack)-inject-plugin/dist/webpack-inject-plugin.loader?id=webpack-inject-module-1 ./src/RootComponents/Login/index.js ***!
-  \**************************************************************************************************************************************/
+/***/ 5:
+/*!***************************************************************************************************************************************!*\
+  !*** multi (webpack)-inject-plugin/dist/webpack-inject-plugin.loader?id=webpack-inject-module-1 ./src/RootComponents/SignUp/index.js ***!
+  \***************************************************************************************************************************************/
 /*! no static exports found */
 /*! all exports used */
 /*! ModuleConcatenation bailout: Module is not an ECMAScript module */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! /Users/mabecker/Documents/github/hlxsites/maidenform/pwa/node_modules/webpack-inject-plugin/dist/webpack-inject-plugin.loader?id=webpack-inject-module-1! */"./node_modules/webpack-inject-plugin/dist/webpack-inject-plugin.loader.js?id=webpack-inject-module-1!./");
-module.exports = __webpack_require__(/*! ./src/RootComponents/Login/index.js */"./src/RootComponents/Login/index.js");
+module.exports = __webpack_require__(/*! ./src/RootComponents/SignUp/index.js */"./src/RootComponents/SignUp/index.js");
 
 
 /***/ })
 
 /******/ });
-//# sourceMappingURL=login.js.map
+//# sourceMappingURL=signup.js.map

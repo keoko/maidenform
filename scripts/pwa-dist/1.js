@@ -599,14 +599,14 @@ const ShippingForm = props => {
     onSubmit: handleOnSubmit
   }, /*#__PURE__*/react_default.a.createElement(country["a" /* default */], {
     "data-cy": "ShippingMethods-ShippingForm-country",
-    validate: formValidators["b" /* isRequired */]
+    validate: formValidators["c" /* isRequired */]
   }), /*#__PURE__*/react_default.a.createElement(region["a" /* default */], {
     "data-cy": "ShippingMethods-ShippingForm-region",
-    validate: formValidators["b" /* isRequired */]
+    validate: formValidators["c" /* isRequired */]
   }), /*#__PURE__*/react_default.a.createElement(postcode["a" /* default */], {
     fieldInput: "zip",
     "data-cy": "ShippingMethods-ShippingForm-postCode",
-    validate: formValidators["b" /* isRequired */],
+    validate: formValidators["c" /* isRequired */],
     onValueChange: handleZipChange
   }), !hasMethods ? /*#__PURE__*/react_default.a.createElement(Button_button["a" /* default */], {
     classes: {
@@ -1060,7 +1060,7 @@ ShippingRadio.propTypes = {
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/react/hooks/useQuery.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/shallowMerge.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Field/field.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Select/select.js because of ./node_modules/@magento/venia-ui/lib/components/CheckoutPage/ShippingInformation/AddressForm/guestForm.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Select/select.js because of ./node_modules/@magento/venia-ui/lib/components/CheckoutPage/PaymentInformation/creditCard.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/Country/country.module.css (<- Module uses module.id) */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql-tag/lib/index.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/prop-types/index.js (<- Module is not an ECMAScript module) */
@@ -1675,7 +1675,7 @@ RadioGroup.propTypes = {
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/hooks/hook-wrappers/useInformedFieldStateWrapper.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/shallowMerge.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Field/field.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Select/select.js because of ./node_modules/@magento/venia-ui/lib/components/CheckoutPage/ShippingInformation/AddressForm/guestForm.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Select/select.js because of ./node_modules/@magento/venia-ui/lib/components/CheckoutPage/PaymentInformation/creditCard.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/TextInput/textInput.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/Region/region.module.css (<- Module uses module.id) */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql-tag/lib/index.js */

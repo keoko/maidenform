@@ -221,6 +221,7 @@ export default async function decorate(block) {
     }, { once: true });
 
     const login = document.createElement('a');
+    login.href = '/customer/account/login';
     login.classList.add('sign-in-link-desktop');
     login.innerText = 'Sign In';
     toolContainer.prepend(login);
@@ -297,7 +298,7 @@ export default async function decorate(block) {
 
     const loginMobile = document.createElement('li');
     loginMobile.classList.add('sign-in-link-mobile', 'menu-nav-category');
-    loginMobile.innerHTML = '<a>Sign In</a>';
+    loginMobile.innerHTML = '<a href="/customer/account/login">Sign In</a>';
     navMenuUl.prepend(loginMobile);
 
     nav.querySelector('.nav-menu').innerHTML = navMenuUl.outerHTML;
