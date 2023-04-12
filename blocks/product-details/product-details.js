@@ -17,6 +17,7 @@ import {
   performCatalogServiceQuery,
   performMonolithGraphQLQuery,
   getProduct,
+  getAmastyLabels,
 } from '../../scripts/commerce.js';
 
 const html = htm.bind(h);
@@ -82,18 +83,19 @@ class ProductDetailPage extends Component {
         .reduce((acc, curr) => ({ ...acc, [curr.code]: { label: curr.label, id: curr.uid } }), {}));
 
     // for each option, store the in-stock products given all the other options that are selected
-    return this.state.product.options.reduce((acc, curOption) => {
+    const options = this.state.product.options.reduce((acc, curOption) => {
       const inStockVariantsForOption = inStockVariants
         .filter((variant) => Object.keys(this.state.selection)
           .filter((selectionType) => selectionType !== curOption.id)
           .reduce((inStockSoFar, curr) => inStockSoFar
-            && this.state.selection[curr].id === variant[curr].id, true));
+            && this.state.selection[curr]?.id === variant[curr]?.id, true));
       return {
         ...acc,
         [curOption.id]: [
           ...new Set(inStockVariantsForOption.map((variant) => variant[curOption.id].id))],
       };
     }, {});
+    return [product.id, options];
   }
 
   async componentDidMount() {
@@ -115,7 +117,13 @@ class ProductDetailPage extends Component {
       selection,
     });
 
-    this.getInStockProducts().then((result) => this.setState({ inStockVariants: result }));
+    this.getInStockProducts().then(([numId, inStockVariants]) => this.setState((oldState) => ({
+      product: {
+        ...oldState.product,
+        numId,
+      },
+      inStockVariants,
+    })));
     getProductRatings(getSkuFromUrl()).then((result) => {
       this.setState((oldState) => ({ product: { ...oldState.product, reviewStats: result } }));
     });
@@ -156,7 +164,13 @@ class ProductDetailPage extends Component {
       },
     }));
 
-    this.getInStockProducts().then((result) => this.setState({ inStockVariants: result }));
+    this.getInStockProducts().then(([numId, inStockVariants]) => this.setState((oldState) => ({
+      product: {
+        ...oldState.product,
+        numId,
+      },
+      inStockVariants,
+    })));
 
     // fetch new images and prices
     const variantIds = Object.values({ ...this.state.selection, ...fragment })
@@ -171,6 +185,21 @@ class ProductDetailPage extends Component {
       }));
     });
   };
+
+  async componentDidUpdate() {
+    if (this.state.product?.numId && !this.state.product.amasty) {
+      const [amasty] = await getAmastyLabels([this.state.product.numId]);
+      if (!amasty) {
+        return;
+      }
+      this.setState((oldState) => ({
+        product: {
+          ...oldState.product,
+          amasty,
+        },
+      }));
+    }
+  }
 
   render() {
     if (this.state.loading) {

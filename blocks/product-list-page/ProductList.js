@@ -118,6 +118,20 @@ class ProductCard extends Component {
     </picture>`;
   }
 
+  renderLabel() {
+    const {
+      product: {
+        amasty,
+      },
+    } = this.props;
+    if (!amasty) {
+      return null;
+    }
+    return html`<div class="amasty-wrapper">
+      <div class=${amasty.position} style=${amasty.style} dangerouslySetInnerHTML=${{__html: amasty.txt}} />
+    </div>`;
+  }
+
   render({ product, loading, index }, state) {
     if (loading) {
       return html`
@@ -143,6 +157,7 @@ class ProductCard extends Component {
         <div class="picture">
           <a href="/products/${product.url_key}/${product.sku}">
             ${this.renderImage(index < numberOfEagerImages ? 'eager' : 'lazy')}
+            ${this.renderLabel()}
           </a>
           <button class="add-to-cart-action">Add to Bag</button>
         </div>

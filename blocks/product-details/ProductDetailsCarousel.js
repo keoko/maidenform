@@ -87,6 +87,16 @@ export default class Carousel extends Component {
     });
   }
 
+  renderLabel() {
+    const amasty = this.props.product?.amasty;
+    if (!amasty) {
+      return null;
+    }
+    return html`<div class="amasty-wrapper">
+      <div class=${amasty.position} style=${amasty.style} dangerouslySetInnerHTML=${{ __html: amasty.txt }} />
+    </div>`;
+  }
+
   render() {
     this.getImages();
 
@@ -115,6 +125,7 @@ export default class Carousel extends Component {
                 </ul>
             </div>
             <div class="carousel-stage-wrapper">
+                ${this.renderLabel()}
                 ${this.props.shimmer || html`
                     <div class="main-controls">
                         <button name="stage-prev" onClick=${() => this.updateSlide((index) => index - 1)}><${Icon} name="caret-left-fill" /></button>
