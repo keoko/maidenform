@@ -6,7 +6,6 @@
 import React from 'react';
 import { render } from 'react-dom';
 import Account from './account';
-import '../../index.css';
 
 console.log('Account Loaded');
 

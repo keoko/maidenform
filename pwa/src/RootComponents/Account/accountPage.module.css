@@ -1,0 +1,12 @@
+.root {
+    display: flex;
+    gap: 25px;
+}
+
+.sidebar {
+    flex: 1;
+}
+
+.content {
+    flex: 5;
+}
