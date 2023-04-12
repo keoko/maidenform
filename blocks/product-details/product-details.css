@@ -215,8 +215,20 @@
 }
 
 .product-details .product-detail-carousel .carousel-stage-wrapper {
+  display: grid;
   overflow: hidden;
   min-width: 100%;
+}
+
+.product-details .product-detail-carousel .carousel-stage-wrapper .amasty-wrapper {
+  grid-area: 1 / 1 / 1 / 1;
+  z-index: 2;
+  display: flex;
+}
+
+.product-details .product-detail-carousel .carousel-stage-wrapper .amasty-wrapper > .bottom-center {
+  align-self: end;
+  text-align: center;
 }
 
 .product-details picture.shimmer img {
@@ -307,6 +319,7 @@
 }
 
 .product-details .product-detail-carousel .carousel-stage {
+  grid-area: 1 / 1 / 1 / 1;
   display: flex;
   transition: transform 200ms;
   min-width: 100%;
@@ -322,6 +335,7 @@
 }
 
 .product-details .product-detail-carousel .main-controls {
+  grid-area: 1 / 1 / 1 / 1;
   z-index: 2;
   position: absolute;
   right: 40px;

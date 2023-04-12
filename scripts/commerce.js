@@ -26,6 +26,17 @@ const priceFieldsFragment = `fragment priceFields on ProductViewPrice {
   }
 }`;
 
+const productAmastyLabelsQuery = `query AmastyLabels($productIds: [Int]!) {
+  amLabelProvider(productIds: $productIds, mode: PRODUCT) {
+      items {
+          product_id
+          position
+          txt
+          style
+      }
+  }
+}`;
+
 /* Queries PDP */
 
 export const refineProductQuery = `query RefineProductQuery($sku: String!, $variantIds: [String!]!) {
@@ -65,6 +76,7 @@ export const productStockQuery = `query StockQuery($urlKey: String!) {
     currentPage: 1
   ) {
     items {
+      id
       name
       stock_status
       ... on ConfigurableProduct {
@@ -146,8 +158,7 @@ export const productDetailQuery = `query ProductQuery($sku: String!) {
 }
 ${priceFieldsFragment}`;
 
-export const productBreadcrumbQuery = `
-  query ProductBreadcrumbQuery($urlKey: String!) {
+export const productBreadcrumbQuery = `query ProductBreadcrumbQuery($urlKey: String!) {
     products(
         filter: { url_key: { eq: $urlKey } }
         pageSize: 20
@@ -167,11 +178,9 @@ export const productBreadcrumbQuery = `
             }
         }
     }
-}
-`;
+}`;
 
-export const urlKeyToSkuQuery = `
-query UrlKeyToSku($urlKeys: [String!]!) {
+export const urlKeyToSkuQuery = `query UrlKeyToSku($urlKeys: [String!]!) {
     products(
         filter: { url_key: { in: $urlKeys } }
         pageSize: 200
@@ -182,8 +191,7 @@ query UrlKeyToSku($urlKeys: [String!]!) {
             sku
         }
     }
-}
-`;
+}`;
 
 /* Queries PLP */
 
@@ -224,6 +232,9 @@ export const productSearchQuery = `query ProductSearch(
           }
       }
       items {
+          product {
+            id
+          }
           productView {
               name
               sku
@@ -392,6 +403,13 @@ export async function performMonolithGraphQLQuery(query, variables, GET = true) 
   return response.json();
 }
 
+export async function getAmastyLabels(productIds) {
+  const response = await performMonolithGraphQLQuery(productAmastyLabelsQuery, { productIds });
+  return response.data?.amLabelProvider
+    .map((e) => (e.items.length > 0 ? e.items[0] : null))
+    .filter((e) => e !== null);
+}
+
 export function renderPrice(product, format, html, Fragment) {
   // Simple product
   if (product.price) {
@@ -478,7 +496,7 @@ export async function getProduct(sku) {
 }
 
 export async function getCategoryNameFromUrlKey() {
-  const possibleProducts = await performMonolithGraphQLQuery(
+  const { data: possibleProducts } = await performMonolithGraphQLQuery(
     productBreadcrumbQuery,
     { urlKey: getUrlKeyFromUrl() },
   );
@@ -518,18 +536,19 @@ const getColorSwatchesForProduct = (colorOption, sku) => (
   // Remove options without image
   .filter((v) => v.image);
 
-const mapProduct = (product) => {
+const mapProduct = (productView, product) => {
   // Parse url_key from url
-  const productUrl = new URL(product.url);
+  const productUrl = new URL(productView.url);
   const urlKey = productUrl.pathname.substring(1, productUrl.pathname.length - 5);
 
   // Find in product.options the object with id = color
-  const colorOption = product.options.find((option) => option.id === 'color');
-  const colorOptions = getColorSwatchesForProduct(colorOption, product.sku);
+  const colorOption = productView.options.find((option) => option.id === 'color');
+  const colorOptions = getColorSwatchesForProduct(colorOption, productView.sku);
 
   return {
     ...product,
-    images: [{ url: new URL(`/product-images/${product.sku.toLowerCase()}.jpg`, document.baseURI).toString() }],
+    ...productView,
+    images: [{ url: new URL(`/product-images/${productView.sku.toLowerCase()}.jpg`, document.baseURI).toString() }],
     url_key: urlKey,
     swatches: colorOptions,
     rating: 'loading',
@@ -583,7 +602,7 @@ export async function loadCategory(state) {
       pages: Math.max(response.productSearch.page_info.total_pages, 1),
       products: {
         items: response.productSearch.items
-          .map((product) => mapProduct(product.productView)),
+          .map((product) => mapProduct(product.productView, product.product)),
         total: response.productSearch.total_count,
       },
       facets: response.productSearch.facets.filter((facet) => facet.attribute !== 'categories'),
