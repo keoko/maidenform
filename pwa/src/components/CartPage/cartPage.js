@@ -11,7 +11,7 @@ import StockStatusMessage from '@magento/venia-ui/lib/components/StockStatusMess
 import PriceAdjustments from '@magento/venia-ui/lib/components/CartPage/PriceAdjustments';
 import PriceSummary from './PriceSummary';
 import ProductListing from './ProductListing';
-import defaultClasses from '@magento/venia-ui/lib/components/CartPage/cartPage.module.css';
+import classes from './cartPage.module.css'
 
 const CheckIcon = <Icon size={20} src={Check} />;
 
@@ -46,7 +46,6 @@ const CartPage = props => {
         wishlistSuccessProps
     } = talonProps;
 
-    const classes = useStyle(defaultClasses, props.classes);
     const { formatMessage } = useIntl();
     const [, { addToast }] = useToasts();
 

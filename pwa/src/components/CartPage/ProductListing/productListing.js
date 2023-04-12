@@ -8,9 +8,13 @@ import defaultClasses from '@magento/venia-ui/lib/components/CartPage/ProductLis
 import Product from './product';
 import ErrorMessage from './errorMessage';
 
-const EditModal = React.lazy(() =>
-    async () => await import('@magento/venia-ui/lib/components/CartPage/ProductListing/EditModal').default
-);
+//FIXME: use lazy load
+// const EditModal = React.lazy(() =>
+//     async () => await import('@magento/venia-ui/lib/components/CartPage/ProductListing/EditModal').default
+// );
+//
+import EditModal from '@magento/venia-ui/lib/components/CartPage/ProductListing/EditModal'
+
 /**
  * A child component of the CartPage component.
  * This component renders the product listing on the cart page.
