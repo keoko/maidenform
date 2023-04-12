@@ -7,6 +7,7 @@ import SavedPaymentsPage from '@magento/venia-ui/lib/components/SavedPaymentsPag
 import OrderHistoryPage from '@magento/venia-ui/lib/components/OrderHistoryPage';
 import AccountInformationPage from '@magento/venia-ui/lib/components/AccountInformationPage';
 import AddressBookPage from '@magento/venia-ui/lib/components/AddressBookPage';
+import WishListPage from '@magento/venia-ui/lib/components/WishlistPage';
 
 const origin = globalThis.location.origin;
 const styles = new Set();
@@ -22,6 +23,8 @@ const AccountTypeHandler = props => {
             return <AccountInformationPage />;
         case 'history':
             return <OrderHistoryPage />;
+        case 'wishlist':
+            return <WishListPage />;
         case 'creditcards':
             return <SavedPaymentsPage />;
         case 'resetpassword':

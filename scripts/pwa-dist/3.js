@@ -1,35 +1,36 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[3],{
 
-/***/ "./node_modules/@magento/venia-ui/lib/components/CartPage/ProductListing/EditModal/index.js":
-/*!***************************************************************************************************************!*\
-  !*** ./node_modules/@magento/venia-ui/lib/components/CartPage/ProductListing/EditModal/index.js + 31 modules ***!
-  \***************************************************************************************************************/
+/***/ "./node_modules/@magento/venia-ui/lib/components/CartPage/PriceAdjustments/GiftOptions/index.js":
+/*!******************************************************************************************************************!*\
+  !*** ./node_modules/@magento/venia-ui/lib/components/CartPage/PriceAdjustments/GiftOptions/index.js + 7 modules ***!
+  \******************************************************************************************************************/
 /*! exports provided: default */
 /*! all exports used */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/react/hooks/useMutation.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/react/hooks/useQuery.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/context/cart.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/context/eventing.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/hooks/hook-wrappers/useInformedFieldStateWrapper.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/talons/CartPage/PriceSummary/queries/giftOptionsSummary.ee.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/talons/CartPage/cartPageFragments.gql.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/configuredVariant.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/imageUtils.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/shallowMerge.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Dialog/dialog.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Button/button.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Checkbox/checkbox.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Field/field.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Field/message.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/FormError/formError.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Icon/icon.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Image/image.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/LinkButton/linkButton.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/LoadingIndicator/indicator.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/LoadingIndicator/spinner.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Price/price.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/QuantityStepper/quantityStepper.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-feather/dist/icons/check.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/CartPage/ProductListing/EditModal/productDetail.module.css (<- Module uses module.id) */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/CartPage/ProductListing/EditModal/productForm.module.css (<- Module uses module.id) */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/ProductOptions/option.module.css (<- Module uses module.id) */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/ProductOptions/swatch.module.css (<- Module uses module.id) */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/ProductOptions/swatchList.module.css (<- Module uses module.id) */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/ProductOptions/tile.module.css (<- Module uses module.id) */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/ProductOptions/tileList.module.css (<- Module uses module.id) */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/TextInput/textInput.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/util/formValidators.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-feather/dist/icons/edit-2.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/CartPage/PriceAdjustments/GiftOptions/giftOptions.module.css (<- Module uses module.id) */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/TextArea/textArea.module.css (<- Module uses module.id) */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql-tag/lib/index.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/informed/dist/esm/index.js (<- Module uses injected variables (process)) */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/lodash.debounce/index.js (<- Module is not an ECMAScript module) */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/prop-types/index.js (<- Module is not an ECMAScript module) */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-intl/lib/src/components/message.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-intl/lib/src/components/useIntl.js */
@@ -42,50 +43,23 @@
 __webpack_require__.r(__webpack_exports__);
 
 // EXPORTS
-__webpack_require__.d(__webpack_exports__, "default", function() { return /* reexport */ editModal; });
+__webpack_require__.d(__webpack_exports__, "default", function() { return /* reexport */ giftOptions; });
 
 // EXTERNAL MODULE: ./node_modules/react/index.js
 var react = __webpack_require__("./node_modules/react/index.js");
 var react_default = /*#__PURE__*/__webpack_require__.n(react);
 
-// CONCATENATED MODULE: ./node_modules/@magento/peregrine/lib/talons/CartPage/ProductListing/EditModal/useEditModal.js
-
-
-/**
- * This talon contains logic for a product edit modal used on a cart page.
- * It returns prop data for rendering an interactive modal component.
- *
- * @function
- *
- * @return {EditModalTalonProps}
- *
- * @example <caption>Importing into your project</caption>
- * import { useEditModal } from '@magento/peregrine/lib/talons/CartPage/ProductListing/EditModal/useEditModal';
- */
-const useEditModal = () => {
-  const [variantPrice, setVariantPrice] = Object(react["useState"])(null);
-  return {
-    setVariantPrice,
-    variantPrice
-  };
-};
-
-/** JSDocs type definitions */
-
-/**
- * Object type returned by the {@link useEditModal} talon.
- * It provides props data for rendering an edit modal component.
- *
- * @typedef {Object} EditModalTalonProps
- *
- * @property {function} setVariantPrice Function for setting a product's variant price.
- * @property {Object} variantPrice The variant price for a product. See [Money object]{@link https://devdocs.magento.com/guides/v2.4/graphql/product/product-interface.html#Money}.
- */
 // EXTERNAL MODULE: ./node_modules/react-intl/lib/src/components/useIntl.js
 var useIntl = __webpack_require__("./node_modules/react-intl/lib/src/components/useIntl.js");
 
 // EXTERNAL MODULE: ./node_modules/react-intl/lib/src/components/message.js
 var components_message = __webpack_require__("./node_modules/react-intl/lib/src/components/message.js");
+
+// EXTERNAL MODULE: ./node_modules/react-feather/dist/icons/edit-2.js
+var edit_2 = __webpack_require__("./node_modules/react-feather/dist/icons/edit-2.js");
+
+// EXTERNAL MODULE: ./node_modules/informed/dist/esm/index.js
+var esm = __webpack_require__("./node_modules/informed/dist/esm/index.js");
 
 // EXTERNAL MODULE: ./node_modules/@apollo/client/react/hooks/useMutation.js
 var useMutation = __webpack_require__("./node_modules/@apollo/client/react/hooks/useMutation.js");
@@ -93,369 +67,91 @@ var useMutation = __webpack_require__("./node_modules/@apollo/client/react/hooks
 // EXTERNAL MODULE: ./node_modules/@apollo/client/react/hooks/useQuery.js
 var useQuery = __webpack_require__("./node_modules/@apollo/client/react/hooks/useQuery.js");
 
+// EXTERNAL MODULE: ./node_modules/lodash.debounce/index.js
+var lodash_debounce = __webpack_require__("./node_modules/lodash.debounce/index.js");
+var lodash_debounce_default = /*#__PURE__*/__webpack_require__.n(lodash_debounce);
+
+// EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/context/cart.js
+var context_cart = __webpack_require__("./node_modules/@magento/peregrine/lib/context/cart.js");
+
 // EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/util/shallowMerge.js
 var shallowMerge = __webpack_require__("./node_modules/@magento/peregrine/lib/util/shallowMerge.js");
 
-// EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/context/cart.js
-var cart = __webpack_require__("./node_modules/@magento/peregrine/lib/context/cart.js");
+// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/util/formValidators.js
+var formValidators = __webpack_require__("./node_modules/@magento/venia-ui/lib/util/formValidators.js");
 
-// CONCATENATED MODULE: ./node_modules/@magento/peregrine/lib/util/findMatchingProductVariant.js
-/**
- * TODO Document
- */
-const findMatchingVariant = ({
-  variants,
-  optionCodes,
-  optionSelections
-}) => {
-  return variants.find(({
-    attributes,
-    product
-  }) => {
-    const customAttributes = (attributes || []).reduce((map, {
-      code,
-      value_index
-    }) => new Map(map).set(code, value_index), new Map());
-    for (const [id, value] of optionSelections) {
-      const code = optionCodes.get(id);
-      const matchesStandardAttribute = product[code] === value;
-      const matchesCustomAttribute = customAttributes.get(code) === value;
-
-      // if any option selection fails to match any standard attribute
-      // and also fails to match any custom attribute
-      // then this isn't the correct variant
-      if (!matchesStandardAttribute && !matchesCustomAttribute) {
-        return false;
-      }
-    }
-
-    // otherwise, every option selection matched
-    // and this is the correct variant
-    return true;
-  });
-};
 // EXTERNAL MODULE: ./node_modules/graphql-tag/lib/index.js + 3 modules
 var lib = __webpack_require__("./node_modules/graphql-tag/lib/index.js");
 
 // EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/talons/CartPage/cartPageFragments.gql.js
 var cartPageFragments_gql = __webpack_require__("./node_modules/@magento/peregrine/lib/talons/CartPage/cartPageFragments.gql.js");
 
-// CONCATENATED MODULE: ./node_modules/@magento/peregrine/lib/talons/CartPage/ProductListing/EditModal/productFormFragment.gql.js
+// EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/talons/CartPage/PriceSummary/queries/giftOptionsSummary.ee.js
+var giftOptionsSummary_ee = __webpack_require__("./node_modules/@magento/peregrine/lib/talons/CartPage/PriceSummary/queries/giftOptionsSummary.ee.js");
 
-const ProductFormFragment = lib["a" /* gql */]`
-    # eslint-disable-next-line @graphql-eslint/require-id-when-available
-    fragment ProductFormFragment on ProductInterface {
-        uid
-        sku
-        # eslint-disable-next-line @graphql-eslint/require-id-when-available
-        ... on ConfigurableProduct {
-            # eslint-disable-next-line @graphql-eslint/require-id-when-available
-            configurable_options {
-                attribute_code
-                attribute_id
-                uid
-                label
-                values {
-                    default_label
-                    label
-                    store_label
-                    use_default_value
-                    value_index
-                    swatch_data {
-                        ... on ImageSwatchData {
-                            thumbnail
-                        }
-                        value
-                    }
-                }
-            }
-            variants {
-                attributes {
-                    code
-                    value_index
-                }
-                # eslint-disable-next-line @graphql-eslint/require-id-when-available
-                product {
-                    uid
-                    price {
-                        regularPrice {
-                            amount {
-                                currency
-                                value
-                            }
-                        }
-                    }
-                    price_range {
-                        maximum_price {
-                            final_price {
-                                currency
-                                value
-                            }
-                        }
-                    }
-                    sku
-                    stock_status
-                }
-            }
+// CONCATENATED MODULE: ./node_modules/@magento/peregrine/lib/talons/CartPage/PriceAdjustments/GiftOptions/giftOptionsFragments.gql.js
+
+
+const GiftOptionsFragment = lib["a" /* gql */]`
+    fragment GiftOptionsFragment on Cart {
+        __typename
+        id
+        gift_message {
+            from
+            to
+            message
+        }
+        gift_receipt_included
+        printed_card_included
+        ...GiftOptionsSummaryFragment
+    }
+    ${giftOptionsSummary_ee["a" /* GiftOptionsSummaryFragment */]}
+`;
+// CONCATENATED MODULE: ./node_modules/@magento/peregrine/lib/talons/CartPage/PriceAdjustments/GiftOptions/giftOptions.gql.js
+
+
+
+const GET_GIFT_OPTIONS = lib["a" /* gql */]`
+    query GetGiftOptions($cartId: String!) {
+        cart(cart_id: $cartId) {
+            id
+            ...GiftOptionsFragment
         }
     }
+    ${GiftOptionsFragment}
 `;
-// CONCATENATED MODULE: ./node_modules/@magento/peregrine/lib/talons/CartPage/ProductListing/EditModal/productForm.gql.js
 
-
-
-const GET_CONFIGURABLE_OPTIONS = lib["a" /* gql */]`
-    query productDetailBySku($sku: String) {
-        products(filter: { sku: { eq: $sku } }) {
-            items {
-                id
-                uid
-                ...ProductFormFragment
-            }
-        }
-    }
-    ${ProductFormFragment}
-`;
-const UPDATE_QUANTITY_MUTATION = lib["a" /* gql */]`
-    mutation UpdateCartItemQuantity(
+// Currently Commerce only
+const SET_GIFT_OPTIONS_ON_CART = lib["a" /* gql */]`
+    mutation SetGiftOptionsOnCart(
         $cartId: String!
-        $cartItemId: ID!
-        $quantity: Float!
+        $giftMessage: GiftMessageInput
+        $giftReceiptIncluded: Boolean!
+        $printedCardIncluded: Boolean!
     ) {
-        updateCartItems(
+        setGiftOptionsOnCart(
             input: {
                 cart_id: $cartId
-                cart_items: [
-                    { cart_item_uid: $cartItemId, quantity: $quantity }
-                ]
+                gift_message: $giftMessage
+                gift_receipt_included: $giftReceiptIncluded
+                printed_card_included: $printedCardIncluded
             }
         ) {
             cart {
                 id
                 ...CartPageFragment
+                ...GiftOptionsFragment
             }
         }
     }
     ${cartPageFragments_gql["a" /* CartPageFragment */]}
+    ${GiftOptionsFragment}
 `;
-const UPDATE_CONFIGURABLE_OPTIONS_MUTATION = lib["a" /* gql */]`
-    mutation UpdateConfigurableOptions(
-        $cartId: String!
-        $cartItemId: ID!
-        $parentSku: String!
-        $variantSku: String!
-        $quantity: Float!
-    ) {
-        addConfigurableProductsToCart(
-            input: {
-                cart_id: $cartId
-                cart_items: [
-                    {
-                        data: { quantity: $quantity, sku: $variantSku }
-                        parent_sku: $parentSku
-                    }
-                ]
-            }
-        ) {
-            cart {
-                id
-            }
-        }
-
-        removeItemFromCart(
-            input: { cart_id: $cartId, cart_item_uid: $cartItemId }
-        ) {
-            cart {
-                id
-                ...CartPageFragment
-            }
-        }
-    }
-    ${cartPageFragments_gql["a" /* CartPageFragment */]}
-`;
-const GET_CONFIGURABLE_THUMBNAIL_SOURCE = lib["a" /* gql */]`
-    query getConfigurableThumbnailSource {
-        # eslint-disable-next-line @graphql-eslint/require-id-when-available
-        storeConfig {
-            store_code
-            configurable_thumbnail_source
-        }
-    }
-`;
-/* harmony default export */ var productForm_gql = ({
-  getConfigurableThumbnailSourceQuery: GET_CONFIGURABLE_THUMBNAIL_SOURCE,
-  getConfigurableOptionsQuery: GET_CONFIGURABLE_OPTIONS,
-  updateQuantityMutation: UPDATE_QUANTITY_MUTATION,
-  updateConfigurableOptionsMutation: UPDATE_CONFIGURABLE_OPTIONS_MUTATION
+/* harmony default export */ var giftOptions_gql = ({
+  getGiftOptionsQuery: GET_GIFT_OPTIONS,
+  setGiftOptionsOnCartMutation: SET_GIFT_OPTIONS_ON_CART
 });
-// EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/context/eventing.js
-var eventing = __webpack_require__("./node_modules/@magento/peregrine/lib/context/eventing.js");
-
-// CONCATENATED MODULE: ./node_modules/@magento/peregrine/lib/util/findAllMatchingVariants.js
-/**
- * Find all the products/variants contains current option selections
- * @return {Array} variants
- */
-const findAllMatchingVariants = ({
-  variants,
-  optionCodes,
-  singleOptionSelection
-}) => {
-  return variants === null || variants === void 0 ? void 0 : variants.filter(({
-    attributes,
-    product
-  }) => {
-    const customAttributes = (attributes || []).reduce((map, {
-      code,
-      value_index
-    }) => new Map(map).set(code, value_index), new Map());
-    for (const [id, value] of singleOptionSelection) {
-      const code = optionCodes.get(id);
-      const matchesStandardAttribute = product[code] === value;
-      const matchesCustomAttribute = customAttributes.get(code) === value;
-
-      // if any option selection fails to match any standard attribute
-      // and also fails to match any custom attribute
-      // then this isn't the correct variant
-      if (!matchesStandardAttribute && !matchesCustomAttribute) {
-        return false;
-      }
-    }
-
-    // otherwise, every option selection matched
-    // and these are the correct variants
-    return true;
-  });
-};
-// CONCATENATED MODULE: ./node_modules/@magento/peregrine/lib/util/getOutOfStockIndexes.js
-/**
- * Find the value_index of out of stock variants
- * @return {Array} indexes
- */
-
-const getOutOfStockIndexes = items => {
-  const OUT_OF_STOCK_CODE = 'OUT_OF_STOCK';
-  return items === null || items === void 0 ? void 0 : items.filter(item => item.product.stock_status === OUT_OF_STOCK_CODE).map(option => option.attributes.map(attribute => attribute.value_index));
-};
-// CONCATENATED MODULE: ./node_modules/@magento/peregrine/lib/util/createProductVariants.js
-/**
- * Rebuild the array of variants with out of stock items data added.
- * Since when admin selects in the Admin dashboard to not to display out of stock products
- * the variants data that are needed to find disabled swatches only show the the in stock ones, missing the out of stock ones
- * We rebuild the variants here to display all the variants and mark the stock status accordingly
- * This returns an array of objects
- */
-
-const createProductVariants = product => {
-  const OUT_OF_STOCK_CODE = 'OUT_OF_STOCK';
-  const IN_STOCK_CODE = 'IN_STOCK';
-  if (product && product.configurable_options) {
-    const {
-      variants
-    } = product;
-    // Compute the permutation of all possible arrays of given arrays
-    // For example, if array = [[1,2],[10,20],[100,200,300]]
-    // the result is [[1, 10, 100], [1, 10, 200], [1, 10, 300], [1, 20, 100], [1, 20, 200],
-    // [1, 20, 300], [2, 10, 100], [2, 10, 200], [2, 10, 300], [2, 20, 100], [2, 20, 200], [2, 20, 300]]
-    const cartesian = (...array) => array.reduce((array, current) => array.flatMap(cur => current.map(n => [cur, n].flat())));
-    const configurableOptionsValueIndexes = product.configurable_options.map(option => option.values.map(value => value.value_index));
-    // Get all possible variants for current options
-    const allPossibleItems = cartesian(...configurableOptionsValueIndexes);
-    const variantsValueIndexes = variants.map(variant => variant.attributes.map(attribute => attribute.value_index));
-    const newVariantsArray = [];
-    const len = allPossibleItems.length;
-    let foundMatch;
-    let currentValueIndex = [];
-    for (let i = 0; i < len; i++) {
-      currentValueIndex = allPossibleItems[i];
-      for (const option of variantsValueIndexes) {
-        // If found the same item option in the current variants array, meaning the item is in stock
-        // If not found a match, meaning the item is out of stock, which is why it's not in the current variants array
-        // with the not to display out of stock products selected in Admin dashboard
-        foundMatch = option.length > 1 ? Array.from(currentValueIndex).sort().toString() === option.sort().toString() : currentValueIndex.toString() === option.toString();
-        if (foundMatch) {
-          break;
-        }
-      }
-      const newAttributes = [];
-      // If there are more than 1 group of swatches
-      if (currentValueIndex.length && currentValueIndex.length > 1) {
-        for (const index of Array.from(currentValueIndex)) {
-          const code = product.configurable_options.find(option => option.values.find(value => value.value_index === index));
-          newAttributes.push({
-            value_index: index,
-            code: code.attribute_code
-          });
-        }
-        // If there's only one group of swatches
-      } else {
-        const code = product.configurable_options.find(option => option.values.find(value => value.value_index === currentValueIndex));
-        newAttributes.push({
-          value_index: currentValueIndex,
-          code: code.attribute_code
-        });
-      }
-      newVariantsArray.push({
-        key: i,
-        attributes: Array.from(newAttributes),
-        product: {
-          stock_status: foundMatch ? IN_STOCK_CODE : OUT_OF_STOCK_CODE
-        }
-      });
-    }
-    return newVariantsArray;
-  } else {
-    return [];
-  }
-};
-// CONCATENATED MODULE: ./node_modules/@magento/peregrine/lib/util/getCombinations.js
-/**
- * Find the combination of k elements in the array.
- * For example: array is [1,2,3]. k=2.
- * The results are [[1,2],[1,3],[2,3]]
- * @return {Array}
- */
-function getCombinations(array, k, prefix = []) {
-  if (k == 0) return [prefix];
-  return array.flatMap((value, index) => getCombinations(array.slice(index + 1), k - 1, [...prefix, value]));
-}
-// CONCATENATED MODULE: ./node_modules/@magento/peregrine/lib/util/getOutOfStockVariantsWithInitialSelection.js
-/**
- * Find out of stock variants/options of current option selections with initial selctions
- * @return {Array} variants
- */
-
-
-
-
-const getOutOfStockVariantsWithInitialSelection = (product, configurableOptionCodes, multipleOptionSelections, configItem, isOutOfStockProductDisplayed) => {
-  if (configItem && product) {
-    let variants = product.variants;
-    const variantsIfOutOfStockProductsNotDisplayed = createProductVariants(configItem);
-    //If out of stock products is set to not displayed, use the variants created
-    variants = isOutOfStockProductDisplayed ? variants : variantsIfOutOfStockProductsNotDisplayed;
-    if (multipleOptionSelections && multipleOptionSelections.size === configurableOptionCodes.size) {
-      const selectedIndexes = Array.from(multipleOptionSelections.values()).flat();
-      const selectedIndexesCombinations = getCombinations(selectedIndexes, selectedIndexes.length - 1);
-      const oosIndexes = [];
-      for (const option of selectedIndexesCombinations) {
-        var _getOutOfStockIndexes;
-        const curOption = new Map([...multipleOptionSelections].filter(([key, val]) => (option.includes(key), option.includes(val))));
-        const curItems = findAllMatchingVariants({
-          optionCodes: configurableOptionCodes,
-          singleOptionSelection: curOption,
-          variants: variants
-        });
-        const outOfStockIndex = (_getOutOfStockIndexes = getOutOfStockIndexes(curItems)) === null || _getOutOfStockIndexes === void 0 ? void 0 : _getOutOfStockIndexes.flat().filter(idx => !selectedIndexes.includes(idx));
-        oosIndexes.push(outOfStockIndex);
-      }
-      return oosIndexes;
-    }
-    return [];
-  }
-};
-// CONCATENATED MODULE: ./node_modules/@magento/peregrine/lib/talons/CartPage/ProductListing/EditModal/useProductForm.js
-
+// CONCATENATED MODULE: ./node_modules/@magento/peregrine/lib/talons/CartPage/PriceAdjustments/GiftOptions/useGiftOptions.js
 
 
 
@@ -465,985 +161,427 @@ const getOutOfStockVariantsWithInitialSelection = (product, configurableOptionCo
 
 
 /**
- * This talon contains logic for a product edit form.
- * It performs effects and returns data for rendering the component inside a modal container.
+ * This talon contains the logic for a gift options component.
+ * It performs effects and returns a data object containing values for rendering the component.
  *
  * This talon performs the following effects:
  *
- * - Manage the updating state of the cart while form data is being saved
- * - Set the variant price on a product depending on the product's options
+ * - Fetch the gift options associated with the cart
+ * - Update the {@link GiftOptionsTalonProps} values with the data returned by the query
  *
  * @function
  *
  * @param {Object} props
- * @param {Object} props.cartItem The cart item to configure on the form
- * @param {GraphQLDocument} props.getConfigurableOptionsQuery GraphQL query to get the configurable options for a product.
- * @param {function} props.setIsCartUpdating Function for setting the updating state for the shopping cart.
- * @param {function} props.setVariantPrice Function for setting the variant price on a product.
- * @param {GraphQLDocument} props.updateConfigurableOptionsMutation GraphQL mutation for updating the configurable options for a product.
- * @param {GraphQLDocument} props.updateQuantityMutation GraphQL mutation for updating the quantity of a product in a cart.
- * @param {function} props.setActiveEditItem Function for setting the actively editing item.
+ * @param {GiftOptionsOperations} props.operations
  *
- * @return {ProductFormTalonProps}
+ * @returns {GiftOptionsTalonProps}
  *
  * @example <caption>Importing into your project</caption>
- * import { useProductForm } from '@magento/peregrine/lib/talons/CartPage/ProductListing/EditModal/useProductForm';
+ * import { useGiftOptions } from '@magento/peregrine/lib/talons/CartPage/GiftOptions/useGiftOptions';
  */
-
-// Get initial selections
-function deriveOptionSelectionsFromProduct(cartItem) {
-  if (cartItem) {
-    const initialOptionSelections = new Map();
-    for (const {
-      id,
-      value_id
-    } of cartItem.configurable_options) {
-      initialOptionSelections.set(String(id), value_id);
-    }
-    return initialOptionSelections;
-  }
-}
-const useProductForm = props => {
-  const operations = Object(shallowMerge["a" /* default */])(productForm_gql, props.operations);
+const useGiftOptions = (props = {}) => {
+  var _cart$gift_message10, _cart$gift_message11, _cart$gift_message12, _cart$prices, _cart$prices$gift_opt;
+  const operations = Object(shallowMerge["a" /* default */])(giftOptions_gql, props.operations);
   const {
-    getConfigurableThumbnailSourceQuery,
-    getConfigurableOptionsQuery,
-    updateConfigurableOptionsMutation,
-    updateQuantityMutation
+    setGiftOptionsOnCartMutation,
+    getGiftOptionsQuery
   } = operations;
-  const {
-    cartItem,
-    setIsCartUpdating,
-    setVariantPrice,
-    setActiveEditItem
-  } = props;
-  const [, {
-    dispatch
-  }] = Object(eventing["b" /* useEventingContext */])();
   const [{
     cartId
-  }] = Object(cart["b" /* useCartContext */])();
-  const derivedOptionSelections = Object(react["useMemo"])(() => {
-    if (cartItem) {
-      return deriveOptionSelectionsFromProduct(cartItem);
-    }
-  }, [cartItem]);
-  const [optionSelections, setOptionSelections] = Object(react["useState"])(new Map());
-  const [multipleOptionSelections, setMultipleOptionSelections] = Object(react["useState"])(derivedOptionSelections ? derivedOptionSelections : new Map());
-  Object(react["useEffect"])(() => {
-    if (cartItem) {
-      setMultipleOptionSelections(derivedOptionSelections);
-    }
-  }, [derivedOptionSelections, cartItem]);
-  const handleClose = Object(react["useCallback"])(() => {
-    setMultipleOptionSelections(new Map());
-    setOptionSelections(new Map());
-    setActiveEditItem(null);
-  }, [setActiveEditItem, setMultipleOptionSelections, setOptionSelections]);
-  const [updateItemQuantity, {
-    called: updateQuantityCalled,
-    error: updateQuantityError,
-    loading: updateQuantityLoading
-  }] = Object(useMutation["a" /* useMutation */])(updateQuantityMutation);
-  const [updateConfigurableOptions, {
-    called: updateConfigurableCalled,
-    error: updateConfigurableError,
-    loading: updateConfigurableLoading
-  }] = Object(useMutation["a" /* useMutation */])(updateConfigurableOptionsMutation);
-  const isSaving = updateQuantityCalled && updateQuantityLoading || updateConfigurableCalled && updateConfigurableLoading;
-  Object(react["useEffect"])(() => {
-    setIsCartUpdating(isSaving);
-  }, [isSaving, setIsCartUpdating]);
+  }] = Object(context_cart["b" /* useCartContext */])();
+  const [setGiftOptionsOnCart, {
+    error: setGiftOptionsOnCartError
+  }] = Object(useMutation["a" /* useMutation */])(setGiftOptionsOnCartMutation);
   const {
-    data,
-    error,
+    data: getGiftOptionsData,
+    error: getGiftOptionsError,
     loading
-  } = Object(useQuery["a" /* useQuery */])(getConfigurableOptionsQuery, {
-    skip: !cartItem,
+  } = Object(useQuery["a" /* useQuery */])(getGiftOptionsQuery, {
+    fetchPolicy: 'cache-and-network',
+    nextFetchPolicy: 'cache-first',
+    skip: !cartId,
     variables: {
-      sku: cartItem ? cartItem.product.sku : null
+      cartId
     }
   });
   const {
-    data: storeConfigData
-  } = Object(useQuery["a" /* useQuery */])(getConfigurableThumbnailSourceQuery, {
-    fetchPolicy: 'cache-and-network'
-  });
-  const handleOptionSelection = Object(react["useCallback"])((optionId, selection) => {
-    const nextOptionSelections = new Map([...optionSelections]);
-    const initialSelection = cartItem.configurable_options.find(option => option.id == optionId);
-    if ((initialSelection === null || initialSelection === void 0 ? void 0 : initialSelection.value_id) === selection) {
-      nextOptionSelections.delete(optionId);
-    } else {
-      nextOptionSelections.set(optionId, selection);
+    cart
+  } = getGiftOptionsData || {};
+  const formApiRef = Object(react["useRef"])(null);
+  const [giftMessageIsChecked, setGiftMessageIsChecked] = Object(react["useState"])(false);
+  const [showGiftMessageResult, setShowGiftMessageResult] = Object(react["useState"])(false);
+  const [savingOptions, setSavingOptions] = Object(react["useState"])([]);
+  const initialValues = Object(react["useMemo"])(() => {
+    var _cart$gift_message, _cart$gift_message2, _cart$gift_message3, _formApiRef$current, _formApiRef$current$g, _cart$gift_message4, _cart$gift_message5, _cart$gift_message6;
+    const hasInitialGiftMessage = (cart === null || cart === void 0 ? void 0 : (_cart$gift_message = cart.gift_message) === null || _cart$gift_message === void 0 ? void 0 : _cart$gift_message.from.length) > 0 || (cart === null || cart === void 0 ? void 0 : (_cart$gift_message2 = cart.gift_message) === null || _cart$gift_message2 === void 0 ? void 0 : _cart$gift_message2.to.length) > 0 || (cart === null || cart === void 0 ? void 0 : (_cart$gift_message3 = cart.gift_message) === null || _cart$gift_message3 === void 0 ? void 0 : _cart$gift_message3.message.length) > 0;
+    if ((formApiRef === null || formApiRef === void 0 ? void 0 : (_formApiRef$current = formApiRef.current) === null || _formApiRef$current === void 0 ? void 0 : (_formApiRef$current$g = _formApiRef$current.getState()) === null || _formApiRef$current$g === void 0 ? void 0 : _formApiRef$current$g.values) === undefined) {
+      setGiftMessageIsChecked(hasInitialGiftMessage);
+      setShowGiftMessageResult(hasInitialGiftMessage);
     }
-    setOptionSelections(nextOptionSelections);
-
-    // Create a new Map to only keep track of user multiple selections with key as String
-    // without considering initialSelection.value_id
-    const nextMultipleOptionSelections = new Map([...multipleOptionSelections]);
-    nextMultipleOptionSelections.set(optionId, selection);
-    setMultipleOptionSelections(nextMultipleOptionSelections);
-  }, [cartItem, optionSelections, multipleOptionSelections]);
-  const configItem = !loading && !error && data ? data.products.items[0] : null;
-
-  // Check if display out of stock products option is selected in the Admin Dashboard
-  const isOutOfStockProductDisplayed = Object(react["useMemo"])(() => {
-    let totalVariants = 1;
-    if (configItem && configItem.configurable_options) {
-      for (const option of configItem.configurable_options) {
-        const length = option.values.length;
-        totalVariants = totalVariants * length;
-      }
-      return configItem.variants.length === totalVariants;
-    }
-  }, [configItem]);
-  const configurableOptionCodes = Object(react["useMemo"])(() => {
-    const optionCodeMap = new Map();
-    if (configItem) {
-      configItem.configurable_options.forEach(option => {
-        optionCodeMap.set(option.attribute_id, option.attribute_code);
-      });
-    }
-    return optionCodeMap;
-  }, [configItem]);
-  const selectedVariant = Object(react["useMemo"])(() => {
-    if (optionSelections.size && configItem) {
-      const mergedOptionSelections = new Map([...optionSelections]);
-      cartItem.configurable_options.forEach(option => {
-        if (!mergedOptionSelections.has(`${option.id}`)) {
-          mergedOptionSelections.set(`${option.id}`, option.value_id);
-        }
-      });
-      return findMatchingVariant({
-        variants: configItem.variants,
-        optionCodes: configurableOptionCodes,
-        optionSelections: mergedOptionSelections
-      });
-    }
-  }, [cartItem, configItem, configurableOptionCodes, optionSelections]);
-  const outOfStockVariants = Object(react["useMemo"])(() => {
-    if (cartItem && configItem) {
-      const product = cartItem.product;
-      return getOutOfStockVariantsWithInitialSelection(product, configurableOptionCodes, multipleOptionSelections, configItem, isOutOfStockProductDisplayed);
-    }
-  }, [cartItem, configurableOptionCodes, multipleOptionSelections, configItem, isOutOfStockProductDisplayed]);
-  const configurableThumbnailSource = Object(react["useMemo"])(() => {
-    var _storeConfigData$stor;
-    return storeConfigData === null || storeConfigData === void 0 ? void 0 : (_storeConfigData$stor = storeConfigData.storeConfig) === null || _storeConfigData$stor === void 0 ? void 0 : _storeConfigData$stor.configurable_thumbnail_source;
-  }, [storeConfigData]);
-  Object(react["useEffect"])(() => {
-    var _selectedVariant$prod, _selectedVariant$prod2, _selectedVariant$prod3;
-    const variantPrice = selectedVariant === null || selectedVariant === void 0 ? void 0 : (_selectedVariant$prod = selectedVariant.product) === null || _selectedVariant$prod === void 0 ? void 0 : (_selectedVariant$prod2 = _selectedVariant$prod.price_range) === null || _selectedVariant$prod2 === void 0 ? void 0 : (_selectedVariant$prod3 = _selectedVariant$prod2.maximum_price) === null || _selectedVariant$prod3 === void 0 ? void 0 : _selectedVariant$prod3.final_price;
-    setVariantPrice(variantPrice);
-  }, [selectedVariant, setVariantPrice]);
-  const handleSubmit = Object(react["useCallback"])(async formValues => {
+    return {
+      cardFrom: (cart === null || cart === void 0 ? void 0 : (_cart$gift_message4 = cart.gift_message) === null || _cart$gift_message4 === void 0 ? void 0 : _cart$gift_message4.from) || '',
+      cardTo: (cart === null || cart === void 0 ? void 0 : (_cart$gift_message5 = cart.gift_message) === null || _cart$gift_message5 === void 0 ? void 0 : _cart$gift_message5.to) || '',
+      cardMessage: (cart === null || cart === void 0 ? void 0 : (_cart$gift_message6 = cart.gift_message) === null || _cart$gift_message6 === void 0 ? void 0 : _cart$gift_message6.message) || '',
+      includeGiftReceipt: (cart === null || cart === void 0 ? void 0 : cart.gift_receipt_included) === true,
+      includeGiftMessage: hasInitialGiftMessage,
+      includePrintedCard: (cart === null || cart === void 0 ? void 0 : cart.printed_card_included) === true
+    };
+  }, [cart]);
+  const giftMessageResult = Object(react["useMemo"])(() => {
+    var _cart$gift_message7, _cart$gift_message8, _cart$gift_message9;
+    return {
+      cardFrom: (cart === null || cart === void 0 ? void 0 : (_cart$gift_message7 = cart.gift_message) === null || _cart$gift_message7 === void 0 ? void 0 : _cart$gift_message7.from) || '',
+      cardTo: (cart === null || cart === void 0 ? void 0 : (_cart$gift_message8 = cart.gift_message) === null || _cart$gift_message8 === void 0 ? void 0 : _cart$gift_message8.to) || '',
+      cardMessage: (cart === null || cart === void 0 ? void 0 : (_cart$gift_message9 = cart.gift_message) === null || _cart$gift_message9 === void 0 ? void 0 : _cart$gift_message9.message) || ''
+    };
+  }, [cart === null || cart === void 0 ? void 0 : (_cart$gift_message10 = cart.gift_message) === null || _cart$gift_message10 === void 0 ? void 0 : _cart$gift_message10.from, cart === null || cart === void 0 ? void 0 : (_cart$gift_message11 = cart.gift_message) === null || _cart$gift_message11 === void 0 ? void 0 : _cart$gift_message11.message, cart === null || cart === void 0 ? void 0 : (_cart$gift_message12 = cart.gift_message) === null || _cart$gift_message12 === void 0 ? void 0 : _cart$gift_message12.to]);
+  const printedCardPrice = (cart === null || cart === void 0 ? void 0 : (_cart$prices = cart.prices) === null || _cart$prices === void 0 ? void 0 : (_cart$prices$gift_opt = _cart$prices.gift_options) === null || _cart$prices$gift_opt === void 0 ? void 0 : _cart$prices$gift_opt.printed_card) || {};
+  const hasGiftMessage = giftMessageResult.cardFrom.length > 0 && giftMessageResult.cardTo.length > 0 && giftMessageResult.cardMessage.length > 0;
+  const setFormApi = Object(react["useCallback"])(api => formApiRef.current = api, []);
+  const handleOnChange = Object(react["useCallback"])(async () => {
     try {
-      var _selectedVariant$attr;
-      const quantity = formValues.quantity;
-      if (selectedVariant && optionSelections.size || selectedVariant && multipleOptionSelections.size) {
-        await updateConfigurableOptions({
+      const formApi = formApiRef.current;
+      if (formApi) {
+        await setGiftOptionsOnCart({
           variables: {
             cartId,
-            cartItemId: cartItem.uid,
-            parentSku: cartItem.product.sku,
-            variantSku: selectedVariant.product.sku,
-            quantity: quantity
+            giftReceiptIncluded: formApi.getValue('includeGiftReceipt'),
+            printedCardIncluded: formApi.getValue('includePrintedCard')
           }
         });
-        setOptionSelections(new Map());
-        setMultipleOptionSelections(new Map());
-      } else if (quantity !== cartItem.quantity) {
-        await updateItemQuantity({
-          variables: {
-            cartId,
-            cartItemId: cartItem.uid,
-            quantity: quantity
-          }
-        });
+
+        // Reset saving options when mutation is complete
+        setSavingOptions([]);
       }
-      const selectedOptionsLabels =
-      // with updated variant
-      (selectedVariant === null || selectedVariant === void 0 ? void 0 : (_selectedVariant$attr = selectedVariant.attributes) === null || _selectedVariant$attr === void 0 ? void 0 : _selectedVariant$attr.map(({
-        value_index
-      }, i) => {
-        var _current$values$find;
-        const current = configItem.configurable_options[i];
-        const attribute = current.label;
-        const value = (_current$values$find = current.values.find(x => x.value_index === value_index)) === null || _current$values$find === void 0 ? void 0 : _current$values$find.label;
-        return {
-          attribute,
-          value
-        };
-      })) ||
-      // with current variant (updating only quantity)
-      cartItem.configurable_options.map(({
-        option_label,
-        value_label
-      }) => ({
-        attribute: option_label,
-        value: value_label
-      })) ||
-      // not applicable
-      null;
-      dispatch({
-        type: 'CART_UPDATE_ITEM',
-        payload: {
-          cartId,
-          sku: cartItem.product.sku,
-          name: cartItem.product.name,
-          priceTotal: cartItem.prices.price.value,
-          currencyCode: cartItem.prices.price.currency,
-          discountAmount: cartItem.prices.total_item_discount.value,
-          selectedOptions: selectedOptionsLabels,
-          quantity
-        }
-      });
-    } catch {
-      return;
+    } catch (e) {
+      // Error is logged by apollo link - no need to double log.
     }
-    handleClose();
-  }, [cartId, cartItem, configItem, dispatch, handleClose, optionSelections.size, multipleOptionSelections.size, selectedVariant, updateConfigurableOptions, updateItemQuantity]);
-  const errors = Object(react["useMemo"])(() => new Map([['updateQuantityMutation', updateQuantityError], ['updateConfigurableOptionsMutation', updateConfigurableError]]), [updateConfigurableError, updateQuantityError]);
+  }, [cartId, setGiftOptionsOnCart]);
+
+  // TODO: Update mutation when backend provides the option to remove Gift Message
+  const handleRemoveGiftMessage = Object(react["useCallback"])(async () => {
+    try {
+      const formApi = formApiRef.current;
+      if (formApi) {
+        // Indicates Gift Message is currently saving
+        setSavingOptions([...savingOptions, 'giftMessage']);
+
+        // Reset form data and form errors
+        formApi.setValues({
+          cardTo: '',
+          cardFrom: '',
+          cardMessage: ''
+        });
+        formApi.setError('cardTo');
+        formApi.setError('cardFrom');
+        formApi.setError('cardMessage');
+        setShowGiftMessageResult(false);
+        await setGiftOptionsOnCart({
+          variables: {
+            cartId,
+            giftMessage: {
+              to: '',
+              from: '',
+              message: ''
+            },
+            // Mutation requires both options to be provided
+            giftReceiptIncluded: formApi.getValue('includeGiftReceipt'),
+            printedCardIncluded: formApi.getValue('includePrintedCard')
+          }
+        });
+
+        // Reset saving options when mutation is complete
+        setSavingOptions([]);
+      }
+    } catch (e) {
+      // Error is logged by apollo link - no need to double log.
+    }
+  }, [cartId, savingOptions, setGiftOptionsOnCart]);
+  const handleUpdateGiftMessage = Object(react["useCallback"])(async () => {
+    try {
+      const formApi = formApiRef.current;
+      if (formApi) {
+        formApi.validate();
+        if (!formApi.getState().invalid) {
+          // Indicates Gift Message is currently saving
+          setSavingOptions([...savingOptions, 'giftMessage']);
+          await setGiftOptionsOnCart({
+            variables: {
+              cartId,
+              giftMessage: {
+                to: formApi.getValue('cardTo'),
+                from: formApi.getValue('cardFrom'),
+                message: formApi.getValue('cardMessage')
+              },
+              // Mutation requires both options to be provided
+              giftReceiptIncluded: formApi.getValue('includeGiftReceipt'),
+              printedCardIncluded: formApi.getValue('includePrintedCard')
+            }
+          });
+          setShowGiftMessageResult(true);
+          // Reset saving options when mutation is complete
+          setSavingOptions([]);
+        }
+      }
+    } catch (e) {
+      // Error is logged by apollo link - no need to double log.
+    }
+  }, [cartId, savingOptions, setGiftOptionsOnCart]);
+  const handleToggleGiftMessageIsChecked = Object(react["useCallback"])(async isChecked => {
+    if (!isChecked) {
+      // Remove Gift Message and reset form
+      await handleRemoveGiftMessage();
+    }
+    setGiftMessageIsChecked(prevState => !prevState);
+  }, [handleRemoveGiftMessage]);
+  const handleToggleGiftMessageResult = Object(react["useCallback"])(() => {
+    setShowGiftMessageResult(prevState => !prevState);
+  }, []);
+
+  // Batch writes if the user inputs quickly.
+  const debouncedOnChange = Object(react["useMemo"])(() => lodash_debounce_default()(() => {
+    handleOnChange();
+  }, 500), [handleOnChange]);
+
+  // Indicates which options are currently saving
+  const updateSavingOptionsOnChange = Object(react["useCallback"])(element => {
+    const elementName = element.target.name;
+    if (!savingOptions.includes(elementName)) {
+      setSavingOptions([...savingOptions, elementName]);
+    }
+    debouncedOnChange();
+  }, [debouncedOnChange, savingOptions]);
+  const giftReceiptProps = {
+    field: 'includeGiftReceipt',
+    onChange: updateSavingOptionsOnChange
+  };
+  const printedCardProps = {
+    field: 'includePrintedCard',
+    onChange: updateSavingOptionsOnChange
+  };
+  const giftMessageCheckboxProps = {
+    disabled: savingOptions.includes('giftMessage'),
+    field: 'includeGiftMessage',
+    onValueChange: handleToggleGiftMessageIsChecked
+  };
+  const cardToProps = {
+    disabled: !giftMessageIsChecked || savingOptions.includes('giftMessage'),
+    field: 'cardTo',
+    validate: formValidators["c" /* isRequired */]
+  };
+  const cardFromProps = {
+    disabled: !giftMessageIsChecked || savingOptions.includes('giftMessage'),
+    field: 'cardFrom',
+    validate: formValidators["c" /* isRequired */]
+  };
+  const cardMessageProps = {
+    disabled: !giftMessageIsChecked || savingOptions.includes('giftMessage'),
+    field: 'cardMessage',
+    validate: formValidators["c" /* isRequired */]
+  };
+  const optionsFormProps = {
+    initialValues,
+    getApi: setFormApi
+  };
+  const editGiftMessageButtonProps = {
+    disabled: !giftMessageIsChecked || savingOptions.includes('giftMessage'),
+    priority: 'normal',
+    type: 'button',
+    onClick: handleToggleGiftMessageResult
+  };
+  const cancelGiftMessageButtonProps = {
+    disabled: !giftMessageIsChecked || savingOptions.includes('giftMessage'),
+    priority: 'low',
+    type: 'button',
+    onClick: handleToggleGiftMessageResult
+  };
+  const saveGiftMessageButtonProps = {
+    disabled: !giftMessageIsChecked || savingOptions.includes('giftMessage'),
+    priority: 'normal',
+    type: 'button',
+    onClick: handleUpdateGiftMessage
+  };
+
+  // Create a memoized error map and toggle individual errors when they change
+  const errors = Object(react["useMemo"])(() => new Map([['setGiftOptionsOnCartMutation', setGiftOptionsOnCartError], ['getGiftOptionsQuery', getGiftOptionsError]]), [getGiftOptionsError, setGiftOptionsOnCartError]);
   return {
-    configItem,
+    loading,
     errors,
-    handleOptionSelection,
-    handleSubmit,
-    outOfStockVariants,
-    isLoading: !!loading,
-    isSaving,
-    isDialogOpen: cartItem !== null,
-    handleClose,
-    configurableThumbnailSource
+    savingOptions,
+    giftReceiptProps,
+    printedCardProps,
+    printedCardPrice,
+    giftMessageCheckboxProps,
+    giftMessageResult,
+    hasGiftMessage,
+    showGiftMessageResult,
+    cardToProps,
+    cardFromProps,
+    cardMessageProps,
+    editGiftMessageButtonProps,
+    cancelGiftMessageButtonProps,
+    saveGiftMessageButtonProps,
+    optionsFormProps
   };
 };
 
 /** JSDocs type definitions */
 
 /**
- * Object type returned by the {@link useProductForm} talon.
- * It provides props data for a product form UI component inside a modal.
+ * Props data to use when rendering a gift options component.
  *
- * @typedef {Object} ProductFormTalonProps
+ * @typedef {Object} GiftOptionsTalonProps
  *
- * @property {Object} configItem Cart item to configure
- * @property {Array<Error>} errors An array of form errors resulting from a configuration or quantity value
- * @property {function} handleOptionSelection A callback function handling an option selection event
- * @property {function} handleSubmit A callback function for handling form submission
- * @property {boolean} isLoading True if the form is loading data. False otherwise.
- * @property {boolean} isSaving True if the form is saving data. False otherwise.
- * @property {boolean} isDialogOpen True if the form is visible. False otherwise.
- * @property {function} handleClose A callback function for handling form closing
- * @property {String} configurableThumbnailSource A string indicating which thumbnail should be used for configurable products
+ * @property {Boolean} loading Query loading indicator.
+ * @property {Object} errors Errors for GraphQl query and mutation.
+ * @property {Array} savingOptions Array containing fields that are busy.
+ * @property {Object} giftReceiptProps Props for the `includeGiftReceipt` checkbox element.
+ * @property {Object} printedCardProps Props for the `includePrintedCard` checkbox element.
+ * @property {Object} printedCardPrice Printed Card Price object.
+ * @property {Object} giftMessageCheckboxProps Props for the `includeGiftMessage` checkbox element.
+ * @property {Object} giftMessageResult Object containing Gift Message data.
+ * @property {Boolean} hasGiftMessage Checks if Gift Message data has all fields filled.
+ * @property {Boolean} showGiftMessageResult Show or hide Gift Message result.
+ * @property {Object} cardToProps Props for the `cardTo` text input element.
+ * @property {Object} cardFromProps Props for the `cardFrom` text input element.
+ * @property {Object} cardMessageProps Props for the `cardMessage` textarea element.
+ * @property {Object} editGiftMessageButtonProps Props for the Edit Gift Message button.
+ * @property {Object} cancelGiftMessageButtonProps Props for the Cancel Gift Message button.
+ * @property {Object} saveGiftMessageButtonProps Props for the Update Gift Message button.
+ * @property {Object} optionsFormProps Props for the form element.
  */
+
+/**
+ * This is a type used by the {@link useGiftOptions} talon.
+ *
+ * @typedef {Object} GiftOptionsOperations
+ *
+ * @property {GraphQLAST} setGiftOptionsOnCartMutation sets the gift options on cart.
+ * @property {GraphQLAST} getGiftOptionsQuery fetch the gift options.
+ */
+// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/Button/button.js + 1 modules
+var Button_button = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/Button/button.js");
+
+// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/Checkbox/checkbox.js + 1 modules
+var Checkbox_checkbox = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/Checkbox/checkbox.js");
+
+// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/Field/field.js + 1 modules
+var Field_field = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/Field/field.js");
+
 // EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/FormError/formError.js + 5 modules
 var formError = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/FormError/formError.js");
-
-// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/LoadingIndicator/indicator.js + 1 modules
-var indicator = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/LoadingIndicator/indicator.js");
-
-// EXTERNAL MODULE: ./node_modules/prop-types/index.js
-var prop_types = __webpack_require__("./node_modules/prop-types/index.js");
-
-// CONCATENATED MODULE: ./node_modules/@magento/venia-ui/lib/components/ProductOptions/getOptionType.js
-const customAttributes = {
-  fashion_color: 'swatch'
-};
-/* harmony default export */ var getOptionType = (({
-  attribute_code: code
-} = {}) => customAttributes[code]);
-// EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/util/imageUtils.js
-var imageUtils = __webpack_require__("./node_modules/@magento/peregrine/lib/util/imageUtils.js");
 
 // EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/Icon/icon.js + 1 modules
 var icon = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/Icon/icon.js");
 
-// EXTERNAL MODULE: ./node_modules/react-feather/dist/icons/check.js
-var check = __webpack_require__("./node_modules/react-feather/dist/icons/check.js");
+// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/LoadingIndicator/indicator.js + 1 modules
+var indicator = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/LoadingIndicator/indicator.js");
+
+// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/LoadingIndicator/spinner.js + 1 modules
+var spinner = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/LoadingIndicator/spinner.js");
+
+// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/LinkButton/linkButton.js + 1 modules
+var linkButton = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/LinkButton/linkButton.js");
+
+// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/Price/price.js
+var price = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/Price/price.js");
+
+// EXTERNAL MODULE: ./node_modules/prop-types/index.js
+var prop_types = __webpack_require__("./node_modules/prop-types/index.js");
+
+// EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/hooks/hook-wrappers/useInformedFieldStateWrapper.js
+var useInformedFieldStateWrapper = __webpack_require__("./node_modules/@magento/peregrine/lib/hooks/hook-wrappers/useInformedFieldStateWrapper.js");
+
+// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/Field/message.js + 1 modules
+var Field_message = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/Field/message.js");
 
 // EXTERNAL MODULE: ./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js
 var injectStylesIntoStyleTag = __webpack_require__("./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
 var injectStylesIntoStyleTag_default = /*#__PURE__*/__webpack_require__.n(injectStylesIntoStyleTag);
 
-// EXTERNAL MODULE: ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/ProductOptions/swatch.module.css
-var swatch_module = __webpack_require__("./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/ProductOptions/swatch.module.css");
+// EXTERNAL MODULE: ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/TextArea/textArea.module.css
+var textArea_module = __webpack_require__("./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/TextArea/textArea.module.css");
 
-// CONCATENATED MODULE: ./node_modules/@magento/venia-ui/lib/components/ProductOptions/swatch.module.css
-
-            
-
-var swatch_module_options = {"injectType":"styleTag"};
-
-swatch_module_options.insert = "head";
-swatch_module_options.singleton = false;
-
-var update = injectStylesIntoStyleTag_default()(swatch_module["a" /* default */], swatch_module_options);
-
-
-
-/* harmony default export */ var ProductOptions_swatch_module = (swatch_module["a" /* default */].locals || {});
-// CONCATENATED MODULE: ./node_modules/@magento/peregrine/lib/talons/ProductOptions/useSwatch.js
-
-const useSwatch = props => {
-  const {
-    onClick,
-    value_index
-  } = props;
-  const handleClick = Object(react["useCallback"])(() => {
-    onClick(value_index);
-  }, [value_index, onClick]);
-  return {
-    handleClick
-  };
-};
-// CONCATENATED MODULE: ./node_modules/@magento/venia-ui/lib/components/ProductOptions/swatch.js
-
-
-
-
-
-
-
-
-const getClassName = (name, isSelected, hasFocus, isOptionOutOfStock, isEverythingOutOfStock) => `${name}${isSelected ? '_selected' : ''}${hasFocus ? '_focused' : ''}${isEverythingOutOfStock || isOptionOutOfStock ? '_outOfStock' : ''}`;
-
-// Swatches _must_ have a 1x1 aspect ratio to match the UI.
-const SWATCH_WIDTH = 48;
-const Swatch = props => {
-  const {
-    hasFocus,
-    isSelected,
-    item: {
-      label,
-      value_index,
-      swatch_data
-    },
-    onClick,
-    style,
-    isEverythingOutOfStock,
-    isOptionOutOfStock,
-    attributeLabel
-  } = props;
-  const talonProps = useSwatch({
-    onClick,
-    value_index
-  });
-  const {
-    handleClick
-  } = talonProps;
-  const classes = Object(shallowMerge["a" /* default */])(ProductOptions_swatch_module, props.classes);
-  const checkStyle = Object(react["useMemo"])(() => isSelected ? classes.checked : classes.unchecked, [classes.checked, classes.unchecked, isSelected]);
-  let finalStyle = style;
-  if (swatch_data) {
-    const {
-      thumbnail,
-      value
-    } = swatch_data;
-    let swatchValue = '';
-    if (thumbnail) {
-      const imagePath = Object(imageUtils["c" /* generateUrl */])(thumbnail, 'image-swatch')(SWATCH_WIDTH);
-      swatchValue = `url("${imagePath}")`;
-    } else {
-      swatchValue = value;
-    }
-
-    // We really want to avoid specifying presentation within JS.
-    // Swatches are unusual in that their color is data, not presentation,
-    // but applying color *is* presentational.
-    // So we merely provide the color data here, and let the CSS decide
-    // how to use that color (e.g., background, border).
-    finalStyle = Object.assign({}, style, {
-      '--venia-swatch-bg': swatchValue
-    });
-  }
-  const selectedText = isSelected ? 'Selected' : '';
-  const ariaLabel = `${attributeLabel}'s ${selectedText} option ${label}`;
-  const className = classes[getClassName('root', isSelected, hasFocus, isOptionOutOfStock, isEverythingOutOfStock)];
-  return /*#__PURE__*/react_default.a.createElement("button", {
-    className: className,
-    onClick: handleClick,
-    style: finalStyle,
-    title: label,
-    type: "button",
-    "data-cy": "Swatch-root",
-    disabled: isEverythingOutOfStock || isOptionOutOfStock,
-    "aria-label": ariaLabel
-  }, !isOptionOutOfStock && /*#__PURE__*/react_default.a.createElement(icon["a" /* default */], {
-    classes: {
-      root: checkStyle
-    },
-    src: check["a" /* default */]
-  }));
-};
-Swatch.propTypes = {
-  hasFocus: prop_types["bool"],
-  isSelected: prop_types["bool"],
-  item: Object(prop_types["shape"])({
-    label: prop_types["string"].isRequired,
-    value_index: Object(prop_types["oneOfType"])([prop_types["number"], prop_types["string"]]).isRequired
-  }).isRequired,
-  onClick: prop_types["func"].isRequired,
-  style: prop_types["object"]
-};
-Swatch.defaultProps = {
-  hasFocus: false,
-  isSelected: false
-};
-/* harmony default export */ var swatch = (Swatch);
-// EXTERNAL MODULE: ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/ProductOptions/swatchList.module.css
-var swatchList_module = __webpack_require__("./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/ProductOptions/swatchList.module.css");
-
-// CONCATENATED MODULE: ./node_modules/@magento/venia-ui/lib/components/ProductOptions/swatchList.module.css
+// CONCATENATED MODULE: ./node_modules/@magento/venia-ui/lib/components/TextArea/textArea.module.css
 
             
 
-var swatchList_module_options = {"injectType":"styleTag"};
+var options = {"injectType":"styleTag"};
 
-swatchList_module_options.insert = "head";
-swatchList_module_options.singleton = false;
+options.insert = "head";
+options.singleton = false;
 
-var swatchList_module_update = injectStylesIntoStyleTag_default()(swatchList_module["a" /* default */], swatchList_module_options);
-
-
-
-/* harmony default export */ var ProductOptions_swatchList_module = (swatchList_module["a" /* default */].locals || {});
-// CONCATENATED MODULE: ./node_modules/@magento/venia-ui/lib/components/ProductOptions/swatchList.js
+var update = injectStylesIntoStyleTag_default()(textArea_module["a" /* default */], options);
 
 
 
-
-
-const SwatchList = props => {
-  const {
-    getItemKey,
-    selectedValue = {},
-    items,
-    onSelectionChange,
-    isEverythingOutOfStock,
-    outOfStockVariants,
-    attributeLabel
-  } = props;
-  const classes = Object(shallowMerge["a" /* default */])(ProductOptions_swatchList_module, props.classes);
-  const swatches = Object(react["useMemo"])(() => items.map(item => {
-    const isSelected = item.label === selectedValue.label;
-    let isOptionOutOfStock;
-    if (outOfStockVariants && outOfStockVariants.length > 0) {
-      const flatOutOfStockArray = outOfStockVariants.flat();
-      isOptionOutOfStock = flatOutOfStockArray.includes(item.value_index);
-    }
-    return /*#__PURE__*/react_default.a.createElement(swatch, {
-      key: getItemKey(item),
-      isSelected: isSelected,
-      item: item,
-      onClick: onSelectionChange,
-      isEverythingOutOfStock: isEverythingOutOfStock,
-      isOptionOutOfStock: isOptionOutOfStock,
-      attributeLabel: attributeLabel
-    });
-  }), [getItemKey, selectedValue.label, items, onSelectionChange, isEverythingOutOfStock, outOfStockVariants, attributeLabel]);
-  return /*#__PURE__*/react_default.a.createElement("div", {
-    className: classes.root
-  }, swatches);
-};
-SwatchList.propTypes = {
-  classes: Object(prop_types["shape"])({
-    root: prop_types["string"]
-  }),
-  getItemKey: prop_types["func"],
-  selectedValue: prop_types["object"],
-  items: Object(prop_types["arrayOf"])(prop_types["object"]),
-  onSelectionChange: prop_types["func"]
-};
-SwatchList.displayName = 'SwatchList';
-/* harmony default export */ var swatchList = (SwatchList);
-// EXTERNAL MODULE: ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/ProductOptions/tile.module.css
-var tile_module = __webpack_require__("./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/ProductOptions/tile.module.css");
-
-// CONCATENATED MODULE: ./node_modules/@magento/venia-ui/lib/components/ProductOptions/tile.module.css
-
-            
-
-var tile_module_options = {"injectType":"styleTag"};
-
-tile_module_options.insert = "head";
-tile_module_options.singleton = false;
-
-var tile_module_update = injectStylesIntoStyleTag_default()(tile_module["a" /* default */], tile_module_options);
-
-
-
-/* harmony default export */ var ProductOptions_tile_module = (tile_module["a" /* default */].locals || {});
-// CONCATENATED MODULE: ./node_modules/@magento/peregrine/lib/talons/ProductOptions/useTile.js
-
-const useTile = props => {
-  const {
-    onClick,
-    value_index
-  } = props;
-  const handleClick = Object(react["useCallback"])(() => {
-    onClick(value_index);
-  }, [value_index, onClick]);
-  return {
-    handleClick
-  };
-};
-// CONCATENATED MODULE: ./node_modules/@magento/venia-ui/lib/components/ProductOptions/tile.js
-
-
-
-
-
-const tile_getClassName = (name, isSelected, hasFocus, isOptionOutOfStock, isEverythingOutOfStock) => `${name}${isSelected ? '_selected' : ''}${hasFocus ? '_focused' : ''}${isEverythingOutOfStock || isOptionOutOfStock ? '_outOfStock' : ''}`;
-const Tile = props => {
-  const {
-    hasFocus,
-    isSelected,
-    item: {
-      label,
-      value_index
-    },
-    onClick,
-    isEverythingOutOfStock,
-    isOptionOutOfStock
-  } = props;
-  const talonProps = useTile({
-    onClick,
-    value_index
-  });
-  const {
-    handleClick
-  } = talonProps;
-  const classes = Object(shallowMerge["a" /* default */])(ProductOptions_tile_module, props.classes);
-  const className = classes[tile_getClassName('root', isSelected, hasFocus, isOptionOutOfStock, isEverythingOutOfStock)];
-  return /*#__PURE__*/react_default.a.createElement("button", {
-    className: className,
-    onClick: handleClick,
-    title: label,
-    type: "button",
-    "data-cy": "Tile-button",
-    disabled: isEverythingOutOfStock || isOptionOutOfStock
-  }, /*#__PURE__*/react_default.a.createElement("span", null, label));
-};
-/* harmony default export */ var tile = (Tile);
-Tile.propTypes = {
-  hasFocus: prop_types["bool"],
-  isSelected: prop_types["bool"],
-  item: Object(prop_types["shape"])({
-    label: prop_types["string"].isRequired,
-    value_index: Object(prop_types["oneOfType"])([prop_types["number"], prop_types["string"]]).isRequired
-  }).isRequired,
-  onClick: prop_types["func"].isRequired
-};
-Tile.defaultProps = {
-  hasFocus: false,
-  isSelected: false
-};
-// EXTERNAL MODULE: ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/ProductOptions/tileList.module.css
-var tileList_module = __webpack_require__("./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/ProductOptions/tileList.module.css");
-
-// CONCATENATED MODULE: ./node_modules/@magento/venia-ui/lib/components/ProductOptions/tileList.module.css
-
-            
-
-var tileList_module_options = {"injectType":"styleTag"};
-
-tileList_module_options.insert = "head";
-tileList_module_options.singleton = false;
-
-var tileList_module_update = injectStylesIntoStyleTag_default()(tileList_module["a" /* default */], tileList_module_options);
-
-
-
-/* harmony default export */ var ProductOptions_tileList_module = (tileList_module["a" /* default */].locals || {});
-// CONCATENATED MODULE: ./node_modules/@magento/venia-ui/lib/components/ProductOptions/tileList.js
-
-
-
-
-
-const TileList = props => {
-  const {
-    getItemKey,
-    selectedValue = {},
-    items,
-    onSelectionChange,
-    isEverythingOutOfStock,
-    outOfStockVariants
-  } = props;
-  const classes = Object(shallowMerge["a" /* default */])(ProductOptions_tileList_module, props.classes);
-  const tiles = Object(react["useMemo"])(() => items.map(item => {
-    const isSelected = item.label === selectedValue.label;
-    let isOptionOutOfStock;
-    if (outOfStockVariants && outOfStockVariants.length > 0) {
-      const flatOutOfStockArray = outOfStockVariants.flat();
-      isOptionOutOfStock = flatOutOfStockArray.includes(item.value_index);
-    }
-    return /*#__PURE__*/react_default.a.createElement(tile, {
-      key: getItemKey(item),
-      isSelected: isSelected,
-      item: item,
-      onClick: onSelectionChange,
-      isEverythingOutOfStock: isEverythingOutOfStock,
-      isOptionOutOfStock: isOptionOutOfStock
-    });
-  }), [getItemKey, selectedValue.label, items, onSelectionChange, isEverythingOutOfStock, outOfStockVariants]);
-  return /*#__PURE__*/react_default.a.createElement("div", {
-    className: classes.root
-  }, tiles);
-};
-TileList.propTypes = {
-  classes: Object(prop_types["shape"])({
-    root: prop_types["string"]
-  }),
-  getItemKey: prop_types["func"],
-  selectedValue: prop_types["object"],
-  items: Object(prop_types["arrayOf"])(prop_types["object"]),
-  onSelectionChange: prop_types["func"]
-};
-TileList.displayName = 'TileList';
-/* harmony default export */ var tileList = (TileList);
-// EXTERNAL MODULE: ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/ProductOptions/option.module.css
-var option_module = __webpack_require__("./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/ProductOptions/option.module.css");
-
-// CONCATENATED MODULE: ./node_modules/@magento/venia-ui/lib/components/ProductOptions/option.module.css
-
-            
-
-var option_module_options = {"injectType":"styleTag"};
-
-option_module_options.insert = "head";
-option_module_options.singleton = false;
-
-var option_module_update = injectStylesIntoStyleTag_default()(option_module["a" /* default */], option_module_options);
-
-
-
-/* harmony default export */ var ProductOptions_option_module = (option_module["a" /* default */].locals || {});
-// CONCATENATED MODULE: ./node_modules/@magento/peregrine/lib/talons/ProductOptions/useOption.js
-
-
-/**
- * Talon for Option.
- *
- * @param {number} props.attribute_id the id of the option
- * @param {function} props.onSelectionChange callback handler for when the option is clicked
- * @param {string} props.selectedValue the label of the selected option
- * @param {array} props.values an array containing possible values
- */
-const useOption = props => {
-  const {
-    attribute_id,
-    onSelectionChange,
-    selectedValue,
-    values
-  } = props;
-  const [selection, setSelection] = Object(react["useState"])(null);
-  const initialSelection = Object(react["useMemo"])(() => {
-    let initialSelection = {};
-    const searchValue = selection || selectedValue;
-    if (searchValue) {
-      initialSelection = values.find(value => value.default_label === searchValue) || {};
-    }
-    return initialSelection;
-  }, [selectedValue, selection, values]);
-  const valuesMap = Object(react["useMemo"])(() => {
-    return new Map(values.map(value => [value.value_index, value.store_label]));
-  }, [values]);
-  const selectedValueDescription = selection || initialSelection.default_label || 'None';
-  const handleSelectionChange = Object(react["useCallback"])(selection => {
-    setSelection(valuesMap.get(selection));
-    if (onSelectionChange) {
-      onSelectionChange(attribute_id, selection);
-    }
-  }, [attribute_id, onSelectionChange, valuesMap]);
-  return {
-    handleSelectionChange,
-    initialSelection,
-    selectedValueDescription
-  };
-};
-// CONCATENATED MODULE: ./node_modules/@magento/venia-ui/lib/components/ProductOptions/option.js
-
-
-
-
-
-
-
-
-
-const option_getItemKey = ({
-  value_index
-}) => value_index;
-
-// TODO: get an explicit field from the API
-// that identifies an attribute as a swatch
-const getListComponent = (attribute_code, values) => {
-  const optionType = getOptionType({
-    attribute_code,
-    values
-  });
-  return optionType === 'swatch' ? swatchList : tileList;
-};
-const Option = props => {
-  const {
-    attribute_code,
-    attribute_id,
-    label,
-    onSelectionChange,
-    selectedValue,
-    values,
-    isEverythingOutOfStock,
-    outOfStockVariants
-  } = props;
-  const talonProps = useOption({
-    attribute_id,
-    label,
-    onSelectionChange,
-    selectedValue,
-    values
-  });
-  const {
-    handleSelectionChange,
-    initialSelection,
-    selectedValueDescription
-  } = talonProps;
-  const ValueList = Object(react["useMemo"])(() => getListComponent(attribute_code, values), [attribute_code, values]);
-  const classes = Object(shallowMerge["a" /* default */])(ProductOptions_option_module, props.classes);
-  return /*#__PURE__*/react_default.a.createElement("div", {
-    className: classes.root,
-    "data-cy": "ProductOptions-Option-root"
-  }, /*#__PURE__*/react_default.a.createElement("span", {
-    className: classes.title
-  }, label), /*#__PURE__*/react_default.a.createElement(ValueList, {
-    getItemKey: option_getItemKey,
-    selectedValue: initialSelection,
-    items: values,
-    onSelectionChange: handleSelectionChange,
-    isEverythingOutOfStock: isEverythingOutOfStock,
-    outOfStockVariants: outOfStockVariants,
-    attributeLabel: label
-  }), /*#__PURE__*/react_default.a.createElement("dl", {
-    className: classes.selection
-  }, /*#__PURE__*/react_default.a.createElement("dt", {
-    "data-cy": "ProductOptions-Option-selectedLabel",
-    className: classes.selectionLabel
-  }, /*#__PURE__*/react_default.a.createElement(components_message["a" /* default */], {
-    id: "productOptions.selectedLabel",
-    defaultMessage: "Selected {label}:",
-    values: {
-      label
-    }
-  })), /*#__PURE__*/react_default.a.createElement("dd", null, selectedValueDescription)));
-};
-Option.propTypes = {
-  attribute_code: prop_types["string"].isRequired,
-  attribute_id: prop_types["string"],
-  classes: Object(prop_types["shape"])({
-    root: prop_types["string"],
-    title: prop_types["string"]
-  }),
-  label: prop_types["string"].isRequired,
-  onSelectionChange: prop_types["func"],
-  selectedValue: Object(prop_types["oneOfType"])([prop_types["number"], prop_types["string"]]),
-  values: Object(prop_types["arrayOf"])(prop_types["object"]).isRequired
-};
-/* harmony default export */ var ProductOptions_option = (Option);
-// CONCATENATED MODULE: ./node_modules/@magento/peregrine/lib/talons/ProductOptions/useOptions.js
-
-const useOptions = props => {
-  const {
-    onSelectionChange,
-    selectedValues,
-    options
-  } = props;
-  const handleSelectionChange = Object(react["useCallback"])((optionId, selection) => {
-    if (onSelectionChange) {
-      onSelectionChange(optionId, selection);
-    }
-  }, [onSelectionChange]);
-  const selectedValueMap = new Map();
-
-  // Map the option with correct option_label
-  for (const {
-    id,
-    value_label
-  } of selectedValues) {
-    const option_label = options.find(option => option.attribute_id === String(id)).label;
-    selectedValueMap.set(option_label, value_label);
-  }
-  return {
-    handleSelectionChange,
-    selectedValueMap
-  };
-};
-// CONCATENATED MODULE: ./node_modules/@magento/venia-ui/lib/components/ProductOptions/options.js
+/* harmony default export */ var TextArea_textArea_module = (textArea_module["a" /* default */].locals || {});
+// CONCATENATED MODULE: ./node_modules/@magento/venia-ui/lib/components/TextArea/textArea.js
+const _excluded = ["classes", "field", "message"];
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
 
 
 
-const Options = props => {
+
+
+
+const TextArea = props => {
   const {
-    classes,
-    onSelectionChange,
-    options,
-    selectedValues = [],
-    isEverythingOutOfStock,
-    outOfStockVariants
-  } = props;
-  const talonProps = useOptions({
-    onSelectionChange,
-    selectedValues,
-    options
-  });
-  const {
-    handleSelectionChange,
-    selectedValueMap
-  } = talonProps;
-
-  // Render a list of options passing in any pre-selected values.
-  return options.map(option => /*#__PURE__*/react_default.a.createElement(ProductOptions_option, _extends({}, option, {
-    classes: classes,
-    key: option.attribute_id,
-    onSelectionChange: handleSelectionChange,
-    selectedValue: selectedValueMap.get(option.label),
-    isEverythingOutOfStock: isEverythingOutOfStock,
-    outOfStockVariants: outOfStockVariants
-  })));
+      classes: propClasses,
+      field,
+      message
+    } = props,
+    rest = _objectWithoutProperties(props, _excluded);
+  const fieldState = Object(useInformedFieldStateWrapper["a" /* default */])(field);
+  const classes = Object(shallowMerge["a" /* default */])(TextArea_textArea_module, propClasses);
+  return /*#__PURE__*/react_default.a.createElement(react["Fragment"], null, /*#__PURE__*/react_default.a.createElement(esm["i" /* TextArea */], _extends({}, rest, {
+    className: classes.input,
+    field: field
+  })), /*#__PURE__*/react_default.a.createElement(Field_message["a" /* default */], {
+    fieldState: fieldState
+  }, message));
 };
-Options.propTypes = {
-  onSelectionChange: prop_types["func"],
-  options: prop_types["array"].isRequired,
-  selectedValues: prop_types["array"]
+/* harmony default export */ var textArea = (TextArea);
+TextArea.defaultProps = {
+  cols: 40,
+  rows: 4,
+  wrap: 'hard'
 };
-/* harmony default export */ var ProductOptions_options = (Options);
-// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/QuantityStepper/quantityStepper.js + 2 modules
-var quantityStepper = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/QuantityStepper/quantityStepper.js");
+TextArea.propTypes = {
+  classes: Object(prop_types["shape"])({
+    input: prop_types["string"]
+  }),
+  cols: Object(prop_types["oneOfType"])([prop_types["number"], prop_types["string"]]),
+  field: prop_types["string"].isRequired,
+  message: prop_types["node"],
+  rows: Object(prop_types["oneOfType"])([prop_types["number"], prop_types["string"]]),
+  wrap: Object(prop_types["oneOf"])(['hard', 'soft'])
+};
+// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/TextInput/textInput.js + 1 modules
+var textInput = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/TextInput/textInput.js");
 
-// EXTERNAL MODULE: ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/CartPage/ProductListing/EditModal/productForm.module.css
-var productForm_module = __webpack_require__("./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/CartPage/ProductListing/EditModal/productForm.module.css");
+// EXTERNAL MODULE: ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/CartPage/PriceAdjustments/GiftOptions/giftOptions.module.css
+var giftOptions_module = __webpack_require__("./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/CartPage/PriceAdjustments/GiftOptions/giftOptions.module.css");
 
-// CONCATENATED MODULE: ./node_modules/@magento/venia-ui/lib/components/CartPage/ProductListing/EditModal/productForm.module.css
+// CONCATENATED MODULE: ./node_modules/@magento/venia-ui/lib/components/CartPage/PriceAdjustments/GiftOptions/giftOptions.module.css
 
             
 
-var productForm_module_options = {"injectType":"styleTag"};
+var giftOptions_module_options = {"injectType":"styleTag"};
 
-productForm_module_options.insert = "head";
-productForm_module_options.singleton = false;
+giftOptions_module_options.insert = "head";
+giftOptions_module_options.singleton = false;
 
-var productForm_module_update = injectStylesIntoStyleTag_default()(productForm_module["a" /* default */], productForm_module_options);
-
-
-
-/* harmony default export */ var EditModal_productForm_module = (productForm_module["a" /* default */].locals || {});
-// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/Dialog/dialog.js + 2 modules
-var dialog = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/Dialog/dialog.js");
-
-// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/Price/price.js
-var Price_price = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/Price/price.js");
-
-// EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/util/configuredVariant.js
-var configuredVariant = __webpack_require__("./node_modules/@magento/peregrine/lib/util/configuredVariant.js");
-
-// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/Image/image.js + 4 modules
-var Image_image = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/Image/image.js");
-
-// EXTERNAL MODULE: ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/CartPage/ProductListing/EditModal/productDetail.module.css
-var productDetail_module = __webpack_require__("./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/CartPage/ProductListing/EditModal/productDetail.module.css");
-
-// CONCATENATED MODULE: ./node_modules/@magento/venia-ui/lib/components/CartPage/ProductListing/EditModal/productDetail.module.css
-
-            
-
-var productDetail_module_options = {"injectType":"styleTag"};
-
-productDetail_module_options.insert = "head";
-productDetail_module_options.singleton = false;
-
-var productDetail_module_update = injectStylesIntoStyleTag_default()(productDetail_module["a" /* default */], productDetail_module_options);
+var giftOptions_module_update = injectStylesIntoStyleTag_default()(giftOptions_module["a" /* default */], giftOptions_module_options);
 
 
 
-/* harmony default export */ var EditModal_productDetail_module = (productDetail_module["a" /* default */].locals || {});
-// CONCATENATED MODULE: ./node_modules/@magento/venia-ui/lib/components/CartPage/ProductListing/EditModal/productDetail.js
-
-
-
-
-
-
-
-const IMAGE_SIZE = 240;
-const ProductDetail = props => {
-  const {
-    item,
-    variantPrice,
-    configurableThumbnailSource
-  } = props;
-  const {
-    formatMessage
-  } = Object(useIntl["a" /* default */])();
-  const {
-    prices,
-    product
-  } = item;
-  const {
-    price
-  } = prices;
-  const {
-    currency,
-    value: unitPrice
-  } = variantPrice || price;
-  const {
-    name,
-    sku,
-    stock_status: stockStatusValue
-  } = product;
-  const stockStatusLabels = new Map([['IN_STOCK', formatMessage({
-    id: 'productDetail.inStock',
-    defaultMessage: 'In stock'
-  })], ['OUT_OF_STOCK', formatMessage({
-    id: 'productDetail.outOfStock',
-    defaultMessage: 'Out of stock'
-  })]]);
-  const stockStatus = stockStatusLabels.get(stockStatusValue) || formatMessage({
-    id: 'productDetail.unknown',
-    defaultMessage: 'Unknown'
-  });
-  const classes = Object(shallowMerge["a" /* default */])(EditModal_productDetail_module, props.classes);
-  const configured_variant = Object(configuredVariant["a" /* default */])(item.configurable_options, product);
-  return /*#__PURE__*/react_default.a.createElement("div", {
-    className: classes.root
-  }, /*#__PURE__*/react_default.a.createElement(Image_image["a" /* default */], {
-    alt: name,
-    classes: {
-      image: classes.image,
-      root: classes.imageContainer
-    },
-    width: IMAGE_SIZE,
-    resource: configurableThumbnailSource === 'itself' && configured_variant ? configured_variant.small_image.url : product.small_image.url
-  }), /*#__PURE__*/react_default.a.createElement("span", {
-    className: classes.productName
-  }, name), /*#__PURE__*/react_default.a.createElement("div", {
-    className: classes.stockRow
-  }, /*#__PURE__*/react_default.a.createElement("span", null, /*#__PURE__*/react_default.a.createElement(components_message["a" /* default */], {
-    id: 'productDetail.skuNumber',
-    defaultMessage: 'SKU # {sku}',
-    values: {
-      sku
-    }
-  })), /*#__PURE__*/react_default.a.createElement("span", null, stockStatus)), /*#__PURE__*/react_default.a.createElement("div", {
-    className: classes.price
-  }, /*#__PURE__*/react_default.a.createElement(Price_price["a" /* default */], {
-    currencyCode: currency,
-    value: unitPrice
-  })));
-};
-/* harmony default export */ var productDetail = (ProductDetail);
-// CONCATENATED MODULE: ./node_modules/@magento/venia-ui/lib/components/CartPage/ProductListing/EditModal/productForm.js
+/* harmony default export */ var GiftOptions_giftOptions_module = (giftOptions_module["a" /* default */].locals || {});
+// CONCATENATED MODULE: ./node_modules/@magento/venia-ui/lib/components/CartPage/PriceAdjustments/GiftOptions/giftOptions.js
+function giftOptions_extends() { giftOptions_extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return giftOptions_extends.apply(this, arguments); }
 
 
 
@@ -1455,164 +593,556 @@ const ProductDetail = props => {
 
 
 
-const ProductForm = props => {
-  const {
-    item: cartItem,
-    setIsCartUpdating,
-    variantPrice,
-    setVariantPrice,
-    setActiveEditItem
-  } = props;
-  const {
-    formatMessage
-  } = Object(useIntl["a" /* default */])();
-  const talonProps = useProductForm({
-    cartItem,
-    setIsCartUpdating,
-    setVariantPrice,
-    setActiveEditItem
-  });
-  const {
-    configItem,
-    errors,
-    handleOptionSelection,
-    handleSubmit,
-    outOfStockVariants,
-    isLoading,
-    isSaving,
-    isDialogOpen,
-    handleClose,
-    configurableThumbnailSource
-  } = talonProps;
-  const classes = Object(shallowMerge["a" /* default */])(EditModal_productForm_module, props.classes);
-  const dialogButtonsDisabled = isLoading;
-  const dialogSubmitButtonDisabled = isSaving;
-  const dialogFormProps = {
-    initialValues: cartItem
-  };
-  const message = isLoading ? formatMessage({
-    id: 'productForm.fetchingProductOptions',
-    defaultMessage: 'Fetching Product Options...'
-  }) ? isSaving : formatMessage({
-    id: 'productForm.updatingCart',
-    defaultMessage: 'Updating Cart...'
-  }) : null;
-  const maybeLoadingIndicator = isLoading || isSaving ? /*#__PURE__*/react_default.a.createElement(indicator["a" /* default */], {
-    classes: {
-      root: classes.loading
-    }
-  }, message) : null;
-  if (cartItem && !isLoading && !configItem) {
-    return /*#__PURE__*/react_default.a.createElement("span", {
-      className: classes.dataError
-    }, /*#__PURE__*/react_default.a.createElement(components_message["a" /* default */], {
-      id: 'productForm.dataError',
-      defaultMessage: 'Something went wrong. Please refresh and try again.'
-    }));
-  }
-  const dialogContent = cartItem && configItem ? /*#__PURE__*/react_default.a.createElement("div", null, /*#__PURE__*/react_default.a.createElement(formError["a" /* default */], {
-    classes: {
-      root: classes.errorContainer
-    },
-    errors: Array.from(errors.values()),
-    scrollOnError: false
-  }), /*#__PURE__*/react_default.a.createElement(productDetail, {
-    item: cartItem,
-    variantPrice: variantPrice,
-    configurableThumbnailSource: configurableThumbnailSource
-  }), /*#__PURE__*/react_default.a.createElement(ProductOptions_options, {
-    classes: {
-      root: classes.optionRoot
-    },
-    onSelectionChange: handleOptionSelection,
-    options: configItem.configurable_options,
-    selectedValues: cartItem.configurable_options,
-    outOfStockVariants: outOfStockVariants
-  }), /*#__PURE__*/react_default.a.createElement("h3", {
-    className: classes.quantityLabel
-  }, /*#__PURE__*/react_default.a.createElement(components_message["a" /* default */], {
-    id: 'productForm.quantity',
-    defaultMessage: 'Quantity'
-  })), /*#__PURE__*/react_default.a.createElement(quantityStepper["a" /* default */], {
-    classes: {
-      root: classes.quantityRoot
-    },
-    initialValue: cartItem.quantity,
-    itemId: cartItem.id
-  })) : null;
-  return /*#__PURE__*/react_default.a.createElement(react["Fragment"], null, /*#__PURE__*/react_default.a.createElement(dialog["a" /* default */], {
-    classes: {
-      contents: classes.contents
-    },
-    confirmText: 'Update',
-    confirmTranslationId: 'productForm.submit',
-    formProps: dialogFormProps,
-    isOpen: isDialogOpen,
-    onCancel: handleClose,
-    onConfirm: handleSubmit,
-    shouldDisableAllButtons: dialogButtonsDisabled,
-    shouldDisableConfirmButton: dialogSubmitButtonDisabled,
-    shouldUnmountOnHide: false,
-    title: formatMessage({
-      id: 'editModal.headerText',
-      defaultMessage: 'Edit Item'
-    })
-  }, maybeLoadingIndicator, dialogContent));
-};
-/* harmony default export */ var productForm = (ProductForm);
-// CONCATENATED MODULE: ./node_modules/@magento/venia-ui/lib/components/CartPage/ProductListing/EditModal/editModal.js
+
+
+
 
 
 
 
 /**
- * A child component of the ProductListing component.
- * This component renders an edit modal for a product.
+ * A child component of the PriceAdjustments component.
+ * This component displays the form for adding gift options.
  *
  * @param {Object} props
- * @param {Object} props.item Product to edit.
- * @param {function} props.setActiveEditItem Function for setting the actively editing item
- * See [productListingFragments.js]{@link https://github.com/magento/pwa-studio/blob/develop/packages/venia-ui/lib/components/CartPage/ProductListing/productListingFragments.js}
- * for a list of properties for this object.
- * @param {Function} props.setIsCartUpdating Function for setting the updating state of the cart.
- * @param {Object} props.classes CSS className overrides.
- * See [editModal.module.css]{@link https://github.com/magento/pwa-studio/blob/develop/packages/venia-ui/lib/components/CartPage/ProductListing/EditModal/editModal.module.css}
+ * @param {Object} [props.classes] CSS className overrides.
+ * @param {Object} [props.giftOptionsConfigData] store config data.
+ * See [giftOptions.module.css]{@link https://github.com/magento/pwa-studio/blob/develop/packages/venia-ui/lib/components/CartPage/PriceAdjustments/GiftOptions/giftOptions.module.css}
  * for a list of classes you can override.
  *
  * @returns {React.Element}
  *
  * @example <caption>Importing into your project</caption>
- * import EditModal from "@magento/venia-ui/lib/components/CartPage/ProductListing/EditModal";
+ * import GiftOptions from "@magento/venia-ui/lib/components/CartPage/PriceAdjustments/GiftOptions";
  */
-const EditModal = props => {
+const GiftOptions = props => {
   const {
-    item,
-    setActiveEditItem,
-    setIsCartUpdating
+    classes: propClasses
   } = props;
-  const talonProps = useEditModal();
   const {
-    setVariantPrice,
-    variantPrice
-  } = talonProps;
-  return /*#__PURE__*/react_default.a.createElement(productForm, {
-    item: item,
-    setIsCartUpdating: setIsCartUpdating,
-    setVariantPrice: setVariantPrice,
-    variantPrice: variantPrice,
-    setActiveEditItem: setActiveEditItem
+    loading,
+    errors,
+    savingOptions,
+    giftReceiptProps,
+    printedCardProps,
+    printedCardPrice,
+    giftMessageCheckboxProps,
+    giftMessageResult,
+    hasGiftMessage,
+    showGiftMessageResult,
+    cardToProps,
+    cardFromProps,
+    cardMessageProps,
+    editGiftMessageButtonProps,
+    cancelGiftMessageButtonProps,
+    saveGiftMessageButtonProps,
+    optionsFormProps
+  } = useGiftOptions();
+  const {
+    formatMessage
+  } = Object(useIntl["a" /* default */])();
+  const classes = Object(shallowMerge["a" /* default */])(GiftOptions_giftOptions_module, propClasses);
+  if (loading) {
+    return /*#__PURE__*/react_default.a.createElement(indicator["a" /* default */], null);
+  }
+  const {
+    allow_order,
+    allow_gift_receipt,
+    allow_printed_card
+  } = (props === null || props === void 0 ? void 0 : props.giftOptionsConfigData) || {};
+  const includeGiftReceipt = allow_gift_receipt === '1' ? /*#__PURE__*/react_default.a.createElement("div", {
+    className: classes.option
+  }, /*#__PURE__*/react_default.a.createElement("div", {
+    className: classes.checkboxContainer
+  }, /*#__PURE__*/react_default.a.createElement(Checkbox_checkbox["a" /* default */], giftOptions_extends({}, giftReceiptProps, {
+    "data-cy": "GiftOptions-includeGiftReceipt",
+    label: formatMessage({
+      id: 'giftOptions.includeGiftReceipt',
+      defaultMessage: 'Include gift receipt'
+    })
+  }))), savingOptions.includes(giftReceiptProps.field) ? /*#__PURE__*/react_default.a.createElement("div", {
+    className: classes.savingContainer
+  }, /*#__PURE__*/react_default.a.createElement("span", {
+    className: classes.savingText
+  }, /*#__PURE__*/react_default.a.createElement(components_message["a" /* default */], {
+    id: 'giftOptions.saving',
+    defaultMessage: 'Saving'
+  })), /*#__PURE__*/react_default.a.createElement(spinner["a" /* default */], {
+    classes: {
+      root: classes.savingSpinner
+    }
+  })) : null) : null;
+  const includeGiftMessage = allow_order === '1' ? /*#__PURE__*/react_default.a.createElement(react_default.a.Fragment, null, /*#__PURE__*/react_default.a.createElement("div", {
+    className: classes.option
+  }, /*#__PURE__*/react_default.a.createElement("div", {
+    className: classes.checkboxContainer
+  }, /*#__PURE__*/react_default.a.createElement(Checkbox_checkbox["a" /* default */], giftOptions_extends({}, giftMessageCheckboxProps, {
+    "data-cy": "GiftOptions-includeGiftMessage",
+    label: formatMessage({
+      id: 'giftOptions.includeGiftMessage',
+      defaultMessage: 'Optional Message'
+    })
+  }))), savingOptions.includes('giftMessage') ? /*#__PURE__*/react_default.a.createElement("div", {
+    className: classes.savingContainer
+  }, /*#__PURE__*/react_default.a.createElement("span", {
+    className: classes.savingText
+  }, /*#__PURE__*/react_default.a.createElement(components_message["a" /* default */], {
+    id: 'giftOptions.saving',
+    defaultMessage: 'Saving'
+  })), /*#__PURE__*/react_default.a.createElement(spinner["a" /* default */], {
+    classes: {
+      root: classes.savingSpinner
+    }
+  })) : null), /*#__PURE__*/react_default.a.createElement("div", {
+    className: showGiftMessageResult ? classes.giftMessageResultContainer : classes.hidden
+  }, /*#__PURE__*/react_default.a.createElement("div", {
+    className: classes.giftMessageResult,
+    "data-cy": "GiftOptions-giftMessageResult"
+  }, /*#__PURE__*/react_default.a.createElement("p", null, /*#__PURE__*/react_default.a.createElement(components_message["a" /* default */], {
+    id: "giftOptions.giftMessageTo",
+    defaultMessage: "<strong>To:</strong> {cardTo}",
+    values: {
+      cardTo: giftMessageResult.cardTo,
+      strong: chunks => /*#__PURE__*/react_default.a.createElement("strong", null, chunks)
+    }
+  })), /*#__PURE__*/react_default.a.createElement("p", null, /*#__PURE__*/react_default.a.createElement(components_message["a" /* default */], {
+    id: "giftOptions.giftMessageFrom",
+    defaultMessage: "<strong>From:</strong> {cardFrom}",
+    values: {
+      cardFrom: giftMessageResult.cardFrom,
+      strong: chunks => /*#__PURE__*/react_default.a.createElement("strong", null, chunks)
+    }
+  })), /*#__PURE__*/react_default.a.createElement("p", null, giftMessageResult.cardMessage)), /*#__PURE__*/react_default.a.createElement(linkButton["a" /* default */], giftOptions_extends({}, editGiftMessageButtonProps, {
+    classes: {
+      root: classes.editGiftMessageButton
+    },
+    "data-cy": "GiftOptions-editGiftMessageButton"
+  }), /*#__PURE__*/react_default.a.createElement(icon["a" /* default */], {
+    classes: {
+      icon: null
+    },
+    size: 16,
+    src: edit_2["a" /* default */]
+  }), /*#__PURE__*/react_default.a.createElement("span", {
+    className: classes.actionLabel
+  }, /*#__PURE__*/react_default.a.createElement(components_message["a" /* default */], {
+    id: "giftOptions.editGiftMessageButton",
+    defaultMessage: "Edit"
+  })))), /*#__PURE__*/react_default.a.createElement("div", {
+    className: !showGiftMessageResult ? classes.giftMessageFields : classes.hidden
+  }, /*#__PURE__*/react_default.a.createElement(Field_field["a" /* default */], {
+    id: "to",
+    label: formatMessage({
+      id: 'giftOptions.to',
+      defaultMessage: 'To'
+    })
+  }, /*#__PURE__*/react_default.a.createElement(textInput["a" /* default */], giftOptions_extends({}, cardToProps, {
+    "data-cy": "GiftOptions-cardTo"
+  }))), /*#__PURE__*/react_default.a.createElement(Field_field["a" /* default */], {
+    id: cardFromProps.field,
+    label: formatMessage({
+      id: 'giftOptions.from',
+      defaultMessage: 'From'
+    })
+  }, /*#__PURE__*/react_default.a.createElement(textInput["a" /* default */], giftOptions_extends({}, cardFromProps, {
+    "data-cy": "GiftOptions-cardFrom"
+  }))), /*#__PURE__*/react_default.a.createElement(Field_field["a" /* default */], {
+    id: "message",
+    label: formatMessage({
+      id: 'giftOptions.message',
+      defaultMessage: 'Message'
+    })
+  }, /*#__PURE__*/react_default.a.createElement(textArea, giftOptions_extends({}, cardMessageProps, {
+    "data-cy": "GiftOptions-cardMessage",
+    placeholder: formatMessage({
+      id: 'giftOptions.cardMessage',
+      defaultMessage: 'Enter your message here'
+    })
+  }))), /*#__PURE__*/react_default.a.createElement("div", {
+    className: classes.giftMessageActions
+  }, hasGiftMessage ? /*#__PURE__*/react_default.a.createElement(Button_button["a" /* default */], giftOptions_extends({}, cancelGiftMessageButtonProps, {
+    "data-cy": "GiftOptions-cancelGiftMessageButton"
+  }), /*#__PURE__*/react_default.a.createElement(components_message["a" /* default */], {
+    id: "giftOptions.cancelGiftMessageButton",
+    defaultMessage: "Cancel"
+  })) : null, /*#__PURE__*/react_default.a.createElement(Button_button["a" /* default */], giftOptions_extends({}, saveGiftMessageButtonProps, {
+    "data-cy": "GiftOptions-updateGiftMessageButton"
+  }), hasGiftMessage ? /*#__PURE__*/react_default.a.createElement(components_message["a" /* default */], {
+    id: "giftOptions.updateGiftMessageButton",
+    defaultMessage: "Update Message"
+  }) : /*#__PURE__*/react_default.a.createElement(components_message["a" /* default */], {
+    id: "giftOptions.addGiftMessage",
+    defaultMessage: "Add Message"
+  }))))) : null;
+  const includePrintedCard = allow_printed_card === '1' ? /*#__PURE__*/react_default.a.createElement("div", {
+    className: classes.option
+  }, /*#__PURE__*/react_default.a.createElement("div", {
+    className: classes.checkboxContainer
+  }, /*#__PURE__*/react_default.a.createElement(Checkbox_checkbox["a" /* default */], giftOptions_extends({}, printedCardProps, {
+    "data-cy": "GiftOptions-includePrintedCard",
+    label: formatMessage({
+      id: 'giftOptions.includePrintedCard',
+      defaultMessage: 'Add printed card{price}'
+    }, {
+      price: printedCardPrice && printedCardPrice.value > 0 ? /*#__PURE__*/react_default.a.createElement(react_default.a.Fragment, null, ' ( + ', /*#__PURE__*/react_default.a.createElement(price["a" /* default */], {
+        currencyCode: printedCardPrice.currency,
+        value: printedCardPrice.value
+      }), ')') : null
+    })
+  }))), savingOptions.includes(printedCardProps.field) ? /*#__PURE__*/react_default.a.createElement("div", {
+    className: classes.savingContainer
+  }, /*#__PURE__*/react_default.a.createElement("span", {
+    className: classes.savingText
+  }, /*#__PURE__*/react_default.a.createElement(components_message["a" /* default */], {
+    id: 'giftOptions.saving',
+    defaultMessage: 'Saving'
+  })), /*#__PURE__*/react_default.a.createElement(spinner["a" /* default */], {
+    classes: {
+      root: classes.savingSpinner
+    }
+  })) : null) : null;
+  return /*#__PURE__*/react_default.a.createElement(esm["b" /* Form */], giftOptions_extends({
+    "data-cy": "GiftOptions-form"
+  }, optionsFormProps, {
+    className: classes.root
+  }), /*#__PURE__*/react_default.a.createElement(formError["a" /* default */], {
+    errors: Array.from(errors.values())
+  }), includeGiftReceipt, includeGiftMessage, includePrintedCard);
+};
+/* harmony default export */ var giftOptions = (GiftOptions);
+// CONCATENATED MODULE: ./node_modules/@magento/venia-ui/lib/components/CartPage/PriceAdjustments/GiftOptions/index.js
+
+
+/***/ }),
+
+/***/ "./node_modules/@magento/venia-ui/lib/components/Checkbox/checkbox.js":
+/*!****************************************************************************************!*\
+  !*** ./node_modules/@magento/venia-ui/lib/components/Checkbox/checkbox.js + 1 modules ***!
+  \****************************************************************************************/
+/*! exports provided: default */
+/*! exports used: default */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/hooks/hook-wrappers/useInformedFieldStateWrapper.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/shallowMerge.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Field/message.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-feather/dist/icons/check-square.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-feather/dist/icons/square.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/Checkbox/checkbox.module.css (<- Module uses module.id) */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/informed/dist/esm/index.js (<- Module uses injected variables (process)) */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/prop-types/index.js (<- Module is not an ECMAScript module) */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react/index.js (<- Module is not an ECMAScript module) */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js (<- Module is not an ECMAScript module) */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+
+// EXTERNAL MODULE: ./node_modules/react/index.js
+var react = __webpack_require__("./node_modules/react/index.js");
+var react_default = /*#__PURE__*/__webpack_require__.n(react);
+
+// EXTERNAL MODULE: ./node_modules/prop-types/index.js
+var prop_types = __webpack_require__("./node_modules/prop-types/index.js");
+
+// EXTERNAL MODULE: ./node_modules/informed/dist/esm/index.js
+var esm = __webpack_require__("./node_modules/informed/dist/esm/index.js");
+
+// EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/hooks/hook-wrappers/useInformedFieldStateWrapper.js
+var useInformedFieldStateWrapper = __webpack_require__("./node_modules/@magento/peregrine/lib/hooks/hook-wrappers/useInformedFieldStateWrapper.js");
+
+// EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/util/shallowMerge.js
+var shallowMerge = __webpack_require__("./node_modules/@magento/peregrine/lib/util/shallowMerge.js");
+
+// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/Field/message.js + 1 modules
+var Field_message = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/Field/message.js");
+
+// EXTERNAL MODULE: ./node_modules/react-feather/dist/icons/check-square.js
+var check_square = __webpack_require__("./node_modules/react-feather/dist/icons/check-square.js");
+
+// EXTERNAL MODULE: ./node_modules/react-feather/dist/icons/square.js
+var square = __webpack_require__("./node_modules/react-feather/dist/icons/square.js");
+
+// EXTERNAL MODULE: ./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js
+var injectStylesIntoStyleTag = __webpack_require__("./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+var injectStylesIntoStyleTag_default = /*#__PURE__*/__webpack_require__.n(injectStylesIntoStyleTag);
+
+// EXTERNAL MODULE: ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/Checkbox/checkbox.module.css
+var checkbox_module = __webpack_require__("./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/Checkbox/checkbox.module.css");
+
+// CONCATENATED MODULE: ./node_modules/@magento/venia-ui/lib/components/Checkbox/checkbox.module.css
+
+            
+
+var options = {"injectType":"styleTag"};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = injectStylesIntoStyleTag_default()(checkbox_module["a" /* default */], options);
+
+
+
+/* harmony default export */ var Checkbox_checkbox_module = (checkbox_module["a" /* default */].locals || {});
+// CONCATENATED MODULE: ./node_modules/@magento/venia-ui/lib/components/Checkbox/checkbox.js
+const _excluded = ["ariaLabel", "classes", "field", "fieldValue", "id", "label", "message"];
+function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
+
+
+
+
+
+
+
+
+/* TODO: change lint config to use `label-has-associated-control` */
+/* eslint-disable jsx-a11y/label-has-for */
+
+const checkedIcon = /*#__PURE__*/react_default.a.createElement(check_square["a" /* default */], null);
+const uncheckedIcon = /*#__PURE__*/react_default.a.createElement(square["a" /* default */], null);
+const Checkbox = props => {
+  const {
+      ariaLabel,
+      classes: propClasses,
+      field,
+      fieldValue,
+      id,
+      label,
+      message
+    } = props,
+    rest = _objectWithoutProperties(props, _excluded);
+  const fieldApi = Object(esm["j" /* useFieldApi */])(field);
+  const fieldState = Object(useInformedFieldStateWrapper["a" /* default */])(field);
+  const classes = Object(shallowMerge["a" /* default */])(Checkbox_checkbox_module, propClasses);
+  const icon = fieldState.value ? checkedIcon : uncheckedIcon;
+  Object(react["useEffect"])(() => {
+    if (fieldValue != null && fieldValue !== fieldState.value) {
+      fieldApi.setValue(fieldValue);
+    }
+  }, [fieldApi, fieldState.value, fieldValue]);
+  return /*#__PURE__*/react_default.a.createElement(react["Fragment"], null, /*#__PURE__*/react_default.a.createElement("label", {
+    "data-cy": "Checkbox-label",
+    "aria-label": ariaLabel,
+    className: classes.root,
+    htmlFor: id
+  }, /*#__PURE__*/react_default.a.createElement(esm["a" /* Checkbox */], _extends({}, rest, {
+    className: classes.input,
+    field: field,
+    id: id
+  })), /*#__PURE__*/react_default.a.createElement("span", {
+    className: classes.icon
+  }, icon), /*#__PURE__*/react_default.a.createElement("span", {
+    className: classes.label
+  }, label)), /*#__PURE__*/react_default.a.createElement(Field_message["a" /* default */], {
+    fieldState: fieldState
+  }, message));
+};
+/* harmony default export */ var Checkbox_checkbox = __webpack_exports__["a"] = (Checkbox);
+Checkbox.propTypes = {
+  ariaLabel: prop_types["string"],
+  classes: Object(prop_types["shape"])({
+    icon: prop_types["string"],
+    input: prop_types["string"],
+    label: prop_types["string"],
+    message: prop_types["string"],
+    root: prop_types["string"]
+  }),
+  field: prop_types["string"].isRequired,
+  id: prop_types["string"],
+  label: prop_types["node"].isRequired,
+  message: prop_types["node"]
+};
+
+/* eslint-enable jsx-a11y/label-has-for */
+
+/***/ }),
+
+/***/ "./node_modules/@magento/venia-ui/lib/components/LinkButton/linkButton.js":
+/*!********************************************************************************************!*\
+  !*** ./node_modules/@magento/venia-ui/lib/components/LinkButton/linkButton.js + 1 modules ***!
+  \********************************************************************************************/
+/*! exports provided: default */
+/*! exports used: default */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/shallowMerge.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Button/button.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/LinkButton/linkButton.module.css (<- Module uses module.id) */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/prop-types/index.js (<- Module is not an ECMAScript module) */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react/index.js (<- Module is not an ECMAScript module) */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js (<- Module is not an ECMAScript module) */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+
+// EXTERNAL MODULE: ./node_modules/react/index.js
+var react = __webpack_require__("./node_modules/react/index.js");
+var react_default = /*#__PURE__*/__webpack_require__.n(react);
+
+// EXTERNAL MODULE: ./node_modules/prop-types/index.js
+var prop_types = __webpack_require__("./node_modules/prop-types/index.js");
+
+// EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/util/shallowMerge.js
+var shallowMerge = __webpack_require__("./node_modules/@magento/peregrine/lib/util/shallowMerge.js");
+
+// EXTERNAL MODULE: ./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js
+var injectStylesIntoStyleTag = __webpack_require__("./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+var injectStylesIntoStyleTag_default = /*#__PURE__*/__webpack_require__.n(injectStylesIntoStyleTag);
+
+// EXTERNAL MODULE: ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/LinkButton/linkButton.module.css
+var linkButton_module = __webpack_require__("./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/LinkButton/linkButton.module.css");
+
+// CONCATENATED MODULE: ./node_modules/@magento/venia-ui/lib/components/LinkButton/linkButton.module.css
+
+            
+
+var options = {"injectType":"styleTag"};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = injectStylesIntoStyleTag_default()(linkButton_module["a" /* default */], options);
+
+
+
+/* harmony default export */ var LinkButton_linkButton_module = (linkButton_module["a" /* default */].locals || {});
+// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/Button/button.js + 1 modules
+var Button_button = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/Button/button.js");
+
+// CONCATENATED MODULE: ./node_modules/@magento/venia-ui/lib/components/LinkButton/linkButton.js
+const _excluded = ["children", "classes", "type"];
+function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
+
+
+
+
+
+/**
+ * A component for link buttons.
+ *
+ * @typedef LinkButton
+ * @kind functional component
+ *
+ * @param {props} props React component props
+ *
+ * @returns {React.Element} A React component that displays a single link button.
+ */
+const LinkButton = props => {
+  const {
+      children,
+      classes: propClasses,
+      type
+    } = props,
+    restProps = _objectWithoutProperties(props, _excluded);
+  const classes = Object(shallowMerge["a" /* default */])(LinkButton_linkButton_module, propClasses);
+  return /*#__PURE__*/react_default.a.createElement(Button_button["a" /* default */], _extends({
+    priority: 'normal',
+    classes: {
+      root_normalPriority: classes.root
+    },
+    type: type
+  }, restProps), children);
+};
+
+/**
+ * Props for {@link Button}
+ *
+ * @typedef props
+ *
+ * @property {Object} classes An object containing the class names for the
+ * Button component.
+ * @property {string} classes.root classes for root container
+ * @property {string} type the type of the Button
+ */
+LinkButton.propTypes = {
+  classes: Object(prop_types["shape"])({
+    root: prop_types["string"]
+  }),
+  type: Object(prop_types["oneOf"])(['button', 'reset', 'submit']).isRequired
+};
+LinkButton.defaultProps = {
+  type: 'button'
+};
+/* harmony default export */ var linkButton = __webpack_exports__["a"] = (LinkButton);
+
+/***/ }),
+
+/***/ "./node_modules/@magento/venia-ui/lib/components/LoadingIndicator/spinner.js":
+/*!***********************************************************************************************!*\
+  !*** ./node_modules/@magento/venia-ui/lib/components/LoadingIndicator/spinner.js + 1 modules ***!
+  \***********************************************************************************************/
+/*! exports provided: default */
+/*! exports used: default */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/shallowMerge.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Icon/icon.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-feather/dist/icons/rotate-cw.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/LoadingIndicator/spinner.module.css (<- Module uses module.id) */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react/index.js (<- Module is not an ECMAScript module) */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js (<- Module is not an ECMAScript module) */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+
+// EXTERNAL MODULE: ./node_modules/react/index.js
+var react = __webpack_require__("./node_modules/react/index.js");
+var react_default = /*#__PURE__*/__webpack_require__.n(react);
+
+// EXTERNAL MODULE: ./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js
+var injectStylesIntoStyleTag = __webpack_require__("./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+var injectStylesIntoStyleTag_default = /*#__PURE__*/__webpack_require__.n(injectStylesIntoStyleTag);
+
+// EXTERNAL MODULE: ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/LoadingIndicator/spinner.module.css
+var spinner_module = __webpack_require__("./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/LoadingIndicator/spinner.module.css");
+
+// CONCATENATED MODULE: ./node_modules/@magento/venia-ui/lib/components/LoadingIndicator/spinner.module.css
+
+            
+
+var options = {"injectType":"styleTag"};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = injectStylesIntoStyleTag_default()(spinner_module["a" /* default */], options);
+
+
+
+/* harmony default export */ var LoadingIndicator_spinner_module = (spinner_module["a" /* default */].locals || {});
+// EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/util/shallowMerge.js
+var shallowMerge = __webpack_require__("./node_modules/@magento/peregrine/lib/util/shallowMerge.js");
+
+// EXTERNAL MODULE: ./node_modules/react-feather/dist/icons/rotate-cw.js
+var rotate_cw = __webpack_require__("./node_modules/react-feather/dist/icons/rotate-cw.js");
+
+// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/Icon/icon.js + 1 modules
+var icon = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/Icon/icon.js");
+
+// CONCATENATED MODULE: ./node_modules/@magento/venia-ui/lib/components/LoadingIndicator/spinner.js
+
+
+
+
+
+const Spinner = props => {
+  const classes = Object(shallowMerge["a" /* default */])(LoadingIndicator_spinner_module, props.classes);
+  return /*#__PURE__*/react_default.a.createElement(icon["a" /* default */], {
+    src: rotate_cw["a" /* default */],
+    size: 24,
+    classes: {
+      root: classes.root,
+      icon: classes.icon
+    }
   });
 };
-/* harmony default export */ var editModal = (EditModal);
-// CONCATENATED MODULE: ./node_modules/@magento/venia-ui/lib/components/CartPage/ProductListing/EditModal/index.js
-
+/* harmony default export */ var spinner = __webpack_exports__["a"] = (Spinner);
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/CartPage/ProductListing/EditModal/productDetail.module.css":
-/*!********************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/CartPage/ProductListing/EditModal/productDetail.module.css ***!
-  \********************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/CartPage/PriceAdjustments/GiftOptions/giftOptions.module.css":
+/*!**********************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/CartPage/PriceAdjustments/GiftOptions/giftOptions.module.css ***!
+  \**********************************************************************************************************************************************************************************************************************/
 /*! exports provided: default */
 /*! exports used: default */
 /*! ModuleConcatenation bailout: Module uses module.id */
@@ -1623,177 +1153,73 @@ const EditModal = props => {
 /* harmony import */ var _css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../../../css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 /* harmony import */ var _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _css_loader_dist_cjs_js_ref_6_oneOf_0_1_postcss_loader_dist_cjs_js_LinkButton_linkButton_module_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! -!../../../../../../../css-loader/dist/cjs.js??ref--6-oneOf-0-1!../../../../../../../postcss-loader/dist/cjs.js!../../../LinkButton/linkButton.module.css */ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/LinkButton/linkButton.module.css");
+/* harmony import */ var _css_loader_dist_cjs_js_ref_6_oneOf_0_1_postcss_loader_dist_cjs_js_LoadingIndicator_spinner_module_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! -!../../../../../../../css-loader/dist/cjs.js??ref--6-oneOf-0-1!../../../../../../../postcss-loader/dist/cjs.js!../../../LoadingIndicator/spinner.module.css */ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/LoadingIndicator/spinner.module.css");
 // Imports
 
 
+
+
 var ___CSS_LOADER_EXPORT___ = _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()(_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default.a);
+___CSS_LOADER_EXPORT___.i(_css_loader_dist_cjs_js_ref_6_oneOf_0_1_postcss_loader_dist_cjs_js_LinkButton_linkButton_module_css__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"], "", true);
+___CSS_LOADER_EXPORT___.i(_css_loader_dist_cjs_js_ref_6_oneOf_0_1_postcss_loader_dist_cjs_js_LoadingIndicator_spinner_module_css__WEBPACK_IMPORTED_MODULE_3__[/* default */ "a"], "", true);
 // Module
-___CSS_LOADER_EXPORT___.push([module.i, ".productDetail-root-WID {\n}\n\n.productDetail-imageContainer-wGg {\n}\n\n.productDetail-image-F6k {\n}\n\n.productDetail-productName-1Yr {\n}\n\n.productDetail-stockRow-XdE {\n}\n\n.productDetail-price-nxp {\n}\n", "",{"version":3,"sources":["webpack://./node_modules/@magento/venia-ui/lib/components/CartPage/ProductListing/EditModal/productDetail.module.css"],"names":[],"mappings":"AAAA;AAOA;;AAEA;AAEA;;AAEA;AAGA;;AAEA;AAGA;;AAEA;AAKA;;AAEA;AAEA","sourcesContent":[".root {\n    composes: border-b from global;\n    composes: border-solid from global;\n    composes: border-subtle from global;\n    composes: gap-xs from global;\n    composes: grid from global;\n    composes: pb-xs from global;\n}\n\n.imageContainer {\n    composes: justify-self-center from global;\n}\n\n.image {\n    composes: px-md from global;\n    composes: py-0 from global;\n}\n\n.productName {\n    composes: font-semibold from global;\n    composes: text-xl from global;\n}\n\n.stockRow {\n    composes: flex from global;\n    composes: font-light from global;\n    composes: justify-between from global;\n    composes: text-sm from global;\n}\n\n.price {\n    composes: font-semibold from global;\n}\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.i, ".giftOptions-root-eiS {\n}\n\n.giftOptions-option-lqF {\n    grid-template-columns: auto min-content;\n}\n\n.giftOptions-giftMessageResultContainer-IpS,\n.giftOptions-giftMessageFields-UhM {\n}\n\n.giftOptions-giftMessageResultContainer-IpS {\n\n    /* Small */\n}\n\n.giftOptions-giftMessageResult-Oll p {\n    padding: 0.25rem 0;\n}\n\n.giftOptions-editGiftMessageButton--HK {\n\n    /* Small */\n}\n\n.giftOptions-giftMessageActions-0Vl {\n\n    /* Small */\n}\n\n.giftOptions-savingContainer-QYZ {\n}\n\n.giftOptions-savingSpinner-6H- {\n}\n\n.giftOptions-hidden-Tu6 {\n}\n", "",{"version":3,"sources":["webpack://./node_modules/@magento/venia-ui/lib/components/CartPage/PriceAdjustments/GiftOptions/giftOptions.module.css"],"names":[],"mappings":"AAAA;AACA;;AAEA;IAII,uCAAuC;AAC3C;;AAEA;;AAIA;;AAEA;;IAII,UAAU;AAGd;;AAEA;IACI,kBAAkB;AACtB;;AAEA;;IAII,UAAU;AAEd;;AAEA;;IAKI,UAAU;AAEd;;AAEA;AAKA;;AAEA;AAGA;;AAEA;AAEA","sourcesContent":[".root {\n}\n\n.option {\n    composes: grid from global;\n    composes: px-0 from global;\n    composes: py-2 from global;\n    grid-template-columns: auto min-content;\n}\n\n.giftMessageResultContainer,\n.giftMessageFields {\n    composes: pb-4 from global;\n    composes: pl-8 from global;\n}\n\n.giftMessageResultContainer {\n    composes: gap-8 from global;\n    composes: items-start from global;\n\n    /* Small */\n    composes: sm_flex from global;\n    composes: sm_gap-12 from global;\n}\n\n.giftMessageResult p {\n    padding: 0.25rem 0;\n}\n\n.editGiftMessageButton {\n    composes: root from '../../../LinkButton/linkButton.module.css';\n    composes: mt-4 from global;\n\n    /* Small */\n    composes: sm_mt-2 from global;\n}\n\n.giftMessageActions {\n    composes: gap-4 from global;\n    composes: grid from global;\n    composes: mt-4 from global;\n\n    /* Small */\n    composes: sm_flex from global;\n}\n\n.savingContainer {\n    composes: flex from global;\n    composes: items-center from global;\n    composes: pl-4 from global;\n    composes: text-gray-500 from global;\n}\n\n.savingSpinner {\n    composes: root from '../../../LoadingIndicator/spinner.module.css';\n    composes: ml-2 from global;\n}\n\n.hidden {\n    composes: hidden from global;\n}\n"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
-	"root": "productDetail-root-WID border-b border-solid border-subtle gap-xs grid pb-xs",
-	"imageContainer": "productDetail-imageContainer-wGg justify-self-center",
-	"image": "productDetail-image-F6k px-md py-0",
-	"productName": "productDetail-productName-1Yr font-semibold text-xl",
-	"stockRow": "productDetail-stockRow-XdE flex font-light justify-between text-sm",
-	"price": "productDetail-price-nxp font-semibold"
+	"root": "giftOptions-root-eiS",
+	"option": "giftOptions-option-lqF grid px-0 py-2",
+	"giftMessageResultContainer": "giftOptions-giftMessageResultContainer-IpS pb-4 pl-8 gap-8 items-start sm_flex sm_gap-12",
+	"giftMessageFields": "giftOptions-giftMessageFields-UhM pb-4 pl-8",
+	"giftMessageResult": "giftOptions-giftMessageResult-Oll",
+	"editGiftMessageButton": "giftOptions-editGiftMessageButton--HK " + _css_loader_dist_cjs_js_ref_6_oneOf_0_1_postcss_loader_dist_cjs_js_LinkButton_linkButton_module_css__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"].locals["root"] + " mt-4 sm_mt-2",
+	"giftMessageActions": "giftOptions-giftMessageActions-0Vl gap-4 grid mt-4 sm_flex",
+	"savingContainer": "giftOptions-savingContainer-QYZ flex items-center pl-4 text-gray-500",
+	"savingSpinner": "giftOptions-savingSpinner-6H- " + _css_loader_dist_cjs_js_ref_6_oneOf_0_1_postcss_loader_dist_cjs_js_LoadingIndicator_spinner_module_css__WEBPACK_IMPORTED_MODULE_3__[/* default */ "a"].locals["root"] + " ml-2",
+	"hidden": "giftOptions-hidden-Tu6 hidden"
 };
 /* harmony default export */ __webpack_exports__["a"] = (___CSS_LOADER_EXPORT___);
 
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/CartPage/ProductListing/EditModal/productForm.module.css":
-/*!******************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/CartPage/ProductListing/EditModal/productForm.module.css ***!
-  \******************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/Checkbox/checkbox.module.css":
+/*!**************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/Checkbox/checkbox.module.css ***!
+  \**************************************************************************************************************************************************************************************/
 /*! exports provided: default */
 /*! exports used: default */
 /*! ModuleConcatenation bailout: Module uses module.id */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var _css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../../../../css-loader/dist/runtime/cssWithMappingToString.js */ "./node_modules/css-loader/dist/runtime/cssWithMappingToString.js");
+/* harmony import */ var _css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../../css-loader/dist/runtime/cssWithMappingToString.js */ "./node_modules/css-loader/dist/runtime/cssWithMappingToString.js");
 /* harmony import */ var _css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../../../css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 /* harmony import */ var _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _css_loader_dist_cjs_js_ref_6_oneOf_0_1_postcss_loader_dist_cjs_js_Dialog_dialog_module_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! -!../../../../../../../css-loader/dist/cjs.js??ref--6-oneOf-0-1!../../../../../../../postcss-loader/dist/cjs.js!../../../Dialog/dialog.module.css */ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/Dialog/dialog.module.css");
-/* harmony import */ var _css_loader_dist_cjs_js_ref_6_oneOf_0_1_postcss_loader_dist_cjs_js_QuantityStepper_quantityStepper_module_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! -!../../../../../../../css-loader/dist/cjs.js??ref--6-oneOf-0-1!../../../../../../../postcss-loader/dist/cjs.js!../../../QuantityStepper/quantityStepper.module.css */ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/QuantityStepper/quantityStepper.module.css");
-/* harmony import */ var _css_loader_dist_cjs_js_ref_6_oneOf_0_1_postcss_loader_dist_cjs_js_LoadingIndicator_indicator_module_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! -!../../../../../../../css-loader/dist/cjs.js??ref--6-oneOf-0-1!../../../../../../../postcss-loader/dist/cjs.js!../../../LoadingIndicator/indicator.module.css */ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/LoadingIndicator/indicator.module.css");
 // Imports
 
 
-
-
-
 var ___CSS_LOADER_EXPORT___ = _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()(_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default.a);
-___CSS_LOADER_EXPORT___.i(_css_loader_dist_cjs_js_ref_6_oneOf_0_1_postcss_loader_dist_cjs_js_Dialog_dialog_module_css__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"], "", true);
-___CSS_LOADER_EXPORT___.i(_css_loader_dist_cjs_js_ref_6_oneOf_0_1_postcss_loader_dist_cjs_js_QuantityStepper_quantityStepper_module_css__WEBPACK_IMPORTED_MODULE_3__[/* default */ "a"], "", true);
-___CSS_LOADER_EXPORT___.i(_css_loader_dist_cjs_js_ref_6_oneOf_0_1_postcss_loader_dist_cjs_js_LoadingIndicator_indicator_module_css__WEBPACK_IMPORTED_MODULE_4__[/* default */ "a"], "", true);
 // Module
-___CSS_LOADER_EXPORT___.push([module.i, ".productForm-contents-PPU {\n}\n\n.productForm-optionRoot-VLv {\n}\n\n.productForm-quantityLabel-UpD {\n}\n\n.productForm-quantityRoot-fop {\n    grid-template-columns: auto 4rem auto;\n}\n\n.productForm-loading-0Qo {\n    transform: translateY(-50%);\n}\n\n.productForm-dataError-CgK {\n}\n\n.productForm-errorContainer-g69 {\n}\n", "",{"version":3,"sources":["webpack://./node_modules/@magento/venia-ui/lib/components/CartPage/ProductListing/EditModal/productForm.module.css"],"names":[],"mappings":"AAAA;AAIA;;AAEA;AAMA;;AAEA;AAMA;;AAEA;IAEI,qCAAqC;AAIzC;;AAEA;IASI,2BAA2B;AAC/B;;AAEA;AAKA;;AAEA;AAEA","sourcesContent":[".contents {\n    composes: contents from '../../../Dialog/dialog.module.css';\n\n    composes: relative from global;\n}\n\n.optionRoot {\n    composes: border-b from global;\n    composes: border-solid from global;\n    composes: border-subtle from global;\n    composes: px-0 from global;\n    composes: py-xs from global;\n}\n\n.quantityLabel {\n    composes: font-semibold from global;\n    composes: leading-normal from global;\n    composes: mb-sm from global;\n    composes: pt-xs from global;\n    composes: text-colorDefault from global;\n}\n\n.quantityRoot {\n    composes: root from '../../../QuantityStepper/quantityStepper.module.css';\n    grid-template-columns: auto 4rem auto;\n    composes: justify-start from global;\n    composes: px-xs from global;\n    composes: py-0 from global;\n}\n\n.loading {\n    composes: root from '../../../LoadingIndicator/indicator.module.css';\n\n    composes: absolute from global;\n    composes: h-unset from global;\n    composes: left-0 from global;\n    composes: text-center from global;\n    composes: top-2/4 from global;\n    composes: z-mask from global;\n    transform: translateY(-50%);\n}\n\n.dataError {\n    composes: inline-block from global;\n    composes: leading-normal from global;\n    composes: pt-xs from global;\n    composes: text-error from global;\n}\n\n.errorContainer {\n    composes: pt-xs from global;\n}\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.i, ".checkbox-root-hF1 {\n    --stroke: var(--venia-global-color-gray-600);\n    grid-template-areas: 'input label';\n    grid-template-columns: min-content 1fr;\n}\n\n.checkbox-input-WEy {\n    grid-area: input;\n\n    /* TODO @TW: review, replaces input:disabled. Check if working. */\n}\n\n.checkbox-icon-eiW {\n    grid-area: input;\n}\n\n.checkbox-icon-eiW svg {\n    stroke: rgb(var(--stroke));\n}\n\n.checkbox-label-wHh {\n    grid-area: label;\n}\n\n/* When the input is disabled, update the cursor on the sibling label element. */\n/* TODO @TW: cannot compose */\n.checkbox-input-WEy:disabled ~ .checkbox-label-wHh {\n    cursor: default;\n}\n\n.checkbox-input-WEy:checked:enabled + .checkbox-icon-eiW {\n    --stroke: var(--venia-brand-color-1-700);\n}\n\n/* TODO @TW: cannot compose, needs \"checked\" variant enabled. Cannot combine variants. */\n.checkbox-input-WEy:active:enabled,\n.checkbox-input-WEy:focus:enabled {\n    /* composes: active_shadow-radioActive from global; */\n    /* composes: focus_shadow-radioFocus from global; */\n    box-shadow: -3px 3px rgb(var(--venia-brand-color-1-100));\n    outline: none;\n}\n\n.checkbox-input_shimmer-yEr {\n}\n", "",{"version":3,"sources":["webpack://./node_modules/@magento/venia-ui/lib/components/Checkbox/checkbox.module.css"],"names":[],"mappings":"AAAA;IACI,4CAA4C;IAS5C,kCAAkC;IAClC,sCAAsC;AAC1C;;AAEA;IAUI,gBAAgB;;IAEhB,iEAAiE;AAErE;;AAEA;IAII,gBAAgB;AACpB;;AAEA;IACI,0BAA0B;AAC9B;;AAEA;IAII,gBAAgB;AACpB;;AAEA,gFAAgF;AAChF,6BAA6B;AAC7B;IACI,eAAe;AACnB;;AAEA;IACI,wCAAwC;AAC5C;;AAEA,wFAAwF;AACxF;;IAEI,qDAAqD;IACrD,mDAAmD;IACnD,wDAAwD;IACxD,aAAa;AACjB;;AAEA;AAIA","sourcesContent":[".root {\n    --stroke: var(--venia-global-color-gray-600);\n\n    composes: gap-3 from global;\n    composes: grid from global;\n    composes: grid-flow-col from global;\n    composes: items-center from global;\n    composes: justify-items-center from global;\n    composes: leading-normal from global;\n    composes: text-colorDefault from global;\n    grid-template-areas: 'input label';\n    grid-template-columns: min-content 1fr;\n}\n\n.input {\n    composes: appearance-none from global;\n    composes: bg-transparent from global;\n    composes: border-2 from global;\n    composes: border-solid from global;\n    composes: border-transparent from global;\n    composes: cursor-pointer from global;\n    composes: h-[1.5rem] from global;\n    composes: rounded from global;\n    composes: w-[1.5rem] from global;\n    grid-area: input;\n\n    /* TODO @TW: review, replaces input:disabled. Check if working. */\n    composes: disabled_cursor-not-allowed from global;\n}\n\n.icon {\n    composes: h-[1.5rem] from global;\n    composes: pointer-events-none from global;\n    composes: w-[1.5rem] from global;\n    grid-area: input;\n}\n\n.icon svg {\n    stroke: rgb(var(--stroke));\n}\n\n.label {\n    composes: cursor-pointer from global;\n    composes: justify-self-start from global;\n    composes: text-colorDefault from global;\n    grid-area: label;\n}\n\n/* When the input is disabled, update the cursor on the sibling label element. */\n/* TODO @TW: cannot compose */\n.input:disabled ~ .label {\n    cursor: default;\n}\n\n.input:checked:enabled + .icon {\n    --stroke: var(--venia-brand-color-1-700);\n}\n\n/* TODO @TW: cannot compose, needs \"checked\" variant enabled. Cannot combine variants. */\n.input:active:enabled,\n.input:focus:enabled {\n    /* composes: active_shadow-radioActive from global; */\n    /* composes: focus_shadow-radioFocus from global; */\n    box-shadow: -3px 3px rgb(var(--venia-brand-color-1-100));\n    outline: none;\n}\n\n.input_shimmer {\n    composes: h-[1.5rem] from global;\n    composes: rounded from global;\n    composes: w-[1.5rem] from global;\n}\n"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
-	"contents": "productForm-contents-PPU " + _css_loader_dist_cjs_js_ref_6_oneOf_0_1_postcss_loader_dist_cjs_js_Dialog_dialog_module_css__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"].locals["contents"] + " relative",
-	"optionRoot": "productForm-optionRoot-VLv border-b border-solid border-subtle px-0 py-xs",
-	"quantityLabel": "productForm-quantityLabel-UpD font-semibold leading-normal mb-sm pt-xs text-colorDefault",
-	"quantityRoot": "productForm-quantityRoot-fop " + _css_loader_dist_cjs_js_ref_6_oneOf_0_1_postcss_loader_dist_cjs_js_QuantityStepper_quantityStepper_module_css__WEBPACK_IMPORTED_MODULE_3__[/* default */ "a"].locals["root"] + " justify-start px-xs py-0",
-	"loading": "productForm-loading-0Qo " + _css_loader_dist_cjs_js_ref_6_oneOf_0_1_postcss_loader_dist_cjs_js_LoadingIndicator_indicator_module_css__WEBPACK_IMPORTED_MODULE_4__[/* default */ "a"].locals["root"] + " absolute h-unset left-0 text-center top-2/4 z-mask",
-	"dataError": "productForm-dataError-CgK inline-block leading-normal pt-xs text-error",
-	"errorContainer": "productForm-errorContainer-g69 pt-xs"
+	"root": "checkbox-root-hF1 gap-3 grid grid-flow-col items-center justify-items-center leading-normal text-colorDefault",
+	"input": "checkbox-input-WEy appearance-none bg-transparent border-2 border-solid border-transparent cursor-pointer h-[1.5rem] rounded w-[1.5rem] disabled_cursor-not-allowed",
+	"icon": "checkbox-icon-eiW h-[1.5rem] pointer-events-none w-[1.5rem]",
+	"label": "checkbox-label-wHh cursor-pointer justify-self-start text-colorDefault",
+	"input_shimmer": "checkbox-input_shimmer-yEr h-[1.5rem] rounded w-[1.5rem]"
 };
 /* harmony default export */ __webpack_exports__["a"] = (___CSS_LOADER_EXPORT___);
 
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/ProductOptions/option.module.css":
+/***/ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/LinkButton/linkButton.module.css":
 /*!******************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/ProductOptions/option.module.css ***!
+  !*** ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/LinkButton/linkButton.module.css ***!
   \******************************************************************************************************************************************************************************************/
-/*! exports provided: default */
-/*! exports used: default */
-/*! ModuleConcatenation bailout: Module uses module.id */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var _css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../../css-loader/dist/runtime/cssWithMappingToString.js */ "./node_modules/css-loader/dist/runtime/cssWithMappingToString.js");
-/* harmony import */ var _css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
-/* harmony import */ var _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
-// Imports
-
-
-var ___CSS_LOADER_EXPORT___ = _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()(_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default.a);
-// Module
-___CSS_LOADER_EXPORT___.push([module.i, ".option-root-9Af {\n}\n\n.option-title-8KV {\n}\n\n.option-selection-2zF {\n}\n\n.option-selectionLabel-JfM {\n}\n", "",{"version":3,"sources":["webpack://./node_modules/@magento/venia-ui/lib/components/ProductOptions/option.module.css"],"names":[],"mappings":"AAAA;AAQA;;AAEA;AAMA;;AAEA;AAKA;;AAEA;AAEA","sourcesContent":[".root {\n    composes: border-b from global;\n    composes: border-solid from global;\n    composes: border-subtle from global;\n    composes: mx-sm from global;\n    composes: my-0 from global;\n    composes: px-0 from global;\n    composes: py-sm from global;\n}\n\n.title {\n    composes: block from global;\n    composes: font-semibold from global;\n    composes: leading-normal from global;\n    composes: mb-sm from global;\n    composes: text-colorDefault from global;\n}\n\n.selection {\n    composes: flex from global;\n    composes: leading-normal from global;\n    composes: mt-xs from global;\n    composes: text-colorDefault from global;\n}\n\n.selectionLabel {\n    composes: mr-xs from global;\n}\n"],"sourceRoot":""}]);
-// Exports
-___CSS_LOADER_EXPORT___.locals = {
-	"root": "option-root-9Af border-b border-solid border-subtle mx-sm my-0 px-0 py-sm",
-	"title": "option-title-8KV block font-semibold leading-normal mb-sm text-colorDefault",
-	"selection": "option-selection-2zF flex leading-normal mt-xs text-colorDefault",
-	"selectionLabel": "option-selectionLabel-JfM mr-xs"
-};
-/* harmony default export */ __webpack_exports__["a"] = (___CSS_LOADER_EXPORT___);
-
-
-/***/ }),
-
-/***/ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/ProductOptions/swatch.module.css":
-/*!******************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/ProductOptions/swatch.module.css ***!
-  \******************************************************************************************************************************************************************************************/
-/*! exports provided: default */
-/*! exports used: default */
-/*! ModuleConcatenation bailout: Module uses module.id */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var _css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../../css-loader/dist/runtime/cssWithMappingToString.js */ "./node_modules/css-loader/dist/runtime/cssWithMappingToString.js");
-/* harmony import */ var _css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
-/* harmony import */ var _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _css_loader_dist_cjs_js_ref_6_oneOf_0_1_postcss_loader_dist_cjs_js_tile_module_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! -!../../../../../css-loader/dist/cjs.js??ref--6-oneOf-0-1!../../../../../postcss-loader/dist/cjs.js!./tile.module.css */ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/ProductOptions/tile.module.css");
-// Imports
-
-
-
-var ___CSS_LOADER_EXPORT___ = _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()(_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default.a);
-___CSS_LOADER_EXPORT___.i(_css_loader_dist_cjs_js_ref_6_oneOf_0_1_postcss_loader_dist_cjs_js_tile_module_css__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"], "", true);
-// Module
-___CSS_LOADER_EXPORT___.push([module.i, "/* TODO @TW: review. This relies on custom prop to set color from JSX \"style\" prop. */\n.swatch-root-6VC {\n    --venia-swatch-bg: var(--venia-global-color-gray-100);\n    background: var(--venia-swatch-bg);\n}\n\n/* TODO @TW: review. This relies on custom prop to set color from JSX \"style\" prop. */\n.swatch-root_selected--kC {\n\n    background: linear-gradient(-45deg, rgba(0, 0, 0, 0.2), transparent),\n        var(--venia-swatch-bg);\n}\n\n.swatch-root_focused-27- {\n}\n\n.swatch-root_selected_focused-WQx {\n}\n\n.swatch-checked-blv {\n    opacity: 1;\n    transition-property: opacity;\n    transition-duration: 256ms;\n}\n\n.swatch-unchecked-Aap {\n    opacity: 0;\n}\n\n.swatch-root_outOfStock-Xid,\n.swatch-root_selected_outOfStock-Ul1 {\n}\n.swatch-root_outOfStock-Xid:after,\n.swatch-root_selected_outOfStock-Ul1:after {\n    content: '';\n    position: absolute;\n    border-top: 2px solid rgb(var(--venia-global-color-gray-400));\n    width: 62px;\n    transform: rotate(-45deg);\n}\n", "",{"version":3,"sources":["webpack://./node_modules/@magento/venia-ui/lib/components/ProductOptions/swatch.module.css"],"names":[],"mappings":"AAAA,qFAAqF;AACrF;IACI,qDAAqD;IAOrD,kCAAkC;AACtC;;AAEA,qFAAqF;AACrF;;IAGI;8BAC0B;AAC9B;;AAEA;AAEA;;AAEA;AAEA;;AAEA;IACI,UAAU;IACV,4BAA4B;IAC5B,0BAA0B;AAC9B;;AAEA;IAEI,UAAU;AACd;;AAEA;;AAOA;AACA;;IAEI,WAAW;IACX,kBAAkB;IAClB,6DAA6D;IAC7D,WAAW;IACX,yBAAyB;AAC7B","sourcesContent":["/* TODO @TW: review. This relies on custom prop to set color from JSX \"style\" prop. */\n.root {\n    --venia-swatch-bg: var(--venia-global-color-gray-100);\n\n    composes: root from './tile.module.css';\n\n    composes: border-shaded-10 from global;\n    composes: text-white from global;\n    composes: w-[3rem] from global;\n    background: var(--venia-swatch-bg);\n}\n\n/* TODO @TW: review. This relies on custom prop to set color from JSX \"style\" prop. */\n.root_selected {\n    composes: root;\n\n    background: linear-gradient(-45deg, rgba(0, 0, 0, 0.2), transparent),\n        var(--venia-swatch-bg);\n}\n\n.root_focused {\n    composes: root;\n}\n\n.root_selected_focused {\n    composes: root_selected;\n}\n\n.checked {\n    opacity: 1;\n    transition-property: opacity;\n    transition-duration: 256ms;\n}\n\n.unchecked {\n    composes: checked;\n    opacity: 0;\n}\n\n.root_outOfStock,\n.root_selected_outOfStock {\n    composes: root;\n    composes: opacity-40 from global;\n    composes: border-2 from global;\n    composes: border-solid from global;\n    composes: border-gray-400 from global;\n}\n.root_outOfStock:after,\n.root_selected_outOfStock:after {\n    content: '';\n    position: absolute;\n    border-top: 2px solid rgb(var(--venia-global-color-gray-400));\n    width: 62px;\n    transform: rotate(-45deg);\n}\n"],"sourceRoot":""}]);
-// Exports
-___CSS_LOADER_EXPORT___.locals = {
-	"root": "swatch-root-6VC " + _css_loader_dist_cjs_js_ref_6_oneOf_0_1_postcss_loader_dist_cjs_js_tile_module_css__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"].locals["root"] + " border-shaded-10 text-white w-[3rem]",
-	"root_selected": "swatch-root_selected--kC swatch-root-6VC " + _css_loader_dist_cjs_js_ref_6_oneOf_0_1_postcss_loader_dist_cjs_js_tile_module_css__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"].locals["root"] + " border-shaded-10 text-white w-[3rem]",
-	"root_focused": "swatch-root_focused-27- swatch-root-6VC " + _css_loader_dist_cjs_js_ref_6_oneOf_0_1_postcss_loader_dist_cjs_js_tile_module_css__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"].locals["root"] + " border-shaded-10 text-white w-[3rem]",
-	"root_selected_focused": "swatch-root_selected_focused-WQx swatch-root_selected--kC swatch-root-6VC " + _css_loader_dist_cjs_js_ref_6_oneOf_0_1_postcss_loader_dist_cjs_js_tile_module_css__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"].locals["root"] + " border-shaded-10 text-white w-[3rem]",
-	"checked": "swatch-checked-blv",
-	"unchecked": "swatch-unchecked-Aap swatch-checked-blv",
-	"root_outOfStock": "swatch-root_outOfStock-Xid swatch-root-6VC " + _css_loader_dist_cjs_js_ref_6_oneOf_0_1_postcss_loader_dist_cjs_js_tile_module_css__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"].locals["root"] + " border-shaded-10 text-white w-[3rem] opacity-40 border-2 border-solid border-gray-400",
-	"root_selected_outOfStock": "swatch-root_selected_outOfStock-Ul1 swatch-root-6VC " + _css_loader_dist_cjs_js_ref_6_oneOf_0_1_postcss_loader_dist_cjs_js_tile_module_css__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"].locals["root"] + " border-shaded-10 text-white w-[3rem] opacity-40 border-2 border-solid border-gray-400"
-};
-/* harmony default export */ __webpack_exports__["a"] = (___CSS_LOADER_EXPORT___);
-
-
-/***/ }),
-
-/***/ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/ProductOptions/swatchList.module.css":
-/*!**********************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/ProductOptions/swatchList.module.css ***!
-  \**********************************************************************************************************************************************************************************************/
-/*! exports provided: default */
-/*! exports used: default */
-/*! ModuleConcatenation bailout: Module uses module.id */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var _css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../../css-loader/dist/runtime/cssWithMappingToString.js */ "./node_modules/css-loader/dist/runtime/cssWithMappingToString.js");
-/* harmony import */ var _css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
-/* harmony import */ var _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _css_loader_dist_cjs_js_ref_6_oneOf_0_1_postcss_loader_dist_cjs_js_tileList_module_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! -!../../../../../css-loader/dist/cjs.js??ref--6-oneOf-0-1!../../../../../postcss-loader/dist/cjs.js!./tileList.module.css */ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/ProductOptions/tileList.module.css");
-// Imports
-
-
-
-var ___CSS_LOADER_EXPORT___ = _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()(_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default.a);
-___CSS_LOADER_EXPORT___.i(_css_loader_dist_cjs_js_ref_6_oneOf_0_1_postcss_loader_dist_cjs_js_tileList_module_css__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"], "", true);
-// Module
-___CSS_LOADER_EXPORT___.push([module.i, ".swatchList-root-m0x {\n}\n", "",{"version":3,"sources":["webpack://./node_modules/@magento/venia-ui/lib/components/ProductOptions/swatchList.module.css"],"names":[],"mappings":"AAAA;AAEA","sourcesContent":[".root {\n    composes: root from './tileList.module.css';\n}\n"],"sourceRoot":""}]);
-// Exports
-___CSS_LOADER_EXPORT___.locals = {
-	"root": "swatchList-root-m0x " + _css_loader_dist_cjs_js_ref_6_oneOf_0_1_postcss_loader_dist_cjs_js_tileList_module_css__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"].locals["root"] + ""
-};
-/* harmony default export */ __webpack_exports__["a"] = (___CSS_LOADER_EXPORT___);
-
-
-/***/ }),
-
-/***/ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/ProductOptions/tile.module.css":
-/*!****************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/ProductOptions/tile.module.css ***!
-  \****************************************************************************************************************************************************************************************/
 /*! exports provided: default */
 /*! exports used: default */
 /*! ModuleConcatenation bailout: Module uses module.id */
@@ -1812,25 +1238,20 @@ ___CSS_LOADER_EXPORT___.locals = {
 var ___CSS_LOADER_EXPORT___ = _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()(_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default.a);
 ___CSS_LOADER_EXPORT___.i(_css_loader_dist_cjs_js_ref_6_oneOf_0_1_postcss_loader_dist_cjs_js_clickable_module_css__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"], "", true);
 // Module
-___CSS_LOADER_EXPORT___.push([module.i, ".tile-root-zJL {\n    position: relative;\n}\n\n.tile-root_selected-Kmb {\n}\n\n.tile-root_focused-Rt5 {\n}\n\n.tile-root_selected_focused-sYj {\n}\n\n.tile-root_outOfStock-Ps6,\n.tile-root_selected_outOfStock-IAL {\n}\n.tile-root_outOfStock-Ps6:after,\n.tile-root_selected_outOfStock-IAL:after {\n    content: '';\n    position: absolute;\n    border-top: 2px solid rgb(var(--venia-global-color-gray-400));\n    width: 62px;\n    transform: rotate(-45deg);\n}\n", "",{"version":3,"sources":["webpack://./node_modules/@magento/venia-ui/lib/components/ProductOptions/tile.module.css"],"names":[],"mappings":"AAAA;IAWI,kBAAkB;AACtB;;AAEA;AAKA;;AAEA;AAEA;;AAEA;AAEA;;AAEA;;AASA;AACA;;IAEI,WAAW;IACX,kBAAkB;IAClB,6DAA6D;IAC7D,WAAW;IACX,yBAAyB;AAC7B","sourcesContent":[".root {\n    composes: root from '../clickable.module.css';\n\n    composes: border from global;\n    composes: border-solid from global;\n    composes: border-strong from global;\n    composes: h-[3rem] from global;\n    composes: min-w-[3rem] from global;\n    composes: px-2xs from global;\n    composes: py-0 from global;\n    composes: rounded-sm from global;\n    position: relative;\n}\n\n.root_selected {\n    composes: root;\n\n    composes: bg-gray-900 from global;\n    composes: text-white from global;\n}\n\n.root_focused {\n    composes: root;\n}\n\n.root_selected_focused {\n    composes: root_selected;\n}\n\n.root_outOfStock,\n.root_selected_outOfStock {\n    composes: root;\n    composes: bg-disabledTile from global;\n    composes: opacity-50 from global;\n    composes: border-2 from global;\n    composes: border-solid from global;\n    composes: border-gray-400 from global;\n    composes: text-gray-600 from global;\n}\n.root_outOfStock:after,\n.root_selected_outOfStock:after {\n    content: '';\n    position: absolute;\n    border-top: 2px solid rgb(var(--venia-global-color-gray-400));\n    width: 62px;\n    transform: rotate(-45deg);\n}\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.i, ".linkButton-root-HUs {\n}\n", "",{"version":3,"sources":["webpack://./node_modules/@magento/venia-ui/lib/components/LinkButton/linkButton.module.css"],"names":[],"mappings":"AAAA;AAWA","sourcesContent":[".root {\n    composes: root from '../clickable.module.css';\n\n    composes: font-semibold from global;\n    composes: leading-tight from global;\n    composes: max-w-full from global;\n    composes: text-colorDefault from global;\n    composes: text-brand-dark from global;\n    composes: underline from global;\n\n    composes: hover_text-colorDefault from global;\n}\n"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
-	"root": "tile-root-zJL " + _css_loader_dist_cjs_js_ref_6_oneOf_0_1_postcss_loader_dist_cjs_js_clickable_module_css__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"].locals["root"] + " border border-solid border-strong h-[3rem] min-w-[3rem] px-2xs py-0 rounded-sm",
-	"root_selected": "tile-root_selected-Kmb tile-root-zJL " + _css_loader_dist_cjs_js_ref_6_oneOf_0_1_postcss_loader_dist_cjs_js_clickable_module_css__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"].locals["root"] + " border border-solid border-strong h-[3rem] min-w-[3rem] px-2xs py-0 rounded-sm bg-gray-900 text-white",
-	"root_focused": "tile-root_focused-Rt5 tile-root-zJL " + _css_loader_dist_cjs_js_ref_6_oneOf_0_1_postcss_loader_dist_cjs_js_clickable_module_css__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"].locals["root"] + " border border-solid border-strong h-[3rem] min-w-[3rem] px-2xs py-0 rounded-sm",
-	"root_selected_focused": "tile-root_selected_focused-sYj tile-root_selected-Kmb tile-root-zJL " + _css_loader_dist_cjs_js_ref_6_oneOf_0_1_postcss_loader_dist_cjs_js_clickable_module_css__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"].locals["root"] + " border border-solid border-strong h-[3rem] min-w-[3rem] px-2xs py-0 rounded-sm bg-gray-900 text-white",
-	"root_outOfStock": "tile-root_outOfStock-Ps6 tile-root-zJL " + _css_loader_dist_cjs_js_ref_6_oneOf_0_1_postcss_loader_dist_cjs_js_clickable_module_css__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"].locals["root"] + " border border-solid border-strong h-[3rem] min-w-[3rem] px-2xs py-0 rounded-sm bg-disabledTile opacity-50 border-2 border-solid border-gray-400 text-gray-600",
-	"root_selected_outOfStock": "tile-root_selected_outOfStock-IAL tile-root-zJL " + _css_loader_dist_cjs_js_ref_6_oneOf_0_1_postcss_loader_dist_cjs_js_clickable_module_css__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"].locals["root"] + " border border-solid border-strong h-[3rem] min-w-[3rem] px-2xs py-0 rounded-sm bg-disabledTile opacity-50 border-2 border-solid border-gray-400 text-gray-600"
+	"root": "linkButton-root-HUs " + _css_loader_dist_cjs_js_ref_6_oneOf_0_1_postcss_loader_dist_cjs_js_clickable_module_css__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"].locals["root"] + " font-semibold leading-tight max-w-full text-colorDefault text-brand-dark underline hover_text-colorDefault"
 };
 /* harmony default export */ __webpack_exports__["a"] = (___CSS_LOADER_EXPORT___);
 
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/ProductOptions/tileList.module.css":
-/*!********************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/ProductOptions/tileList.module.css ***!
-  \********************************************************************************************************************************************************************************************/
+/***/ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/LoadingIndicator/spinner.module.css":
+/*!*********************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/LoadingIndicator/spinner.module.css ***!
+  \*********************************************************************************************************************************************************************************************/
 /*! exports provided: default */
 /*! exports used: default */
 /*! ModuleConcatenation bailout: Module uses module.id */
@@ -1841,15 +1262,52 @@ ___CSS_LOADER_EXPORT___.locals = {
 /* harmony import */ var _css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 /* harmony import */ var _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _css_loader_dist_cjs_js_ref_6_oneOf_0_1_postcss_loader_dist_cjs_js_Icon_icon_module_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! -!../../../../../css-loader/dist/cjs.js??ref--6-oneOf-0-1!../../../../../postcss-loader/dist/cjs.js!../Icon/icon.module.css */ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/Icon/icon.module.css");
 // Imports
 
 
+
 var ___CSS_LOADER_EXPORT___ = _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()(_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default.a);
+___CSS_LOADER_EXPORT___.i(_css_loader_dist_cjs_js_ref_6_oneOf_0_1_postcss_loader_dist_cjs_js_Icon_icon_module_css__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"], "", true);
 // Module
-___CSS_LOADER_EXPORT___.push([module.i, ".tileList-root-m4a {\n    grid-template-columns: repeat(auto-fit, minmax(3rem, max-content));\n}\n", "",{"version":3,"sources":["webpack://./node_modules/@magento/venia-ui/lib/components/ProductOptions/tileList.module.css"],"names":[],"mappings":"AAAA;IAII,kEAAkE;AACtE","sourcesContent":[".root {\n    composes: gap-xs from global;\n    composes: grid from global;\n    composes: grid-flow-col from global;\n    grid-template-columns: repeat(auto-fit, minmax(3rem, max-content));\n}\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.i, ".spinner-root-t3- {\n    --stroke: rgb(var(--venia-global-color-text-hint));\n}\n\n.spinner-icon-pXl {\n}\n", "",{"version":3,"sources":["webpack://./node_modules/@magento/venia-ui/lib/components/LoadingIndicator/spinner.module.css"],"names":[],"mappings":"AAAA;IAEI,kDAAkD;AACtD;;AAEA;AAGA","sourcesContent":[".root {\n    composes: root from '../Icon/icon.module.css';\n    --stroke: rgb(var(--venia-global-color-text-hint));\n}\n\n.icon {\n    composes: icon from '../Icon/icon.module.css';\n    composes: animation-spin from global;\n}\n"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
-	"root": "tileList-root-m4a gap-xs grid grid-flow-col"
+	"root": "spinner-root-t3- " + _css_loader_dist_cjs_js_ref_6_oneOf_0_1_postcss_loader_dist_cjs_js_Icon_icon_module_css__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"].locals["root"] + "",
+	"icon": "spinner-icon-pXl " + _css_loader_dist_cjs_js_ref_6_oneOf_0_1_postcss_loader_dist_cjs_js_Icon_icon_module_css__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"].locals["icon"] + " animation-spin"
+};
+/* harmony default export */ __webpack_exports__["a"] = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/TextArea/textArea.module.css":
+/*!**************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/TextArea/textArea.module.css ***!
+  \**************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/*! exports used: default */
+/*! ModuleConcatenation bailout: Module uses module.id */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var _css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../../css-loader/dist/runtime/cssWithMappingToString.js */ "./node_modules/css-loader/dist/runtime/cssWithMappingToString.js");
+/* harmony import */ var _css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _css_loader_dist_cjs_js_ref_6_oneOf_0_1_postcss_loader_dist_cjs_js_Field_field_module_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! -!../../../../../css-loader/dist/cjs.js??ref--6-oneOf-0-1!../../../../../postcss-loader/dist/cjs.js!../Field/field.module.css */ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/Field/field.module.css");
+// Imports
+
+
+
+var ___CSS_LOADER_EXPORT___ = _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()(_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default.a);
+___CSS_LOADER_EXPORT___.i(_css_loader_dist_cjs_js_ref_6_oneOf_0_1_postcss_loader_dist_cjs_js_Field_field_module_css__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"], "", true);
+// Module
+___CSS_LOADER_EXPORT___.push([module.i, ".textArea-input-Rk3 {\n}\n\n.textArea-input_shimmer-SJm {\n    font-size: 1rem;\n}\n", "",{"version":3,"sources":["webpack://./node_modules/@magento/venia-ui/lib/components/TextArea/textArea.module.css"],"names":[],"mappings":"AAAA;AAQA;;AAEA;IAUI,eAAe;AACnB","sourcesContent":[".input {\n    composes: input from '../Field/field.module.css';\n\n    composes: h-auto from global;\n    composes: max-w-full from global;\n    composes: min-w-full from global;\n    composes: px-xs from global;\n    composes: py-3 from global;\n}\n\n.input_shimmer {\n    composes: h-auto from global;\n    composes: m-0 from global;\n    composes: max-w-full from global;\n    composes: min-h-[6.75rem] from global;\n    composes: min-w-full from global;\n    composes: px-[15px] from global;\n    composes: py-[12px] from global;\n    composes: rounded-md from global;\n    composes: w-full from global;\n    font-size: 1rem;\n}\n"],"sourceRoot":""}]);
+// Exports
+___CSS_LOADER_EXPORT___.locals = {
+	"input": "textArea-input-Rk3 " + _css_loader_dist_cjs_js_ref_6_oneOf_0_1_postcss_loader_dist_cjs_js_Field_field_module_css__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"].locals["input"] + " h-auto max-w-full min-w-full px-xs py-3",
+	"input_shimmer": "textArea-input_shimmer-SJm h-auto m-0 max-w-full min-h-[6.75rem] min-w-full px-[15px] py-[12px] rounded-md w-full"
 };
 /* harmony default export */ __webpack_exports__["a"] = (___CSS_LOADER_EXPORT___);
 
@@ -1882,6 +1340,397 @@ ___CSS_LOADER_EXPORT___.locals = {
 };
 /* harmony default export */ __webpack_exports__["a"] = (___CSS_LOADER_EXPORT___);
 
+
+/***/ }),
+
+/***/ "./node_modules/lodash.debounce/index.js":
+/*!***********************************************!*\
+  !*** ./node_modules/lodash.debounce/index.js ***!
+  \***********************************************/
+/*! no static exports found */
+/*! exports used: default */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function(global) {/**
+ * lodash (Custom Build) <https://lodash.com/>
+ * Build: `lodash modularize exports="npm" -o ./`
+ * Copyright jQuery Foundation and other contributors <https://jquery.org/>
+ * Released under MIT license <https://lodash.com/license>
+ * Based on Underscore.js 1.8.3 <http://underscorejs.org/LICENSE>
+ * Copyright Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+ */
+
+/** Used as the `TypeError` message for "Functions" methods. */
+var FUNC_ERROR_TEXT = 'Expected a function';
+
+/** Used as references for various `Number` constants. */
+var NAN = 0 / 0;
+
+/** `Object#toString` result references. */
+var symbolTag = '[object Symbol]';
+
+/** Used to match leading and trailing whitespace. */
+var reTrim = /^\s+|\s+$/g;
+
+/** Used to detect bad signed hexadecimal string values. */
+var reIsBadHex = /^[-+]0x[0-9a-f]+$/i;
+
+/** Used to detect binary string values. */
+var reIsBinary = /^0b[01]+$/i;
+
+/** Used to detect octal string values. */
+var reIsOctal = /^0o[0-7]+$/i;
+
+/** Built-in method references without a dependency on `root`. */
+var freeParseInt = parseInt;
+
+/** Detect free variable `global` from Node.js. */
+var freeGlobal = typeof global == 'object' && global && global.Object === Object && global;
+
+/** Detect free variable `self`. */
+var freeSelf = typeof self == 'object' && self && self.Object === Object && self;
+
+/** Used as a reference to the global object. */
+var root = freeGlobal || freeSelf || Function('return this')();
+
+/** Used for built-in method references. */
+var objectProto = Object.prototype;
+
+/**
+ * Used to resolve the
+ * [`toStringTag`](http://ecma-international.org/ecma-262/7.0/#sec-object.prototype.tostring)
+ * of values.
+ */
+var objectToString = objectProto.toString;
+
+/* Built-in method references for those with the same name as other `lodash` methods. */
+var nativeMax = Math.max,
+    nativeMin = Math.min;
+
+/**
+ * Gets the timestamp of the number of milliseconds that have elapsed since
+ * the Unix epoch (1 January 1970 00:00:00 UTC).
+ *
+ * @static
+ * @memberOf _
+ * @since 2.4.0
+ * @category Date
+ * @returns {number} Returns the timestamp.
+ * @example
+ *
+ * _.defer(function(stamp) {
+ *   console.log(_.now() - stamp);
+ * }, _.now());
+ * // => Logs the number of milliseconds it took for the deferred invocation.
+ */
+var now = function() {
+  return root.Date.now();
+};
+
+/**
+ * Creates a debounced function that delays invoking `func` until after `wait`
+ * milliseconds have elapsed since the last time the debounced function was
+ * invoked. The debounced function comes with a `cancel` method to cancel
+ * delayed `func` invocations and a `flush` method to immediately invoke them.
+ * Provide `options` to indicate whether `func` should be invoked on the
+ * leading and/or trailing edge of the `wait` timeout. The `func` is invoked
+ * with the last arguments provided to the debounced function. Subsequent
+ * calls to the debounced function return the result of the last `func`
+ * invocation.
+ *
+ * **Note:** If `leading` and `trailing` options are `true`, `func` is
+ * invoked on the trailing edge of the timeout only if the debounced function
+ * is invoked more than once during the `wait` timeout.
+ *
+ * If `wait` is `0` and `leading` is `false`, `func` invocation is deferred
+ * until to the next tick, similar to `setTimeout` with a timeout of `0`.
+ *
+ * See [David Corbacho's article](https://css-tricks.com/debouncing-throttling-explained-examples/)
+ * for details over the differences between `_.debounce` and `_.throttle`.
+ *
+ * @static
+ * @memberOf _
+ * @since 0.1.0
+ * @category Function
+ * @param {Function} func The function to debounce.
+ * @param {number} [wait=0] The number of milliseconds to delay.
+ * @param {Object} [options={}] The options object.
+ * @param {boolean} [options.leading=false]
+ *  Specify invoking on the leading edge of the timeout.
+ * @param {number} [options.maxWait]
+ *  The maximum time `func` is allowed to be delayed before it's invoked.
+ * @param {boolean} [options.trailing=true]
+ *  Specify invoking on the trailing edge of the timeout.
+ * @returns {Function} Returns the new debounced function.
+ * @example
+ *
+ * // Avoid costly calculations while the window size is in flux.
+ * jQuery(window).on('resize', _.debounce(calculateLayout, 150));
+ *
+ * // Invoke `sendMail` when clicked, debouncing subsequent calls.
+ * jQuery(element).on('click', _.debounce(sendMail, 300, {
+ *   'leading': true,
+ *   'trailing': false
+ * }));
+ *
+ * // Ensure `batchLog` is invoked once after 1 second of debounced calls.
+ * var debounced = _.debounce(batchLog, 250, { 'maxWait': 1000 });
+ * var source = new EventSource('/stream');
+ * jQuery(source).on('message', debounced);
+ *
+ * // Cancel the trailing debounced invocation.
+ * jQuery(window).on('popstate', debounced.cancel);
+ */
+function debounce(func, wait, options) {
+  var lastArgs,
+      lastThis,
+      maxWait,
+      result,
+      timerId,
+      lastCallTime,
+      lastInvokeTime = 0,
+      leading = false,
+      maxing = false,
+      trailing = true;
+
+  if (typeof func != 'function') {
+    throw new TypeError(FUNC_ERROR_TEXT);
+  }
+  wait = toNumber(wait) || 0;
+  if (isObject(options)) {
+    leading = !!options.leading;
+    maxing = 'maxWait' in options;
+    maxWait = maxing ? nativeMax(toNumber(options.maxWait) || 0, wait) : maxWait;
+    trailing = 'trailing' in options ? !!options.trailing : trailing;
+  }
+
+  function invokeFunc(time) {
+    var args = lastArgs,
+        thisArg = lastThis;
+
+    lastArgs = lastThis = undefined;
+    lastInvokeTime = time;
+    result = func.apply(thisArg, args);
+    return result;
+  }
+
+  function leadingEdge(time) {
+    // Reset any `maxWait` timer.
+    lastInvokeTime = time;
+    // Start the timer for the trailing edge.
+    timerId = setTimeout(timerExpired, wait);
+    // Invoke the leading edge.
+    return leading ? invokeFunc(time) : result;
+  }
+
+  function remainingWait(time) {
+    var timeSinceLastCall = time - lastCallTime,
+        timeSinceLastInvoke = time - lastInvokeTime,
+        result = wait - timeSinceLastCall;
+
+    return maxing ? nativeMin(result, maxWait - timeSinceLastInvoke) : result;
+  }
+
+  function shouldInvoke(time) {
+    var timeSinceLastCall = time - lastCallTime,
+        timeSinceLastInvoke = time - lastInvokeTime;
+
+    // Either this is the first call, activity has stopped and we're at the
+    // trailing edge, the system time has gone backwards and we're treating
+    // it as the trailing edge, or we've hit the `maxWait` limit.
+    return (lastCallTime === undefined || (timeSinceLastCall >= wait) ||
+      (timeSinceLastCall < 0) || (maxing && timeSinceLastInvoke >= maxWait));
+  }
+
+  function timerExpired() {
+    var time = now();
+    if (shouldInvoke(time)) {
+      return trailingEdge(time);
+    }
+    // Restart the timer.
+    timerId = setTimeout(timerExpired, remainingWait(time));
+  }
+
+  function trailingEdge(time) {
+    timerId = undefined;
+
+    // Only invoke if we have `lastArgs` which means `func` has been
+    // debounced at least once.
+    if (trailing && lastArgs) {
+      return invokeFunc(time);
+    }
+    lastArgs = lastThis = undefined;
+    return result;
+  }
+
+  function cancel() {
+    if (timerId !== undefined) {
+      clearTimeout(timerId);
+    }
+    lastInvokeTime = 0;
+    lastArgs = lastCallTime = lastThis = timerId = undefined;
+  }
+
+  function flush() {
+    return timerId === undefined ? result : trailingEdge(now());
+  }
+
+  function debounced() {
+    var time = now(),
+        isInvoking = shouldInvoke(time);
+
+    lastArgs = arguments;
+    lastThis = this;
+    lastCallTime = time;
+
+    if (isInvoking) {
+      if (timerId === undefined) {
+        return leadingEdge(lastCallTime);
+      }
+      if (maxing) {
+        // Handle invocations in a tight loop.
+        timerId = setTimeout(timerExpired, wait);
+        return invokeFunc(lastCallTime);
+      }
+    }
+    if (timerId === undefined) {
+      timerId = setTimeout(timerExpired, wait);
+    }
+    return result;
+  }
+  debounced.cancel = cancel;
+  debounced.flush = flush;
+  return debounced;
+}
+
+/**
+ * Checks if `value` is the
+ * [language type](http://www.ecma-international.org/ecma-262/7.0/#sec-ecmascript-language-types)
+ * of `Object`. (e.g. arrays, functions, objects, regexes, `new Number(0)`, and `new String('')`)
+ *
+ * @static
+ * @memberOf _
+ * @since 0.1.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is an object, else `false`.
+ * @example
+ *
+ * _.isObject({});
+ * // => true
+ *
+ * _.isObject([1, 2, 3]);
+ * // => true
+ *
+ * _.isObject(_.noop);
+ * // => true
+ *
+ * _.isObject(null);
+ * // => false
+ */
+function isObject(value) {
+  var type = typeof value;
+  return !!value && (type == 'object' || type == 'function');
+}
+
+/**
+ * Checks if `value` is object-like. A value is object-like if it's not `null`
+ * and has a `typeof` result of "object".
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is object-like, else `false`.
+ * @example
+ *
+ * _.isObjectLike({});
+ * // => true
+ *
+ * _.isObjectLike([1, 2, 3]);
+ * // => true
+ *
+ * _.isObjectLike(_.noop);
+ * // => false
+ *
+ * _.isObjectLike(null);
+ * // => false
+ */
+function isObjectLike(value) {
+  return !!value && typeof value == 'object';
+}
+
+/**
+ * Checks if `value` is classified as a `Symbol` primitive or object.
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is a symbol, else `false`.
+ * @example
+ *
+ * _.isSymbol(Symbol.iterator);
+ * // => true
+ *
+ * _.isSymbol('abc');
+ * // => false
+ */
+function isSymbol(value) {
+  return typeof value == 'symbol' ||
+    (isObjectLike(value) && objectToString.call(value) == symbolTag);
+}
+
+/**
+ * Converts `value` to a number.
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to process.
+ * @returns {number} Returns the number.
+ * @example
+ *
+ * _.toNumber(3.2);
+ * // => 3.2
+ *
+ * _.toNumber(Number.MIN_VALUE);
+ * // => 5e-324
+ *
+ * _.toNumber(Infinity);
+ * // => Infinity
+ *
+ * _.toNumber('3.2');
+ * // => 3.2
+ */
+function toNumber(value) {
+  if (typeof value == 'number') {
+    return value;
+  }
+  if (isSymbol(value)) {
+    return NAN;
+  }
+  if (isObject(value)) {
+    var other = typeof value.valueOf == 'function' ? value.valueOf() : value;
+    value = isObject(other) ? (other + '') : other;
+  }
+  if (typeof value != 'string') {
+    return value === 0 ? value : +value;
+  }
+  value = value.replace(reTrim, '');
+  var isBinary = reIsBinary.test(value);
+  return (isBinary || reIsOctal.test(value))
+    ? freeParseInt(value.slice(2), isBinary ? 2 : 8)
+    : (reIsBadHex.test(value) ? NAN : +value);
+}
+
+module.exports = debounce;
+
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js")))
 
 /***/ })
 
