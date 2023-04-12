@@ -35,6 +35,7 @@ const links = [
     },
 ];
 
+// TODO: Mobile view
 const AccountNavigation = props => {
     const { pageType } = props;
 
@@ -49,7 +50,7 @@ const AccountNavigation = props => {
                 } else {
                     content.push(<li><a href={url}>{text}</a></li>);
                 }
-                if (index === 3) {
+                if (index === 2) {
                     content.push(<li className={classes.divider} />);
                 }
                 return <Fragment>{content}</Fragment>;

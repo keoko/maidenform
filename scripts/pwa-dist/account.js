@@ -4756,10 +4756,10 @@ const actionMap = {
   \************************************************************************************************/
 /*! exports provided: beginCheckout, cancelCheckout, resetCheckout, resetReceipt, submitPaymentMethodAndBillingAddress, submitBillingAddress, submitPaymentMethod, submitShippingAddress, submitShippingMethod, submitOrder, createAccount, formatAddress, clearCheckoutDataFromStorage */
 /*! all exports used */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/store/actions/app/asyncActions.js because of ./node_modules/@magento/peregrine/lib/talons/CheckoutPage/ShippingInformation/useEditModal.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/store/actions/cart/asyncActions.js because of ./node_modules/@magento/peregrine/lib/talons/CartPage/useCartPage.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/store/actions/app/asyncActions.js because of ./src/RootComponents/Cart/index.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/store/actions/cart/asyncActions.js because of ./src/talons/CheckoutPage/useCheckoutPage.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/store/actions/checkout/actions.js because of ./src/RootComponents/Cart/index.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/simplePersistence.js because of ./node_modules/@magento/peregrine/lib/talons/CartPage/useCartPage.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/simplePersistence.js because of ./src/talons/CheckoutPage/useCheckoutPage.js */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -6972,7 +6972,7 @@ Checkbox.propTypes = {
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/react/hooks/useQuery.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/shallowMerge.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Field/field.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Select/select.js because of ./node_modules/@magento/venia-ui/lib/components/CheckoutPage/PaymentInformation/creditCard.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Select/select.js because of ./node_modules/@magento/venia-ui/lib/components/CartPage/PriceAdjustments/ShippingMethods/shippingForm.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/Country/country.module.css (<- Module uses module.id) */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql-tag/lib/index.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/prop-types/index.js (<- Module is not an ECMAScript module) */
@@ -7159,7 +7159,7 @@ Country.propTypes = {
 /*! exports used: default */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/shallowMerge.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Button/button.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Icon/icon.js because of ./node_modules/@magento/venia-ui/lib/components/CheckoutPage/checkoutPage.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Icon/icon.js because of ./node_modules/@magento/venia-ui/lib/components/CartPage/cartPage.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-feather/dist/icons/x.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./src/components/Portal/portal.js because of ./node_modules/@magento/venia-ui/lib/components/CheckoutPage/ShippingInformation/editModal.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/Dialog/dialog.module.css (<- Module uses module.id) */
@@ -7417,7 +7417,7 @@ Dialog.defaultProps = {
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/shallowMerge.js because of ./src/RootComponents/Cart/index.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/Field/field.module.css (<- Module uses module.id) */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/prop-types/index.js (<- Module is not an ECMAScript module) */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-intl/lib/src/components/message.js because of ./node_modules/@magento/venia-ui/lib/components/CheckoutPage/checkoutPage.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-intl/lib/src/components/message.js because of ./node_modules/@magento/venia-ui/lib/components/CartPage/cartPage.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react/index.js (<- Module is not an ECMAScript module) */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js (<- Module is not an ECMAScript module) */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -7593,7 +7593,7 @@ FieldIcons.propTypes = {
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/shallowMerge.js because of ./src/RootComponents/Cart/index.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/Field/message.module.css (<- Module uses module.id) */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/prop-types/index.js (<- Module is not an ECMAScript module) */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-intl/lib/src/components/useIntl.js because of ./node_modules/@magento/venia-ui/lib/components/CheckoutPage/checkoutPage.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-intl/lib/src/components/useIntl.js because of ./node_modules/@magento/venia-ui/lib/components/CartPage/cartPage.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react/index.js (<- Module is not an ECMAScript module) */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js (<- Module is not an ECMAScript module) */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -8199,12 +8199,12 @@ ForgotPassword.defaultProps = {
   \******************************************************************************************/
 /*! exports provided: default */
 /*! exports used: default */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/deriveErrorMessage.js because of ./node_modules/@magento/venia-ui/lib/components/CartPage/PriceAdjustments/CouponCode/couponCode.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/deriveErrorMessage.js because of ./node_modules/@magento/peregrine/lib/talons/CartPage/ProductListing/useProduct.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/shallowMerge.js because of ./src/RootComponents/Cart/index.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/ErrorMessage/errorMessage.module.css (<- Module uses module.id) */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/FormError/formError.module.css (<- Module uses module.id) */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/prop-types/index.js (<- Module is not an ECMAScript module) */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-intl/lib/src/components/useIntl.js because of ./node_modules/@magento/venia-ui/lib/components/CheckoutPage/checkoutPage.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-intl/lib/src/components/useIntl.js because of ./node_modules/@magento/venia-ui/lib/components/CartPage/cartPage.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react/index.js (<- Module is not an ECMAScript module) */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js (<- Module is not an ECMAScript module) */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -9495,7 +9495,7 @@ LinkButton.defaultProps = {
 /*! exports provided: default */
 /*! exports used: default */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/shallowMerge.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Icon/icon.js because of ./node_modules/@magento/venia-ui/lib/components/CheckoutPage/checkoutPage.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Icon/icon.js because of ./node_modules/@magento/venia-ui/lib/components/CartPage/cartPage.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-feather/dist/icons/loader.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/LoadingIndicator/indicator.module.css (<- Module uses module.id) */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react/index.js (<- Module is not an ECMAScript module) */
@@ -10750,7 +10750,7 @@ Options.propTypes = {
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/hooks/hook-wrappers/useInformedFieldStateWrapper.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/shallowMerge.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Field/field.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Select/select.js because of ./node_modules/@magento/venia-ui/lib/components/CheckoutPage/PaymentInformation/creditCard.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Select/select.js because of ./node_modules/@magento/venia-ui/lib/components/CartPage/PriceAdjustments/ShippingMethods/shippingForm.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/TextInput/textInput.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/Region/region.module.css (<- Module uses module.id) */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql-tag/lib/index.js */
@@ -11927,7 +11927,7 @@ SignInPage.propTypes = {
   \******************************************************************************************/
 /*! exports provided: default */
 /*! exports used: default */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/hooks/hook-wrappers/useInformedFieldStateWrapper.js because of ./node_modules/@magento/venia-ui/lib/components/Checkbox/checkbox.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/hooks/hook-wrappers/useInformedFieldStateWrapper.js because of ./node_modules/@magento/peregrine/lib/talons/QuantityStepper/useQuantityStepper.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/shallowMerge.js because of ./src/RootComponents/Cart/index.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Field/fieldIcons.js because of ./node_modules/@magento/venia-ui/lib/components/Select/select.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Field/message.js because of ./node_modules/@magento/venia-ui/lib/components/QuantityStepper/quantityStepper.js */
@@ -23700,7 +23700,7 @@ var nodejsCustomInspectSymbol = typeof Symbol === 'function' && typeof Symbol.fo
   \***********************************************************/
 /*! exports provided: Location, Token, isNode */
 /*! exports used: Location, Token, isNode */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql/jsutils/nodejsCustomInspectSymbol.mjs because of ./node_modules/@apollo/client/link/http/selectHttpOptionsAndBody.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql/jsutils/nodejsCustomInspectSymbol.mjs because of ./src/RootComponents/Cart/index.js */
 /***/ (function(__webpack_module__, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -25033,7 +25033,7 @@ function hasMultilineItems(maybeArray) {
 /*! exports provided: Source, isSource */
 /*! exports used: Source, isSource */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql/jsutils/inspect.mjs because of ./node_modules/@apollo/client/link/http/selectHttpOptionsAndBody.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql/polyfills/symbols.mjs because of ./src/RootComponents/Cart/index.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql/polyfills/symbols.mjs because of ./node_modules/@magento/peregrine/lib/talons/CheckoutPage/checkoutPage.gql.js */
 /***/ (function(__webpack_module__, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -45118,7 +45118,7 @@ const AccountNavigation = props => {
         href: url
       }, text)));
     }
-    if (index === 3) {
+    if (index === 2) {
       content.push( /*#__PURE__*/react_default.a.createElement("li", {
         className: Account_accountNavigation_module.divider
       }));
@@ -45221,8 +45221,6 @@ const Account = props => {
 
 
 
-//import '../../index.css';
-
 console.log('Account Loaded');
 const pageTypeScript = document.querySelector('script[id="account-page-type"]');
 const pageTypeObject = JSON.parse(pageTypeScript.innerHTML) || {
@@ -45250,44 +45248,44 @@ Object(react_dom["render"])( /*#__PURE__*/react_default.a.createElement(account,
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/link/http/createHttpLink.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/link/retry/retryLink.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/react/context/ApolloProvider.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@formatjs/ecma402-abstract/lib/utils.js because of ./node_modules/@magento/venia-ui/lib/components/CheckoutPage/checkoutPage.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@formatjs/icu-messageformat-parser/lib/index.js because of ./node_modules/@magento/venia-ui/lib/components/CheckoutPage/checkoutPage.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@formatjs/intl/lib/src/error.js because of ./node_modules/@magento/venia-ui/lib/components/CheckoutPage/checkoutPage.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@formatjs/intl/lib/src/utils.js because of ./node_modules/@magento/venia-ui/lib/components/CheckoutPage/checkoutPage.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@formatjs/ecma402-abstract/lib/utils.js because of ./node_modules/@magento/venia-ui/lib/components/CartPage/cartPage.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@formatjs/icu-messageformat-parser/lib/index.js because of ./node_modules/@magento/venia-ui/lib/components/CartPage/cartPage.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@formatjs/intl/lib/src/error.js because of ./node_modules/@magento/venia-ui/lib/components/CartPage/cartPage.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@formatjs/intl/lib/src/utils.js because of ./node_modules/@magento/venia-ui/lib/components/CartPage/cartPage.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/Apollo/clearCartDataFromCache.js because of ./src/talons/CheckoutPage/useCheckoutPage.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/Toasts/useToastContext.js because of ./node_modules/@magento/venia-ui/lib/components/CheckoutPage/checkoutPage.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/Toasts/useToasts.js because of ./node_modules/@magento/venia-ui/lib/components/CheckoutPage/checkoutPage.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/context/app.js because of ./node_modules/@magento/peregrine/lib/talons/CheckoutPage/ShippingInformation/useEditModal.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/context/cart.js because of ./node_modules/@magento/peregrine/lib/talons/CartPage/useCartPage.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/context/eventing.js because of ./node_modules/@magento/peregrine/lib/talons/CartPage/useCartPage.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/context/user.js because of ./node_modules/@magento/peregrine/lib/talons/Wishlist/AddToListButton/useAddToListButton.ee.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/Toasts/useToastContext.js because of ./node_modules/@magento/venia-ui/lib/components/CartPage/cartPage.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/Toasts/useToasts.js because of ./node_modules/@magento/venia-ui/lib/components/CartPage/cartPage.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/context/app.js because of ./node_modules/@magento/peregrine/lib/talons/AddressBookPage/useAddressBookPage.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/context/cart.js because of ./src/talons/CheckoutPage/useCheckoutPage.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/context/eventing.js because of ./src/talons/CheckoutPage/useCheckoutPage.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/context/user.js because of ./src/talons/CheckoutPage/useCheckoutPage.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/hooks/useWindowSize.js because of ./node_modules/@magento/venia-ui/lib/components/CheckoutPage/checkoutPage.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/store/actions/app/actions.js because of ./node_modules/@magento/peregrine/lib/talons/CheckoutPage/ShippingInformation/useEditModal.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/store/actions/app/actions.js because of ./node_modules/@magento/peregrine/lib/talons/AddressBookPage/useAddressBookPage.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/store/actions/catalog/actions.js because of ./src/RootComponents/Cart/index.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/store/actions/checkout/actions.js because of ./node_modules/@magento/peregrine/lib/talons/Wishlist/AddToListButton/useAddToListButton.ee.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/store/actions/checkout/asyncActions.js because of ./node_modules/@magento/peregrine/lib/talons/Wishlist/AddToListButton/useAddToListButton.ee.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/store/actions/checkout/actions.js because of ./src/talons/CheckoutPage/useCheckoutPage.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/store/actions/checkout/asyncActions.js because of ./src/talons/CheckoutPage/useCheckoutPage.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/store/middleware/thunk.js because of ./src/RootComponents/Cart/index.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/bindActionCreators.js because of ./node_modules/@magento/peregrine/lib/talons/CartPage/useCartPage.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/shallowMerge.js because of ./node_modules/@magento/peregrine/lib/talons/CartPage/useCartPage.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/simplePersistence.js because of ./node_modules/@magento/peregrine/lib/talons/CartPage/useCartPage.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/bindActionCreators.js because of ./src/talons/CheckoutPage/useCheckoutPage.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/shallowMerge.js because of ./src/talons/CheckoutPage/useCheckoutPage.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/simplePersistence.js because of ./src/talons/CheckoutPage/useCheckoutPage.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-feather/dist/icons/x.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/apollo-cache-persist/index.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./src/components/Icon/icon.module.css (<- Module uses module.id) */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./src/components/ToastContainer/toast.module.css (<- Module uses module.id) */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./src/components/ToastContainer/toastContainer.module.css (<- Module uses module.id) */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql/language/blockString.mjs because of ./node_modules/@apollo/client/link/http/selectHttpOptionsAndBody.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql/language/lexer.mjs because of ./node_modules/@magento/venia-ui/lib/components/CheckoutPage/checkoutPage.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql/language/source.mjs because of ./node_modules/@magento/venia-ui/lib/components/CheckoutPage/checkoutPage.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql/language/tokenKind.mjs because of ./node_modules/@magento/venia-ui/lib/components/CheckoutPage/checkoutPage.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/intl-messageformat/lib/src/core.js because of ./node_modules/@magento/venia-ui/lib/components/CheckoutPage/checkoutPage.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/intl-messageformat/lib/src/error.js because of ./node_modules/@magento/venia-ui/lib/components/CheckoutPage/checkoutPage.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/intl-messageformat/lib/src/formatters.js because of ./node_modules/@magento/venia-ui/lib/components/CheckoutPage/checkoutPage.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql/language/lexer.mjs because of ./node_modules/@magento/peregrine/lib/talons/CheckoutPage/checkoutPage.gql.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql/language/source.mjs because of ./node_modules/@magento/peregrine/lib/talons/CheckoutPage/checkoutPage.gql.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql/language/tokenKind.mjs because of ./node_modules/@magento/peregrine/lib/talons/CheckoutPage/checkoutPage.gql.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/intl-messageformat/lib/src/core.js because of ./node_modules/@magento/venia-ui/lib/components/CartPage/cartPage.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/intl-messageformat/lib/src/error.js because of ./node_modules/@magento/venia-ui/lib/components/CartPage/cartPage.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/intl-messageformat/lib/src/formatters.js because of ./node_modules/@magento/venia-ui/lib/components/CartPage/cartPage.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/lodash.get/index.js (<- Module is not an ECMAScript module) */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/lodash.set/index.js (<- Module is not an ECMAScript module) */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/prop-types/index.js (<- Module is not an ECMAScript module) */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-helmet-async/lib/index.module.js because of ./node_modules/@magento/venia-ui/lib/components/CheckoutPage/checkoutPage.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-intl/lib/src/components/injectIntl.js because of ./node_modules/@magento/venia-ui/lib/components/CheckoutPage/checkoutPage.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-intl/lib/src/utils.js because of ./node_modules/@magento/venia-ui/lib/components/CheckoutPage/checkoutPage.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-helmet-async/lib/index.module.js because of ./node_modules/@magento/venia-ui/lib/components/CartPage/cartPage.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-intl/lib/src/components/injectIntl.js because of ./node_modules/@magento/venia-ui/lib/components/CartPage/cartPage.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-intl/lib/src/utils.js because of ./node_modules/@magento/venia-ui/lib/components/CartPage/cartPage.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-redux/es/index.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-router-dom/esm/react-router-dom.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react/index.js (<- Module is not an ECMAScript module) */
@@ -47495,14 +47493,14 @@ Portal.propTypes = {
   \***********************************/
 /*! exports provided: default */
 /*! exports used: default */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/store/actions/app/actions.js because of ./node_modules/@magento/peregrine/lib/talons/CheckoutPage/ShippingInformation/useEditModal.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/store/actions/cart/actions.js because of ./node_modules/@magento/peregrine/lib/talons/CartPage/useCartPage.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/store/actions/app/actions.js because of ./src/RootComponents/Cart/index.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/store/actions/cart/actions.js because of ./src/talons/CheckoutPage/useCheckoutPage.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/store/actions/catalog/actions.js because of ./src/RootComponents/Cart/index.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/store/actions/checkout/actions.js because of ./src/RootComponents/Cart/index.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/store/actions/user/actions.js because of ./node_modules/@magento/peregrine/lib/talons/Wishlist/AddToListButton/useAddToListButton.ee.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/store/actions/user/asyncActions.js because of ./node_modules/@magento/peregrine/lib/talons/Wishlist/AddToListButton/useAddToListButton.ee.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/store/actions/user/actions.js because of ./src/talons/CheckoutPage/useCheckoutPage.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/store/actions/user/asyncActions.js because of ./src/talons/CheckoutPage/useCheckoutPage.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/store/middleware/thunk.js because of ./src/RootComponents/Cart/index.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/simplePersistence.js because of ./node_modules/@magento/peregrine/lib/talons/CartPage/useCartPage.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/simplePersistence.js because of ./src/talons/CheckoutPage/useCheckoutPage.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/redux-actions/es/handleActions.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/redux/es/redux.js */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
