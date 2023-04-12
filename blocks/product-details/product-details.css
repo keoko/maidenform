@@ -36,6 +36,7 @@
   gap: 2px;
   align-items: center;
   height: 20px;
+  position: relative;
 }
 
 .product-details .rating .stars {
@@ -63,6 +64,9 @@
 
 .product-details .rating > [role="dialog"] {
   position: absolute;
+  top: 0;
+  left: 0;
+  width: 80%;
   background-color: white;
   z-index: 2;
   border: black 1px solid;
