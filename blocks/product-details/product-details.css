@@ -62,8 +62,10 @@
 }
 
 .product-details .rating > [role="dialog"] {
+  position: absolute;
   background-color: white;
   z-index: 2;
+  border: black 1px solid;
 }
 
 .star {
