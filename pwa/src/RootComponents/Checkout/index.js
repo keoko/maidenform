@@ -18,7 +18,7 @@ console.log('Checkout Loaded');
 
 render((
     <Adapter
-        apiUrl="https://franklin.maidenform.com/graphql"
+        apiUrl="https://www.marbec.click/graphql-maidenform-qa"
         configureLinks={configureLinks}
         origin={origin}
         store={store}
