@@ -55,7 +55,7 @@ function replacePDPLinks(links) {
 
   gqlRateLimiter.execute(async () => {
     const skus = (await performMonolithGraphQLQuery(urlKeyToSkuQuery, { urlKeys: keys }))
-      .products.items.reduce((acc, item) => ({ ...acc, [item.url_key]: item.sku }), {});
+      .data.products.items.reduce((acc, item) => ({ ...acc, [item.url_key]: item.sku }), {});
 
     links.forEach((link) => {
       const newUrl = new URL(window.location);

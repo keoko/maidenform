@@ -215,6 +215,18 @@ header nav .nav-menu > ul > li .menu-nav-category a {
   pointer-events: none;
 }
 
+@media not all and (min-width: 1300px) {
+  header nav .nav-menu > ul > li .menu-nav-category.menu-nav-no-content a {
+    pointer-events: unset;
+    width: 100%;
+    display: inline-block;
+  }
+}
+
+header nav .nav-menu > ul > li .menu-nav-category > div {
+  width: 100%;
+}
+
 header nav .nav-menu ul > li *:is(a, p) {
   text-transform: uppercase;
   text-decoration: none;
