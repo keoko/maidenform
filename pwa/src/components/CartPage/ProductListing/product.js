@@ -10,11 +10,9 @@ import Price from '@magento/venia-ui/lib/components/Price';
 import { useStyle } from '@magento/venia-ui/lib/classify';
 import Icon from '@magento/venia-ui/lib/components/Icon';
 import Image from '@magento/venia-ui/lib/components/Image';
-import Kebab from '@magento/venia-ui/lib/components/LegacyMiniCart/kebab';
 import ProductOptions from '@magento/venia-ui/lib/components/LegacyMiniCart/productOptions';
 import Section from '@magento/venia-ui/lib/components/LegacyMiniCart/section';
-import AddToListButton from '@magento/venia-ui/lib/components/Wishlist/AddToListButton';
-import Quantity from '@magento/venia-ui/lib/components/CartPage/ProductListing/quantity';
+import Quantity from './quantity';
 
 
 import defaultClasses from './product.module.css';

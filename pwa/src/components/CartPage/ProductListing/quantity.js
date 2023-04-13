@@ -1,16 +1,21 @@
 import React from 'react';
 import { Form } from 'informed';
 import { func, number, string } from 'prop-types';
-import QuantityStepper from '../../QuantityStepper';
 
 const Quantity = props => {
+    let options = Array.from({length: props.max}, (_, i) => i + 1);
     return (
         <Form
             initialValues={{
                 quantity: props.initialValue
             }}
         >
-            <QuantityStepper {...props} />
+            <select>
+                {options.map((value) => (
+                    <option value={value} key={value} >{value}</option>
+                ))}
+            </select>
+
         </Form>
     );
 };
@@ -27,14 +32,9 @@ Quantity.propTypes = {
 Quantity.defaultProps = {
     label: 'Quantity',
     min: 0,
+    max: 10,
     initialValue: 1,
     onChange: () => {}
 };
-
-/**
- * @deprecated - moved to component directory in 12.4.0
- * @see QuantityStepper
- */
-export const QuantityFields = QuantityStepper;
 
 export default Quantity;

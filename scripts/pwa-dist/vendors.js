@@ -2553,7 +2553,7 @@ function broadcast(cache) {
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/cache/inmemory/object-canon.js because of ./node_modules/@magento/peregrine/lib/talons/Adapter/useAdapter.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/cache/inmemory/reactiveVars.js because of ./node_modules/@magento/peregrine/lib/talons/Adapter/useAdapter.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/core/networkStatus.js because of ./node_modules/@magento/peregrine/lib/talons/CartPage/useCartPage.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/errors/index.js because of ./node_modules/@magento/peregrine/lib/context/cart.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/errors/index.js because of ./node_modules/@magento/peregrine/lib/talons/CartPage/useCartPage.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/link/core/ApolloLink.js because of ./node_modules/@magento/peregrine/lib/talons/Adapter/useAdapter.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/link/http/createHttpLink.js because of ./node_modules/@magento/peregrine/lib/Apollo/links/index.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/utilities/common/arrays.js because of ./node_modules/@magento/peregrine/lib/talons/Adapter/useAdapter.js */
@@ -48852,12 +48852,12 @@ var ACTION_TYPE_DELIMITER = '||';
 /*! exports provided: default */
 /*! exports used: default */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/invariant/browser.js (<- Module is not an ECMAScript module) */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/redux-actions/es/constants.js because of ./node_modules/@magento/peregrine/lib/store/reducers/app.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/redux-actions/es/utils/flattenWhenNode.js because of ./node_modules/@magento/peregrine/lib/store/reducers/app.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/redux-actions/es/utils/identity.js because of ./node_modules/@magento/peregrine/lib/store/reducers/app.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/redux-actions/es/utils/isFunction.js because of ./node_modules/@magento/peregrine/lib/store/reducers/app.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/redux-actions/es/utils/isNil.js because of ./node_modules/@magento/peregrine/lib/store/reducers/app.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/redux-actions/es/utils/isPlainObject.js because of ./node_modules/@magento/peregrine/lib/store/reducers/app.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/redux-actions/es/constants.js because of ./node_modules/@magento/peregrine/lib/store/reducers/checkout.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/redux-actions/es/utils/flattenWhenNode.js because of ./node_modules/@magento/peregrine/lib/store/reducers/checkout.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/redux-actions/es/utils/identity.js because of ./node_modules/@magento/peregrine/lib/store/reducers/checkout.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/redux-actions/es/utils/isFunction.js because of ./node_modules/@magento/peregrine/lib/store/reducers/checkout.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/redux-actions/es/utils/isNil.js because of ./node_modules/@magento/peregrine/lib/store/reducers/checkout.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/redux-actions/es/utils/isPlainObject.js because of ./node_modules/@magento/peregrine/lib/store/reducers/checkout.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/to-camel-case/index.js (<- Module is not an ECMAScript module) */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
