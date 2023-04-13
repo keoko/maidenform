@@ -8,10 +8,9 @@ import { useToasts } from '@magento/peregrine';
 import Icon from '@magento/venia-ui/lib/components/Icon';
 import { fullPageLoadingIndicator } from '@magento/venia-ui/lib/components/LoadingIndicator';
 import StockStatusMessage from '@magento/venia-ui/lib/components/StockStatusMessage';
-import PriceAdjustments from '@magento/venia-ui/lib/components/CartPage/PriceAdjustments';
-import PriceSummary from './PriceSummary';
+import OrderSummary from './OrderSummary';
 import ProductListing from './ProductListing';
-import classes from './cartPage.module.css'
+import classes from './cartPage.module.css';
 
 const CheckIcon = <Icon size={20} src={Check} />;
 
@@ -74,41 +73,32 @@ const CartPage = props => {
         </h3>
     );
 
-    const priceAdjustments = hasItems ? (
-        <PriceAdjustments setIsCartUpdating={setIsCartUpdating} />
-    ) : null;
-
-    const priceSummary = hasItems ? (
-        <PriceSummary isUpdating={isCartUpdating} />
+    const orderSummary = hasItems ? (
+        <OrderSummary setIsCartUpdating={setIsCartUpdating} />
     ) : null;
 
     return (
         <div className={classes.root} data-cy="CartPage-root">
-            <div className={classes.heading_container}>
-                <h1
-                    aria-live="polite"
-                    data-cy="CartPage-heading"
-                    className={classes.heading}
-                >
-                    <FormattedMessage
-                        id={'cartPage.heading'}
-                        defaultMessage={'Cart'}
-                    />
-                </h1>
-                <div className={classes.stockStatusMessageContainer}>
-                    <StockStatusMessage cartItems={cartItems} />
+            <div className='in_your_bag'>
+                <div className={classes.heading_container}>
+                    <h1
+                        aria-live="polite"
+                        data-cy="CartPage-heading"
+                        className={classes.heading}
+                    >
+                        <FormattedMessage
+                            id={'cartPage.heading'}
+                            defaultMessage={'In your bag'}
+                        />
+                    </h1>
+                    <div className={classes.stockStatusMessageContainer}>
+                        <StockStatusMessage cartItems={cartItems} />
+                    </div>
+                    <div className={classes.items_container}>{productListing}</div>
                 </div>
             </div>
             <div className={classes.body}>
-                <div className={classes.items_container}>{productListing}</div>
-                <div className={classes.price_adjustments_container}>
-                    {priceAdjustments}
-                </div>
-                <div className={classes.summary_container}>
-                    <div className={classes.summary_contents}>
-                        {priceSummary}
-                    </div>
-                </div>
+                {orderSummary}
             </div>
         </div>
     );

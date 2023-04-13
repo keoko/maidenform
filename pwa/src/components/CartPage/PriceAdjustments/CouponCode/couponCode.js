@@ -5,14 +5,14 @@ import { useToasts } from '@magento/peregrine';
 import { deriveErrorMessage } from '@magento/peregrine/lib/util/deriveErrorMessage';
 import { useCouponCode } from '@magento/peregrine/lib/talons/CartPage/PriceAdjustments/CouponCode/useCouponCode';
 
-import { useStyle } from '../../../../classify';
+import { useStyle } from '@magento/venia-ui/lib/classify';
 
-import Button from '../../../Button';
+import Button from '@magento/venia-ui/lib/components//Button';
 import { Form } from 'informed';
-import Field from '../../../Field';
-import Icon from '../../../Icon';
-import LinkButton from '../../../LinkButton';
-import TextInput from '../../../TextInput';
+import Field from '@magento/venia-ui/lib/components//Field';
+import Icon from '@magento/venia-ui/lib/components//Icon';
+import LinkButton from '@magento/venia-ui/lib/components//LinkButton';
+import TextInput from '@magento/venia-ui/lib/components/TextInput';
 
 import defaultClasses from './couponCode.module.css';
 

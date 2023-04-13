@@ -1,23 +1,21 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[5],{
 
-/***/ "./node_modules/@magento/venia-ui/lib/components/AccountInformationPage/editModal.js":
-/*!*******************************************************************************************************!*\
-  !*** ./node_modules/@magento/venia-ui/lib/components/AccountInformationPage/editModal.js + 3 modules ***!
-  \*******************************************************************************************************/
+/***/ "./node_modules/@magento/venia-ui/lib/components/CheckoutPage/PaymentInformation/editModal.js":
+/*!****************************************************************************************************************!*\
+  !*** ./node_modules/@magento/venia-ui/lib/components/CheckoutPage/PaymentInformation/editModal.js + 7 modules ***!
+  \****************************************************************************************************************/
 /*! exports provided: default */
 /*! all exports used */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/react/hooks/useQuery.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/context/cart.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/context/eventing.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/shallowMerge.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-sample-payments-checkmo/src/components/checkmo.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/CheckoutPage/PaymentInformation/creditCard.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Dialog/dialog.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Field/field.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/FormError/formError.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/GoogleReCaptcha/googleReCaptcha.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/LinkButton/linkButton.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Password/password.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/TextInput/textInput.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/util/combineValidators.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/util/formValidators.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/AccountInformationPage/editForm.module.css (<- Module uses module.id) */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/AccountInformationPage/editModal.module.css (<- Module uses module.id) */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-sample-payments-checkmo/src/components/edit.module.css (<- Module uses module.id) */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/CheckoutPage/PaymentInformation/editCard.module.css (<- Module uses module.id) */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql-tag/lib/index.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/prop-types/index.js (<- Module is not an ECMAScript module) */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-intl/lib/src/components/message.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-intl/lib/src/components/useIntl.js */
@@ -36,41 +34,155 @@ var react_default = /*#__PURE__*/__webpack_require__.n(react);
 // EXTERNAL MODULE: ./node_modules/react-intl/lib/src/components/useIntl.js
 var useIntl = __webpack_require__("./node_modules/react-intl/lib/src/components/useIntl.js");
 
-// EXTERNAL MODULE: ./node_modules/prop-types/index.js
-var prop_types = __webpack_require__("./node_modules/prop-types/index.js");
-
-// EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/util/shallowMerge.js
-var shallowMerge = __webpack_require__("./node_modules/@magento/peregrine/lib/util/shallowMerge.js");
-
 // EXTERNAL MODULE: ./node_modules/react-intl/lib/src/components/message.js
 var message = __webpack_require__("./node_modules/react-intl/lib/src/components/message.js");
 
-// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/Field/field.js + 1 modules
-var field = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/Field/field.js");
+// EXTERNAL MODULE: ./node_modules/prop-types/index.js
+var prop_types = __webpack_require__("./node_modules/prop-types/index.js");
 
-// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/LinkButton/linkButton.js + 1 modules
-var linkButton = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/LinkButton/linkButton.js");
+// EXTERNAL MODULE: ./node_modules/@apollo/client/react/hooks/useQuery.js
+var useQuery = __webpack_require__("./node_modules/@apollo/client/react/hooks/useQuery.js");
 
-// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/Password/password.js + 2 modules
-var Password_password = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/Password/password.js");
+// EXTERNAL MODULE: ./node_modules/graphql-tag/lib/index.js + 3 modules
+var lib = __webpack_require__("./node_modules/graphql-tag/lib/index.js");
 
-// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/TextInput/textInput.js + 1 modules
-var textInput = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/TextInput/textInput.js");
+// CONCATENATED MODULE: ./node_modules/@magento/peregrine/lib/talons/CheckoutPage/PaymentInformation/editModal.gql.js
 
-// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/util/formValidators.js
-var formValidators = __webpack_require__("./node_modules/@magento/venia-ui/lib/util/formValidators.js");
+const GET_SELECTED_PAYMENT_METHOD = lib["a" /* gql */]`
+    query getSelectedPaymentMethod($cartId: String!) {
+        cart(cart_id: $cartId) {
+            id
+            selected_payment_method {
+                code
+            }
+        }
+    }
+`;
+/* harmony default export */ var editModal_gql = ({
+  getSelectedPaymentMethodQuery: GET_SELECTED_PAYMENT_METHOD
+});
+// EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/util/shallowMerge.js
+var shallowMerge = __webpack_require__("./node_modules/@magento/peregrine/lib/util/shallowMerge.js");
 
-// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/util/combineValidators.js
-var combineValidators = __webpack_require__("./node_modules/@magento/venia-ui/lib/util/combineValidators.js");
+// EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/context/eventing.js
+var eventing = __webpack_require__("./node_modules/@magento/peregrine/lib/context/eventing.js");
+
+// EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/context/cart.js
+var cart = __webpack_require__("./node_modules/@magento/peregrine/lib/context/cart.js");
+
+// CONCATENATED MODULE: ./node_modules/@magento/peregrine/lib/talons/CheckoutPage/PaymentInformation/useEditModal.js
+
+
+
+
+
+
+
+/**
+ * Talon to handle checkout page's payment information edit modal.
+ *
+ * @param {Function} props.onClose callback to be called when the modal's close or cancel button is clicked.
+ * @param {DocumentNode} props.operations.getSelectedPaymentMethodQuery query to fetch the payment method that was used in the payment information checkout step
+ *
+ * @returns {
+ *   selectedPaymentMethod: String,
+ *   isLoading: Boolean,
+ *   updateButtonClicked: Boolean,
+ *   handleClose: Function,
+ *   handleUpdate: Function,
+ *   handlePaymentError: Function,
+ *   handlePaymentReady: Function,
+ *   handlePaymentSuccess: Function,
+ *   resetUpdateButtonClicked: Function
+ * }
+ */
+const useEditModal = props => {
+  const {
+    onClose
+  } = props;
+  const operations = Object(shallowMerge["a" /* default */])(editModal_gql, props.operations);
+  const {
+    getSelectedPaymentMethodQuery
+  } = operations;
+  /**
+   * Definitions
+   */
+
+  const [isLoading, setIsLoading] = Object(react["useState"])(true);
+  const [updateButtonClicked, setUpdateButtonClicked] = Object(react["useState"])(false);
+  const [{
+    cartId
+  }] = Object(cart["b" /* useCartContext */])();
+  const [, {
+    dispatch
+  }] = Object(eventing["b" /* useEventingContext */])();
+
+  /**
+   * Queries
+   */
+
+  const {
+    data: selectedPaymentMethodData
+  } = Object(useQuery["a" /* useQuery */])(getSelectedPaymentMethodQuery, {
+    skip: !cartId,
+    variables: {
+      cartId
+    }
+  });
+  const selectedPaymentMethod = selectedPaymentMethodData ? selectedPaymentMethodData.cart.selected_payment_method.code : null;
+
+  /**
+   * Helper Functions
+   */
+
+  const handleClose = Object(react["useCallback"])(() => {
+    onClose();
+  }, [onClose]);
+  const handleUpdate = Object(react["useCallback"])(() => {
+    setUpdateButtonClicked(true);
+  }, [setUpdateButtonClicked]);
+  const handlePaymentSuccess = Object(react["useCallback"])(() => {
+    onClose();
+    dispatch({
+      type: 'CHECKOUT_BILLING_INFORMATION_UPDATED',
+      payload: {
+        cart_id: cartId,
+        selected_payment_method: selectedPaymentMethod
+      }
+    });
+  }, [onClose, dispatch, cartId, selectedPaymentMethod]);
+  const handlePaymentError = Object(react["useCallback"])(() => {
+    setUpdateButtonClicked(false);
+  }, []);
+  const handlePaymentReady = Object(react["useCallback"])(() => {
+    setIsLoading(false);
+  }, [setIsLoading]);
+  const resetUpdateButtonClicked = Object(react["useCallback"])(() => {
+    setUpdateButtonClicked(false);
+  }, [setUpdateButtonClicked]);
+  return {
+    selectedPaymentMethod,
+    isLoading,
+    updateButtonClicked,
+    handleClose,
+    handleUpdate,
+    handlePaymentError,
+    handlePaymentReady,
+    handlePaymentSuccess,
+    resetUpdateButtonClicked
+  };
+};
+// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/Dialog/dialog.js + 2 modules
+var dialog = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/Dialog/dialog.js");
 
 // EXTERNAL MODULE: ./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js
 var injectStylesIntoStyleTag = __webpack_require__("./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
 var injectStylesIntoStyleTag_default = /*#__PURE__*/__webpack_require__.n(injectStylesIntoStyleTag);
 
-// EXTERNAL MODULE: ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/AccountInformationPage/editForm.module.css
-var editForm_module = __webpack_require__("./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/AccountInformationPage/editForm.module.css");
+// EXTERNAL MODULE: ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/CheckoutPage/PaymentInformation/editCard.module.css
+var editCard_module = __webpack_require__("./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/CheckoutPage/PaymentInformation/editCard.module.css");
 
-// CONCATENATED MODULE: ./node_modules/@magento/venia-ui/lib/components/AccountInformationPage/editForm.module.css
+// CONCATENATED MODULE: ./node_modules/@magento/venia-ui/lib/components/CheckoutPage/PaymentInformation/editCard.module.css
 
             
 
@@ -79,159 +191,147 @@ var options = {"injectType":"styleTag"};
 options.insert = "head";
 options.singleton = false;
 
-var update = injectStylesIntoStyleTag_default()(editForm_module["a" /* default */], options);
+var update = injectStylesIntoStyleTag_default()(editCard_module["a" /* default */], options);
 
 
 
-/* harmony default export */ var AccountInformationPage_editForm_module = (editForm_module["a" /* default */].locals || {});
-// CONCATENATED MODULE: ./node_modules/@magento/venia-ui/lib/components/AccountInformationPage/editForm.js
+/* harmony default export */ var PaymentInformation_editCard_module = (editCard_module["a" /* default */].locals || {});
+// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/CheckoutPage/PaymentInformation/creditCard.js + 5 modules
+var creditCard = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/CheckoutPage/PaymentInformation/creditCard.js");
 
-
-
-
-
-
+// CONCATENATED MODULE: ./node_modules/@magento/venia-ui/lib/components/CheckoutPage/PaymentInformation/editCard.js
 
 
 
 
 
-const EditForm = props => {
+
+/**
+ * The edit view for the Braintree payment method.
+ */
+const EditCard = props => {
+  const classes = Object(shallowMerge["a" /* default */])(PaymentInformation_editCard_module, props.classes);
   const {
-    classes: propClasses,
-    handleChangePassword,
-    shouldShowNewPassword
+    onPaymentReady,
+    onPaymentSuccess,
+    onPaymentError,
+    resetShouldSubmit,
+    shouldSubmit
   } = props;
-  const {
-    formatMessage
-  } = Object(useIntl["a" /* default */])();
-  const classes = Object(shallowMerge["a" /* default */])(AccountInformationPage_editForm_module, propClasses);
-  const maybeNewPasswordField = shouldShowNewPassword ? /*#__PURE__*/react_default.a.createElement("div", {
-    className: classes.newPassword
-  }, /*#__PURE__*/react_default.a.createElement(Password_password["a" /* default */], {
-    fieldName: "newPassword",
-    label: formatMessage({
-      id: 'global.newPassword',
-      defaultMessage: 'New Password'
-    }),
-    validate: Object(combineValidators["a" /* default */])([formValidators["c" /* isRequired */], [formValidators["a" /* hasLengthAtLeast */], 8], formValidators["d" /* validatePassword */], [formValidators["b" /* isNotEqualToField */], 'password']]),
-    isToggleButtonHidden: false,
-    "data-cy": "newPassword"
-  })) : null;
-  const maybeChangePasswordButton = !shouldShowNewPassword ? /*#__PURE__*/react_default.a.createElement("div", {
-    className: classes.changePasswordButtonContainer,
-    "data-cy": "editForm-changePasswordButtonContainer"
-  }, /*#__PURE__*/react_default.a.createElement(linkButton["a" /* default */], {
-    classes: classes.changePasswordButton,
-    type: "button",
-    onClick: handleChangePassword,
-    "data-cy": "linkButton-root"
-  }, /*#__PURE__*/react_default.a.createElement(message["a" /* default */], {
-    id: 'global.changePassword',
-    defaultMessage: 'Change Password'
-  }))) : null;
-  const passwordLabel = shouldShowNewPassword ? formatMessage({
-    id: 'global.currentPassword',
-    defaultMessage: 'Current Password'
-  }) : formatMessage({
-    id: 'global.password',
-    defaultMessage: 'Password'
-  });
-  return /*#__PURE__*/react_default.a.createElement(react["Fragment"], null, /*#__PURE__*/react_default.a.createElement("div", {
-    className: classes.root
-  }, /*#__PURE__*/react_default.a.createElement("div", {
-    className: classes.firstname
-  }, /*#__PURE__*/react_default.a.createElement(field["a" /* default */], {
-    id: "firstname",
-    label: formatMessage({
-      id: 'global.firstName',
-      defaultMessage: 'First Name'
-    })
-  }, /*#__PURE__*/react_default.a.createElement(textInput["a" /* default */], {
-    field: "firstname",
-    validate: formValidators["c" /* isRequired */],
-    "data-cy": "firstname"
-  }))), /*#__PURE__*/react_default.a.createElement("div", {
-    className: classes.lastname
-  }, /*#__PURE__*/react_default.a.createElement(field["a" /* default */], {
-    id: "lastname",
-    label: formatMessage({
-      id: 'global.lastName',
-      defaultMessage: 'Last Name'
-    })
-  }, /*#__PURE__*/react_default.a.createElement(textInput["a" /* default */], {
-    field: "lastname",
-    validate: formValidators["c" /* isRequired */],
-    "data-cy": "lastname"
-  }))), /*#__PURE__*/react_default.a.createElement("div", {
-    className: classes.email
-  }, /*#__PURE__*/react_default.a.createElement(field["a" /* default */], {
-    id: "email",
-    label: formatMessage({
-      id: 'global.email',
-      defaultMessage: 'Email'
-    })
-  }, /*#__PURE__*/react_default.a.createElement(textInput["a" /* default */], {
-    field: "email",
-    validate: formValidators["c" /* isRequired */],
-    "data-cy": "email"
-  }))), /*#__PURE__*/react_default.a.createElement("div", {
-    className: classes.password
-  }, /*#__PURE__*/react_default.a.createElement(Password_password["a" /* default */], {
-    fieldName: "password",
-    label: passwordLabel,
-    validate: formValidators["c" /* isRequired */],
-    autoComplete: "current-password",
-    isToggleButtonHidden: false,
-    "data-cy": "password"
-  })), maybeNewPasswordField), maybeChangePasswordButton);
+  return /*#__PURE__*/react_default.a.createElement("div", {
+    className: classes.root,
+    "data-cy": "EditCard"
+  }, /*#__PURE__*/react_default.a.createElement(creditCard["a" /* default */], {
+    onPaymentReady: onPaymentReady,
+    onPaymentSuccess: onPaymentSuccess,
+    onPaymentError: onPaymentError,
+    resetShouldSubmit: resetShouldSubmit,
+    shouldSubmit: shouldSubmit
+  }));
 };
-/* harmony default export */ var editForm = (EditForm);
-EditForm.propTypes = {
+EditCard.propTypes = {
   classes: Object(prop_types["shape"])({
-    changePasswordButton: prop_types["string"],
-    changePasswordButtonContainer: prop_types["string"],
-    root: prop_types["string"],
-    field: prop_types["string"],
-    email: prop_types["string"],
-    firstname: prop_types["string"],
-    lastname: prop_types["string"],
-    buttons: prop_types["string"],
-    passwordLabel: prop_types["string"],
-    password: prop_types["string"],
-    newPassword: prop_types["string"]
-  })
+    root: prop_types["string"]
+  }),
+  onPaymentReady: prop_types["func"].isRequired,
+  onPaymentSuccess: prop_types["func"].isRequired,
+  onPaymentError: prop_types["func"].isRequired,
+  resetShouldSubmit: prop_types["func"].isRequired,
+  shouldSubmit: prop_types["bool"]
 };
-// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/FormError/formError.js + 5 modules
-var formError = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/FormError/formError.js");
+/* harmony default export */ var editCard = (EditCard);
+// EXTERNAL MODULE: ./node_modules/@magento/venia-sample-payments-checkmo/src/components/checkmo.js + 7 modules
+var checkmo = __webpack_require__("./node_modules/@magento/venia-sample-payments-checkmo/src/components/checkmo.js");
 
-// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/Dialog/dialog.js + 2 modules
-var dialog = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/Dialog/dialog.js");
+// EXTERNAL MODULE: ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-sample-payments-checkmo/src/components/edit.module.css
+var edit_module = __webpack_require__("./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-sample-payments-checkmo/src/components/edit.module.css");
 
-// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/GoogleReCaptcha/googleReCaptcha.js + 1 modules
-var googleReCaptcha = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/GoogleReCaptcha/googleReCaptcha.js");
-
-// EXTERNAL MODULE: ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/AccountInformationPage/editModal.module.css
-var editModal_module = __webpack_require__("./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/AccountInformationPage/editModal.module.css");
-
-// CONCATENATED MODULE: ./node_modules/@magento/venia-ui/lib/components/AccountInformationPage/editModal.module.css
+// CONCATENATED MODULE: ./node_modules/@magento/venia-sample-payments-checkmo/src/components/edit.module.css
 
             
 
-var editModal_module_options = {"injectType":"styleTag"};
+var edit_module_options = {"injectType":"styleTag"};
 
-editModal_module_options.insert = "head";
-editModal_module_options.singleton = false;
+edit_module_options.insert = "head";
+edit_module_options.singleton = false;
 
-var editModal_module_update = injectStylesIntoStyleTag_default()(editModal_module["a" /* default */], editModal_module_options);
-
-
-
-/* harmony default export */ var AccountInformationPage_editModal_module = (editModal_module["a" /* default */].locals || {});
-// CONCATENATED MODULE: ./node_modules/@magento/venia-ui/lib/components/AccountInformationPage/editModal.js
+var edit_module_update = injectStylesIntoStyleTag_default()(edit_module["a" /* default */], edit_module_options);
 
 
 
+/* harmony default export */ var components_edit_module = (edit_module["a" /* default */].locals || {});
+// CONCATENATED MODULE: ./node_modules/@magento/venia-sample-payments-checkmo/src/components/edit.js
+
+
+
+
+
+
+/**
+ * The edit view for the Checkmo payment method.
+ */
+const EditCheckMo = props => {
+  const {
+    onPaymentReady,
+    onPaymentSuccess,
+    onPaymentError,
+    resetShouldSubmit,
+    shouldSubmit
+  } = props;
+  const classes = Object(shallowMerge["a" /* default */])(components_edit_module, props.classes);
+  return /*#__PURE__*/react_default.a.createElement("div", {
+    className: classes.root
+  }, /*#__PURE__*/react_default.a.createElement(checkmo["a" /* default */], {
+    onPaymentReady: onPaymentReady,
+    onPaymentSuccess: onPaymentSuccess,
+    onPaymentError: onPaymentError,
+    resetShouldSubmit: resetShouldSubmit,
+    shouldSubmit: shouldSubmit
+  }));
+};
+/* harmony default export */ var edit = (EditCheckMo);
+EditCheckMo.propTypes = {
+  classes: Object(prop_types["shape"])({
+    root: prop_types["string"]
+  }),
+  onPaymentReady: prop_types["func"].isRequired,
+  onPaymentSuccess: prop_types["func"].isRequired,
+  onPaymentError: prop_types["func"].isRequired,
+  resetShouldSubmit: prop_types["func"].isRequired,
+  shouldSubmit: prop_types["bool"]
+};
+// CONCATENATED MODULE: ./node_modules/@magento/venia-ui/lib/components/CheckoutPage/PaymentInformation/editablePaymentCollection.js
+
+
+/**
+ * This file is augmented at build time using the @magento/venia-ui build
+ * target "checkoutPagePaymentTypes", which allows third-party modules to
+ * add new payment component mappings for the checkout page.
+ *
+ * @see [Payment definition object]{@link PaymentDefinition}
+ */
+
+/**
+ * A payment definition object that describes a payment in your storefront.
+ *
+ * @typedef {Object} PaymentDefinition
+ * @property {string} paymentCode is use to map your payment
+ * @property {string} importPath Resolvable path to the component the
+ *   Route component will render
+ *
+ * @example <caption>A custom payment method</caption>
+ * const myCustomPayment = {
+ *      paymentCode: 'cc',
+ *      importPath: '@partner/module/path_to_your_component'
+ * }
+ */
+// generated by export-esm-collection-loader
+
+/* harmony default export */ var editablePaymentCollection = ({
+  braintree: editCard,
+  checkmo: edit
+});
+// CONCATENATED MODULE: ./node_modules/@magento/venia-ui/lib/components/CheckoutPage/PaymentInformation/editModal.js
 
 
 
@@ -240,208 +340,120 @@ var editModal_module_update = injectStylesIntoStyleTag_default()(editModal_modul
 
 const EditModal = props => {
   const {
-    classes: propClasses,
-    formErrors,
-    onCancel,
-    onChangePassword,
-    onSubmit,
-    initialValues,
-    isDisabled,
-    isOpen,
-    shouldShowNewPassword,
-    recaptchaWidgetProps
+    onClose,
+    isOpen
   } = props;
   const {
     formatMessage
   } = Object(useIntl["a" /* default */])();
-  const classes = Object(shallowMerge["a" /* default */])(AccountInformationPage_editModal_module, propClasses);
-  const dialogFormProps = {
-    initialValues
-  };
+  const talonProps = useEditModal({
+    onClose
+  });
+  const {
+    selectedPaymentMethod,
+    handleUpdate,
+    handleClose,
+    handlePaymentSuccess,
+    handlePaymentReady,
+    updateButtonClicked,
+    resetUpdateButtonClicked,
+    handlePaymentError
+  } = talonProps;
+  const paymentMethodComponent = Object(react["useMemo"])(() => {
+    const isEditable = Object.keys(editablePaymentCollection).includes(selectedPaymentMethod);
+    if (isEditable) {
+      const PaymentMethodComponent = editablePaymentCollection[selectedPaymentMethod];
+      return /*#__PURE__*/react_default.a.createElement(PaymentMethodComponent, {
+        onPaymentReady: handlePaymentReady,
+        onPaymentSuccess: handlePaymentSuccess,
+        onPaymentError: handlePaymentError,
+        resetShouldSubmit: resetUpdateButtonClicked,
+        shouldSubmit: updateButtonClicked
+      });
+    } else {
+      return /*#__PURE__*/react_default.a.createElement("div", null, /*#__PURE__*/react_default.a.createElement(message["a" /* default */], {
+        id: 'checkoutPage.paymentMethodStatus',
+        defaultMessage: '{selectedPaymentMethod} is not supported for editing.',
+        values: {
+          selectedPaymentMethod
+        }
+      }));
+    }
+  }, [handlePaymentError, handlePaymentReady, handlePaymentSuccess, resetUpdateButtonClicked, selectedPaymentMethod, updateButtonClicked]);
   return /*#__PURE__*/react_default.a.createElement(dialog["a" /* default */], {
-    classes: {
-      body: classes.bodyEditAccountInformation
-    },
-    confirmText: 'Save',
-    formProps: dialogFormProps,
+    confirmText: 'Update',
+    confirmTranslationId: 'global.updateButton',
     isOpen: isOpen,
-    onCancel: onCancel,
-    onConfirm: onSubmit,
-    shouldDisableAllButtons: isDisabled,
-    shouldDisableConfirmButton: isDisabled,
-    shouldUnmountOnHide: true,
+    onCancel: handleClose,
+    onConfirm: handleUpdate,
+    shouldDisableAllButtons: updateButtonClicked,
+    shouldDisableConfirmButton: updateButtonClicked,
     title: formatMessage({
-      id: 'accountInformationPage.editAccount',
-      defaultMessage: 'Edit Account Information'
+      id: 'checkoutPage.editPaymentInformation',
+      defaultMessage: 'Edit Payment Information'
     })
-  }, /*#__PURE__*/react_default.a.createElement(formError["a" /* default */], {
-    classes: {
-      root: classes.errorContainer
-    },
-    errors: formErrors
-  }), /*#__PURE__*/react_default.a.createElement(editForm, {
-    handleChangePassword: onChangePassword,
-    shouldShowNewPassword: shouldShowNewPassword
-  }), /*#__PURE__*/react_default.a.createElement(googleReCaptcha["a" /* default */], recaptchaWidgetProps));
+  }, paymentMethodComponent);
 };
 /* harmony default export */ var editModal = __webpack_exports__["default"] = (EditModal);
 EditModal.propTypes = {
-  classes: Object(prop_types["shape"])({
-    errorContainer: prop_types["string"]
-  }),
-  formErrors: prop_types["array"],
-  handleCancel: prop_types["func"],
-  handleSubmit: prop_types["func"],
-  initialValues: prop_types["object"],
-  isDisabled: prop_types["bool"],
-  isOpen: prop_types["bool"],
-  recaptchaWidgetProps: Object(prop_types["shape"])({
-    containerElement: prop_types["func"],
-    shouldRender: prop_types["bool"]
-  })
+  onClose: prop_types["func"].isRequired,
+  isOpen: prop_types["bool"]
 };
 
 /***/ }),
 
-/***/ "./node_modules/@magento/venia-ui/lib/util/combineValidators.js":
-/*!**********************************************************************!*\
-  !*** ./node_modules/@magento/venia-ui/lib/util/combineValidators.js ***!
-  \**********************************************************************/
-/*! exports provided: default */
-/*! exports used: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/**
- * The function purpose is to group validation callbacks into a chain within single callback function.
- *
- * The single callback function should be passed as `validation` prop to an input component. It's being
- * called by the React Controller on a form submit.
- * The `callbacks` param is the array contains validators. Each validator should be either function or array. In case of a
- * validator is a function it is called the same way as React Controller does, with a field `value` and a form `values` params. If
- * the validator is an array, this means that it is extended validator which requires additional param for configuration.
- * The first index of that array should be a extended validator function, the second index is extended param, which is needed for
- * that function. So the function is called with three params on the form submit, with a field `value`, a form `values`
- * and an `extended param`.
- *
- * Example usage of the function:
- *
- * <input validate={combine([
- * foo
- * ])} .../>
- *
- * foo - validation function
- * It will be called on form submitting within chain as:
- * `foo(value, values)`
- *
- * Example usage of the function with extended callback:
- *
- * <input validate={combine([
- * [foo, bar]
- * ])} .../>
- *
- * foo - extended validator
- * bar - additional param
- * It will be called on form submitting within chain as:
- * `foo(value, values, bar)`
- *
- * Each callback being called one after another, according to their index in callbacks array, if one item returned the error
- * message, validation is failed, and rest validator are not supposed to be called.
- *
- * @param {Array} callbacks
- * @return {function(value, values): *}
- */
-/* harmony default export */ __webpack_exports__["a"] = (callbacks => {
-  if (callbacks == null || !Array.isArray(callbacks)) {
-    throw new Error('Expected `callbacks` to be array.');
-  }
-  return (value, values) => {
-    let result = null;
-    for (let i = 0; i < callbacks.length; i++) {
-      const callback = callbacks[i];
-      if (callback == null || !Array.isArray(callback) && typeof callback !== 'function') {
-        throw new Error('Expected `callbacks[' + i + ']` to be array or function.');
-      }
-      if (Array.isArray(callback)) {
-        const [extendedCallback, extendedParam] = callback;
-        if (typeof extendedCallback !== 'function') {
-          throw new Error('Expected `callbacks[' + i + '][0]` to be function.');
-        }
-        result = extendedCallback(value, values, extendedParam);
-      } else {
-        result = callback(value, values);
-      }
-      if (result) {
-        break;
-      }
-    }
-    return result;
-  };
-});
-
-/***/ }),
-
-/***/ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/AccountInformationPage/editForm.module.css":
-/*!****************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/AccountInformationPage/editForm.module.css ***!
-  \****************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-sample-payments-checkmo/src/components/edit.module.css":
+/*!**********************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-sample-payments-checkmo/src/components/edit.module.css ***!
+  \**********************************************************************************************************************************************************************************************/
 /*! exports provided: default */
 /*! exports used: default */
 /*! ModuleConcatenation bailout: Module uses module.id */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var _css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../../css-loader/dist/runtime/cssWithMappingToString.js */ "./node_modules/css-loader/dist/runtime/cssWithMappingToString.js");
+/* harmony import */ var _css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../css-loader/dist/runtime/cssWithMappingToString.js */ "./node_modules/css-loader/dist/runtime/cssWithMappingToString.js");
 /* harmony import */ var _css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 /* harmony import */ var _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
 // Imports
 
 
 var ___CSS_LOADER_EXPORT___ = _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()(_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default.a);
 // Module
-___CSS_LOADER_EXPORT___.push([module.i, ".editForm-root-QAH {\n}\n\n.editForm-field-JTM {\n}\n\n.editForm-email-WKv,\n.editForm-passwordLabel-8vp {\n}\n\n.editForm-buttons-YK- {\n}\n\n.editForm-changePasswordButtonContainer-D9q {\n}\n\n@media (max-width: 959px) {\n    .editForm-firstname-2yB,\n    .editForm-lastname-DCs,\n    .editForm-password-aba,\n    .editForm-newPassword-Anf {\n        grid-column: 1 / span 2;\n    }\n}\n", "",{"version":3,"sources":["webpack://./node_modules/@magento/venia-ui/lib/components/AccountInformationPage/editForm.module.css"],"names":[],"mappings":"AAAA;AAMA;;AAEA;AAEA;;AAEA;;AAGA;;AAEA;AAOA;;AAEA;AAEA;;AAEA;IACI;;;;QAII,uBAAuB;IAC3B;AACJ","sourcesContent":[".root {\n    composes: gap-x-2xs from global;\n    composes: gap-y-sm from global;\n    composes: grid from global;\n    composes: grid-cols-2 from global;\n    composes: w-full from global;\n}\n\n.field {\n    composes: col-end-span2 from global;\n}\n\n.email,\n.passwordLabel {\n    composes: field;\n}\n\n.buttons {\n    composes: field;\n    composes: gap-xs from global;\n    composes: grid from global;\n    composes: grid-flow-col from global;\n    composes: justify-self-center from global;\n    composes: p-xs from global;\n}\n\n.changePasswordButtonContainer {\n    composes: pt-xs from global;\n}\n\n@media (max-width: 959px) {\n    .firstname,\n    .lastname,\n    .password,\n    .newPassword {\n        grid-column: 1 / span 2;\n    }\n}\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.i, ".edit-root-4P3 {\n    overflow: auto;\n    padding: 0.5rem 1rem;\n}\n", "",{"version":3,"sources":["webpack://./node_modules/@magento/venia-sample-payments-checkmo/src/components/edit.module.css"],"names":[],"mappings":"AAAA;IACI,cAAc;IACd,oBAAoB;AACxB","sourcesContent":[".root {\n    overflow: auto;\n    padding: 0.5rem 1rem;\n}\n"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
-	"root": "editForm-root-QAH gap-x-2xs gap-y-sm grid grid-cols-2 w-full",
-	"field": "editForm-field-JTM col-end-span2",
-	"email": "editForm-email-WKv editForm-field-JTM col-end-span2",
-	"passwordLabel": "editForm-passwordLabel-8vp editForm-field-JTM col-end-span2",
-	"buttons": "editForm-buttons-YK- editForm-field-JTM col-end-span2 gap-xs grid grid-flow-col justify-self-center p-xs",
-	"changePasswordButtonContainer": "editForm-changePasswordButtonContainer-D9q pt-xs",
-	"firstname": "editForm-firstname-2yB",
-	"lastname": "editForm-lastname-DCs",
-	"password": "editForm-password-aba",
-	"newPassword": "editForm-newPassword-Anf"
+	"root": "edit-root-4P3"
 };
 /* harmony default export */ __webpack_exports__["a"] = (___CSS_LOADER_EXPORT___);
 
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/AccountInformationPage/editModal.module.css":
-/*!*****************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/AccountInformationPage/editModal.module.css ***!
-  \*****************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/CheckoutPage/PaymentInformation/editCard.module.css":
+/*!*************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/CheckoutPage/PaymentInformation/editCard.module.css ***!
+  \*************************************************************************************************************************************************************************************************************/
 /*! exports provided: default */
 /*! exports used: default */
 /*! ModuleConcatenation bailout: Module uses module.id */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var _css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../../css-loader/dist/runtime/cssWithMappingToString.js */ "./node_modules/css-loader/dist/runtime/cssWithMappingToString.js");
+/* harmony import */ var _css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../../../css-loader/dist/runtime/cssWithMappingToString.js */ "./node_modules/css-loader/dist/runtime/cssWithMappingToString.js");
 /* harmony import */ var _css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../../css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 /* harmony import */ var _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
 // Imports
 
 
 var ___CSS_LOADER_EXPORT___ = _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()(_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default.a);
 // Module
-___CSS_LOADER_EXPORT___.push([module.i, ".editModal-errorContainer-53Z {\n}\n", "",{"version":3,"sources":["webpack://./node_modules/@magento/venia-ui/lib/components/AccountInformationPage/editModal.module.css"],"names":[],"mappings":"AAAA;AAEA","sourcesContent":[".errorContainer {\n    composes: pb-xs from global;\n}\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.i, ".editCard-root-iuk {\n}\n", "",{"version":3,"sources":["webpack://./node_modules/@magento/venia-ui/lib/components/CheckoutPage/PaymentInformation/editCard.module.css"],"names":[],"mappings":"AAAA;AAIA","sourcesContent":[".root {\n    composes: overflow-auto from global;\n    composes: px-xs from global;\n    composes: py-2xs from global;\n}\n"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
-	"errorContainer": "editModal-errorContainer-53Z pb-xs"
+	"root": "editCard-root-iuk overflow-auto px-xs py-2xs"
 };
 /* harmony default export */ __webpack_exports__["a"] = (___CSS_LOADER_EXPORT___);
 

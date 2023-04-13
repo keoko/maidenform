@@ -17,7 +17,7 @@ import AddToListButton from '@magento/venia-ui/lib/components/Wishlist/AddToList
 import Quantity from '@magento/venia-ui/lib/components/CartPage/ProductListing/quantity';
 
 
-import defaultClasses from '@magento/venia-ui/lib/components/CartPage/ProductListing/product.module.css';
+import defaultClasses from './product.module.css';
 
 import { CartPageFragment } from '@magento/peregrine/lib/talons/CartPage/cartPageFragments.gql.js';
 import { AvailableShippingMethodsCartFragment } from '@magento/peregrine/lib/talons/CartPage/PriceAdjustments/ShippingMethods/shippingMethodsFragments.gql.js';
@@ -119,6 +119,9 @@ const Product = props => {
                     <div className={classes.name} data-cy="Product-name">
                         <Link to={itemLink}>{name}</Link>
                     </div>
+                    <span className={classes.style} data-cy="Product-style">
+                        Style: {item.sku}
+                    </span>
                     <ProductOptions
                         options={options}
                         classes={{
@@ -144,36 +147,23 @@ const Product = props => {
                         />
                     </div>
                 </div>
-                <Kebab
-                    classes={{
-                        root: classes.kebab
-                    }}
-                    disabled={true}
-                >
-                    {editItemSection}
-                    <Section
-                        text={formatMessage({
+                <div>
+
+                    <Link to="/" onClick={handleEditItem}>
+                        {formatMessage({
+                            id: 'product.editItem',
+                            defaultMessage: 'Edit item'
+                        })}
+                    </Link>
+                    <Link to="/" onClick={handleRemoveFromCart}
+                        data-cy="Product-Section-removeFromCart"
+                    >
+                        {formatMessage({
                             id: 'product.removeFromCart',
                             defaultMessage: 'Remove from cart'
                         })}
-                        data-cy="Product-Section-removeFromCart"
-                        onClick={handleRemoveFromCart}
-                        icon="Trash"
-                        classes={{
-                            text: classes.sectionText
-                        }}
-                    />
-                    <li>
-                        <AddToListButton
-                            {...addToWishlistProps}
-                            classes={{
-                                root: classes.addToListButton,
-                                root_selected: classes.addToListButton_selected
-                            }}
-                            icon={HeartIcon}
-                        />
-                    </li>
-                </Kebab>
+                    </Link>
+                </div>
             </div>
         </li>
     );

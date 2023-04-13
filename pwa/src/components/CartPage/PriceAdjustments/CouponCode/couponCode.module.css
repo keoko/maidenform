@@ -45,7 +45,7 @@
 
 /* Styles for "removal" view. */
 .removeButton {
-    composes: root from '../../../LinkButton/linkButton.module.css';
+    composes: root from '@magento/venia-ui/lib/components/LinkButton/linkButton.module.css';
 
     composes: ml-xs from global;
 }

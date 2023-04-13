@@ -62,6 +62,7 @@ const ProductListing = props => {
     }
 
     if (items.length) {
+        console.log(items);
         const productComponents = items.map(product => (
             <Product
                 item={product}
