@@ -2,13 +2,11 @@ import React from 'react';
 
 import store from '../../store';
 import Adapter from '../../components/Adapter/adapter';
-import CreateAccountPage from './createAccountPage';
+import CreateAccountPage from '@magento/venia-ui/lib/components/CreateAccountPage';
 
 const origin = globalThis.location.origin;
 const styles = new Set();
 const configureLinks = links => [...links.values()];
-
-import classes from './signup.module.css';
 
 /**
  * @RootComponent
