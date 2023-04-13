@@ -9,6 +9,8 @@ const componentOverrideMapping = {
  '@magento/venia-ui/lib/components/Portal/portal.js': './src/components/Portal/portal.js',
  '@magento/peregrine/lib/talons/SignInPage/useSignInPage.js': './src/talons/SignInPage/useSignInPage.js',
  '@magento/peregrine/lib/talons/CheckoutPage/useCheckoutPage': './src/talons/CheckoutPage/useCheckoutPage.js',
+ '@magento/venia-ui/lib/components/CreateAccount/createAccount.js': './src/components/CreateAccount/createAccount.js',
+ '@magento/peregrine/lib/talons/CreateAccount/useCreateAccount.js': './src/talons/CreateAccount/useCreateAccount.js',
 };
 
 const {
