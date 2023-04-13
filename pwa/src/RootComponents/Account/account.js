@@ -2,6 +2,7 @@ import React from 'react';
 
 import store from '../../store';
 import Adapter from '../../components/Adapter/adapter';
+
 import AccountPage from './accountPage';
 
 const origin = globalThis.location.origin;

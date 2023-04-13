@@ -1,12 +1,7 @@
 import React from 'react';
 
-import store from '../../store';
 import SignInPage from '@magento/venia-ui/lib/components/SignInPage';
-import Adapter from '../../components/Adapter/adapter';
-
-const origin = globalThis.location.origin;
-const styles = new Set();
-const configureLinks = links => [...links.values()];
+import { useProtectedPage } from '../Account/accountPage';
 
 /**
  * @RootComponent
@@ -14,14 +9,13 @@ const configureLinks = links => [...links.values()];
  * pageTypes = ACCOUNT
  */
 function Login() {
-    return <Adapter
-        apiUrl="https://www.marbec.click/graphql-maidenform-qa"
-        configureLinks={configureLinks}
-        origin={origin}
-        store={store}
-        styles={styles}>
-        <SignInPage createAccountPageUrl='/customer/account/create' forgotPasswordPageUrl='/customer/account/forgotpassword' />
-    </Adapter>
+    const [redirectIfNotSignedIn, redirectIfSignedIn] = useProtectedPage();
+    redirectIfSignedIn(new URL(window.location).searchParams.get('login_redirect'));
+
+    return <SignInPage
+        signedInRedirectUrl='/customer/account'
+        createAccountPageUrl='/customer/account/create'
+        forgotPasswordPageUrl='/customer/account/forgotpassword' />
 }
 
 export default Login;

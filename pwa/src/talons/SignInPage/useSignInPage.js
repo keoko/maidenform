@@ -28,7 +28,7 @@ export const useSignInPage = props => {
     const historyState = useMemo(() => {
         return history && history.location.state ? history.location.state : {};
     }, [history]);
-    const fromRedirectUrl = historyState.from || null;
+    const fromRedirectUrl = historyState.from || (new URL(window.location).searchParams.get('login_redirect')) || null;
 
     // Redirect if user is signed in
     useEffect(() => {

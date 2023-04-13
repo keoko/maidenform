@@ -1,6 +1,5 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 
-import SignInPage from '@magento/venia-ui/lib/components/SignInPage';
 import ForgotPasswordPage from '@magento/venia-ui/lib/components/ForgotPasswordPage';
 import SavedPaymentsPage from '@magento/venia-ui/lib/components/SavedPaymentsPage';
 import OrderHistoryPage from '@magento/venia-ui/lib/components/OrderHistoryPage';
@@ -11,25 +10,58 @@ import WishListPage from '@magento/venia-ui/lib/components/WishlistPage';
 import AccountNavigation from './accountNavigation';
 
 import classes from './accountPage.module.css';
+import { useUserContext } from '@magento/peregrine/lib/context/user';
+import Login from '../Login/login';
+
+export const useProtectedPage = () => {
+    const [{ isSignedIn }] = useUserContext();
+
+    const redirectIfNotSignedIn = useCallback((redirectAfterSignIn) => {
+        const loginRedirect = redirectAfterSignIn || '/customer/account';
+
+        if (!isSignedIn) {
+            window.location = `/customer/account/login?login_redirect=${loginRedirect}`;
+        }
+    }, [isSignedIn])
+
+    const redirectIfSignedIn = useCallback((where) => {
+        const loginRedirect = where || '/customer/account';
+
+        if (isSignedIn) {
+            window.location = loginRedirect;
+        }
+    }, [isSignedIn])
+
+    return [redirectIfNotSignedIn, redirectIfSignedIn];
+}
 
 const AccountTypeHandler = props => {
+    const [redirectIfNotSignedIn, redirectIfSignedIn] = useProtectedPage();
+
     switch (props.pageType) {
         case 'myaccount':
+            redirectIfNotSignedIn();
             return <AccountInformationPage />;
         case 'address':
+            redirectIfNotSignedIn();
             return <AddressBookPage />;
         case 'editaccount':
+            redirectIfNotSignedIn();
             return <AccountInformationPage />;
         case 'history':
+            redirectIfNotSignedIn();
             return <OrderHistoryPage />;
         case 'wishlist':
-            return <WishListPage />;
+            redirectIfNotSignedIn();
+            return <WishListPage loginRedirect='/customer/wishlist' />;
         case 'creditcards':
+            redirectIfNotSignedIn();
             return <SavedPaymentsPage />;
         case 'resetpassword':
-            return <ForgotPasswordPage />
+            redirectIfSignedIn();
+            return <ForgotPasswordPage />;
         default:
-            return <SignInPage />;
+            return <Login />;
     }
 }
 
