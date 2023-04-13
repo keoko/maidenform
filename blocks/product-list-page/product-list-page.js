@@ -5,7 +5,9 @@ import htm from '../../scripts/htm.js';
 import ProductList from './ProductList.js';
 import FacetList from './FacetList.js';
 import { readBlockConfig } from '../../scripts/lib-franklin.js';
-import { loadCategory, getProductRatings, parseQueryParams } from '../../scripts/commerce.js';
+import {
+  loadCategory, getProductRatings, parseQueryParams, getAmastyLabels,
+} from '../../scripts/commerce.js';
 
 const html = htm.bind(h);
 
@@ -106,6 +108,12 @@ class ProductListPage extends Component {
     };
   }
 
+  setStatePromise(state) {
+    return new Promise((resolve) => {
+      this.setState(state, resolve);
+    });
+  }
+
   static updateQueryParams = (params) => {
     const newParams = new URLSearchParams();
     Object.keys(params).forEach((key) => {
@@ -118,44 +126,65 @@ class ProductListPage extends Component {
     window.history.pushState({}, '', `${window.location.pathname}?${newParams.toString()}`);
   };
 
-  loadProductRatings = async () => {
-    const skus = this.state.products.items.map((product) => product.sku);
+  static loadProductRatings = async (items) => {
+    const skus = items.map((product) => product.sku);
     const ratings = await getProductRatings(skus);
 
-    const newProducts = this.state.products.items.map((p) => ({
-      ...p,
+    return items.map((p) => ({
+      sku: p.sku,
       rating: {
         average: ratings[p.sku]?.average ?? 0,
         count: ratings[p.sku]?.count ?? 0,
       },
     }));
+  };
 
-    this.setState({ products: { ...this.state.products, items: newProducts } });
+  static loadAmastyLabels = async (items) => {
+    const ids = items.map((product) => product.id);
+    const labels = await getAmastyLabels(ids);
+    return items.map((p) => ({
+      id: p.id,
+      amasty: labels.find((label) => label.product_id === p.id),
+    }));
+  };
+
+  static loadAdditionalProductData = async (items) => {
+    // Load label and ratings in parallel
+    let ratings = ProductListPage.loadProductRatings(items);
+    let labels = ProductListPage.loadAmastyLabels(items);
+    ([ratings, labels] = await Promise.all([ratings, labels]));
+
+    // Combine and add to product list
+    return items.map((p) => ({
+      ...p,
+      rating: ratings.find((r) => r.sku === p.sku)?.rating,
+      amasty: labels.find((l) => l.id === p.id)?.amasty,
+    }));
   };
 
   loadProducts = async () => {
     this.setState({ loading: true });
 
     const state = await loadCategory(this.state);
-
-    this.setState({
+    await this.setStatePromise({
       ...state,
       loading: false,
-    }, () => {
-      this.loadProductRatings();
     });
+
+    const items = await ProductListPage.loadAdditionalProductData(this.state.products.items);
+    this.setState({ products: { ...this.state.products, items } });
   };
 
-  componentDidMount() {
+  async componentDidMount() {
     if (window.loadCategoryPromise) {
-      window.loadCategoryPromise.then((state) => {
-        this.setState({
-          ...state,
-          loading: false,
-        }, () => {
-          this.loadProductRatings();
-        });
+      const state = await window.loadCategoryPromise;
+      await this.setStatePromise({
+        ...state,
+        loading: false,
       });
+
+      const items = await ProductListPage.loadAdditionalProductData(this.state.products.items);
+      this.setState({ products: { ...this.state.products, items } });
     } else {
       this.loadProducts();
     }
