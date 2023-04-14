@@ -49046,12 +49046,12 @@ var ACTION_TYPE_DELIMITER = '||';
 /*! exports provided: default */
 /*! exports used: default */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/invariant/browser.js (<- Module is not an ECMAScript module) */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/redux-actions/es/constants.js because of ./node_modules/@magento/peregrine/lib/store/reducers/cart.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/redux-actions/es/utils/flattenWhenNode.js because of ./node_modules/@magento/peregrine/lib/store/reducers/cart.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/redux-actions/es/utils/identity.js because of ./node_modules/@magento/peregrine/lib/store/reducers/cart.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/redux-actions/es/utils/isFunction.js because of ./node_modules/@magento/peregrine/lib/store/reducers/cart.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/redux-actions/es/utils/isNil.js because of ./node_modules/@magento/peregrine/lib/store/reducers/cart.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/redux-actions/es/utils/isPlainObject.js because of ./node_modules/@magento/peregrine/lib/store/reducers/cart.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/redux-actions/es/constants.js because of ./node_modules/@magento/peregrine/lib/store/reducers/checkout.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/redux-actions/es/utils/flattenWhenNode.js because of ./node_modules/@magento/peregrine/lib/store/reducers/checkout.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/redux-actions/es/utils/identity.js because of ./node_modules/@magento/peregrine/lib/store/reducers/checkout.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/redux-actions/es/utils/isFunction.js because of ./node_modules/@magento/peregrine/lib/store/reducers/checkout.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/redux-actions/es/utils/isNil.js because of ./node_modules/@magento/peregrine/lib/store/reducers/checkout.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/redux-actions/es/utils/isPlainObject.js because of ./node_modules/@magento/peregrine/lib/store/reducers/checkout.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/to-camel-case/index.js (<- Module is not an ECMAScript module) */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 

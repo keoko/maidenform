@@ -1,7 +1,7 @@
 import React from 'react';
 
 import CreateAccountPage from './createAccountPage';
-import { useProtectedPage } from '../Account/accountPage';
+import { useProtectedPage } from '../Account/AccountPage';
 
 /**
  * @RootComponent
