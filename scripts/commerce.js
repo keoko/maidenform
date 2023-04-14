@@ -369,17 +369,18 @@ export async function performCatalogServiceQuery(query, variables) {
   return queryResponse.data;
 }
 
-export async function performMonolithGraphQLQuery(query, variables, GET = true) {
-  const headers = {
+export async function performMonolithGraphQLQuery(query, variables, GET = true, headers = {}) {
+  const finalHeaders = {
     'Content-Type': 'application/json',
     Store: 'maidenform_store_view',
+    ...headers
   };
 
   let response;
   if (!GET) {
     response = await fetch('https://www.marbec.click/graphql-maidenform-qa', {
       method: 'POST',
-      headers,
+      headers: finalHeaders,
       body: JSON.stringify({
         query: query.replace(/(?:\r\n|\r|\n|\t|[\s]{4})/g, ' ').replace(/\s\s+/g, ' '),
         variables,
@@ -392,7 +393,7 @@ export async function performMonolithGraphQLQuery(query, variables, GET = true) 
     });
     response = await fetch(
       `https://www.marbec.click/graphql-maidenform-qa?${params.toString()}`,
-      { headers },
+      { headers: finalHeaders },
     );
   }
 

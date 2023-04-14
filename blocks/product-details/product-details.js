@@ -63,6 +63,7 @@ class ProductDetailPage extends Component {
     this.onAddToCart = this.onAddToCart.bind(this);
     this.onQuantityChanged = this.onQuantityChanged.bind(this);
     this.getInStockProducts = this.getInStockProducts.bind(this);
+    this.onAddToWishlist = this.onAddToWishlist.bind(this);
   }
 
   // Returns a map. Keys to the map are option type ids. Values are arrays of in-stock variant ids,
@@ -151,6 +152,12 @@ class ProductDetailPage extends Component {
     }
   };
 
+  onAddToWishlist = async () => {
+    const wishlistApi = await import('../../scripts/wishlist/api.js');
+    // TODO use getWishlists to allow user to select which wishlist to add to (pass instead of null)
+    wishlistApi.addToWishlist(getSkuFromUrl(), null);
+  }
+
   onQuantityChanged = (quantity) => {
     this.setState({ selectedQuantity: quantity });
   };
@@ -214,6 +221,7 @@ class ProductDetailPage extends Component {
                   selection=${this.state.selection} 
                   onSelectionChanged=${this.onSelectionChanged} 
                   onAddToCart=${this.onAddToCart}
+                  onAddToWishlist=${this.onAddToWishlist}
                   onQuantityChanged=${this.onQuantityChanged}
                   inStockVariants=${this.state.inStockVariants}
           />

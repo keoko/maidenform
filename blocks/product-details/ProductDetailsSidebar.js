@@ -117,7 +117,7 @@ function ColorSelector({
   `;
 }
 
-function CartSection({ onAddToCart, canAddToCart }) {
+function CartSection({ onAddToCart, canAddToCart, onAddToWishlist }) {
   return html`<div class="sidebar-section cart">
           <button 
                   disabled=${!canAddToCart()} 
@@ -125,8 +125,7 @@ function CartSection({ onAddToCart, canAddToCart }) {
                   class="button primary cart-button">Add to Bag</button>
           <p>Pay in 4 interest free payments on purchases of $30-$1,500 with PayPal
           </p>
-          <p class="secondary-action"><${Icon} name="heart" />ADD TO FAVORITES</p>
-          <p class="secondary-action"><${Icon} name="envelope" />EMAIL</p>
+          <button onclick=${onAddToWishlist} class="secondary-action"><${Icon} name="heart" />ADD TO FAVORITES</button>
           <p><a href="/customer-service">Need Help?</a></p>
       </div>`;
 }
@@ -235,7 +234,7 @@ export default class ProductDetailsSidebar extends Component {
             ${(allProductOptions?.length > 0 || hasColors) && html`
                 <${SelectionDisplay} selection=${this.props.selection} productOptions=${product?.options} />`}
           <${QuantitySelector} onChange=${this.props.onQuantityChanged} />
-          <${CartSection} onAddToCart=${this.props.onAddToCart} canAddToCart=${this.canAddToCart} />
+          <${CartSection} onAddToWishlist=${this.props.onAddToWishlist} onAddToCart=${this.props.onAddToCart} canAddToCart=${this.canAddToCart} />
         `}
       </div>
     <//>`;
