@@ -63,7 +63,7 @@
     vertical-align: -1px;
 }
 
-.orderTableDesktop {
+.addressTableDesktop {
     display: none;
 }
 
@@ -71,16 +71,16 @@
     text-align: center;
 }
 
-.orderTableMobile > div {
+.addressTableMobile > div {
     display: grid;
 }
 
-.orderTableMobile > div strong {
+.addressTableMobile > div strong {
     font-weight: bold;
     padding-right: 8px;
 }
 
-.orderTableMobile > div a {
+.addressTableMobile > div a {
     text-decoration: underline;
 }
 
@@ -89,32 +89,32 @@
         flex-direction: row;
     }
 
-    .orderTableMobile {
+    .addressTableMobile {
         display: none;
     }
 
-    .orderTableDesktop {
+    .addressTableDesktop {
         display: table;
         width: 100%;
         font-size: 1.4rem;
         border-collapse: collapse;
     }
     
-    .orderTableDesktop td, .orderTableDesktop th {
+    .addressTableDesktop td, .addressTableDesktop th {
         padding: 10px;
         text-align: left;
         border-bottom: 1px solid #c6c6c6;
     }
     
-    .orderTableDesktop td a {
+    .addressTableDesktop td a {
         text-decoration: underline;
     }
 
-    .orderTableEmpty td {
+    .addressTableEmpty td {
         text-align: center;
     }
 
-    .sectionOrders {
+    .sectionAdditionalAddresses {
         margin-bottom: 0;
     }
 }

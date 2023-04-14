@@ -4756,9 +4756,9 @@ const actionMap = {
   \************************************************************************************************/
 /*! exports provided: beginCheckout, cancelCheckout, resetCheckout, resetReceipt, submitPaymentMethodAndBillingAddress, submitBillingAddress, submitPaymentMethod, submitShippingAddress, submitShippingMethod, submitOrder, createAccount, formatAddress, clearCheckoutDataFromStorage */
 /*! all exports used */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/store/actions/app/asyncActions.js because of ./node_modules/@magento/peregrine/lib/talons/OrderHistoryPage/useOrderHistoryPage.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/store/actions/app/asyncActions.js because of ./node_modules/@magento/peregrine/lib/talons/AddressBookPage/useAddressBookPage.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/store/actions/cart/asyncActions.js because of ./src/talons/CreateAccount/useCreateAccount.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/store/actions/checkout/actions.js because of ./src/RootComponents/Cart/index.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/store/actions/checkout/actions.js because of ./src/RootComponents/Checkout/index.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/simplePersistence.js because of ./src/RootComponents/Account/AccountPage.js */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -6871,336 +6871,6 @@ var update = _style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMP
 
 /***/ }),
 
-/***/ "./node_modules/@magento/venia-ui/lib/components/Checkbox/checkbox.js":
-/*!****************************************************************************************!*\
-  !*** ./node_modules/@magento/venia-ui/lib/components/Checkbox/checkbox.js + 1 modules ***!
-  \****************************************************************************************/
-/*! exports provided: default */
-/*! exports used: default */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/hooks/hook-wrappers/useInformedFieldStateWrapper.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/shallowMerge.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Field/message.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-feather/dist/icons/check-square.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-feather/dist/icons/square.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/Checkbox/checkbox.module.css (<- Module uses module.id) */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/informed/dist/esm/index.js (<- Module uses injected variables (process)) */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/prop-types/index.js (<- Module is not an ECMAScript module) */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react/index.js (<- Module is not an ECMAScript module) */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js (<- Module is not an ECMAScript module) */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-
-// EXTERNAL MODULE: ./node_modules/react/index.js
-var react = __webpack_require__("./node_modules/react/index.js");
-var react_default = /*#__PURE__*/__webpack_require__.n(react);
-
-// EXTERNAL MODULE: ./node_modules/prop-types/index.js
-var prop_types = __webpack_require__("./node_modules/prop-types/index.js");
-
-// EXTERNAL MODULE: ./node_modules/informed/dist/esm/index.js
-var esm = __webpack_require__("./node_modules/informed/dist/esm/index.js");
-
-// EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/hooks/hook-wrappers/useInformedFieldStateWrapper.js
-var useInformedFieldStateWrapper = __webpack_require__("./node_modules/@magento/peregrine/lib/hooks/hook-wrappers/useInformedFieldStateWrapper.js");
-
-// EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/util/shallowMerge.js
-var shallowMerge = __webpack_require__("./node_modules/@magento/peregrine/lib/util/shallowMerge.js");
-
-// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/Field/message.js + 1 modules
-var Field_message = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/Field/message.js");
-
-// EXTERNAL MODULE: ./node_modules/react-feather/dist/icons/check-square.js
-var check_square = __webpack_require__("./node_modules/react-feather/dist/icons/check-square.js");
-
-// EXTERNAL MODULE: ./node_modules/react-feather/dist/icons/square.js
-var square = __webpack_require__("./node_modules/react-feather/dist/icons/square.js");
-
-// EXTERNAL MODULE: ./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js
-var injectStylesIntoStyleTag = __webpack_require__("./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
-var injectStylesIntoStyleTag_default = /*#__PURE__*/__webpack_require__.n(injectStylesIntoStyleTag);
-
-// EXTERNAL MODULE: ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/Checkbox/checkbox.module.css
-var checkbox_module = __webpack_require__("./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/Checkbox/checkbox.module.css");
-
-// CONCATENATED MODULE: ./node_modules/@magento/venia-ui/lib/components/Checkbox/checkbox.module.css
-
-            
-
-var options = {"injectType":"styleTag"};
-
-options.insert = "head";
-options.singleton = false;
-
-var update = injectStylesIntoStyleTag_default()(checkbox_module["a" /* default */], options);
-
-
-
-/* harmony default export */ var Checkbox_checkbox_module = (checkbox_module["a" /* default */].locals || {});
-// CONCATENATED MODULE: ./node_modules/@magento/venia-ui/lib/components/Checkbox/checkbox.js
-const _excluded = ["ariaLabel", "classes", "field", "fieldValue", "id", "label", "message"];
-function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
-function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-
-
-
-
-
-
-
-
-
-/* TODO: change lint config to use `label-has-associated-control` */
-/* eslint-disable jsx-a11y/label-has-for */
-
-const checkedIcon = /*#__PURE__*/react_default.a.createElement(check_square["a" /* default */], null);
-const uncheckedIcon = /*#__PURE__*/react_default.a.createElement(square["a" /* default */], null);
-const Checkbox = props => {
-  const {
-      ariaLabel,
-      classes: propClasses,
-      field,
-      fieldValue,
-      id,
-      label,
-      message
-    } = props,
-    rest = _objectWithoutProperties(props, _excluded);
-  const fieldApi = Object(esm["j" /* useFieldApi */])(field);
-  const fieldState = Object(useInformedFieldStateWrapper["a" /* default */])(field);
-  const classes = Object(shallowMerge["a" /* default */])(Checkbox_checkbox_module, propClasses);
-  const icon = fieldState.value ? checkedIcon : uncheckedIcon;
-  Object(react["useEffect"])(() => {
-    if (fieldValue != null && fieldValue !== fieldState.value) {
-      fieldApi.setValue(fieldValue);
-    }
-  }, [fieldApi, fieldState.value, fieldValue]);
-  return /*#__PURE__*/react_default.a.createElement(react["Fragment"], null, /*#__PURE__*/react_default.a.createElement("label", {
-    "data-cy": "Checkbox-label",
-    "aria-label": ariaLabel,
-    className: classes.root,
-    htmlFor: id
-  }, /*#__PURE__*/react_default.a.createElement(esm["a" /* Checkbox */], _extends({}, rest, {
-    className: classes.input,
-    field: field,
-    id: id
-  })), /*#__PURE__*/react_default.a.createElement("span", {
-    className: classes.icon
-  }, icon), /*#__PURE__*/react_default.a.createElement("span", {
-    className: classes.label
-  }, label)), /*#__PURE__*/react_default.a.createElement(Field_message["a" /* default */], {
-    fieldState: fieldState
-  }, message));
-};
-/* harmony default export */ var Checkbox_checkbox = __webpack_exports__["a"] = (Checkbox);
-Checkbox.propTypes = {
-  ariaLabel: prop_types["string"],
-  classes: Object(prop_types["shape"])({
-    icon: prop_types["string"],
-    input: prop_types["string"],
-    label: prop_types["string"],
-    message: prop_types["string"],
-    root: prop_types["string"]
-  }),
-  field: prop_types["string"].isRequired,
-  id: prop_types["string"],
-  label: prop_types["node"].isRequired,
-  message: prop_types["node"]
-};
-
-/* eslint-enable jsx-a11y/label-has-for */
-
-/***/ }),
-
-/***/ "./node_modules/@magento/venia-ui/lib/components/Country/country.js":
-/*!**************************************************************************************!*\
-  !*** ./node_modules/@magento/venia-ui/lib/components/Country/country.js + 3 modules ***!
-  \**************************************************************************************/
-/*! exports provided: default */
-/*! exports used: default */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/react/hooks/useQuery.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/shallowMerge.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Field/field.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Select/select.js because of ./node_modules/@magento/venia-ui/lib/components/AddressBookPage/addEditDialog.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/Country/country.module.css (<- Module uses module.id) */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql-tag/lib/index.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/prop-types/index.js (<- Module is not an ECMAScript module) */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-intl/lib/src/components/useIntl.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react/index.js (<- Module is not an ECMAScript module) */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js (<- Module is not an ECMAScript module) */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-
-// EXTERNAL MODULE: ./node_modules/react/index.js
-var react = __webpack_require__("./node_modules/react/index.js");
-var react_default = /*#__PURE__*/__webpack_require__.n(react);
-
-// EXTERNAL MODULE: ./node_modules/react-intl/lib/src/components/useIntl.js
-var useIntl = __webpack_require__("./node_modules/react-intl/lib/src/components/useIntl.js");
-
-// EXTERNAL MODULE: ./node_modules/prop-types/index.js
-var prop_types = __webpack_require__("./node_modules/prop-types/index.js");
-
-// EXTERNAL MODULE: ./node_modules/@apollo/client/react/hooks/useQuery.js
-var useQuery = __webpack_require__("./node_modules/@apollo/client/react/hooks/useQuery.js");
-
-// CONCATENATED MODULE: ./node_modules/@magento/peregrine/lib/talons/Country/useCountry.js
-
-const useCountry = props => {
-  const {
-    queries: {
-      getCountriesQuery
-    }
-  } = props;
-  const {
-    data,
-    error,
-    loading
-  } = Object(useQuery["a" /* useQuery */])(getCountriesQuery);
-  let formattedCountriesData = [{
-    label: 'Loading Countries...',
-    value: ''
-  }];
-  if (!loading && !error) {
-    const {
-      countries
-    } = data;
-    formattedCountriesData = countries.map(country => ({
-      // If a country is missing the full english name just show the abbreviation.
-      label: country.full_name_english || country.two_letter_abbreviation,
-      value: country.two_letter_abbreviation
-    }));
-    formattedCountriesData.sort((a, b) => a.label < b.label ? -1 : 1);
-  }
-  return {
-    countries: formattedCountriesData,
-    loading
-  };
-};
-// EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/util/shallowMerge.js
-var shallowMerge = __webpack_require__("./node_modules/@magento/peregrine/lib/util/shallowMerge.js");
-
-// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/Field/field.js
-var Field_field = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/Field/field.js");
-
-// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/Select/select.js + 1 modules
-var Select_select = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/Select/select.js");
-
-// EXTERNAL MODULE: ./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js
-var injectStylesIntoStyleTag = __webpack_require__("./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
-var injectStylesIntoStyleTag_default = /*#__PURE__*/__webpack_require__.n(injectStylesIntoStyleTag);
-
-// EXTERNAL MODULE: ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/Country/country.module.css
-var country_module = __webpack_require__("./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/Country/country.module.css");
-
-// CONCATENATED MODULE: ./node_modules/@magento/venia-ui/lib/components/Country/country.module.css
-
-            
-
-var options = {"injectType":"styleTag"};
-
-options.insert = "head";
-options.singleton = false;
-
-var update = injectStylesIntoStyleTag_default()(country_module["a" /* default */], options);
-
-
-
-/* harmony default export */ var Country_country_module = (country_module["a" /* default */].locals || {});
-// EXTERNAL MODULE: ./node_modules/graphql-tag/lib/index.js + 3 modules
-var lib = __webpack_require__("./node_modules/graphql-tag/lib/index.js");
-
-// CONCATENATED MODULE: ./node_modules/@magento/venia-ui/lib/components/Country/country.gql.js
-
-const GET_COUNTRIES_QUERY = lib["a" /* gql */]`
-    query GetCountries {
-        countries {
-            id
-            full_name_english
-            two_letter_abbreviation
-        }
-    }
-`;
-// CONCATENATED MODULE: ./node_modules/@magento/venia-ui/lib/components/Country/country.js
-const _excluded = ["classes", "field", "label", "translationId"];
-function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
-function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return typeof key === "symbol" ? key : String(key); }
-function _toPrimitive(input, hint) { if (typeof input !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (typeof res !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
-function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
-function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-
-
-
-
-
-
-
-
-
-const Country = props => {
-  const talonProps = useCountry({
-    queries: {
-      getCountriesQuery: GET_COUNTRIES_QUERY
-    }
-  });
-  const {
-    countries,
-    loading
-  } = talonProps;
-  const {
-      classes: propClasses,
-      field,
-      label,
-      translationId
-    } = props,
-    inputProps = _objectWithoutProperties(props, _excluded);
-  const {
-    formatMessage
-  } = Object(useIntl["a" /* default */])();
-  const classes = Object(shallowMerge["a" /* default */])(Country_country_module, propClasses);
-  const selectProps = _objectSpread({
-    classes,
-    disabled: loading,
-    field,
-    items: countries
-  }, inputProps);
-  return /*#__PURE__*/react_default.a.createElement(Field_field["a" /* default */], {
-    id: classes.root,
-    label: formatMessage({
-      id: translationId,
-      defaultMessage: label
-    }),
-    classes: {
-      root: classes.root
-    }
-  }, /*#__PURE__*/react_default.a.createElement(Select_select["a" /* default */], _extends({}, selectProps, {
-    id: classes.root
-  })));
-};
-/* harmony default export */ var country = __webpack_exports__["a"] = (Country);
-Country.defaultProps = {
-  field: 'country',
-  label: 'Country',
-  translationId: 'country.label'
-};
-Country.propTypes = {
-  classes: Object(prop_types["shape"])({
-    root: prop_types["string"]
-  }),
-  field: prop_types["string"],
-  label: prop_types["string"],
-  translationId: prop_types["string"],
-  validate: prop_types["func"],
-  initialValue: prop_types["string"]
-};
-
-/***/ }),
-
 /***/ "./node_modules/@magento/venia-ui/lib/components/Dialog/dialog.js":
 /*!************************************************************************************!*\
   !*** ./node_modules/@magento/venia-ui/lib/components/Dialog/dialog.js + 2 modules ***!
@@ -7208,8 +6878,8 @@ Country.propTypes = {
 /*! exports provided: default */
 /*! exports used: default */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/shallowMerge.js because of ./src/RootComponents/CreateAccount/createAccount.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Button/button.js because of ./node_modules/@magento/venia-ui/lib/components/SignIn/signIn.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Icon/icon.js because of ./node_modules/@magento/venia-ui/lib/components/OrderHistoryPage/orderHistoryPage.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Button/button.js because of ./node_modules/@magento/venia-ui/lib/components/LinkButton/linkButton.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Icon/icon.js because of ./src/RootComponents/Account/AddressBookPage/addressBookPage.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-feather/dist/icons/x.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./src/components/Portal/portal.js because of ./node_modules/@magento/venia-ui/lib/components/CheckoutPage/ShippingInformation/editModal.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/Dialog/dialog.module.css (<- Module uses module.id) */
@@ -9129,7 +8799,7 @@ Image.defaultProps = {
   \*********************************************************************************************/
 /*! exports provided: default */
 /*! exports used: default */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Image/simpleImage.js because of ./node_modules/@magento/venia-ui/lib/components/WishlistPage/wishlistItem.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Image/simpleImage.js because of ./node_modules/@magento/venia-ui/lib/components/CartPage/ProductListing/product.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/prop-types/index.js (<- Module is not an ECMAScript module) */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react/index.js (<- Module is not an ECMAScript module) */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -9538,7 +9208,7 @@ LinkButton.defaultProps = {
 /*! exports provided: default */
 /*! exports used: default */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/shallowMerge.js because of ./src/RootComponents/CreateAccount/createAccount.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Icon/icon.js because of ./node_modules/@magento/venia-ui/lib/components/OrderHistoryPage/orderHistoryPage.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Icon/icon.js because of ./node_modules/@magento/venia-ui/lib/components/CartPage/ProductListing/product.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-feather/dist/icons/loader.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/LoadingIndicator/indicator.module.css (<- Module uses module.id) */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react/index.js (<- Module is not an ECMAScript module) */
@@ -9845,182 +9515,6 @@ var update = _style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMP
 
 
 /* harmony default export */ __webpack_exports__["a"] = (_css_loader_dist_cjs_js_ref_6_oneOf_0_1_postcss_loader_dist_cjs_js_password_module_css__WEBPACK_IMPORTED_MODULE_1__[/* default */ "a"].locals || {});
-
-/***/ }),
-
-/***/ "./node_modules/@magento/venia-ui/lib/components/Postcode/postcode.js":
-/*!****************************************************************************************!*\
-  !*** ./node_modules/@magento/venia-ui/lib/components/Postcode/postcode.js + 2 modules ***!
-  \****************************************************************************************/
-/*! exports provided: default */
-/*! exports used: default */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/hooks/hook-wrappers/useInformedFieldStateWrapper.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/shallowMerge.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Field/field.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/TextInput/textInput.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/Postcode/postcode.module.css (<- Module uses module.id) */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/informed/dist/esm/index.js (<- Module uses injected variables (process)) */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/prop-types/index.js (<- Module is not an ECMAScript module) */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-intl/lib/src/components/useIntl.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react/index.js (<- Module is not an ECMAScript module) */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js (<- Module is not an ECMAScript module) */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-
-// EXTERNAL MODULE: ./node_modules/react/index.js
-var react = __webpack_require__("./node_modules/react/index.js");
-var react_default = /*#__PURE__*/__webpack_require__.n(react);
-
-// EXTERNAL MODULE: ./node_modules/prop-types/index.js
-var prop_types = __webpack_require__("./node_modules/prop-types/index.js");
-
-// EXTERNAL MODULE: ./node_modules/react-intl/lib/src/components/useIntl.js
-var useIntl = __webpack_require__("./node_modules/react-intl/lib/src/components/useIntl.js");
-
-// EXTERNAL MODULE: ./node_modules/informed/dist/esm/index.js
-var esm = __webpack_require__("./node_modules/informed/dist/esm/index.js");
-
-// EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/hooks/hook-wrappers/useInformedFieldStateWrapper.js
-var useInformedFieldStateWrapper = __webpack_require__("./node_modules/@magento/peregrine/lib/hooks/hook-wrappers/useInformedFieldStateWrapper.js");
-
-// CONCATENATED MODULE: ./node_modules/@magento/peregrine/lib/talons/Postcode/usePostcode.js
-
-
-
-
-/**
- * The usePostcode talon handles logic for resetting the postcode field value when the country changes.
- *
- * @param {Object} props
- * @param {string} props.countryCodeField
- * @param {string} props.fieldInput - the reference field path for free form text input Defaults to "postcode".
- *
- * @return {PostcodeTalonProps}
- */
-const usePostcode = props => {
-  const {
-    countryCodeField = 'country',
-    fieldInput = 'postcode'
-  } = props;
-  const hasInitialized = Object(react["useRef"])(false);
-  const countryFieldState = Object(useInformedFieldStateWrapper["a" /* default */])(countryCodeField);
-  const {
-    value: country
-  } = countryFieldState;
-  const postcodeInputFieldApi = Object(esm["j" /* useFieldApi */])(fieldInput);
-
-  // Reset postcode when country changes. Because of how Informed sets
-  // initialValues, we want to skip the first state change of the value being
-  // initialized.
-  Object(react["useEffect"])(() => {
-    if (country) {
-      if (hasInitialized.current) {
-        postcodeInputFieldApi.reset();
-      } else {
-        hasInitialized.current = true;
-      }
-    }
-  }, [country, postcodeInputFieldApi]);
-  return {};
-};
-
-/** JSDocs type definitions */
-
-/**
- * @typedef {Object} PostcodeTalonProps
- */
-// EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/util/shallowMerge.js
-var shallowMerge = __webpack_require__("./node_modules/@magento/peregrine/lib/util/shallowMerge.js");
-
-// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/Field/field.js
-var field = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/Field/field.js");
-
-// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/TextInput/textInput.js
-var textInput = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/TextInput/textInput.js");
-
-// EXTERNAL MODULE: ./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js
-var injectStylesIntoStyleTag = __webpack_require__("./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
-var injectStylesIntoStyleTag_default = /*#__PURE__*/__webpack_require__.n(injectStylesIntoStyleTag);
-
-// EXTERNAL MODULE: ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/Postcode/postcode.module.css
-var postcode_module = __webpack_require__("./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/Postcode/postcode.module.css");
-
-// CONCATENATED MODULE: ./node_modules/@magento/venia-ui/lib/components/Postcode/postcode.module.css
-
-            
-
-var options = {"injectType":"styleTag"};
-
-options.insert = "head";
-options.singleton = false;
-
-var update = injectStylesIntoStyleTag_default()(postcode_module["a" /* default */], options);
-
-
-
-/* harmony default export */ var Postcode_postcode_module = (postcode_module["a" /* default */].locals || {});
-// CONCATENATED MODULE: ./node_modules/@magento/venia-ui/lib/components/Postcode/postcode.js
-const _excluded = ["classes", "fieldInput", "label"];
-function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
-function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return typeof key === "symbol" ? key : String(key); }
-function _toPrimitive(input, hint) { if (typeof input !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (typeof res !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
-function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
-function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-
-
-
-
-
-
-
-
-const Postcode = props => {
-  const {
-      classes: propClasses,
-      fieldInput,
-      label
-    } = props,
-    inputProps = _objectWithoutProperties(props, _excluded);
-  const classes = Object(shallowMerge["a" /* default */])(Postcode_postcode_module, propClasses);
-  const postcodeProps = _objectSpread({
-    classes
-  }, inputProps);
-  const {
-    formatMessage
-  } = Object(useIntl["a" /* default */])();
-  const fieldLabel = label || formatMessage({
-    id: 'postcode.label',
-    defaultMessage: 'ZIP / Postal Code'
-  });
-  usePostcode({
-    fieldInput
-  });
-  return /*#__PURE__*/react_default.a.createElement(field["a" /* default */], {
-    id: classes.root,
-    label: fieldLabel,
-    classes: {
-      root: classes.root
-    }
-  }, /*#__PURE__*/react_default.a.createElement(textInput["a" /* default */], _extends({}, postcodeProps, {
-    field: fieldInput,
-    id: classes.root
-  })));
-};
-/* harmony default export */ var postcode = __webpack_exports__["a"] = (Postcode);
-Postcode.defaultProps = {
-  fieldInput: 'postcode'
-};
-Postcode.propTypes = {
-  classes: Object(prop_types["shape"])({
-    root: prop_types["string"]
-  }),
-  fieldInput: prop_types["string"],
-  label: prop_types["string"]
-};
 
 /***/ }),
 
@@ -10713,445 +10207,6 @@ Options.propTypes = {
   selectedValues: prop_types["array"]
 };
 /* harmony default export */ var ProductOptions_options = __webpack_exports__["a"] = (Options);
-
-/***/ }),
-
-/***/ "./node_modules/@magento/venia-ui/lib/components/Region/region.js":
-/*!************************************************************************************!*\
-  !*** ./node_modules/@magento/venia-ui/lib/components/Region/region.js + 3 modules ***!
-  \************************************************************************************/
-/*! exports provided: default */
-/*! exports used: default */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/react/hooks/useQuery.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/hooks/hook-wrappers/useInformedFieldStateWrapper.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/shallowMerge.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Field/field.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Select/select.js because of ./node_modules/@magento/venia-ui/lib/components/AddressBookPage/addEditDialog.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/TextInput/textInput.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/Region/region.module.css (<- Module uses module.id) */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql-tag/lib/index.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/informed/dist/esm/index.js (<- Module uses injected variables (process)) */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/prop-types/index.js (<- Module is not an ECMAScript module) */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-intl/lib/src/components/useIntl.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react/index.js (<- Module is not an ECMAScript module) */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js (<- Module is not an ECMAScript module) */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-
-// EXTERNAL MODULE: ./node_modules/react/index.js
-var react = __webpack_require__("./node_modules/react/index.js");
-var react_default = /*#__PURE__*/__webpack_require__.n(react);
-
-// EXTERNAL MODULE: ./node_modules/react-intl/lib/src/components/useIntl.js
-var useIntl = __webpack_require__("./node_modules/react-intl/lib/src/components/useIntl.js");
-
-// EXTERNAL MODULE: ./node_modules/prop-types/index.js
-var prop_types = __webpack_require__("./node_modules/prop-types/index.js");
-
-// EXTERNAL MODULE: ./node_modules/@apollo/client/react/hooks/useQuery.js
-var useQuery = __webpack_require__("./node_modules/@apollo/client/react/hooks/useQuery.js");
-
-// EXTERNAL MODULE: ./node_modules/informed/dist/esm/index.js
-var esm = __webpack_require__("./node_modules/informed/dist/esm/index.js");
-
-// EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/hooks/hook-wrappers/useInformedFieldStateWrapper.js
-var useInformedFieldStateWrapper = __webpack_require__("./node_modules/@magento/peregrine/lib/hooks/hook-wrappers/useInformedFieldStateWrapper.js");
-
-// CONCATENATED MODULE: ./node_modules/@magento/peregrine/lib/talons/Region/useRegion.js
-
-
-
-
-
-/**
- * The useRegion talon handles logic for:
- *
- *  * Resetting the region field value when the country changes.
- *  * Querying for available regions for a country and rendering them.
- *
- * @param {Object} props
- * @param {string} props.countryCodeField
- * @param {string} props.fieldInput - the reference field path for free form text input Defaults to "region".
- * @param {string} props.fieldSelect - the reference field path for selectable list of regions. Defaults to "region".
- * @param {string} props.optionValueKey - the key used to get the value for the field. Defaults to "code"
- * @param {GraphQLAST} props.queries.getRegionsQuery - query to fetch regions for a country.
- *
- * @return {RegionTalonProps}
- */
-const useRegion = props => {
-  const {
-    countryCodeField = 'country',
-    fieldInput = 'region',
-    fieldSelect = 'region',
-    optionValueKey = 'code',
-    queries: {
-      getRegionsQuery
-    }
-  } = props;
-  const hasInitialized = Object(react["useRef"])(false);
-  const countryFieldState = Object(useInformedFieldStateWrapper["a" /* default */])(countryCodeField);
-  const {
-    value: country
-  } = countryFieldState;
-  const regionInputFieldApi = Object(esm["j" /* useFieldApi */])(fieldInput);
-  const regionSelectFieldApi = Object(esm["j" /* useFieldApi */])(fieldSelect);
-  const {
-    data,
-    loading
-  } = Object(useQuery["a" /* useQuery */])(getRegionsQuery, {
-    variables: {
-      countryCode: country
-    },
-    skip: !country
-  });
-
-  // Reset region value when country changes. Because of how Informed sets
-  // initialValues, we want to skip the first state change of the value being
-  // initialized.
-  Object(react["useEffect"])(() => {
-    if (country && !loading) {
-      if (hasInitialized.current) {
-        regionInputFieldApi.exists() && regionInputFieldApi.setValue();
-        regionSelectFieldApi.exists() && regionSelectFieldApi.setValue();
-      } else {
-        hasInitialized.current = true;
-      }
-    }
-  }, [country, regionInputFieldApi, regionSelectFieldApi, loading]);
-  let formattedRegionsData = [{
-    label: 'Loading Regions...',
-    value: ''
-  }];
-  if (data) {
-    const {
-      country
-    } = data;
-    const {
-      available_regions: availableRegions
-    } = country;
-    if (availableRegions) {
-      formattedRegionsData = availableRegions.map(region => ({
-        key: region.id,
-        label: region.name,
-        value: region[optionValueKey]
-      }));
-      formattedRegionsData.unshift({
-        disabled: true,
-        hidden: true,
-        label: '',
-        value: ''
-      });
-    } else {
-      formattedRegionsData = [];
-    }
-  }
-  return {
-    loading,
-    regions: formattedRegionsData
-  };
-};
-
-/** JSDocs type definitions */
-
-/**
- * @typedef {Object} RegionTalonProps
- *
- * @property {boolean} loading whether the regions are loading
- * @property {Array<Region>} regions array of formatted regions for the country
- *
- */
-
-/**
- * @typedef {Object} Region
- *
- * @property {number} key the id of the region
- * @property {String} label the label of the region
- * @property {String} value the value of the region
- */
-// EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/util/shallowMerge.js
-var shallowMerge = __webpack_require__("./node_modules/@magento/peregrine/lib/util/shallowMerge.js");
-
-// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/Field/field.js
-var field = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/Field/field.js");
-
-// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/Select/select.js + 1 modules
-var Select_select = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/Select/select.js");
-
-// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/TextInput/textInput.js
-var textInput = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/TextInput/textInput.js");
-
-// EXTERNAL MODULE: ./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js
-var injectStylesIntoStyleTag = __webpack_require__("./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
-var injectStylesIntoStyleTag_default = /*#__PURE__*/__webpack_require__.n(injectStylesIntoStyleTag);
-
-// EXTERNAL MODULE: ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/Region/region.module.css
-var region_module = __webpack_require__("./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/Region/region.module.css");
-
-// CONCATENATED MODULE: ./node_modules/@magento/venia-ui/lib/components/Region/region.module.css
-
-            
-
-var options = {"injectType":"styleTag"};
-
-options.insert = "head";
-options.singleton = false;
-
-var update = injectStylesIntoStyleTag_default()(region_module["a" /* default */], options);
-
-
-
-/* harmony default export */ var Region_region_module = (region_module["a" /* default */].locals || {});
-// EXTERNAL MODULE: ./node_modules/graphql-tag/lib/index.js + 3 modules
-var lib = __webpack_require__("./node_modules/graphql-tag/lib/index.js");
-
-// CONCATENATED MODULE: ./node_modules/@magento/venia-ui/lib/components/Region/region.gql.js
-
-const GET_REGIONS_QUERY = lib["a" /* gql */]`
-    query GetRegions($countryCode: String!) {
-        country(id: $countryCode) {
-            id
-            available_regions {
-                id
-                code
-                name
-            }
-        }
-    }
-`;
-// CONCATENATED MODULE: ./node_modules/@magento/venia-ui/lib/components/Region/region.js
-const _excluded = ["classes", "countryCodeField", "fieldInput", "fieldSelect", "label", "translationId", "optionValueKey"];
-function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
-function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return typeof key === "symbol" ? key : String(key); }
-function _toPrimitive(input, hint) { if (typeof input !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (typeof res !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
-function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
-function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-
-
-
-
-
-
-
-
-
-
-
-/**
- * Form component for Region that is seeded with backend data.
- *
- * @param {string} props.optionValueKey - Key to use for returned option values. In a future release, this will be removed and hard-coded to use "id" once GraphQL has resolved MC-30886.
- */
-const Region = props => {
-  const {
-      classes: propClasses,
-      countryCodeField,
-      fieldInput,
-      fieldSelect,
-      label,
-      translationId,
-      optionValueKey
-    } = props,
-    inputProps = _objectWithoutProperties(props, _excluded);
-  const {
-    formatMessage
-  } = Object(useIntl["a" /* default */])();
-  const talonProps = useRegion({
-    countryCodeField,
-    fieldInput,
-    fieldSelect,
-    optionValueKey,
-    queries: {
-      getRegionsQuery: GET_REGIONS_QUERY
-    }
-  });
-  const {
-    loading,
-    regions
-  } = talonProps;
-  const classes = Object(shallowMerge["a" /* default */])(Region_region_module, propClasses);
-  const regionProps = _objectSpread({
-    classes,
-    disabled: loading
-  }, inputProps);
-  const regionField = regions.length || loading ? /*#__PURE__*/react_default.a.createElement(Select_select["a" /* default */], _extends({}, regionProps, {
-    field: fieldSelect,
-    id: classes.root,
-    items: regions
-  })) : /*#__PURE__*/react_default.a.createElement(textInput["a" /* default */], _extends({}, regionProps, {
-    field: fieldInput,
-    id: classes.root
-  }));
-  return /*#__PURE__*/react_default.a.createElement(field["a" /* default */], {
-    id: classes.root,
-    label: formatMessage({
-      id: translationId,
-      defaultMessage: label
-    }),
-    classes: {
-      root: classes.root
-    }
-  }, regionField);
-};
-/* harmony default export */ var region = __webpack_exports__["a"] = (Region);
-Region.defaultProps = {
-  countryCodeField: 'country',
-  fieldInput: 'region',
-  fieldSelect: 'region',
-  label: 'State',
-  translationId: 'region.label',
-  optionValueKey: 'code'
-};
-Region.propTypes = {
-  classes: Object(prop_types["shape"])({
-    root: prop_types["string"]
-  }),
-  countryCodeField: prop_types["string"],
-  fieldInput: prop_types["string"],
-  fieldSelect: prop_types["string"],
-  label: prop_types["string"],
-  translationId: prop_types["string"],
-  optionValueKey: prop_types["string"],
-  validate: prop_types["func"],
-  initialValue: Object(prop_types["oneOfType"])([prop_types["number"], prop_types["string"]])
-};
-
-/***/ }),
-
-/***/ "./node_modules/@magento/venia-ui/lib/components/Select/select.js":
-/*!************************************************************************************!*\
-  !*** ./node_modules/@magento/venia-ui/lib/components/Select/select.js + 1 modules ***!
-  \************************************************************************************/
-/*! exports provided: default */
-/*! exports used: default */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/shallowMerge.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Field/fieldIcons.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Field/message.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Icon/icon.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-feather/dist/icons/chevron-down.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/Select/select.module.css (<- Module uses module.id) */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/informed/dist/esm/index.js (<- Module uses injected variables (process)) */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/prop-types/index.js (<- Module is not an ECMAScript module) */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react/index.js (<- Module is not an ECMAScript module) */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js (<- Module is not an ECMAScript module) */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-
-// EXTERNAL MODULE: ./node_modules/react/index.js
-var react = __webpack_require__("./node_modules/react/index.js");
-var react_default = /*#__PURE__*/__webpack_require__.n(react);
-
-// EXTERNAL MODULE: ./node_modules/prop-types/index.js
-var prop_types = __webpack_require__("./node_modules/prop-types/index.js");
-
-// EXTERNAL MODULE: ./node_modules/informed/dist/esm/index.js
-var esm = __webpack_require__("./node_modules/informed/dist/esm/index.js");
-
-// EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/util/shallowMerge.js
-var shallowMerge = __webpack_require__("./node_modules/@magento/peregrine/lib/util/shallowMerge.js");
-
-// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/Field/fieldIcons.js + 1 modules
-var fieldIcons = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/Field/fieldIcons.js");
-
-// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/Field/message.js + 1 modules
-var Field_message = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/Field/message.js");
-
-// EXTERNAL MODULE: ./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js
-var injectStylesIntoStyleTag = __webpack_require__("./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
-var injectStylesIntoStyleTag_default = /*#__PURE__*/__webpack_require__.n(injectStylesIntoStyleTag);
-
-// EXTERNAL MODULE: ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/Select/select.module.css
-var select_module = __webpack_require__("./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/Select/select.module.css");
-
-// CONCATENATED MODULE: ./node_modules/@magento/venia-ui/lib/components/Select/select.module.css
-
-            
-
-var select_module_options = {"injectType":"styleTag"};
-
-select_module_options.insert = "head";
-select_module_options.singleton = false;
-
-var update = injectStylesIntoStyleTag_default()(select_module["a" /* default */], select_module_options);
-
-
-
-/* harmony default export */ var Select_select_module = (select_module["a" /* default */].locals || {});
-// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/Icon/icon.js + 1 modules
-var icon = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/Icon/icon.js");
-
-// EXTERNAL MODULE: ./node_modules/react-feather/dist/icons/chevron-down.js
-var chevron_down = __webpack_require__("./node_modules/react-feather/dist/icons/chevron-down.js");
-
-// CONCATENATED MODULE: ./node_modules/@magento/venia-ui/lib/components/Select/select.js
-const _excluded = ["before", "classes", "field", "items", "message"];
-function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
-function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-
-
-
-
-
-
-
-
-const arrow = /*#__PURE__*/react_default.a.createElement(icon["a" /* default */], {
-  src: chevron_down["a" /* default */],
-  size: 24
-});
-const Select = props => {
-  const {
-      before,
-      classes: propClasses,
-      field,
-      items,
-      message
-    } = props,
-    rest = _objectWithoutProperties(props, _excluded);
-  const fieldState = Object(esm["k" /* useFieldState */])(field);
-  const classes = Object(shallowMerge["a" /* default */])(Select_select_module, propClasses);
-  const inputClass = fieldState.error ? classes.input_error : classes.input;
-  const options = items.map(({
-    disabled = null,
-    hidden = null,
-    label,
-    value,
-    key = value
-  }) => /*#__PURE__*/react_default.a.createElement(esm["c" /* Option */], {
-    key: key,
-    disabled: disabled,
-    hidden: hidden,
-    value: value
-  }, label || (value != null ? value : '')));
-  return /*#__PURE__*/react_default.a.createElement(react["Fragment"], null, /*#__PURE__*/react_default.a.createElement(fieldIcons["a" /* default */], {
-    after: arrow,
-    before: before
-  }, /*#__PURE__*/react_default.a.createElement(esm["g" /* Select */], _extends({}, rest, {
-    className: inputClass,
-    field: field
-  }), options)), /*#__PURE__*/react_default.a.createElement(Field_message["a" /* default */], {
-    fieldState: fieldState
-  }, message));
-};
-/* harmony default export */ var Select_select = __webpack_exports__["a"] = (Select);
-Select.propTypes = {
-  before: prop_types["node"],
-  classes: Object(prop_types["shape"])({
-    input: prop_types["string"]
-  }),
-  field: prop_types["string"].isRequired,
-  items: Object(prop_types["arrayOf"])(Object(prop_types["shape"])({
-    key: Object(prop_types["oneOfType"])([prop_types["number"], prop_types["string"]]),
-    label: prop_types["string"],
-    value: Object(prop_types["oneOfType"])([prop_types["number"], prop_types["string"]])
-  })),
-  message: prop_types["node"]
-};
 
 /***/ }),
 
@@ -18221,120 +17276,6 @@ ___CSS_LOADER_EXPORT___.locals = {
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/AddressBookPage/addEditDialog.module.css":
-/*!**************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/AddressBookPage/addEditDialog.module.css ***!
-  \**************************************************************************************************************************************************************************************************/
-/*! exports provided: default */
-/*! exports used: default */
-/*! ModuleConcatenation bailout: Module uses module.id */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var _css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../../css-loader/dist/runtime/cssWithMappingToString.js */ "./node_modules/css-loader/dist/runtime/cssWithMappingToString.js");
-/* harmony import */ var _css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
-/* harmony import */ var _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
-// Imports
-
-
-var ___CSS_LOADER_EXPORT___ = _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()(_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default.a);
-// Module
-___CSS_LOADER_EXPORT___.push([module.i, ".addEditDialog-root-rXa {\n}\n\n.addEditDialog-fullWidthField-MFL {\n}\n\n@media (min-width: 960px) {\n    .addEditDialog-lastname-8DW,\n    .addEditDialog-country-Kxc,\n    .addEditDialog-default_address_check-8tg {\n    }\n}\n", "",{"version":3,"sources":["webpack://./node_modules/@magento/venia-ui/lib/components/AddressBookPage/addEditDialog.module.css"],"names":[],"mappings":"AAAA;AAOA;;AAEA;AAEA;;AAEA;IACI;;;IAIA;AACJ","sourcesContent":[".root {\n    composes: gap-x-2xs from global;\n    composes: gap-y-sm from global;\n    composes: grid from global;\n    composes: grid-cols-1 from global;\n\n    composes: lg_grid-cols-2 from global;\n}\n\n.fullWidthField {\n    composes: lg_col-end-span2 from global;\n}\n\n@media (min-width: 960px) {\n    .lastname,\n    .country,\n    .default_address_check {\n        composes: fullWidthField;\n    }\n}\n"],"sourceRoot":""}]);
-// Exports
-___CSS_LOADER_EXPORT___.locals = {
-	"root": "addEditDialog-root-rXa gap-x-2xs gap-y-sm grid grid-cols-1 lg_grid-cols-2",
-	"fullWidthField": "addEditDialog-fullWidthField-MFL lg_col-end-span2",
-	"lastname": "addEditDialog-lastname-8DW addEditDialog-fullWidthField-MFL lg_col-end-span2",
-	"country": "addEditDialog-country-Kxc addEditDialog-fullWidthField-MFL lg_col-end-span2",
-	"default_address_check": "addEditDialog-default_address_check-8tg addEditDialog-fullWidthField-MFL lg_col-end-span2"
-};
-/* harmony default export */ __webpack_exports__["a"] = (___CSS_LOADER_EXPORT___);
-
-
-/***/ }),
-
-/***/ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/AddressBookPage/addressBookPage.module.css":
-/*!****************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/AddressBookPage/addressBookPage.module.css ***!
-  \****************************************************************************************************************************************************************************************************/
-/*! exports provided: default */
-/*! exports used: default */
-/*! ModuleConcatenation bailout: Module uses module.id */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var _css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../../css-loader/dist/runtime/cssWithMappingToString.js */ "./node_modules/css-loader/dist/runtime/cssWithMappingToString.js");
-/* harmony import */ var _css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
-/* harmony import */ var _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
-// Imports
-
-
-var ___CSS_LOADER_EXPORT___ = _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()(_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default.a);
-// Module
-___CSS_LOADER_EXPORT___.push([module.i, ".addressBookPage-root-Hcy {\n}\n\n.addressBookPage-heading-KS0 {\n}\n\n.addressBookPage-content-oUx {\n    grid-auto-rows: minmax(6rem, max-content);\n}\n\n.addressBookPage-addButton--cR {\n    transition: border-color 384ms var(--venia-global-anim-standard);\n}\n.addressBookPage-addButton--cR:focus {\n    box-shadow: -6px 6px rgb(var(--venia-global-color-blue-100));\n}\n", "",{"version":3,"sources":["webpack://./node_modules/@magento/venia-ui/lib/components/AddressBookPage/addressBookPage.module.css"],"names":[],"mappings":"AAAA;AAQA;;AAEA;AAOA;;AAEA;IAII,yCAAyC;AAK7C;;AAEA;IAQI,gEAAgE;AAMpE;AACA;IACI,4DAA4D;AAChE","sourcesContent":[".root {\n    composes: max-w-site from global;\n    composes: mx-auto from global;\n    composes: my-0 from global;\n    composes: px-sm from global;\n    composes: py-md from global;\n\n    composes: lg_px-lg from global;\n}\n\n.heading {\n    composes: capitalize from global;\n    composes: font-bold from global;\n    composes: font-serif from global;\n    composes: leading-tight from global;\n    composes: mb-md from global;\n    composes: text-center from global;\n}\n\n.content {\n    composes: gap-xs from global;\n    composes: grid from global;\n    composes: grid-cols-1 from global;\n    grid-auto-rows: minmax(6rem, max-content);\n\n    composes: sm_grid-cols-2 from global;\n\n    composes: lg_grid-cols-3 from global;\n}\n\n.addButton {\n    composes: border-2 from global;\n    composes: border-dashed from global;\n    composes: border-subtle from global;\n    composes: font-semibold from global;\n    composes: rounded-md from global;\n    composes: text-brand-dark from global;\n    composes: text-sm from global;\n    transition: border-color 384ms var(--venia-global-anim-standard);\n\n    composes: focus_outline-none from global;\n    composes: focus_shadow-buttonFocus from global;\n\n    composes: hover_border-brand-dark from global;\n}\n.addButton:focus {\n    box-shadow: -6px 6px rgb(var(--venia-global-color-blue-100));\n}\n"],"sourceRoot":""}]);
-// Exports
-___CSS_LOADER_EXPORT___.locals = {
-	"root": "addressBookPage-root-Hcy max-w-site mx-auto my-0 px-sm py-md lg_px-lg",
-	"heading": "addressBookPage-heading-KS0 capitalize font-bold font-serif leading-tight mb-md text-center",
-	"content": "addressBookPage-content-oUx gap-xs grid grid-cols-1 sm_grid-cols-2 lg_grid-cols-3",
-	"addButton": "addressBookPage-addButton--cR border-2 border-dashed border-subtle font-semibold rounded-md text-brand-dark text-sm focus_outline-none focus_shadow-buttonFocus hover_border-brand-dark"
-};
-/* harmony default export */ __webpack_exports__["a"] = (___CSS_LOADER_EXPORT___);
-
-
-/***/ }),
-
-/***/ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/AddressBookPage/addressCard.module.css":
-/*!************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/AddressBookPage/addressCard.module.css ***!
-  \************************************************************************************************************************************************************************************************/
-/*! exports provided: default */
-/*! exports used: default */
-/*! ModuleConcatenation bailout: Module uses module.id */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var _css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../../css-loader/dist/runtime/cssWithMappingToString.js */ "./node_modules/css-loader/dist/runtime/cssWithMappingToString.js");
-/* harmony import */ var _css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
-/* harmony import */ var _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _css_loader_dist_cjs_js_ref_6_oneOf_0_1_postcss_loader_dist_cjs_js_Button_button_module_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! -!../../../../../css-loader/dist/cjs.js??ref--6-oneOf-0-1!../../../../../postcss-loader/dist/cjs.js!../Button/button.module.css */ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/Button/button.module.css");
-/* harmony import */ var _css_loader_dist_cjs_js_ref_6_oneOf_0_1_postcss_loader_dist_cjs_js_LinkButton_linkButton_module_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! -!../../../../../css-loader/dist/cjs.js??ref--6-oneOf-0-1!../../../../../postcss-loader/dist/cjs.js!../LinkButton/linkButton.module.css */ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/LinkButton/linkButton.module.css");
-// Imports
-
-
-
-
-var ___CSS_LOADER_EXPORT___ = _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()(_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default.a);
-___CSS_LOADER_EXPORT___.i(_css_loader_dist_cjs_js_ref_6_oneOf_0_1_postcss_loader_dist_cjs_js_Button_button_module_css__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"], "", true);
-___CSS_LOADER_EXPORT___.i(_css_loader_dist_cjs_js_ref_6_oneOf_0_1_postcss_loader_dist_cjs_js_LinkButton_linkButton_module_css__WEBPACK_IMPORTED_MODULE_3__[/* default */ "a"], "", true);
-// Module
-___CSS_LOADER_EXPORT___.push([module.i, ".addressCard-root-ZBw {\n    grid-template-columns: 1fr max-content;\n}\n\n.addressCard-root_updated-Lx7 {\n\n    animation: addressCard-flash-Im0 var(--venia-global-anim-bounce) 640ms 2;\n}\n\n.addressCard-confirmDeleteContainer-zf3 {\n}\n\n@media (min-width: 640px) {\n    .addressCard-confirmDeleteContainer-zf3 {\n        grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));\n    }\n}\n\n.addressCard-confirmDeleteButton-8cu {\n}\n\n.addressCard-cancelDeleteButton-8mu {\n}\n\n.addressCard-contentContainer-iXN {\n}\n\n.addressCard-actionContainer-s2W {\n}\n\n.addressCard-defaultBadge-Gph {\n}\n\n.addressCard-name-imn {\n}\n\n.addressCard-telephone-ZM- {\n}\n\n.addressCard-linkButton-Dvb {\n}\n\n.addressCard-editButton-t6G {\n}\n\n.addressCard-deleteButton-urc {\n}\n\n.addressCard-actionLabel-FV2 {\n}\n\n@keyframes addressCard-flash-Im0 {\n    0% {\n        opacity: 1;\n    }\n    50% {\n        opacity: 0.5;\n    }\n    100% {\n        opacity: 1;\n    }\n}\n", "",{"version":3,"sources":["webpack://./node_modules/@magento/venia-ui/lib/components/AddressBookPage/addressCard.module.css"],"names":[],"mappings":"AAAA;IASI,sCAAsC;AAI1C;;AAEA;;IAGI,wEAAwD;AAC5D;;AAEA;AAgBA;;AAEA;IACI;QACI,2DAA2D;IAC/D;AACJ;;AAEA;AAMA;;AAEA;AAIA;;AAEA;AAGA;;AAEA;AAKA;;AAEA;AAWA;;AAEA;AAEA;;AAEA;AAEA;;AAEA;AAIA;;AAEA;AAEA;;AAEA;AAEA;;AAEA;AAIA;;AAEA;IACI;QACI,UAAU;IACd;IACA;QACI,YAAY;IAChB;IACA;QACI,UAAU;IACd;AACJ","sourcesContent":[".root {\n    composes: border-2 from global;\n    composes: border-solid from global;\n    composes: border-subtle from global;\n    composes: content-start from global;\n    composes: grid from global;\n    composes: p-xs from global;\n    composes: relative from global;\n    composes: rounded-md from global;\n    grid-template-columns: 1fr max-content;\n\n    composes: sm_px-md from global;\n    composes: sm_px-5 from global;\n}\n\n.root_updated {\n    composes: root;\n\n    animation: flash var(--venia-global-anim-bounce) 640ms 2;\n}\n\n.confirmDeleteContainer {\n    composes: absolute from global;\n    composes: bg-white from global;\n    composes: gap-md from global;\n    composes: grid from global;\n    composes: grid-cols-1 from global;\n    composes: h-full from global;\n    composes: items-center from global;\n    composes: justify-items-center from global;\n    composes: left-0 from global;\n    composes: p-xs from global;\n    composes: top-0 from global;\n    composes: w-full from global;\n\n    composes: sm_px-md from global;\n    composes: sm_py-5 from global;\n}\n\n@media (min-width: 640px) {\n    .confirmDeleteContainer {\n        grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));\n    }\n}\n\n.confirmDeleteButton {\n    composes: root_normalPriorityNegative from '../Button/button.module.css';\n\n    composes: bg-white from global;\n    composes: order-first from global;\n    composes: sm_order-1 from global;\n}\n\n.cancelDeleteButton {\n    composes: root_lowPriority from '../Button/button.module.css';\n\n    composes: bg-white from global;\n}\n\n.contentContainer {\n    composes: gap-y-2xs from global;\n    composes: grid from global;\n}\n\n.actionContainer {\n    composes: content-start from global;\n    composes: gap-y-2xs from global;\n    composes: grid from global;\n    composes: justify-items-start from global;\n}\n\n.defaultBadge {\n    composes: border from global;\n    composes: border-solid from global;\n    composes: border-subtle from global;\n    composes: font-semibold from global;\n    composes: mb-2xs from global;\n    composes: px-sm from global;\n    composes: py-1.5 from global;\n    composes: rounded-md from global;\n    composes: text-xs from global;\n    composes: w-max from global;\n}\n\n.name {\n    composes: font-semibold from global;\n}\n\n.telephone {\n    composes: mt-2xs from global;\n}\n\n.linkButton {\n    composes: root from '../LinkButton/linkButton.module.css';\n\n    composes: no-underline from global;\n}\n\n.editButton {\n    composes: linkButton;\n}\n\n.deleteButton {\n    composes: linkButton;\n}\n\n.actionLabel {\n    composes: hidden from global;\n\n    composes: xs_inline from global;\n}\n\n@keyframes flash {\n    0% {\n        opacity: 1;\n    }\n    50% {\n        opacity: 0.5;\n    }\n    100% {\n        opacity: 1;\n    }\n}\n"],"sourceRoot":""}]);
-// Exports
-___CSS_LOADER_EXPORT___.locals = {
-	"root": "addressCard-root-ZBw border-2 border-solid border-subtle content-start grid p-xs relative rounded-md sm_px-md sm_px-5",
-	"root_updated": "addressCard-root_updated-Lx7 addressCard-root-ZBw border-2 border-solid border-subtle content-start grid p-xs relative rounded-md sm_px-md sm_px-5",
-	"flash": "addressCard-flash-Im0",
-	"confirmDeleteContainer": "addressCard-confirmDeleteContainer-zf3 absolute bg-white gap-md grid grid-cols-1 h-full items-center justify-items-center left-0 p-xs top-0 w-full sm_px-md sm_py-5",
-	"confirmDeleteButton": "addressCard-confirmDeleteButton-8cu " + _css_loader_dist_cjs_js_ref_6_oneOf_0_1_postcss_loader_dist_cjs_js_Button_button_module_css__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"].locals["root_normalPriorityNegative"] + " bg-white order-first sm_order-1",
-	"cancelDeleteButton": "addressCard-cancelDeleteButton-8mu " + _css_loader_dist_cjs_js_ref_6_oneOf_0_1_postcss_loader_dist_cjs_js_Button_button_module_css__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"].locals["root_lowPriority"] + " bg-white",
-	"contentContainer": "addressCard-contentContainer-iXN gap-y-2xs grid",
-	"actionContainer": "addressCard-actionContainer-s2W content-start gap-y-2xs grid justify-items-start",
-	"defaultBadge": "addressCard-defaultBadge-Gph border border-solid border-subtle font-semibold mb-2xs px-sm py-1.5 rounded-md text-xs w-max",
-	"name": "addressCard-name-imn font-semibold",
-	"telephone": "addressCard-telephone-ZM- mt-2xs",
-	"linkButton": "addressCard-linkButton-Dvb " + _css_loader_dist_cjs_js_ref_6_oneOf_0_1_postcss_loader_dist_cjs_js_LinkButton_linkButton_module_css__WEBPACK_IMPORTED_MODULE_3__[/* default */ "a"].locals["root"] + " no-underline",
-	"editButton": "addressCard-editButton-t6G addressCard-linkButton-Dvb " + _css_loader_dist_cjs_js_ref_6_oneOf_0_1_postcss_loader_dist_cjs_js_LinkButton_linkButton_module_css__WEBPACK_IMPORTED_MODULE_3__[/* default */ "a"].locals["root"] + " no-underline",
-	"deleteButton": "addressCard-deleteButton-urc addressCard-linkButton-Dvb " + _css_loader_dist_cjs_js_ref_6_oneOf_0_1_postcss_loader_dist_cjs_js_LinkButton_linkButton_module_css__WEBPACK_IMPORTED_MODULE_3__[/* default */ "a"].locals["root"] + " no-underline",
-	"actionLabel": "addressCard-actionLabel-FV2 hidden xs_inline"
-};
-/* harmony default export */ __webpack_exports__["a"] = (___CSS_LOADER_EXPORT___);
-
-
-/***/ }),
-
 /***/ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/Button/button.module.css":
 /*!**********************************************************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/Button/button.module.css ***!
@@ -18365,68 +17306,6 @@ ___CSS_LOADER_EXPORT___.locals = {
 	"root_normalPriorityNegative": "button-root_normalPriorityNegative-x-d button-root-MFn border-2 border-solid cursor-pointer font-bold inline-flex items-center justify-center leading-tight max-w-full min-w-[10rem] outline-none pointer-events-auto px-sm rounded-full text-center text-sm uppercase disabled_bg-gray-400 disabled_border-gray-400 disabled_opacity-50 disabled_pointer-events-none disabled_text-white focus_shadow-inputFocus bg-transparent border-red-600 text-red-600 active_border-red-700 active_text-red-700 hover_border-red-700 hover_text-red-700",
 	"root_highPriorityNegative": "button-root_highPriorityNegative-gwK button-root-MFn border-2 border-solid cursor-pointer font-bold inline-flex items-center justify-center leading-tight max-w-full min-w-[10rem] outline-none pointer-events-auto px-sm rounded-full text-center text-sm uppercase disabled_bg-gray-400 disabled_border-gray-400 disabled_opacity-50 disabled_pointer-events-none disabled_text-white focus_shadow-inputFocus bg-red-600 border-red-600 text-white active_bg-red-700 active_border-red-700 active_text-white hover_bg-red-700 hover_border-red-700 hover_text-white",
 	"content": "button-content-TD8 gap-1.5 grid-flow-col inline-grid items-center justify-center justify-items-center"
-};
-/* harmony default export */ __webpack_exports__["a"] = (___CSS_LOADER_EXPORT___);
-
-
-/***/ }),
-
-/***/ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/Checkbox/checkbox.module.css":
-/*!**************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/Checkbox/checkbox.module.css ***!
-  \**************************************************************************************************************************************************************************************/
-/*! exports provided: default */
-/*! exports used: default */
-/*! ModuleConcatenation bailout: Module uses module.id */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var _css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../../css-loader/dist/runtime/cssWithMappingToString.js */ "./node_modules/css-loader/dist/runtime/cssWithMappingToString.js");
-/* harmony import */ var _css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
-/* harmony import */ var _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
-// Imports
-
-
-var ___CSS_LOADER_EXPORT___ = _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()(_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default.a);
-// Module
-___CSS_LOADER_EXPORT___.push([module.i, ".checkbox-root-hF1 {\n    --stroke: var(--venia-global-color-gray-600);\n    grid-template-areas: 'input label';\n    grid-template-columns: min-content 1fr;\n}\n\n.checkbox-input-WEy {\n    grid-area: input;\n\n    /* TODO @TW: review, replaces input:disabled. Check if working. */\n}\n\n.checkbox-icon-eiW {\n    grid-area: input;\n}\n\n.checkbox-icon-eiW svg {\n    stroke: rgb(var(--stroke));\n}\n\n.checkbox-label-wHh {\n    grid-area: label;\n}\n\n/* When the input is disabled, update the cursor on the sibling label element. */\n/* TODO @TW: cannot compose */\n.checkbox-input-WEy:disabled ~ .checkbox-label-wHh {\n    cursor: default;\n}\n\n.checkbox-input-WEy:checked:enabled + .checkbox-icon-eiW {\n    --stroke: var(--venia-brand-color-1-700);\n}\n\n/* TODO @TW: cannot compose, needs \"checked\" variant enabled. Cannot combine variants. */\n.checkbox-input-WEy:active:enabled,\n.checkbox-input-WEy:focus:enabled {\n    /* composes: active_shadow-radioActive from global; */\n    /* composes: focus_shadow-radioFocus from global; */\n    box-shadow: -3px 3px rgb(var(--venia-brand-color-1-100));\n    outline: none;\n}\n\n.checkbox-input_shimmer-yEr {\n}\n", "",{"version":3,"sources":["webpack://./node_modules/@magento/venia-ui/lib/components/Checkbox/checkbox.module.css"],"names":[],"mappings":"AAAA;IACI,4CAA4C;IAS5C,kCAAkC;IAClC,sCAAsC;AAC1C;;AAEA;IAUI,gBAAgB;;IAEhB,iEAAiE;AAErE;;AAEA;IAII,gBAAgB;AACpB;;AAEA;IACI,0BAA0B;AAC9B;;AAEA;IAII,gBAAgB;AACpB;;AAEA,gFAAgF;AAChF,6BAA6B;AAC7B;IACI,eAAe;AACnB;;AAEA;IACI,wCAAwC;AAC5C;;AAEA,wFAAwF;AACxF;;IAEI,qDAAqD;IACrD,mDAAmD;IACnD,wDAAwD;IACxD,aAAa;AACjB;;AAEA;AAIA","sourcesContent":[".root {\n    --stroke: var(--venia-global-color-gray-600);\n\n    composes: gap-3 from global;\n    composes: grid from global;\n    composes: grid-flow-col from global;\n    composes: items-center from global;\n    composes: justify-items-center from global;\n    composes: leading-normal from global;\n    composes: text-colorDefault from global;\n    grid-template-areas: 'input label';\n    grid-template-columns: min-content 1fr;\n}\n\n.input {\n    composes: appearance-none from global;\n    composes: bg-transparent from global;\n    composes: border-2 from global;\n    composes: border-solid from global;\n    composes: border-transparent from global;\n    composes: cursor-pointer from global;\n    composes: h-[1.5rem] from global;\n    composes: rounded from global;\n    composes: w-[1.5rem] from global;\n    grid-area: input;\n\n    /* TODO @TW: review, replaces input:disabled. Check if working. */\n    composes: disabled_cursor-not-allowed from global;\n}\n\n.icon {\n    composes: h-[1.5rem] from global;\n    composes: pointer-events-none from global;\n    composes: w-[1.5rem] from global;\n    grid-area: input;\n}\n\n.icon svg {\n    stroke: rgb(var(--stroke));\n}\n\n.label {\n    composes: cursor-pointer from global;\n    composes: justify-self-start from global;\n    composes: text-colorDefault from global;\n    grid-area: label;\n}\n\n/* When the input is disabled, update the cursor on the sibling label element. */\n/* TODO @TW: cannot compose */\n.input:disabled ~ .label {\n    cursor: default;\n}\n\n.input:checked:enabled + .icon {\n    --stroke: var(--venia-brand-color-1-700);\n}\n\n/* TODO @TW: cannot compose, needs \"checked\" variant enabled. Cannot combine variants. */\n.input:active:enabled,\n.input:focus:enabled {\n    /* composes: active_shadow-radioActive from global; */\n    /* composes: focus_shadow-radioFocus from global; */\n    box-shadow: -3px 3px rgb(var(--venia-brand-color-1-100));\n    outline: none;\n}\n\n.input_shimmer {\n    composes: h-[1.5rem] from global;\n    composes: rounded from global;\n    composes: w-[1.5rem] from global;\n}\n"],"sourceRoot":""}]);
-// Exports
-___CSS_LOADER_EXPORT___.locals = {
-	"root": "checkbox-root-hF1 gap-3 grid grid-flow-col items-center justify-items-center leading-normal text-colorDefault",
-	"input": "checkbox-input-WEy appearance-none bg-transparent border-2 border-solid border-transparent cursor-pointer h-[1.5rem] rounded w-[1.5rem] disabled_cursor-not-allowed",
-	"icon": "checkbox-icon-eiW h-[1.5rem] pointer-events-none w-[1.5rem]",
-	"label": "checkbox-label-wHh cursor-pointer justify-self-start text-colorDefault",
-	"input_shimmer": "checkbox-input_shimmer-yEr h-[1.5rem] rounded w-[1.5rem]"
-};
-/* harmony default export */ __webpack_exports__["a"] = (___CSS_LOADER_EXPORT___);
-
-
-/***/ }),
-
-/***/ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/Country/country.module.css":
-/*!************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/Country/country.module.css ***!
-  \************************************************************************************************************************************************************************************/
-/*! exports provided: default */
-/*! exports used: default */
-/*! ModuleConcatenation bailout: Module uses module.id */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var _css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../../css-loader/dist/runtime/cssWithMappingToString.js */ "./node_modules/css-loader/dist/runtime/cssWithMappingToString.js");
-/* harmony import */ var _css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
-/* harmony import */ var _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
-// Imports
-
-
-var ___CSS_LOADER_EXPORT___ = _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()(_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default.a);
-// Module
-___CSS_LOADER_EXPORT___.push([module.i, ".country-root-k1e {\n    grid-area: country;\n}\n", "",{"version":3,"sources":["webpack://./node_modules/@magento/venia-ui/lib/components/Country/country.module.css"],"names":[],"mappings":"AAAA;IACI,kBAAkB;AACtB","sourcesContent":[".root {\n    grid-area: country;\n}\n"],"sourceRoot":""}]);
-// Exports
-___CSS_LOADER_EXPORT___.locals = {
-	"root": "country-root-k1e"
 };
 /* harmony default export */ __webpack_exports__["a"] = (___CSS_LOADER_EXPORT___);
 
@@ -19417,35 +18296,6 @@ ___CSS_LOADER_EXPORT___.locals = {
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/Postcode/postcode.module.css":
-/*!**************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/Postcode/postcode.module.css ***!
-  \**************************************************************************************************************************************************************************************/
-/*! exports provided: default */
-/*! exports used: default */
-/*! ModuleConcatenation bailout: Module uses module.id */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var _css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../../css-loader/dist/runtime/cssWithMappingToString.js */ "./node_modules/css-loader/dist/runtime/cssWithMappingToString.js");
-/* harmony import */ var _css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
-/* harmony import */ var _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
-// Imports
-
-
-var ___CSS_LOADER_EXPORT___ = _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()(_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default.a);
-// Module
-___CSS_LOADER_EXPORT___.push([module.i, ".postcode-root-ttM {\n}\n", "",{"version":3,"sources":["webpack://./node_modules/@magento/venia-ui/lib/components/Postcode/postcode.module.css"],"names":[],"mappings":"AAAA;AACA","sourcesContent":[".root {\n}\n"],"sourceRoot":""}]);
-// Exports
-___CSS_LOADER_EXPORT___.locals = {
-	"root": "postcode-root-ttM"
-};
-/* harmony default export */ __webpack_exports__["a"] = (___CSS_LOADER_EXPORT___);
-
-
-/***/ }),
-
 /***/ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/ProductOptions/option.module.css":
 /*!******************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/ProductOptions/option.module.css ***!
@@ -19615,35 +18465,6 @@ ___CSS_LOADER_EXPORT___.locals = {
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/Region/region.module.css":
-/*!**********************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/Region/region.module.css ***!
-  \**********************************************************************************************************************************************************************************/
-/*! exports provided: default */
-/*! exports used: default */
-/*! ModuleConcatenation bailout: Module uses module.id */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var _css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../../css-loader/dist/runtime/cssWithMappingToString.js */ "./node_modules/css-loader/dist/runtime/cssWithMappingToString.js");
-/* harmony import */ var _css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
-/* harmony import */ var _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
-// Imports
-
-
-var ___CSS_LOADER_EXPORT___ = _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()(_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default.a);
-// Module
-___CSS_LOADER_EXPORT___.push([module.i, ".region-root-1B2 {\n    grid-area: state;\n}\n", "",{"version":3,"sources":["webpack://./node_modules/@magento/venia-ui/lib/components/Region/region.module.css"],"names":[],"mappings":"AAAA;IACI,gBAAgB;AACpB","sourcesContent":[".root {\n    grid-area: state;\n}\n"],"sourceRoot":""}]);
-// Exports
-___CSS_LOADER_EXPORT___.locals = {
-	"root": "region-root-1B2"
-};
-/* harmony default export */ __webpack_exports__["a"] = (___CSS_LOADER_EXPORT___);
-
-
-/***/ }),
-
 /***/ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/SavedPaymentsPage/creditCard.module.css":
 /*!*************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/SavedPaymentsPage/creditCard.module.css ***!
@@ -19718,40 +18539,6 @@ ___CSS_LOADER_EXPORT___.locals = {
 	"content": "savedPaymentsPage-content-hs4 gap-xs grid grid-cols-1 lg_grid-cols-[1fr,1fr,1fr]",
 	"noPayments": "savedPaymentsPage-noPayments-j9T text-center",
 	"addButton": "savedPaymentsPage-addButton-H2i border-2 border-solid border-subtle font-semibold rounded-md text-brand-dark text-sm focus_outline-none focus_shadow-buttonFocus hover_border-brand-dark"
-};
-/* harmony default export */ __webpack_exports__["a"] = (___CSS_LOADER_EXPORT___);
-
-
-/***/ }),
-
-/***/ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/Select/select.module.css":
-/*!**********************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/Select/select.module.css ***!
-  \**********************************************************************************************************************************************************************************/
-/*! exports provided: default */
-/*! exports used: default */
-/*! ModuleConcatenation bailout: Module uses module.id */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var _css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../../css-loader/dist/runtime/cssWithMappingToString.js */ "./node_modules/css-loader/dist/runtime/cssWithMappingToString.js");
-/* harmony import */ var _css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
-/* harmony import */ var _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _css_loader_dist_cjs_js_ref_6_oneOf_0_1_postcss_loader_dist_cjs_js_Field_field_module_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! -!../../../../../css-loader/dist/cjs.js??ref--6-oneOf-0-1!../../../../../postcss-loader/dist/cjs.js!../Field/field.module.css */ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/Field/field.module.css");
-// Imports
-
-
-
-var ___CSS_LOADER_EXPORT___ = _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()(_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default.a);
-___CSS_LOADER_EXPORT___.i(_css_loader_dist_cjs_js_ref_6_oneOf_0_1_postcss_loader_dist_cjs_js_Field_field_module_css__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"], "", true);
-// Module
-___CSS_LOADER_EXPORT___.push([module.i, ".select-wrapper-x12 {\n    grid-template-areas: 'input icon';\n    grid-template-columns: auto 2.25rem;\n}\n\n.select-input--qv,\n.select-input_error-Goj {\n    grid-area: input-start / input-start / input-end / icon-end;\n    padding-right: calc(2.25rem - 1px); /* TODO @TW: review */\n}\n\n.select-input--qv {\n}\n\n.select-input_error-Goj {\n}\n", "",{"version":3,"sources":["webpack://./node_modules/@magento/venia-ui/lib/components/Select/select.module.css"],"names":[],"mappings":"AAAA;IAII,iCAAiC;IACjC,mCAAmC;AACvC;;AAEA;;IAGI,2DAA2D;IAC3D,kCAAkC,EAAE,qBAAqB;AAG7D;;AAEA;AAEA;;AAEA;AAEA","sourcesContent":[".wrapper {\n    composes: grid-flow-col from global;\n    composes: h-[2.25rem] from global;\n    composes: inline-grid from global;\n    grid-template-areas: 'input icon';\n    grid-template-columns: auto 2.25rem;\n}\n\n.input,\n.input_error {\n    composes: input from '../Field/field.module.css';\n    grid-area: input-start / input-start / input-end / icon-end;\n    padding-right: calc(2.25rem - 1px); /* TODO @TW: review */\n\n    composes: disabled_text-subtle from global;\n}\n\n.input {\n    composes: disabled_pointer-events-none from global;\n}\n\n.input_error {\n    composes: border-error from global;\n}\n"],"sourceRoot":""}]);
-// Exports
-___CSS_LOADER_EXPORT___.locals = {
-	"wrapper": "select-wrapper-x12 grid-flow-col h-[2.25rem] inline-grid",
-	"input": "select-input--qv " + _css_loader_dist_cjs_js_ref_6_oneOf_0_1_postcss_loader_dist_cjs_js_Field_field_module_css__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"].locals["input"] + " disabled_text-subtle disabled_pointer-events-none",
-	"input_error": "select-input_error-Goj " + _css_loader_dist_cjs_js_ref_6_oneOf_0_1_postcss_loader_dist_cjs_js_Field_field_module_css__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"].locals["input"] + " disabled_text-subtle border-error"
 };
 /* harmony default export */ __webpack_exports__["a"] = (___CSS_LOADER_EXPORT___);
 
@@ -20282,7 +19069,7 @@ ___CSS_LOADER_EXPORT___.locals = {
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()(_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default.a);
 // Module
-___CSS_LOADER_EXPORT___.push([module.i, ".AccountOverview-root-8Ij {\n\n}\n\n.AccountOverview-root-8Ij h1 {\n    font-family: var(--ff-gilroy-regular);\n    font-size: 4.2rem;\n    margin: 0 0 40px 0;\n}\n\n.AccountOverview-section-0dw {\n\n}\n\n.AccountOverview-sectionHeader-0M2 {\n    font-size: 1.4rem;\n    display: flex;\n    align-items: center;\n    gap: 25px;\n    margin: 0 0 25px 0;\n    border-bottom: 1px solid #c6c6c6;\n    padding: 10px 0;\n}\n\n.AccountOverview-sectionHeader-0M2 h2 {\n    font-family: var(--ff-gilroy-regular);\n    font-size: 2.5rem;\n    margin: 0;\n}\n\n.AccountOverview-sectionHeader-0M2 a {\n    text-decoration: underline;\n}\n\n.AccountOverview-sectionContent-LMD {\n    margin-bottom: 50px;\n    font-size: 1.6rem;\n    display: flex;\n    gap: 20%;\n    flex-direction: column;\n}\n\n.AccountOverview-boxTitle-4F-, .AccountOverview-box-CIR, .AccountOverview-boxContent-LyJ {\n    padding-bottom: 10px;\n}\n\n.AccountOverview-boxActions-rd0 {\n    display: flex;\n    font-size: 1.4rem;\n}\n\n.AccountOverview-boxActions-rd0 a {\n    text-decoration: underline;\n}\n\n.AccountOverview-boxActions-rd0 a:nth-child(n + 2)::before {\n    border-left: 1px solid #a6a6a6;\n    content: '';\n    display: inline-block;\n    height: 12px;\n    margin: 0 10px;\n    vertical-align: -1px;\n}\n\n.AccountOverview-orderTableDesktop--b1 {\n    display: none;\n}\n\n.AccountOverview-orderTableEmpty--RK {\n    text-align: center;\n}\n\n.AccountOverview-orderTableMobile-AXX > div {\n    display: grid;\n}\n\n.AccountOverview-orderTableMobile-AXX > div strong {\n    font-weight: bold;\n    padding-right: 8px;\n}\n\n.AccountOverview-orderTableMobile-AXX > div a {\n    text-decoration: underline;\n}\n\n@media (min-width: 1024px) {\n    .AccountOverview-sectionContent-LMD {\n        flex-direction: row;\n    }\n\n    .AccountOverview-orderTableMobile-AXX {\n        display: none;\n    }\n\n    .AccountOverview-orderTableDesktop--b1 {\n        display: table;\n        width: 100%;\n        font-size: 1.4rem;\n        border-collapse: collapse;\n    }\n    \n    .AccountOverview-orderTableDesktop--b1 td, .AccountOverview-orderTableDesktop--b1 th {\n        padding: 10px;\n        text-align: left;\n        border-bottom: 1px solid #c6c6c6;\n    }\n    \n    .AccountOverview-orderTableDesktop--b1 td a {\n        text-decoration: underline;\n    }\n\n    .AccountOverview-orderTableEmpty--RK td {\n        text-align: center;\n    }\n\n    .AccountOverview-sectionOrders-oT8 {\n        margin-bottom: 0;\n    }\n}", "",{"version":3,"sources":["webpack://./src/RootComponents/Account/AccountOverview/AccountOverview.module.css"],"names":[],"mappings":"AAAA;;AAEA;;AAEA;IACI,qCAAqC;IACrC,iBAAiB;IACjB,kBAAkB;AACtB;;AAEA;;AAEA;;AAEA;IACI,iBAAiB;IACjB,aAAa;IACb,mBAAmB;IACnB,SAAS;IACT,kBAAkB;IAClB,gCAAgC;IAChC,eAAe;AACnB;;AAEA;IACI,qCAAqC;IACrC,iBAAiB;IACjB,SAAS;AACb;;AAEA;IACI,0BAA0B;AAC9B;;AAEA;IACI,mBAAmB;IACnB,iBAAiB;IACjB,aAAa;IACb,QAAQ;IACR,sBAAsB;AAC1B;;AAEA;IACI,oBAAoB;AACxB;;AAEA;IACI,aAAa;IACb,iBAAiB;AACrB;;AAEA;IACI,0BAA0B;AAC9B;;AAEA;IACI,8BAA8B;IAC9B,WAAW;IACX,qBAAqB;IACrB,YAAY;IACZ,cAAc;IACd,oBAAoB;AACxB;;AAEA;IACI,aAAa;AACjB;;AAEA;IACI,kBAAkB;AACtB;;AAEA;IACI,aAAa;AACjB;;AAEA;IACI,iBAAiB;IACjB,kBAAkB;AACtB;;AAEA;IACI,0BAA0B;AAC9B;;AAEA;IACI;QACI,mBAAmB;IACvB;;IAEA;QACI,aAAa;IACjB;;IAEA;QACI,cAAc;QACd,WAAW;QACX,iBAAiB;QACjB,yBAAyB;IAC7B;;IAEA;QACI,aAAa;QACb,gBAAgB;QAChB,gCAAgC;IACpC;;IAEA;QACI,0BAA0B;IAC9B;;IAEA;QACI,kBAAkB;IACtB;;IAEA;QACI,gBAAgB;IACpB;AACJ","sourcesContent":[".root {\n\n}\n\n.root h1 {\n    font-family: var(--ff-gilroy-regular);\n    font-size: 4.2rem;\n    margin: 0 0 40px 0;\n}\n\n.section {\n\n}\n\n.sectionHeader {\n    font-size: 1.4rem;\n    display: flex;\n    align-items: center;\n    gap: 25px;\n    margin: 0 0 25px 0;\n    border-bottom: 1px solid #c6c6c6;\n    padding: 10px 0;\n}\n\n.sectionHeader h2 {\n    font-family: var(--ff-gilroy-regular);\n    font-size: 2.5rem;\n    margin: 0;\n}\n\n.sectionHeader a {\n    text-decoration: underline;\n}\n\n.sectionContent {\n    margin-bottom: 50px;\n    font-size: 1.6rem;\n    display: flex;\n    gap: 20%;\n    flex-direction: column;\n}\n\n.boxTitle, .box, .boxContent {\n    padding-bottom: 10px;\n}\n\n.boxActions {\n    display: flex;\n    font-size: 1.4rem;\n}\n\n.boxActions a {\n    text-decoration: underline;\n}\n\n.boxActions a:nth-child(n + 2)::before {\n    border-left: 1px solid #a6a6a6;\n    content: '';\n    display: inline-block;\n    height: 12px;\n    margin: 0 10px;\n    vertical-align: -1px;\n}\n\n.orderTableDesktop {\n    display: none;\n}\n\n.orderTableEmpty {\n    text-align: center;\n}\n\n.orderTableMobile > div {\n    display: grid;\n}\n\n.orderTableMobile > div strong {\n    font-weight: bold;\n    padding-right: 8px;\n}\n\n.orderTableMobile > div a {\n    text-decoration: underline;\n}\n\n@media (min-width: 1024px) {\n    .sectionContent {\n        flex-direction: row;\n    }\n\n    .orderTableMobile {\n        display: none;\n    }\n\n    .orderTableDesktop {\n        display: table;\n        width: 100%;\n        font-size: 1.4rem;\n        border-collapse: collapse;\n    }\n    \n    .orderTableDesktop td, .orderTableDesktop th {\n        padding: 10px;\n        text-align: left;\n        border-bottom: 1px solid #c6c6c6;\n    }\n    \n    .orderTableDesktop td a {\n        text-decoration: underline;\n    }\n\n    .orderTableEmpty td {\n        text-align: center;\n    }\n\n    .sectionOrders {\n        margin-bottom: 0;\n    }\n}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.i, ".AccountOverview-root-8Ij {\n\n}\n\n.AccountOverview-root-8Ij h1 {\n    font-family: var(--ff-gilroy-regular);\n    font-size: 4.2rem;\n    margin: 0 0 40px 0;\n    text-transform: uppercase;\n}\n\n.AccountOverview-section-0dw {\n\n}\n\n.AccountOverview-sectionHeader-0M2 {\n    font-size: 1.4rem;\n    display: flex;\n    align-items: center;\n    gap: 25px;\n    margin: 0 0 25px 0;\n    border-bottom: 1px solid #c6c6c6;\n    padding: 10px 0;\n}\n\n.AccountOverview-sectionHeader-0M2 h2 {\n    font-family: var(--ff-gilroy-regular);\n    font-size: 2.5rem;\n    margin: 0;\n}\n\n.AccountOverview-sectionHeader-0M2 a {\n    text-decoration: underline;\n}\n\n.AccountOverview-sectionContent-LMD {\n    margin-bottom: 50px;\n    font-size: 1.6rem;\n    display: flex;\n    gap: 20%;\n    flex-direction: column;\n}\n\n.AccountOverview-boxTitle-4F-, .AccountOverview-box-CIR, .AccountOverview-boxContent-LyJ {\n    padding-bottom: 10px;\n}\n\n.AccountOverview-boxActions-rd0 {\n    display: flex;\n    font-size: 1.4rem;\n}\n\n.AccountOverview-boxActions-rd0 a {\n    text-decoration: underline;\n}\n\n.AccountOverview-boxActions-rd0 a:nth-child(n + 2)::before {\n    border-left: 1px solid #a6a6a6;\n    content: '';\n    display: inline-block;\n    height: 12px;\n    margin: 0 10px;\n    vertical-align: -1px;\n}\n\n.AccountOverview-orderTableDesktop--b1 {\n    display: none;\n}\n\n.AccountOverview-orderTableEmpty--RK {\n    text-align: center;\n}\n\n.AccountOverview-orderTableMobile-AXX > div {\n    display: grid;\n}\n\n.AccountOverview-orderTableMobile-AXX > div strong {\n    font-weight: bold;\n    padding-right: 8px;\n}\n\n.AccountOverview-orderTableMobile-AXX > div a {\n    text-decoration: underline;\n}\n\n@media (min-width: 1024px) {\n    .AccountOverview-sectionContent-LMD {\n        flex-direction: row;\n    }\n\n    .AccountOverview-orderTableMobile-AXX {\n        display: none;\n    }\n\n    .AccountOverview-orderTableDesktop--b1 {\n        display: table;\n        width: 100%;\n        font-size: 1.4rem;\n        border-collapse: collapse;\n    }\n    \n    .AccountOverview-orderTableDesktop--b1 td, .AccountOverview-orderTableDesktop--b1 th {\n        padding: 10px;\n        text-align: left;\n        border-bottom: 1px solid #c6c6c6;\n    }\n    \n    .AccountOverview-orderTableDesktop--b1 td a {\n        text-decoration: underline;\n    }\n\n    .AccountOverview-orderTableEmpty--RK td {\n        text-align: center;\n    }\n\n    .AccountOverview-sectionOrders-oT8 {\n        margin-bottom: 0;\n    }\n}", "",{"version":3,"sources":["webpack://./src/RootComponents/Account/AccountOverview/AccountOverview.module.css"],"names":[],"mappings":"AAAA;;AAEA;;AAEA;IACI,qCAAqC;IACrC,iBAAiB;IACjB,kBAAkB;IAClB,yBAAyB;AAC7B;;AAEA;;AAEA;;AAEA;IACI,iBAAiB;IACjB,aAAa;IACb,mBAAmB;IACnB,SAAS;IACT,kBAAkB;IAClB,gCAAgC;IAChC,eAAe;AACnB;;AAEA;IACI,qCAAqC;IACrC,iBAAiB;IACjB,SAAS;AACb;;AAEA;IACI,0BAA0B;AAC9B;;AAEA;IACI,mBAAmB;IACnB,iBAAiB;IACjB,aAAa;IACb,QAAQ;IACR,sBAAsB;AAC1B;;AAEA;IACI,oBAAoB;AACxB;;AAEA;IACI,aAAa;IACb,iBAAiB;AACrB;;AAEA;IACI,0BAA0B;AAC9B;;AAEA;IACI,8BAA8B;IAC9B,WAAW;IACX,qBAAqB;IACrB,YAAY;IACZ,cAAc;IACd,oBAAoB;AACxB;;AAEA;IACI,aAAa;AACjB;;AAEA;IACI,kBAAkB;AACtB;;AAEA;IACI,aAAa;AACjB;;AAEA;IACI,iBAAiB;IACjB,kBAAkB;AACtB;;AAEA;IACI,0BAA0B;AAC9B;;AAEA;IACI;QACI,mBAAmB;IACvB;;IAEA;QACI,aAAa;IACjB;;IAEA;QACI,cAAc;QACd,WAAW;QACX,iBAAiB;QACjB,yBAAyB;IAC7B;;IAEA;QACI,aAAa;QACb,gBAAgB;QAChB,gCAAgC;IACpC;;IAEA;QACI,0BAA0B;IAC9B;;IAEA;QACI,kBAAkB;IACtB;;IAEA;QACI,gBAAgB;IACpB;AACJ","sourcesContent":[".root {\n\n}\n\n.root h1 {\n    font-family: var(--ff-gilroy-regular);\n    font-size: 4.2rem;\n    margin: 0 0 40px 0;\n    text-transform: uppercase;\n}\n\n.section {\n\n}\n\n.sectionHeader {\n    font-size: 1.4rem;\n    display: flex;\n    align-items: center;\n    gap: 25px;\n    margin: 0 0 25px 0;\n    border-bottom: 1px solid #c6c6c6;\n    padding: 10px 0;\n}\n\n.sectionHeader h2 {\n    font-family: var(--ff-gilroy-regular);\n    font-size: 2.5rem;\n    margin: 0;\n}\n\n.sectionHeader a {\n    text-decoration: underline;\n}\n\n.sectionContent {\n    margin-bottom: 50px;\n    font-size: 1.6rem;\n    display: flex;\n    gap: 20%;\n    flex-direction: column;\n}\n\n.boxTitle, .box, .boxContent {\n    padding-bottom: 10px;\n}\n\n.boxActions {\n    display: flex;\n    font-size: 1.4rem;\n}\n\n.boxActions a {\n    text-decoration: underline;\n}\n\n.boxActions a:nth-child(n + 2)::before {\n    border-left: 1px solid #a6a6a6;\n    content: '';\n    display: inline-block;\n    height: 12px;\n    margin: 0 10px;\n    vertical-align: -1px;\n}\n\n.orderTableDesktop {\n    display: none;\n}\n\n.orderTableEmpty {\n    text-align: center;\n}\n\n.orderTableMobile > div {\n    display: grid;\n}\n\n.orderTableMobile > div strong {\n    font-weight: bold;\n    padding-right: 8px;\n}\n\n.orderTableMobile > div a {\n    text-decoration: underline;\n}\n\n@media (min-width: 1024px) {\n    .sectionContent {\n        flex-direction: row;\n    }\n\n    .orderTableMobile {\n        display: none;\n    }\n\n    .orderTableDesktop {\n        display: table;\n        width: 100%;\n        font-size: 1.4rem;\n        border-collapse: collapse;\n    }\n    \n    .orderTableDesktop td, .orderTableDesktop th {\n        padding: 10px;\n        text-align: left;\n        border-bottom: 1px solid #c6c6c6;\n    }\n    \n    .orderTableDesktop td a {\n        text-decoration: underline;\n    }\n\n    .orderTableEmpty td {\n        text-align: center;\n    }\n\n    .sectionOrders {\n        margin-bottom: 0;\n    }\n}"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"root": "AccountOverview-root-8Ij",
@@ -20322,7 +19109,7 @@ ___CSS_LOADER_EXPORT___.locals = {
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()(_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default.a);
 // Module
-___CSS_LOADER_EXPORT___.push([module.i, ".AddressCard-content-QA2 {\n    padding-bottom: 10px;\n    display: grid;\n}\n\n.AddressCard-actions-Xb- {\n    display: flex;\n    font-size: 1.4rem;\n}\n\n.AddressCard-actions-Xb- a {\n    text-decoration: underline;\n}\n\n.AddressCard-actions-Xb- a:nth-child(n + 2)::before {\n    border-left: 1px solid #a6a6a6;\n    content: '';\n    display: inline-block;\n    height: 12px;\n    margin: 0 10px;\n    vertical-align: -1px;\n}", "",{"version":3,"sources":["webpack://./src/RootComponents/Account/AccountOverview/AddressCard.module.css"],"names":[],"mappings":"AAAA;IACI,oBAAoB;IACpB,aAAa;AACjB;;AAEA;IACI,aAAa;IACb,iBAAiB;AACrB;;AAEA;IACI,0BAA0B;AAC9B;;AAEA;IACI,8BAA8B;IAC9B,WAAW;IACX,qBAAqB;IACrB,YAAY;IACZ,cAAc;IACd,oBAAoB;AACxB","sourcesContent":[".content {\n    padding-bottom: 10px;\n    display: grid;\n}\n\n.actions {\n    display: flex;\n    font-size: 1.4rem;\n}\n\n.actions a {\n    text-decoration: underline;\n}\n\n.actions a:nth-child(n + 2)::before {\n    border-left: 1px solid #a6a6a6;\n    content: '';\n    display: inline-block;\n    height: 12px;\n    margin: 0 10px;\n    vertical-align: -1px;\n}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.i, ".AddressCard-content-QA2 {\n    padding-bottom: 10px;\n    display: grid;\n}\n\n.AddressCard-actions-Xb- {\n    display: flex;\n    font-size: 1.4rem;\n}\n\n.AddressCard-actions-Xb- a {\n    cursor: pointer;\n    text-decoration: underline;\n}\n\n.AddressCard-actions-Xb- a:nth-child(n + 2)::before {\n    border-left: 1px solid #a6a6a6;\n    content: '';\n    display: inline-block;\n    height: 12px;\n    margin: 0 10px;\n    vertical-align: -1px;\n}", "",{"version":3,"sources":["webpack://./src/RootComponents/Account/AccountOverview/AddressCard.module.css"],"names":[],"mappings":"AAAA;IACI,oBAAoB;IACpB,aAAa;AACjB;;AAEA;IACI,aAAa;IACb,iBAAiB;AACrB;;AAEA;IACI,eAAe;IACf,0BAA0B;AAC9B;;AAEA;IACI,8BAA8B;IAC9B,WAAW;IACX,qBAAqB;IACrB,YAAY;IACZ,cAAc;IACd,oBAAoB;AACxB","sourcesContent":[".content {\n    padding-bottom: 10px;\n    display: grid;\n}\n\n.actions {\n    display: flex;\n    font-size: 1.4rem;\n}\n\n.actions a {\n    cursor: pointer;\n    text-decoration: underline;\n}\n\n.actions a:nth-child(n + 2)::before {\n    border-left: 1px solid #a6a6a6;\n    content: '';\n    display: inline-block;\n    height: 12px;\n    margin: 0 10px;\n    vertical-align: -1px;\n}"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"content": "AddressCard-content-QA2",
@@ -20358,6 +19145,47 @@ ___CSS_LOADER_EXPORT___.locals = {
 	"root": "AccountPage-root-D4j",
 	"sidebar": "AccountPage-sidebar-20J",
 	"content": "AccountPage-content-7Z-"
+};
+/* harmony default export */ __webpack_exports__["a"] = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./src/RootComponents/Account/AddressBookPage/AddressBookPage.module.css":
+/*!*********************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./src/RootComponents/Account/AddressBookPage/AddressBookPage.module.css ***!
+  \*********************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/*! exports used: default */
+/*! ModuleConcatenation bailout: Module uses module.id */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var _node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/cssWithMappingToString.js */ "./node_modules/css-loader/dist/runtime/cssWithMappingToString.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+// Imports
+
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()(_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default.a);
+// Module
+___CSS_LOADER_EXPORT___.push([module.i, ".AddressBookPage-root-ULe {\n\n}\n\n.AddressBookPage-root-ULe h1 {\n    font-family: var(--ff-gilroy-regular);\n    font-size: 4.2rem;\n    margin: 0 0 40px 0;\n    text-transform: uppercase;\n}\n\n.AddressBookPage-section-txi {\n\n}\n\n.AddressBookPage-sectionHeader-rPL {\n    font-size: 1.4rem;\n    display: flex;\n    align-items: center;\n    gap: 25px;\n    margin: 0 0 25px 0;\n    border-bottom: 1px solid #c6c6c6;\n    padding: 10px 0;\n}\n\n.AddressBookPage-sectionHeader-rPL h2 {\n    font-family: var(--ff-gilroy-regular);\n    font-size: 2.5rem;\n    margin: 0;\n}\n\n.AddressBookPage-sectionHeader-rPL a {\n    text-decoration: underline;\n}\n\n.AddressBookPage-sectionContent-d9z {\n    margin-bottom: 50px;\n    font-size: 1.6rem;\n    display: flex;\n    gap: 20%;\n    flex-direction: column;\n}\n\n.AddressBookPage-boxTitle-PkL, .AddressBookPage-box-4SY, .AddressBookPage-boxContent-Qzv {\n    padding-bottom: 10px;\n}\n\n.AddressBookPage-boxActions-Wne {\n    display: flex;\n    font-size: 1.4rem;\n}\n\n.AddressBookPage-boxActions-Wne a {\n    text-decoration: underline;\n}\n\n.AddressBookPage-boxActions-Wne a:nth-child(n + 2)::before {\n    border-left: 1px solid #a6a6a6;\n    content: '';\n    display: inline-block;\n    height: 12px;\n    margin: 0 10px;\n    vertical-align: -1px;\n}\n\n.AddressBookPage-addressTableDesktop-9Qg {\n    display: none;\n}\n\n.AddressBookPage-orderTableEmpty-zHr {\n    text-align: center;\n}\n\n.AddressBookPage-addressTableMobile-zHo > div {\n    display: grid;\n}\n\n.AddressBookPage-addressTableMobile-zHo > div strong {\n    font-weight: bold;\n    padding-right: 8px;\n}\n\n.AddressBookPage-addressTableMobile-zHo > div a {\n    text-decoration: underline;\n}\n\n@media (min-width: 1024px) {\n    .AddressBookPage-sectionContent-d9z {\n        flex-direction: row;\n    }\n\n    .AddressBookPage-addressTableMobile-zHo {\n        display: none;\n    }\n\n    .AddressBookPage-addressTableDesktop-9Qg {\n        display: table;\n        width: 100%;\n        font-size: 1.4rem;\n        border-collapse: collapse;\n    }\n    \n    .AddressBookPage-addressTableDesktop-9Qg td, .AddressBookPage-addressTableDesktop-9Qg th {\n        padding: 10px;\n        text-align: left;\n        border-bottom: 1px solid #c6c6c6;\n    }\n    \n    .AddressBookPage-addressTableDesktop-9Qg td a {\n        text-decoration: underline;\n    }\n\n    .AddressBookPage-addressTableEmpty-evO td {\n        text-align: center;\n    }\n\n    .AddressBookPage-sectionAdditionalAddresses-P32 {\n        margin-bottom: 0;\n    }\n}", "",{"version":3,"sources":["webpack://./src/RootComponents/Account/AddressBookPage/AddressBookPage.module.css"],"names":[],"mappings":"AAAA;;AAEA;;AAEA;IACI,qCAAqC;IACrC,iBAAiB;IACjB,kBAAkB;IAClB,yBAAyB;AAC7B;;AAEA;;AAEA;;AAEA;IACI,iBAAiB;IACjB,aAAa;IACb,mBAAmB;IACnB,SAAS;IACT,kBAAkB;IAClB,gCAAgC;IAChC,eAAe;AACnB;;AAEA;IACI,qCAAqC;IACrC,iBAAiB;IACjB,SAAS;AACb;;AAEA;IACI,0BAA0B;AAC9B;;AAEA;IACI,mBAAmB;IACnB,iBAAiB;IACjB,aAAa;IACb,QAAQ;IACR,sBAAsB;AAC1B;;AAEA;IACI,oBAAoB;AACxB;;AAEA;IACI,aAAa;IACb,iBAAiB;AACrB;;AAEA;IACI,0BAA0B;AAC9B;;AAEA;IACI,8BAA8B;IAC9B,WAAW;IACX,qBAAqB;IACrB,YAAY;IACZ,cAAc;IACd,oBAAoB;AACxB;;AAEA;IACI,aAAa;AACjB;;AAEA;IACI,kBAAkB;AACtB;;AAEA;IACI,aAAa;AACjB;;AAEA;IACI,iBAAiB;IACjB,kBAAkB;AACtB;;AAEA;IACI,0BAA0B;AAC9B;;AAEA;IACI;QACI,mBAAmB;IACvB;;IAEA;QACI,aAAa;IACjB;;IAEA;QACI,cAAc;QACd,WAAW;QACX,iBAAiB;QACjB,yBAAyB;IAC7B;;IAEA;QACI,aAAa;QACb,gBAAgB;QAChB,gCAAgC;IACpC;;IAEA;QACI,0BAA0B;IAC9B;;IAEA;QACI,kBAAkB;IACtB;;IAEA;QACI,gBAAgB;IACpB;AACJ","sourcesContent":[".root {\n\n}\n\n.root h1 {\n    font-family: var(--ff-gilroy-regular);\n    font-size: 4.2rem;\n    margin: 0 0 40px 0;\n    text-transform: uppercase;\n}\n\n.section {\n\n}\n\n.sectionHeader {\n    font-size: 1.4rem;\n    display: flex;\n    align-items: center;\n    gap: 25px;\n    margin: 0 0 25px 0;\n    border-bottom: 1px solid #c6c6c6;\n    padding: 10px 0;\n}\n\n.sectionHeader h2 {\n    font-family: var(--ff-gilroy-regular);\n    font-size: 2.5rem;\n    margin: 0;\n}\n\n.sectionHeader a {\n    text-decoration: underline;\n}\n\n.sectionContent {\n    margin-bottom: 50px;\n    font-size: 1.6rem;\n    display: flex;\n    gap: 20%;\n    flex-direction: column;\n}\n\n.boxTitle, .box, .boxContent {\n    padding-bottom: 10px;\n}\n\n.boxActions {\n    display: flex;\n    font-size: 1.4rem;\n}\n\n.boxActions a {\n    text-decoration: underline;\n}\n\n.boxActions a:nth-child(n + 2)::before {\n    border-left: 1px solid #a6a6a6;\n    content: '';\n    display: inline-block;\n    height: 12px;\n    margin: 0 10px;\n    vertical-align: -1px;\n}\n\n.addressTableDesktop {\n    display: none;\n}\n\n.orderTableEmpty {\n    text-align: center;\n}\n\n.addressTableMobile > div {\n    display: grid;\n}\n\n.addressTableMobile > div strong {\n    font-weight: bold;\n    padding-right: 8px;\n}\n\n.addressTableMobile > div a {\n    text-decoration: underline;\n}\n\n@media (min-width: 1024px) {\n    .sectionContent {\n        flex-direction: row;\n    }\n\n    .addressTableMobile {\n        display: none;\n    }\n\n    .addressTableDesktop {\n        display: table;\n        width: 100%;\n        font-size: 1.4rem;\n        border-collapse: collapse;\n    }\n    \n    .addressTableDesktop td, .addressTableDesktop th {\n        padding: 10px;\n        text-align: left;\n        border-bottom: 1px solid #c6c6c6;\n    }\n    \n    .addressTableDesktop td a {\n        text-decoration: underline;\n    }\n\n    .addressTableEmpty td {\n        text-align: center;\n    }\n\n    .sectionAdditionalAddresses {\n        margin-bottom: 0;\n    }\n}"],"sourceRoot":""}]);
+// Exports
+___CSS_LOADER_EXPORT___.locals = {
+	"root": "AddressBookPage-root-ULe",
+	"section": "AddressBookPage-section-txi",
+	"sectionHeader": "AddressBookPage-sectionHeader-rPL",
+	"sectionContent": "AddressBookPage-sectionContent-d9z",
+	"boxTitle": "AddressBookPage-boxTitle-PkL",
+	"box": "AddressBookPage-box-4SY",
+	"boxContent": "AddressBookPage-boxContent-Qzv",
+	"boxActions": "AddressBookPage-boxActions-Wne",
+	"addressTableDesktop": "AddressBookPage-addressTableDesktop-9Qg",
+	"orderTableEmpty": "AddressBookPage-orderTableEmpty-zHr",
+	"addressTableMobile": "AddressBookPage-addressTableMobile-zHo",
+	"addressTableEmpty": "AddressBookPage-addressTableEmpty-evO",
+	"sectionAdditionalAddresses": "AddressBookPage-sectionAdditionalAddresses-P32"
 };
 /* harmony default export */ __webpack_exports__["a"] = (___CSS_LOADER_EXPORT___);
 
@@ -21229,11 +20057,11 @@ module.exports = function (data, opts) {
   \***********************************************************/
 /*! exports provided: gql, resetCaches, disableFragmentWarnings, enableExperimentalFragmentVariables, disableExperimentalFragmentVariables, default */
 /*! exports used: gql */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql/error/syntaxError.mjs because of ./src/RootComponents/Cart/index.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql/language/ast.mjs because of ./node_modules/@apollo/client/link/http/selectHttpOptionsAndBody.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql/language/lexer.mjs because of ./src/RootComponents/Cart/index.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql/language/source.mjs because of ./src/RootComponents/Cart/index.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql/language/tokenKind.mjs because of ./src/RootComponents/Cart/index.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql/error/syntaxError.mjs because of ./src/RootComponents/Checkout/index.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql/language/ast.mjs because of ./src/RootComponents/Checkout/index.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql/language/lexer.mjs because of ./src/RootComponents/Checkout/index.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql/language/source.mjs because of ./src/RootComponents/Checkout/index.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql/language/tokenKind.mjs because of ./src/RootComponents/Checkout/index.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/tslib/tslib.es6.js because of ./src/RootComponents/CreateAccount/createAccountPage.js */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -23037,7 +21865,7 @@ gql["default"] = gql;
   \****************************************************************/
 /*! exports provided: syntaxError */
 /*! exports used: syntaxError */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql/polyfills/symbols.mjs because of ./src/RootComponents/Cart/index.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql/polyfills/symbols.mjs because of ./src/RootComponents/Checkout/index.js */
 /***/ (function(__webpack_module__, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -23604,7 +22432,7 @@ var nodejsCustomInspectSymbol = typeof Symbol === 'function' && typeof Symbol.fo
   \***********************************************************/
 /*! exports provided: Location, Token, isNode */
 /*! exports used: Location, Token, isNode */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql/jsutils/nodejsCustomInspectSymbol.mjs because of ./node_modules/@apollo/client/link/http/selectHttpOptionsAndBody.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql/jsutils/nodejsCustomInspectSymbol.mjs because of ./src/RootComponents/Checkout/index.js */
 /***/ (function(__webpack_module__, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -24937,7 +23765,7 @@ function hasMultilineItems(maybeArray) {
 /*! exports provided: Source, isSource */
 /*! exports used: Source, isSource */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql/jsutils/inspect.mjs because of ./node_modules/@apollo/client/link/http/selectHttpOptionsAndBody.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql/polyfills/symbols.mjs because of ./src/RootComponents/Cart/index.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql/polyfills/symbols.mjs because of ./src/RootComponents/Checkout/index.js */
 /***/ (function(__webpack_module__, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -38559,7 +37387,7 @@ if (hasSymbols()) {
 
 /***/ "./src/RootComponents/Account/AccountPage.js":
 /*!*****************************************************************!*\
-  !*** ./src/RootComponents/Account/AccountPage.js + 106 modules ***!
+  !*** ./src/RootComponents/Account/AccountPage.js + 103 modules ***!
   \*****************************************************************/
 /*! exports provided: useProtectedPage, default */
 /*! exports used: default, useProtectedPage */
@@ -38580,8 +37408,6 @@ if (hasSymbols()) {
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/getOutOfStockIndexes.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/shallowMerge.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Button/button.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Checkbox/checkbox.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Country/country.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Dialog/dialog.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Field/field.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Field/message.js */
@@ -38596,10 +37422,8 @@ if (hasSymbols()) {
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/LoadingIndicator/indicator.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/LoadingIndicator/spinner.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/LoadingIndicator/static.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Postcode/postcode.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Price/price.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/ProductOptions/options.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Region/region.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/TextInput/textInput.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/util/formValidators.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-feather/dist/icons/alert-circle.js */
@@ -38617,9 +37441,6 @@ if (hasSymbols()) {
 /*! ModuleConcatenation bailout: Cannot concat with ./src/RootComponents/Login/login.js because of ./src/RootComponents/Login/index.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/AccountInformationPage/accountInformationPage.module.css (<- Module uses module.id) */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/AddToCartDialog/addToCartDialog.module.css (<- Module uses module.id) */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/AddressBookPage/addEditDialog.module.css (<- Module uses module.id) */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/AddressBookPage/addressBookPage.module.css (<- Module uses module.id) */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/AddressBookPage/addressCard.module.css (<- Module uses module.id) */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/ForgotPasswordPage/forgotPasswordPage.module.css (<- Module uses module.id) */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/OrderHistoryPage/OrderDetails/billingInformation.module.css (<- Module uses module.id) */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/OrderHistoryPage/OrderDetails/item.module.css (<- Module uses module.id) */
@@ -38647,6 +37468,7 @@ if (hasSymbols()) {
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./src/RootComponents/Account/AccountOverview/AccountOverview.module.css (<- Module uses module.id) */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./src/RootComponents/Account/AccountOverview/AddressCard.module.css (<- Module uses module.id) */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./src/RootComponents/Account/AccountPage.module.css (<- Module uses module.id) */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./src/RootComponents/Account/AddressBookPage/AddressBookPage.module.css (<- Module uses module.id) */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql-tag/lib/index.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/informed/dist/esm/index.js (<- Module uses injected variables (process)) */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/prop-types/index.js (<- Module is not an ECMAScript module) */
@@ -41688,927 +40510,6 @@ const AccountInformationPage = props => {
   })), errorMessage ? errorMessage : pageContent);
 };
 /* harmony default export */ var accountInformationPage = (AccountInformationPage);
-// EXTERNAL MODULE: ./node_modules/react-feather/dist/icons/plus-square.js
-var plus_square = __webpack_require__("./node_modules/react-feather/dist/icons/plus-square.js");
-
-// CONCATENATED MODULE: ./node_modules/@magento/peregrine/lib/talons/AddressBookPage/addressBookFragments.gql.js
-
-const CustomerAddressBookAddressFragment = lib["a" /* gql */]`
-    fragment CustomerAddressBookAddressFragment on CustomerAddress {
-        __typename
-        id
-        city
-        country_code
-        default_billing
-        default_shipping
-        firstname
-        lastname
-        middlename
-        postcode
-        region {
-            region
-            region_code
-            region_id
-        }
-        street
-        telephone
-    }
-`;
-// CONCATENATED MODULE: ./node_modules/@magento/peregrine/lib/talons/AddressBookPage/addressBookPage.gql.js
-
-
-const GET_CUSTOMER_ADDRESSES = lib["a" /* gql */]`
-    query GetCustomerAddressesForAddressBook {
-        # eslint-disable-next-line @graphql-eslint/require-id-when-available
-        customer {
-            addresses {
-                id
-                ...CustomerAddressBookAddressFragment
-            }
-        }
-        countries {
-            id
-            full_name_locale
-        }
-    }
-    ${CustomerAddressBookAddressFragment}
-`;
-const ADD_NEW_CUSTOMER_ADDRESS = lib["a" /* gql */]`
-    mutation AddNewCustomerAddressToAddressBook(
-        $address: CustomerAddressInput!
-    ) {
-        createCustomerAddress(input: $address) {
-            # We don't manually write to the cache to update the collection
-            # after adding a new address so there's no need to query for a bunch
-            # of address fields here. We use refetchQueries to refresh the list.
-            id
-        }
-    }
-`;
-const UPDATE_CUSTOMER_ADDRESS = lib["a" /* gql */]`
-    mutation UpdateCustomerAddressInAddressBook(
-        $addressId: Int!
-        $updated_address: CustomerAddressInput!
-    ) {
-        updateCustomerAddress(id: $addressId, input: $updated_address) {
-            id
-            ...CustomerAddressBookAddressFragment
-        }
-    }
-    ${CustomerAddressBookAddressFragment}
-`;
-const DELETE_CUSTOMER_ADDRESS = lib["a" /* gql */]`
-    mutation DeleteCustomerAddressFromAddressBook($addressId: Int!) {
-        deleteCustomerAddress(id: $addressId)
-    }
-`;
-/* harmony default export */ var addressBookPage_gql = ({
-  createCustomerAddressMutation: ADD_NEW_CUSTOMER_ADDRESS,
-  deleteCustomerAddressMutation: DELETE_CUSTOMER_ADDRESS,
-  getCustomerAddressesQuery: GET_CUSTOMER_ADDRESSES,
-  updateCustomerAddressMutation: UPDATE_CUSTOMER_ADDRESS
-});
-// CONCATENATED MODULE: ./node_modules/@magento/peregrine/lib/talons/AddressBookPage/useAddressBookPage.js
-function useAddressBookPage_ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
-function useAddressBookPage_objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? useAddressBookPage_ownKeys(Object(source), !0).forEach(function (key) { useAddressBookPage_defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : useAddressBookPage_ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
-function useAddressBookPage_defineProperty(obj, key, value) { key = useAddressBookPage_toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-function useAddressBookPage_toPropertyKey(arg) { var key = useAddressBookPage_toPrimitive(arg, "string"); return typeof key === "symbol" ? key : String(key); }
-function useAddressBookPage_toPrimitive(input, hint) { if (typeof input !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (typeof res !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
-
-
-
-
-
-
-
-
-/**
- *  A talon to support the functionality of the Address Book page.
- *
- *  @function
- *
- *  @param {Object} props
- *  @param {Object} props.operations - GraphQL operations to be run by the talon.
- *
- *  @returns {AddressBookPageTalonProps}
- *
- * @example <caption>Importing into your project</caption>
- * import { useAddressBookPage } from '@magento/peregrine/lib/talons/AddressBookPage/useAddressBookPage';
- */
-const useAddressBookPage = (props = {}) => {
-  const operations = Object(shallowMerge["a" /* default */])(addressBookPage_gql, props.operations);
-  const {
-    createCustomerAddressMutation,
-    deleteCustomerAddressMutation,
-    getCustomerAddressesQuery,
-    updateCustomerAddressMutation
-  } = operations;
-  const [, {
-    actions: {
-      setPageLoading
-    }
-  }] = Object(app["b" /* useAppContext */])();
-  const [{
-    isSignedIn,
-    currentUser
-  }] = Object(user["b" /* useUserContext */])();
-  const [, {
-    dispatch
-  }] = Object(eventing["b" /* useEventingContext */])();
-  const {
-    data: customerAddressesData,
-    loading
-  } = Object(useQuery["a" /* useQuery */])(getCustomerAddressesQuery, {
-    fetchPolicy: 'cache-and-network',
-    skip: !isSignedIn
-  });
-  const [deleteCustomerAddress, {
-    loading: isDeletingCustomerAddress
-  }] = Object(useMutation["a" /* useMutation */])(deleteCustomerAddressMutation);
-  const [confirmDeleteAddressId, setConfirmDeleteAddressId] = Object(react["useState"])();
-  const isRefetching = !!customerAddressesData && loading;
-  const customerAddresses = customerAddressesData && customerAddressesData.customer && customerAddressesData.customer.addresses || [];
-  const [createCustomerAddress, {
-    error: createCustomerAddressError,
-    loading: isCreatingCustomerAddress
-  }] = Object(useMutation["a" /* useMutation */])(createCustomerAddressMutation);
-  const [updateCustomerAddress, {
-    error: updateCustomerAddressError,
-    loading: isUpdatingCustomerAddress
-  }] = Object(useMutation["a" /* useMutation */])(updateCustomerAddressMutation);
-  const [isDialogOpen, setIsDialogOpen] = Object(react["useState"])(false);
-  const [isDialogEditMode, setIsDialogEditMode] = Object(react["useState"])(false);
-  const [formAddress, setFormAddress] = Object(react["useState"])({});
-
-  // Use local state to determine whether to display errors or not.
-  // Could be replaced by a "reset mutation" function from apollo client.
-  // https://github.com/apollographql/apollo-feature-requests/issues/170
-  const [displayError, setDisplayError] = Object(react["useState"])(false);
-
-  // Update the page indicator if the GraphQL query is in flight.
-  Object(react["useEffect"])(() => {
-    setPageLoading(isRefetching);
-  }, [isRefetching, setPageLoading]);
-  const handleAddAddress = Object(react["useCallback"])(() => {
-    // Hide all previous errors when we open the dialog.
-    setDisplayError(false);
-    setIsDialogEditMode(false);
-    setFormAddress({
-      country_code: "US"
-    });
-    setIsDialogOpen(true);
-  }, []);
-  const handleDeleteAddress = Object(react["useCallback"])(addressId => {
-    setConfirmDeleteAddressId(addressId);
-  }, []);
-  const handleCancelDeleteAddress = Object(react["useCallback"])(() => {
-    setConfirmDeleteAddressId(null);
-  }, []);
-  const handleConfirmDeleteAddress = Object(react["useCallback"])(async () => {
-    try {
-      await deleteCustomerAddress({
-        variables: {
-          addressId: confirmDeleteAddressId
-        },
-        refetchQueries: [{
-          query: getCustomerAddressesQuery
-        }],
-        awaitRefetchQueries: true
-      });
-      dispatch({
-        type: 'USER_ADDRESS_DELETE',
-        payload: {
-          addressId: confirmDeleteAddressId,
-          user: currentUser
-        }
-      });
-      setConfirmDeleteAddressId(null);
-    } catch {
-      return;
-    }
-  }, [confirmDeleteAddressId, deleteCustomerAddress, getCustomerAddressesQuery, dispatch, currentUser]);
-  const handleEditAddress = Object(react["useCallback"])(address => {
-    // Hide all previous errors when we open the dialog.
-    setDisplayError(false);
-    setIsDialogEditMode(true);
-    setFormAddress(address);
-    setIsDialogOpen(true);
-  }, []);
-  const handleCancelDialog = Object(react["useCallback"])(() => {
-    setIsDialogOpen(false);
-  }, []);
-  const handleConfirmDialog = Object(react["useCallback"])(async formValues => {
-    if (isDialogEditMode) {
-      try {
-        const address = useAddressBookPage_objectSpread(useAddressBookPage_objectSpread({}, formValues), {}, {
-          // Sends value as empty if none are provided
-          middlename: formValues.middlename || '',
-          // Cleans up the street array when values are null or undefined
-          street: formValues.street.filter(e => e)
-        });
-        await updateCustomerAddress({
-          variables: {
-            addressId: formAddress.id,
-            updated_address: address
-          },
-          refetchQueries: [{
-            query: getCustomerAddressesQuery
-          }],
-          awaitRefetchQueries: true
-        });
-        dispatch({
-          type: 'USER_ADDRESS_EDIT',
-          payload: {
-            id: formAddress.id,
-            address: address,
-            user: currentUser
-          }
-        });
-        setIsDialogOpen(false);
-      } catch {
-        // Make sure any errors from the mutations are displayed.
-        setDisplayError(true);
-
-        // we have an onError link that logs errors, and FormError
-        // already renders this error, so just return to avoid
-        // triggering the success callback
-        return;
-      }
-    } else {
-      try {
-        const address = useAddressBookPage_objectSpread(useAddressBookPage_objectSpread({}, formValues), {}, {
-          // Sends value as empty if none are provided
-          middlename: formValues.middlename || '',
-          // Cleans up the street array when values are null or undefined
-          street: formValues.street.filter(e => e)
-        });
-        await createCustomerAddress({
-          variables: {
-            address
-          },
-          refetchQueries: [{
-            query: getCustomerAddressesQuery
-          }],
-          awaitRefetchQueries: true
-        });
-        dispatch({
-          type: 'USER_ADDRESS_CREATE',
-          payload: {
-            address,
-            user: currentUser
-          }
-        });
-        setIsDialogOpen(false);
-      } catch {
-        // Make sure any errors from the mutations are displayed.
-        setDisplayError(true);
-
-        // we have an onError link that logs errors, and FormError
-        // already renders this error, so just return to avoid
-        // triggering the success callback
-        return;
-      }
-    }
-  }, [createCustomerAddress, formAddress, getCustomerAddressesQuery, isDialogEditMode, updateCustomerAddress, dispatch, currentUser]);
-  const formErrors = Object(react["useMemo"])(() => {
-    if (displayError) {
-      return new Map([['createCustomerAddressMutation', createCustomerAddressError], ['updateCustomerAddressMutation', updateCustomerAddressError]]);
-    } else return new Map();
-  }, [createCustomerAddressError, displayError, updateCustomerAddressError]);
-
-  // use data from backend until Intl.DisplayNames is widely supported
-  const countryDisplayNameMap = Object(react["useMemo"])(() => {
-    const countryMap = new Map();
-    if (customerAddressesData) {
-      const {
-        countries
-      } = customerAddressesData;
-      countries.forEach(country => {
-        countryMap.set(country.id, country.full_name_locale);
-      });
-    }
-    return countryMap;
-  }, [customerAddressesData]);
-  const isDialogBusy = isCreatingCustomerAddress || isUpdatingCustomerAddress;
-  const isLoadingWithoutData = !customerAddressesData && loading;
-  const formProps = {
-    initialValues: formAddress
-  };
-  return {
-    confirmDeleteAddressId,
-    countryDisplayNameMap,
-    customerAddresses,
-    formErrors,
-    formProps,
-    handleAddAddress,
-    handleCancelDeleteAddress,
-    handleCancelDialog,
-    handleConfirmDeleteAddress,
-    handleConfirmDialog,
-    handleDeleteAddress,
-    handleEditAddress,
-    isDeletingCustomerAddress,
-    isDialogBusy,
-    isDialogEditMode,
-    isDialogOpen,
-    isLoading: isLoadingWithoutData
-  };
-};
-
-/**
- * Object type returned by the {@link useAddressBookPage} talon.
- * It provides props data to use when rendering the address book page component.
- *
- * @typedef {Object} AddressBookPageTalonProps
- *
- * @property {String} confirmDeleteAddressId - The id of the address that is waiting to be confirmed for deletion.
- * @property {Map} countryDisplayNameMap - A Map of country id to its localized display name.
- * @property {Array<Object>} customerAddresses - A list of customer addresses.
- * @property {Map} formErrors - A Map of form errors.
- * @property {Object} formProps - Properties to pass to the add/edit form.
- * @property {Function} handleAddAdddress - Function to invoke when adding a new address.
- * @property {Function} handleCancelDeleteAddress - Function to deny the confirmation of deleting an address.
- * @property {Function} handleCancelDialog - Function to invoke when cancelling the add/edit dialog.
- * @property {Function} handleConfirmDeleteAddress - Function to invoke to accept the confirmation of deleting an address.
- * @property {Function} handleConfirmDialog - Function to invoke when submitting the add/edit dialog.
- * @property {Function} handleDeleteAddress - Function to invoke to begin the address deletion process.
- * @property {Function} handleEditAddress - Function to invoke when editing an existing address.
- * @property {Boolean} isDeletingCustomerAddress - Whether an address deletion is currently in progress.
- * @property {Boolean} isDialogBusy - Whether actions inside the dialog should be disabled.
- * @property {Boolean} isDialogEditMode - Whether the dialog is in edit mode (true) or add new mode (false).
- * @property {Boolean} isDialogOpen - Whether the dialog should be open.
- * @property {Boolean} isLoading - Whether the page is loading.
- */
-// EXTERNAL MODULE: ./node_modules/react-feather/dist/icons/edit-2.js
-var edit_2 = __webpack_require__("./node_modules/react-feather/dist/icons/edit-2.js");
-
-// EXTERNAL MODULE: ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/AddressBookPage/addressCard.module.css
-var addressCard_module = __webpack_require__("./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/AddressBookPage/addressCard.module.css");
-
-// CONCATENATED MODULE: ./node_modules/@magento/venia-ui/lib/components/AddressBookPage/addressCard.module.css
-
-            
-
-var addressCard_module_options = {"injectType":"styleTag"};
-
-addressCard_module_options.insert = "head";
-addressCard_module_options.singleton = false;
-
-var addressCard_module_update = injectStylesIntoStyleTag_default()(addressCard_module["a" /* default */], addressCard_module_options);
-
-
-
-/* harmony default export */ var AddressBookPage_addressCard_module = (addressCard_module["a" /* default */].locals || {});
-// CONCATENATED MODULE: ./node_modules/@magento/venia-ui/lib/components/AddressBookPage/addressCard.js
-
-
-
-
-
-
-
-
-
-const AddressCard = props => {
-  const {
-    address,
-    classes: propClasses,
-    countryName,
-    isConfirmingDelete,
-    isDeletingCustomerAddress,
-    onCancelDelete,
-    onConfirmDelete,
-    onEdit,
-    onDelete
-  } = props;
-  const {
-    city,
-    country_code,
-    default_shipping,
-    firstname,
-    middlename = '',
-    lastname,
-    postcode,
-    region: {
-      region
-    },
-    street,
-    telephone
-  } = address;
-  const classes = Object(shallowMerge["a" /* default */])(AddressBookPage_addressCard_module, propClasses);
-  const confirmDeleteButtonClasses = {
-    root_normalPriorityNegative: classes.confirmDeleteButton
-  };
-  const cancelDeleteButtonClasses = {
-    root_lowPriority: classes.cancelDeleteButton
-  };
-  const streetRows = street.map((row, index) => {
-    return /*#__PURE__*/react_default.a.createElement("span", {
-      className: classes.streetRow,
-      key: index
-    }, row);
-  });
-  const defaultBadge = default_shipping ? /*#__PURE__*/react_default.a.createElement("span", {
-    className: classes.defaultBadge,
-    "data-cy": "addressCard-defaultBadge"
-  }, /*#__PURE__*/react_default.a.createElement(message["a" /* default */], {
-    id: 'addressCard.defaultText',
-    defaultMessage: 'Default'
-  })) : null;
-  const nameString = [firstname, middlename, lastname].filter(name => !!name).join(' ');
-  const additionalAddressString = `${city}, ${region} ${postcode}`;
-  const deleteButtonElement = !default_shipping ? /*#__PURE__*/react_default.a.createElement(linkButton["a" /* default */], {
-    classes: {
-      root: classes.deleteButton
-    },
-    onClick: onDelete,
-    "data-cy": "addressCard-deleteButton"
-  }, /*#__PURE__*/react_default.a.createElement(icon["a" /* default */], {
-    classes: {
-      icon: null
-    },
-    size: 16,
-    src: trash_2["a" /* default */]
-  }), /*#__PURE__*/react_default.a.createElement("span", {
-    className: classes.actionLabel
-  }, /*#__PURE__*/react_default.a.createElement(message["a" /* default */], {
-    id: "addressBookPage.deleteAddress",
-    defaultMessage: "Delete"
-  }))) : null;
-  const maybeConfirmingDeleteOverlay = isConfirmingDelete ? /*#__PURE__*/react_default.a.createElement("div", {
-    className: classes.confirmDeleteContainer
-  }, /*#__PURE__*/react_default.a.createElement(Button_button["a" /* default */], {
-    classes: confirmDeleteButtonClasses,
-    disabled: isDeletingCustomerAddress,
-    priority: "normal",
-    type: "button",
-    negative: true,
-    onClick: onConfirmDelete,
-    "data-cy": "addressCard-confirmDeleteButton"
-  }, /*#__PURE__*/react_default.a.createElement(message["a" /* default */], {
-    id: 'global.deleteButton',
-    defaultMessage: 'Delete'
-  })), /*#__PURE__*/react_default.a.createElement(Button_button["a" /* default */], {
-    classes: cancelDeleteButtonClasses,
-    disabled: isDeletingCustomerAddress,
-    priority: "low",
-    type: "button",
-    onClick: onCancelDelete
-  }, /*#__PURE__*/react_default.a.createElement(message["a" /* default */], {
-    id: 'global.cancelButton',
-    defaultMessage: 'Cancel'
-  }))) : null;
-  return /*#__PURE__*/react_default.a.createElement("div", {
-    className: classes.root,
-    "data-cy": "addressCard-root"
-  }, /*#__PURE__*/react_default.a.createElement("div", {
-    className: classes.contentContainer,
-    "data-cy": "addressCard-contentContainer"
-  }, defaultBadge, /*#__PURE__*/react_default.a.createElement("span", {
-    className: classes.name
-  }, nameString), streetRows, /*#__PURE__*/react_default.a.createElement("span", {
-    className: classes.additionalAddress
-  }, additionalAddressString), /*#__PURE__*/react_default.a.createElement("span", {
-    className: classes.country
-  }, countryName || country_code), /*#__PURE__*/react_default.a.createElement("span", {
-    className: classes.telephone
-  }, /*#__PURE__*/react_default.a.createElement(message["a" /* default */], {
-    id: "addressBookPage.telephone",
-    defaultMessage: "Phone {telephone}",
-    values: {
-      telephone
-    }
-  }))), /*#__PURE__*/react_default.a.createElement("div", {
-    className: classes.actionContainer
-  }, /*#__PURE__*/react_default.a.createElement(linkButton["a" /* default */], {
-    classes: {
-      root: classes.editButton
-    },
-    onClick: onEdit,
-    "data-cy": "addressCard-editButton"
-  }, /*#__PURE__*/react_default.a.createElement(icon["a" /* default */], {
-    classes: {
-      icon: null
-    },
-    size: 16,
-    src: edit_2["a" /* default */]
-  }), /*#__PURE__*/react_default.a.createElement("span", {
-    className: classes.actionLabel
-  }, /*#__PURE__*/react_default.a.createElement(message["a" /* default */], {
-    id: "addressBookPage.editAddress",
-    defaultMessage: "Edit"
-  }))), deleteButtonElement, maybeConfirmingDeleteOverlay));
-};
-/* harmony default export */ var addressCard = (AddressCard);
-AddressCard.propTypes = {
-  address: Object(prop_types["shape"])({
-    city: prop_types["string"],
-    country_code: prop_types["string"],
-    default_shipping: prop_types["bool"],
-    firstname: prop_types["string"],
-    lastname: prop_types["string"],
-    postcode: prop_types["string"],
-    region: Object(prop_types["shape"])({
-      region_code: prop_types["string"],
-      region: prop_types["string"]
-    }),
-    street: Object(prop_types["arrayOf"])(prop_types["string"]),
-    telephone: prop_types["string"]
-  }).isRequired,
-  classes: Object(prop_types["shape"])({
-    actionContainer: prop_types["string"],
-    actionLabel: prop_types["string"],
-    additionalAddress: prop_types["string"],
-    contentContainer: prop_types["string"],
-    country: prop_types["string"],
-    defaultBadge: prop_types["string"],
-    defaultCard: prop_types["string"],
-    deleteButton: prop_types["string"],
-    editButton: prop_types["string"],
-    flash: prop_types["string"],
-    linkButton: prop_types["string"],
-    name: prop_types["string"],
-    root: prop_types["string"],
-    root_updated: prop_types["string"],
-    streetRow: prop_types["string"],
-    telephone: prop_types["string"]
-  }),
-  countryName: prop_types["string"],
-  isConfirmingDelete: prop_types["bool"],
-  isDeletingCustomerAddress: prop_types["bool"],
-  onCancelDelete: prop_types["func"],
-  onConfirmDelete: prop_types["func"],
-  onDelete: prop_types["func"],
-  onEdit: prop_types["func"]
-};
-// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/util/formValidators.js
-var formValidators = __webpack_require__("./node_modules/@magento/venia-ui/lib/util/formValidators.js");
-
-// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/Checkbox/checkbox.js + 1 modules
-var Checkbox_checkbox = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/Checkbox/checkbox.js");
-
-// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/Country/country.js + 3 modules
-var country = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/Country/country.js");
-
-// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/Dialog/dialog.js + 2 modules
-var dialog = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/Dialog/dialog.js");
-
-// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/Field/field.js
-var field = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/Field/field.js");
-
-// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/FormError/formError.js + 5 modules
-var formError = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/FormError/formError.js");
-
-// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/Postcode/postcode.js + 2 modules
-var Postcode_postcode = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/Postcode/postcode.js");
-
-// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/Region/region.js + 3 modules
-var Region_region = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/Region/region.js");
-
-// EXTERNAL MODULE: ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/AddressBookPage/addEditDialog.module.css
-var addEditDialog_module = __webpack_require__("./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/AddressBookPage/addEditDialog.module.css");
-
-// CONCATENATED MODULE: ./node_modules/@magento/venia-ui/lib/components/AddressBookPage/addEditDialog.module.css
-
-            
-
-var addEditDialog_module_options = {"injectType":"styleTag"};
-
-addEditDialog_module_options.insert = "head";
-addEditDialog_module_options.singleton = false;
-
-var addEditDialog_module_update = injectStylesIntoStyleTag_default()(addEditDialog_module["a" /* default */], addEditDialog_module_options);
-
-
-
-/* harmony default export */ var AddressBookPage_addEditDialog_module = (addEditDialog_module["a" /* default */].locals || {});
-// CONCATENATED MODULE: ./node_modules/@magento/venia-ui/lib/components/AddressBookPage/addEditDialog.js
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-const AddEditDialog = props => {
-  const {
-    formErrors,
-    formProps,
-    isBusy,
-    isEditMode,
-    isOpen,
-    onCancel,
-    onConfirm
-  } = props;
-  const {
-    formatMessage
-  } = Object(useIntl["a" /* default */])();
-  const classes = Object(shallowMerge["a" /* default */])(AddressBookPage_addEditDialog_module, props.classes);
-  let formatTitleArgs;
-  if (isEditMode) {
-    formatTitleArgs = {
-      id: 'addressBookPage.editDialogTitle',
-      defaultMessage: 'Edit Address'
-    };
-  } else {
-    formatTitleArgs = {
-      id: 'addressBookPage.addDialogTitle',
-      defaultMessage: 'New Address'
-    };
-  }
-  const title = formatMessage(formatTitleArgs);
-  const firstNameLabel = formatMessage({
-    id: 'global.firstName',
-    defaultMessage: 'First Name'
-  });
-  const middleNameLabel = formatMessage({
-    id: 'global.middleName',
-    defaultMessage: 'Middle Name'
-  });
-  const lastNameLabel = formatMessage({
-    id: 'global.lastName',
-    defaultMessage: 'Last Name'
-  });
-  const street1Label = formatMessage({
-    id: 'global.streetAddress',
-    defaultMessage: 'Street Address'
-  });
-  const street2Label = formatMessage({
-    id: 'global.streetAddress2',
-    defaultMessage: 'Street Address 2'
-  });
-  const cityLabel = formatMessage({
-    id: 'global.city',
-    defaultMessage: 'City'
-  });
-  const telephoneLabel = formatMessage({
-    id: 'global.phoneNumber',
-    defaultMessage: 'Phone Number'
-  });
-  const defaultAddressCheckLabel = formatMessage({
-    id: 'addressBookPage.makeDefaultAddress',
-    defaultMessage: 'Make this my default address'
-  });
-  return /*#__PURE__*/react_default.a.createElement(dialog["a" /* default */], {
-    confirmTranslationId: 'global.save',
-    confirmText: "Save",
-    formProps: formProps,
-    isOpen: isOpen,
-    onCancel: onCancel,
-    onConfirm: onConfirm,
-    shouldDisableAllButtons: isBusy,
-    title: title
-  }, /*#__PURE__*/react_default.a.createElement(formError["a" /* default */], {
-    classes: {
-      root: classes.errorContainer
-    },
-    errors: Array.from(formErrors.values())
-  }), /*#__PURE__*/react_default.a.createElement("div", {
-    className: classes.root,
-    "data-cy": "AddEditDialog-root"
-  }, /*#__PURE__*/react_default.a.createElement("div", {
-    className: classes.firstname
-  }, /*#__PURE__*/react_default.a.createElement(field["a" /* default */], {
-    id: "firstname",
-    label: firstNameLabel
-  }, /*#__PURE__*/react_default.a.createElement(textInput["a" /* default */], {
-    field: "firstname",
-    validate: formValidators["c" /* isRequired */],
-    "data-cy": "firstname"
-  }))), /*#__PURE__*/react_default.a.createElement("div", {
-    className: classes.middlename
-  }, /*#__PURE__*/react_default.a.createElement(field["a" /* default */], {
-    id: "middlename",
-    label: middleNameLabel,
-    optional: true
-  }, /*#__PURE__*/react_default.a.createElement(textInput["a" /* default */], {
-    field: "middlename",
-    "data-cy": "middlename"
-  }))), /*#__PURE__*/react_default.a.createElement("div", {
-    className: classes.lastname
-  }, /*#__PURE__*/react_default.a.createElement(field["a" /* default */], {
-    id: "lastname",
-    label: lastNameLabel
-  }, /*#__PURE__*/react_default.a.createElement(textInput["a" /* default */], {
-    field: "lastname",
-    validate: formValidators["c" /* isRequired */],
-    "data-cy": "lastname"
-  }))), /*#__PURE__*/react_default.a.createElement("div", {
-    className: classes.country
-  }, /*#__PURE__*/react_default.a.createElement(country["a" /* default */], {
-    field: 'country_code',
-    validate: formValidators["c" /* isRequired */],
-    "data-cy": "country"
-  })), /*#__PURE__*/react_default.a.createElement("div", {
-    className: classes.street1
-  }, /*#__PURE__*/react_default.a.createElement(field["a" /* default */], {
-    id: "street1",
-    label: street1Label
-  }, /*#__PURE__*/react_default.a.createElement(textInput["a" /* default */], {
-    field: "street[0]",
-    validate: formValidators["c" /* isRequired */],
-    "data-cy": "street[0]"
-  }))), /*#__PURE__*/react_default.a.createElement("div", {
-    className: classes.street2
-  }, /*#__PURE__*/react_default.a.createElement(field["a" /* default */], {
-    id: "street2",
-    label: street2Label,
-    optional: true
-  }, /*#__PURE__*/react_default.a.createElement(textInput["a" /* default */], {
-    field: "street[1]",
-    "data-cy": "street[1]"
-  }))), /*#__PURE__*/react_default.a.createElement("div", {
-    className: classes.city
-  }, /*#__PURE__*/react_default.a.createElement(field["a" /* default */], {
-    id: "city",
-    label: cityLabel
-  }, /*#__PURE__*/react_default.a.createElement(textInput["a" /* default */], {
-    field: "city",
-    validate: formValidators["c" /* isRequired */],
-    "data-cy": "city"
-  }))), /*#__PURE__*/react_default.a.createElement("div", {
-    className: classes.region
-  }, /*#__PURE__*/react_default.a.createElement(Region_region["a" /* default */], {
-    countryCodeField: 'country_code',
-    fieldInput: 'region[region]',
-    fieldSelect: 'region[region_id]',
-    optionValueKey: "id",
-    validate: formValidators["c" /* isRequired */],
-    "data-cy": "region"
-  })), /*#__PURE__*/react_default.a.createElement("div", {
-    className: classes.postcode
-  }, /*#__PURE__*/react_default.a.createElement(Postcode_postcode["a" /* default */], {
-    validate: formValidators["c" /* isRequired */],
-    "data-cy": "Postcode"
-  })), /*#__PURE__*/react_default.a.createElement("div", {
-    className: classes.telephone
-  }, /*#__PURE__*/react_default.a.createElement(field["a" /* default */], {
-    id: "telephone",
-    label: telephoneLabel
-  }, /*#__PURE__*/react_default.a.createElement(textInput["a" /* default */], {
-    field: "telephone",
-    validate: formValidators["c" /* isRequired */],
-    "data-cy": "telephone"
-  }))), /*#__PURE__*/react_default.a.createElement("div", {
-    className: classes.default_address_check
-  }, /*#__PURE__*/react_default.a.createElement(Checkbox_checkbox["a" /* default */], {
-    field: "default_shipping",
-    label: defaultAddressCheckLabel,
-    "data-cy": "default_shipping"
-  }))));
-};
-/* harmony default export */ var addEditDialog = (AddEditDialog);
-AddEditDialog.propTypes = {
-  classes: Object(prop_types["shape"])({
-    root: prop_types["string"],
-    city: prop_types["string"],
-    country: prop_types["string"],
-    default_address_check: prop_types["string"],
-    errorContainer: prop_types["string"],
-    firstname: prop_types["string"],
-    lastname: prop_types["string"],
-    middlename: prop_types["string"],
-    postcode: prop_types["string"],
-    region: prop_types["string"],
-    street1: prop_types["string"],
-    street2: prop_types["string"],
-    telephone: prop_types["string"]
-  }),
-  formErrors: prop_types["object"],
-  isEditMode: prop_types["bool"],
-  isOpen: prop_types["bool"],
-  onCancel: prop_types["func"],
-  onConfirm: prop_types["func"]
-};
-// EXTERNAL MODULE: ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/AddressBookPage/addressBookPage.module.css
-var addressBookPage_module = __webpack_require__("./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/AddressBookPage/addressBookPage.module.css");
-
-// CONCATENATED MODULE: ./node_modules/@magento/venia-ui/lib/components/AddressBookPage/addressBookPage.module.css
-
-            
-
-var addressBookPage_module_options = {"injectType":"styleTag"};
-
-addressBookPage_module_options.insert = "head";
-addressBookPage_module_options.singleton = false;
-
-var addressBookPage_module_update = injectStylesIntoStyleTag_default()(addressBookPage_module["a" /* default */], addressBookPage_module_options);
-
-
-
-/* harmony default export */ var AddressBookPage_addressBookPage_module = (addressBookPage_module["a" /* default */].locals || {});
-// CONCATENATED MODULE: ./node_modules/@magento/venia-ui/lib/components/AddressBookPage/addressBookPage.js
-
-
-
-
-
-
-
-
-
-
-
-
-const AddressBookPage = props => {
-  const talonProps = useAddressBookPage();
-  const {
-    confirmDeleteAddressId,
-    countryDisplayNameMap,
-    customerAddresses,
-    formErrors,
-    formProps,
-    handleAddAddress,
-    handleCancelDeleteAddress,
-    handleCancelDialog,
-    handleConfirmDeleteAddress,
-    handleConfirmDialog,
-    handleDeleteAddress,
-    handleEditAddress,
-    isDeletingCustomerAddress,
-    isDialogBusy,
-    isDialogEditMode,
-    isDialogOpen,
-    isLoading
-  } = talonProps;
-  const {
-    formatMessage
-  } = Object(useIntl["a" /* default */])();
-  const classes = Object(shallowMerge["a" /* default */])(AddressBookPage_addressBookPage_module, props.classes);
-  const PAGE_TITLE = formatMessage({
-    id: 'addressBookPage.addressBookText',
-    defaultMessage: 'Address Book'
-  });
-  const addressBookElements = Object(react["useMemo"])(() => {
-    const defaultToBeginning = (address1, address2) => {
-      if (address1.default_shipping) return -1;
-      if (address2.default_shipping) return 1;
-      return 0;
-    };
-    return Array.from(customerAddresses).sort(defaultToBeginning).map(addressEntry => {
-      const countryName = countryDisplayNameMap.get(addressEntry.country_code);
-      const boundEdit = () => handleEditAddress(addressEntry);
-      const boundDelete = () => handleDeleteAddress(addressEntry.id);
-      const isConfirmingDelete = confirmDeleteAddressId === addressEntry.id;
-      return /*#__PURE__*/react_default.a.createElement(addressCard, {
-        address: addressEntry,
-        countryName: countryName,
-        isConfirmingDelete: isConfirmingDelete,
-        isDeletingCustomerAddress: isDeletingCustomerAddress,
-        key: addressEntry.id,
-        onCancelDelete: handleCancelDeleteAddress,
-        onConfirmDelete: handleConfirmDeleteAddress,
-        onDelete: boundDelete,
-        onEdit: boundEdit
-      });
-    });
-  }, [confirmDeleteAddressId, countryDisplayNameMap, customerAddresses, handleCancelDeleteAddress, handleConfirmDeleteAddress, handleDeleteAddress, handleEditAddress, isDeletingCustomerAddress]);
-  if (isLoading) {
-    return LoadingIndicator_static["a" /* default */];
-  }
-  return /*#__PURE__*/react_default.a.createElement("div", {
-    className: classes.root
-  }, /*#__PURE__*/react_default.a.createElement(Head["a" /* StoreTitle */], null, PAGE_TITLE), /*#__PURE__*/react_default.a.createElement("h1", {
-    "aria-live": "polite",
-    className: classes.heading,
-    "data-cy": "AddressBookPage-heading"
-  }, PAGE_TITLE), /*#__PURE__*/react_default.a.createElement("div", {
-    className: classes.content,
-    "data-cy": "AddressBookPage-content"
-  }, addressBookElements, /*#__PURE__*/react_default.a.createElement(linkButton["a" /* default */], {
-    className: classes.addButton,
-    key: "addAddressButton",
-    onClick: handleAddAddress,
-    "data-cy": "AddressBookPage-addButton"
-  }, /*#__PURE__*/react_default.a.createElement(icon["a" /* default */], {
-    classes: {
-      icon: classes.addIcon
-    },
-    size: 24,
-    src: plus_square["a" /* default */]
-  }), /*#__PURE__*/react_default.a.createElement("span", {
-    className: classes.addText
-  }, /*#__PURE__*/react_default.a.createElement(message["a" /* default */], {
-    id: 'addressBookPage.addAddressText',
-    defaultMessage: 'Add an Address'
-  })))), /*#__PURE__*/react_default.a.createElement(addEditDialog, {
-    formErrors: formErrors,
-    formProps: formProps,
-    isBusy: isDialogBusy,
-    isEditMode: isDialogEditMode,
-    isOpen: isDialogOpen,
-    onCancel: handleCancelDialog,
-    onConfirm: handleConfirmDialog
-  }));
-};
-/* harmony default export */ var addressBookPage = (AddressBookPage);
 // CONCATENATED MODULE: ./node_modules/@magento/peregrine/lib/talons/WishlistPage/wishlistItemFragments.gql.js
 
 const WishlistItemFragment = lib["a" /* gql */]`
@@ -43878,6 +41779,9 @@ const useAddToCartDialog = props => {
     priceProps
   };
 };
+// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/Dialog/dialog.js + 2 modules
+var dialog = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/Dialog/dialog.js");
+
 // EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/ProductOptions/options.js + 15 modules
 var ProductOptions_options = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/ProductOptions/options.js");
 
@@ -43898,6 +41802,9 @@ var addToCartDialog_module_update = injectStylesIntoStyleTag_default()(addToCart
 
 
 /* harmony default export */ var AddToCartDialog_addToCartDialog_module = (addToCartDialog_module["a" /* default */].locals || {});
+// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/FormError/formError.js + 5 modules
+var formError = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/FormError/formError.js");
+
 // EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/LoadingIndicator/spinner.js + 1 modules
 var spinner = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/LoadingIndicator/spinner.js");
 
@@ -44186,6 +42093,9 @@ const useActionMenu = (props = {}) => {
  * @property {Boolean} isEditInProgress Whether the update wishlist operation is in progress
  * @property {Boolean} listActionsIsOpen Whether the list actions dialog is open
  */
+// EXTERNAL MODULE: ./node_modules/react-feather/dist/icons/edit-2.js
+var edit_2 = __webpack_require__("./node_modules/react-feather/dist/icons/edit-2.js");
+
 // EXTERNAL MODULE: ./node_modules/react-feather/dist/icons/chevron-right.js
 var chevron_right = __webpack_require__("./node_modules/react-feather/dist/icons/chevron-right.js");
 
@@ -44284,6 +42194,12 @@ var wishlistEditFavoritesListDialog_module_update = injectStylesIntoStyleTag_def
 
 
 /* harmony default export */ var WishlistPage_wishlistEditFavoritesListDialog_module = (wishlistEditFavoritesListDialog_module["a" /* default */].locals || {});
+// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/util/formValidators.js
+var formValidators = __webpack_require__("./node_modules/@magento/venia-ui/lib/util/formValidators.js");
+
+// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/Field/field.js
+var field = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/Field/field.js");
+
 // CONCATENATED MODULE: ./node_modules/@magento/venia-ui/lib/components/WishlistPage/wishlistEditFavoritesListDialog.js
 
 
@@ -44611,6 +42527,9 @@ var wishlistPage_module_update = injectStylesIntoStyleTag_default()(wishlistPage
 
 
 /* harmony default export */ var WishlistPage_wishlistPage_module = (wishlistPage_module["a" /* default */].locals || {});
+// EXTERNAL MODULE: ./node_modules/react-feather/dist/icons/plus-square.js
+var plus_square = __webpack_require__("./node_modules/react-feather/dist/icons/plus-square.js");
+
 // CONCATENATED MODULE: ./node_modules/@magento/peregrine/lib/talons/WishlistPage/createWishlist.gql.js
 
 const CREATE_WISHLIST = lib["a" /* gql */]`
@@ -45042,6 +42961,354 @@ const AccountNavigation = props => {
 // EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/hooks/useAwaitQuery.js
 var useAwaitQuery = __webpack_require__("./node_modules/@magento/peregrine/lib/hooks/useAwaitQuery.js");
 
+// CONCATENATED MODULE: ./node_modules/@magento/peregrine/lib/talons/AddressBookPage/addressBookFragments.gql.js
+
+const CustomerAddressBookAddressFragment = lib["a" /* gql */]`
+    fragment CustomerAddressBookAddressFragment on CustomerAddress {
+        __typename
+        id
+        city
+        country_code
+        default_billing
+        default_shipping
+        firstname
+        lastname
+        middlename
+        postcode
+        region {
+            region
+            region_code
+            region_id
+        }
+        street
+        telephone
+    }
+`;
+// CONCATENATED MODULE: ./node_modules/@magento/peregrine/lib/talons/AddressBookPage/addressBookPage.gql.js
+
+
+const GET_CUSTOMER_ADDRESSES = lib["a" /* gql */]`
+    query GetCustomerAddressesForAddressBook {
+        # eslint-disable-next-line @graphql-eslint/require-id-when-available
+        customer {
+            addresses {
+                id
+                ...CustomerAddressBookAddressFragment
+            }
+        }
+        countries {
+            id
+            full_name_locale
+        }
+    }
+    ${CustomerAddressBookAddressFragment}
+`;
+const ADD_NEW_CUSTOMER_ADDRESS = lib["a" /* gql */]`
+    mutation AddNewCustomerAddressToAddressBook(
+        $address: CustomerAddressInput!
+    ) {
+        createCustomerAddress(input: $address) {
+            # We don't manually write to the cache to update the collection
+            # after adding a new address so there's no need to query for a bunch
+            # of address fields here. We use refetchQueries to refresh the list.
+            id
+        }
+    }
+`;
+const UPDATE_CUSTOMER_ADDRESS = lib["a" /* gql */]`
+    mutation UpdateCustomerAddressInAddressBook(
+        $addressId: Int!
+        $updated_address: CustomerAddressInput!
+    ) {
+        updateCustomerAddress(id: $addressId, input: $updated_address) {
+            id
+            ...CustomerAddressBookAddressFragment
+        }
+    }
+    ${CustomerAddressBookAddressFragment}
+`;
+const DELETE_CUSTOMER_ADDRESS = lib["a" /* gql */]`
+    mutation DeleteCustomerAddressFromAddressBook($addressId: Int!) {
+        deleteCustomerAddress(id: $addressId)
+    }
+`;
+/* harmony default export */ var addressBookPage_gql = ({
+  createCustomerAddressMutation: ADD_NEW_CUSTOMER_ADDRESS,
+  deleteCustomerAddressMutation: DELETE_CUSTOMER_ADDRESS,
+  getCustomerAddressesQuery: GET_CUSTOMER_ADDRESSES,
+  updateCustomerAddressMutation: UPDATE_CUSTOMER_ADDRESS
+});
+// CONCATENATED MODULE: ./node_modules/@magento/peregrine/lib/talons/AddressBookPage/useAddressBookPage.js
+function useAddressBookPage_ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+function useAddressBookPage_objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? useAddressBookPage_ownKeys(Object(source), !0).forEach(function (key) { useAddressBookPage_defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : useAddressBookPage_ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
+function useAddressBookPage_defineProperty(obj, key, value) { key = useAddressBookPage_toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+function useAddressBookPage_toPropertyKey(arg) { var key = useAddressBookPage_toPrimitive(arg, "string"); return typeof key === "symbol" ? key : String(key); }
+function useAddressBookPage_toPrimitive(input, hint) { if (typeof input !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (typeof res !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
+
+
+
+
+
+
+
+
+/**
+ *  A talon to support the functionality of the Address Book page.
+ *
+ *  @function
+ *
+ *  @param {Object} props
+ *  @param {Object} props.operations - GraphQL operations to be run by the talon.
+ *
+ *  @returns {AddressBookPageTalonProps}
+ *
+ * @example <caption>Importing into your project</caption>
+ * import { useAddressBookPage } from '@magento/peregrine/lib/talons/AddressBookPage/useAddressBookPage';
+ */
+const useAddressBookPage = (props = {}) => {
+  const operations = Object(shallowMerge["a" /* default */])(addressBookPage_gql, props.operations);
+  const {
+    createCustomerAddressMutation,
+    deleteCustomerAddressMutation,
+    getCustomerAddressesQuery,
+    updateCustomerAddressMutation
+  } = operations;
+  const [, {
+    actions: {
+      setPageLoading
+    }
+  }] = Object(app["b" /* useAppContext */])();
+  const [{
+    isSignedIn,
+    currentUser
+  }] = Object(user["b" /* useUserContext */])();
+  const [, {
+    dispatch
+  }] = Object(eventing["b" /* useEventingContext */])();
+  const {
+    data: customerAddressesData,
+    loading
+  } = Object(useQuery["a" /* useQuery */])(getCustomerAddressesQuery, {
+    fetchPolicy: 'cache-and-network',
+    skip: !isSignedIn
+  });
+  const [deleteCustomerAddress, {
+    loading: isDeletingCustomerAddress
+  }] = Object(useMutation["a" /* useMutation */])(deleteCustomerAddressMutation);
+  const [confirmDeleteAddressId, setConfirmDeleteAddressId] = Object(react["useState"])();
+  const isRefetching = !!customerAddressesData && loading;
+  const customerAddresses = customerAddressesData && customerAddressesData.customer && customerAddressesData.customer.addresses || [];
+  const [createCustomerAddress, {
+    error: createCustomerAddressError,
+    loading: isCreatingCustomerAddress
+  }] = Object(useMutation["a" /* useMutation */])(createCustomerAddressMutation);
+  const [updateCustomerAddress, {
+    error: updateCustomerAddressError,
+    loading: isUpdatingCustomerAddress
+  }] = Object(useMutation["a" /* useMutation */])(updateCustomerAddressMutation);
+  const [isDialogOpen, setIsDialogOpen] = Object(react["useState"])(false);
+  const [isDialogEditMode, setIsDialogEditMode] = Object(react["useState"])(false);
+  const [formAddress, setFormAddress] = Object(react["useState"])({});
+
+  // Use local state to determine whether to display errors or not.
+  // Could be replaced by a "reset mutation" function from apollo client.
+  // https://github.com/apollographql/apollo-feature-requests/issues/170
+  const [displayError, setDisplayError] = Object(react["useState"])(false);
+
+  // Update the page indicator if the GraphQL query is in flight.
+  Object(react["useEffect"])(() => {
+    setPageLoading(isRefetching);
+  }, [isRefetching, setPageLoading]);
+  const handleAddAddress = Object(react["useCallback"])(() => {
+    // Hide all previous errors when we open the dialog.
+    setDisplayError(false);
+    setIsDialogEditMode(false);
+    setFormAddress({
+      country_code: "US"
+    });
+    setIsDialogOpen(true);
+  }, []);
+  const handleDeleteAddress = Object(react["useCallback"])(addressId => {
+    setConfirmDeleteAddressId(addressId);
+  }, []);
+  const handleCancelDeleteAddress = Object(react["useCallback"])(() => {
+    setConfirmDeleteAddressId(null);
+  }, []);
+  const handleConfirmDeleteAddress = Object(react["useCallback"])(async () => {
+    try {
+      await deleteCustomerAddress({
+        variables: {
+          addressId: confirmDeleteAddressId
+        },
+        refetchQueries: [{
+          query: getCustomerAddressesQuery
+        }],
+        awaitRefetchQueries: true
+      });
+      dispatch({
+        type: 'USER_ADDRESS_DELETE',
+        payload: {
+          addressId: confirmDeleteAddressId,
+          user: currentUser
+        }
+      });
+      setConfirmDeleteAddressId(null);
+    } catch {
+      return;
+    }
+  }, [confirmDeleteAddressId, deleteCustomerAddress, getCustomerAddressesQuery, dispatch, currentUser]);
+  const handleEditAddress = Object(react["useCallback"])(address => {
+    // Hide all previous errors when we open the dialog.
+    setDisplayError(false);
+    setIsDialogEditMode(true);
+    setFormAddress(address);
+    setIsDialogOpen(true);
+  }, []);
+  const handleCancelDialog = Object(react["useCallback"])(() => {
+    setIsDialogOpen(false);
+  }, []);
+  const handleConfirmDialog = Object(react["useCallback"])(async formValues => {
+    if (isDialogEditMode) {
+      try {
+        const address = useAddressBookPage_objectSpread(useAddressBookPage_objectSpread({}, formValues), {}, {
+          // Sends value as empty if none are provided
+          middlename: formValues.middlename || '',
+          // Cleans up the street array when values are null or undefined
+          street: formValues.street.filter(e => e)
+        });
+        await updateCustomerAddress({
+          variables: {
+            addressId: formAddress.id,
+            updated_address: address
+          },
+          refetchQueries: [{
+            query: getCustomerAddressesQuery
+          }],
+          awaitRefetchQueries: true
+        });
+        dispatch({
+          type: 'USER_ADDRESS_EDIT',
+          payload: {
+            id: formAddress.id,
+            address: address,
+            user: currentUser
+          }
+        });
+        setIsDialogOpen(false);
+      } catch {
+        // Make sure any errors from the mutations are displayed.
+        setDisplayError(true);
+
+        // we have an onError link that logs errors, and FormError
+        // already renders this error, so just return to avoid
+        // triggering the success callback
+        return;
+      }
+    } else {
+      try {
+        const address = useAddressBookPage_objectSpread(useAddressBookPage_objectSpread({}, formValues), {}, {
+          // Sends value as empty if none are provided
+          middlename: formValues.middlename || '',
+          // Cleans up the street array when values are null or undefined
+          street: formValues.street.filter(e => e)
+        });
+        await createCustomerAddress({
+          variables: {
+            address
+          },
+          refetchQueries: [{
+            query: getCustomerAddressesQuery
+          }],
+          awaitRefetchQueries: true
+        });
+        dispatch({
+          type: 'USER_ADDRESS_CREATE',
+          payload: {
+            address,
+            user: currentUser
+          }
+        });
+        setIsDialogOpen(false);
+      } catch {
+        // Make sure any errors from the mutations are displayed.
+        setDisplayError(true);
+
+        // we have an onError link that logs errors, and FormError
+        // already renders this error, so just return to avoid
+        // triggering the success callback
+        return;
+      }
+    }
+  }, [createCustomerAddress, formAddress, getCustomerAddressesQuery, isDialogEditMode, updateCustomerAddress, dispatch, currentUser]);
+  const formErrors = Object(react["useMemo"])(() => {
+    if (displayError) {
+      return new Map([['createCustomerAddressMutation', createCustomerAddressError], ['updateCustomerAddressMutation', updateCustomerAddressError]]);
+    } else return new Map();
+  }, [createCustomerAddressError, displayError, updateCustomerAddressError]);
+
+  // use data from backend until Intl.DisplayNames is widely supported
+  const countryDisplayNameMap = Object(react["useMemo"])(() => {
+    const countryMap = new Map();
+    if (customerAddressesData) {
+      const {
+        countries
+      } = customerAddressesData;
+      countries.forEach(country => {
+        countryMap.set(country.id, country.full_name_locale);
+      });
+    }
+    return countryMap;
+  }, [customerAddressesData]);
+  const isDialogBusy = isCreatingCustomerAddress || isUpdatingCustomerAddress;
+  const isLoadingWithoutData = !customerAddressesData && loading;
+  const formProps = {
+    initialValues: formAddress
+  };
+  return {
+    confirmDeleteAddressId,
+    countryDisplayNameMap,
+    customerAddresses,
+    formErrors,
+    formProps,
+    handleAddAddress,
+    handleCancelDeleteAddress,
+    handleCancelDialog,
+    handleConfirmDeleteAddress,
+    handleConfirmDialog,
+    handleDeleteAddress,
+    handleEditAddress,
+    isDeletingCustomerAddress,
+    isDialogBusy,
+    isDialogEditMode,
+    isDialogOpen,
+    isLoading: isLoadingWithoutData
+  };
+};
+
+/**
+ * Object type returned by the {@link useAddressBookPage} talon.
+ * It provides props data to use when rendering the address book page component.
+ *
+ * @typedef {Object} AddressBookPageTalonProps
+ *
+ * @property {String} confirmDeleteAddressId - The id of the address that is waiting to be confirmed for deletion.
+ * @property {Map} countryDisplayNameMap - A Map of country id to its localized display name.
+ * @property {Array<Object>} customerAddresses - A list of customer addresses.
+ * @property {Map} formErrors - A Map of form errors.
+ * @property {Object} formProps - Properties to pass to the add/edit form.
+ * @property {Function} handleAddAdddress - Function to invoke when adding a new address.
+ * @property {Function} handleCancelDeleteAddress - Function to deny the confirmation of deleting an address.
+ * @property {Function} handleCancelDialog - Function to invoke when cancelling the add/edit dialog.
+ * @property {Function} handleConfirmDeleteAddress - Function to invoke to accept the confirmation of deleting an address.
+ * @property {Function} handleConfirmDialog - Function to invoke when submitting the add/edit dialog.
+ * @property {Function} handleDeleteAddress - Function to invoke to begin the address deletion process.
+ * @property {Function} handleEditAddress - Function to invoke when editing an existing address.
+ * @property {Boolean} isDeletingCustomerAddress - Whether an address deletion is currently in progress.
+ * @property {Boolean} isDialogBusy - Whether actions inside the dialog should be disabled.
+ * @property {Boolean} isDialogEditMode - Whether the dialog is in edit mode (true) or add new mode (false).
+ * @property {Boolean} isDialogOpen - Whether the dialog should be open.
+ * @property {Boolean} isLoading - Whether the page is loading.
+ */
 // CONCATENATED MODULE: ./src/RootComponents/Account/AccountOverview/AccountOverview.gql.js
 
 const GET_CUSTOMER = lib["a" /* gql */]`query GetCustomerInformation {
@@ -45073,15 +43340,17 @@ var AddressCard_module_update = injectStylesIntoStyleTag_default()(AddressCard_m
 
 
 /* harmony default export */ var AccountOverview_AddressCard_module = (AddressCard_module["a" /* default */].locals || {});
-// CONCATENATED MODULE: ./src/RootComponents/Account/AccountOverview/addressCard.js
+// CONCATENATED MODULE: ./src/RootComponents/Account/AccountOverview/AddressCard.js
 
 
 
 
-const addressCard_AddressCard = props => {
+const AddressCard = props => {
   const {
     address,
-    countryName
+    countryName,
+    onEdit,
+    onEditLabel = 'Edit Address'
   } = props;
   const {
     city,
@@ -45124,11 +43393,11 @@ const addressCard_AddressCard = props => {
   }))), /*#__PURE__*/react_default.a.createElement("div", {
     className: AccountOverview_AddressCard_module.actions
   }, /*#__PURE__*/react_default.a.createElement("a", {
-    href: `/customer/address?edit=${id}`
+    onClick: () => onEdit(address)
   }, "Edit Address")));
 };
-/* harmony default export */ var AccountOverview_addressCard = (addressCard_AddressCard);
-addressCard_AddressCard.propTypes = {
+/* harmony default export */ var AccountOverview_AddressCard = (AddressCard);
+AddressCard.propTypes = {
   address: Object(prop_types["shape"])({
     city: prop_types["string"],
     country_code: prop_types["string"],
@@ -45143,7 +43412,9 @@ addressCard_AddressCard.propTypes = {
     street: Object(prop_types["arrayOf"])(prop_types["string"]),
     telephone: prop_types["string"]
   }).isRequired,
-  countryName: prop_types["string"]
+  countryName: prop_types["string"],
+  onEdit: prop_types["func"].isRequired,
+  onEditLabel: prop_types["string"]
 };
 // EXTERNAL MODULE: ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./src/RootComponents/Account/AccountOverview/AccountOverview.module.css
 var AccountOverview_module = __webpack_require__("./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./src/RootComponents/Account/AccountOverview/AccountOverview.module.css");
@@ -45378,18 +43649,24 @@ const AccountOverview = () => {
     className: AccountOverview_AccountOverview_module.box
   }, /*#__PURE__*/react_default.a.createElement("div", {
     className: AccountOverview_AccountOverview_module.boxTitle
-  }, "Default Billing Address"), defaultBillingAddress ? /*#__PURE__*/react_default.a.createElement(AccountOverview_addressCard, {
+  }, "Default Billing Address"), defaultBillingAddress ? /*#__PURE__*/react_default.a.createElement(AccountOverview_AddressCard, {
     address: defaultBillingAddress,
-    countryName: countryDisplayNameMap.get(defaultBillingAddress.country_code)
+    countryName: countryDisplayNameMap.get(defaultBillingAddress.country_code),
+    onEdit: ({
+      id
+    }) => window.location = `/customer/address?edit=${id}`
   }) : /*#__PURE__*/react_default.a.createElement("div", {
     className: AccountOverview_AccountOverview_module.boxContent
   }, "You have not set a default billing address.")), /*#__PURE__*/react_default.a.createElement("div", {
     className: AccountOverview_AccountOverview_module.box
   }, /*#__PURE__*/react_default.a.createElement("div", {
     className: AccountOverview_AccountOverview_module.boxTitle
-  }, "Default Shipping Address"), defaultShippingAddress ? /*#__PURE__*/react_default.a.createElement(AccountOverview_addressCard, {
+  }, "Default Shipping Address"), defaultShippingAddress ? /*#__PURE__*/react_default.a.createElement(AccountOverview_AddressCard, {
     address: defaultShippingAddress,
-    countryName: countryDisplayNameMap.get(defaultShippingAddress.country_code)
+    countryName: countryDisplayNameMap.get(defaultShippingAddress.country_code),
+    onEdit: ({
+      id
+    }) => window.location = `/customer/address?edit=${id}`
   }) : /*#__PURE__*/react_default.a.createElement("div", {
     className: AccountOverview_AccountOverview_module.boxContent
   }, "You have not set a default shipping address.")))), /*#__PURE__*/react_default.a.createElement("div", {
@@ -45440,6 +43717,318 @@ var AccountPage_module_update = injectStylesIntoStyleTag_default()(AccountPage_m
 
 
 /* harmony default export */ var Account_AccountPage_module = (AccountPage_module["a" /* default */].locals || {});
+// EXTERNAL MODULE: ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./src/RootComponents/Account/AddressBookPage/AddressBookPage.module.css
+var AddressBookPage_module = __webpack_require__("./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./src/RootComponents/Account/AddressBookPage/AddressBookPage.module.css");
+
+// CONCATENATED MODULE: ./src/RootComponents/Account/AddressBookPage/AddressBookPage.module.css
+
+            
+
+var AddressBookPage_module_options = {"injectType":"styleTag"};
+
+AddressBookPage_module_options.insert = "head";
+AddressBookPage_module_options.singleton = false;
+
+var AddressBookPage_module_update = injectStylesIntoStyleTag_default()(AddressBookPage_module["a" /* default */], AddressBookPage_module_options);
+
+
+
+/* harmony default export */ var AddressBookPage_AddressBookPage_module = (AddressBookPage_module["a" /* default */].locals || {});
+// CONCATENATED MODULE: ./src/RootComponents/Account/AddressBookPage/AddressRow.js
+
+
+const AddressRow = props => {
+  const {
+    address,
+    countryName,
+    mobile,
+    onEdit,
+    onDelete
+  } = props;
+  const {
+    city,
+    firstname,
+    lastname,
+    postcode,
+    region,
+    street,
+    telephone,
+    id
+  } = address;
+  if (mobile) {
+    return /*#__PURE__*/react_default.a.createElement("div", null, /*#__PURE__*/react_default.a.createElement("span", null, /*#__PURE__*/react_default.a.createElement("strong", null, "First Name:"), " ", firstname), /*#__PURE__*/react_default.a.createElement("span", null, /*#__PURE__*/react_default.a.createElement("strong", null, "Last Name:"), " ", lastname), /*#__PURE__*/react_default.a.createElement("span", null, /*#__PURE__*/react_default.a.createElement("strong", null, "Street Address:"), " ", street.length > 0 ? street[0] : ''), /*#__PURE__*/react_default.a.createElement("span", null, /*#__PURE__*/react_default.a.createElement("strong", null, "City:"), " ", city), /*#__PURE__*/react_default.a.createElement("span", null, /*#__PURE__*/react_default.a.createElement("strong", null, "Country:"), " ", countryName), /*#__PURE__*/react_default.a.createElement("span", null, /*#__PURE__*/react_default.a.createElement("strong", null, "State:"), " ", region === null || region === void 0 ? void 0 : region.region), /*#__PURE__*/react_default.a.createElement("span", null, /*#__PURE__*/react_default.a.createElement("strong", null, "Zip/Postal Code:"), " ", postcode), /*#__PURE__*/react_default.a.createElement("span", null, /*#__PURE__*/react_default.a.createElement("strong", null, "Phone:"), " ", telephone), /*#__PURE__*/react_default.a.createElement("span", null, /*#__PURE__*/react_default.a.createElement("strong", null, "Actions:"), /*#__PURE__*/react_default.a.createElement("a", {
+      onClick: () => onEdit(address)
+    }, "Edit"), /*#__PURE__*/react_default.a.createElement("a", {
+      onClick: () => onDelete(id)
+    }, "Delete")));
+  }
+  return /*#__PURE__*/react_default.a.createElement("tr", null, /*#__PURE__*/react_default.a.createElement("td", null, firstname), /*#__PURE__*/react_default.a.createElement("td", null, lastname), /*#__PURE__*/react_default.a.createElement("td", null, street.length > 0 ? street[0] : ''), /*#__PURE__*/react_default.a.createElement("td", null, city), /*#__PURE__*/react_default.a.createElement("td", null, countryName), /*#__PURE__*/react_default.a.createElement("td", null, region === null || region === void 0 ? void 0 : region.region), /*#__PURE__*/react_default.a.createElement("td", null, postcode), /*#__PURE__*/react_default.a.createElement("td", null, telephone), /*#__PURE__*/react_default.a.createElement("td", null, /*#__PURE__*/react_default.a.createElement("a", {
+    onClick: () => onEdit(address)
+  }, "Edit"), /*#__PURE__*/react_default.a.createElement("a", {
+    onClick: () => onDelete(id)
+  }, "Delete")));
+};
+/* harmony default export */ var AddressBookPage_AddressRow = (AddressRow);
+AddressRow.propTypes = {
+  address: Object(prop_types["shape"])({
+    id: prop_types["string"],
+    city: prop_types["string"],
+    country_code: prop_types["string"],
+    default_shipping: prop_types["bool"],
+    firstname: prop_types["string"],
+    lastname: prop_types["string"],
+    postcode: prop_types["string"],
+    region: Object(prop_types["shape"])({
+      region_code: prop_types["string"],
+      region: prop_types["string"]
+    }),
+    street: Object(prop_types["arrayOf"])(prop_types["string"]),
+    telephone: prop_types["string"]
+  }).isRequired,
+  mobile: prop_types["bool"],
+  countryName: prop_types["string"],
+  onDelete: prop_types["func"].isRequired,
+  onEdit: prop_types["func"].isRequired
+};
+// CONCATENATED MODULE: ./src/RootComponents/Account/AddressBookPage/addressBookPage.js
+function addressBookPage_ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+function addressBookPage_objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? addressBookPage_ownKeys(Object(source), !0).forEach(function (key) { addressBookPage_defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : addressBookPage_ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
+function addressBookPage_defineProperty(obj, key, value) { key = addressBookPage_toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+function addressBookPage_toPropertyKey(arg) { var key = addressBookPage_toPrimitive(arg, "string"); return typeof key === "symbol" ? key : String(key); }
+function addressBookPage_toPrimitive(input, hint) { if (typeof input !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (typeof res !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
+
+
+
+
+
+
+
+
+
+
+
+const AddressBookPage = props => {
+  const talonProps = useAddressBookPage();
+  const {
+    confirmDeleteAddressId,
+    countryDisplayNameMap,
+    customerAddresses,
+    formErrors,
+    formProps,
+    handleAddAddress,
+    handleCancelDeleteAddress,
+    handleCancelDialog,
+    handleConfirmDeleteAddress,
+    handleConfirmDialog,
+    handleDeleteAddress,
+    handleEditAddress,
+    isDeletingCustomerAddress,
+    isDialogBusy,
+    isDialogEditMode,
+    isDialogOpen,
+    isLoading
+  } = talonProps;
+  const {
+    formatMessage
+  } = Object(useIntl["a" /* default */])();
+
+  // TODO: Convert dialog into full page
+
+  const defaultBillingAddress = customerAddresses.find(({
+    default_billing
+  }) => default_billing);
+  const defaultShippingAddress = customerAddresses.find(({
+    default_shipping
+  }) => default_shipping);
+  const remainingAddresses = customerAddresses.filter(({
+    default_billing,
+    default_shipping
+  }) => !default_billing && !default_shipping).map(address => addressBookPage_objectSpread(addressBookPage_objectSpread({}, address), {}, {
+    countryName: countryDisplayNameMap.get(address.country_code)
+  }));
+  console.log('remainingAddresses', remainingAddresses);
+  Object(react["useEffect"])(() => {
+    // Check if ?edit=id is set
+    let queryEditId = new URLSearchParams(window.location.search).get('edit');
+    if (!queryEditId) {
+      return;
+    }
+
+    // Parse id
+    try {
+      queryEditId = parseInt(queryEditId, 10);
+    } catch (err) {
+      console.error('Invalid edit id', queryEditId);
+      return;
+    }
+    console.log('queryEditId', queryEditId);
+
+    // Find address with id
+    const addressToEdit = customerAddresses.find(({
+      id
+    }) => id === queryEditId);
+    if (!addressToEdit) {
+      return;
+    }
+
+    // Switch to edit mode
+    console.log('addressToEdit', addressToEdit);
+    handleEditAddress(addressToEdit);
+  }, [customerAddresses]);
+
+  /* const addressBookElements = useMemo(() => {
+      const defaultToBeginning = (address1, address2) => {
+          if (address1.default_shipping) return -1;
+          if (address2.default_shipping) return 1;
+          return 0;
+      };
+       return Array.from(customerAddresses)
+          .sort(defaultToBeginning)
+          .map(addressEntry => {
+              const countryName = countryDisplayNameMap.get(
+                  addressEntry.country_code
+              );
+               const boundEdit = () => handleEditAddress(addressEntry);
+              const boundDelete = () => handleDeleteAddress(addressEntry.id);
+              const isConfirmingDelete =
+                  confirmDeleteAddressId === addressEntry.id;
+               return (
+                  <AddressCard
+                      address={addressEntry}
+                      countryName={countryName}
+                      isConfirmingDelete={isConfirmingDelete}
+                      isDeletingCustomerAddress={isDeletingCustomerAddress}
+                      key={addressEntry.id}
+                      onCancelDelete={handleCancelDeleteAddress}
+                      onConfirmDelete={handleConfirmDeleteAddress}
+                      onDelete={boundDelete}
+                      onEdit={boundEdit}
+                  />
+              );
+          });
+  }, [
+      confirmDeleteAddressId,
+      countryDisplayNameMap,
+      customerAddresses,
+      handleCancelDeleteAddress,
+      handleConfirmDeleteAddress,
+      handleDeleteAddress,
+      handleEditAddress,
+      isDeletingCustomerAddress
+  ]); */
+
+  if (isLoading) {
+    return LoadingIndicator_static["a" /* default */];
+  }
+  return /*#__PURE__*/react_default.a.createElement("div", {
+    className: AddressBookPage_AddressBookPage_module.root
+  }, /*#__PURE__*/react_default.a.createElement("h1", null, "Address Book"), /*#__PURE__*/react_default.a.createElement("div", null, isDialogEditMode ? 'in edit mode' : 'not in edit mode', " ", isDialogOpen ? 'dialog open' : 'dialog not open'), /*#__PURE__*/react_default.a.createElement("div", {
+    className: AddressBookPage_AddressBookPage_module.section
+  }, /*#__PURE__*/react_default.a.createElement("div", {
+    className: AddressBookPage_AddressBookPage_module.sectionHeader
+  }, /*#__PURE__*/react_default.a.createElement("h2", null, "Default Addresses")), /*#__PURE__*/react_default.a.createElement("div", {
+    className: AddressBookPage_AddressBookPage_module.sectionContent
+  }, /*#__PURE__*/react_default.a.createElement("div", {
+    className: AddressBookPage_AddressBookPage_module.box
+  }, /*#__PURE__*/react_default.a.createElement("div", {
+    className: AddressBookPage_AddressBookPage_module.boxTitle
+  }, "Default Billing Address"), defaultBillingAddress ? /*#__PURE__*/react_default.a.createElement(AccountOverview_AddressCard, {
+    address: defaultBillingAddress,
+    countryName: countryDisplayNameMap.get(defaultBillingAddress.country_code),
+    onEdit: address => handleEditAddress(address)
+  }) : /*#__PURE__*/react_default.a.createElement("div", {
+    className: AddressBookPage_AddressBookPage_module.boxContent
+  }, "You have not set a default billing address.")), /*#__PURE__*/react_default.a.createElement("div", {
+    className: AddressBookPage_AddressBookPage_module.box
+  }, /*#__PURE__*/react_default.a.createElement("div", {
+    className: AddressBookPage_AddressBookPage_module.boxTitle
+  }, "Default Shipping Address"), defaultShippingAddress ? /*#__PURE__*/react_default.a.createElement(AccountOverview_AddressCard, {
+    address: defaultShippingAddress,
+    countryName: countryDisplayNameMap.get(defaultShippingAddress.country_code),
+    onEdit: address => handleEditAddress(address)
+  }) : /*#__PURE__*/react_default.a.createElement("div", {
+    className: AddressBookPage_AddressBookPage_module.boxContent
+  }, "You have not set a default shipping address.")))), /*#__PURE__*/react_default.a.createElement("div", {
+    className: AddressBookPage_AddressBookPage_module.section
+  }, /*#__PURE__*/react_default.a.createElement("div", {
+    className: [AddressBookPage_AddressBookPage_module.sectionHeader, AddressBookPage_AddressBookPage_module.sectionAdditionalAddresses].join(' ')
+  }, /*#__PURE__*/react_default.a.createElement("h2", null, "Additional Address Entries")), /*#__PURE__*/react_default.a.createElement("div", {
+    className: AddressBookPage_AddressBookPage_module.sectionContent
+  }, /*#__PURE__*/react_default.a.createElement("table", {
+    className: AddressBookPage_AddressBookPage_module.addressTableDesktop
+  }, /*#__PURE__*/react_default.a.createElement("thead", null, /*#__PURE__*/react_default.a.createElement("tr", null, /*#__PURE__*/react_default.a.createElement("th", null, "First Name"), /*#__PURE__*/react_default.a.createElement("th", null, "Last Name"), /*#__PURE__*/react_default.a.createElement("th", null, "Street Address"), /*#__PURE__*/react_default.a.createElement("th", null, "City"), /*#__PURE__*/react_default.a.createElement("th", null, "Country"), /*#__PURE__*/react_default.a.createElement("th", null, "State"), /*#__PURE__*/react_default.a.createElement("th", null, "Zip/Postal Code"), /*#__PURE__*/react_default.a.createElement("th", null, "Phone"), /*#__PURE__*/react_default.a.createElement("th", null))), /*#__PURE__*/react_default.a.createElement("tbody", null, (remainingAddresses === null || remainingAddresses === void 0 ? void 0 : remainingAddresses.length) > 0 ? remainingAddresses.map(address => /*#__PURE__*/react_default.a.createElement(AddressBookPage_AddressRow, {
+    key: address.id,
+    address: address,
+    onEdit: address => handleEditAddress(address),
+    onDelete: id => handleDeleteAddress(id)
+  })) : /*#__PURE__*/react_default.a.createElement("tr", {
+    className: AddressBookPage_AddressBookPage_module.addressTableEmpty
+  }, /*#__PURE__*/react_default.a.createElement("td", {
+    colSpan: "9"
+  }, "You have not have any additional addresses saved.")))), /*#__PURE__*/react_default.a.createElement("div", {
+    className: AddressBookPage_AddressBookPage_module.addressTableMobile
+  }, (remainingAddresses === null || remainingAddresses === void 0 ? void 0 : remainingAddresses.length) > 0 ? remainingAddresses.map(address => /*#__PURE__*/react_default.a.createElement(AddressBookPage_AddressRow, {
+    key: address.id,
+    address: address,
+    mobile: true,
+    onEdit: address => handleEditAddress(address),
+    onDelete: id => handleDeleteAddress(id)
+  })) : /*#__PURE__*/react_default.a.createElement("div", {
+    className: AddressBookPage_AddressBookPage_module.addressTableEmpty
+  }, "You have not have any additional addresses saved.")))), /*#__PURE__*/react_default.a.createElement("div", {
+    className: AddressBookPage_AddressBookPage_module.section
+  }, /*#__PURE__*/react_default.a.createElement("div", {
+    className: AddressBookPage_AddressBookPage_module.sectionContent
+  }, /*#__PURE__*/react_default.a.createElement("button", {
+    onClick: handleAddAddress
+  }, "Add New Address"))));
+
+  /*
+  <div className={classes.root}>
+  <h1
+  aria-live="polite"
+  className={classes.heading}
+  data-cy="AddressBookPage-heading"
+  >
+  {PAGE_TITLE}
+  </h1>
+  <div className={classes.content} data-cy="AddressBookPage-content">
+  {addressBookElements}
+  <LinkButton
+  className={classes.addButton}
+  key="addAddressButton"
+  onClick={handleAddAddress}
+  data-cy="AddressBookPage-addButton"
+  >
+  <Icon
+      classes={{
+          icon: classes.addIcon
+      }}
+      size={24}
+      src={PlusSquare}
+  />
+  <span className={classes.addText}>
+      <FormattedMessage
+          id={'addressBookPage.addAddressText'}
+          defaultMessage={'Add an Address'}
+      />
+  </span>
+  </LinkButton>
+  </div>
+  <AddEditDialog
+  formErrors={formErrors}
+  formProps={formProps}
+  isBusy={isDialogBusy}
+  isEditMode={isDialogEditMode}
+  isOpen={isDialogOpen}
+  onCancel={handleCancelDialog}
+  onConfirm={handleConfirmDialog}
+  />
+  </div>
+   */
+};
+
+/* harmony default export */ var addressBookPage = (AddressBookPage);
 // CONCATENATED MODULE: ./src/RootComponents/Account/AccountPage.js
 
 
@@ -45551,7 +44140,7 @@ var store = __webpack_require__("./src/store.js");
 // EXTERNAL MODULE: ./src/components/Adapter/adapter.js + 37 modules
 var adapter = __webpack_require__("./src/components/Adapter/adapter.js");
 
-// EXTERNAL MODULE: ./src/RootComponents/Account/AccountPage.js + 106 modules
+// EXTERNAL MODULE: ./src/RootComponents/Account/AccountPage.js + 103 modules
 var AccountPage = __webpack_require__("./src/RootComponents/Account/AccountPage.js");
 
 // CONCATENATED MODULE: ./src/RootComponents/Account/Account.js
@@ -45789,7 +44378,7 @@ SignInPage.propTypes = {
   signedInRedirectUrl: prop_types["string"]
 };
 /* harmony default export */ var signInPage = (SignInPage);
-// EXTERNAL MODULE: ./src/RootComponents/Account/AccountPage.js + 106 modules
+// EXTERNAL MODULE: ./src/RootComponents/Account/AccountPage.js + 103 modules
 var AccountPage = __webpack_require__("./src/RootComponents/Account/AccountPage.js");
 
 // CONCATENATED MODULE: ./src/RootComponents/Login/login.js
@@ -45835,18 +44424,18 @@ function Login() {
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@formatjs/intl/lib/src/error.js because of ./src/RootComponents/CreateAccount/createAccountPage.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@formatjs/intl/lib/src/utils.js because of ./src/RootComponents/CreateAccount/createAccountPage.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/Apollo/clearCartDataFromCache.js because of ./src/talons/CheckoutPage/useCheckoutPage.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/Toasts/useToastContext.js because of ./node_modules/@magento/venia-ui/lib/components/CartPage/cartPage.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/Toasts/useToasts.js because of ./node_modules/@magento/venia-ui/lib/components/CartPage/cartPage.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/context/app.js because of ./node_modules/@magento/peregrine/lib/talons/OrderHistoryPage/useOrderHistoryPage.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/Toasts/useToastContext.js because of ./node_modules/@magento/venia-ui/lib/components/Wishlist/AddToListButton/useCommonToasts.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/Toasts/useToasts.js because of ./node_modules/@magento/venia-ui/lib/components/Wishlist/AddToListButton/useCommonToasts.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/context/app.js because of ./node_modules/@magento/peregrine/lib/talons/AddressBookPage/useAddressBookPage.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/context/cart.js because of ./src/talons/CreateAccount/useCreateAccount.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/context/eventing.js because of ./src/talons/CreateAccount/useCreateAccount.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/context/eventing.js because of ./node_modules/@magento/peregrine/lib/talons/AddressBookPage/useAddressBookPage.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/context/user.js because of ./src/RootComponents/Account/AccountPage.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/hooks/useWindowSize.js because of ./node_modules/@magento/venia-ui/lib/components/CheckoutPage/checkoutPage.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/store/actions/app/actions.js because of ./node_modules/@magento/peregrine/lib/talons/OrderHistoryPage/useOrderHistoryPage.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/store/actions/catalog/actions.js because of ./src/RootComponents/Cart/index.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/store/actions/app/actions.js because of ./node_modules/@magento/peregrine/lib/talons/AddressBookPage/useAddressBookPage.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/store/actions/catalog/actions.js because of ./src/RootComponents/Checkout/index.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/store/actions/checkout/actions.js because of ./src/RootComponents/Account/AccountPage.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/store/actions/checkout/asyncActions.js because of ./src/RootComponents/Account/AccountPage.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/store/middleware/thunk.js because of ./src/RootComponents/Cart/index.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/store/middleware/thunk.js because of ./src/RootComponents/Checkout/index.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/bindActionCreators.js because of ./src/RootComponents/Account/AccountPage.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/shallowMerge.js because of ./src/RootComponents/CreateAccount/createAccount.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/simplePersistence.js because of ./src/RootComponents/Account/AccountPage.js */
@@ -45855,7 +44444,7 @@ function Login() {
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./src/components/Icon/icon.module.css (<- Module uses module.id) */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./src/components/ToastContainer/toast.module.css (<- Module uses module.id) */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./src/components/ToastContainer/toastContainer.module.css (<- Module uses module.id) */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql/language/blockString.mjs because of ./node_modules/@apollo/client/link/http/selectHttpOptionsAndBody.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql/language/blockString.mjs because of ./src/RootComponents/CreateAccount/mutations.gql.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql/language/lexer.mjs because of ./src/RootComponents/CreateAccount/mutations.gql.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql/language/source.mjs because of ./src/RootComponents/CreateAccount/mutations.gql.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql/language/tokenKind.mjs because of ./src/RootComponents/CreateAccount/mutations.gql.js */
@@ -45865,7 +44454,7 @@ function Login() {
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/lodash.get/index.js (<- Module is not an ECMAScript module) */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/lodash.set/index.js (<- Module is not an ECMAScript module) */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/prop-types/index.js (<- Module is not an ECMAScript module) */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-helmet-async/lib/index.module.js because of ./node_modules/@magento/venia-ui/lib/components/SignInPage/signInPage.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-helmet-async/lib/index.module.js because of ./node_modules/@magento/venia-ui/lib/components/AccountInformationPage/accountInformationPage.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-intl/lib/src/components/injectIntl.js because of ./src/RootComponents/CreateAccount/createAccountPage.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-intl/lib/src/utils.js because of ./src/RootComponents/CreateAccount/createAccountPage.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-redux/es/index.js */
@@ -48075,13 +46664,13 @@ Portal.propTypes = {
   \***********************************/
 /*! exports provided: default */
 /*! exports used: default */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/store/actions/app/actions.js because of ./node_modules/@magento/peregrine/lib/talons/OrderHistoryPage/useOrderHistoryPage.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/store/actions/app/actions.js because of ./node_modules/@magento/peregrine/lib/talons/AddressBookPage/useAddressBookPage.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/store/actions/cart/actions.js because of ./src/talons/CreateAccount/useCreateAccount.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/store/actions/catalog/actions.js because of ./src/RootComponents/Cart/index.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/store/actions/checkout/actions.js because of ./src/RootComponents/Cart/index.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/store/actions/catalog/actions.js because of ./src/RootComponents/Checkout/index.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/store/actions/checkout/actions.js because of ./src/RootComponents/Checkout/index.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/store/actions/user/actions.js because of ./src/RootComponents/Account/AccountPage.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/store/actions/user/asyncActions.js because of ./src/RootComponents/Account/AccountPage.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/store/middleware/thunk.js because of ./src/RootComponents/Cart/index.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/store/middleware/thunk.js because of ./src/RootComponents/Checkout/index.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/simplePersistence.js because of ./src/RootComponents/Account/AccountPage.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/redux-actions/es/handleActions.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/redux/es/redux.js */

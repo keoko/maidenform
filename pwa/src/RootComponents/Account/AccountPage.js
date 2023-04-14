@@ -4,7 +4,6 @@ import ForgotPasswordPage from '@magento/venia-ui/lib/components/ForgotPasswordP
 import SavedPaymentsPage from '@magento/venia-ui/lib/components/SavedPaymentsPage';
 import OrderHistoryPage from '@magento/venia-ui/lib/components/OrderHistoryPage';
 import AccountInformationPage from '@magento/venia-ui/lib/components/AccountInformationPage';
-import AddressBookPage from '@magento/venia-ui/lib/components/AddressBookPage';
 import WishListPage from '@magento/venia-ui/lib/components/WishlistPage';
 import { useUserContext } from '@magento/peregrine/lib/context/user';
 
@@ -13,6 +12,7 @@ import AccountOverview from './AccountOverview/AccountOverview';
 import Login from '../Login/login';
 
 import classes from './AccountPage.module.css';
+import AddressBookPage from './AddressBookPage/addressBookPage';
 
 export const useProtectedPage = () => {
     const [{ isSignedIn }] = useUserContext();

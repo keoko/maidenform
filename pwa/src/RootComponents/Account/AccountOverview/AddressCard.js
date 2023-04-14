@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import { FormattedMessage } from 'react-intl';
-import { arrayOf, bool, shape, string } from 'prop-types';
+import { arrayOf, bool, shape, string, func } from 'prop-types';
 
 import classes from './AddressCard.module.css';
 
@@ -8,6 +8,8 @@ const AddressCard = props => {
     const {
         address,
         countryName,
+        onEdit,
+        onEditLabel = 'Edit Address',
     } = props;
 
     const {
@@ -52,7 +54,7 @@ const AddressCard = props => {
                 </span>
             </div>
             <div className={classes.actions}>
-                <a href={`/customer/address?edit=${id}`}>Edit Address</a>
+                <a onClick={() => onEdit(address)}>Edit Address</a>
             </div>
         </Fragment>
     );
@@ -76,4 +78,6 @@ AddressCard.propTypes = {
         telephone: string
     }).isRequired,
     countryName: string,
+    onEdit: func.isRequired,
+    onEditLabel: string,
 };

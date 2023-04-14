@@ -5,7 +5,7 @@ import { useAwaitQuery } from '@magento/peregrine/lib/hooks/useAwaitQuery';
 import { useAddressBookPage } from '@magento/peregrine/lib/talons/AddressBookPage/useAddressBookPage';
 import { useOrderHistoryPage } from '@magento/peregrine/lib/talons/OrderHistoryPage/useOrderHistoryPage';
 import { GET_CUSTOMER } from './AccountOverview.gql';
-import AddressCard from './addressCard';
+import AddressCard from './AddressCard';
 
 import classes from './AccountOverview.module.css';
 import OrderRow from './orderRow';
@@ -66,7 +66,10 @@ const AccountOverview = () => {
                     <div className={classes.box}>
                         <div className={classes.boxTitle}>Default Billing Address</div>
                         {defaultBillingAddress ? (
-                            <AddressCard address={defaultBillingAddress} countryName={countryDisplayNameMap.get(defaultBillingAddress.country_code)} />
+                            <AddressCard
+                                address={defaultBillingAddress}
+                                countryName={countryDisplayNameMap.get(defaultBillingAddress.country_code)}
+                                onEdit={({ id }) => window.location = `/customer/address?edit=${id}`} />
                         ) : (
                             <div className={classes.boxContent}>
                                 You have not set a default billing address.
@@ -76,7 +79,10 @@ const AccountOverview = () => {
                     <div className={classes.box}>
                         <div className={classes.boxTitle}>Default Shipping Address</div>
                         {defaultShippingAddress ? (
-                            <AddressCard address={defaultShippingAddress} countryName={countryDisplayNameMap.get(defaultShippingAddress.country_code)} />
+                            <AddressCard
+                                address={defaultShippingAddress}
+                                countryName={countryDisplayNameMap.get(defaultShippingAddress.country_code)}
+                                onEdit={({ id }) => window.location = `/customer/address?edit=${id}`} />
                         ) : (
                             <div className={classes.boxContent}>
                                 You have not set a default shipping address.
