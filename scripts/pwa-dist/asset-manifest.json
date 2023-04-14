@@ -71,6 +71,7 @@
   "i18n-en_US.js.map": "/i18n-en_US.js.map",
   "login.js": "/login.js",
   "login.js.map": "/login.js.map",
+  "rounded-triangle.svg": "/rounded-triangle-fHp.svg",
   "signup.js": "/signup.js",
   "signup.js.map": "/signup.js.map",
   "vendors.js": "/vendors.js",
@@ -100,5 +101,8 @@
     "login.js": "/login.js.map",
     "signup.js": "/signup.js.map",
     "vendors.js": "/vendors.js.map"
+  },
+  "svg": {
+    "rounded-triangle": "/rounded-triangle-fHp.svg"
   }
 }

@@ -600,7 +600,7 @@ var strategies = {
   \**********************************************************************************/
 /*! exports provided: parse, TYPE, SKELETON_TYPE, isLiteralElement, isArgumentElement, isNumberElement, isDateElement, isTimeElement, isSelectElement, isPluralElement, isPoundElement, isTagElement, isNumberSkeleton, isDateTimeSkeleton, createLiteralElement, createNumberElement */
 /*! exports used: TYPE, isArgumentElement, isDateElement, isDateTimeSkeleton, isLiteralElement, isNumberElement, isNumberSkeleton, isPluralElement, isPoundElement, isSelectElement, isTagElement, isTimeElement, parse */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/tslib/tslib.es6.js because of ./node_modules/@apollo/client/cache/inmemory/policies.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/tslib/tslib.es6.js because of ./node_modules/@apollo/client/link/http/HttpLink.js */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4756,10 +4756,10 @@ const actionMap = {
   \************************************************************************************************/
 /*! exports provided: beginCheckout, cancelCheckout, resetCheckout, resetReceipt, submitPaymentMethodAndBillingAddress, submitBillingAddress, submitPaymentMethod, submitShippingAddress, submitShippingMethod, submitOrder, createAccount, formatAddress, clearCheckoutDataFromStorage */
 /*! all exports used */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/store/actions/app/asyncActions.js because of ./src/RootComponents/Cart/index.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/store/actions/cart/asyncActions.js because of ./src/RootComponents/Cart/index.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/store/actions/app/asyncActions.js because of ./node_modules/@magento/peregrine/lib/talons/AddressBookPage/useAddressBookPage.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/store/actions/cart/asyncActions.js because of ./node_modules/@magento/peregrine/lib/talons/CartPage/useCartPage.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/store/actions/checkout/actions.js because of ./src/RootComponents/Cart/index.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/simplePersistence.js because of ./src/RootComponents/SignUp/signup.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/simplePersistence.js because of ./src/RootComponents/Account/AccountPage.js */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -5779,7 +5779,7 @@ const AppliedCouponsFragment = _apollo_client__WEBPACK_IMPORTED_MODULE_0__[/* gq
 /*! exports provided: GrandTotalFragment, PriceSummaryFragment */
 /*! exports used: PriceSummaryFragment */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/talons/CartPage/PriceSummary/queries/giftOptionsSummary.ee.js because of ./node_modules/@magento/peregrine/lib/talons/CartPage/PriceAdjustments/GiftOptions/giftOptionsFragments.gql.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql-tag/lib/index.js because of ./node_modules/@magento/venia-ui/lib/components/CartPage/cartPage.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql-tag/lib/index.js because of ./src/RootComponents/Account/AccountOverview/AccountOverview.gql.js */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -6972,7 +6972,7 @@ Checkbox.propTypes = {
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/react/hooks/useQuery.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/shallowMerge.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Field/field.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Select/select.js because of ./node_modules/@magento/venia-ui/lib/components/CheckoutPage/PaymentInformation/creditCard.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Select/select.js because of ./node_modules/@magento/venia-ui/lib/components/CartPage/PriceAdjustments/ShippingMethods/shippingForm.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/Country/country.module.css (<- Module uses module.id) */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql-tag/lib/index.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/prop-types/index.js (<- Module is not an ECMAScript module) */
@@ -7158,7 +7158,7 @@ Country.propTypes = {
 /*! exports provided: default */
 /*! exports used: default */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/shallowMerge.js because of ./src/RootComponents/Cart/index.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Button/button.js because of ./node_modules/@magento/venia-ui/lib/components/CheckoutPage/checkoutPage.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Button/button.js because of ./node_modules/@magento/venia-ui/lib/components/CartPage/PriceAdjustments/CouponCode/couponCode.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Icon/icon.js because of ./node_modules/@magento/venia-ui/lib/components/CartPage/cartPage.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-feather/dist/icons/x.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./src/components/Portal/portal.js because of ./node_modules/@magento/venia-ui/lib/components/CheckoutPage/ShippingInformation/editModal.js */
@@ -7695,7 +7695,7 @@ Message.propTypes = {
 /*! exports provided: default */
 /*! exports used: default */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/react/hooks/useMutation.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/hooks/useGoogleReCaptcha/useGoogleReCaptcha.js because of ./node_modules/@magento/venia-ui/lib/components/CheckoutPage/GuestSignIn/guestSignIn.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/hooks/useGoogleReCaptcha/useGoogleReCaptcha.js because of ./node_modules/@magento/venia-ui/lib/components/SignInPage/signInPage.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/shallowMerge.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Button/button.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Field/field.js */
@@ -8199,7 +8199,7 @@ ForgotPassword.defaultProps = {
   \******************************************************************************************/
 /*! exports provided: default */
 /*! exports used: default */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/deriveErrorMessage.js because of ./node_modules/@magento/peregrine/lib/talons/CheckoutPage/AddressBook/useAddressBook.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/deriveErrorMessage.js because of ./node_modules/@magento/peregrine/lib/talons/OrderHistoryPage/useOrderHistoryPage.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/shallowMerge.js because of ./src/RootComponents/Cart/index.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/ErrorMessage/errorMessage.module.css (<- Module uses module.id) */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/FormError/formError.module.css (<- Module uses module.id) */
@@ -9086,7 +9086,7 @@ Image.defaultProps = {
   \*********************************************************************************************/
 /*! exports provided: default */
 /*! exports used: default */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Image/simpleImage.js because of ./node_modules/@magento/venia-ui/lib/components/CheckoutPage/ItemsReview/item.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Image/simpleImage.js because of ./node_modules/@magento/venia-ui/lib/components/CartPage/ProductListing/product.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/prop-types/index.js (<- Module is not an ECMAScript module) */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react/index.js (<- Module is not an ECMAScript module) */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -10750,7 +10750,7 @@ Options.propTypes = {
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/hooks/hook-wrappers/useInformedFieldStateWrapper.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/shallowMerge.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Field/field.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Select/select.js because of ./node_modules/@magento/venia-ui/lib/components/CheckoutPage/PaymentInformation/creditCard.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Select/select.js because of ./node_modules/@magento/venia-ui/lib/components/CartPage/PriceAdjustments/ShippingMethods/shippingForm.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/TextInput/textInput.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/Region/region.module.css (<- Module uses module.id) */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql-tag/lib/index.js */
@@ -11191,7 +11191,7 @@ Select.propTypes = {
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/context/eventing.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/context/user.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/hooks/useAwaitQuery.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/hooks/useGoogleReCaptcha/useGoogleReCaptcha.js because of ./src/talons/CheckoutPage/useCheckoutPage.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/hooks/useGoogleReCaptcha/useGoogleReCaptcha.js because of ./node_modules/@magento/peregrine/lib/talons/AccountInformationPage/useAccountInformationPage.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/store/actions/cart/asyncActions.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/talons/CartPage/cartPageFragments.gql.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/talons/CheckoutPage/checkoutPageFragments.gql.js because of ./node_modules/@magento/peregrine/lib/talons/CheckoutPage/checkoutPage.gql.js */
@@ -11201,7 +11201,7 @@ Select.propTypes = {
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/FormError/formError.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/GoogleReCaptcha/googleReCaptcha.js because of ./node_modules/@magento/venia-ui/lib/components/CheckoutPage/checkoutPage.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/LinkButton/linkButton.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Password/password.js because of ./node_modules/@magento/venia-ui/lib/components/CheckoutPage/OrderConfirmationPage/createAccount.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Password/password.js because of ./node_modules/@magento/venia-ui/lib/components/AccountInformationPage/editForm.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/TextInput/textInput.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/util/formValidators.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/SignIn/signIn.module.css (<- Module uses module.id) */
@@ -11744,10 +11744,10 @@ SignIn.defaultProps = {
   \******************************************************************************************/
 /*! exports provided: default */
 /*! exports used: default */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/hooks/hook-wrappers/useInformedFieldStateWrapper.js because of ./node_modules/@magento/venia-ui/lib/components/Checkbox/checkbox.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/hooks/hook-wrappers/useInformedFieldStateWrapper.js because of ./node_modules/@magento/venia-ui/lib/components/RadioGroup/radioGroup.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/shallowMerge.js because of ./src/RootComponents/Cart/index.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Field/fieldIcons.js because of ./node_modules/@magento/venia-ui/lib/components/Select/select.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Field/message.js because of ./node_modules/@magento/venia-ui/lib/components/Checkbox/checkbox.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Field/message.js because of ./node_modules/@magento/venia-ui/lib/components/QuantityStepper/quantityStepper.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/TextInput/textInput.module.css (<- Module uses module.id) */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/informed/dist/esm/index.js (<- Module uses injected variables (process)) */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/prop-types/index.js (<- Module is not an ECMAScript module) */
@@ -20262,9 +20262,9 @@ ___CSS_LOADER_EXPORT___.locals = {
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./src/RootComponents/Account/accountNavigation.module.css":
+/***/ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./src/RootComponents/Account/AccountNavigation.module.css":
 /*!*******************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./src/RootComponents/Account/accountNavigation.module.css ***!
+  !*** ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./src/RootComponents/Account/AccountNavigation.module.css ***!
   \*******************************************************************************************************************************************************************/
 /*! exports provided: default */
 /*! exports used: default */
@@ -20276,26 +20276,106 @@ ___CSS_LOADER_EXPORT___.locals = {
 /* harmony import */ var _node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 /* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/getUrl.js */ "./node_modules/css-loader/dist/runtime/getUrl.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _rounded_triangle_svg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./rounded-triangle.svg */ "./src/RootComponents/Account/rounded-triangle.svg");
+/* harmony import */ var _rounded_triangle_svg__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_rounded_triangle_svg__WEBPACK_IMPORTED_MODULE_3__);
 // Imports
 
 
+
+
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()(_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default.a);
+var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(_rounded_triangle_svg__WEBPACK_IMPORTED_MODULE_3___default.a);
 // Module
-___CSS_LOADER_EXPORT___.push([module.i, ".accountNavigation-root-l94 {\n    background-color: var(--clr-grey);\n    font-size: 1.6rem;\n    font-family: var(--ff-gilroy-regular);\n}\n\n.accountNavigation-root-l94 ul {\n    list-style-type: none;\n    margin: 0;\n    padding: 0;\n    width: 100%;\n}\n\n.accountNavigation-root-l94 li {\n    padding: 5px 18px 5px 15px;\n    border-left: 3px solid transparent;\n    margin-bottom: 3px;\n    line-height: 3rem;\n}\n\n.accountNavigation-root-l94 li a {\n    color: #99969c;\n}\n\nli.accountNavigation-active-YkT {\n    border-left: 3px solid var(--clr-pink);\n    color: var(--clr-black);\n}\n\nli.accountNavigation-divider-dCK {\n    border-bottom: 1px solid #d1d1d1;\n    margin: 15px 18px 15px 15px;\n    padding: 0;\n}\n\n.accountNavigation-root-l94 li:hover {\n    background: #E8E8E8;\n    text-decoration: none;\n}\n\n.accountNavigation-root-l94 li a:hover {\n    text-decoration: none;\n}", "",{"version":3,"sources":["webpack://./src/RootComponents/Account/accountNavigation.module.css"],"names":[],"mappings":"AAAA;IACI,iCAAiC;IACjC,iBAAiB;IACjB,qCAAqC;AACzC;;AAEA;IACI,qBAAqB;IACrB,SAAS;IACT,UAAU;IACV,WAAW;AACf;;AAEA;IACI,0BAA0B;IAC1B,kCAAkC;IAClC,kBAAkB;IAClB,iBAAiB;AACrB;;AAEA;IACI,cAAc;AAClB;;AAEA;IACI,sCAAsC;IACtC,uBAAuB;AAC3B;;AAEA;IACI,gCAAgC;IAChC,2BAA2B;IAC3B,UAAU;AACd;;AAEA;IACI,mBAAmB;IACnB,qBAAqB;AACzB;;AAEA;IACI,qBAAqB;AACzB","sourcesContent":[".root {\n    background-color: var(--clr-grey);\n    font-size: 1.6rem;\n    font-family: var(--ff-gilroy-regular);\n}\n\n.root ul {\n    list-style-type: none;\n    margin: 0;\n    padding: 0;\n    width: 100%;\n}\n\n.root li {\n    padding: 5px 18px 5px 15px;\n    border-left: 3px solid transparent;\n    margin-bottom: 3px;\n    line-height: 3rem;\n}\n\n.root li a {\n    color: #99969c;\n}\n\nli.active {\n    border-left: 3px solid var(--clr-pink);\n    color: var(--clr-black);\n}\n\nli.divider {\n    border-bottom: 1px solid #d1d1d1;\n    margin: 15px 18px 15px 15px;\n    padding: 0;\n}\n\n.root li:hover {\n    background: #E8E8E8;\n    text-decoration: none;\n}\n\n.root li a:hover {\n    text-decoration: none;\n}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.i, ".AccountNavigation-root-wf8 {\n    display: none;\n    background-color: var(--clr-grey);\n    font-size: 1.6rem;\n    font-family: var(--ff-gilroy-regular);\n    position: fixed;\n    top: calc(var(--nav-height) + 41px);\n    left: 0;\n    right: 0;\n    bottom: 48px;\n    z-index: 2;\n    overflow: auto;\n}\n\n.AccountNavigation-open-8Cs {\n    display: block;\n}\n\n.AccountNavigation-root-wf8 ul {\n    list-style-type: none;\n    margin: 0;\n    padding: 0;\n    width: 100%;\n}\n\n.AccountNavigation-root-wf8 li {\n    padding: 5px 18px 5px 15px;\n    border-left: 3px solid transparent;\n    margin-bottom: 3px;\n    line-height: 3rem;\n}\n\n.AccountNavigation-root-wf8 li a {\n    color: #99969c;\n}\n\nli.AccountNavigation-active-yG0 {\n    border-left: 3px solid var(--clr-pink);\n    color: var(--clr-black);\n}\n\nli.AccountNavigation-divider-ae1 {\n    border-bottom: 1px solid #d1d1d1;\n    margin: 15px 18px 15px 15px;\n    padding: 0;\n}\n\n.AccountNavigation-root-wf8 li:hover {\n    background: #E8E8E8;\n    text-decoration: none;\n}\n\n.AccountNavigation-root-wf8 li a:hover {\n    text-decoration: none;\n}\n\n.AccountNavigation-navButton-ypD {\n    display: flex;\n    justify-content: space-between;\n    background: transparent;\n    border: 0;\n    border-radius: 0;\n    color: var(--clr-black);\n    border-bottom: 1px solid #ccc;\n    border-top: 1px solid #ccc;\n    position: absolute;\n    left: 0;\n    right: 0;\n    top: var(--nav-height);\n    margin: 3px 0 0 0;\n    padding: 10px;\n    width: 100%;\n}\n\n.AccountNavigation-navButton-ypD::after {\n    display: inline-block;\n    content: '';\n    width: 15px;\n    height: 15px;\n    background: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ") no-repeat center/contain;\n    transition: all .2s ease;\n}\n\n.AccountNavigation-navButton-ypD:hover, .AccountNavigation-navButton-ypD:focus {\n    background: transparent;\n}\n\n.AccountNavigation-navButtonOpen-UC4::after {\n    transform: rotate(180deg);\n}\n\n@media (min-width: 1024px) {\n    .AccountNavigation-root-wf8 {\n        display: block;\n        position: unset;\n        z-index: unset;\n        overflow: unset;\n    }\n\n    .AccountNavigation-navButton-ypD {\n        display: none;\n    }\n}", "",{"version":3,"sources":["webpack://./src/RootComponents/Account/AccountNavigation.module.css"],"names":[],"mappings":"AAAA;IACI,aAAa;IACb,iCAAiC;IACjC,iBAAiB;IACjB,qCAAqC;IACrC,eAAe;IACf,mCAAmC;IACnC,OAAO;IACP,QAAQ;IACR,YAAY;IACZ,UAAU;IACV,cAAc;AAClB;;AAEA;IACI,cAAc;AAClB;;AAEA;IACI,qBAAqB;IACrB,SAAS;IACT,UAAU;IACV,WAAW;AACf;;AAEA;IACI,0BAA0B;IAC1B,kCAAkC;IAClC,kBAAkB;IAClB,iBAAiB;AACrB;;AAEA;IACI,cAAc;AAClB;;AAEA;IACI,sCAAsC;IACtC,uBAAuB;AAC3B;;AAEA;IACI,gCAAgC;IAChC,2BAA2B;IAC3B,UAAU;AACd;;AAEA;IACI,mBAAmB;IACnB,qBAAqB;AACzB;;AAEA;IACI,qBAAqB;AACzB;;AAEA;IACI,aAAa;IACb,8BAA8B;IAC9B,uBAAuB;IACvB,SAAS;IACT,gBAAgB;IAChB,uBAAuB;IACvB,6BAA6B;IAC7B,0BAA0B;IAC1B,kBAAkB;IAClB,OAAO;IACP,QAAQ;IACR,sBAAsB;IACtB,iBAAiB;IACjB,aAAa;IACb,WAAW;AACf;;AAEA;IACI,qBAAqB;IACrB,WAAW;IACX,WAAW;IACX,YAAY;IACZ,4EAAgE;IAChE,wBAAwB;AAC5B;;AAEA;IACI,uBAAuB;AAC3B;;AAEA;IACI,yBAAyB;AAC7B;;AAEA;IACI;QACI,cAAc;QACd,eAAe;QACf,cAAc;QACd,eAAe;IACnB;;IAEA;QACI,aAAa;IACjB;AACJ","sourcesContent":[".root {\n    display: none;\n    background-color: var(--clr-grey);\n    font-size: 1.6rem;\n    font-family: var(--ff-gilroy-regular);\n    position: fixed;\n    top: calc(var(--nav-height) + 41px);\n    left: 0;\n    right: 0;\n    bottom: 48px;\n    z-index: 2;\n    overflow: auto;\n}\n\n.open {\n    display: block;\n}\n\n.root ul {\n    list-style-type: none;\n    margin: 0;\n    padding: 0;\n    width: 100%;\n}\n\n.root li {\n    padding: 5px 18px 5px 15px;\n    border-left: 3px solid transparent;\n    margin-bottom: 3px;\n    line-height: 3rem;\n}\n\n.root li a {\n    color: #99969c;\n}\n\nli.active {\n    border-left: 3px solid var(--clr-pink);\n    color: var(--clr-black);\n}\n\nli.divider {\n    border-bottom: 1px solid #d1d1d1;\n    margin: 15px 18px 15px 15px;\n    padding: 0;\n}\n\n.root li:hover {\n    background: #E8E8E8;\n    text-decoration: none;\n}\n\n.root li a:hover {\n    text-decoration: none;\n}\n\n.navButton {\n    display: flex;\n    justify-content: space-between;\n    background: transparent;\n    border: 0;\n    border-radius: 0;\n    color: var(--clr-black);\n    border-bottom: 1px solid #ccc;\n    border-top: 1px solid #ccc;\n    position: absolute;\n    left: 0;\n    right: 0;\n    top: var(--nav-height);\n    margin: 3px 0 0 0;\n    padding: 10px;\n    width: 100%;\n}\n\n.navButton::after {\n    display: inline-block;\n    content: '';\n    width: 15px;\n    height: 15px;\n    background: url(./rounded-triangle.svg) no-repeat center/contain;\n    transition: all .2s ease;\n}\n\n.navButton:hover, .navButton:focus {\n    background: transparent;\n}\n\n.navButtonOpen::after {\n    transform: rotate(180deg);\n}\n\n@media (min-width: 1024px) {\n    .root {\n        display: block;\n        position: unset;\n        z-index: unset;\n        overflow: unset;\n    }\n\n    .navButton {\n        display: none;\n    }\n}"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
-	"root": "accountNavigation-root-l94",
-	"active": "accountNavigation-active-YkT",
-	"divider": "accountNavigation-divider-dCK"
+	"root": "AccountNavigation-root-wf8",
+	"open": "AccountNavigation-open-8Cs",
+	"active": "AccountNavigation-active-yG0",
+	"divider": "AccountNavigation-divider-ae1",
+	"navButton": "AccountNavigation-navButton-ypD",
+	"navButtonOpen": "AccountNavigation-navButtonOpen-UC4"
 };
 /* harmony default export */ __webpack_exports__["a"] = (___CSS_LOADER_EXPORT___);
 
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./src/RootComponents/Account/accountPage.module.css":
+/***/ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./src/RootComponents/Account/AccountOverview/AccountOverview.module.css":
+/*!*********************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./src/RootComponents/Account/AccountOverview/AccountOverview.module.css ***!
+  \*********************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/*! exports used: default */
+/*! ModuleConcatenation bailout: Module uses module.id */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var _node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/cssWithMappingToString.js */ "./node_modules/css-loader/dist/runtime/cssWithMappingToString.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+// Imports
+
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()(_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default.a);
+// Module
+___CSS_LOADER_EXPORT___.push([module.i, ".AccountOverview-root-8Ij {\n\n}\n\n.AccountOverview-root-8Ij h1 {\n    font-family: var(--ff-gilroy-regular);\n    font-size: 4.2rem;\n    margin: 0 0 40px 0;\n}\n\n.AccountOverview-section-0dw {\n\n}\n\n.AccountOverview-sectionHeader-0M2 {\n    font-size: 1.4rem;\n    display: flex;\n    align-items: center;\n    gap: 25px;\n    margin: 0 0 25px 0;\n    border-bottom: 1px solid #c6c6c6;\n    padding: 10px 0;\n}\n\n.AccountOverview-sectionHeader-0M2 h2 {\n    font-family: var(--ff-gilroy-regular);\n    font-size: 2.5rem;\n    margin: 0;\n}\n\n.AccountOverview-sectionHeader-0M2 a {\n    text-decoration: underline;\n}\n\n.AccountOverview-sectionContent-LMD {\n    margin-bottom: 50px;\n    font-size: 1.6rem;\n    display: flex;\n    gap: 20%;\n    flex-direction: column;\n}\n\n.AccountOverview-boxTitle-4F-, .AccountOverview-box-CIR, .AccountOverview-boxContent-LyJ {\n    padding-bottom: 10px;\n}\n\n.AccountOverview-boxActions-rd0 {\n    display: flex;\n    font-size: 1.4rem;\n}\n\n.AccountOverview-boxActions-rd0 a {\n    text-decoration: underline;\n}\n\n.AccountOverview-boxActions-rd0 a:nth-child(n + 2)::before {\n    border-left: 1px solid #a6a6a6;\n    content: '';\n    display: inline-block;\n    height: 12px;\n    margin: 0 10px;\n    vertical-align: -1px;\n}\n\n.AccountOverview-orderTableDesktop--b1 {\n    display: none;\n}\n\n.AccountOverview-orderTableEmpty--RK {\n    text-align: center;\n}\n\n.AccountOverview-orderTableMobile-AXX > div {\n    display: grid;\n}\n\n.AccountOverview-orderTableMobile-AXX > div strong {\n    font-weight: bold;\n    padding-right: 8px;\n}\n\n.AccountOverview-orderTableMobile-AXX > div a {\n    text-decoration: underline;\n}\n\n@media (min-width: 1024px) {\n    .AccountOverview-sectionContent-LMD {\n        flex-direction: row;\n    }\n\n    .AccountOverview-orderTableMobile-AXX {\n        display: none;\n    }\n\n    .AccountOverview-orderTableDesktop--b1 {\n        display: table;\n        width: 100%;\n        font-size: 1.4rem;\n        border-collapse: collapse;\n    }\n    \n    .AccountOverview-orderTableDesktop--b1 td, .AccountOverview-orderTableDesktop--b1 th {\n        padding: 10px;\n        text-align: left;\n        border-bottom: 1px solid #c6c6c6;\n    }\n    \n    .AccountOverview-orderTableDesktop--b1 td a {\n        text-decoration: underline;\n    }\n\n    .AccountOverview-orderTableEmpty--RK td {\n        text-align: center;\n    }\n\n    .AccountOverview-sectionOrders-oT8 {\n        margin-bottom: 0;\n    }\n}", "",{"version":3,"sources":["webpack://./src/RootComponents/Account/AccountOverview/AccountOverview.module.css"],"names":[],"mappings":"AAAA;;AAEA;;AAEA;IACI,qCAAqC;IACrC,iBAAiB;IACjB,kBAAkB;AACtB;;AAEA;;AAEA;;AAEA;IACI,iBAAiB;IACjB,aAAa;IACb,mBAAmB;IACnB,SAAS;IACT,kBAAkB;IAClB,gCAAgC;IAChC,eAAe;AACnB;;AAEA;IACI,qCAAqC;IACrC,iBAAiB;IACjB,SAAS;AACb;;AAEA;IACI,0BAA0B;AAC9B;;AAEA;IACI,mBAAmB;IACnB,iBAAiB;IACjB,aAAa;IACb,QAAQ;IACR,sBAAsB;AAC1B;;AAEA;IACI,oBAAoB;AACxB;;AAEA;IACI,aAAa;IACb,iBAAiB;AACrB;;AAEA;IACI,0BAA0B;AAC9B;;AAEA;IACI,8BAA8B;IAC9B,WAAW;IACX,qBAAqB;IACrB,YAAY;IACZ,cAAc;IACd,oBAAoB;AACxB;;AAEA;IACI,aAAa;AACjB;;AAEA;IACI,kBAAkB;AACtB;;AAEA;IACI,aAAa;AACjB;;AAEA;IACI,iBAAiB;IACjB,kBAAkB;AACtB;;AAEA;IACI,0BAA0B;AAC9B;;AAEA;IACI;QACI,mBAAmB;IACvB;;IAEA;QACI,aAAa;IACjB;;IAEA;QACI,cAAc;QACd,WAAW;QACX,iBAAiB;QACjB,yBAAyB;IAC7B;;IAEA;QACI,aAAa;QACb,gBAAgB;QAChB,gCAAgC;IACpC;;IAEA;QACI,0BAA0B;IAC9B;;IAEA;QACI,kBAAkB;IACtB;;IAEA;QACI,gBAAgB;IACpB;AACJ","sourcesContent":[".root {\n\n}\n\n.root h1 {\n    font-family: var(--ff-gilroy-regular);\n    font-size: 4.2rem;\n    margin: 0 0 40px 0;\n}\n\n.section {\n\n}\n\n.sectionHeader {\n    font-size: 1.4rem;\n    display: flex;\n    align-items: center;\n    gap: 25px;\n    margin: 0 0 25px 0;\n    border-bottom: 1px solid #c6c6c6;\n    padding: 10px 0;\n}\n\n.sectionHeader h2 {\n    font-family: var(--ff-gilroy-regular);\n    font-size: 2.5rem;\n    margin: 0;\n}\n\n.sectionHeader a {\n    text-decoration: underline;\n}\n\n.sectionContent {\n    margin-bottom: 50px;\n    font-size: 1.6rem;\n    display: flex;\n    gap: 20%;\n    flex-direction: column;\n}\n\n.boxTitle, .box, .boxContent {\n    padding-bottom: 10px;\n}\n\n.boxActions {\n    display: flex;\n    font-size: 1.4rem;\n}\n\n.boxActions a {\n    text-decoration: underline;\n}\n\n.boxActions a:nth-child(n + 2)::before {\n    border-left: 1px solid #a6a6a6;\n    content: '';\n    display: inline-block;\n    height: 12px;\n    margin: 0 10px;\n    vertical-align: -1px;\n}\n\n.orderTableDesktop {\n    display: none;\n}\n\n.orderTableEmpty {\n    text-align: center;\n}\n\n.orderTableMobile > div {\n    display: grid;\n}\n\n.orderTableMobile > div strong {\n    font-weight: bold;\n    padding-right: 8px;\n}\n\n.orderTableMobile > div a {\n    text-decoration: underline;\n}\n\n@media (min-width: 1024px) {\n    .sectionContent {\n        flex-direction: row;\n    }\n\n    .orderTableMobile {\n        display: none;\n    }\n\n    .orderTableDesktop {\n        display: table;\n        width: 100%;\n        font-size: 1.4rem;\n        border-collapse: collapse;\n    }\n    \n    .orderTableDesktop td, .orderTableDesktop th {\n        padding: 10px;\n        text-align: left;\n        border-bottom: 1px solid #c6c6c6;\n    }\n    \n    .orderTableDesktop td a {\n        text-decoration: underline;\n    }\n\n    .orderTableEmpty td {\n        text-align: center;\n    }\n\n    .sectionOrders {\n        margin-bottom: 0;\n    }\n}"],"sourceRoot":""}]);
+// Exports
+___CSS_LOADER_EXPORT___.locals = {
+	"root": "AccountOverview-root-8Ij",
+	"section": "AccountOverview-section-0dw",
+	"sectionHeader": "AccountOverview-sectionHeader-0M2",
+	"sectionContent": "AccountOverview-sectionContent-LMD",
+	"boxTitle": "AccountOverview-boxTitle-4F-",
+	"box": "AccountOverview-box-CIR",
+	"boxContent": "AccountOverview-boxContent-LyJ",
+	"boxActions": "AccountOverview-boxActions-rd0",
+	"orderTableDesktop": "AccountOverview-orderTableDesktop--b1",
+	"orderTableEmpty": "AccountOverview-orderTableEmpty--RK",
+	"orderTableMobile": "AccountOverview-orderTableMobile-AXX",
+	"sectionOrders": "AccountOverview-sectionOrders-oT8"
+};
+/* harmony default export */ __webpack_exports__["a"] = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./src/RootComponents/Account/AccountOverview/AddressCard.module.css":
+/*!*****************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./src/RootComponents/Account/AccountOverview/AddressCard.module.css ***!
+  \*****************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/*! exports used: default */
+/*! ModuleConcatenation bailout: Module uses module.id */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var _node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/cssWithMappingToString.js */ "./node_modules/css-loader/dist/runtime/cssWithMappingToString.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+// Imports
+
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()(_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default.a);
+// Module
+___CSS_LOADER_EXPORT___.push([module.i, ".AddressCard-content-QA2 {\n    padding-bottom: 10px;\n    display: grid;\n}\n\n.AddressCard-actions-Xb- {\n    display: flex;\n    font-size: 1.4rem;\n}\n\n.AddressCard-actions-Xb- a {\n    text-decoration: underline;\n}\n\n.AddressCard-actions-Xb- a:nth-child(n + 2)::before {\n    border-left: 1px solid #a6a6a6;\n    content: '';\n    display: inline-block;\n    height: 12px;\n    margin: 0 10px;\n    vertical-align: -1px;\n}", "",{"version":3,"sources":["webpack://./src/RootComponents/Account/AccountOverview/AddressCard.module.css"],"names":[],"mappings":"AAAA;IACI,oBAAoB;IACpB,aAAa;AACjB;;AAEA;IACI,aAAa;IACb,iBAAiB;AACrB;;AAEA;IACI,0BAA0B;AAC9B;;AAEA;IACI,8BAA8B;IAC9B,WAAW;IACX,qBAAqB;IACrB,YAAY;IACZ,cAAc;IACd,oBAAoB;AACxB","sourcesContent":[".content {\n    padding-bottom: 10px;\n    display: grid;\n}\n\n.actions {\n    display: flex;\n    font-size: 1.4rem;\n}\n\n.actions a {\n    text-decoration: underline;\n}\n\n.actions a:nth-child(n + 2)::before {\n    border-left: 1px solid #a6a6a6;\n    content: '';\n    display: inline-block;\n    height: 12px;\n    margin: 0 10px;\n    vertical-align: -1px;\n}"],"sourceRoot":""}]);
+// Exports
+___CSS_LOADER_EXPORT___.locals = {
+	"content": "AddressCard-content-QA2",
+	"actions": "AddressCard-actions-Xb-"
+};
+/* harmony default export */ __webpack_exports__["a"] = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./src/RootComponents/Account/AccountPage.module.css":
 /*!*************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./src/RootComponents/Account/accountPage.module.css ***!
+  !*** ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./src/RootComponents/Account/AccountPage.module.css ***!
   \*************************************************************************************************************************************************************/
 /*! exports provided: default */
 /*! exports used: default */
@@ -20312,12 +20392,12 @@ ___CSS_LOADER_EXPORT___.locals = {
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()(_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default.a);
 // Module
-___CSS_LOADER_EXPORT___.push([module.i, ".accountPage-root-F8H {\n    display: flex;\n    gap: 25px;\n}\n\n.accountPage-sidebar-hNW {\n    flex: 1;\n}\n\n.accountPage-content-whU {\n    flex: 5;\n}", "",{"version":3,"sources":["webpack://./src/RootComponents/Account/accountPage.module.css"],"names":[],"mappings":"AAAA;IACI,aAAa;IACb,SAAS;AACb;;AAEA;IACI,OAAO;AACX;;AAEA;IACI,OAAO;AACX","sourcesContent":[".root {\n    display: flex;\n    gap: 25px;\n}\n\n.sidebar {\n    flex: 1;\n}\n\n.content {\n    flex: 5;\n}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.i, ".AccountPage-root-D4j {\n    display: flex;\n    gap: 25px;\n    flex-direction: column;\n}\n\n.AccountPage-sidebar-20J {\n    flex: 1;\n}\n\n.AccountPage-content-7Z- {\n    flex: 5;\n}\n\n@media (min-width: 1024px) {\n    .AccountPage-root-D4j {\n        flex-direction: row;\n    }\n}", "",{"version":3,"sources":["webpack://./src/RootComponents/Account/AccountPage.module.css"],"names":[],"mappings":"AAAA;IACI,aAAa;IACb,SAAS;IACT,sBAAsB;AAC1B;;AAEA;IACI,OAAO;AACX;;AAEA;IACI,OAAO;AACX;;AAEA;IACI;QACI,mBAAmB;IACvB;AACJ","sourcesContent":[".root {\n    display: flex;\n    gap: 25px;\n    flex-direction: column;\n}\n\n.sidebar {\n    flex: 1;\n}\n\n.content {\n    flex: 5;\n}\n\n@media (min-width: 1024px) {\n    .root {\n        flex-direction: row;\n    }\n}"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
-	"root": "accountPage-root-F8H",
-	"sidebar": "accountPage-sidebar-hNW",
-	"content": "accountPage-content-whU"
+	"root": "AccountPage-root-D4j",
+	"sidebar": "AccountPage-sidebar-20J",
+	"content": "AccountPage-content-7Z-"
 };
 /* harmony default export */ __webpack_exports__["a"] = (___CSS_LOADER_EXPORT___);
 
@@ -20548,6 +20628,53 @@ module.exports = function cssWithMappingToString(item) {
   }
 
   return [content].join("\n");
+};
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/runtime/getUrl.js":
+/*!********************************************************!*\
+  !*** ./node_modules/css-loader/dist/runtime/getUrl.js ***!
+  \********************************************************/
+/*! no static exports found */
+/*! exports used: default */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function (url, options) {
+  if (!options) {
+    // eslint-disable-next-line no-param-reassign
+    options = {};
+  } // eslint-disable-next-line no-underscore-dangle, no-param-reassign
+
+
+  url = url && url.__esModule ? url.default : url;
+
+  if (typeof url !== "string") {
+    return url;
+  } // If url is already wrapped in quotes, remove them
+
+
+  if (/^['"].*['"]$/.test(url)) {
+    // eslint-disable-next-line no-param-reassign
+    url = url.slice(1, -1);
+  }
+
+  if (options.hash) {
+    // eslint-disable-next-line no-param-reassign
+    url += options.hash;
+  } // Should url be wrapped?
+  // See https://drafts.csswg.org/css-values-3/#urls
+
+
+  if (/["'() \t\n]/.test(url) || options.needQuotes) {
+    return "\"".concat(url.replace(/"/g, '\\"').replace(/\n/g, "\\n"), "\"");
+  }
+
+  return url;
 };
 
 /***/ }),
@@ -21147,7 +21274,7 @@ module.exports = function (data, opts) {
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql/language/lexer.mjs because of ./src/RootComponents/Cart/index.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql/language/source.mjs because of ./src/RootComponents/Cart/index.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql/language/tokenKind.mjs because of ./src/RootComponents/Cart/index.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/tslib/tslib.es6.js because of ./node_modules/@apollo/client/cache/inmemory/policies.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/tslib/tslib.es6.js because of ./node_modules/@apollo/client/link/http/HttpLink.js */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -23517,7 +23644,7 @@ var nodejsCustomInspectSymbol = typeof Symbol === 'function' && typeof Symbol.fo
   \***********************************************************/
 /*! exports provided: Location, Token, isNode */
 /*! exports used: Location, Token, isNode */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql/jsutils/nodejsCustomInspectSymbol.mjs because of ./node_modules/@apollo/client/link/http/selectHttpOptionsAndBody.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql/jsutils/nodejsCustomInspectSymbol.mjs because of ./src/RootComponents/Cart/index.js */
 /***/ (function(__webpack_module__, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -24850,7 +24977,7 @@ function hasMultilineItems(maybeArray) {
 /*! exports provided: Source, isSource */
 /*! exports used: Source, isSource */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql/jsutils/inspect.mjs because of ./node_modules/@apollo/client/link/http/selectHttpOptionsAndBody.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql/polyfills/symbols.mjs because of ./node_modules/@magento/venia-ui/lib/components/CartPage/cartPage.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql/polyfills/symbols.mjs because of ./src/RootComponents/Cart/index.js */
 /***/ (function(__webpack_module__, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -38470,9 +38597,9 @@ if (hasSymbols()) {
 
 /***/ }),
 
-/***/ "./src/RootComponents/Account/accountPage.js":
+/***/ "./src/RootComponents/Account/AccountPage.js":
 /*!*****************************************************************!*\
-  !*** ./src/RootComponents/Account/accountPage.js + 100 modules ***!
+  !*** ./src/RootComponents/Account/AccountPage.js + 106 modules ***!
   \*****************************************************************/
 /*! exports provided: useProtectedPage, default */
 /*! exports used: default, useProtectedPage */
@@ -38484,6 +38611,7 @@ if (hasSymbols()) {
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/context/cart.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/context/eventing.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/context/user.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/hooks/useAwaitQuery.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/hooks/useGoogleReCaptcha/useGoogleReCaptcha.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/createProductVariants.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/deriveErrorMessage.js */
@@ -38555,8 +38683,10 @@ if (hasSymbols()) {
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/WishlistPage/wishlistItems.module.css (<- Module uses module.id) */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/WishlistPage/wishlistMoreActionsDialog.module.css (<- Module uses module.id) */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/WishlistPage/wishlistPage.module.css (<- Module uses module.id) */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./src/RootComponents/Account/accountNavigation.module.css (<- Module uses module.id) */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./src/RootComponents/Account/accountPage.module.css (<- Module uses module.id) */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./src/RootComponents/Account/AccountNavigation.module.css (<- Module uses module.id) */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./src/RootComponents/Account/AccountOverview/AccountOverview.module.css (<- Module uses module.id) */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./src/RootComponents/Account/AccountOverview/AddressCard.module.css (<- Module uses module.id) */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./src/RootComponents/Account/AccountPage.module.css (<- Module uses module.id) */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql-tag/lib/index.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/informed/dist/esm/index.js (<- Module uses injected variables (process)) */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/prop-types/index.js (<- Module is not an ECMAScript module) */
@@ -44853,106 +44983,505 @@ const WishlistPage = props => {
   })), content);
 };
 /* harmony default export */ var wishlistPage = (WishlistPage);
-// EXTERNAL MODULE: ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./src/RootComponents/Account/accountNavigation.module.css
-var accountNavigation_module = __webpack_require__("./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./src/RootComponents/Account/accountNavigation.module.css");
+// EXTERNAL MODULE: ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./src/RootComponents/Account/AccountNavigation.module.css
+var AccountNavigation_module = __webpack_require__("./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./src/RootComponents/Account/AccountNavigation.module.css");
 
-// CONCATENATED MODULE: ./src/RootComponents/Account/accountNavigation.module.css
+// CONCATENATED MODULE: ./src/RootComponents/Account/AccountNavigation.module.css
 
             
 
-var accountNavigation_module_options = {"injectType":"styleTag"};
+var AccountNavigation_module_options = {"injectType":"styleTag"};
 
-accountNavigation_module_options.insert = "head";
-accountNavigation_module_options.singleton = false;
+AccountNavigation_module_options.insert = "head";
+AccountNavigation_module_options.singleton = false;
 
-var accountNavigation_module_update = injectStylesIntoStyleTag_default()(accountNavigation_module["a" /* default */], accountNavigation_module_options);
-
-
-
-/* harmony default export */ var Account_accountNavigation_module = (accountNavigation_module["a" /* default */].locals || {});
-// CONCATENATED MODULE: ./src/RootComponents/Account/accountNavigation.js
+var AccountNavigation_module_update = injectStylesIntoStyleTag_default()(AccountNavigation_module["a" /* default */], AccountNavigation_module_options);
 
 
-const links = [{
-  type: 'myaccount',
-  text: 'My Account',
-  url: '/customer/account'
-}, {
-  type: 'history',
-  text: 'Order History',
-  url: '/customer/order-history'
-}, {
-  type: 'wishlist',
-  text: 'My Favorites',
-  url: '/customer/wishlist'
-}, {
-  type: 'address',
-  text: 'Address Book',
-  url: '/customer/address'
-}, {
-  type: 'editaccount',
-  text: 'Account Information',
-  url: '/customer/account/edit'
-}, {
-  type: 'creditcards',
-  text: 'Stored Payment Methods',
-  url: '/customer/cards'
-}];
 
-// TODO: Mobile view
+/* harmony default export */ var Account_AccountNavigation_module = (AccountNavigation_module["a" /* default */].locals || {});
+// CONCATENATED MODULE: ./src/RootComponents/Account/AccountNavigation.js
+
+
+const accountPages = {
+  myaccount: {
+    type: 'myaccount',
+    text: 'My Account',
+    url: '/customer/account'
+  },
+  history: {
+    type: 'history',
+    text: 'Order History',
+    url: '/customer/order-history'
+  },
+  wishlist: {
+    type: 'wishlist',
+    text: 'My Favorites',
+    url: '/customer/wishlist'
+  },
+  address: {
+    type: 'address',
+    text: 'Address Book',
+    url: '/customer/address'
+  },
+  editaccount: {
+    type: 'editaccount',
+    text: 'Account Information',
+    url: '/customer/account/edit'
+  },
+  creditcards: {
+    type: 'creditcards',
+    text: 'Stored Payment Methods',
+    url: '/customer/cards'
+  }
+};
 const AccountNavigation = props => {
+  const [open, setOpen] = Object(react["useState"])(false);
   const {
     pageType
   } = props;
-  return /*#__PURE__*/react_default.a.createElement("div", {
-    className: Account_accountNavigation_module.root
-  }, /*#__PURE__*/react_default.a.createElement("ul", null, links.map((link, index) => {
+  const links = Object.values(accountPages);
+  links.splice(3, 0, {
+    type: 'divider'
+  });
+  const activePage = links.find(link => link.type === pageType);
+  return /*#__PURE__*/react_default.a.createElement(react["Fragment"], null, /*#__PURE__*/react_default.a.createElement("button", {
+    className: [Account_AccountNavigation_module.navButton, open ? Account_AccountNavigation_module.navButtonOpen : ''].join(' '),
+    onClick: () => setOpen(open => !open)
+  }, activePage.text), /*#__PURE__*/react_default.a.createElement("div", {
+    className: [Account_AccountNavigation_module.root, open ? Account_AccountNavigation_module.open : ''].join(' ')
+  }, /*#__PURE__*/react_default.a.createElement("ul", null, links.map(link => {
     const {
       type,
       text,
       url
     } = link;
     const isActive = type === pageType;
-    let content = [];
+    if (type === 'divider') {
+      return /*#__PURE__*/react_default.a.createElement("li", {
+        key: type,
+        className: Account_AccountNavigation_module.divider
+      });
+    }
     if (isActive) {
-      content.push( /*#__PURE__*/react_default.a.createElement("li", {
-        className: Account_accountNavigation_module.active
-      }, text));
-    } else {
-      content.push( /*#__PURE__*/react_default.a.createElement("li", null, /*#__PURE__*/react_default.a.createElement("a", {
-        href: url
-      }, text)));
+      return /*#__PURE__*/react_default.a.createElement("li", {
+        key: type,
+        className: Account_AccountNavigation_module.active,
+        onClick: () => setOpen(false)
+      }, text);
     }
-    if (index === 2) {
-      content.push( /*#__PURE__*/react_default.a.createElement("li", {
-        className: Account_accountNavigation_module.divider
-      }));
-    }
-    return /*#__PURE__*/react_default.a.createElement(react["Fragment"], null, content);
-  })));
+    return /*#__PURE__*/react_default.a.createElement("li", {
+      key: type
+    }, /*#__PURE__*/react_default.a.createElement("a", {
+      href: url,
+      onClick: () => setOpen(false)
+    }, text));
+  }))));
 };
-/* harmony default export */ var accountNavigation = (AccountNavigation);
-// EXTERNAL MODULE: ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./src/RootComponents/Account/accountPage.module.css
-var accountPage_module = __webpack_require__("./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./src/RootComponents/Account/accountPage.module.css");
+/* harmony default export */ var Account_AccountNavigation = (AccountNavigation);
+// EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/hooks/useAwaitQuery.js
+var useAwaitQuery = __webpack_require__("./node_modules/@magento/peregrine/lib/hooks/useAwaitQuery.js");
 
-// CONCATENATED MODULE: ./src/RootComponents/Account/accountPage.module.css
+// CONCATENATED MODULE: ./src/RootComponents/Account/AccountOverview/AccountOverview.gql.js
+
+const GET_CUSTOMER = lib["a" /* gql */]`query GetCustomerInformation {
+    customer {
+        allow_remote_shopping_assistance
+        created_at
+        email
+        firstname
+        gender
+        lastname
+        middlename
+        prefix
+    }
+}`;
+// EXTERNAL MODULE: ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./src/RootComponents/Account/AccountOverview/AddressCard.module.css
+var AddressCard_module = __webpack_require__("./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./src/RootComponents/Account/AccountOverview/AddressCard.module.css");
+
+// CONCATENATED MODULE: ./src/RootComponents/Account/AccountOverview/AddressCard.module.css
 
             
 
-var accountPage_module_options = {"injectType":"styleTag"};
+var AddressCard_module_options = {"injectType":"styleTag"};
 
-accountPage_module_options.insert = "head";
-accountPage_module_options.singleton = false;
+AddressCard_module_options.insert = "head";
+AddressCard_module_options.singleton = false;
 
-var accountPage_module_update = injectStylesIntoStyleTag_default()(accountPage_module["a" /* default */], accountPage_module_options);
+var AddressCard_module_update = injectStylesIntoStyleTag_default()(AddressCard_module["a" /* default */], AddressCard_module_options);
 
 
 
-/* harmony default export */ var Account_accountPage_module = (accountPage_module["a" /* default */].locals || {});
+/* harmony default export */ var AccountOverview_AddressCard_module = (AddressCard_module["a" /* default */].locals || {});
+// CONCATENATED MODULE: ./src/RootComponents/Account/AccountOverview/addressCard.js
+
+
+
+
+const addressCard_AddressCard = props => {
+  const {
+    address,
+    countryName
+  } = props;
+  const {
+    city,
+    country_code,
+    firstname,
+    middlename = '',
+    lastname,
+    postcode,
+    region: {
+      region
+    },
+    street,
+    telephone,
+    id
+  } = address;
+  const streetRows = street.map((row, index) => {
+    return /*#__PURE__*/react_default.a.createElement("span", {
+      className: AccountOverview_AddressCard_module.streetRow,
+      key: index
+    }, row);
+  });
+  const nameString = [firstname, middlename, lastname].filter(name => !!name).join(' ');
+  const additionalAddressString = `${city}, ${region} ${postcode}`;
+  return /*#__PURE__*/react_default.a.createElement(react["Fragment"], null, /*#__PURE__*/react_default.a.createElement("div", {
+    className: AccountOverview_AddressCard_module.content
+  }, /*#__PURE__*/react_default.a.createElement("span", {
+    className: AccountOverview_AddressCard_module.name
+  }, nameString), streetRows, /*#__PURE__*/react_default.a.createElement("span", {
+    className: AccountOverview_AddressCard_module.additionalAddress
+  }, additionalAddressString), /*#__PURE__*/react_default.a.createElement("span", {
+    className: AccountOverview_AddressCard_module.country
+  }, countryName || country_code), /*#__PURE__*/react_default.a.createElement("span", {
+    className: AccountOverview_AddressCard_module.telephone
+  }, /*#__PURE__*/react_default.a.createElement(message["a" /* default */], {
+    id: "addressBookPage.telephone",
+    defaultMessage: "Phone {telephone}",
+    values: {
+      telephone
+    }
+  }))), /*#__PURE__*/react_default.a.createElement("div", {
+    className: AccountOverview_AddressCard_module.actions
+  }, /*#__PURE__*/react_default.a.createElement("a", {
+    href: `/customer/address?edit=${id}`
+  }, "Edit Address")));
+};
+/* harmony default export */ var AccountOverview_addressCard = (addressCard_AddressCard);
+addressCard_AddressCard.propTypes = {
+  address: Object(prop_types["shape"])({
+    city: prop_types["string"],
+    country_code: prop_types["string"],
+    default_shipping: prop_types["bool"],
+    firstname: prop_types["string"],
+    lastname: prop_types["string"],
+    postcode: prop_types["string"],
+    region: Object(prop_types["shape"])({
+      region_code: prop_types["string"],
+      region: prop_types["string"]
+    }),
+    street: Object(prop_types["arrayOf"])(prop_types["string"]),
+    telephone: prop_types["string"]
+  }).isRequired,
+  countryName: prop_types["string"]
+};
+// EXTERNAL MODULE: ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./src/RootComponents/Account/AccountOverview/AccountOverview.module.css
+var AccountOverview_module = __webpack_require__("./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./src/RootComponents/Account/AccountOverview/AccountOverview.module.css");
+
+// CONCATENATED MODULE: ./src/RootComponents/Account/AccountOverview/AccountOverview.module.css
+
+            
+
+var AccountOverview_module_options = {"injectType":"styleTag"};
+
+AccountOverview_module_options.insert = "head";
+AccountOverview_module_options.singleton = false;
+
+var AccountOverview_module_update = injectStylesIntoStyleTag_default()(AccountOverview_module["a" /* default */], AccountOverview_module_options);
+
+
+
+/* harmony default export */ var AccountOverview_AccountOverview_module = (AccountOverview_module["a" /* default */].locals || {});
+// CONCATENATED MODULE: ./src/RootComponents/Account/AccountOverview/orderRow.js
+
+
+
+const orderRow_OrderRow = props => {
+  const {
+    order,
+    mobile
+  } = props;
+  const {
+    id,
+    number: orderNumber,
+    order_date: orderDate,
+    status,
+    total,
+    shipping_address: shippingAddress
+  } = order;
+  const {
+    grand_total: grandTotal
+  } = total;
+  const {
+    currency,
+    value: orderTotal
+  } = grandTotal;
+
+  // Convert date to ISO-8601 format so Safari can also parse it
+  const isoFormattedDate = orderDate.replace(' ', 'T');
+  const formattedDate = new Date(isoFormattedDate).toLocaleDateString(undefined, {
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric'
+  });
+  const {
+    firstname,
+    lastname
+  } = shippingAddress;
+  const nameString = [firstname, lastname].filter(name => !!name).join(' ');
+  const orderTotalPrice = currency && orderTotal !== null ? /*#__PURE__*/react_default.a.createElement(price["a" /* default */], {
+    currencyCode: currency,
+    value: orderTotal
+  }) : '-';
+  if (mobile) {
+    return /*#__PURE__*/react_default.a.createElement("div", null, /*#__PURE__*/react_default.a.createElement("span", null, /*#__PURE__*/react_default.a.createElement("strong", null, "Order #:"), " ", orderNumber), /*#__PURE__*/react_default.a.createElement("span", null, /*#__PURE__*/react_default.a.createElement("strong", null, "Date:"), " ", formattedDate), /*#__PURE__*/react_default.a.createElement("span", null, /*#__PURE__*/react_default.a.createElement("strong", null, "Ship To:"), " ", nameString), /*#__PURE__*/react_default.a.createElement("span", null, /*#__PURE__*/react_default.a.createElement("strong", null, "Order Total:"), " ", orderTotalPrice), /*#__PURE__*/react_default.a.createElement("span", null, /*#__PURE__*/react_default.a.createElement("strong", null, "Status:"), " ", status), /*#__PURE__*/react_default.a.createElement("span", null, /*#__PURE__*/react_default.a.createElement("a", {
+      href: `/customer/order-history?order=${id}`
+    }, "View Order")));
+  }
+  return /*#__PURE__*/react_default.a.createElement("tr", null, /*#__PURE__*/react_default.a.createElement("td", null, orderNumber), /*#__PURE__*/react_default.a.createElement("td", null, formattedDate), /*#__PURE__*/react_default.a.createElement("td", null, nameString), /*#__PURE__*/react_default.a.createElement("td", null, orderTotalPrice), /*#__PURE__*/react_default.a.createElement("td", null, status), /*#__PURE__*/react_default.a.createElement("td", null, /*#__PURE__*/react_default.a.createElement("a", {
+    href: `/customer/order-history?order=${id}`
+  }, "View Order")));
+};
+/* harmony default export */ var AccountOverview_orderRow = (orderRow_OrderRow);
+orderRow_OrderRow.propTypes = {
+  order: Object(prop_types["shape"])({
+    billing_address: Object(prop_types["shape"])({
+      city: prop_types["string"],
+      country_code: prop_types["string"],
+      firstname: prop_types["string"],
+      lastname: prop_types["string"],
+      postcode: prop_types["string"],
+      region_id: prop_types["string"],
+      street: Object(prop_types["arrayOf"])(prop_types["string"])
+    }),
+    items: Object(prop_types["arrayOf"])(Object(prop_types["shape"])({
+      id: prop_types["string"],
+      product_name: prop_types["string"],
+      product_sale_price: Object(prop_types["shape"])({
+        currency: prop_types["string"],
+        value: prop_types["number"]
+      }),
+      product_sku: prop_types["string"],
+      selected_options: Object(prop_types["arrayOf"])(Object(prop_types["shape"])({
+        label: prop_types["string"],
+        value: prop_types["string"]
+      })),
+      quantity_ordered: prop_types["number"]
+    })),
+    invoices: Object(prop_types["arrayOf"])(Object(prop_types["shape"])({
+      id: prop_types["string"]
+    })),
+    number: prop_types["string"],
+    order_date: prop_types["string"],
+    payment_methods: Object(prop_types["arrayOf"])(Object(prop_types["shape"])({
+      type: prop_types["string"],
+      additional_data: Object(prop_types["arrayOf"])(Object(prop_types["shape"])({
+        name: prop_types["string"],
+        value: prop_types["string"]
+      }))
+    })),
+    shipping_address: Object(prop_types["shape"])({
+      city: prop_types["string"],
+      country_code: prop_types["string"],
+      firstname: prop_types["string"],
+      lastname: prop_types["string"],
+      postcode: prop_types["string"],
+      region_id: prop_types["string"],
+      street: Object(prop_types["arrayOf"])(prop_types["string"]),
+      telephone: prop_types["string"]
+    }),
+    shipping_method: prop_types["string"],
+    shipments: Object(prop_types["arrayOf"])(Object(prop_types["shape"])({
+      id: prop_types["string"],
+      tracking: Object(prop_types["arrayOf"])(Object(prop_types["shape"])({
+        number: prop_types["string"]
+      }))
+    })),
+    status: prop_types["string"],
+    total: Object(prop_types["shape"])({
+      discounts: Object(prop_types["arrayOf"])(Object(prop_types["shape"])({
+        amount: Object(prop_types["shape"])({
+          currency: prop_types["string"],
+          value: prop_types["number"]
+        })
+      })),
+      grand_total: Object(prop_types["shape"])({
+        currency: prop_types["string"],
+        value: prop_types["number"]
+      }),
+      subtotal: Object(prop_types["shape"])({
+        currency: prop_types["string"],
+        value: prop_types["number"]
+      }),
+      total_tax: Object(prop_types["shape"])({
+        currency: prop_types["string"],
+        value: prop_types["number"]
+      }),
+      total_shipping: Object(prop_types["shape"])({
+        currency: prop_types["string"],
+        value: prop_types["number"]
+      })
+    })
+  })
+};
+// CONCATENATED MODULE: ./src/RootComponents/Account/AccountOverview/AccountOverview.js
+
+
+
+
+
+
+
+
+
+const AccountOverview = () => {
+  const fetchUserDetails = Object(useAwaitQuery["a" /* useAwaitQuery */])(GET_CUSTOMER);
+  const [{
+    currentUser
+  }, {
+    getUserDetails
+  }] = Object(user["b" /* useUserContext */])();
+  const {
+    customerAddresses,
+    countryDisplayNameMap
+  } = useAddressBookPage();
+  const {
+    orders
+  } = useOrderHistoryPage();
+  Object(react["useEffect"])(() => {
+    console.log('fetchUserDetails', fetchUserDetails);
+    getUserDetails({
+      fetchUserDetails
+    });
+  }, [fetchUserDetails, getUserDetails]);
+  const {
+    email,
+    firstname,
+    middlename,
+    lastname
+  } = currentUser;
+  Object(react["useEffect"])(() => {
+    console.log('got user details', currentUser);
+  }, [currentUser]);
+  if (!email) {
+    // TODO: Shimmer
+    return /*#__PURE__*/react_default.a.createElement("div", {
+      className: AccountOverview_AccountOverview_module.root
+    }, "Loading...");
+  }
+  console.log('orders', orders);
+  const defaultBillingAddress = customerAddresses.find(({
+    default_billing
+  }) => default_billing);
+  const defaultShippingAddress = customerAddresses.find(({
+    default_shipping
+  }) => default_shipping);
+  return /*#__PURE__*/react_default.a.createElement("div", {
+    className: AccountOverview_AccountOverview_module.root
+  }, /*#__PURE__*/react_default.a.createElement("h1", null, "My Account"), /*#__PURE__*/react_default.a.createElement("div", {
+    className: AccountOverview_AccountOverview_module.section
+  }, /*#__PURE__*/react_default.a.createElement("div", {
+    className: AccountOverview_AccountOverview_module.sectionHeader
+  }, /*#__PURE__*/react_default.a.createElement("h2", null, "Account Information")), /*#__PURE__*/react_default.a.createElement("div", {
+    className: AccountOverview_AccountOverview_module.sectionContent
+  }, /*#__PURE__*/react_default.a.createElement("div", {
+    className: AccountOverview_AccountOverview_module.box
+  }, /*#__PURE__*/react_default.a.createElement("div", {
+    className: AccountOverview_AccountOverview_module.boxTitle
+  }, "Contact Information"), /*#__PURE__*/react_default.a.createElement("div", {
+    className: AccountOverview_AccountOverview_module.boxContent
+  }, [firstname, middlename, lastname].join(' '), /*#__PURE__*/react_default.a.createElement("br", null), email), /*#__PURE__*/react_default.a.createElement("div", {
+    className: AccountOverview_AccountOverview_module.boxActions
+  }, /*#__PURE__*/react_default.a.createElement("a", {
+    href: "/customer/account/edit"
+  }, "Edit"), /*#__PURE__*/react_default.a.createElement("a", {
+    href: "/customer/account/edit?changepassword"
+  }, "Change Password"))))), /*#__PURE__*/react_default.a.createElement("div", {
+    className: AccountOverview_AccountOverview_module.section
+  }, /*#__PURE__*/react_default.a.createElement("div", {
+    className: AccountOverview_AccountOverview_module.sectionHeader
+  }, /*#__PURE__*/react_default.a.createElement("h2", null, "Address Book"), " ", /*#__PURE__*/react_default.a.createElement("a", {
+    href: "/customer/address"
+  }, "Manage Addresses")), /*#__PURE__*/react_default.a.createElement("div", {
+    className: AccountOverview_AccountOverview_module.sectionContent
+  }, /*#__PURE__*/react_default.a.createElement("div", {
+    className: AccountOverview_AccountOverview_module.box
+  }, /*#__PURE__*/react_default.a.createElement("div", {
+    className: AccountOverview_AccountOverview_module.boxTitle
+  }, "Default Billing Address"), defaultBillingAddress ? /*#__PURE__*/react_default.a.createElement(AccountOverview_addressCard, {
+    address: defaultBillingAddress,
+    countryName: countryDisplayNameMap.get(defaultBillingAddress.country_code)
+  }) : /*#__PURE__*/react_default.a.createElement("div", {
+    className: AccountOverview_AccountOverview_module.boxContent
+  }, "You have not set a default billing address.")), /*#__PURE__*/react_default.a.createElement("div", {
+    className: AccountOverview_AccountOverview_module.box
+  }, /*#__PURE__*/react_default.a.createElement("div", {
+    className: AccountOverview_AccountOverview_module.boxTitle
+  }, "Default Shipping Address"), defaultShippingAddress ? /*#__PURE__*/react_default.a.createElement(AccountOverview_addressCard, {
+    address: defaultShippingAddress,
+    countryName: countryDisplayNameMap.get(defaultShippingAddress.country_code)
+  }) : /*#__PURE__*/react_default.a.createElement("div", {
+    className: AccountOverview_AccountOverview_module.boxContent
+  }, "You have not set a default shipping address.")))), /*#__PURE__*/react_default.a.createElement("div", {
+    className: AccountOverview_AccountOverview_module.section
+  }, /*#__PURE__*/react_default.a.createElement("div", {
+    className: [AccountOverview_AccountOverview_module.sectionHeader, AccountOverview_AccountOverview_module.sectionOrders].join(' ')
+  }, /*#__PURE__*/react_default.a.createElement("h2", null, "Recent Orders"), " ", /*#__PURE__*/react_default.a.createElement("a", {
+    href: "/customer/order-history"
+  }, "View all")), /*#__PURE__*/react_default.a.createElement("div", {
+    className: AccountOverview_AccountOverview_module.sectionContent
+  }, /*#__PURE__*/react_default.a.createElement("table", {
+    className: AccountOverview_AccountOverview_module.orderTableDesktop
+  }, /*#__PURE__*/react_default.a.createElement("thead", null, /*#__PURE__*/react_default.a.createElement("tr", null, /*#__PURE__*/react_default.a.createElement("th", null, "Order #"), /*#__PURE__*/react_default.a.createElement("th", null, "Date"), /*#__PURE__*/react_default.a.createElement("th", null, "Ship To"), /*#__PURE__*/react_default.a.createElement("th", null, "Order Total"), /*#__PURE__*/react_default.a.createElement("th", null, "Status"), /*#__PURE__*/react_default.a.createElement("th", null, "Action"))), /*#__PURE__*/react_default.a.createElement("tbody", null, (orders === null || orders === void 0 ? void 0 : orders.length) > 0 ? orders.map(order => /*#__PURE__*/react_default.a.createElement(AccountOverview_orderRow, {
+    key: order.id,
+    order: order
+  })) : /*#__PURE__*/react_default.a.createElement("tr", {
+    className: AccountOverview_AccountOverview_module.orderTableEmpty
+  }, /*#__PURE__*/react_default.a.createElement("td", {
+    colSpan: "6"
+  }, "You have not placed any orders.")))), /*#__PURE__*/react_default.a.createElement("div", {
+    className: AccountOverview_AccountOverview_module.orderTableMobile
+  }, (orders === null || orders === void 0 ? void 0 : orders.length) > 0 ? orders.map(order => /*#__PURE__*/react_default.a.createElement(AccountOverview_orderRow, {
+    key: order.id,
+    order: order,
+    mobile: true
+  })) : /*#__PURE__*/react_default.a.createElement("div", {
+    className: AccountOverview_AccountOverview_module.orderTableEmpty
+  }, "You have not placed any orders.")))));
+};
+/* harmony default export */ var AccountOverview_AccountOverview = (AccountOverview);
 // EXTERNAL MODULE: ./src/RootComponents/Login/login.js + 3 modules
 var login = __webpack_require__("./src/RootComponents/Login/login.js");
 
-// CONCATENATED MODULE: ./src/RootComponents/Account/accountPage.js
+// EXTERNAL MODULE: ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./src/RootComponents/Account/AccountPage.module.css
+var AccountPage_module = __webpack_require__("./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./src/RootComponents/Account/AccountPage.module.css");
+
+// CONCATENATED MODULE: ./src/RootComponents/Account/AccountPage.module.css
+
+            
+
+var AccountPage_module_options = {"injectType":"styleTag"};
+
+AccountPage_module_options.insert = "head";
+AccountPage_module_options.singleton = false;
+
+var AccountPage_module_update = injectStylesIntoStyleTag_default()(AccountPage_module["a" /* default */], AccountPage_module_options);
+
+
+
+/* harmony default export */ var Account_AccountPage_module = (AccountPage_module["a" /* default */].locals || {});
+// CONCATENATED MODULE: ./src/RootComponents/Account/AccountPage.js
+
 
 
 
@@ -44987,7 +45516,7 @@ const AccountTypeHandler = props => {
   switch (props.pageType) {
     case 'myaccount':
       redirectIfNotSignedIn();
-      return /*#__PURE__*/react_default.a.createElement(accountInformationPage, null);
+      return /*#__PURE__*/react_default.a.createElement(AccountOverview_AccountOverview, null);
     case 'address':
       redirectIfNotSignedIn();
       return /*#__PURE__*/react_default.a.createElement(addressBookPage, null);
@@ -45017,18 +45546,18 @@ const AccountPage = props => {
     pageType
   } = props;
   return /*#__PURE__*/react_default.a.createElement("div", {
-    className: Account_accountPage_module.root
+    className: Account_AccountPage_module.root
   }, /*#__PURE__*/react_default.a.createElement("div", {
-    className: Account_accountPage_module.sidebar
-  }, /*#__PURE__*/react_default.a.createElement(accountNavigation, {
+    className: Account_AccountPage_module.sidebar
+  }, /*#__PURE__*/react_default.a.createElement(Account_AccountNavigation, {
     pageType: pageType
   })), /*#__PURE__*/react_default.a.createElement("div", {
-    className: Account_accountPage_module.content
+    className: Account_AccountPage_module.content
   }, /*#__PURE__*/react_default.a.createElement(AccountTypeHandler, {
     pageType: pageType
   })));
 };
-/* harmony default export */ var accountPage = __webpack_exports__["a"] = (AccountPage);
+/* harmony default export */ var Account_AccountPage = __webpack_exports__["a"] = (AccountPage);
 
 /***/ }),
 
@@ -45038,7 +45567,7 @@ const AccountPage = props => {
   \*********************************************************/
 /*! no exports provided */
 /*! all exports used */
-/*! ModuleConcatenation bailout: Cannot concat with ./src/RootComponents/Account/accountPage.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./src/RootComponents/Account/AccountPage.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./src/components/Adapter/adapter.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./src/store.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-dom/index.js (<- Module is not an ECMAScript module) */
@@ -45062,10 +45591,10 @@ var store = __webpack_require__("./src/store.js");
 // EXTERNAL MODULE: ./src/components/Adapter/adapter.js + 37 modules
 var adapter = __webpack_require__("./src/components/Adapter/adapter.js");
 
-// EXTERNAL MODULE: ./src/RootComponents/Account/accountPage.js + 100 modules
-var accountPage = __webpack_require__("./src/RootComponents/Account/accountPage.js");
+// EXTERNAL MODULE: ./src/RootComponents/Account/AccountPage.js + 106 modules
+var AccountPage = __webpack_require__("./src/RootComponents/Account/AccountPage.js");
 
-// CONCATENATED MODULE: ./src/RootComponents/Account/account.js
+// CONCATENATED MODULE: ./src/RootComponents/Account/Account.js
 
 
 
@@ -45080,11 +45609,11 @@ const Account = props => {
     origin: origin,
     store: store["a" /* default */],
     styles: styles
-  }, /*#__PURE__*/react_default.a.createElement(accountPage["a" /* default */], {
+  }, /*#__PURE__*/react_default.a.createElement(AccountPage["a" /* default */], {
     pageType: props.pageType
   }));
 };
-/* harmony default export */ var account = (Account);
+/* harmony default export */ var Account_Account = (Account);
 // CONCATENATED MODULE: ./src/RootComponents/Account/index.js
 /**
  * @RootComponent
@@ -45100,9 +45629,22 @@ const pageTypeObject = JSON.parse(pageTypeScript.innerHTML) || {
   "pageType": "myaccount"
 };
 const pageType = pageTypeObject.pageType;
-Object(react_dom["render"])( /*#__PURE__*/react_default.a.createElement(account, {
+Object(react_dom["render"])( /*#__PURE__*/react_default.a.createElement(Account_Account, {
   pageType: pageType
 }), document.querySelector('.block.commerce-account'));
+
+/***/ }),
+
+/***/ "./src/RootComponents/Account/rounded-triangle.svg":
+/*!*********************************************************!*\
+  !*** ./src/RootComponents/Account/rounded-triangle.svg ***!
+  \*********************************************************/
+/*! no static exports found */
+/*! exports used: default */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "rounded-triangle-fHp.svg";
 
 /***/ }),
 
@@ -45116,7 +45658,7 @@ Object(react_dom["render"])( /*#__PURE__*/react_default.a.createElement(account,
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/shallowMerge.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Head/index.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/SignIn/signIn.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./src/RootComponents/Account/accountPage.js because of ./src/RootComponents/Account/account.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./src/RootComponents/Account/AccountPage.js because of ./src/RootComponents/Account/Account.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/SignInPage/signInPage.module.css (<- Module uses module.id) */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/prop-types/index.js (<- Module is not an ECMAScript module) */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-intl/lib/src/components/message.js */
@@ -45287,8 +45829,8 @@ SignInPage.propTypes = {
   signedInRedirectUrl: prop_types["string"]
 };
 /* harmony default export */ var signInPage = (SignInPage);
-// EXTERNAL MODULE: ./src/RootComponents/Account/accountPage.js + 100 modules
-var accountPage = __webpack_require__("./src/RootComponents/Account/accountPage.js");
+// EXTERNAL MODULE: ./src/RootComponents/Account/AccountPage.js + 106 modules
+var AccountPage = __webpack_require__("./src/RootComponents/Account/AccountPage.js");
 
 // CONCATENATED MODULE: ./src/RootComponents/Login/login.js
 
@@ -45301,7 +45843,7 @@ var accountPage = __webpack_require__("./src/RootComponents/Account/accountPage.
  * pageTypes = ACCOUNT
  */
 function Login() {
-  const [redirectIfNotSignedIn, redirectIfSignedIn] = Object(accountPage["b" /* useProtectedPage */])();
+  const [redirectIfNotSignedIn, redirectIfSignedIn] = Object(AccountPage["b" /* useProtectedPage */])();
   redirectIfSignedIn(new URL(window.location).searchParams.get('login_redirect'));
   return /*#__PURE__*/react_default.a.createElement(signInPage, {
     signedInRedirectUrl: "/customer/account",
@@ -45335,28 +45877,28 @@ function Login() {
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/Apollo/clearCartDataFromCache.js because of ./src/talons/CheckoutPage/useCheckoutPage.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/Toasts/useToastContext.js because of ./node_modules/@magento/venia-ui/lib/components/CartPage/cartPage.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/Toasts/useToasts.js because of ./node_modules/@magento/venia-ui/lib/components/CartPage/cartPage.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/context/app.js because of ./node_modules/@magento/peregrine/lib/talons/CheckoutPage/ShippingInformation/useEditModal.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/context/cart.js because of ./node_modules/@magento/peregrine/lib/talons/CheckoutPage/ItemsReview/useItemsReview.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/context/eventing.js because of ./node_modules/@magento/peregrine/lib/talons/CartPage/useCartPage.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/context/user.js because of ./src/RootComponents/SignUp/signup.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/context/app.js because of ./node_modules/@magento/peregrine/lib/talons/AddressBookPage/useAddressBookPage.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/context/cart.js because of ./node_modules/@magento/peregrine/lib/talons/CartPage/useCartPage.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/context/eventing.js because of ./node_modules/@magento/peregrine/lib/talons/AddressBookPage/useAddressBookPage.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/context/user.js because of ./src/RootComponents/Account/AccountPage.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/hooks/useWindowSize.js because of ./node_modules/@magento/venia-ui/lib/components/CheckoutPage/checkoutPage.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/store/actions/app/actions.js because of ./node_modules/@magento/peregrine/lib/talons/CheckoutPage/ShippingInformation/useEditModal.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/store/actions/app/actions.js because of ./node_modules/@magento/peregrine/lib/talons/AddressBookPage/useAddressBookPage.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/store/actions/catalog/actions.js because of ./src/RootComponents/Cart/index.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/store/actions/checkout/actions.js because of ./src/RootComponents/SignUp/signup.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/store/actions/checkout/asyncActions.js because of ./src/RootComponents/SignUp/signup.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/store/actions/checkout/actions.js because of ./src/RootComponents/Account/AccountPage.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/store/actions/checkout/asyncActions.js because of ./src/RootComponents/Account/AccountPage.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/store/middleware/thunk.js because of ./src/RootComponents/Cart/index.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/bindActionCreators.js because of ./src/RootComponents/SignUp/signup.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/shallowMerge.js because of ./src/talons/CheckoutPage/useCheckoutPage.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/simplePersistence.js because of ./src/RootComponents/SignUp/signup.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/bindActionCreators.js because of ./src/RootComponents/Account/AccountPage.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/shallowMerge.js because of ./node_modules/@magento/peregrine/lib/talons/AddressBookPage/useAddressBookPage.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/simplePersistence.js because of ./src/RootComponents/Account/AccountPage.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-feather/dist/icons/x.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/apollo-cache-persist/index.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./src/components/Icon/icon.module.css (<- Module uses module.id) */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./src/components/ToastContainer/toast.module.css (<- Module uses module.id) */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./src/components/ToastContainer/toastContainer.module.css (<- Module uses module.id) */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql/language/blockString.mjs because of ./node_modules/@apollo/client/link/http/selectHttpOptionsAndBody.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql/language/lexer.mjs because of ./node_modules/@magento/venia-ui/lib/components/CartPage/cartPage.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql/language/source.mjs because of ./node_modules/@magento/venia-ui/lib/components/CartPage/cartPage.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql/language/tokenKind.mjs because of ./node_modules/@magento/venia-ui/lib/components/CartPage/cartPage.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql/language/lexer.mjs because of ./src/RootComponents/Account/AccountOverview/AccountOverview.gql.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql/language/source.mjs because of ./src/RootComponents/Account/AccountOverview/AccountOverview.gql.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql/language/tokenKind.mjs because of ./src/RootComponents/Account/AccountOverview/AccountOverview.gql.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/intl-messageformat/lib/src/core.js because of ./node_modules/@magento/venia-ui/lib/components/CartPage/cartPage.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/intl-messageformat/lib/src/error.js because of ./node_modules/@magento/venia-ui/lib/components/CartPage/cartPage.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/intl-messageformat/lib/src/formatters.js because of ./node_modules/@magento/venia-ui/lib/components/CartPage/cartPage.js */
@@ -45370,7 +45912,7 @@ function Login() {
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-router-dom/esm/react-router-dom.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react/index.js (<- Module is not an ECMAScript module) */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js (<- Module is not an ECMAScript module) */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/tslib/tslib.es6.js because of ./node_modules/@apollo/client/cache/inmemory/policies.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/tslib/tslib.es6.js because of ./node_modules/@apollo/client/link/http/HttpLink.js */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -47573,14 +48115,14 @@ Portal.propTypes = {
   \***********************************/
 /*! exports provided: default */
 /*! exports used: default */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/store/actions/app/actions.js because of ./src/RootComponents/Cart/index.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/store/actions/cart/actions.js because of ./src/RootComponents/Cart/index.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/store/actions/app/actions.js because of ./node_modules/@magento/peregrine/lib/talons/AddressBookPage/useAddressBookPage.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/store/actions/cart/actions.js because of ./node_modules/@magento/peregrine/lib/talons/CartPage/useCartPage.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/store/actions/catalog/actions.js because of ./src/RootComponents/Cart/index.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/store/actions/checkout/actions.js because of ./src/RootComponents/Cart/index.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/store/actions/user/actions.js because of ./src/RootComponents/SignUp/signup.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/store/actions/user/asyncActions.js because of ./src/RootComponents/SignUp/signup.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/store/actions/user/actions.js because of ./src/RootComponents/Account/AccountPage.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/store/actions/user/asyncActions.js because of ./src/RootComponents/Account/AccountPage.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/store/middleware/thunk.js because of ./src/RootComponents/Cart/index.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/simplePersistence.js because of ./src/RootComponents/SignUp/signup.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/simplePersistence.js because of ./src/RootComponents/Account/AccountPage.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/redux-actions/es/handleActions.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/redux/es/redux.js */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -48620,7 +49162,7 @@ const ProductListingFragment = _apollo_client__WEBPACK_IMPORTED_MODULE_0__[/* gq
 /*! ModuleConcatenation bailout: Module is not an ECMAScript module */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/hhertach/Documents/code/maidenform/pwa/node_modules/webpack-inject-plugin/dist/webpack-inject-plugin.loader?id=webpack-inject-module-1! */"./node_modules/webpack-inject-plugin/dist/webpack-inject-plugin.loader.js?id=webpack-inject-module-1!./");
+__webpack_require__(/*! /Users/mabecker/Documents/github/hlxsites/maidenform/pwa/node_modules/webpack-inject-plugin/dist/webpack-inject-plugin.loader?id=webpack-inject-module-1! */"./node_modules/webpack-inject-plugin/dist/webpack-inject-plugin.loader.js?id=webpack-inject-module-1!./");
 module.exports = __webpack_require__(/*! ./src/RootComponents/Account/index.js */"./src/RootComponents/Account/index.js");
 
 

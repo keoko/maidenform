@@ -5,7 +5,7 @@
  */
 import React from 'react';
 import { render } from 'react-dom';
-import Account from './account';
+import Account from './Account';
 
 console.log('Account Loaded');
 

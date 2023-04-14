@@ -6,12 +6,13 @@ import OrderHistoryPage from '@magento/venia-ui/lib/components/OrderHistoryPage'
 import AccountInformationPage from '@magento/venia-ui/lib/components/AccountInformationPage';
 import AddressBookPage from '@magento/venia-ui/lib/components/AddressBookPage';
 import WishListPage from '@magento/venia-ui/lib/components/WishlistPage';
-
-import AccountNavigation from './accountNavigation';
-
-import classes from './accountPage.module.css';
 import { useUserContext } from '@magento/peregrine/lib/context/user';
+
+import AccountNavigation from './AccountNavigation';
+import AccountOverview from './AccountOverview/AccountOverview';
 import Login from '../Login/login';
+
+import classes from './AccountPage.module.css';
 
 export const useProtectedPage = () => {
     const [{ isSignedIn }] = useUserContext();
@@ -41,7 +42,7 @@ const AccountTypeHandler = props => {
     switch (props.pageType) {
         case 'myaccount':
             redirectIfNotSignedIn();
-            return <AccountInformationPage />;
+            return <AccountOverview />;
         case 'address':
             redirectIfNotSignedIn();
             return <AddressBookPage />;
@@ -71,6 +72,8 @@ const AccountPage = props => {
     return (<div className={classes.root}>
         <div className={classes.sidebar}>
             <AccountNavigation pageType={pageType} />
+            {/* TODO: Recently bought items */}
+            {/* TODO: Favorites */}
         </div>
         <div className={classes.content}>
             <AccountTypeHandler pageType={pageType} />

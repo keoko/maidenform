@@ -1,8 +1,7 @@
 import React from 'react';
 
 import CreateAccountPage from '@magento/venia-ui/lib/components/CreateAccountPage';
-import { useUserContext } from '@magento/peregrine/lib/context/user';
-import { useProtectedPage } from '../Account/accountPage';
+import { useProtectedPage } from '../Account/AccountPage';
 
 /**
  * @RootComponent
@@ -10,7 +9,7 @@ import { useProtectedPage } from '../Account/accountPage';
  * pageTypes = ACCOUNT
  */
 function SignUp() {
-    const [redirectIfNotSignedIn, redirectIfSignedIn] = useProtectedPage();
+    const [, redirectIfSignedIn] = useProtectedPage();
     redirectIfSignedIn();
 
     return  <CreateAccountPage
