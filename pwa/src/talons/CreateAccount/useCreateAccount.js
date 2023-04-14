@@ -102,7 +102,6 @@ export const useCreateAccount = props => {
                         firstname: formValues.customer.firstname,
                         lastname: formValues.customer.lastname,
                         password: formValues.password,
-                        is_subscribed: !!formValues.subscribe,
                         dateofbirth: formValues.customer.dateofbirth,
                     },
                     ...recaptchaDataForCreateAccount
@@ -114,7 +113,6 @@ export const useCreateAccount = props => {
                         email: formValues.customer.email,
                         firstName: formValues.customer.firstname,
                         lastName: formValues.customer.lastname,
-                        isSubscribed: !!formValues.subscribe,
                         dateOfBirth: formValues.customer.dateofbirth,
                     }
                 });

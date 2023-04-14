@@ -1,7 +1,7 @@
 import React from 'react';
 
-import CreateAccountPage from '@magento/venia-ui/lib/components/CreateAccountPage';
-import { useProtectedPage } from '../Account/AccountPage';
+import CreateAccountPage from './createAccountPage';
+import { useProtectedPage } from '../Account/accountPage';
 
 /**
  * @RootComponent

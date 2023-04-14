@@ -430,10 +430,10 @@ Price.defaultProps = {
 // EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/util/formValidators.js
 var formValidators = __webpack_require__("./node_modules/@magento/venia-ui/lib/util/formValidators.js");
 
-// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/Button/button.js + 1 modules
+// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/Button/button.js
 var Button_button = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/Button/button.js");
 
-// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/Field/field.js + 1 modules
+// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/Field/field.js
 var field = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/Field/field.js");
 
 // EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/Icon/icon.js + 1 modules
@@ -445,7 +445,7 @@ var linkButton = __webpack_require__("./node_modules/@magento/venia-ui/lib/compo
 // EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/LoadingIndicator/indicator.js + 1 modules
 var indicator = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/LoadingIndicator/indicator.js");
 
-// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/TextInput/textInput.js + 1 modules
+// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/TextInput/textInput.js
 var textInput = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/TextInput/textInput.js");
 
 // EXTERNAL MODULE: ./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js
@@ -809,7 +809,7 @@ var update = injectStylesIntoStyleTag_default()(linkButton_module["a" /* default
 
 
 /* harmony default export */ var LinkButton_linkButton_module = (linkButton_module["a" /* default */].locals || {});
-// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/Button/button.js + 1 modules
+// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/Button/button.js
 var Button_button = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/Button/button.js");
 
 // CONCATENATED MODULE: ./node_modules/@magento/venia-ui/lib/components/LinkButton/linkButton.js

@@ -45,16 +45,16 @@ var shallowMerge = __webpack_require__("./node_modules/@magento/peregrine/lib/ut
 // EXTERNAL MODULE: ./node_modules/react-intl/lib/src/components/message.js
 var message = __webpack_require__("./node_modules/react-intl/lib/src/components/message.js");
 
-// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/Field/field.js + 1 modules
+// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/Field/field.js
 var field = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/Field/field.js");
 
 // EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/LinkButton/linkButton.js + 1 modules
 var linkButton = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/LinkButton/linkButton.js");
 
-// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/Password/password.js + 2 modules
+// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/Password/password.js
 var Password_password = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/Password/password.js");
 
-// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/TextInput/textInput.js + 1 modules
+// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/TextInput/textInput.js
 var textInput = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/TextInput/textInput.js");
 
 // EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/util/formValidators.js

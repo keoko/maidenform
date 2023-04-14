@@ -459,13 +459,13 @@ const useGiftOptions = (props = {}) => {
  * @property {GraphQLAST} setGiftOptionsOnCartMutation sets the gift options on cart.
  * @property {GraphQLAST} getGiftOptionsQuery fetch the gift options.
  */
-// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/Button/button.js + 1 modules
+// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/Button/button.js
 var Button_button = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/Button/button.js");
 
 // EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/Checkbox/checkbox.js + 1 modules
 var Checkbox_checkbox = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/Checkbox/checkbox.js");
 
-// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/Field/field.js + 1 modules
+// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/Field/field.js
 var Field_field = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/Field/field.js");
 
 // EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/FormError/formError.js + 5 modules
@@ -560,7 +560,7 @@ TextArea.propTypes = {
   rows: Object(prop_types["oneOfType"])([prop_types["number"], prop_types["string"]]),
   wrap: Object(prop_types["oneOf"])(['hard', 'soft'])
 };
-// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/TextInput/textInput.js + 1 modules
+// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/TextInput/textInput.js
 var textInput = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/TextInput/textInput.js");
 
 // EXTERNAL MODULE: ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/CartPage/PriceAdjustments/GiftOptions/giftOptions.module.css
@@ -1004,7 +1004,7 @@ var update = injectStylesIntoStyleTag_default()(linkButton_module["a" /* default
 
 
 /* harmony default export */ var LinkButton_linkButton_module = (linkButton_module["a" /* default */].locals || {});
-// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/Button/button.js + 1 modules
+// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/Button/button.js
 var Button_button = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/Button/button.js");
 
 // CONCATENATED MODULE: ./node_modules/@magento/venia-ui/lib/components/LinkButton/linkButton.js

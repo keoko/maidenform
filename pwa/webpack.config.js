@@ -9,7 +9,6 @@ const componentOverrideMapping = {
  '@magento/venia-ui/lib/components/Portal/portal.js': './src/components/Portal/portal.js',
  '@magento/peregrine/lib/talons/SignInPage/useSignInPage.js': './src/talons/SignInPage/useSignInPage.js',
  '@magento/peregrine/lib/talons/CheckoutPage/useCheckoutPage': './src/talons/CheckoutPage/useCheckoutPage.js',
- '@magento/venia-ui/lib/components/CreateAccount/createAccount.js': './src/components/CreateAccount/createAccount.js',
  '@magento/peregrine/lib/talons/CreateAccount/useCreateAccount.js': './src/talons/CreateAccount/useCreateAccount.js',
 };
 
@@ -178,7 +177,7 @@ module.exports = async env => {
     config.entry.checkout = './src/RootComponents/Checkout/index.js';
     config.entry.account = './src/RootComponents/Account/index.js';
     config.entry.login = './src/RootComponents/Login/index.js';
-    config.entry.signup = './src/RootComponents/SignUp/index.js';
+    config.entry.signup = './src/RootComponents/CreateAccount/index.js';
 
     // Change output filenames
     config.output.filename = '[name].js';

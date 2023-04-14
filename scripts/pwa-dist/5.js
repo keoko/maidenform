@@ -272,13 +272,13 @@ const useCouponCode = props => {
  * @property {function} handleRemoveCoupon Function to call for handling the removal of a coupon code from a cart
  * @property {boolean} removingCoupon True if a coupon code is currently being removed. False otherwise.
  */
-// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/Button/button.js + 1 modules
+// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/Button/button.js
 var Button_button = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/Button/button.js");
 
 // EXTERNAL MODULE: ./node_modules/informed/dist/esm/index.js
 var esm = __webpack_require__("./node_modules/informed/dist/esm/index.js");
 
-// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/Field/field.js + 1 modules
+// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/Field/field.js
 var field = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/Field/field.js");
 
 // EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/Icon/icon.js + 1 modules
@@ -287,7 +287,7 @@ var icon = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/
 // EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/LinkButton/linkButton.js + 1 modules
 var linkButton = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/LinkButton/linkButton.js");
 
-// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/TextInput/textInput.js + 1 modules
+// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/TextInput/textInput.js
 var textInput = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/TextInput/textInput.js");
 
 // EXTERNAL MODULE: ./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js
@@ -515,7 +515,7 @@ var update = injectStylesIntoStyleTag_default()(linkButton_module["a" /* default
 
 
 /* harmony default export */ var LinkButton_linkButton_module = (linkButton_module["a" /* default */].locals || {});
-// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/Button/button.js + 1 modules
+// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/Button/button.js
 var Button_button = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/Button/button.js");
 
 // CONCATENATED MODULE: ./node_modules/@magento/venia-ui/lib/components/LinkButton/linkButton.js
