@@ -3,7 +3,7 @@ import { performMonolithGraphQLQuery } from '../commerce.js';
 function getAuthToken() {
   const redirectToSignin = () => {
     window.location = `/customer/account/login?login_redirect=${window.location.pathname}`;
-  }
+  };
 
   const authObject = window.localStorage.getItem('M2_VENIA_BROWSER_PERSISTENCE__signin_token');
   if (!authObject) {
@@ -71,7 +71,7 @@ export async function getWishlists() {
     getWishlistsQuery,
     {},
     true,
-    { 'Authorization': `Bearer ${token}` }
+    { Authorization: `Bearer ${token}` },
   );
 
   return wishlists.data?.customer?.wishlists;
@@ -79,7 +79,6 @@ export async function getWishlists() {
 
 export async function addToWishlist(product, wishlistId) {
   const toWishlist = wishlistId ?? (await getWishlists())[0].id;
-  console.log(toWishlist);
   const token = getAuthToken();
 
   const response = await performMonolithGraphQLQuery(
@@ -89,6 +88,10 @@ export async function addToWishlist(product, wishlistId) {
       sku: product,
     },
     false,
-    { 'Authorization': `Bearer ${token}` }
+    { Authorization: `Bearer ${token}` },
   );
+
+  if (response.user_errors) {
+    console.error(response.user_errors);
+  }
 }

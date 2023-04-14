@@ -373,7 +373,7 @@ export async function performMonolithGraphQLQuery(query, variables, GET = true, 
   const finalHeaders = {
     'Content-Type': 'application/json',
     Store: 'maidenform_store_view',
-    ...headers
+    ...headers,
   };
 
   let response;

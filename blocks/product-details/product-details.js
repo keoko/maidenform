@@ -152,11 +152,12 @@ class ProductDetailPage extends Component {
     }
   };
 
+  // eslint-disable-next-line class-methods-use-this
   onAddToWishlist = async () => {
     const wishlistApi = await import('../../scripts/wishlist/api.js');
     // TODO use getWishlists to allow user to select which wishlist to add to (pass instead of null)
     wishlistApi.addToWishlist(getSkuFromUrl(), null);
-  }
+  };
 
   onQuantityChanged = (quantity) => {
     this.setState({ selectedQuantity: quantity });
