@@ -155,8 +155,20 @@ class ProductDetailPage extends Component {
   // eslint-disable-next-line class-methods-use-this
   onAddToWishlist = async () => {
     const wishlistApi = await import('../../scripts/wishlist/api.js');
-    // TODO use getWishlists to allow user to select which wishlist to add to (pass instead of null)
-    wishlistApi.addToWishlist(getSkuFromUrl(), null);
+
+    const wishlists = await wishlistApi.getWishlists();
+
+    console.log(wishlists)
+
+    if (wishlists.length > 1) {
+      const showWishlistModal = await import('../../scripts/wishlist/wishlist-modal.js');
+      showWishlistModal.default(
+        wishlists,
+        (selectedWishlist) => wishlistApi.addToWishlist(getSkuFromUrl(), selectedWishlist),
+      );
+    } else {
+      wishlistApi.addToWishlist(getSkuFromUrl(), null);
+    }
   };
 
   onQuantityChanged = (quantity) => {

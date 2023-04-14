@@ -1,0 +1,17 @@
+.wishlist-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+  background: rgb(0 0 0 / 50%);
+}
+
+.wishlist-modal-content {
+  padding: 40px;
+  margin: 40% auto auto;
+  width: 80%;
+  max-width: 450px;
+  background: white;
+}
