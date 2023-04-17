@@ -309,6 +309,134 @@ const ShippingInformationFragment = _apollo_client__WEBPACK_IMPORTED_MODULE_0__[
 
 /***/ }),
 
+/***/ "./node_modules/@magento/peregrine/lib/talons/Region/useRegion.js":
+/*!************************************************************************!*\
+  !*** ./node_modules/@magento/peregrine/lib/talons/Region/useRegion.js ***!
+  \************************************************************************/
+/*! exports provided: useRegion */
+/*! exports used: useRegion */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return useRegion; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _apollo_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @apollo/client */ "./node_modules/@apollo/client/react/hooks/useQuery.js");
+/* harmony import */ var informed__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! informed */ "./node_modules/informed/dist/esm/index.js");
+/* harmony import */ var _magento_peregrine_lib_hooks_hook_wrappers_useInformedFieldStateWrapper__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @magento/peregrine/lib/hooks/hook-wrappers/useInformedFieldStateWrapper */ "./node_modules/@magento/peregrine/lib/hooks/hook-wrappers/useInformedFieldStateWrapper.js");
+
+
+
+
+
+/**
+ * The useRegion talon handles logic for:
+ *
+ *  * Resetting the region field value when the country changes.
+ *  * Querying for available regions for a country and rendering them.
+ *
+ * @param {Object} props
+ * @param {string} props.countryCodeField
+ * @param {string} props.fieldInput - the reference field path for free form text input Defaults to "region".
+ * @param {string} props.fieldSelect - the reference field path for selectable list of regions. Defaults to "region".
+ * @param {string} props.optionValueKey - the key used to get the value for the field. Defaults to "code"
+ * @param {GraphQLAST} props.queries.getRegionsQuery - query to fetch regions for a country.
+ *
+ * @return {RegionTalonProps}
+ */
+const useRegion = props => {
+  const {
+    countryCodeField = 'country',
+    fieldInput = 'region',
+    fieldSelect = 'region',
+    optionValueKey = 'code',
+    queries: {
+      getRegionsQuery
+    }
+  } = props;
+  const hasInitialized = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])(false);
+  const countryFieldState = Object(_magento_peregrine_lib_hooks_hook_wrappers_useInformedFieldStateWrapper__WEBPACK_IMPORTED_MODULE_3__[/* default */ "a"])(countryCodeField);
+  const {
+    value: country
+  } = countryFieldState;
+  const regionInputFieldApi = Object(informed__WEBPACK_IMPORTED_MODULE_2__[/* useFieldApi */ "j"])(fieldInput);
+  const regionSelectFieldApi = Object(informed__WEBPACK_IMPORTED_MODULE_2__[/* useFieldApi */ "j"])(fieldSelect);
+  const {
+    data,
+    loading
+  } = Object(_apollo_client__WEBPACK_IMPORTED_MODULE_1__[/* useQuery */ "a"])(getRegionsQuery, {
+    variables: {
+      countryCode: country
+    },
+    skip: !country
+  });
+
+  // Reset region value when country changes. Because of how Informed sets
+  // initialValues, we want to skip the first state change of the value being
+  // initialized.
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
+    if (country && !loading) {
+      if (hasInitialized.current) {
+        regionInputFieldApi.exists() && regionInputFieldApi.setValue();
+        regionSelectFieldApi.exists() && regionSelectFieldApi.setValue();
+      } else {
+        hasInitialized.current = true;
+      }
+    }
+  }, [country, regionInputFieldApi, regionSelectFieldApi, loading]);
+  let formattedRegionsData = [{
+    label: 'Loading Regions...',
+    value: ''
+  }];
+  if (data) {
+    const {
+      country
+    } = data;
+    const {
+      available_regions: availableRegions
+    } = country;
+    if (availableRegions) {
+      formattedRegionsData = availableRegions.map(region => ({
+        key: region.id,
+        label: region.name,
+        value: region[optionValueKey]
+      }));
+      formattedRegionsData.unshift({
+        disabled: true,
+        hidden: true,
+        label: '',
+        value: ''
+      });
+    } else {
+      formattedRegionsData = [];
+    }
+  }
+  return {
+    loading,
+    regions: formattedRegionsData
+  };
+};
+
+/** JSDocs type definitions */
+
+/**
+ * @typedef {Object} RegionTalonProps
+ *
+ * @property {boolean} loading whether the regions are loading
+ * @property {Array<Region>} regions array of formatted regions for the country
+ *
+ */
+
+/**
+ * @typedef {Object} Region
+ *
+ * @property {number} key the id of the region
+ * @property {String} label the label of the region
+ * @property {String} value the value of the region
+ */
+
+/***/ }),
+
 /***/ "./node_modules/@magento/venia-ui/lib/components/CartPage/PriceAdjustments/ShippingMethods/index.js":
 /*!**********************************************************************************************************************!*\
   !*** ./node_modules/@magento/venia-ui/lib/components/CartPage/PriceAdjustments/ShippingMethods/index.js + 8 modules ***!
@@ -518,7 +646,7 @@ var country = __webpack_require__("./node_modules/@magento/venia-ui/lib/componen
 // EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/FormError/formError.js + 5 modules
 var formError = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/FormError/formError.js");
 
-// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/Region/region.js + 3 modules
+// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/Region/region.js + 1 modules
 var region = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/Region/region.js");
 
 // EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/Postcode/postcode.js + 2 modules
@@ -1060,7 +1188,7 @@ ShippingRadio.propTypes = {
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/react/hooks/useQuery.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/shallowMerge.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Field/field.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Select/select.js because of ./node_modules/@magento/venia-ui/lib/components/CheckoutPage/PaymentInformation/creditCard.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Select/select.js because of ./node_modules/@magento/venia-ui/lib/components/Region/region.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/Country/country.module.css (<- Module uses module.id) */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql-tag/lib/index.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/prop-types/index.js (<- Module is not an ECMAScript module) */
@@ -1665,21 +1793,46 @@ RadioGroup.propTypes = {
 
 /***/ }),
 
+/***/ "./node_modules/@magento/venia-ui/lib/components/Region/region.gql.js":
+/*!****************************************************************************!*\
+  !*** ./node_modules/@magento/venia-ui/lib/components/Region/region.gql.js ***!
+  \****************************************************************************/
+/*! exports provided: GET_REGIONS_QUERY */
+/*! exports used: GET_REGIONS_QUERY */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return GET_REGIONS_QUERY; });
+/* harmony import */ var _apollo_client__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @apollo/client */ "./node_modules/graphql-tag/lib/index.js");
+
+const GET_REGIONS_QUERY = _apollo_client__WEBPACK_IMPORTED_MODULE_0__[/* gql */ "a"]`
+    query GetRegions($countryCode: String!) {
+        country(id: $countryCode) {
+            id
+            available_regions {
+                id
+                code
+                name
+            }
+        }
+    }
+`;
+
+/***/ }),
+
 /***/ "./node_modules/@magento/venia-ui/lib/components/Region/region.js":
 /*!************************************************************************************!*\
-  !*** ./node_modules/@magento/venia-ui/lib/components/Region/region.js + 3 modules ***!
+  !*** ./node_modules/@magento/venia-ui/lib/components/Region/region.js + 1 modules ***!
   \************************************************************************************/
 /*! exports provided: default */
 /*! exports used: default */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/react/hooks/useQuery.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/hooks/hook-wrappers/useInformedFieldStateWrapper.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/talons/Region/useRegion.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/shallowMerge.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Field/field.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Select/select.js because of ./node_modules/@magento/venia-ui/lib/components/CheckoutPage/PaymentInformation/creditCard.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Region/region.gql.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Select/select.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/TextInput/textInput.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/Region/region.module.css (<- Module uses module.id) */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql-tag/lib/index.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/informed/dist/esm/index.js (<- Module uses injected variables (process)) */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/prop-types/index.js (<- Module is not an ECMAScript module) */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-intl/lib/src/components/useIntl.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react/index.js (<- Module is not an ECMAScript module) */
@@ -1698,126 +1851,9 @@ var useIntl = __webpack_require__("./node_modules/react-intl/lib/src/components/
 // EXTERNAL MODULE: ./node_modules/prop-types/index.js
 var prop_types = __webpack_require__("./node_modules/prop-types/index.js");
 
-// EXTERNAL MODULE: ./node_modules/@apollo/client/react/hooks/useQuery.js
-var useQuery = __webpack_require__("./node_modules/@apollo/client/react/hooks/useQuery.js");
+// EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/talons/Region/useRegion.js
+var useRegion = __webpack_require__("./node_modules/@magento/peregrine/lib/talons/Region/useRegion.js");
 
-// EXTERNAL MODULE: ./node_modules/informed/dist/esm/index.js
-var esm = __webpack_require__("./node_modules/informed/dist/esm/index.js");
-
-// EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/hooks/hook-wrappers/useInformedFieldStateWrapper.js
-var useInformedFieldStateWrapper = __webpack_require__("./node_modules/@magento/peregrine/lib/hooks/hook-wrappers/useInformedFieldStateWrapper.js");
-
-// CONCATENATED MODULE: ./node_modules/@magento/peregrine/lib/talons/Region/useRegion.js
-
-
-
-
-
-/**
- * The useRegion talon handles logic for:
- *
- *  * Resetting the region field value when the country changes.
- *  * Querying for available regions for a country and rendering them.
- *
- * @param {Object} props
- * @param {string} props.countryCodeField
- * @param {string} props.fieldInput - the reference field path for free form text input Defaults to "region".
- * @param {string} props.fieldSelect - the reference field path for selectable list of regions. Defaults to "region".
- * @param {string} props.optionValueKey - the key used to get the value for the field. Defaults to "code"
- * @param {GraphQLAST} props.queries.getRegionsQuery - query to fetch regions for a country.
- *
- * @return {RegionTalonProps}
- */
-const useRegion = props => {
-  const {
-    countryCodeField = 'country',
-    fieldInput = 'region',
-    fieldSelect = 'region',
-    optionValueKey = 'code',
-    queries: {
-      getRegionsQuery
-    }
-  } = props;
-  const hasInitialized = Object(react["useRef"])(false);
-  const countryFieldState = Object(useInformedFieldStateWrapper["a" /* default */])(countryCodeField);
-  const {
-    value: country
-  } = countryFieldState;
-  const regionInputFieldApi = Object(esm["j" /* useFieldApi */])(fieldInput);
-  const regionSelectFieldApi = Object(esm["j" /* useFieldApi */])(fieldSelect);
-  const {
-    data,
-    loading
-  } = Object(useQuery["a" /* useQuery */])(getRegionsQuery, {
-    variables: {
-      countryCode: country
-    },
-    skip: !country
-  });
-
-  // Reset region value when country changes. Because of how Informed sets
-  // initialValues, we want to skip the first state change of the value being
-  // initialized.
-  Object(react["useEffect"])(() => {
-    if (country && !loading) {
-      if (hasInitialized.current) {
-        regionInputFieldApi.exists() && regionInputFieldApi.setValue();
-        regionSelectFieldApi.exists() && regionSelectFieldApi.setValue();
-      } else {
-        hasInitialized.current = true;
-      }
-    }
-  }, [country, regionInputFieldApi, regionSelectFieldApi, loading]);
-  let formattedRegionsData = [{
-    label: 'Loading Regions...',
-    value: ''
-  }];
-  if (data) {
-    const {
-      country
-    } = data;
-    const {
-      available_regions: availableRegions
-    } = country;
-    if (availableRegions) {
-      formattedRegionsData = availableRegions.map(region => ({
-        key: region.id,
-        label: region.name,
-        value: region[optionValueKey]
-      }));
-      formattedRegionsData.unshift({
-        disabled: true,
-        hidden: true,
-        label: '',
-        value: ''
-      });
-    } else {
-      formattedRegionsData = [];
-    }
-  }
-  return {
-    loading,
-    regions: formattedRegionsData
-  };
-};
-
-/** JSDocs type definitions */
-
-/**
- * @typedef {Object} RegionTalonProps
- *
- * @property {boolean} loading whether the regions are loading
- * @property {Array<Region>} regions array of formatted regions for the country
- *
- */
-
-/**
- * @typedef {Object} Region
- *
- * @property {number} key the id of the region
- * @property {String} label the label of the region
- * @property {String} value the value of the region
- */
 // EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/util/shallowMerge.js
 var shallowMerge = __webpack_require__("./node_modules/@magento/peregrine/lib/util/shallowMerge.js");
 
@@ -1851,23 +1887,9 @@ var update = injectStylesIntoStyleTag_default()(region_module["a" /* default */]
 
 
 /* harmony default export */ var Region_region_module = (region_module["a" /* default */].locals || {});
-// EXTERNAL MODULE: ./node_modules/graphql-tag/lib/index.js + 3 modules
-var lib = __webpack_require__("./node_modules/graphql-tag/lib/index.js");
+// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/Region/region.gql.js
+var region_gql = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/Region/region.gql.js");
 
-// CONCATENATED MODULE: ./node_modules/@magento/venia-ui/lib/components/Region/region.gql.js
-
-const GET_REGIONS_QUERY = lib["a" /* gql */]`
-    query GetRegions($countryCode: String!) {
-        country(id: $countryCode) {
-            id
-            available_regions {
-                id
-                code
-                name
-            }
-        }
-    }
-`;
 // CONCATENATED MODULE: ./node_modules/@magento/venia-ui/lib/components/Region/region.js
 const _excluded = ["classes", "countryCodeField", "fieldInput", "fieldSelect", "label", "translationId", "optionValueKey"];
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
@@ -1908,13 +1930,13 @@ const Region = props => {
   const {
     formatMessage
   } = Object(useIntl["a" /* default */])();
-  const talonProps = useRegion({
+  const talonProps = Object(useRegion["a" /* useRegion */])({
     countryCodeField,
     fieldInput,
     fieldSelect,
     optionValueKey,
     queries: {
-      getRegionsQuery: GET_REGIONS_QUERY
+      getRegionsQuery: region_gql["a" /* GET_REGIONS_QUERY */]
     }
   });
   const {

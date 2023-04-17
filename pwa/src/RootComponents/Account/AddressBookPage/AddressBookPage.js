@@ -120,6 +120,18 @@ const AddressBookPage = props => {
         return fullPageLoadingIndicator;
     }
 
+    if (isDialogOpen) {
+        return <AddEditDialog
+                formErrors={formErrors}
+                formProps={formProps}
+                isBusy={isDialogBusy}
+                isEditMode={isDialogEditMode}
+                isOpen={isDialogOpen}
+                onCancel={handleCancelDialog}
+                onConfirm={handleConfirmDialog}
+            />;
+    }
+
     return (<div className={classes.root}>
         <h1>Address Book</h1>
         <div>{isDialogEditMode ? 'in edit mode' : 'not in edit mode'} {isDialogOpen ? 'dialog open' : 'dialog not open'}</div>

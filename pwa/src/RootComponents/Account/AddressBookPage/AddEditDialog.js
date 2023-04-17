@@ -1,19 +1,23 @@
 import React from 'react';
 import { bool, func, object, shape, string } from 'prop-types';
 import { useIntl } from 'react-intl';
+import { Form } from 'informed';
 
 import { isRequired } from '@magento/venia-ui/lib/util/formValidators';
-
 import Checkbox from '@magento/venia-ui/lib/components/Checkbox';
 import Country from '@magento/venia-ui/lib/components/Country';
-import Dialog from '@magento/venia-ui/lib/components/Dialog';
-import Field from '@magento/venia-ui/lib/components/Field';
+import Field from '../../../components/Field/field';
 import FormError from '@magento/venia-ui/lib/components/FormError';
 import Postcode from '@magento/venia-ui/lib/components/Postcode';
-import Region from '@magento/venia-ui/lib/components/Region';
-import TextInput from '@magento/venia-ui/lib/components/TextInput';
+import Region from '../../../components/Region/region';
+import TextInput from '../../../components/TextInput/textInput';
+import Button from '../../../components/Button/button';
 
 import classes from './AddEditDialog.module.css';
+import fieldClasses from '../../CreateAccount/field.module.css';
+import textInputClasses from './textInput.module.css';
+import messageClasses from '../../CreateAccount/inputMessage.module.css';
+
 
 const AddEditDialog = props => {
     const {
@@ -46,37 +50,22 @@ const AddEditDialog = props => {
         id: 'global.firstName',
         defaultMessage: 'First Name'
     });
-    const middleNameLabel = formatMessage({
-        id: 'global.middleName',
-        defaultMessage: 'Middle Name'
-    });
     const lastNameLabel = formatMessage({
         id: 'global.lastName',
         defaultMessage: 'Last Name'
-    });
-    const street1Label = formatMessage({
-        id: 'global.streetAddress',
-        defaultMessage: 'Street Address'
     });
     const street2Label = formatMessage({
         id: 'global.streetAddress2',
         defaultMessage: 'Street Address 2'
     });
-    const cityLabel = formatMessage({
-        id: 'global.city',
-        defaultMessage: 'City'
-    });
     const telephoneLabel = formatMessage({
         id: 'global.phoneNumber',
         defaultMessage: 'Phone Number'
     });
-    const defaultAddressCheckLabel = formatMessage({
-        id: 'addressBookPage.makeDefaultAddress',
-        defaultMessage: 'Make this my default address'
-    });
 
-    return (
-        <Dialog
+
+
+            /* <Dialog
             confirmTranslationId={'global.save'}
             confirmText="Save"
             formProps={formProps}
@@ -84,101 +73,113 @@ const AddEditDialog = props => {
             onCancel={onCancel}
             onConfirm={onConfirm}
             shouldDisableAllButtons={isBusy}
-            title={title}
-        >
-            <FormError
-                classes={{ root: classes.errorContainer }}
-                errors={Array.from(formErrors.values())}
-            />
-            <div className={classes.root} data-cy="AddEditDialog-root">
-                <div className={classes.firstname}>
-                    <Field id="firstname" label={firstNameLabel}>
-                        <TextInput
-                            field="firstname"
-                            validate={isRequired}
-                            data-cy="firstname"
+            title={title}>
+            </Dialog> */
+
+
+    // Override FieldIcons styling to hide before/after
+    // Override Region, Postcode, Country, Checkbox
+
+    return (
+        <div className={classes.root}>
+        <h1>{title}</h1>
+        <Form {...formProps} onSubmit={onConfirm}>
+            <div className={classes.sectionFlex}>
+                <div className={classes.section}>
+                    <div className={classes.sectionHeader}>
+                        <h2>Contact Information</h2>
+                    </div>
+                    <div className={classes.sectionContent}>
+                        <FormError
+                            classes={{ root: classes.errorContainer }}
+                            errors={Array.from(formErrors.values())}
                         />
-                    </Field>
+                        <Field id="firstname" label={firstNameLabel} classes={fieldClasses}>
+                            <TextInput
+                                field="firstname"
+                                classes={textInputClasses}
+                                messageClasses={messageClasses}
+                                validate={isRequired}
+                            />
+                        </Field>
+                        <Field id="lastname" label={lastNameLabel} classes={fieldClasses}>
+                            <TextInput
+                                field="lastname"
+                                classes={textInputClasses}
+                                messageClasses={messageClasses}
+                                validate={isRequired}
+                            />
+                        </Field>
+                        <Field id="telephone" label={telephoneLabel} classes={fieldClasses}>
+                            <TextInput
+                                field="telephone"
+                                classes={textInputClasses}
+                                messageClasses={messageClasses}
+                                validate={isRequired}
+                            />
+                        </Field>
+                    </div>
                 </div>
-                <div className={classes.middlename}>
-                    <Field
-                        id="middlename"
-                        label={middleNameLabel}
-                        optional={true}
-                    >
-                        <TextInput field="middlename" data-cy="middlename" />
-                    </Field>
-                </div>
-                <div className={classes.lastname}>
-                    <Field id="lastname" label={lastNameLabel}>
-                        <TextInput
-                            field="lastname"
+                <div className={classes.section}>
+                    <div className={classes.sectionHeader}>
+                        <h2>Address</h2>
+                    </div>
+                    <div className={classes.sectionContent}>
+                            <Field id="street1" label="Street Address" classes={fieldClasses}>
+                                <TextInput
+                                    field="street[0]"
+                                    classes={textInputClasses}
+                                    messageClasses={messageClasses}
+                                    validate={isRequired}
+                                />
+                            </Field>
+                            <Field id="street2" label={street2Label} optional={true} classes={{ ...fieldClasses, label: classes.optionalStreetField }}>
+                                <TextInput
+                                    field="street[1]"
+                                    classes={textInputClasses}
+                                    messageClasses={messageClasses}
+                                />
+                            </Field>
+                        <Field id="city" label="City" classes={fieldClasses}>
+                            <TextInput
+                                field="city"
+                                classes={textInputClasses}
+                                messageClasses={messageClasses}
+                                validate={isRequired}
+                            />
+                        </Field>
+                        <Region
+                            fieldClasses={fieldClasses}
+                            inputClasses={textInputClasses}
+                            countryCodeField={'country_code'}
+                            fieldInput={'region[region]'}
+                            fieldSelect={'region[region_id]'}
+                            optionValueKey="id"
+                            label="State/Province"
                             validate={isRequired}
-                            data-cy="lastname"
                         />
-                    </Field>
-                </div>
-                <div className={classes.country}>
-                    <Country
-                        field={'country_code'}
-                        validate={isRequired}
-                        data-cy="country"
-                    />
-                </div>
-                <div className={classes.street1}>
-                    <Field id="street1" label={street1Label}>
-                        <TextInput
-                            field="street[0]"
+                        <Postcode validate={isRequired} />
+                        <Country
+                            field={'country_code'}
                             validate={isRequired}
-                            data-cy="street[0]"
                         />
-                    </Field>
-                </div>
-                <div className={classes.street2}>
-                    <Field id="street2" label={street2Label} optional={true}>
-                        <TextInput field="street[1]" data-cy="street[1]" />
-                    </Field>
-                </div>
-                <div className={classes.city}>
-                    <Field id="city" label={cityLabel}>
-                        <TextInput
-                            field="city"
-                            validate={isRequired}
-                            data-cy="city"
+                        <Checkbox
+                            field="default_billing"
+                            label="Use as my default billing address"
                         />
-                    </Field>
-                </div>
-                <div className={classes.region}>
-                    <Region
-                        countryCodeField={'country_code'}
-                        fieldInput={'region[region]'}
-                        fieldSelect={'region[region_id]'}
-                        optionValueKey="id"
-                        validate={isRequired}
-                        data-cy="region"
-                    />
-                </div>
-                <div className={classes.postcode}>
-                    <Postcode validate={isRequired} data-cy="Postcode" />
-                </div>
-                <div className={classes.telephone}>
-                    <Field id="telephone" label={telephoneLabel}>
-                        <TextInput
-                            field="telephone"
-                            validate={isRequired}
-                            data-cy="telephone"
+                        <Checkbox
+                            field="default_shipping"
+                            label="Use as my default shipping address"
                         />
-                    </Field>
-                </div>
-                <div className={classes.default_address_check}>
-                    <Checkbox
-                        field="default_shipping"
-                        label={defaultAddressCheckLabel}
-                        data-cy="default_shipping"
-                    />
+                    </div>
                 </div>
             </div>
-        </Dialog>
+            <div className={classes.section}>
+                <Button disabled={isBusy} priority="high" type="submit">Save Address</Button>
+                <Button disabled={isBusy} onClick={onCancel} priority="low" type="reset">Cancel</Button>
+            </div>
+        </Form>
+        </div>
     );
 };
 
