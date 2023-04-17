@@ -1,14 +1,12 @@
 const { configureWebpack, graphQL } = require('@magento/pwa-buildpack');
 const webpack = require('webpack');
 const fs = require('fs');
-const { promisify } = require('util');
-const ModuleOverridePlugin = require('./moduleOverrideWebpackPlugin');
 
 const componentOverrideMapping = {
  '@magento/peregrine/lib/talons/CartPage/ProductListing/productListingFragments.gql.js': './src/talons/CartPage/ProductListing/productListingFragments.gql.js',
  '@magento/venia-ui/lib/components/Portal/portal.js': './src/components/Portal/portal.js',
  '@magento/peregrine/lib/talons/SignInPage/useSignInPage.js': './src/talons/SignInPage/useSignInPage.js',
- '@magento/peregrine/lib/talons/CheckoutPage/useCheckoutPage': './src/talons/CheckoutPage/useCheckoutPage.js',
+ '@magento/peregrine/lib/talons/CheckoutPage/useCheckoutPage.js': './src/talons/CheckoutPage/useCheckoutPage.js',
  '@magento/peregrine/lib/talons/CreateAccount/useCreateAccount.js': './src/talons/CreateAccount/useCreateAccount.js',
 };
 
@@ -18,20 +16,6 @@ const {
 } = graphQL;
 
 const { DefinePlugin } = webpack;
-// const { LimitChunkCountPlugin } = webpack.optimize;
-
-const getCleanTemplate = templateFile => {
-    return new Promise(resolve => {
-        fs.readFile(templateFile, 'utf8', (err, data) => {
-            resolve(
-                data.replace(
-                    /(?<inlineddata><!-- Inlined Data -->.*\s<!-- \/Inlined Data -->)/gs,
-                    ''
-                )
-            );
-        });
-    });
-};
 
 module.exports = async env => {
     /**
@@ -43,6 +27,7 @@ module.exports = async env => {
      */
     const config = await configureWebpack({
         context: __dirname,
+        alias: componentOverrideMapping,
         vendor: [
             '@apollo/client',
             'apollo-cache-persist',
@@ -73,7 +58,6 @@ module.exports = async env => {
         "store_name": "Maidenform Store View"
     };
     const { availableStores } = await getAvailableStoresConfigData();
-    const writeFile = promisify(fs.writeFile);
 
     /**
      * Loop the available stores when there is provided STORE_VIEW_CODE
@@ -90,66 +74,23 @@ module.exports = async env => {
 
     const possibleTypes = JSON.parse(fs.readFileSync('possibleTypes.json', 'utf8'));
 
-    const htmlWebpackConfig = {
-        filename: 'index.html',
-        minify: {
-            collapseWhitespace: true,
-            removeComments: true
-        }
-    };
-
-    // Strip UPWARD mustache from template file during watch
-    if (
-        process.env.npm_lifecycle_event &&
-        process.env.npm_lifecycle_event.includes('watch')
-    ) {
-        const devTemplate = await getCleanTemplate('./template.html');
-
-        // Generate new gitignored html file based on the cleaned template
-        await writeFile('template.generated.html', devTemplate);
-        htmlWebpackConfig.template = './template.generated.html';
-    } else {
-        htmlWebpackConfig.template = './template.html';
-    }
-
     config.module.noParse = [
         /@adobe\/adobe\-client\-data\-layer/,
         /braintree\-web\-drop\-in/
     ];
 
-    // Remove serviceworker plugin
-    config.plugins = config.plugins.filter(
-        plugin => plugin.constructor.name !== 'ServiceWorkerPlugin'
-    );
-
-    // Remove RootComponentsPlugin
-    config.plugins = config.plugins.filter(
-        plugin => plugin.constructor.name !== 'RootComponentsPlugin'
-    );
-    // TODO: Can RootComponentsPlugin be used instead to configure entrypoints?
-    /*
-    {
-        "opts": {
-            "rootComponentsDirs": [
-                "/Users/mabecker/Documents/github/hlxsites/maidenform/pwa/node_modules/@magento/venia-ui/RootComponents",
-                "/Users/mabecker/Documents/github/hlxsites/maidenform/pwa/node_modules/@magento/venia-ui/src/RootComponents",
-                "/Users/mabecker/Documents/github/hlxsites/maidenform/pwa/node_modules/@magento/venia-ui/lib/RootComponents",
-                "/Users/mabecker/Documents/github/hlxsites/maidenform/pwa/RootComponents",
-                "/Users/mabecker/Documents/github/hlxsites/maidenform/pwa/src/RootComponents",
-                "/Users/mabecker/Documents/github/hlxsites/maidenform/pwa/lib/RootComponents"
-            ],
-            "context": "/Users/mabecker/Documents/github/hlxsites/maidenform/pwa"
-        }
-    },
-    */
-
-    // Disable UpwardIncludePlugin
-    config.plugins = config.plugins.filter(
-        plugin => plugin.constructor.name !== 'UpwardIncludePlugin'
-    );
+    // Remove unnecessary plugins
+    const pluginsToRemove = new Set([
+        'HTMLWebpackPlugin',
+        'ServiceWorkerPlugin',
+        'RootComponentsPlugin',
+        'UpwardIncludePlugin'
+    ]);
 
     config.plugins = [
-        ...config.plugins,
+        ...config.plugins.filter(
+            plugin => !pluginsToRemove.has(plugin.constructor.name)
+        ),
         new DefinePlugin({
             /**
              * Make sure to add the same constants to
@@ -168,8 +109,7 @@ module.exports = async env => {
                 process.env.DEFAULT_COUNTRY_CODE || 'US'
             ),
             __DEV__: process.env.NODE_ENV !== 'production'
-        }),
-        new ModuleOverridePlugin(componentOverrideMapping),
+        })
     ];
 
     // Add additional entrypoints

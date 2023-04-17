@@ -5,10 +5,10 @@ import { useAwaitQuery } from '@magento/peregrine/lib/hooks/useAwaitQuery';
 import { useAddressBookPage } from '@magento/peregrine/lib/talons/AddressBookPage/useAddressBookPage';
 import { useOrderHistoryPage } from '@magento/peregrine/lib/talons/OrderHistoryPage/useOrderHistoryPage';
 import { GET_CUSTOMER } from './AccountOverview.gql';
-import AddressCard from './addressCard';
+import AddressCard from './AddressCard';
 
 import classes from './AccountOverview.module.css';
-import OrderRow from './orderRow';
+import OrderRow from './OrderRow';
 
 const AccountOverview = () => {
     const fetchUserDetails = useAwaitQuery(GET_CUSTOMER);
@@ -103,7 +103,7 @@ const AccountOverview = () => {
                         </thead>
                         <tbody>
                             {orders?.length > 0 ?
-                            (orders.map((order) => <OrderRow key={order.id} order={order} />)) : 
+                            (orders.map((order) => <OrderRow key={order.id} order={order} />)) :
                             (<tr className={classes.orderTableEmpty}>
                                 <td colSpan="6">You have not placed any orders.</td>
                             </tr>)}
