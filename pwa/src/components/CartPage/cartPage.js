@@ -4,6 +4,7 @@ import { Check } from 'react-feather';
 import { useCartPage } from '@magento/peregrine/lib/talons/CartPage/useCartPage';
 import { useStyle } from '@magento/venia-ui/lib/classify';
 import { useToasts } from '@magento/peregrine';
+import { Link } from 'react-router-dom';
 
 import Icon from '@magento/venia-ui/lib/components/Icon';
 import { fullPageLoadingIndicator } from '@magento/venia-ui/lib/components/LoadingIndicator';
@@ -79,7 +80,7 @@ const CartPage = props => {
 
     return (
         <div className={classes.root} data-cy="CartPage-root">
-            <div className='in_your_bag'>
+            <div className={classes.inYourBag}>
                 <div className={classes.heading_container}>
                     <h1
                         aria-live="polite"
@@ -87,17 +88,24 @@ const CartPage = props => {
                         className={classes.heading}
                     >
                         <FormattedMessage
-                            id={'cartPage.heading'}
+                            id={'cartPage.title'}
                             defaultMessage={'In your bag'}
                         />
                     </h1>
+                    <span className={classes.continueShopping}>
+                        <Link to="/">
+                        <FormattedMessage
+                            id={"cartPage.continueShopping"}
+                            defaultMessage={"Continue Shopping"}
+                        /><span class="arrow">►</span></Link>
+                    </span>
                     <div className={classes.stockStatusMessageContainer}>
                         <StockStatusMessage cartItems={cartItems} />
                     </div>
                     <div className={classes.items_container}>{productListing}</div>
                 </div>
             </div>
-            <div className={classes.body}>
+            <div className={classes.orderSummary}>
                 {orderSummary}
             </div>
         </div>

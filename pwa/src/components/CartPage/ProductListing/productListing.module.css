@@ -1,7 +1,19 @@
 .root {
-    composes: gap-x-md from global;
-    composes: gap-y-xs from global;
-    composes: grid from global;
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+.columnHeader {
+    color: var(--clr-dark-blue);
+    font-size: 14px;
+    font-weight: 700;
+    padding: 24px 10px 15px 10px;
+    border-bottom: 1px solid var(--highlight-background-color);
+}
+
+.columnHeaderPrice {
+    composes: columnHeader;
+    text-align: right;
 }
 
 .errorText {

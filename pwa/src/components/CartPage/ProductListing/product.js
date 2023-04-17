@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, Fragment } from 'react';
 import { FormattedMessage, useIntl } from 'react-intl';
 import { Heart } from 'react-feather';
 import { gql } from '@apollo/client';
@@ -7,20 +7,19 @@ import { useProduct } from '@magento/peregrine/lib/talons/CartPage/ProductListin
 import resourceUrl from '@magento/peregrine/lib/util/makeUrl';
 import Price from '@magento/venia-ui/lib/components/Price';
 
-import { useStyle } from '@magento/venia-ui/lib/classify';
 import Icon from '@magento/venia-ui/lib/components/Icon';
 import Image from '@magento/venia-ui/lib/components/Image';
-import ProductOptions from '@magento/venia-ui/lib/components/LegacyMiniCart/productOptions';
+import ProductOptions from './productOptions';
 import Section from '@magento/venia-ui/lib/components/LegacyMiniCart/section';
 import Quantity from './quantity';
 
 
-import defaultClasses from './product.module.css';
+import classes from './product.module.css';
 
 import { CartPageFragment } from '@magento/peregrine/lib/talons/CartPage/cartPageFragments.gql.js';
 import { AvailableShippingMethodsCartFragment } from '@magento/peregrine/lib/talons/CartPage/PriceAdjustments/ShippingMethods/shippingMethodsFragments.gql.js';
 
-const IMAGE_SIZE = 100;
+const IMAGE_SIZE = 165;
 
 const HeartIcon = <Icon size={16} src={Heart} />;
 
@@ -59,8 +58,6 @@ const Product = props => {
         urlSuffix
     } = product;
 
-    const classes = useStyle(defaultClasses, props.classes);
-
     const itemClassName = isProductUpdating
         ? classes.item_disabled
         : classes.item;
@@ -94,14 +91,9 @@ const Product = props => {
             : '';
 
     return (
-        <li className={classes.root} data-cy="Product-root">
-            <span className={classes.errorText}>{errorMessage}</span>
-            <div className={itemClassName}>
-                <Link
-                    to={itemLink}
-                    className={classes.imageContainer}
-                    data-cy="Product-imageContainer"
-                >
+        <Fragment>
+               <div className={classes.imageContainer} data-cy="Product-imageContainer"> 
+                <Link to={itemLink}>
                     <Image
                         alt={name}
                         classes={{
@@ -113,13 +105,15 @@ const Product = props => {
                         data-cy="Product-image"
                     />
                 </Link>
+                </div>
+                <div className={classes.productDetails}>
                 <div className={classes.details}>
                     <div className={classes.name} data-cy="Product-name">
                         <Link to={itemLink}>{name}</Link>
                     </div>
-                    <span className={classes.style} data-cy="Product-style">
-                        Style: {item.sku}
-                    </span>
+                    <div className={classes.style} data-cy="Product-style">
+                        <span>Style:</span><span>{item.sku}</span>
+                    </div>
                     <ProductOptions
                         options={options}
                         classes={{
@@ -127,17 +121,14 @@ const Product = props => {
                             optionLabel: classes.optionLabel
                         }}
                     />
-                    <span className={classes.price} data-cy="Product-price">
-                        <Price currencyCode={currency} value={unitPrice} />
-                        <FormattedMessage
-                            id={'product.price'}
-                            defaultMessage={' ea.'}
-                        />
-                    </span>
                     <span className={classes.stockStatusMessage}>
                         {stockStatusMessage}
                     </span>
                     <div className={classes.quantity}>
+                    {formatMessage({
+                            id: 'product.quantity',
+                            defaultMessage: 'Quantity: '
+                        })}
                         <Quantity
                             itemId={item.id}
                             initialValue={quantity}
@@ -145,7 +136,7 @@ const Product = props => {
                         />
                     </div>
                 </div>
-                <div>
+                <div className={classes.actions}>
 
                     <Link to="/" onClick={handleEditItem}>
                         {formatMessage({
@@ -162,8 +153,11 @@ const Product = props => {
                         })}
                     </Link>
                 </div>
-            </div>
-        </li>
+                </div>
+                <span className={classes.price} data-cy="Product-price">
+                        <Price currencyCode={currency} value={unitPrice} />
+                </span>
+        </Fragment>
     );
 };
 

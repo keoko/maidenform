@@ -132,7 +132,7 @@ const CouponCode = props => {
                     id="couponCode"
                     label={formatMessage({
                         id: 'cartPage.couponCode',
-                        defaultMessage: 'Coupon Code'
+                        defaultMessage: 'Use a Promo Code'
                     })}
                 >
                     <TextInput
@@ -141,7 +141,7 @@ const CouponCode = props => {
                         data-cy="CouponCode-couponCode"
                         placeholder={formatMessage({
                             id: 'couponCode.enterCode',
-                            defaultMessage: 'Enter code'
+                            defaultMessage: 'Enter your code'
                         })}
                         mask={value => value && value.trim()}
                         maskOnBlur={true}
@@ -157,7 +157,7 @@ const CouponCode = props => {
                     >
                         <FormattedMessage
                             id={'couponCode.apply'}
-                            defaultMessage={'Apply'}
+                            defaultMessage={'Apply Promo'}
                         />
                     </Button>
                 </Field>

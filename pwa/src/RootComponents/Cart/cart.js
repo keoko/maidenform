@@ -10,7 +10,6 @@ const Cart = props => {
     console.log('props', props);
     return (
         <Fragment>
-            <div>Hello Cart 2</div>
             <CartPage />
         </Fragment>
     );

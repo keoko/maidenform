@@ -1,4 +1,26 @@
-.root{
+.root {
     font-family: var(--ff-gilroy-regular);
-    background: red;
+    border: 1px solid var(--highlight-background-color);
+    border-radius: 8px;
+    padding: 10px 30px;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.orderSummaryTitle {
+    font-size: 20px;
+    padding-left: 0;
+    color: var(--clr-black);
+    padding: 12px 0px;
+    border-bottom: 1px solid var(--highlight-background-color);
+}
+
+.goToCheckout {
+    font-family: var(--ff-gilroy-bold);
+    background-color: var(--clr-dark-pink);
+    color: var(--clr-white);
+    height: 45px;
+    width: 100%;
+    margin-bottom: 20px;
+    text-transform: uppercase;
 }

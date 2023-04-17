@@ -4,7 +4,7 @@ import { useProductListing } from '@magento/peregrine/lib/talons/CartPage/Produc
 
 import { useStyle } from '@magento/venia-ui/lib/classify';
 import LoadingIndicator from '@magento/venia-ui/lib/components/LoadingIndicator';
-import defaultClasses from '@magento/venia-ui/lib/components/CartPage/ProductListing/productListing.module.css';
+import defaultClasses from './productListing.module.css';
 import Product from './product';
 import ErrorMessage from './errorMessage';
 
@@ -78,9 +78,12 @@ const ProductListing = props => {
         return (
             <Fragment>
                 <ErrorMessage error={error} />
-                <ul className={classes.root} data-cy="ProductListing-root">
+                <div className={classes.root} data-cy="ProductListing-root">
+                    <div className={classes.columnHeader}>Product</div>
+                    <div className={classes.columnHeader}>Details</div>
+                    <div className={classes.columnHeaderPrice}>Price</div>
                     {productComponents}
-                </ul>
+                </div>
                 <Suspense fallback={null}>
                     <EditModal
                         item={activeEditItem}

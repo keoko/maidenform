@@ -17,7 +17,9 @@ const OrderSummary = props => {
 
     return (
         <div className={classes.root} data-cy="PriceAdjustments-root">
-            <span>Order Summary</span>
+            <div class={classes.orderSummaryTitle}>
+                <strong>Order Summary</strong>
+            </div>
             <CouponCode setIsCartUpdating={setIsCartUpdating} />
             <PriceSummary />
             <LinkButton

@@ -1,34 +1,29 @@
 .root {
-    font-family: var(--ff-gilroy-regular);
-    background: red;   
+    display: flex;
+    font-family: var(--ff-gilroy-medium);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.18;
 }
 
-.heading {
-    font-family: var(--ff-gilroy-regular);
-    background: red;
+.heading_container h1 {
+    display: inline;
+    font-size: var(--ff-gilroy-medium);
+    font-size: 22px;
+    text-transform: uppercase;
+    margin-bottom: 40px;
 }
 
-.heading_container {
-    font-family: var(--ff-gilroy-regular);
-    background: red;
+.continueShopping {
+    float: right;
 }
 
-.stockStatusMessageContainer {
-    font-family: var(--ff-gilroy-regular);
-    background: red;
+.inYourBag {
+    width: 67%;
+    padding-right: 40px;
+    border: 1px solid var();
 }
 
-.item_container {
-    font-family: var(--ff-gilroy-regular);
-    background: red;
-}
-
-.summary_contents {
-    font-family: var(--ff-gilroy-regular);
-    background: red;
-}
-
-.in_your_bag {
-    font-family: var(--ff-gilroy-regular);
-    background: red;
+.orderSummary {
+    width: 33%;
 }

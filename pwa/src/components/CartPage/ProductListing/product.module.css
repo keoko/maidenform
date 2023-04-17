@@ -1,106 +1,59 @@
-.root {
-    font-family: var(--ff-gilroy-regular);
-    background: red;
-}
-
-.item {
-    font-family: var(--ff-gilroy-regular);
-    background: red;
-}
-
-.item_disabled {
-    font-family: var(--ff-gilroy-regular);
-    background: red;
-}
-
-.errorText {
-    font-family: var(--ff-gilroy-regular);
-    background: red;
-}
-
-/* TODO @TW: cannot compose */
-.errorText:empty {
-    font-family: var(--ff-gilroy-regular);
-    background: red;
+.image {
+    padding-right: 20px 18px 20px 0px;
 }
 
 .imageContainer {
-    font-family: var(--ff-gilroy-regular);
-    background: red;
-}
-
-.imageRoot {
-    font-family: var(--ff-gilroy-regular);
-    background: red;
-}
-
-.image {
-    font-family: var(--ff-gilroy-regular);
-    background: red;
-}
-
-.style {
-    font-family: var(--ff-gilroy-regular);
-    background: red;
-}
-
-.details {
-    font-family: var(--ff-gilroy-regular);
-    background: red;
-}
-
-.name {
-    font-family: var(--ff-gilroy-regular);
-    background: red;
+    padding: 20px 8px 20px 0px;
+    border-bottom: 1px solid var(--highlight-background-color);
 }
 
 .price {
-    font-family: var(--ff-gilroy-regular);
-    background: red;
+    padding: 25px 11px 10px 0px;
+    border-bottom: 1px solid var(--highlight-background-color);
+    color: var(--clr-pink);
+    font-weight: 400;
+    font-size: 18px;
+    text-align:  right;
 }
 
 .quantity {
-    font-family: var(--ff-gilroy-regular);
-    background: red;
+    padding-bottom: 15px;
 }
 
-.kebab {
-    font-family: var(--ff-gilroy-regular);
-    background: red;
+.quantity form{
+    display: inline;
+    padding-bottom: 15px;
 }
 
-.sectionText {
-    font-family: var(--ff-gilroy-regular);
-    background: red;
+.productDetails {
+    border-bottom: 1px solid var(--highlight-background-color);
+    padding: 15px 10px 11px 10px;
 }
 
-.options {
-    font-family: var(--ff-gilroy-regular);
-    background: red;
+.details {
+    font-family: var(--ff-gilroy-medium);
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
 }
 
-.optionLabel {
-    font-family: var(--ff-gilroy-regular);
-    background: red;
+.style {
+    padding: 10px 15px 15px 0px;
 }
 
-.stockStatusMessage {
-    font-family: var(--ff-gilroy-regular);
-    background: red;
+.name {
+    font-size: 18px;
+    text-transform: none;
 }
 
-/* TODO @TW: cannot compose */
-.stockStatusMessage:empty {
+.actions {
     font-family: var(--ff-gilroy-regular);
-    background: red;
+    font-weight: 500;
+    font-size: 16px;
+    padding-bottom: 15px;
+    text-transform: uppercase;
 }
 
-.addToListButton {
-    font-family: var(--ff-gilroy-regular);
-    background: red;
-}
-
-.addToListButton_selected {
-    font-family: var(--ff-gilroy-regular);
-    background: red;
+.actions a {
+    padding-right: 20px;
 }
