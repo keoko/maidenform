@@ -129,7 +129,7 @@ module.exports = async env => {
     }
 
     // Fix publicPath
-    config.output.publicPath = '/scripts/pwa-dist/';
+    config.output.publicPath = config.output.path = '/scripts/pwa-dist/';
 
     return [config];
 };
