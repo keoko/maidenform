@@ -13,3 +13,13 @@ tools/product-image-importer/product-images/*
 scripts/pwa-dist
 .env
 .vscode
+
+.idea
+test-results
+.DS_Store
+build-stats.json
+npm-debug.log
+merged-schema*.json
+test-report.xml
+test-results.json
+yarn-error.log

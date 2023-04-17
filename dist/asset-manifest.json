@@ -1,0 +1,76 @@
+{
+  "account.js": "/account.js",
+  "cart.js": "/cart.js",
+  "checkout.js": "/checkout.js",
+  "client.js": "/client.js",
+  "entrypoints": {
+    "client": {
+      "js": [
+        "/runtime.js",
+        "/client.js"
+      ]
+    },
+    "cart": {
+      "js": [
+        "/runtime.js",
+        "/vendors.js",
+        "/cart.js"
+      ]
+    },
+    "checkout": {
+      "js": [
+        "/runtime.js",
+        "/vendors.js",
+        "/checkout.js"
+      ]
+    },
+    "account": {
+      "js": [
+        "/runtime.js",
+        "/vendors.js",
+        "/account.js"
+      ]
+    },
+    "login": {
+      "js": [
+        "/runtime.js",
+        "/vendors.js",
+        "/login.js"
+      ]
+    },
+    "signup": {
+      "js": [
+        "/runtime.js",
+        "/vendors.js",
+        "/signup.js"
+      ]
+    }
+  },
+  "i18n-en_US.js": "/i18n-en_US.js",
+  "login.js": "/login.js",
+  "rounded-triangle.svg": "/rounded-triangle-fHp.svg",
+  "runtime.js": "/runtime.js",
+  "signup.js": "/signup.js",
+  "vendors.js": "/vendors.js",
+  "bundles": {
+    "load": [
+      "/runtime.js",
+      "/client.js"
+    ],
+    "prefetch": []
+  },
+  "js": {
+    "account": "/account.js",
+    "cart": "/cart.js",
+    "checkout": "/checkout.js",
+    "client": "/client.js",
+    "i18n-en_US": "/i18n-en_US.js",
+    "login": "/login.js",
+    "runtime": "/runtime.js",
+    "signup": "/signup.js",
+    "vendors": "/vendors.js"
+  },
+  "svg": {
+    "rounded-triangle": "/rounded-triangle-fHp.svg"
+  }
+}

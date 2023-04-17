@@ -1,0 +1,3 @@
+/*! @version pwa-studio: 1.0.0, @magento/venia-ui: ~10.0.0, @magento/venia-sample-payments-checkmo: ^0.0.10, @magento/upward-security-headers: ~1.0.12, @magento/pwa-theme-venia: ^1.3.0, @magento/pwa-buildpack: ~11.4.1, @magento/peregrine: ~13.0.0, @magento/pagebuilder: ~8.0.0, @magento/eslint-config: ~1.5.0, @magento/babel-preset-peregrine: ~1.2.2, @apollo/client: ~3.5.0 */
+(window.webpackJsonp=window.webpackJsonp||[]).push([[6],{0:function(n,o,t){t("FASw"),n.exports=t("tjUo")},FASw:function(n,o,t){globalThis.__fetchLocaleData__=async function getLocale(n){if("en_US"===n)return t.e(7).then(t.t.bind(null,"5I32",3))
+throw new Error("Unable to locate locale "+n+" within generated dist directory.")}},tjUo:function(n,o){}},[[0,1]]])
