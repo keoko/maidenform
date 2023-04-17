@@ -12,3 +12,4 @@ tools/product-image-importer/product-images/*
 
 scripts/pwa-dist
 .env
+.vscode
