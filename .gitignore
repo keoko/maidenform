@@ -10,7 +10,6 @@ node_modules
 .parcel-cache
 tools/product-image-importer/product-images/*
 
-scripts/pwa-dist
 .env
 .vscode
 
