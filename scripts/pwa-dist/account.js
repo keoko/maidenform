@@ -4758,7 +4758,7 @@ const actionMap = {
 /*! all exports used */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/store/actions/app/asyncActions.js because of ./node_modules/@magento/peregrine/lib/talons/OrderHistoryPage/useOrderHistoryPage.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/store/actions/cart/asyncActions.js because of ./src/talons/CreateAccount/useCreateAccount.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/store/actions/checkout/actions.js because of ./src/RootComponents/Cart/index.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/store/actions/checkout/actions.js because of ./src/RootComponents/Checkout/index.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/simplePersistence.js because of ./src/RootComponents/Account/AccountPage.js */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -7280,8 +7280,8 @@ const GET_COUNTRIES_QUERY = _apollo_client__WEBPACK_IMPORTED_MODULE_0__[/* gql *
 /*! exports provided: default */
 /*! exports used: default */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/shallowMerge.js because of ./src/RootComponents/CreateAccount/createAccount.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Button/button.js because of ./node_modules/@magento/venia-ui/lib/components/LinkButton/linkButton.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Icon/icon.js because of ./node_modules/@magento/venia-ui/lib/components/WishlistPage/createWishlist.ee.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Button/button.js because of ./node_modules/@magento/venia-ui/lib/components/SignIn/signIn.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Icon/icon.js because of ./src/RootComponents/Account/AddressBookPage/addressBookPage.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-feather/dist/icons/x.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./src/components/Portal/portal.js because of ./node_modules/@magento/venia-ui/lib/components/CheckoutPage/ShippingInformation/editModal.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/Dialog/dialog.module.css (<- Module uses module.id) */
@@ -9610,7 +9610,7 @@ LinkButton.defaultProps = {
 /*! exports provided: default */
 /*! exports used: default */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/shallowMerge.js because of ./src/RootComponents/CreateAccount/createAccount.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Icon/icon.js because of ./node_modules/@magento/venia-ui/lib/components/WishlistPage/createWishlist.ee.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Icon/icon.js because of ./node_modules/@magento/venia-ui/lib/components/LoadingIndicator/spinner.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-feather/dist/icons/loader.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/LoadingIndicator/indicator.module.css (<- Module uses module.id) */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react/index.js (<- Module is not an ECMAScript module) */
@@ -19632,7 +19632,7 @@ ___CSS_LOADER_EXPORT___.locals = {
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()(_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default.a);
 // Module
-___CSS_LOADER_EXPORT___.push([module.i, ".AddEditDialog-root-C-O {\n\n}\n\n.AddEditDialog-root-C-O h1 {\n    font-family: var(--ff-gilroy-regular);\n    font-size: 4.2rem;\n    margin: 0 0 40px 0;\n    text-transform: uppercase;\n}\n\n.AddEditDialog-sectionFlex-9fN {\n    display: flex;\n    gap: 25px;\n    flex-direction: column;\n}\n\n.AddEditDialog-section-bcj {\n    flex: 1;\n}\n\n.AddEditDialog-sectionHeader-0Sl {\n    font-size: 1.4rem;\n    display: flex;\n    align-items: center;\n    gap: 25px;\n    margin: 0 0 25px 0;\n    border-bottom: 1px solid #c6c6c6;\n    padding: 10px 0;\n}\n\n.AddEditDialog-sectionHeader-0Sl h2 {\n    font-family: var(--ff-gilroy-regular);\n    font-size: 2.5rem;\n    margin: 0;\n}\n\n.AddEditDialog-sectionHeader-0Sl a {\n    text-decoration: underline;\n}\n\n.AddEditDialog-sectionContent-WEh {\n    margin-bottom: 50px;\n    font-size: 1.6rem;\n}\n\n.AddEditDialog-optionalStreetField-Fj9 {\n    display: none;\n}\n\n@media (min-width: 1024px) {\n    .AddEditDialog-sectionFlex-9fN {\n        flex-direction: row;\n    }\n}", "",{"version":3,"sources":["webpack://./src/RootComponents/Account/AddressBookPage/AddEditDialog.module.css"],"names":[],"mappings":"AAAA;;AAEA;;AAEA;IACI,qCAAqC;IACrC,iBAAiB;IACjB,kBAAkB;IAClB,yBAAyB;AAC7B;;AAEA;IACI,aAAa;IACb,SAAS;IACT,sBAAsB;AAC1B;;AAEA;IACI,OAAO;AACX;;AAEA;IACI,iBAAiB;IACjB,aAAa;IACb,mBAAmB;IACnB,SAAS;IACT,kBAAkB;IAClB,gCAAgC;IAChC,eAAe;AACnB;;AAEA;IACI,qCAAqC;IACrC,iBAAiB;IACjB,SAAS;AACb;;AAEA;IACI,0BAA0B;AAC9B;;AAEA;IACI,mBAAmB;IACnB,iBAAiB;AACrB;;AAEA;IACI,aAAa;AACjB;;AAEA;IACI;QACI,mBAAmB;IACvB;AACJ","sourcesContent":[".root {\n\n}\n\n.root h1 {\n    font-family: var(--ff-gilroy-regular);\n    font-size: 4.2rem;\n    margin: 0 0 40px 0;\n    text-transform: uppercase;\n}\n\n.sectionFlex {\n    display: flex;\n    gap: 25px;\n    flex-direction: column;\n}\n\n.section {\n    flex: 1;\n}\n\n.sectionHeader {\n    font-size: 1.4rem;\n    display: flex;\n    align-items: center;\n    gap: 25px;\n    margin: 0 0 25px 0;\n    border-bottom: 1px solid #c6c6c6;\n    padding: 10px 0;\n}\n\n.sectionHeader h2 {\n    font-family: var(--ff-gilroy-regular);\n    font-size: 2.5rem;\n    margin: 0;\n}\n\n.sectionHeader a {\n    text-decoration: underline;\n}\n\n.sectionContent {\n    margin-bottom: 50px;\n    font-size: 1.6rem;\n}\n\n.optionalStreetField {\n    display: none;\n}\n\n@media (min-width: 1024px) {\n    .sectionFlex {\n        flex-direction: row;\n    }\n}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.i, ".AddEditDialog-root-C-O {\n\n}\n\n.AddEditDialog-root-C-O h1 {\n    font-family: var(--ff-gilroy-regular);\n    font-size: 4.2rem;\n    margin: 0 0 40px 0;\n    text-transform: uppercase;\n}\n\n.AddEditDialog-sectionFlex-9fN {\n    display: flex;\n    gap: 25px;\n    flex-direction: column;\n}\n\n.AddEditDialog-section-bcj {\n    flex: 1;\n}\n\n.AddEditDialog-sectionHeader-0Sl {\n    font-size: 1.4rem;\n    display: flex;\n    align-items: center;\n    gap: 25px;\n    margin: 0 0 25px 0;\n    border-bottom: 1px solid #c6c6c6;\n    padding: 10px 0;\n}\n\n.AddEditDialog-sectionHeader-0Sl h2 {\n    font-family: var(--ff-gilroy-regular);\n    font-size: 2.5rem;\n    margin: 0;\n}\n\n.AddEditDialog-sectionHeader-0Sl a {\n    text-decoration: underline;\n}\n\n.AddEditDialog-sectionContent-WEh {\n    margin-bottom: 50px;\n    font-size: 1.6rem;\n}\n\n.AddEditDialog-sectionActions-oQq {\n    display: flex;\n    gap: 15px;\n}\n\n.AddEditDialog-optionalStreetField-Fj9 {\n    display: none;\n}\n\n@media (min-width: 1024px) {\n    .AddEditDialog-sectionFlex-9fN {\n        flex-direction: row;\n    }\n}", "",{"version":3,"sources":["webpack://./src/RootComponents/Account/AddressBookPage/AddEditDialog.module.css"],"names":[],"mappings":"AAAA;;AAEA;;AAEA;IACI,qCAAqC;IACrC,iBAAiB;IACjB,kBAAkB;IAClB,yBAAyB;AAC7B;;AAEA;IACI,aAAa;IACb,SAAS;IACT,sBAAsB;AAC1B;;AAEA;IACI,OAAO;AACX;;AAEA;IACI,iBAAiB;IACjB,aAAa;IACb,mBAAmB;IACnB,SAAS;IACT,kBAAkB;IAClB,gCAAgC;IAChC,eAAe;AACnB;;AAEA;IACI,qCAAqC;IACrC,iBAAiB;IACjB,SAAS;AACb;;AAEA;IACI,0BAA0B;AAC9B;;AAEA;IACI,mBAAmB;IACnB,iBAAiB;AACrB;;AAEA;IACI,aAAa;IACb,SAAS;AACb;;AAEA;IACI,aAAa;AACjB;;AAEA;IACI;QACI,mBAAmB;IACvB;AACJ","sourcesContent":[".root {\n\n}\n\n.root h1 {\n    font-family: var(--ff-gilroy-regular);\n    font-size: 4.2rem;\n    margin: 0 0 40px 0;\n    text-transform: uppercase;\n}\n\n.sectionFlex {\n    display: flex;\n    gap: 25px;\n    flex-direction: column;\n}\n\n.section {\n    flex: 1;\n}\n\n.sectionHeader {\n    font-size: 1.4rem;\n    display: flex;\n    align-items: center;\n    gap: 25px;\n    margin: 0 0 25px 0;\n    border-bottom: 1px solid #c6c6c6;\n    padding: 10px 0;\n}\n\n.sectionHeader h2 {\n    font-family: var(--ff-gilroy-regular);\n    font-size: 2.5rem;\n    margin: 0;\n}\n\n.sectionHeader a {\n    text-decoration: underline;\n}\n\n.sectionContent {\n    margin-bottom: 50px;\n    font-size: 1.6rem;\n}\n\n.sectionActions {\n    display: flex;\n    gap: 15px;\n}\n\n.optionalStreetField {\n    display: none;\n}\n\n@media (min-width: 1024px) {\n    .sectionFlex {\n        flex-direction: row;\n    }\n}"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"root": "AddEditDialog-root-C-O",
@@ -19640,6 +19640,7 @@ ___CSS_LOADER_EXPORT___.locals = {
 	"section": "AddEditDialog-section-bcj",
 	"sectionHeader": "AddEditDialog-sectionHeader-0Sl",
 	"sectionContent": "AddEditDialog-sectionContent-WEh",
+	"sectionActions": "AddEditDialog-sectionActions-oQq",
 	"optionalStreetField": "AddEditDialog-optionalStreetField-Fj9"
 };
 /* harmony default export */ __webpack_exports__["a"] = (___CSS_LOADER_EXPORT___);
@@ -19682,6 +19683,68 @@ ___CSS_LOADER_EXPORT___.locals = {
 	"addressTableMobile": "AddressBookPage-addressTableMobile-zHo",
 	"addressTableEmpty": "AddressBookPage-addressTableEmpty-evO",
 	"sectionAdditionalAddresses": "AddressBookPage-sectionAdditionalAddresses-P32"
+};
+/* harmony default export */ __webpack_exports__["a"] = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./src/RootComponents/Account/AddressBookPage/AddressRow.module.css":
+/*!****************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./src/RootComponents/Account/AddressBookPage/AddressRow.module.css ***!
+  \****************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/*! exports used: default */
+/*! ModuleConcatenation bailout: Module uses module.id */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var _node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/cssWithMappingToString.js */ "./node_modules/css-loader/dist/runtime/cssWithMappingToString.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+// Imports
+
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()(_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default.a);
+// Module
+___CSS_LOADER_EXPORT___.push([module.i, ".AddressRow-actions-2FS a {\n    cursor: pointer;\n}\n\n.AddressRow-actions-2FS a:nth-of-type(2) {\n    color: var(--clr-pink);\n}\n\n.AddressRow-actions-2FS a:nth-of-type(n + 2)::before {\n    border-left: 1px solid #a6a6a6;\n    content: '';\n    display: inline-block;\n    height: 12px;\n    margin: 0 10px;\n    vertical-align: -1px;\n}\n\n.AddressRow-confirmDeleteContainerBackground-8Xl {\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    align-items: center;\n    z-index: 3000;\n    background: rgb(0 0 0 / 80%);\n    position: fixed;\n    top: 0;\n    left: 0;\n    right: 0;\n    bottom: 0;\n}\n\n.AddressRow-confirmDeleteContainer-gEV {\n    background: #fff;\n    padding: 2rem;\n    max-width: 500px;\n    width: 60%;\n    border-radius: 4px;\n    font-size: 1.4rem;\n    position: relative;\n    font-family: var(--ff-gilroy-regular);\n    box-shadow: 0 0 12px 2px rgba(0 0 0 / 35%);\n}\n\n.AddressRow-confirmDeleteContainerButtons-UdE {\n    display: flex;\n    gap: 15px;\n}\n\n.AddressRow-confirmDeleteContainerButtons-UdE button {\n    margin: 0;\n}", "",{"version":3,"sources":["webpack://./src/RootComponents/Account/AddressBookPage/AddressRow.module.css"],"names":[],"mappings":"AAAA;IACI,eAAe;AACnB;;AAEA;IACI,sBAAsB;AAC1B;;AAEA;IACI,8BAA8B;IAC9B,WAAW;IACX,qBAAqB;IACrB,YAAY;IACZ,cAAc;IACd,oBAAoB;AACxB;;AAEA;IACI,aAAa;IACb,sBAAsB;IACtB,uBAAuB;IACvB,mBAAmB;IACnB,aAAa;IACb,4BAA4B;IAC5B,eAAe;IACf,MAAM;IACN,OAAO;IACP,QAAQ;IACR,SAAS;AACb;;AAEA;IACI,gBAAgB;IAChB,aAAa;IACb,gBAAgB;IAChB,UAAU;IACV,kBAAkB;IAClB,iBAAiB;IACjB,kBAAkB;IAClB,qCAAqC;IACrC,0CAA0C;AAC9C;;AAEA;IACI,aAAa;IACb,SAAS;AACb;;AAEA;IACI,SAAS;AACb","sourcesContent":[".actions a {\n    cursor: pointer;\n}\n\n.actions a:nth-of-type(2) {\n    color: var(--clr-pink);\n}\n\n.actions a:nth-of-type(n + 2)::before {\n    border-left: 1px solid #a6a6a6;\n    content: '';\n    display: inline-block;\n    height: 12px;\n    margin: 0 10px;\n    vertical-align: -1px;\n}\n\n.confirmDeleteContainerBackground {\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    align-items: center;\n    z-index: 3000;\n    background: rgb(0 0 0 / 80%);\n    position: fixed;\n    top: 0;\n    left: 0;\n    right: 0;\n    bottom: 0;\n}\n\n.confirmDeleteContainer {\n    background: #fff;\n    padding: 2rem;\n    max-width: 500px;\n    width: 60%;\n    border-radius: 4px;\n    font-size: 1.4rem;\n    position: relative;\n    font-family: var(--ff-gilroy-regular);\n    box-shadow: 0 0 12px 2px rgba(0 0 0 / 35%);\n}\n\n.confirmDeleteContainerButtons {\n    display: flex;\n    gap: 15px;\n}\n\n.confirmDeleteContainerButtons button {\n    margin: 0;\n}"],"sourceRoot":""}]);
+// Exports
+___CSS_LOADER_EXPORT___.locals = {
+	"actions": "AddressRow-actions-2FS",
+	"confirmDeleteContainerBackground": "AddressRow-confirmDeleteContainerBackground-8Xl",
+	"confirmDeleteContainer": "AddressRow-confirmDeleteContainer-gEV",
+	"confirmDeleteContainerButtons": "AddressRow-confirmDeleteContainerButtons-UdE"
+};
+/* harmony default export */ __webpack_exports__["a"] = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./src/RootComponents/Account/AddressBookPage/button.module.css":
+/*!************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./src/RootComponents/Account/AddressBookPage/button.module.css ***!
+  \************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/*! exports used: default */
+/*! ModuleConcatenation bailout: Module uses module.id */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var _node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/cssWithMappingToString.js */ "./node_modules/css-loader/dist/runtime/cssWithMappingToString.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+// Imports
+
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()(_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default.a);
+// Module
+___CSS_LOADER_EXPORT___.push([module.i, ".button-root_highPriority-yp4 {\n    background: var(--clr-pink);\n    color: var(--clr-white);\n    font-family: var(--ff-gilroy-bold);\n    font-size: 14px;\n    text-transform: uppercase;\n    padding: 5px 10px;\n}\n\n.button-root_highPriority-yp4:hover {\n    background: var(--clr-dark-pink);\n}\n\n.button-root_highPriority-yp4:hover > span {\n    text-decoration: underline;\n}\n\n.button-root_lowPriority-5R- {\n    background: var(--clr-charcoal);\n    color: var(--clr-white);\n    font-family: var(--ff-gilroy-bold);\n    font-size: 14px;\n    text-transform: uppercase;\n    padding: 5px 10px;\n}\n\n.button-root_lowPriority-5R-:hover {\n    background: var(--clr-dark-grey);\n}\n\n.button-root_lowPriority-5R-:hover > span {\n    text-decoration: underline;\n}\n", "",{"version":3,"sources":["webpack://./src/RootComponents/Account/AddressBookPage/button.module.css"],"names":[],"mappings":"AAAA;IACI,2BAA2B;IAC3B,uBAAuB;IACvB,kCAAkC;IAClC,eAAe;IACf,yBAAyB;IACzB,iBAAiB;AACrB;;AAEA;IACI,gCAAgC;AACpC;;AAEA;IACI,0BAA0B;AAC9B;;AAEA;IACI,+BAA+B;IAC/B,uBAAuB;IACvB,kCAAkC;IAClC,eAAe;IACf,yBAAyB;IACzB,iBAAiB;AACrB;;AAEA;IACI,gCAAgC;AACpC;;AAEA;IACI,0BAA0B;AAC9B","sourcesContent":[".root_highPriority {\n    background: var(--clr-pink);\n    color: var(--clr-white);\n    font-family: var(--ff-gilroy-bold);\n    font-size: 14px;\n    text-transform: uppercase;\n    padding: 5px 10px;\n}\n\n.root_highPriority:hover {\n    background: var(--clr-dark-pink);\n}\n\n.root_highPriority:hover > span {\n    text-decoration: underline;\n}\n\n.root_lowPriority {\n    background: var(--clr-charcoal);\n    color: var(--clr-white);\n    font-family: var(--ff-gilroy-bold);\n    font-size: 14px;\n    text-transform: uppercase;\n    padding: 5px 10px;\n}\n\n.root_lowPriority:hover {\n    background: var(--clr-dark-grey);\n}\n\n.root_lowPriority:hover > span {\n    text-decoration: underline;\n}\n"],"sourceRoot":""}]);
+// Exports
+___CSS_LOADER_EXPORT___.locals = {
+	"root_highPriority": "button-root_highPriority-yp4",
+	"root_lowPriority": "button-root_lowPriority-5R-"
 };
 /* harmony default export */ __webpack_exports__["a"] = (___CSS_LOADER_EXPORT___);
 
@@ -20788,11 +20851,11 @@ module.exports = function (data, opts) {
   \***********************************************************/
 /*! exports provided: gql, resetCaches, disableFragmentWarnings, enableExperimentalFragmentVariables, disableExperimentalFragmentVariables, default */
 /*! exports used: gql */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql/error/syntaxError.mjs because of ./src/RootComponents/Cart/index.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql/error/syntaxError.mjs because of ./src/RootComponents/Checkout/index.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql/language/ast.mjs because of ./node_modules/@apollo/client/link/http/selectHttpOptionsAndBody.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql/language/lexer.mjs because of ./src/RootComponents/Cart/index.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql/language/source.mjs because of ./src/RootComponents/Cart/index.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql/language/tokenKind.mjs because of ./src/RootComponents/Cart/index.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql/language/lexer.mjs because of ./src/RootComponents/Checkout/index.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql/language/source.mjs because of ./src/RootComponents/Checkout/index.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql/language/tokenKind.mjs because of ./src/RootComponents/Checkout/index.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/tslib/tslib.es6.js because of ./src/RootComponents/CreateAccount/createAccountPage.js */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -23163,7 +23226,7 @@ var nodejsCustomInspectSymbol = typeof Symbol === 'function' && typeof Symbol.fo
   \***********************************************************/
 /*! exports provided: Location, Token, isNode */
 /*! exports used: Location, Token, isNode */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql/jsutils/nodejsCustomInspectSymbol.mjs because of ./src/RootComponents/CreateAccount/mutations.gql.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql/jsutils/nodejsCustomInspectSymbol.mjs because of ./node_modules/@apollo/client/link/http/selectHttpOptionsAndBody.js */
 /***/ (function(__webpack_module__, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -38118,7 +38181,7 @@ if (hasSymbols()) {
 
 /***/ "./src/RootComponents/Account/AccountPage.js":
 /*!*****************************************************************!*\
-  !*** ./src/RootComponents/Account/AccountPage.js + 115 modules ***!
+  !*** ./src/RootComponents/Account/AccountPage.js + 117 modules ***!
   \*****************************************************************/
 /*! exports provided: useProtectedPage, default */
 /*! exports used: default, useProtectedPage */
@@ -38211,6 +38274,8 @@ if (hasSymbols()) {
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./src/RootComponents/Account/AccountPage.module.css (<- Module uses module.id) */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./src/RootComponents/Account/AddressBookPage/AddEditDialog.module.css (<- Module uses module.id) */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./src/RootComponents/Account/AddressBookPage/AddressBookPage.module.css (<- Module uses module.id) */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./src/RootComponents/Account/AddressBookPage/AddressRow.module.css (<- Module uses module.id) */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./src/RootComponents/Account/AddressBookPage/button.module.css (<- Module uses module.id) */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./src/RootComponents/Account/AddressBookPage/checkbox.module.css (<- Module uses module.id) */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./src/RootComponents/Account/AddressBookPage/textInput.module.css (<- Module uses module.id) */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./src/components/Country/country.module.css (<- Module uses module.id) */
@@ -44467,6 +44532,9 @@ var AccountPage_module_update = injectStylesIntoStyleTag_default()(AccountPage_m
 
 
 /* harmony default export */ var Account_AccountPage_module = (AccountPage_module["a" /* default */].locals || {});
+// EXTERNAL MODULE: ./src/components/Button/button.js
+var components_Button_button = __webpack_require__("./src/components/Button/button.js");
+
 // EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/Checkbox/checkbox.js + 1 modules
 var Checkbox_checkbox = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/Checkbox/checkbox.js");
 
@@ -44863,9 +44931,6 @@ Region.propTypes = {
   validate: prop_types["func"],
   initialValue: Object(prop_types["oneOfType"])([prop_types["number"], prop_types["string"]])
 };
-// EXTERNAL MODULE: ./src/components/Button/button.js
-var components_Button_button = __webpack_require__("./src/components/Button/button.js");
-
 // EXTERNAL MODULE: ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./src/RootComponents/Account/AddressBookPage/AddEditDialog.module.css
 var AddEditDialog_module = __webpack_require__("./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./src/RootComponents/Account/AddressBookPage/AddEditDialog.module.css");
 
@@ -44923,6 +44988,23 @@ var checkbox_module_update = injectStylesIntoStyleTag_default()(checkbox_module[
 
 
 /* harmony default export */ var AddressBookPage_checkbox_module = (checkbox_module["a" /* default */].locals || {});
+// EXTERNAL MODULE: ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./src/RootComponents/Account/AddressBookPage/button.module.css
+var button_module = __webpack_require__("./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./src/RootComponents/Account/AddressBookPage/button.module.css");
+
+// CONCATENATED MODULE: ./src/RootComponents/Account/AddressBookPage/button.module.css
+
+            
+
+var button_module_options = {"injectType":"styleTag"};
+
+button_module_options.insert = "head";
+button_module_options.singleton = false;
+
+var button_module_update = injectStylesIntoStyleTag_default()(button_module["a" /* default */], button_module_options);
+
+
+
+/* harmony default export */ var AddressBookPage_button_module = (button_module["a" /* default */].locals || {});
 // CONCATENATED MODULE: ./src/RootComponents/Account/AddressBookPage/AddEditDialog.js
 function AddEditDialog_extends() { AddEditDialog_extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return AddEditDialog_extends.apply(this, arguments); }
 function AddEditDialog_ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
@@ -44930,6 +45012,7 @@ function AddEditDialog_objectSpread(target) { for (var i = 1; i < arguments.leng
 function AddEditDialog_defineProperty(obj, key, value) { key = AddEditDialog_toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 function AddEditDialog_toPropertyKey(arg) { var key = AddEditDialog_toPrimitive(arg, "string"); return typeof key === "symbol" ? key : String(key); }
 function AddEditDialog_toPrimitive(input, hint) { if (typeof input !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (typeof res !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
+
 
 
 
@@ -44990,21 +45073,6 @@ const AddEditDialog = props => {
     id: 'global.phoneNumber',
     defaultMessage: 'Phone Number'
   });
-
-  /* <Dialog
-  confirmTranslationId={'global.save'}
-  confirmText="Save"
-  formProps={formProps}
-  isOpen={isOpen}
-  onCancel={onCancel}
-  onConfirm={onConfirm}
-  shouldDisableAllButtons={isBusy}
-  title={title}>
-  </Dialog> */
-
-  // Override FieldIcons styling to hide before/after
-  // Override Region, Postcode, Country, Checkbox
-
   return /*#__PURE__*/react_default.a.createElement("div", {
     className: AddressBookPage_AddEditDialog_module.root
   }, /*#__PURE__*/react_default.a.createElement("h1", null, title), /*#__PURE__*/react_default.a.createElement(esm["b" /* Form */], AddEditDialog_extends({}, formProps, {
@@ -45115,16 +45183,20 @@ const AddEditDialog = props => {
     classes: AddressBookPage_checkbox_module
   })))), /*#__PURE__*/react_default.a.createElement("div", {
     className: AddressBookPage_AddEditDialog_module.section
+  }, /*#__PURE__*/react_default.a.createElement("div", {
+    className: [AddressBookPage_AddEditDialog_module.sectionContent, AddressBookPage_AddEditDialog_module.sectionActions].join(' ')
   }, /*#__PURE__*/react_default.a.createElement(components_Button_button["a" /* default */], {
     disabled: isBusy,
+    classes: AddressBookPage_button_module,
     priority: "high",
     type: "submit"
   }, "Save Address"), /*#__PURE__*/react_default.a.createElement(components_Button_button["a" /* default */], {
     disabled: isBusy,
+    classes: AddressBookPage_button_module,
     onClick: onCancel,
     priority: "low",
     type: "reset"
-  }, "Cancel"))));
+  }, "Cancel")))));
 };
 /* harmony default export */ var AddressBookPage_AddEditDialog = (AddEditDialog);
 AddEditDialog.propTypes = {
@@ -45166,7 +45238,27 @@ var AddressBookPage_module_update = injectStylesIntoStyleTag_default()(AddressBo
 
 
 /* harmony default export */ var AddressBookPage_AddressBookPage_module = (AddressBookPage_module["a" /* default */].locals || {});
+// EXTERNAL MODULE: ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./src/RootComponents/Account/AddressBookPage/AddressRow.module.css
+var AddressRow_module = __webpack_require__("./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/dist/cjs.js!./src/RootComponents/Account/AddressBookPage/AddressRow.module.css");
+
+// CONCATENATED MODULE: ./src/RootComponents/Account/AddressBookPage/AddressRow.module.css
+
+            
+
+var AddressRow_module_options = {"injectType":"styleTag"};
+
+AddressRow_module_options.insert = "head";
+AddressRow_module_options.singleton = false;
+
+var AddressRow_module_update = injectStylesIntoStyleTag_default()(AddressRow_module["a" /* default */], AddressRow_module_options);
+
+
+
+/* harmony default export */ var AddressBookPage_AddressRow_module = (AddressRow_module["a" /* default */].locals || {});
 // CONCATENATED MODULE: ./src/RootComponents/Account/AddressBookPage/AddressRow.js
+
+
+
 
 
 const AddressRow = props => {
@@ -45175,7 +45267,11 @@ const AddressRow = props => {
     countryName,
     mobile,
     onEdit,
-    onDelete
+    onDelete,
+    onCancelDelete,
+    onConfirmDelete,
+    isConfirmingDelete,
+    isDeletingCustomerAddress
   } = props;
   const {
     city,
@@ -45187,18 +45283,43 @@ const AddressRow = props => {
     telephone,
     id
   } = address;
+  const maybeConfirmingDeleteOverlay = isConfirmingDelete ? /*#__PURE__*/react_default.a.createElement("div", {
+    className: AddressBookPage_AddressRow_module.confirmDeleteContainerBackground
+  }, /*#__PURE__*/react_default.a.createElement("div", {
+    className: AddressBookPage_AddressRow_module.confirmDeleteContainer,
+    role: "dialog",
+    "aria-modal": "true"
+  }, /*#__PURE__*/react_default.a.createElement("p", null, "Are you sure you want to delete this address?"), /*#__PURE__*/react_default.a.createElement("div", {
+    className: AddressBookPage_AddressRow_module.confirmDeleteContainerButtons
+  }, /*#__PURE__*/react_default.a.createElement(components_Button_button["a" /* default */], {
+    classes: AddressBookPage_button_module,
+    disabled: isDeletingCustomerAddress,
+    priority: "low",
+    type: "button",
+    onClick: onCancelDelete
+  }, "Cancel"), /*#__PURE__*/react_default.a.createElement(components_Button_button["a" /* default */], {
+    classes: AddressBookPage_button_module,
+    disabled: isDeletingCustomerAddress,
+    priority: "high",
+    type: "button",
+    onClick: onConfirmDelete
+  }, "Delete")))) : null;
   if (mobile) {
-    return /*#__PURE__*/react_default.a.createElement("div", null, /*#__PURE__*/react_default.a.createElement("span", null, /*#__PURE__*/react_default.a.createElement("strong", null, "First Name:"), " ", firstname), /*#__PURE__*/react_default.a.createElement("span", null, /*#__PURE__*/react_default.a.createElement("strong", null, "Last Name:"), " ", lastname), /*#__PURE__*/react_default.a.createElement("span", null, /*#__PURE__*/react_default.a.createElement("strong", null, "Street Address:"), " ", street.length > 0 ? street[0] : ''), /*#__PURE__*/react_default.a.createElement("span", null, /*#__PURE__*/react_default.a.createElement("strong", null, "City:"), " ", city), /*#__PURE__*/react_default.a.createElement("span", null, /*#__PURE__*/react_default.a.createElement("strong", null, "Country:"), " ", countryName), /*#__PURE__*/react_default.a.createElement("span", null, /*#__PURE__*/react_default.a.createElement("strong", null, "State:"), " ", region === null || region === void 0 ? void 0 : region.region), /*#__PURE__*/react_default.a.createElement("span", null, /*#__PURE__*/react_default.a.createElement("strong", null, "Zip/Postal Code:"), " ", postcode), /*#__PURE__*/react_default.a.createElement("span", null, /*#__PURE__*/react_default.a.createElement("strong", null, "Phone:"), " ", telephone), /*#__PURE__*/react_default.a.createElement("span", null, /*#__PURE__*/react_default.a.createElement("strong", null, "Actions:"), /*#__PURE__*/react_default.a.createElement("a", {
+    return /*#__PURE__*/react_default.a.createElement("div", null, /*#__PURE__*/react_default.a.createElement("span", null, /*#__PURE__*/react_default.a.createElement("strong", null, "First Name:"), " ", firstname), /*#__PURE__*/react_default.a.createElement("span", null, /*#__PURE__*/react_default.a.createElement("strong", null, "Last Name:"), " ", lastname), /*#__PURE__*/react_default.a.createElement("span", null, /*#__PURE__*/react_default.a.createElement("strong", null, "Street Address:"), " ", street.length > 0 ? street[0] : ''), /*#__PURE__*/react_default.a.createElement("span", null, /*#__PURE__*/react_default.a.createElement("strong", null, "City:"), " ", city), /*#__PURE__*/react_default.a.createElement("span", null, /*#__PURE__*/react_default.a.createElement("strong", null, "Country:"), " ", countryName), /*#__PURE__*/react_default.a.createElement("span", null, /*#__PURE__*/react_default.a.createElement("strong", null, "State:"), " ", region === null || region === void 0 ? void 0 : region.region), /*#__PURE__*/react_default.a.createElement("span", null, /*#__PURE__*/react_default.a.createElement("strong", null, "Zip/Postal Code:"), " ", postcode), /*#__PURE__*/react_default.a.createElement("span", null, /*#__PURE__*/react_default.a.createElement("strong", null, "Phone:"), " ", telephone), /*#__PURE__*/react_default.a.createElement("span", {
+      className: AddressBookPage_AddressRow_module.actions
+    }, /*#__PURE__*/react_default.a.createElement("strong", null, "Actions:"), /*#__PURE__*/react_default.a.createElement("a", {
       onClick: () => onEdit(address)
     }, "Edit"), /*#__PURE__*/react_default.a.createElement("a", {
       onClick: () => onDelete(id)
-    }, "Delete")));
+    }, "Delete"), maybeConfirmingDeleteOverlay));
   }
-  return /*#__PURE__*/react_default.a.createElement("tr", null, /*#__PURE__*/react_default.a.createElement("td", null, firstname), /*#__PURE__*/react_default.a.createElement("td", null, lastname), /*#__PURE__*/react_default.a.createElement("td", null, street.length > 0 ? street[0] : ''), /*#__PURE__*/react_default.a.createElement("td", null, city), /*#__PURE__*/react_default.a.createElement("td", null, countryName), /*#__PURE__*/react_default.a.createElement("td", null, region === null || region === void 0 ? void 0 : region.region), /*#__PURE__*/react_default.a.createElement("td", null, postcode), /*#__PURE__*/react_default.a.createElement("td", null, telephone), /*#__PURE__*/react_default.a.createElement("td", null, /*#__PURE__*/react_default.a.createElement("a", {
+  return /*#__PURE__*/react_default.a.createElement("tr", null, /*#__PURE__*/react_default.a.createElement("td", null, firstname), /*#__PURE__*/react_default.a.createElement("td", null, lastname), /*#__PURE__*/react_default.a.createElement("td", null, street.length > 0 ? street[0] : ''), /*#__PURE__*/react_default.a.createElement("td", null, city), /*#__PURE__*/react_default.a.createElement("td", null, countryName), /*#__PURE__*/react_default.a.createElement("td", null, region === null || region === void 0 ? void 0 : region.region), /*#__PURE__*/react_default.a.createElement("td", null, postcode), /*#__PURE__*/react_default.a.createElement("td", null, telephone), /*#__PURE__*/react_default.a.createElement("td", {
+    className: AddressBookPage_AddressRow_module.actions
+  }, /*#__PURE__*/react_default.a.createElement("a", {
     onClick: () => onEdit(address)
   }, "Edit"), /*#__PURE__*/react_default.a.createElement("a", {
     onClick: () => onDelete(id)
-  }, "Delete")));
+  }, "Delete"), maybeConfirmingDeleteOverlay));
 };
 /* harmony default export */ var AddressBookPage_AddressRow = (AddressRow);
 AddressRow.propTypes = {
@@ -45220,7 +45341,11 @@ AddressRow.propTypes = {
   mobile: prop_types["bool"],
   countryName: prop_types["string"],
   onDelete: prop_types["func"].isRequired,
-  onEdit: prop_types["func"].isRequired
+  onEdit: prop_types["func"].isRequired,
+  onCancelDelete: prop_types["func"].isRequired,
+  onConfirmDelete: prop_types["func"].isRequired,
+  isConfirmingDelete: prop_types["bool"],
+  isDeletingCustomerAddress: prop_types["bool"]
 };
 // CONCATENATED MODULE: ./src/RootComponents/Account/AddressBookPage/addressBookPage.js
 function addressBookPage_ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
@@ -45228,8 +45353,6 @@ function addressBookPage_objectSpread(target) { for (var i = 1; i < arguments.le
 function addressBookPage_defineProperty(obj, key, value) { key = addressBookPage_toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 function addressBookPage_toPropertyKey(arg) { var key = addressBookPage_toPrimitive(arg, "string"); return typeof key === "symbol" ? key : String(key); }
 function addressBookPage_toPrimitive(input, hint) { if (typeof input !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (typeof res !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
-
-
 
 
 
@@ -45260,11 +45383,8 @@ const AddressBookPage = props => {
     isDialogOpen,
     isLoading
   } = talonProps;
-  const {
-    formatMessage
-  } = Object(useIntl["a" /* default */])();
 
-  // TODO: Convert dialog into full page
+  // TODO: Delete
 
   const defaultBillingAddress = customerAddresses.find(({
     default_billing
@@ -45365,7 +45485,7 @@ const AddressBookPage = props => {
   }
   return /*#__PURE__*/react_default.a.createElement("div", {
     className: AddressBookPage_AddressBookPage_module.root
-  }, /*#__PURE__*/react_default.a.createElement("h1", null, "Address Book"), /*#__PURE__*/react_default.a.createElement("div", null, isDialogEditMode ? 'in edit mode' : 'not in edit mode', " ", isDialogOpen ? 'dialog open' : 'dialog not open'), /*#__PURE__*/react_default.a.createElement("div", {
+  }, /*#__PURE__*/react_default.a.createElement("h1", null, "Address Book"), /*#__PURE__*/react_default.a.createElement("div", {
     className: AddressBookPage_AddressBookPage_module.section
   }, /*#__PURE__*/react_default.a.createElement("div", {
     className: AddressBookPage_AddressBookPage_module.sectionHeader
@@ -45402,6 +45522,10 @@ const AddressBookPage = props => {
   }, /*#__PURE__*/react_default.a.createElement("thead", null, /*#__PURE__*/react_default.a.createElement("tr", null, /*#__PURE__*/react_default.a.createElement("th", null, "First Name"), /*#__PURE__*/react_default.a.createElement("th", null, "Last Name"), /*#__PURE__*/react_default.a.createElement("th", null, "Street Address"), /*#__PURE__*/react_default.a.createElement("th", null, "City"), /*#__PURE__*/react_default.a.createElement("th", null, "Country"), /*#__PURE__*/react_default.a.createElement("th", null, "State"), /*#__PURE__*/react_default.a.createElement("th", null, "Zip/Postal Code"), /*#__PURE__*/react_default.a.createElement("th", null, "Phone"), /*#__PURE__*/react_default.a.createElement("th", null))), /*#__PURE__*/react_default.a.createElement("tbody", null, (remainingAddresses === null || remainingAddresses === void 0 ? void 0 : remainingAddresses.length) > 0 ? remainingAddresses.map(address => /*#__PURE__*/react_default.a.createElement(AddressBookPage_AddressRow, {
     key: address.id,
     address: address,
+    onCancelDelete: handleCancelDeleteAddress,
+    onConfirmDelete: handleConfirmDeleteAddress,
+    isConfirmingDelete: confirmDeleteAddressId === address.id,
+    isDeletingCustomerAddress: isDeletingCustomerAddress,
     onEdit: address => handleEditAddress(address),
     onDelete: id => handleDeleteAddress(id)
   })) : /*#__PURE__*/react_default.a.createElement("tr", {
@@ -45414,6 +45538,10 @@ const AddressBookPage = props => {
     key: address.id,
     address: address,
     mobile: true,
+    onCancelDelete: handleCancelDeleteAddress,
+    onConfirmDelete: handleConfirmDeleteAddress,
+    isConfirmingDelete: confirmDeleteAddressId === address.id,
+    isDeletingCustomerAddress: isDeletingCustomerAddress,
     onEdit: address => handleEditAddress(address),
     onDelete: id => handleDeleteAddress(id)
   })) : /*#__PURE__*/react_default.a.createElement("div", {
@@ -45422,8 +45550,10 @@ const AddressBookPage = props => {
     className: AddressBookPage_AddressBookPage_module.section
   }, /*#__PURE__*/react_default.a.createElement("div", {
     className: AddressBookPage_AddressBookPage_module.sectionContent
-  }, /*#__PURE__*/react_default.a.createElement("button", {
-    onClick: handleAddAddress
+  }, /*#__PURE__*/react_default.a.createElement(components_Button_button["a" /* default */], {
+    classes: AddressBookPage_button_module,
+    priority: "high",
+    onPress: handleAddAddress
   }, "Add New Address"))));
 
   /*
@@ -45583,7 +45713,7 @@ var store = __webpack_require__("./src/store.js");
 // EXTERNAL MODULE: ./src/components/Adapter/adapter.js + 37 modules
 var adapter = __webpack_require__("./src/components/Adapter/adapter.js");
 
-// EXTERNAL MODULE: ./src/RootComponents/Account/AccountPage.js + 115 modules
+// EXTERNAL MODULE: ./src/RootComponents/Account/AccountPage.js + 117 modules
 var AccountPage = __webpack_require__("./src/RootComponents/Account/AccountPage.js");
 
 // CONCATENATED MODULE: ./src/RootComponents/Account/Account.js
@@ -45877,7 +46007,7 @@ SignInPage.propTypes = {
   signedInRedirectUrl: prop_types["string"]
 };
 /* harmony default export */ var signInPage = (SignInPage);
-// EXTERNAL MODULE: ./src/RootComponents/Account/AccountPage.js + 115 modules
+// EXTERNAL MODULE: ./src/RootComponents/Account/AccountPage.js + 117 modules
 var AccountPage = __webpack_require__("./src/RootComponents/Account/AccountPage.js");
 
 // CONCATENATED MODULE: ./src/RootComponents/Login/login.js
@@ -45923,18 +46053,18 @@ function Login() {
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@formatjs/intl/lib/src/error.js because of ./src/RootComponents/CreateAccount/createAccountPage.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@formatjs/intl/lib/src/utils.js because of ./src/RootComponents/CreateAccount/createAccountPage.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/Apollo/clearCartDataFromCache.js because of ./src/talons/CheckoutPage/useCheckoutPage.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/Toasts/useToastContext.js because of ./node_modules/@magento/venia-ui/lib/components/WishlistPage/wishlistItem.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/Toasts/useToasts.js because of ./node_modules/@magento/venia-ui/lib/components/WishlistPage/wishlistItem.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/Toasts/useToastContext.js because of ./node_modules/@magento/venia-ui/lib/components/CartPage/PriceAdjustments/CouponCode/couponCode.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/Toasts/useToasts.js because of ./node_modules/@magento/venia-ui/lib/components/CartPage/PriceAdjustments/CouponCode/couponCode.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/context/app.js because of ./node_modules/@magento/peregrine/lib/talons/OrderHistoryPage/useOrderHistoryPage.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/context/cart.js because of ./src/talons/CreateAccount/useCreateAccount.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/context/eventing.js because of ./node_modules/@magento/peregrine/lib/talons/AddressBookPage/useAddressBookPage.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/context/eventing.js because of ./src/talons/CreateAccount/useCreateAccount.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/context/user.js because of ./src/RootComponents/Account/AccountPage.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/hooks/useWindowSize.js because of ./node_modules/@magento/venia-ui/lib/components/CheckoutPage/checkoutPage.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/store/actions/app/actions.js because of ./node_modules/@magento/peregrine/lib/talons/OrderHistoryPage/useOrderHistoryPage.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/store/actions/catalog/actions.js because of ./src/RootComponents/Cart/index.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/store/actions/catalog/actions.js because of ./src/RootComponents/Checkout/index.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/store/actions/checkout/actions.js because of ./src/RootComponents/Account/AccountPage.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/store/actions/checkout/asyncActions.js because of ./src/RootComponents/Account/AccountPage.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/store/middleware/thunk.js because of ./src/RootComponents/Cart/index.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/store/middleware/thunk.js because of ./src/RootComponents/Checkout/index.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/bindActionCreators.js because of ./src/RootComponents/Account/AccountPage.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/shallowMerge.js because of ./src/RootComponents/CreateAccount/createAccount.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/simplePersistence.js because of ./src/RootComponents/Account/AccountPage.js */
@@ -45943,7 +46073,7 @@ function Login() {
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./src/components/Icon/icon.module.css (<- Module uses module.id) */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./src/components/ToastContainer/toast.module.css (<- Module uses module.id) */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./src/components/ToastContainer/toastContainer.module.css (<- Module uses module.id) */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql/language/blockString.mjs because of ./node_modules/@apollo/client/link/http/selectHttpOptionsAndBody.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql/language/blockString.mjs because of ./src/RootComponents/CreateAccount/mutations.gql.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql/language/lexer.mjs because of ./src/RootComponents/CreateAccount/mutations.gql.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql/language/source.mjs because of ./src/RootComponents/CreateAccount/mutations.gql.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql/language/tokenKind.mjs because of ./src/RootComponents/CreateAccount/mutations.gql.js */
@@ -45953,7 +46083,7 @@ function Login() {
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/lodash.get/index.js (<- Module is not an ECMAScript module) */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/lodash.set/index.js (<- Module is not an ECMAScript module) */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/prop-types/index.js (<- Module is not an ECMAScript module) */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-helmet-async/lib/index.module.js because of ./node_modules/@magento/venia-ui/lib/components/SignInPage/signInPage.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-helmet-async/lib/index.module.js because of ./node_modules/@magento/venia-ui/lib/components/AccountInformationPage/accountInformationPage.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-intl/lib/src/components/injectIntl.js because of ./src/RootComponents/CreateAccount/createAccountPage.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-intl/lib/src/utils.js because of ./src/RootComponents/CreateAccount/createAccountPage.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-redux/es/index.js */
@@ -48408,11 +48538,11 @@ TextInput.propTypes = {
 /*! exports used: default */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/store/actions/app/actions.js because of ./node_modules/@magento/peregrine/lib/talons/OrderHistoryPage/useOrderHistoryPage.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/store/actions/cart/actions.js because of ./src/talons/CreateAccount/useCreateAccount.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/store/actions/catalog/actions.js because of ./src/RootComponents/Cart/index.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/store/actions/checkout/actions.js because of ./src/RootComponents/Cart/index.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/store/actions/catalog/actions.js because of ./src/RootComponents/Checkout/index.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/store/actions/checkout/actions.js because of ./src/RootComponents/Checkout/index.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/store/actions/user/actions.js because of ./src/RootComponents/Account/AccountPage.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/store/actions/user/asyncActions.js because of ./src/RootComponents/Account/AccountPage.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/store/middleware/thunk.js because of ./src/RootComponents/Cart/index.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/store/middleware/thunk.js because of ./src/RootComponents/Checkout/index.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/simplePersistence.js because of ./src/RootComponents/Account/AccountPage.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/redux-actions/es/handleActions.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/redux/es/redux.js */

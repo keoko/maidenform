@@ -44,6 +44,11 @@
     font-size: 1.6rem;
 }
 
+.sectionActions {
+    display: flex;
+    gap: 15px;
+}
+
 .optionalStreetField {
     display: none;
 }

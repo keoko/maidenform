@@ -18,6 +18,7 @@ import fieldClasses from '../../CreateAccount/field.module.css';
 import textInputClasses from './textInput.module.css';
 import messageClasses from '../../CreateAccount/inputMessage.module.css';
 import checkboxClasses from './checkbox.module.css';
+import buttonClasses from './button.module.css';
 
 const AddEditDialog = props => {
     const {
@@ -62,23 +63,6 @@ const AddEditDialog = props => {
         id: 'global.phoneNumber',
         defaultMessage: 'Phone Number'
     });
-
-
-
-            /* <Dialog
-            confirmTranslationId={'global.save'}
-            confirmText="Save"
-            formProps={formProps}
-            isOpen={isOpen}
-            onCancel={onCancel}
-            onConfirm={onConfirm}
-            shouldDisableAllButtons={isBusy}
-            title={title}>
-            </Dialog> */
-
-
-    // Override FieldIcons styling to hide before/after
-    // Override Region, Postcode, Country, Checkbox
 
     return (
         <div className={classes.root}>
@@ -185,8 +169,10 @@ const AddEditDialog = props => {
                 </div>
             </div>
             <div className={classes.section}>
-                <Button disabled={isBusy} priority="high" type="submit">Save Address</Button>
-                <Button disabled={isBusy} onClick={onCancel} priority="low" type="reset">Cancel</Button>
+                <div className={[classes.sectionContent, classes.sectionActions].join(' ')}>
+                    <Button disabled={isBusy} classes={buttonClasses} priority="high" type="submit">Save Address</Button>
+                    <Button disabled={isBusy} classes={buttonClasses} onClick={onCancel} priority="low" type="reset">Cancel</Button>
+                </div>
             </div>
         </Form>
         </div>

@@ -1,16 +1,14 @@
-import React, { useEffect, useMemo } from 'react';
-import { FormattedMessage, useIntl } from 'react-intl';
-import { PlusSquare } from 'react-feather';
+import React, { useEffect } from 'react';
 
 import { useAddressBookPage } from '@magento/peregrine/lib/talons/AddressBookPage/useAddressBookPage';
-import Icon from '@magento/venia-ui/lib/components/Icon';
-import LinkButton from '@magento/venia-ui/lib/components/LinkButton';
 import { fullPageLoadingIndicator } from '@magento/venia-ui/lib/components/LoadingIndicator';
+import Button from '../../../components/Button/button';
 
 import AddressCard from '../AccountOverview/AddressCard';
 import AddEditDialog from './AddEditDialog';
 import classes from './AddressBookPage.module.css';
 import AddressRow from './AddressRow';
+import buttonClasses from './button.module.css';
 
 const AddressBookPage = props => {
     const talonProps = useAddressBookPage();
@@ -34,9 +32,7 @@ const AddressBookPage = props => {
         isLoading
     } = talonProps;
 
-    const { formatMessage } = useIntl();
-
-    // TODO: Convert dialog into full page
+    // TODO: Delete
 
     const defaultBillingAddress = customerAddresses.find(({ default_billing }) => default_billing);
     const defaultShippingAddress = customerAddresses.find(({ default_shipping }) => default_shipping);
@@ -122,19 +118,18 @@ const AddressBookPage = props => {
 
     if (isDialogOpen) {
         return <AddEditDialog
-                formErrors={formErrors}
-                formProps={formProps}
-                isBusy={isDialogBusy}
-                isEditMode={isDialogEditMode}
-                isOpen={isDialogOpen}
-                onCancel={handleCancelDialog}
-                onConfirm={handleConfirmDialog}
-            />;
+            formErrors={formErrors}
+            formProps={formProps}
+            isBusy={isDialogBusy}
+            isEditMode={isDialogEditMode}
+            isOpen={isDialogOpen}
+            onCancel={handleCancelDialog}
+            onConfirm={handleConfirmDialog}
+        />;
     }
 
     return (<div className={classes.root}>
         <h1>Address Book</h1>
-        <div>{isDialogEditMode ? 'in edit mode' : 'not in edit mode'} {isDialogOpen ? 'dialog open' : 'dialog not open'}</div>
         <div className={classes.section}>
             <div className={classes.sectionHeader}>
                 <h2>Default Addresses</h2>
@@ -192,8 +187,13 @@ const AddressBookPage = props => {
                             (remainingAddresses.map((address) => <AddressRow
                                 key={address.id}
                                 address={address}
+                                onCancelDelete={handleCancelDeleteAddress}
+                                onConfirmDelete={handleConfirmDeleteAddress}
+                                isConfirmingDelete={confirmDeleteAddressId === address.id}
+                                isDeletingCustomerAddress={isDeletingCustomerAddress}
                                 onEdit={(address) => handleEditAddress(address)}
-                                onDelete={(id) => handleDeleteAddress(id)} />)) : 
+                                onDelete={(id) => handleDeleteAddress(id)}
+                                 />)) : 
                             (<tr className={classes.addressTableEmpty}>
                                 <td colSpan="9">You have not have any additional addresses saved.</td>
                             </tr>)}
@@ -205,6 +205,10 @@ const AddressBookPage = props => {
                             key={address.id}
                             address={address}
                             mobile={true}
+                            onCancelDelete={handleCancelDeleteAddress}
+                            onConfirmDelete={handleConfirmDeleteAddress}
+                            isConfirmingDelete={confirmDeleteAddressId === address.id}
+                            isDeletingCustomerAddress={isDeletingCustomerAddress}
                             onEdit={(address) => handleEditAddress(address)}
                             onDelete={(id) => handleDeleteAddress(id)} />)) :
                         (<div className={classes.addressTableEmpty}>
@@ -215,7 +219,7 @@ const AddressBookPage = props => {
         </div>
         <div className={classes.section}>
             <div className={classes.sectionContent}>
-                <button onClick={handleAddAddress}>Add New Address</button>
+                <Button classes={buttonClasses} priority="high" onPress={handleAddAddress}>Add New Address</Button>
             </div>
         </div>
     </div>);
