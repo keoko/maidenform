@@ -1,6 +1,7 @@
 const { configureWebpack, graphQL } = require('@magento/pwa-buildpack');
 const webpack = require('webpack');
 const fs = require('fs');
+const path = require('path');
 
 const componentOverrideMapping = {
  '@magento/peregrine/lib/talons/CartPage/ProductListing/productListingFragments.gql.js': './src/talons/CartPage/ProductListing/productListingFragments.gql.js',
@@ -126,10 +127,14 @@ module.exports = async env => {
     // Prevent removal of console statements
     if (env.mode === 'production') {
         config.optimization.minimizer[0].options.terserOptions.compress.drop_console = false;
+    } else if (config.devServer) {
+        config.devServer.writeToDisk = true;
+        config.optimization.runtimeChunk = 'single';
     }
 
     // Fix publicPath
-    config.output.publicPath = config.output.path = '/scripts/pwa-dist/';
+    config.output.publicPath = '/scripts/pwa-dist/';
+    config.output.path = path.resolve(__dirname, 'scripts/pwa-dist');
 
     return [config];
 };
