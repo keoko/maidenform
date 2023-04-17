@@ -32,8 +32,6 @@ const AddressBookPage = props => {
         isLoading
     } = talonProps;
 
-    // TODO: Delete
-
     const defaultBillingAddress = customerAddresses.find(({ default_billing }) => default_billing);
     const defaultShippingAddress = customerAddresses.find(({ default_shipping }) => default_shipping);
     const remainingAddresses = customerAddresses
@@ -67,50 +65,6 @@ const AddressBookPage = props => {
         console.log('addressToEdit', addressToEdit);
         handleEditAddress(addressToEdit);
     }, [customerAddresses]);
-
-    /* const addressBookElements = useMemo(() => {
-        const defaultToBeginning = (address1, address2) => {
-            if (address1.default_shipping) return -1;
-            if (address2.default_shipping) return 1;
-            return 0;
-        };
-
-        return Array.from(customerAddresses)
-            .sort(defaultToBeginning)
-            .map(addressEntry => {
-                const countryName = countryDisplayNameMap.get(
-                    addressEntry.country_code
-                );
-
-                const boundEdit = () => handleEditAddress(addressEntry);
-                const boundDelete = () => handleDeleteAddress(addressEntry.id);
-                const isConfirmingDelete =
-                    confirmDeleteAddressId === addressEntry.id;
-
-                return (
-                    <AddressCard
-                        address={addressEntry}
-                        countryName={countryName}
-                        isConfirmingDelete={isConfirmingDelete}
-                        isDeletingCustomerAddress={isDeletingCustomerAddress}
-                        key={addressEntry.id}
-                        onCancelDelete={handleCancelDeleteAddress}
-                        onConfirmDelete={handleConfirmDeleteAddress}
-                        onDelete={boundDelete}
-                        onEdit={boundEdit}
-                    />
-                );
-            });
-    }, [
-        confirmDeleteAddressId,
-        countryDisplayNameMap,
-        customerAddresses,
-        handleCancelDeleteAddress,
-        handleConfirmDeleteAddress,
-        handleDeleteAddress,
-        handleEditAddress,
-        isDeletingCustomerAddress
-    ]); */
 
     if (isLoading) {
         return fullPageLoadingIndicator;
@@ -223,51 +177,6 @@ const AddressBookPage = props => {
             </div>
         </div>
     </div>);
-
-                    /*
- <div className={classes.root}>
-            <h1
-                aria-live="polite"
-                className={classes.heading}
-                data-cy="AddressBookPage-heading"
-            >
-                {PAGE_TITLE}
-            </h1>
-            <div className={classes.content} data-cy="AddressBookPage-content">
-                {addressBookElements}
-                <LinkButton
-                    className={classes.addButton}
-                    key="addAddressButton"
-                    onClick={handleAddAddress}
-                    data-cy="AddressBookPage-addButton"
-                >
-                    <Icon
-                        classes={{
-                            icon: classes.addIcon
-                        }}
-                        size={24}
-                        src={PlusSquare}
-                    />
-                    <span className={classes.addText}>
-                        <FormattedMessage
-                            id={'addressBookPage.addAddressText'}
-                            defaultMessage={'Add an Address'}
-                        />
-                    </span>
-                </LinkButton>
-            </div>
-            <AddEditDialog
-                formErrors={formErrors}
-                formProps={formProps}
-                isBusy={isDialogBusy}
-                isEditMode={isDialogEditMode}
-                isOpen={isDialogOpen}
-                onCancel={handleCancelDialog}
-                onConfirm={handleConfirmDialog}
-            />
-        </div>
-
-                    */
 
 };
 
