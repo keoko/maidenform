@@ -17,6 +17,7 @@ const Select = props => {
         field,
         items,
         message,
+        messageClasses,
         ...rest
     } = props;
     const fieldState = useFieldState(field);
@@ -43,7 +44,7 @@ const Select = props => {
                     {options}
                 </InformedSelect>
             </FieldIcons>
-            <Message fieldState={fieldState}>{message}</Message>
+            <Message classes={messageClasses} fieldState={fieldState}>{message}</Message>
         </Fragment>
     );
 };

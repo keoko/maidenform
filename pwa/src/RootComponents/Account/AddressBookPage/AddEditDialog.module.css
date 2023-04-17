@@ -12,6 +12,7 @@
 .sectionFlex {
     display: flex;
     gap: 25px;
+    flex-direction: column;
 }
 
 .section {
@@ -48,4 +49,7 @@
 }
 
 @media (min-width: 1024px) {
+    .sectionFlex {
+        flex-direction: row;
+    }
 }

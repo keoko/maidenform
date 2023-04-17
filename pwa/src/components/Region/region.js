@@ -26,6 +26,7 @@ const Region = props => {
         optionValueKey,
         fieldClasses,
         inputClasses,
+        messageClasses,
         ...inputProps
     } = props;
     const { formatMessage } = useIntl();
@@ -42,6 +43,7 @@ const Region = props => {
     const classes = useStyle(defaultClasses, propClasses);
     const regionProps = {
         classes: inputClasses,
+        messageClasses,
         disabled: loading,
         ...inputProps
     };

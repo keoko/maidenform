@@ -309,6 +309,114 @@ const ShippingInformationFragment = _apollo_client__WEBPACK_IMPORTED_MODULE_0__[
 
 /***/ }),
 
+/***/ "./node_modules/@magento/peregrine/lib/talons/Country/useCountry.js":
+/*!**************************************************************************!*\
+  !*** ./node_modules/@magento/peregrine/lib/talons/Country/useCountry.js ***!
+  \**************************************************************************/
+/*! exports provided: useCountry */
+/*! exports used: useCountry */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return useCountry; });
+/* harmony import */ var _apollo_client__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @apollo/client */ "./node_modules/@apollo/client/react/hooks/useQuery.js");
+
+const useCountry = props => {
+  const {
+    queries: {
+      getCountriesQuery
+    }
+  } = props;
+  const {
+    data,
+    error,
+    loading
+  } = Object(_apollo_client__WEBPACK_IMPORTED_MODULE_0__[/* useQuery */ "a"])(getCountriesQuery);
+  let formattedCountriesData = [{
+    label: 'Loading Countries...',
+    value: ''
+  }];
+  if (!loading && !error) {
+    const {
+      countries
+    } = data;
+    formattedCountriesData = countries.map(country => ({
+      // If a country is missing the full english name just show the abbreviation.
+      label: country.full_name_english || country.two_letter_abbreviation,
+      value: country.two_letter_abbreviation
+    }));
+    formattedCountriesData.sort((a, b) => a.label < b.label ? -1 : 1);
+  }
+  return {
+    countries: formattedCountriesData,
+    loading
+  };
+};
+
+/***/ }),
+
+/***/ "./node_modules/@magento/peregrine/lib/talons/Postcode/usePostcode.js":
+/*!****************************************************************************!*\
+  !*** ./node_modules/@magento/peregrine/lib/talons/Postcode/usePostcode.js ***!
+  \****************************************************************************/
+/*! exports provided: usePostcode */
+/*! exports used: usePostcode */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return usePostcode; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var informed__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! informed */ "./node_modules/informed/dist/esm/index.js");
+/* harmony import */ var _magento_peregrine_lib_hooks_hook_wrappers_useInformedFieldStateWrapper__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @magento/peregrine/lib/hooks/hook-wrappers/useInformedFieldStateWrapper */ "./node_modules/@magento/peregrine/lib/hooks/hook-wrappers/useInformedFieldStateWrapper.js");
+
+
+
+
+/**
+ * The usePostcode talon handles logic for resetting the postcode field value when the country changes.
+ *
+ * @param {Object} props
+ * @param {string} props.countryCodeField
+ * @param {string} props.fieldInput - the reference field path for free form text input Defaults to "postcode".
+ *
+ * @return {PostcodeTalonProps}
+ */
+const usePostcode = props => {
+  const {
+    countryCodeField = 'country',
+    fieldInput = 'postcode'
+  } = props;
+  const hasInitialized = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])(false);
+  const countryFieldState = Object(_magento_peregrine_lib_hooks_hook_wrappers_useInformedFieldStateWrapper__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"])(countryCodeField);
+  const {
+    value: country
+  } = countryFieldState;
+  const postcodeInputFieldApi = Object(informed__WEBPACK_IMPORTED_MODULE_1__[/* useFieldApi */ "j"])(fieldInput);
+
+  // Reset postcode when country changes. Because of how Informed sets
+  // initialValues, we want to skip the first state change of the value being
+  // initialized.
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
+    if (country) {
+      if (hasInitialized.current) {
+        postcodeInputFieldApi.reset();
+      } else {
+        hasInitialized.current = true;
+      }
+    }
+  }, [country, postcodeInputFieldApi]);
+  return {};
+};
+
+/** JSDocs type definitions */
+
+/**
+ * @typedef {Object} PostcodeTalonProps
+ */
+
+/***/ }),
+
 /***/ "./node_modules/@magento/peregrine/lib/talons/Region/useRegion.js":
 /*!************************************************************************!*\
   !*** ./node_modules/@magento/peregrine/lib/talons/Region/useRegion.js ***!
@@ -640,7 +748,7 @@ var useShippingForm = __webpack_require__("./node_modules/@magento/peregrine/lib
 // EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/util/formValidators.js
 var formValidators = __webpack_require__("./node_modules/@magento/venia-ui/lib/util/formValidators.js");
 
-// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/Country/country.js + 3 modules
+// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/Country/country.js + 1 modules
 var country = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/Country/country.js");
 
 // EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/FormError/formError.js + 5 modules
@@ -649,7 +757,7 @@ var formError = __webpack_require__("./node_modules/@magento/venia-ui/lib/compon
 // EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/Region/region.js + 1 modules
 var region = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/Region/region.js");
 
-// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/Postcode/postcode.js + 2 modules
+// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/Postcode/postcode.js + 1 modules
 var postcode = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/Postcode/postcode.js");
 
 // EXTERNAL MODULE: ./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js
@@ -1179,18 +1287,42 @@ ShippingRadio.propTypes = {
 
 /***/ }),
 
+/***/ "./node_modules/@magento/venia-ui/lib/components/Country/country.gql.js":
+/*!******************************************************************************!*\
+  !*** ./node_modules/@magento/venia-ui/lib/components/Country/country.gql.js ***!
+  \******************************************************************************/
+/*! exports provided: GET_COUNTRIES_QUERY */
+/*! exports used: GET_COUNTRIES_QUERY */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return GET_COUNTRIES_QUERY; });
+/* harmony import */ var _apollo_client__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @apollo/client */ "./node_modules/graphql-tag/lib/index.js");
+
+const GET_COUNTRIES_QUERY = _apollo_client__WEBPACK_IMPORTED_MODULE_0__[/* gql */ "a"]`
+    query GetCountries {
+        countries {
+            id
+            full_name_english
+            two_letter_abbreviation
+        }
+    }
+`;
+
+/***/ }),
+
 /***/ "./node_modules/@magento/venia-ui/lib/components/Country/country.js":
 /*!**************************************************************************************!*\
-  !*** ./node_modules/@magento/venia-ui/lib/components/Country/country.js + 3 modules ***!
+  !*** ./node_modules/@magento/venia-ui/lib/components/Country/country.js + 1 modules ***!
   \**************************************************************************************/
 /*! exports provided: default */
 /*! exports used: default */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@apollo/client/react/hooks/useQuery.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/talons/Country/useCountry.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/shallowMerge.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Country/country.gql.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Field/field.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Select/select.js because of ./node_modules/@magento/venia-ui/lib/components/Region/region.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Select/select.js because of ./node_modules/@magento/venia-ui/lib/components/CheckoutPage/PaymentInformation/creditCard.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/Country/country.module.css (<- Module uses module.id) */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/graphql-tag/lib/index.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/prop-types/index.js (<- Module is not an ECMAScript module) */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-intl/lib/src/components/useIntl.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react/index.js (<- Module is not an ECMAScript module) */
@@ -1209,42 +1341,9 @@ var useIntl = __webpack_require__("./node_modules/react-intl/lib/src/components/
 // EXTERNAL MODULE: ./node_modules/prop-types/index.js
 var prop_types = __webpack_require__("./node_modules/prop-types/index.js");
 
-// EXTERNAL MODULE: ./node_modules/@apollo/client/react/hooks/useQuery.js
-var useQuery = __webpack_require__("./node_modules/@apollo/client/react/hooks/useQuery.js");
+// EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/talons/Country/useCountry.js
+var useCountry = __webpack_require__("./node_modules/@magento/peregrine/lib/talons/Country/useCountry.js");
 
-// CONCATENATED MODULE: ./node_modules/@magento/peregrine/lib/talons/Country/useCountry.js
-
-const useCountry = props => {
-  const {
-    queries: {
-      getCountriesQuery
-    }
-  } = props;
-  const {
-    data,
-    error,
-    loading
-  } = Object(useQuery["a" /* useQuery */])(getCountriesQuery);
-  let formattedCountriesData = [{
-    label: 'Loading Countries...',
-    value: ''
-  }];
-  if (!loading && !error) {
-    const {
-      countries
-    } = data;
-    formattedCountriesData = countries.map(country => ({
-      // If a country is missing the full english name just show the abbreviation.
-      label: country.full_name_english || country.two_letter_abbreviation,
-      value: country.two_letter_abbreviation
-    }));
-    formattedCountriesData.sort((a, b) => a.label < b.label ? -1 : 1);
-  }
-  return {
-    countries: formattedCountriesData,
-    loading
-  };
-};
 // EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/util/shallowMerge.js
 var shallowMerge = __webpack_require__("./node_modules/@magento/peregrine/lib/util/shallowMerge.js");
 
@@ -1275,20 +1374,9 @@ var update = injectStylesIntoStyleTag_default()(country_module["a" /* default */
 
 
 /* harmony default export */ var Country_country_module = (country_module["a" /* default */].locals || {});
-// EXTERNAL MODULE: ./node_modules/graphql-tag/lib/index.js + 3 modules
-var lib = __webpack_require__("./node_modules/graphql-tag/lib/index.js");
+// EXTERNAL MODULE: ./node_modules/@magento/venia-ui/lib/components/Country/country.gql.js
+var country_gql = __webpack_require__("./node_modules/@magento/venia-ui/lib/components/Country/country.gql.js");
 
-// CONCATENATED MODULE: ./node_modules/@magento/venia-ui/lib/components/Country/country.gql.js
-
-const GET_COUNTRIES_QUERY = lib["a" /* gql */]`
-    query GetCountries {
-        countries {
-            id
-            full_name_english
-            two_letter_abbreviation
-        }
-    }
-`;
 // CONCATENATED MODULE: ./node_modules/@magento/venia-ui/lib/components/Country/country.js
 const _excluded = ["classes", "field", "label", "translationId"];
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
@@ -1309,9 +1397,9 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 
 
 const Country = props => {
-  const talonProps = useCountry({
+  const talonProps = Object(useCountry["a" /* useCountry */])({
     queries: {
-      getCountriesQuery: GET_COUNTRIES_QUERY
+      getCountriesQuery: country_gql["a" /* GET_COUNTRIES_QUERY */]
     }
   });
   const {
@@ -1369,16 +1457,15 @@ Country.propTypes = {
 
 /***/ "./node_modules/@magento/venia-ui/lib/components/Postcode/postcode.js":
 /*!****************************************************************************************!*\
-  !*** ./node_modules/@magento/venia-ui/lib/components/Postcode/postcode.js + 2 modules ***!
+  !*** ./node_modules/@magento/venia-ui/lib/components/Postcode/postcode.js + 1 modules ***!
   \****************************************************************************************/
 /*! exports provided: default */
 /*! exports used: default */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/hooks/hook-wrappers/useInformedFieldStateWrapper.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/talons/Postcode/usePostcode.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/shallowMerge.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Field/field.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/TextInput/textInput.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/Postcode/postcode.module.css (<- Module uses module.id) */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/informed/dist/esm/index.js (<- Module uses injected variables (process)) */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/prop-types/index.js (<- Module is not an ECMAScript module) */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-intl/lib/src/components/useIntl.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react/index.js (<- Module is not an ECMAScript module) */
@@ -1397,58 +1484,9 @@ var prop_types = __webpack_require__("./node_modules/prop-types/index.js");
 // EXTERNAL MODULE: ./node_modules/react-intl/lib/src/components/useIntl.js
 var useIntl = __webpack_require__("./node_modules/react-intl/lib/src/components/useIntl.js");
 
-// EXTERNAL MODULE: ./node_modules/informed/dist/esm/index.js
-var esm = __webpack_require__("./node_modules/informed/dist/esm/index.js");
+// EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/talons/Postcode/usePostcode.js
+var usePostcode = __webpack_require__("./node_modules/@magento/peregrine/lib/talons/Postcode/usePostcode.js");
 
-// EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/hooks/hook-wrappers/useInformedFieldStateWrapper.js
-var useInformedFieldStateWrapper = __webpack_require__("./node_modules/@magento/peregrine/lib/hooks/hook-wrappers/useInformedFieldStateWrapper.js");
-
-// CONCATENATED MODULE: ./node_modules/@magento/peregrine/lib/talons/Postcode/usePostcode.js
-
-
-
-
-/**
- * The usePostcode talon handles logic for resetting the postcode field value when the country changes.
- *
- * @param {Object} props
- * @param {string} props.countryCodeField
- * @param {string} props.fieldInput - the reference field path for free form text input Defaults to "postcode".
- *
- * @return {PostcodeTalonProps}
- */
-const usePostcode = props => {
-  const {
-    countryCodeField = 'country',
-    fieldInput = 'postcode'
-  } = props;
-  const hasInitialized = Object(react["useRef"])(false);
-  const countryFieldState = Object(useInformedFieldStateWrapper["a" /* default */])(countryCodeField);
-  const {
-    value: country
-  } = countryFieldState;
-  const postcodeInputFieldApi = Object(esm["j" /* useFieldApi */])(fieldInput);
-
-  // Reset postcode when country changes. Because of how Informed sets
-  // initialValues, we want to skip the first state change of the value being
-  // initialized.
-  Object(react["useEffect"])(() => {
-    if (country) {
-      if (hasInitialized.current) {
-        postcodeInputFieldApi.reset();
-      } else {
-        hasInitialized.current = true;
-      }
-    }
-  }, [country, postcodeInputFieldApi]);
-  return {};
-};
-
-/** JSDocs type definitions */
-
-/**
- * @typedef {Object} PostcodeTalonProps
- */
 // EXTERNAL MODULE: ./node_modules/@magento/peregrine/lib/util/shallowMerge.js
 var shallowMerge = __webpack_require__("./node_modules/@magento/peregrine/lib/util/shallowMerge.js");
 
@@ -1515,7 +1553,7 @@ const Postcode = props => {
     id: 'postcode.label',
     defaultMessage: 'ZIP / Postal Code'
   });
-  usePostcode({
+  Object(usePostcode["a" /* usePostcode */])({
     fieldInput
   });
   return /*#__PURE__*/react_default.a.createElement(field["a" /* default */], {
@@ -1830,7 +1868,7 @@ const GET_REGIONS_QUERY = _apollo_client__WEBPACK_IMPORTED_MODULE_0__[/* gql */ 
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/peregrine/lib/util/shallowMerge.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Field/field.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Region/region.gql.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Select/select.js */
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/Select/select.js because of ./node_modules/@magento/venia-ui/lib/components/CheckoutPage/PaymentInformation/creditCard.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/@magento/venia-ui/lib/components/TextInput/textInput.js */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-0-1!./node_modules/postcss-loader/dist/cjs.js!./node_modules/@magento/venia-ui/lib/components/Region/region.module.css (<- Module uses module.id) */
 /*! ModuleConcatenation bailout: Cannot concat with ./node_modules/prop-types/index.js (<- Module is not an ECMAScript module) */

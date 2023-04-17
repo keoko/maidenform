@@ -5,10 +5,10 @@ import { Form } from 'informed';
 
 import { isRequired } from '@magento/venia-ui/lib/util/formValidators';
 import Checkbox from '@magento/venia-ui/lib/components/Checkbox';
-import Country from '@magento/venia-ui/lib/components/Country';
+import Country from '../../../components/Country/country';
 import Field from '../../../components/Field/field';
 import FormError from '@magento/venia-ui/lib/components/FormError';
-import Postcode from '@magento/venia-ui/lib/components/Postcode';
+import Postcode from '../../../components/Postcode/postcode';
 import Region from '../../../components/Region/region';
 import TextInput from '../../../components/TextInput/textInput';
 import Button from '../../../components/Button/button';
@@ -17,7 +17,7 @@ import classes from './AddEditDialog.module.css';
 import fieldClasses from '../../CreateAccount/field.module.css';
 import textInputClasses from './textInput.module.css';
 import messageClasses from '../../CreateAccount/inputMessage.module.css';
-
+import checkboxClasses from './checkbox.module.css';
 
 const AddEditDialog = props => {
     const {
@@ -151,6 +151,7 @@ const AddEditDialog = props => {
                         <Region
                             fieldClasses={fieldClasses}
                             inputClasses={textInputClasses}
+                            messageClasses={messageClasses}
                             countryCodeField={'country_code'}
                             fieldInput={'region[region]'}
                             fieldSelect={'region[region_id]'}
@@ -158,18 +159,27 @@ const AddEditDialog = props => {
                             label="State/Province"
                             validate={isRequired}
                         />
-                        <Postcode validate={isRequired} />
+                        <Postcode
+                            validate={isRequired}
+                            fieldClasses={fieldClasses}
+                            inputClasses={textInputClasses}
+                            messageClasses={messageClasses} />
                         <Country
                             field={'country_code'}
                             validate={isRequired}
+                            fieldClasses={fieldClasses}
+                            inputClasses={textInputClasses}
+                            messageClasses={messageClasses}
                         />
                         <Checkbox
                             field="default_billing"
                             label="Use as my default billing address"
+                            classes={checkboxClasses}
                         />
                         <Checkbox
                             field="default_shipping"
                             label="Use as my default shipping address"
+                            classes={checkboxClasses}
                         />
                     </div>
                 </div>
