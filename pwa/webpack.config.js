@@ -5,19 +5,17 @@ const { promisify } = require('util');
 const ModuleOverridePlugin = require('./moduleOverrideWebpackPlugin');
 
 const componentOverrideMapping = {
-    '@magento/peregrine/lib/talons/CartPage/ProductListing/productListingFragments.gql.js':
-        './src/talons/CartPage/ProductListing/productListingFragments.gql.js',
-    '@magento/venia-ui/lib/components/Portal/portal.js':
-        './src/components/Portal/portal.js',
-    '@magento/peregrine/lib/talons/SignInPage/useSignInPage.js':
-        './src/talons/SignInPage/useSignInPage.js',
-    '@magento/peregrine/lib/talons/CheckoutPage/useCheckoutPage':
-        './src/talons/CheckoutPage/useCheckoutPage.js',
-    '@magento/peregrine/lib/talons/CreateAccount/useCreateAccount.js':
-        './src/talons/CreateAccount/useCreateAccount.js'
+ '@magento/peregrine/lib/talons/CartPage/ProductListing/productListingFragments.gql.js': './src/talons/CartPage/ProductListing/productListingFragments.gql.js',
+ '@magento/venia-ui/lib/components/Portal/portal.js': './src/components/Portal/portal.js',
+ '@magento/peregrine/lib/talons/SignInPage/useSignInPage.js': './src/talons/SignInPage/useSignInPage.js',
+ '@magento/peregrine/lib/talons/CheckoutPage/useCheckoutPage': './src/talons/CheckoutPage/useCheckoutPage.js',
+ '@magento/peregrine/lib/talons/CreateAccount/useCreateAccount.js': './src/talons/CreateAccount/useCreateAccount.js',
 };
 
-const { getMediaURL, getAvailableStoresConfigData } = graphQL;
+const {
+    getMediaURL,
+    getAvailableStoresConfigData,
+} = graphQL;
 
 const { DefinePlugin } = webpack;
 // const { LimitChunkCountPlugin } = webpack.optimize;
@@ -68,11 +66,11 @@ module.exports = async env => {
 
     const mediaUrl = await getMediaURL();
     const storeConfigData = {
-        store_code: 'maidenform_store_view',
-        code: 'maidenform_store_view',
-        locale: 'en_US',
-        secure_base_media_url: 'https://franklin.maidenform.com/',
-        store_name: 'Maidenform Store View'
+        "store_code": "maidenform_store_view",
+        "code": "maidenform_store_view",
+        "locale": "en_US",
+        "secure_base_media_url": "https://franklin.maidenform.com/",
+        "store_name": "Maidenform Store View"
     };
     const { availableStores } = await getAvailableStoresConfigData();
     const writeFile = promisify(fs.writeFile);
@@ -90,9 +88,7 @@ module.exports = async env => {
     global.LOCALE = storeConfigData.locale.replace('_', '-');
     global.AVAILABLE_STORE_VIEWS = availableStores;
 
-    const possibleTypes = JSON.parse(
-        fs.readFileSync('possibleTypes.json', 'utf8')
-    );
+    const possibleTypes = JSON.parse(fs.readFileSync('possibleTypes.json', 'utf8'));
 
     const htmlWebpackConfig = {
         filename: 'index.html',
@@ -148,9 +144,9 @@ module.exports = async env => {
     */
 
     // Disable UpwardIncludePlugin
-    // config.plugins = config.plugins.filter(
-    //     plugin => plugin.constructor.name !== 'UpwardIncludePlugin'
-    // );
+    config.plugins = config.plugins.filter(
+        plugin => plugin.constructor.name !== 'UpwardIncludePlugin'
+    );
 
     config.plugins = [
         ...config.plugins,
@@ -173,7 +169,7 @@ module.exports = async env => {
             ),
             __DEV__: process.env.NODE_ENV !== 'production'
         }),
-        new ModuleOverridePlugin(componentOverrideMapping)
+        new ModuleOverridePlugin(componentOverrideMapping),
     ];
 
     // Add additional entrypoints
