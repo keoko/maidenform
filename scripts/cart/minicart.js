@@ -167,7 +167,7 @@ export class Minicart extends Component {
       </ul>
       <div class="minicart-actions">
         <button onClick=${() => close(false)}>Continue Shopping</button>
-        <button onClick=${() => { window.location.href = '/cart/checkout'; }}>View and edit bag</button>
+        <button onClick=${() => { window.location.href = '/checkout'; }}>View and edit bag</button>
       </div>
     </div>`;
   }
