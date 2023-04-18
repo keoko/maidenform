@@ -2,7 +2,7 @@
 
 
 # Franklin Maidenform
-Your project's description...
+Your project's description....
 
 ## Environments
 - Preview: https://main--maidenform--hlxsites.hlx.page/
