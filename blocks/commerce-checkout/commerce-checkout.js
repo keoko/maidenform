@@ -12,6 +12,7 @@ const useCheckoutMFE = () => {
 
   useEffect(() => {
     CheckoutApi.init({
+      // endpoint: 'https://graph.adobe.io/api/e7c76861-4f68-45fc-b397-e642abe5da9a/graphql?api_key=efcac4a158e54ba399feda9441453b54',
       endpoint: 'https://franklin.maidenform.com/graphql',
       selectedStore: 'maidenform_store_view',
     });
@@ -28,9 +29,10 @@ const useCheckoutMFE = () => {
 const CheckoutContext = createContext();
 
 function ShippingAddressForm() {
-  const { shippingAddress } = useContext(CheckoutContext);
+  const { context } = useContext(CheckoutContext);
+  const { shippingAddress} = context;
   const [formState, setFormState] = useState({});
-
+  
   // Initialize form state with shipping address if empty
   useEffect(() => {
     if (Object.keys(formState).length === 0) {
@@ -65,10 +67,13 @@ function ShippingAddressForm() {
 
   const useField = (name, type = 'text') => ({
     value: formState[name] || '',
-    onChange: (e) => setFormState((oldState) => ({
+    onChange: (e) => { 
+      console.log('changing value ...', formState, e.target.value)
+      setFormState((oldState) => ({
       ...oldState,
       [name]: e.target.value,
-    })),
+    }))
+    },
     type,
     name,
   });
@@ -145,7 +150,7 @@ function ShippingMethodForm() {
             </label>
           `)}
       </div>
-      <button onclick=${handleSetShippingMethod}>Set payment method</button>
+      <button onclick=${handleSetShippingMethod}>Set shipping method</button>
     </form>
   `;
 }
@@ -181,6 +186,7 @@ function ShippingStep({ active }) {
               <span>${shippingAddress.city}</span>
               <span>${shippingAddress.zipCode}</span>
               <span>${shippingAddress.country}</span>
+            </div>              
           `}
       <//>
   `;
@@ -246,12 +252,12 @@ function PaymentStep({ active }) {
 function Checkout() {
   const checkoutState = useCheckoutMFE();
 
-  console.log(checkoutState);
+  console.log('checkout state', checkoutState);
+  console.log('cartid', checkoutState?.context?.cartId);
 
   return html`
     <${CheckoutContext.Provider} value=${checkoutState}>
         ${checkoutState.state === 'cart' && html`<div>
-            ${checkoutState.context.cartId}
             <button onClick=${() => CheckoutApi.proceedToCheckout()}>Proceed to checkout</button>
         </div>`}
         <${ShippingStep} active=${checkoutState.state === 'shipping'} />
