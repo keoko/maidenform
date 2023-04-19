@@ -109,7 +109,7 @@ function ShippingAddressForm() {
           `)}
       </select>
       <input ...${useField('phoneNumber')} placeholder="Phone Number" />
-      <button onClick=${handleSetShippingAddress}>Set shipping address</button>
+      <button class="button primary" onClick=${handleSetShippingAddress}>Set shipping address</button>
     </form>
   `;
 }
@@ -150,7 +150,7 @@ function ShippingMethodForm() {
             </label>
           `)}
       </div>
-      <button onclick=${handleSetShippingMethod}>Set shipping method</button>
+      <button class="button primary" onclick=${handleSetShippingMethod}>Set shipping method</button>
     </form>
   `;
 }
@@ -176,16 +176,14 @@ function ShippingStep({ active }) {
               <${ShippingAddressForm} />
               <hr />
               <${ShippingMethodForm} />
-              <button onClick=${() => CheckoutApi.continueToPayment()}>Continue To Next Step</button>
+              <button class="button primary" onClick=${() => CheckoutApi.continueToPayment()}>Continue To Next Step</button>
           `}
           ${!active && Object.keys(shippingAddress).length > 0 && html`
             <div class="shipping-address-summary">
-              <span>${shippingAddress.firstName} ${shippingAddress.lastName}</span>
-              <span>${shippingAddress.streetAddress1}</span>
-              <span>${shippingAddress.streetAddress2}</span>
-              <span>${shippingAddress.city}</span>
-              <span>${shippingAddress.zipCode}</span>
-              <span>${shippingAddress.country}</span>
+              <div>${shippingAddress.firstName} ${shippingAddress.lastName}</div>
+              <div>${shippingAddress.streetAddress1} ${shippingAddress.streetAddress2}</div>
+              <div>${shippingAddress.city}, ${shippingAddress.zipCode}</div>
+              <div>${shippingAddress.country}</div>
             </div>              
           `}
       <//>
@@ -220,7 +218,7 @@ function PaymentMethodSelector() {
           <//>
         `)}
       </div>
-      <button onClick=${handleSetPaymentMethod}>Set payment method</button>
+      <button class="button primary" onClick=${handleSetPaymentMethod}>Set payment method</button>
     <//>
     
   `;
@@ -236,7 +234,7 @@ function PaymentForm() {
     <form>
       <span>Select payment method</span>
       <${PaymentMethodSelector} />
-      <button onClick=${handlePlaceOrder}>Place Order</button>
+      <button class="button primary" onClick=${handlePlaceOrder}>Place Order</button>
     </form>
   `;
 }
@@ -249,6 +247,61 @@ function PaymentStep({ active }) {
   `;
 }
 
+function OrderSummary(props) {
+  const [orderSummaryState, setOrderSummaryState] = useState({});
+  const {shippingMethod} = orderSummaryState
+
+
+    // Event Bus (Vanilla JS implementation – to be moved to its own lib file)
+    const events = (() => {
+      return {
+        on(event, handler) {
+          const subscriber = new BroadcastChannel('ElsieSDK/EventBus');
+
+          subscriber.addEventListener('message', (msg) => {
+            if (msg.data?.event === event) {
+              handler(msg.data.payload);
+            }
+          });
+
+          return {
+            off() {
+              subscriber.close();
+            },
+          };
+        },
+        emit(event, payload) {
+          const publisher = new BroadcastChannel('ElsieSDK/EventBus');
+          publisher.postMessage({
+            event,
+            payload
+          });
+        },
+      };
+    })();
+
+    // Initialize form state with shipping address if empty
+    useEffect(() => {
+      events.on('checkout/shippingMethodSet', (event) => {
+        console.log('shipping method set event received', event);
+        setOrderSummaryState({shippingMethod: event})
+      });
+    }, []);
+
+  return html`
+    <div>${!!shippingMethod?.currency ? html`${shippingMethod?.methodTitle} ${shippingMethod?.amount} ${shippingMethod?.currency}` : html`<i>Shipping method not selected</i>`}</div>
+    <button class="button primary" onClick=${() => CheckoutApi.proceedToCheckout()}>Proceed to checkout</button>
+    `;
+}
+
+function OrderSummaryStep({ active }) {
+  return html`
+  <${CheckoutStepWrapper} active=${active} title="Order Summary">
+      ${active && html`<${OrderSummary} />`}
+  <//>
+`; 
+}
+
 function Checkout() {
   const checkoutState = useCheckoutMFE();
 
@@ -257,9 +310,7 @@ function Checkout() {
 
   return html`
     <${CheckoutContext.Provider} value=${checkoutState}>
-        ${checkoutState.state === 'cart' && html`<div>
-            <button onClick=${() => CheckoutApi.proceedToCheckout()}>Proceed to checkout</button>
-        </div>`}
+        <${OrderSummaryStep} active=${true} />
         <${ShippingStep} active=${checkoutState.state === 'shipping'} />
         <${PaymentStep} active=${checkoutState.state === 'payment'} />
     <//>
